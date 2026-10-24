@@ -117,7 +117,8 @@ posts across tiers per day.
 ## Tier 1 — big reach (your comment rides into the author's audience)
 Chip Huyen, Ethan Mollick, Sebastian Raschka, Eugene Yan, Hamel Husain,
 Simon Willison, Jerry Liu (LlamaIndex), Amjad Masad (Replit),
-Paolo Perrone (60,500-imp thread origin; keep watching)
+Paolo Perrone (60,500-imp thread origin; keep watching),
+Prasad Rao (AWS Principal SA, following, added 10-24 evening)
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
