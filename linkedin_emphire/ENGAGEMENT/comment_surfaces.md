@@ -241,6 +241,23 @@ Sudarshan Thorat
   the slop pattern the engine exists to avoid. Surface
   stays available if he posts a real claim or the
   owner wants a 1st-degree relationship play.
+- Andriy Burkov (53m at paste, following, PhD in AI,
+  author of the Hundred-Page LLM + ML books, runs a
+  newsletter, no thread history): newsletter promo,
+  "this week's edition was emailed to subscribers",
+  a digest of ML article titles (autoregressive
+  diffusion for market data, token usage in agentic
+  SE, RAG in fintech, GRPO search agents, 14-byte
+  maze NN), 6 broad hashtags. Skipped per rung 6 + day
+  at ceiling: OUT OF LANE (ML education/newsletter,
+  no security or check-frame topic in any headline,
+  an in-lane comment would be a bolted-on off-topic
+  lecture), it is a CTA post so a comment feeds the
+  newsletter funnel (the only value-free options are a
+  category-7 compliment or the off-topic lecture), and
+  the argument test cannot pass (a list of titles is
+  not a claim). Surface stays available if he posts a
+  real checkable claim in-lane.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
