@@ -117,7 +117,14 @@ posts across tiers per day.
 ## Tier 1 — big reach (your comment rides into the author's audience)
 Chip Huyen, Ethan Mollick, Sebastian Raschka, Eugene Yan, Hamel Husain,
 Simon Willison, Jerry Liu (LlamaIndex), Amjad Masad (Replit),
-Paolo Perrone (60,500-imp thread origin; keep watching),
+Paolo Perrone (60,500-imp thread origin; keep
+watching; active thread partner, item 21; 10-24
+night: his own 45m harness-engineering post,
+CTA/workshop, argument test passes (resilience
+vs trust, check that runs on resume), HUMAN
+83w drafted (verbatim item 23), logged-override
+candidate, strongest available; owner's call
+re second override if item 21 was sent),
 Prasad Rao (AWS Principal SA, following, added 10-24 evening),
 Tanya Janca (cybersecurity keynote speaker, secure coding
 trainer, bestselling author, founder, 1st, services page,
