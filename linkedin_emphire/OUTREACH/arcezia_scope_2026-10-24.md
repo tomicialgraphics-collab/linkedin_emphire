@@ -45,21 +45,28 @@ The tester runs the test in the window using the provided key, at the tester's p
 Key used only for this engagement, not shared, returned or destroyed at close. No attempts on data or resources outside the test account.
 
 ## Terms
-Fee: $1,000 flat. $100 commitment fee due at signing (this
-scope's agreed markup); balance of $900 deferred, invoiced
-at the earlier of (a) publication of the joint write-up,
-or (b) Arcezia's next funding round closing.
-Interim credit: the tester's name on every finding; a
-written reference from the target owner for the tester's
-next client, delivered at report handoff.
-[STATUS 10-24 7:47 PM: Praveen declined the $100/$900
-structure, reclassifying the deferred balance as
-pre-round debt under a stated company rule, and
-returned to his two options: (a) unpaid with full
-credit + reference, or (b) park until after the
-raise, then paid properly; and added a gate: he
-wants to see a past engagement write-up first.
-The structure above records what was offered in the
-DM. Awaiting the tester's call on (a) vs (b) vs
-walk; the fix-ownership and delivery-model
-clarifications above hold under any structure.]
+This engagement is unpaid, by agreement, for the stated
+reason: the target owner is bootstrapped and will not
+take on debt before the round. The fee is recorded here
+as a one-time written waiver so it does not set a rate
+default; the tester's rate is unchanged.
+
+Agreed shape (both sides deliver inside the window):
+- Test on the 27th and 29th; private report to the target
+  owner first, on the 30th.
+- The target owner fixes; the tester verifies the fix
+  holds. The tester does not implement the fix in code;
+  building the fix is a separate, separately-priced
+  deliverable.
+- Credit: the tester's name on every finding, bylined on
+  the joint write-up in both channels; a written reference
+  from the target owner for the tester's next client,
+  delivered at report handoff.
+- The joint write-up publishes only after the fix is
+  confirmed, with both sides' sign-off; co-authored,
+  bylines both, runs on both channels.
+
+Superseded: the $100 commitment / $900 deferred structure
+offered earlier on 10-24 was declined by the target owner
+(declared pre-round debt) and is replaced by this
+unpaid-with-credit agreement, accepted 10-24 8:30 PM.
