@@ -137,7 +137,15 @@ Thacker, Rebecca Huteson, Alex Combessie (Giskard), Keren Katz
 (Zenity, OWASP Agentic Top 10), Hyrum Anderson (Abundant Security),
 Rock Lambros (Zenity), Tarique Smith (Zero Day Agent),
 Nathan Hamiel (Sr Dir Research, AI security, keynote speaker,
-following, added 10-24 evening)
+following, added 10-24 evening),
+Kevin Payne (GTM Engineer at LawVu, following, 200+
+bylines, operator at A16z/YC/Techstars startups,
+Substack funnel, added 10-24 evening; AI-stack
+ownership post with the three-question test and the
+"verifier that logs pass or fail" line; in-lane on
+the verifier question; OUTSTANDING 117w drafted 10-24
+evening, day at ceiling, tomorrow queue after Tanya
++ Hamiel)
 
 ## Tier 3 — builder / adjacent layer + active thread partners
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
