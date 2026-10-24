@@ -222,6 +222,25 @@ Sudarshan Thorat
   it reappears organically: the quiet-workaround paragraph
   is the shadow-system theme (cf. Sweden C2 "the exact
   state a shadow system prefers").
+- al neitsch (42m at paste, 1st, tier 3 adjacent, data +
+  AI governance advisor, no thread history): generic
+  thought-leadership post, "escalating cyber threats
+  that imperil our data and governance", "websites
+  brought down worldwide as a critical cyber-security
+  update was issued" (the PHP2Shell week, BBC source
+  line), 5 broad hashtags, no number, no first-hand
+  experience, no argument, no concession. Skipped per
+  rung 6 (weak/out-of-lane, skips regardless of
+  headroom) + day at ceiling: the argument test cannot
+  pass (nothing to argue with, any comment is a
+  category-7 compliment or an unprompted lecture), the
+  only in-lane angle (patch pipeline / the layer you do
+  not own) is already used in the vulnzero standalone +
+  the Hamiel 68w inside the same 24h window, and
+  manufacturing a point out of a substance-free post is
+  the slop pattern the engine exists to avoid. Surface
+  stays available if he posts a real claim or the
+  owner wants a 1st-degree relationship play.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
