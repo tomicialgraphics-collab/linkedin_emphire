@@ -258,6 +258,39 @@ Sudarshan Thorat
   the argument test cannot pass (a list of titles is
   not a claim). Surface stays available if he posts a
   real checkable claim in-lane.
+- Brad Smith post via Mahum Ahmad comment (11m at paste;
+  comment author following, 1st, lawyer / Of Counsel
+  Corporate & Commercial, no thread history; post
+  author 3rd+, Microsoft Vice Chair and President, not
+  followed, 1d at paste): Mahum's 24w emoji-laden
+  reaction ("Brilliant address by Brad Smith... AI
+  innovation and responsibility must go hand in hand.
+  👌 ... tech industry to get over its 'allergy to
+  regulation' 😂") on Brad Smith's two-line generic
+  governance post ("no technology is above the law",
+  "sensible, balanced rules that enable us to do
+  both"). Read-more fetch = 403 login wall, full post
+  text present in the paste. Skipped per rung 6 (weak
+  fit, skips regardless of headroom) + day at the
+  12-action ceiling: a 1st-degree lawyer's
+  platitude-and-joke reaction to a 3rd-degree C-suite
+  corporate-PR governance post carries no security
+  audience and no thread-partner value (a comment also
+  feeds reach to the Microsoft C-suite post, off
+  audience), the argument test cannot pass (a platitude
+  plus a joke is not a claim, the only in-lane angle,
+  rules without a measurable bar are unenforceable,
+  i.e. the denominator point, would be an unprompted
+  lecture reply to a 24w emoji comment, or the
+  alternative is a category-7 compliment on a speech
+  the owner did not attend), and it is the same
+  generic-governance category as the al neitsch skip
+  earlier today. New feed surface on a 12/12 day: does
+  not meet the override test (contrast Paolo: tier-1
+  anchor, owner's own post, active thread, spoke 1m
+  ago). Surface stays available if Mahum posts or
+  comments a real checkable claim in lane, or the
+  owner wants the 1st-degree relationship play.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
