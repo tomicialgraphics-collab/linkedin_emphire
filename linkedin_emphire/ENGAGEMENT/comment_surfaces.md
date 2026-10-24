@@ -190,6 +190,21 @@ Sudarshan Thorat
   is a vendor claim, not a check; answering a claim with
   positioning on a marketing post is the slop pattern the
   engine avoids. Skipped on quality, not the cap.
+- Manthan Patel (24m at paste, SPONSORED post, #Kiteworks
+  #sponsored, 100K+ student lead-gen educator): security
+  reviews get skipped for ambiguity (auth flow, version
+  mismatched docs, hand-provisioned credentials,
+  trial-and-error limits), "good documentation is a
+  security control", "the quiet workaround" paragraph
+  (scripts outside the sanctioned process, unaudited).
+  Skipped per rung 6 + day at the 12-action ceiling:
+  sponsored surface (comment rides the advertiser's
+  funnel, his product is the audience itself), lead-gen
+  creator weak fit for security positioning. In-lane
+  angle recorded for a person's surface or standalone if
+  it reappears organically: the quiet-workaround paragraph
+  is the shadow-system theme (cf. Sweden C2 "the exact
+  state a shadow system prefers").
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
