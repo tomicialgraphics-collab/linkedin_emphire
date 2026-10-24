@@ -118,7 +118,16 @@ posts across tiers per day.
 Chip Huyen, Ethan Mollick, Sebastian Raschka, Eugene Yan, Hamel Husain,
 Simon Willison, Jerry Liu (LlamaIndex), Amjad Masad (Replit),
 Paolo Perrone (60,500-imp thread origin; keep watching),
-Prasad Rao (AWS Principal SA, following, added 10-24 evening)
+Prasad Rao (AWS Principal SA, following, added 10-24 evening),
+Tanya Janca (cybersecurity keynote speaker, secure coding
+trainer, bestselling author, founder, 1st, services page,
+added 10-24 evening; PHP2Shell supply-chain post live:
+runtime in the supply chain, container base image
+example, "verify that security fixes actually make it
+into production", video link. Tier 1, named-human
+security publication, in-lane. OUTSTANDING 119w
+drafted 10-24 evening, day at ceiling, tomorrow
+queue, proposed FIRST)
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
