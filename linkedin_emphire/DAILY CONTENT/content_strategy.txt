@@ -401,9 +401,12 @@ WHAT THE DATA CHANGES
    engine, so a slop-shaped comment does
    double damage: it does not land, and it
    brands the account. Engine response: THE
-   HUMAN GATE (voice_dna.txt PART 10) + four
-   comment modes + CATEGORY 7 in
-   banned_words.txt. The 10-23 "0 contractions"
+   HUMAN GATE (voice_dna.txt PART 10) + PART
+   10.5 STRUCTURE RULES (10-24 paste-mining
+   fine-tune: the shape is the slop tell; the
+   owner's VERIFIED_POSTS are the format
+   authority) + four comment modes + CATEGORY 7
+   in banned_words.txt. The 10-23 "0 contractions"
    gate is retired: uniform formality was
    itself the tell. Calibration anchor: the
    Paolo Perrone comment (60,772 imp, author

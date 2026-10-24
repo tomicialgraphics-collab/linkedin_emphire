@@ -129,8 +129,12 @@ PROMPT:
 For each post verify:
 □ Sounds like Timothy wrote it
 □ Zero banned words
-□ ZERO em dashes, ZERO contractions (search the text;
-  hard gate, see voice_dna.txt Part 10)
+□ ZERO em dashes; contractions 1-4, none in the
+  first line (search the text; the old
+  "ZERO contractions" line is stale, retired by
+  the 10-24 fine-tune; hard gate, see
+  voice_dna.txt Part 10 + PART 10.5 structure
+  rules passed)
 □ Has strong hook
 □ Provides real value
 □ Natural CTA
@@ -323,7 +327,9 @@ For each, provide:
   first line), word count inside budget and
   under the post's length, argument test passed,
   no CATEGORY 7 openers or closers, uneven
-  paragraphs, no bullets, flat ending
+  paragraphs, no bullets, flat ending, structure
+  rules PART 10.5 passed for the piece type
+  (signatures present, D1-D3 absent)
 
 Also draft any follow-up replies due from the
 watchlist, INTERACTIVE mode (hostile reply
@@ -348,6 +354,8 @@ search the text for each):
 □ Uneven paragraph lengths, no bullets
 □ Flat ending (question mark only in
   INTERACTIVE mode), no hashtags
+□ Structure rules (voice_dna.txt PART 10.5)
+  passed for the piece type
 □ No two of today's comments reuse the same
   closer
 □ Read it aloud once: any sentence that sounds

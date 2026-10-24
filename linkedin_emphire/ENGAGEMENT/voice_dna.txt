@@ -322,6 +322,134 @@ search the text for each):
 □ Ends on a flat statement or a concrete image;
   a question mark only in INTERACTIVE mode; no
   hashtags inside a comment
+□ Structure rules PART 10.5 pass for the piece
+  type: the signatures required by that type
+  are present and the demoted devices D1-D3
+  are absent (standalone: S1-S7 required;
+  comment: S3 and S4 required where they fit,
+  S7/S8 optional)
+
+═══════════════════════════════════════════════
+PART 10.5: STRUCTURE RULES (10-24 fine-tune,
+owner: "the way the pasted posts and comments
+are structured can finetune the engine; some
+output still sounds generated, not human")
+═══════════════════════════════════════════════
+
+The words can pass the gate and the piece can
+still read generated. The tell is not the
+vocabulary, it is the shape: uniform paragraphs,
+every sentence load-bearing, the point always
+first, precision everywhere. The pastes were
+mined (feed posts that read human, the owner's
+own DMs and replies) and the owner's
+VERIFIED_POSTS were read as ground truth.
+Extend the owner's verified posts. Never copy
+another writer's format: their numbered lists
+and emoji numbering are not the goal, and the
+owner's own posts have never used a list.
+
+GROUND TRUTH SIGNATURES (from the owner's own
+verified posts, the only format authority):
+- 5-10 paragraphs of wildly uneven lengths
+  (php2shell event post: 10; check-never-
+  failed: 5; aithos: 6), not 3 equal blocks
+- first-person habitual bridge: "I keep seeing
+  this in the work." / "I see the same failure
+  from the other side of the stack." / "Last
+  week I tried to break a support chatbot I
+  had spent a month building."
+- one pivot line per post: "But here is the
+  part nobody says out loud." / "And the honest
+  part:" / "The discovery story is the other
+  lesson."
+- period fragments: "In the runtime." /
+  "Before any application code runs." / "That
+  is the only proof I have."
+- echo couplets: "All of those look exactly
+  the same from the dashboard. All of them are
+  green." / "Calif found it with GPT-5.6 Sol.
+  Wiz found it independently."
+- plain words where the polished word would
+  go: "a thing I know is bad" / "a
+  conversation with whoever owns the server"
+- hedged precision: one dense exact pile (the
+  versions, the CVEs), everything else plain
+  ("about 70 percent", "millions of attempts",
+  "on a stock install")
+- flat close, sometimes with a sardonic
+  fragment that does not land: "Break it
+  before your users do, or their relatives
+  do."
+
+S1. STANDALONE SHAPE: 5-8 paragraphs. At least
+    one is a 2-6 word beat (a fragment, an
+    imperative, or a colon-beat like "And the
+    honest part:"). At least one is a dense
+    paragraph (4+ sentences) when the piece
+    carries facts. Three equal-length
+    paragraphs is banned as a standalone shape
+    (it was this week's default and it is the
+    shape the owner names as generated).
+S2. FIRST-PERSON HABITUAL BRIDGE (standalone
+    required, comment allowed): one line
+    where the writer states what he keeps
+    seeing, doing, or finding out, as a habit,
+    not a confession. It states the writer's
+    relation to the topic; it does not restate
+    the thesis.
+S3. PERIOD FRAGMENTS: 1-3 in a standalone,
+    0-1 in a comment. A 3-6 word fragment that
+    ends a thought a full sentence would carry.
+S4. PLAIN WORD (required, both types): one
+    place where the plain word goes where the
+    polished word would ("a thing", "on the
+    wall", "went sideways"). A piece where
+    every noun is precise reads generated.
+S5. PRECISION SPREAD (pieces with facts): one
+    dense exact pile (versions, CVEs, scores,
+    dates); everything else hedged and plain
+    ("about", "most of", "a few",
+    "considerably more"). Never two dense
+    piles, never all hedged.
+S6. THE PIVOT (standalone required): the piece
+    is two halves and one sentence is the
+    hinge. The hinge must not reuse a pivot
+    line from a post in the last 7 days (the
+    owner's pivot lines are a finite set;
+    reusing one is a motif violation).
+S7. UNLANDED DETAIL (0-1, both types): one
+    specific detail that serves the argument
+    only a little, stated and left (a number,
+    a name, a scene; the reader could check
+    it; the argument does not need it). This
+    is the human waste that generated text has
+    none of. Never two.
+S8. COMMA-CHAIN SENTENCE (0-1, both types):
+    one sentence of 25+ words chained with
+    commas, the point arriving in the middle
+    or at the end (the owner's own DM
+    structure: "this is a business deal not a
+    personal favor"). Generated copy puts the
+    point first, every time.
+S9. PARENTHETICAL ASIDE (post 0-1): one
+    parenthetical that trails off without
+    landing (the Hamiel "especially after so
+    much investment in cybersecurity from AI
+    companies..."). Only when the joke is
+    already in the piece's tone.
+
+DEMOTED DEVICES (the engine's own overused
+moves, now tells; search before publishing):
+D1. "Not: X. This: Y." antithesis: max once
+    per 3 posts (used in the Sam 58w reply,
+    the Praveen 112w, and the first vulnzero
+    draft on the same day; the device was
+    becoming a motif).
+D2. The triple "no X, no Y, no Z": max once
+    per post.
+D3. Four uniform paragraphs: banned as a
+    standalone shape (see S1).
 
 ARGUMENT TEST (the Jada Balster test):
 Could a hostile reader find one line here to

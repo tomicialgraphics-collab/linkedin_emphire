@@ -9416,6 +9416,14 @@ CORE VOICE CHECKS:
 □ No banned openers or closers
   (banned_words.txt, CATEGORY 7)
 □ One idea per breath, paragraph lengths uneven
+□ Structure rules (ENGAGEMENT/voice_dna.txt
+  PART 10.5): the piece carries the signatures
+  for its type (standalone: 5-8 uneven
+  paragraphs with a 2-6 word beat, a first-
+  person habitual bridge, a period fragment, a
+  plain word, a precision spread, a pivot not
+  reused in 7 days, 0-1 unlanded detail) and
+  none of the demoted devices D1-D3
 
 INFLUENCE CHECKS:
 □ Does this incorporate [Writer 1]'s structure well?
