@@ -25,8 +25,11 @@ A fresh test account on Arcezia's live service, provided by the target owner. Th
 1. Keys delivered after both sides mark up this scope; one-time delivery by email, deleted after receipt
 2. Testing in the window; every finding kept with its minimal repro
 3. Private report to the target owner first: findings, severity, repro, before anything is public
-4. Target owner fixes; both sides confirm the fix
+4. Target owner fixes; both sides confirm the fix. The tester does not implement the fix in code: finding, reporting, and verifying the fix are the tester's deliverables; building the fix is a separate, separately-priced deliverable
 5. Joint write-up: target owner reads for accuracy and for anything not yet public. The findings and the repro stay the tester's
+
+## Delivery model
+The tester runs the test in the window using the provided key, at the tester's pace, and delivers the private report first. The two days of testing are not required to be done live on a shared screen. Two optional co-observed moments: (a) a short pre-commit method demo on the test account (one chain, live) so the target owner watches the process before committing; (b) live fix verification, the target owner fixes, the tester re-runs the chain in front of him and confirms it stops.
 
 ## Report
 - Covers holds as well as hits: what was tried, what went through, what stopped it
@@ -49,6 +52,14 @@ or (b) Arcezia's next funding round closing.
 Interim credit: the tester's name on every finding; a
 written reference from the target owner for the tester's
 next client, delivered at report handoff.
-[awaiting Praveen's markup; if he marks the trigger to
-round-close only, the deferral trigger changes,
-everything else stands]
+[STATUS 10-24 7:47 PM: Praveen declined the $100/$900
+structure, reclassifying the deferred balance as
+pre-round debt under a stated company rule, and
+returned to his two options: (a) unpaid with full
+credit + reference, or (b) park until after the
+raise, then paid properly; and added a gate: he
+wants to see a past engagement write-up first.
+The structure above records what was offered in the
+DM. Awaiting the tester's call on (a) vs (b) vs
+walk; the fix-ownership and delivery-model
+clarifications above hold under any structure.]
