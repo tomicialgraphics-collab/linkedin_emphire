@@ -173,7 +173,12 @@ Restelica, Helen Oakley (Zenity), Robinson Miranda, Tanay
 Kothari, Salman Lakhani (SIGNAL/NOISE corroboration board;
 10-24 confirmed author of the Sweden post, thread partner,
 follow-back pending), Chris H., Madhan Vadlamudi, Ned Lowe,
-Sudarshan Thorat
+Sudarshan Thorat, Sumit Gupta (130K+ data engineering /
+AI-B2B creator, 2nd, off-lane, recurring surface:
+idempotent-sink argument referenced in Michal thread;
+10-24 roadmap post, category 7 shape, argument test
+passes, 78w drafted = verbatim item 24, held to 10-25
+queue slot 12, reach-optional)
 
 ## Groups (free distribution; separate from the comment round)
 - Group 6773411: the 90-day top performer is a post in this group
