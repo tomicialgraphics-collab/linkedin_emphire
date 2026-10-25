@@ -75,3 +75,38 @@ UTC by LinkedIn. Deltas as shown by LinkedIn.
 ### Next snapshots
 - Weekly: 2026-10-30
 - 90-day: 2026-11-23
+
+## 7-day analytics capture (owner paste, 2026-10-25 evening;
+window 2026-10-19 to 2026-10-25, daily data UTC)
+- Followers: 753 total, +30% vs prior 7 days (daily
+  gains 11-177 on the chart).
+- Impressions: 2,145 cumulative, +1% vs prior 7 days
+  (FLAT). Discovery: 77% out-of-network, 23%
+  in-network; 1,205 members reached.
+- Engagement: 30 social engagements (23 reactions, 6
+  comments, 0 reposts, 1 save, 0 sends) = ~1.4% rate.
+- Follower demographics: SF Bay 9%, DC 4%, NYC 4%,
+  Seattle 3%, London 3%, Bengaluru 2%, LA 2%, Boston
+  2%, Toronto 2%.
+- Profile-visitor demographics: SF 5%, Hyderabad 5%,
+  Bengaluru 3%, Chennai 3%, NYC 3%, Lagos 3%, London
+  2%, Delhi 2%, Sao Paulo 2%.
+- Top posts (7d): vulnzero 966 imp / 2 eng; lens post
+  267 / 2; vendor-number ("I build the check, not the
+  claim") 258 / 3.
+- KEY READS: (1) current demo = AI-content audience,
+  not buyers; +30% follower growth = same demo; (2)
+  specific post (vulnzero) out-earned abstract by ~4x
+  = the content template going forward; (3) 77%
+  out-of-network = distribution works, mix decides
+  who; (4) conversion KPIs = prospect-list accepts,
+  DMs reaching the qualification question, audit
+  conversations (NOT follower demo).
+- OUTPUT: positioning/ICP doc written =
+  LINKEDIN/positioning_icp_2026-10-25.md (three
+  demographic tiers ranked for the owner's position:
+  Nigerian/West African regulated fintech+banking
+  first-paid; AI-native product companies = the "in
+  demand" tier; mid-market regulated enterprises = the
+  big pool; 30-day demo-shift plan; "what we are not
+  doing" list).
