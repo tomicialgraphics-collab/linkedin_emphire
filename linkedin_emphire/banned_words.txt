@@ -319,6 +319,65 @@ CATEGORY 6: PHRASES THAT SOUND SMART BUT AREN'T
    ✅ Better: "Meanwhile" or restructure sentence
 
 ═══════════════════════════════════════════════════
+CATEGORY 7: COMMENT SLOP OPENERS AND CLOSERS
+═══════════════════════════════════════════════════
+
+These identify a comment as machine-written
+regardless of how good the middle is. The shape
+(opens with praise, closes with a question) is
+the tell even when every word in between is
+fine. Source: 90 days of this account's
+published_comments archive + the 10-24 Jada
+Balster signal (CMO post complaining about AI
+comments that are "longer than the original
+post but say absolutely nothing").
+
+BANNED AS OPENERS (any comment, any mode):
+❌ "Great post" / "Great insight" / "Amazing
+   post" / "Such a great reminder"
+❌ "So true" / "So true this"
+❌ "Love this" / "Love where this is going"
+❌ "This resonates" / "This hits home"
+❌ "Couldn't agree more" / "100%" / "Absolutely"
+❌ "Well said" / "Kudos to" / "Hats off to"
+❌ "This is why I follow you"
+❌ "Here's the thing" (banned as a comment
+   opener only; allowed mid-post, max once per
+   post)
+❌ "Here's what I learned" / "Something I've
+   learned" (these open a post, not a comment)
+❌ "I think you're right that" (flattery setup)
+
+BANNED AS CLOSERS (any comment, any mode):
+❌ "Thanks for sharing" / "Thanks for putting
+   this out there"
+❌ "Looking forward to" (anything)
+❌ "Happy to dive deeper" / "Happy to discuss"
+❌ "Would love to hear more about" (generic)
+❌ Any restatement of the post's own point
+❌ A question mark, except in INTERACTIVE reply
+   mode, and then only when the thread needs
+   the next move
+❌ Hashtags inside a comment
+
+WHY: a comment that opens with a compliment and
+closes with a question is the shape of a
+template. The argument test (voice_dna.txt
+PART 10) is the fix: at least one line the
+author could argue with, and a flat ending.
+
+SPECIFIC COMPLIMENTS ARE ALLOWED (10-24b):
+The ban is on generic praise, not on
+appreciation. One specific, earned compliment
+per comment is allowed anywhere after the
+first line, and in HUMAN mode it is the
+payload. Test: the author must be able to
+point at the exact line, number, or choice
+you are praising. "The middle manager line
+is the one doing the work here" passes.
+"Great post" does not.
+
+═══════════════════════════════════════════════════
 QUICK REFERENCE: NEVER USE
 ═══════════════════════════════════════════════════
 
@@ -376,6 +435,15 @@ FILLER PHRASES:
 - It goes without saying
 - In conclusion
 
+COMMENT OPENER/CLOSER SHAPE (CATEGORY 7):
+- Great post / So true / Love this /
+  This resonates / Couldn't agree more
+- Here's the thing (as a comment opener)
+- Thanks for sharing / Happy to dive deeper /
+  Looking forward to
+- question-mark closer on a new comment
+- hashtags inside a comment
+
 ═══════════════════════════════════════════════════
 POSITIVE ALTERNATIVES SUMMARY
 ═══════════════════════════════════════════════════
@@ -387,9 +455,10 @@ For emphasis:
 ✅ Concrete examples ("Here's what happened...")
 ✅ Real names/tools ("I used X" vs "we leverage")
 
-For transitions:
+For transitions (posts only; banned as comment
+openers, see CATEGORY 7):
 ✅ "And" / "But" / "So"
-✅ "Here's the thing"
+✅ "Here's the thing" (mid-post, max once)
 ✅ "Here's what I mean"
 
 For enthusiasm:

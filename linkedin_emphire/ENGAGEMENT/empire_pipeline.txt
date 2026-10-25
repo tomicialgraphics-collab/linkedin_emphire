@@ -129,8 +129,12 @@ PROMPT:
 For each post verify:
 □ Sounds like Timothy wrote it
 □ Zero banned words
-□ ZERO em dashes, ZERO contractions (search the text;
-  hard gate, see voice_dna.txt Part 10)
+□ ZERO em dashes; contractions 1-4, none in the
+  first line (search the text; the old
+  "ZERO contractions" line is stale, retired by
+  the 10-24 fine-tune; hard gate, see
+  voice_dna.txt Part 10 + PART 10.5 structure
+  rules passed)
 □ Has strong hook
 □ Provides real value
 □ Natural CTA
@@ -201,8 +205,9 @@ Provide:
 1. Comment surface rotation for the week from
    ENGAGEMENT/comment_surfaces.md (tier 1 for reach,
    tier 2 for home turf, tier 3 as spice)
-2. 5-8 comment actions per day budget (hard cap,
-   spaced across the day, never a burst)
+2. Comment actions per day budget: 8 base, up to 12
+   under the extension guardrails (protocol 1), hard
+   ceiling 12, spaced across the day, never a burst
 3. Follow-up reply watchlist (open threads that need
    a second move)
 4. 5 people to DM this week (warm leads)
@@ -213,14 +218,29 @@ Provide:
    (top performer of the 90-day window is a post in
    that group; add a group-specific question close)"
 
-PACING RULE (from 2026-10-23 analytics):
-- 5-8 comment actions per day, spaced, not batched.
-  A 14-16 action burst in one hour risks throttling
-  comment distribution.
+PACING RULE (from 2026-10-23 analytics, expanded 10-24):
+- 8 comment actions per day base, extendable to 12, hard
+  ceiling 12. The 10-23 event (14-16 in an hour) was a
+  clustering risk with no observed throttling, so the
+  ceiling rises and the anti-clustering rules stay:
+  max 2 per hour, 60+ min between new comments (replies
+  exempt on an active thread), 4+ actions on tier 1-2 or
+  thread-partner replies, 2+ INTERACTIVE replies, never
+  3+ actions in any 2-hour window. Extension is only for
+  fresh in-lane surfaces; weak surfaces are skipped
+  regardless of headroom.
 - A comment action = a comment OR a follow-up reply.
   Replies are first-class: threads compound (the
   Paolo Perrone thread: main comment + 2 replies,
   the reply alone hit 3,722 impressions).
+
+MODE BALANCE (10-24, voice_dna.txt COMMENT MODES):
+- Plan the week so no day carries more than 2
+  OUTSTANDING comments.
+- If a planned surface has a checkable claim or
+  number, mark it QUESTIONING in the plan.
+- Personal, community, and celebration posts get
+  HUMAN mode, never a check-theorem drop.
 
 OUTPUT → Engagement plan for daily execution
 
@@ -255,27 +275,91 @@ INPUT: comment_surfaces.md + reply watchlist
 AGENT: Engagement Specialist
 
 PROMPT:
-"Pick today's 5-8 comment actions from the surface
-list (fresh posts only: same day or yesterday).
+"Pick today's comment actions from the surface list
+(8 base, up to 12 if the extension guardrails in
+comment_surfaces protocol 1 can hold; fresh posts
+only: same day or yesterday).
 
-[PASTE 5-8 FRESH POSTS FROM SURFACES]
+[PASTE FRESH POSTS FROM SURFACES]
+
+SOURCE RULE first (comment_surfaces protocol 9, 10-24 owner
+standing instruction): if a post carries a read-more, article,
+paper, or report link, fetch and read the full source before
+drafting anything. Comment on the source, cite specifics to the
+source, and prefer the one finding the post omitted as the
+added value. If the source cannot be fetched, mark the draft
+UNVERIFIED-SOURCE in the tone notes.
+
+PROFILE READ + method before the mode (comment_surfaces
+protocol 10, 10-24 owner direction): for each pasted surface,
+read the author's block from the paste (relationship, degree,
+headline, commercial signals, tier, thread-partner status from
+the published_comments archive) and pick the move from the
+method ladder: reply / follow-back + comment / comment /
+repost with thought / skip. Missing fields are UNKNOWN, not
+guessed. Method before mode. A repost replaces the comment on
+the same surface, it never stacks with it.
+
+Pick the mode first (ENGAGEMENT/voice_dna.txt
+COMMENT MODES, 10-24 fine-tune):
+- tier 1-2 surface, no checkable claim
+  → OUTSTANDING (expertise + risk angle,
+    90-120 words, one memorable line allowed)
+- post contains a checkable claim or number
+  → QUESTIONING (90-120 words, lead with the
+    line that does not hold, one re-runnable
+    counter, argue the checkable part only)
+- personal, community, or celebration post
+  → HUMAN (20-80 words, warm, specific, frame
+    invisible, no memorable-line attempt)
+- a reply is due on any thread → INTERACTIVE
+  (15-60 words, question allowed there only)
 
 For each, provide:
-- 2 comment options (expertise + story angle),
-  one idea per breath, 90-140 words for a main
-  comment, ~60 for a reply
+- 2 options inside the picked mode (different
+  angles, same risk level), one idea per breath
 - Recommended option with reason
-- One memorable line called out
+- One memorable line called out (OUTSTANDING
+  only; HUMAN mode gets none)
 - Tone notes
+- SLOP DETECTOR result (voice_dna.txt PART 10):
+  0 em dashes, 1-4 contractions (none in the
+  first line), word count inside budget and
+  under the post's length, argument test passed,
+  no CATEGORY 7 openers or closers, uneven
+  paragraphs, no bullets, flat ending, structure
+  rules PART 10.5 passed for the piece type
+  (signatures present, D1-D3 absent)
 
 Also draft any follow-up replies due from the
-watchlist (hostile reply protocol: do not defend,
-serve the verifiable claim, invite the re-run)."
+watchlist, INTERACTIVE mode (hostile reply
+protocol: do not defend, serve the verifiable
+claim, invite the re-run)."
 
-GATE BEFORE POSTING (every single comment):
-□ 0 em dashes, 0 contractions (search the text)
-□ No two of today's comments reuse the same closer
-□ Sounds like the owner, not a template
+GATE BEFORE POSTING (every single comment,
+search the text for each):
+□ 0 em dashes. Contractions 1-4, none in the
+  first line, none doubled in one clause
+□ Word count inside the mode budget and under
+  the post's length
+□ Argument test: at least one line a hostile
+  reader could argue with
+□ Compliment check: at most one, specific
+  (the author must be able to point at the
+  line), never the first line; required as the
+  payload in HUMAN mode (COMPLIMENT RULE,
+  voice_dna.txt PART 10)
+□ No CATEGORY 7 openers or closers
+  (banned_words.txt)
+□ Uneven paragraph lengths, no bullets
+□ Flat ending (question mark only in
+  INTERACTIVE mode), no hashtags
+□ Structure rules (voice_dna.txt PART 10.5)
+  passed for the piece type
+□ No two of today's comments reuse the same
+  closer
+□ Read it aloud once: any sentence that sounds
+  like a caption gets rewritten
 
 HUMAN ACTION: Review, edit, post manually, spaced
 
@@ -302,8 +386,19 @@ PROMPT:
 
 [PASTE COMMENTS RECEIVED]
 
-Use response templates from response_templates.txt.
-Each reply must add value or continue conversation."
+Mode INTERACTIVE (voice_dna.txt COMMENT MODES):
+15-60 words, direct address, answer what was
+said before adding anything, a question mark
+only when the thread needs the next move.
+Same day: a reply is first-class, not an
+afterthought (the Paolo Perrone thread reply
+alone hit 3,722 impressions).
+
+Use response templates from response_templates.txt
+as a floor, not a shape. Each reply must add
+value or continue the conversation. Hostile
+reply protocol: do not defend, serve the
+verifiable claim, invite the re-run."
 
 HUMAN ACTION: Review, edit, post replies
 

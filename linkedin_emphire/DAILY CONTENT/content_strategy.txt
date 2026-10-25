@@ -373,8 +373,13 @@ WHAT THE DATA CHANGES
    surfaces, (2) group posts, (3) feed posts. Feed
    posts are now for depth and for the profile
    funnel, not for reach.
-2. Pacing: 5-8 comment actions per day, spaced,
-   never a burst. Follow-up replies are actions.
+2. Pacing: 8 comment actions per day base,
+   extendable to 12 under the 10-24 guardrails
+   (2/hour max, 60+ min between new comments, 4+ on
+   tier 1-2 or thread-partner replies, 2+ replies,
+   never 3+ in a 2-hour window). Spaced, never a
+   burst. Follow-up replies are actions. Weak
+   surfaces skipped regardless of headroom.
 3. Positioning: AI red teaming / check frame is the
    engine (VERIFIED_POSTS rows 6-15 are all
    AREDTEAM). The parts 1-3 pillars stay as the
@@ -388,6 +393,24 @@ WHAT THE DATA CHANGES
 5. Surface discipline: daily picks come from
    ENGAGEMENT/comment_surfaces.md, not the raw
    feed. Demote and log surfaces that stop paying.
+6. Comment voice is now a product surface
+   (10-24, market signal: Jada Balster post
+   complaining that AI comments are "longer than
+   the original post but say absolutely nothing").
+   The comment channel is the #1 distribution
+   engine, so a slop-shaped comment does
+   double damage: it does not land, and it
+   brands the account. Engine response: THE
+   HUMAN GATE (voice_dna.txt PART 10) + PART
+   10.5 STRUCTURE RULES (10-24 paste-mining
+   fine-tune: the shape is the slop tell; the
+   owner's VERIFIED_POSTS are the format
+   authority) + four comment modes + CATEGORY 7
+   in banned_words.txt. The 10-23 "0 contractions"
+   gate is retired: uniform formality was
+   itself the tell. Calibration anchor: the
+   Paolo Perrone comment (60,772 imp, author
+   replied, peer celebrated).
 
 ═══════════════════════════════════════════════════
 END OF CONTENT STRATEGY

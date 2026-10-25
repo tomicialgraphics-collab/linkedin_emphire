@@ -16,7 +16,7 @@
   "structure": "emergency-patch hook, pre-app-code line, patch-only-in-runtime versions incl. no 8.1-or-older release, AI-assisted discovery, honest hedges, patch-now window line, red team lesson + relatives closer",
   "media": "php2shell_post.png — layered diagram: INCOMING REQUEST -> PHP RUNTIME [EXPLOIT LIVES HERE] -> YOUR APP CODE [TOO LATE TO DEFEND]; 3168x1980, dark navy + cyan brand palette, no face, no fabricated detail",
   "media_source": "post.svg + render.mjs in this folder (re-render: node render.mjs; requires npm i @resvg/resvg-js and explicit DejaVu fontFiles, fc-list is empty in the sandbox)",
-  "fact_verification": "verified 2026-10-22 via web research: CVE-2026-109618 (OOM corruption) + CVE-2026-109619 (stale global state), both CVSS v4.0 9.2, pre-auth RCE reached while PHP parses the request before app code; fixed 2026-10-21 in 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12, no official release for 8.1 and below; discovered with AI assistance, independently by Wiz; PHP on ~70% of the web; Amazon attempt logged ~Oct 17 pre-patch; Cloudflare counting millions of attempts; exploit tooling public; no confirmed breach; CISA not KEV-listed as of 10-23; public exploit fails on stock install. Live version keeps the hedging.",
+  "fact_verification": "verified 2026-10-22 via web research: CVE-2026-109618 (OOM corruption) + CVE-2026-109619 (stale global state), both CVSS v4.0 9.2, pre-auth RCE reached while PHP parses the request before app code; fixed 2026-10-21 in 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12, no official release for 8.1 and below; discovered with AI assistance, independently by Wiz; PHP on ~70% of the web; Amazon attempt logged ~Oct 17 pre-patch; Cloudflare counting millions of attempts; exploit tooling public; no confirmed breach; CISA not KEV-listed as of 10-23; public exploit fails on stock install. Live version keeps the hedging. Addendum 2026-10-23: NSA advisory 'Critical PHP Patching Released' (nsa.gov press release, read in full) confirms: nickname PHP2Shell; unauthenticated takeover of affected web servers; flaws in PHP core, not the hosted application or its configuration; servers running affected versions described as exploitable; patch released Wed 2026-10-21; NSA instructs immediate inventory of services on vulnerable PHP, enhanced logging, replacement of end-of-life PHP that will not take the patch, and taking systems offline if immediate update is not feasible; co-signed CISA / NCSC UK / ASD ACSC / CERT-EU. Advisory asserts exploitability and likely weaponization but reports no confirmed compromise.",
   "banned_words_check": "PASS (0 em dashes, 0 contractions)",
   "voice_check": [
     "plain connectives, no guru posture",
@@ -24,7 +24,12 @@
     "honest hedging kept (attempts vs confirmed, default install fails) — no breach claims",
     "flat thesis + relatives closer, no question ending"
   ],
-  "hashtags": ["#PHP2Shell", "#cybersecurity", "#AIsecurity", "#redteaming"],
+  "hashtags": [
+    "#PHP2Shell",
+    "#cybersecurity",
+    "#AIsecurity",
+    "#redteaming"
+  ],
   "early_metrics": {
     "impressions": 28,
     "as_of": "2026-10-23, ~5h after the 10-23 re-post",

@@ -9391,14 +9391,39 @@ BEHAVIORS TO AVOID:
 PART 10: VOICE CHECK QUESTIONS
 ═══════════════════════════════════════════════════
 
-Before publishing any post, ask:
+Before publishing any post or comment, ask. For
+comments, the full mechanical gate and the four
+comment modes live in ENGAGEMENT/voice_dna.txt
+PART 10 (THE HUMAN GATE); the checks below
+apply to all copy.
 
 CORE VOICE CHECKS:
 □ Does this sound like Timothy wrote it?
 □ Would I actually say these words out loud?
-□ Are contractions used naturally?
+□ Are contractions used naturally (1-4, never in
+  the first line)? Zero-contraction copy reads
+  as machine-polished. (10-24 fine-tune: the
+  10-23 "0 contractions" gate is retired because
+  uniform formality was itself a slop tell)
 □ Are there sentence fragments where they add power?
-□ Is there at least one em dash or rhetorical question?
+□ 0 em dashes (PART 3 ban is absolute; the old
+  "at least one em dash" line is removed as of
+  10-24: it contradicted the ban and em dashes
+  are a machine tell)
+□ Argument test: can a hostile reader find one
+  line to argue with? If the piece flatters and
+  risks nothing, rewrite it
+□ No banned openers or closers
+  (banned_words.txt, CATEGORY 7)
+□ One idea per breath, paragraph lengths uneven
+□ Structure rules (ENGAGEMENT/voice_dna.txt
+  PART 10.5): the piece carries the signatures
+  for its type (standalone: 5-8 uneven
+  paragraphs with a 2-6 word beat, a first-
+  person habitual bridge, a period fragment, a
+  plain word, a precision spread, a pivot not
+  reused in 7 days, 0-1 unlanded detail) and
+  none of the demoted devices D1-D3
 
 INFLUENCE CHECKS:
 □ Does this incorporate [Writer 1]'s structure well?

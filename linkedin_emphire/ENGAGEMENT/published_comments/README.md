@@ -14,3 +14,5 @@ drafts (drafts live in conversation history and in response_templates convention
 ## Files
 - `2026-10-20_to_2026-10-23_verbatim.md` — 40+ comments/replies incl. the 60,500-impression
   Paolo Perrone (Apple fm) comment and its 2,753/3,722-impression replies.
+- `2026-10-24_to_2026-10-24_verbatim.md` — 10-24 window (ongoing): Craig G. inference-bubble
+  comment (posted verbatim) + Craig's agreement reply disclosing the small-model engine.

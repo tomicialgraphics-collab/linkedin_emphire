@@ -70,21 +70,61 @@ Usage: "Give me variations of this post: [paste post]"
 
 "COMMENT" / "GENERATE COMMENT"
 Means: Create comment for someone else's post
-Expected output: 3 comment options
-- Add expertise angle
-- Personal story angle
-- Respectful challenge angle
+Expected output: method decision first (profile
+read, comment_surfaces protocol 10: relationship,
+degree, headline, commercial signals, tier,
+thread-partner status; method ladder picks the
+move), then picked mode, then 2 options inside it
+- Pick the mode (OUTSTANDING / QUESTIONING /
+  HUMAN per ENGAGEMENT/voice_dna.txt COMMENT
+  MODES, 10-24 fine-tune)
+- 2 options inside the mode (expertise + risk,
+  or personal story + concession, or the line
+  that does not hold)
+- Recommended option with reason
+- Memorable line called out (OUTSTANDING only)
+- SLOP DETECTOR result before presenting
+  (voice_dna.txt PART 10 THE HUMAN GATE)
 
 Usage: "Generate comment for this post: [paste]"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 "REPLY" / "GENERATE REPLY"
-Means: Reply to comment on MY post
-Expected output: Reply draft + alternative version
+Means: Reply to comment on MY post (or on a
+thread where the owner already commented)
+Mode INTERACTIVE: 15-60 words, direct address,
+answer what was said before adding, question
+mark only when the thread needs the next move,
+same day (replies are first-class)
+Expected output: Reply draft + alternative
+version (challenging reply protocol: do not
+defend, serve the verifiable claim, invite the
+re-run)
 
 Usage: "Generate reply to this comment: [paste]
        My original post was about [topic]"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"REPOST" / "REPOST WITH THOUGHT"
+Means: Repost someone's post to the owner's feed
+with a short thought
+Method note: protocol 10 ladder rung 4. A repost
+REPLACES the comment on the same surface, it never
+stacks with it. Reposts land on the owner's own
+followers, so the thought must give that audience a
+reason to click through.
+Expected output:
+- Method confirmation (why repost beats comment
+  for this surface)
+- Thought, 40-60 words: one bankable line that is
+  the owner's, one specific compliment pointing at
+  a line of the post, flat ending, no question
+  mark, no hashtags
+- SLOP DETECTOR result (voice_dna.txt PART 10)
+
+Usage: "Repost with thought: [paste post]"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
