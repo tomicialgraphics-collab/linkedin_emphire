@@ -136,7 +136,7 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   both engaged with the CxBOM point. Strongest thread
   signal of the window. CxBOM validator run = next-week
   follow-up play (10-25 item 7).
-- TODAY'S QUEUE STATE (updated after the 5th 10-26
+- TODAY'S QUEUE STATE (updated after the 6th 10-26
   paste): Brad Wolfe 79w HUMAN = POSTED (owner). The
   rest of the queue (Rock 59w reply, Salman 76w reply,
   Oguzhan 119w OUT, Endrit 78w HUMAN, Dario 114w
@@ -153,10 +153,19 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   and is the newest item on the post. The author (COFO,
   2nd) is an active thread-builder and independently
   posted the re-performance line at 42m = convergence
-  with the owner's comment (green light). No second
-  owner comment on this post. CONNECT NOW recommended
-  (note drafted, item 8). Watch the author's reply to
-  the owner's comment = conversion moment (then DM with
-  the bench pitch). New surface: Anthonette Ochieze
+  with the owner's comment (green light). CONNECT NOW
+  recommended (note drafted, item 8).
+- WOLFE REPLY (10-26, 6th paste, item 10): the
+  conversion moment FIRED - he replied 4m,
+  substantively (agreed + extended with run-time input
+  snapshot + re-perform-the-check-not-the-model).
+  In-thread reply 72w HUMAN DRAFTED (engages his two
+  new points, no pitch; replies exempt from 60+ min
+  spacing; = 8th action if Wolfe+Shuliak posted; the
+  one action worth an override at cap, an unanswered
+  live 2nd-degree controls-buyer reply reads as a
+  miss). DM with bench pitch + qualification
+  question DRAFTED - send AFTER the in-thread reply
+  lands, not instead of it. New surface: Anthonette Ochieze
   Adanyin (AI security, 2nd, not followed) added to
   tier 2 + follow-back flag.

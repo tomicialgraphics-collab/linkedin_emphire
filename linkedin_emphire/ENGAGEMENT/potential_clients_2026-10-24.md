@@ -249,8 +249,21 @@ Trigger ammunition (all verifiable, citable in outreach):
   lines, one line on what I do, soft "trade notes" CTA, no
   pitch). WATCH: his reply to the owner's comment is the
   conversion moment -> then a DM with the bench pitch /
-  qualification question, not another public comment. No
-  DM until that reply lands.
+  qualification question, not another public comment.
+  REPLY LANDED (10-26, 6th paste, item 10): he replied
+  to the owner's 79w comment substantively - agreed +
+  EXTENDED with two new mechanisms (snapshot the inputs
+  at run time; re-perform the CHECK, not the model,
+  because the model is non-deterministic and the
+  tie-out isn't). CONVERSION MOMENT. In-thread reply
+  DRAFTED (72w HUMAN, item 10; decision revised from
+  "no second comment" because he raised two new points);
+  DM with bench pitch + qualification question DRAFTED
+  (item 10) - sent only AFTER the in-thread reply
+  lands. Watch his reply to that. STRONGEST client
+  signal of the day: the CFO-side controls buyer is
+  building the same control from the other end, in
+  public.
 
 ## Adjacent-lane flags (thread partners first, not primary
 ## targets)

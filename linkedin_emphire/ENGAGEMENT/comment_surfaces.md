@@ -225,6 +225,17 @@ point); CONNECT NOW (connect note drafted, 10-26
 verbatim item 8); watch the author's reply to the
 owner's comment = the conversion moment (then DM with
 the bench pitch, not another public comment).
+UPDATE 10-26 (6th paste): CONVERSION MOMENT FIRED - he
+replied 4m, substantively: agreed + EXTENDED with two
+new mechanisms (snapshot the inputs at run time;
+re-perform the CHECK not the model, because the model
+is non-deterministic and the tie-out isn't). Decision
+revised (item 10, logged transparently): short in-
+thread reply DRAFTED (72w HUMAN, engages his two new
+points, no pitch) - replies exempt from 60+ min
+spacing; DM DRAFTED (bench pitch + qualification
+question, sent only AFTER the in-thread reply lands).
+In-thread reply = 8th action if Wolfe+Shuliak posted.
 Anthonette Ochieze Adanyin (Premium, 2nd, NOT followed;
 Lead Data Scientist | AI Engineer | AI Security |
 TechWomen100 Winner 2026 | Speaker; added 10-26 from the
@@ -583,7 +594,13 @@ drafted, item 8), Anthonette Ochieze Adanyin added to
 tier 2 + follow-back flag; fifth 10-26 paste: Oleksandr
 Shuliak (1st, Responsible AI / governance, RABA) added
 to tier 3 + HUMAN 78w drafted (permission-as-snapshot /
-re-run against current environment, item 9)).
+re-run against current environment, item 9); sixth
+10-26 paste: Wolfe reply = CONVERSION MOMENT FIRED
+(substantive, extended with run-time input snapshot +
+re-perform-the-check-not-the-model); decision revised
+no-second-comment -> short in-thread reply 72w HUMAN
+DRAFTED + DM DRAFTED, DM after the reply lands (item
+10)).
 Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip
