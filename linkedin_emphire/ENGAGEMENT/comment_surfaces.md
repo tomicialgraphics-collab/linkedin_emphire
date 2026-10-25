@@ -158,7 +158,11 @@ Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 Team), Clint Gibler (OpenAI), Ian W. (Promptfoo / OpenAI), Joseph
 Thacker, Rebecca Huteson, Alex Combessie (Giskard), Keren Katz
 (Zenity, OWASP Agentic Top 10), Hyrum Anderson (Abundant Security),
-Rock Lambros (Zenity), Tarique Smith (Zero Day Agent),
+Rock Lambros (Zenity; thread partner 10-24 "Huh?"
+thread, 59w reply queued; 10-25 [un]prompted II post =
+Stage 2 opener w/ Fred Wilmot, CxBOM release, 78w
+HUMAN drafted = 10-25 verbatim item 7), Tarique Smith
+(Zero Day Agent),
 Nathan Hamiel (Sr Dir Research, AI security, keynote speaker,
 following, added 10-24 evening),
 Kevin Payne (GTM Engineer at LawVu, following, 200+
