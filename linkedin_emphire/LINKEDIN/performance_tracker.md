@@ -138,4 +138,8 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   follow-up play (10-25 item 7).
 - TODAY'S POSTED COMMENTS AT PASTE: 0 confirmed. Queue:
   Rock 59w reply -> Salman 76w reply -> Oguzhan 119w new
-  -> Endrit 78w new (60+ min spacing, cap holds).
+  -> Endrit 78w new -> Dario Melo 114w new (5th action,
+  60+ min spacing, 3 new comments today stay <=2 per
+  2h window, 5 total under the 8 base cap). Dario =
+  tier 1 reach (follows owner, physical AI series),
+  OUTSTANDING draft, 10-26 verbatim item 6.

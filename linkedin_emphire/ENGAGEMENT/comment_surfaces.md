@@ -176,6 +176,21 @@ INTERACTIVE drafted = 10-25 verbatim item 8;
 recommendation SKIP today (cap + lane fit), sendable
 if owner wants the reach/follower play
 
+Dario Melo (AI & Technology Strategist | Author &
+Engineer | Creator of Machines and Power | Data Economy,
+Physical AI & Strategic Foresight; FOLLOWS THE OWNER;
+runs a 4-episode Physical AI economics series; added
+10-26 morning): Physical AI growth post, episode 2/4,
+fully sourced (SAG Aug 2026, IFR World Robotics Sep
+2026, Barclays Jan 2026, Intuitive FY2025, Interact
+Analysis, Gecko, Pudu). Lane-adjacent via the fence/
+containment line ("A fenced cell is a solved
+environment" is actually a safety-architecture claim);
+argument test passes on the missing containment cost
+line in his value thesis. OUTSTANDING 114w drafted
+(10-26 verbatim item 6: "The check just needs a body"),
+5th action today, owner may hold to tomorrow. Follow-
+back audit: confirm owner follows him back.
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
@@ -507,7 +522,9 @@ evaluated (HUMAN 78w draft, not skipped), Ivan Lee
 repost = Datasaur hackathon client signal (no comment
 target, file updated), owner agent-layer post live (72
 imp at 1h), +5 followers, Tyler/Fred/Rock engagement on
-owner comments captured).
+owner comments captured; second 10-26 paste: Dario Melo
+(physical AI economics ep 2/4, follows owner) added to
+tier 1 + OUTSTANDING 114w drafted, queue now 5 actions).
 Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip
