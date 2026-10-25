@@ -560,6 +560,28 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   reply, Salman reply, Oguzhan comment; owner may hold it
   to tomorrow to separate the two same-day voice-AI
   comments. See 10-26 verbatim item 4.
+- Steven Bartlett (3m, Mark Cuban interview promo,
+  "Out now on all platforms"): SKIP, rung 6, OUT OF
+  LANE (creator-economy / entrepreneurship / life-story
+  podcast promo; no AI, no security, no agent, no
+  technical claim or number to build on - the $5.7B
+  sale is biography, not a claim). Same class as the
+  Lenny Rachitsky podcast-promo and GaryVee/Julia
+  Suzuki episode-card skips. Comment feeds the funnel
+  (visible comments are "going to find this now"
+  energy). TWO BRIDGES CONSIDERED AND REJECTED: (1)
+  the "stop learning = someone else gets ahead" line
+  would take a generic operator-advice comment that
+  fits any business post, not the owner's lane; (2)
+  the "another financial bubble is forming" line would
+  take a contrarian AI-bubble take on a celebratory
+  promo = tone mismatch + a market call not to make on
+  his feed. Owner is Following (big account, no thread
+  history); he is NOT a red-team buyer (creator-economy
+  media, no AI budget signal) - no client flag, no DM,
+  no Connect. Reach note only: if the owner ever wants
+  podcast/content appearances, Bartlett is a future
+  CONTENT-surface play (outbound, not a comment).
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
@@ -600,7 +622,10 @@ re-run against current environment, item 9); sixth
 re-perform-the-check-not-the-model); decision revised
 no-second-comment -> short in-thread reply 72w HUMAN
 DRAFTED + DM DRAFTED, DM after the reply lands (item
-10)).
+10); seventh 10-26 paste: Steven Bartlett (Mark Cuban
+podcast promo) -> SKIP rung 6 out-of-lane (skip log
+entry 14; two bridges considered and rejected; reach/
+content-surface note only, no client flag)).
 Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip
