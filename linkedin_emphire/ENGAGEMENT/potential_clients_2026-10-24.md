@@ -272,6 +272,39 @@ Trigger ammunition (all verifiable, citable in outreach):
   item 15). LOW-MEDIUM priority; no DM until a second
   thread exchange; approach = continue the
   permissions-vs-vCPU thread if he replies.
+- Oleksandr Shuliak - Business Process & Systems Analyst |
+  Requirements | AI & Automation Analysis | Responsible AI
+  (1st degree, a connection; flagged 2026-10-26).
+  https://www.linkedin.com/in/oleksandr-shuliak-49039285/
+  Building out "Responsible AI Business Architecture
+  (RABA)" - his own framework. The controls buyer on the
+  GOVERNANCE side: the analyst/architect who designs
+  agent-oversight and authorization controls, a third
+  persona angle on the day (CFO Wolfe / CISO bank lead /
+  governance analyst). His 10-26 post "When does a valid
+  AI authorization stop being sufficient?" is in-lane-
+  adjacent (the agent-layer authorization question in
+  governance language): identity/permissions/policy all
+  valid but the real-world conditions underlying the
+  original human decision changed, and the hard case is a
+  material change that falls OUTSIDE the conditions the
+  system was designed to observe; his open questions =
+  who can raise the concern / what evidence suffices to
+  suspend reliance / how to respond without making the
+  observer a decision-maker. LOW priority (no
+  budget/intent signal, exploratory framework work, no
+  named org). 10-26 HUMAN 78w drafted (verbatim item 9):
+  permission-as-snapshot + re-run-against-the-current-
+  environment as the sufficient evidence, answering his
+  "what evidence suffices" and "observer vs
+  decision-maker" questions; 7th action if the queue
+  posted, 60+ min spacing, owner may hold to tomorrow at
+  cap. NEXT: watch his RABA follow-ups for the control
+  model he is landing on; if he publishes a RABA model
+  with an authorization-suspension step, that is the DM
+  moment (the owner's re-runnable check is the concrete
+  control for exactly that step). No DM this turn, no
+  pitch, 1 comment max.
 
 ## Outreach discipline (matches existing engagement rules)
 

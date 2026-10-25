@@ -136,15 +136,19 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   both engaged with the CxBOM point. Strongest thread
   signal of the window. CxBOM validator run = next-week
   follow-up play (10-25 item 7).
-- TODAY'S QUEUE STATE (updated after the 4th 10-26
+- TODAY'S QUEUE STATE (updated after the 5th 10-26
   paste): Brad Wolfe 79w HUMAN = POSTED (owner). The
   rest of the queue (Rock 59w reply, Salman 76w reply,
   Oguzhan 119w OUT, Endrit 78w HUMAN, Dario 114w
   OUTSTANDING) = posted status not confirmed in the
   pastes; the owner's post count today is therefore at
   least 1 (Wolfe), total unknown. Plan-of-record for the
-  day was 6 actions (all <=2 per 2h, 4 new comments at
-  60+ min spacing, 2 OUTSTANDING max = Oguzhan + Dario).
+  day is now 7 actions: + Oleksandr Shuliak 78w HUMAN
+  DRAFT (10-26 verbatim item 9, 7th action; 60+ min from
+  the last new comment; does not touch the 2-OUTSTANDING
+  cap; holds to tomorrow if the day is at the 8 base
+  cap - a 1h-old conceptual post on a 1st-degree
+  connection's feed, the point does not decay).
 - WOLFE THREAD (10-26, item 8): the 79w comment is live
   and is the newest item on the post. The author (COFO,
   2nd) is an active thread-builder and independently

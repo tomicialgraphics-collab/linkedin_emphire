@@ -260,6 +260,20 @@ non-capped 1st-degree DM)
 ## Tier 3 — builder / adjacent layer + active thread partners
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
 Ife Abimbola-Olulesi (Proof), Shehbaz Pathan (RAG / agent memory),
+Oleksandr Shuliak (1st; Business Process & Systems
+Analyst | Requirements | AI & Automation Analysis |
+Responsible AI; exploring "Responsible AI Business
+Architecture (RABA)"; added 10-26 from the "when does a
+valid AI authorization stop being sufficient" post;
+in-lane-adjacent governance/oversight, his gap = a
+material change OUTSIDE the conditions the system was
+designed to observe; HUMAN 78w DRAFTED = 10-26 verbatim
+item 9: the permission-as-snapshot / re-run-against-
+current-environment angle, answers his "what evidence
+suffices" + "observer vs decision-maker" questions;
+7th action if the queue posted, 60+ min spacing, owner
+may hold to tomorrow at cap; light client flag =
+governance-side controls buyer, the 3rd persona angle),
 Alex Banks, Sam Illingworth (Slow AI), al neitsch, Endrit
 Restelica, Helen Oakley (Zenity), Robinson Miranda, Tanay
 Kothari, Salman Lakhani (SIGNAL/NOISE corroboration board;
@@ -566,7 +580,10 @@ HUMAN not OUTSTANDING), queue now 6 actions; fourth
 builder with independent re-performance convergence
 (42m), no second owner comment, CONNECT NOW (note
 drafted, item 8), Anthonette Ochieze Adanyin added to
-tier 2 + follow-back flag).
+tier 2 + follow-back flag; fifth 10-26 paste: Oleksandr
+Shuliak (1st, Responsible AI / governance, RABA) added
+to tier 3 + HUMAN 78w drafted (permission-as-snapshot /
+re-run against current environment, item 9)).
 Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip
