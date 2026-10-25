@@ -4,6 +4,30 @@ Companion to item 6b in the 10-25 verbatim. Follow top to bottom;
 each step = find, do, capture, if-not-found. Total budget 30-45 min.
 Phone or laptop works; laptop is easier for the incognito checks.
 
+STATUS (10-25 evening, updated as owner executes):
+- A1 DONE (two screenshots archived: step 2 of 2 + Plaid
+  picker).
+- BROKER NOT IN PLAID LIST (owner, 10-25): A4 and A5 NOT
+  EXECUTABLE on real data. Logged as a stated limitation,
+  plus a product finding (uncovered institution = dead
+  end at the picker with no explanation shown).
+- A3 PARTIAL: public surfaces reviewed (sample page +
+  35-member live leaderboard): percentages only, no
+  dollar figures observed. Own-data render test not
+  executable; report says exactly that.
+- A2 LITE still possible: tap ANY institution in the
+  picker, screenshot the Plaid disclosure screen if it
+  renders before login, then back out. No credentials.
+- A6 fully executable on the empty account (settings
+  list, deletion control, leaderboard opt-in question).
+- DECIDER: the /sample ACTIVITY tab paste. If it carries
+  trades AND cash flows with dates, the +15.92% gets
+  re-run in the sandbox on Truefolio's own frozen data
+  (stronger evidence than the owner's account). If
+  trades only, P2 holds in full.
+- Cleanup: owner decides delete vs keep the empty
+  account.
+
 ## 0. Before you start (2 min)
 
 - Use ONE real brokerage account you're comfortable connecting
