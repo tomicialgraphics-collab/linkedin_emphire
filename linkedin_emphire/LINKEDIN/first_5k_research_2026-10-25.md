@@ -185,6 +185,14 @@ channel; the connection notes and DMs are the close channel.
 ## 4. ICP v2 (closing-focused, supersedes the tiering in
 positioning_icp_2026-10-25.md for the $5K sprint)
 
+SUPERSEDED NOTE (2026-10-25 night): the owner directed
+foreign-first targeting. ICP v2 below (Nigeria = Tier 1,
+AI-native = Tier 2) is superseded by ICP v3 in
+LINKEDIN/foreign_first_pivot_2026-10-25.md (foreign above
+local; Nigeria demoted to the secondary trust lane). The
+research findings and citations in this doc remain valid;
+only the ranking and effort allocation changed.
+
 Ranked by closability within 30 days, not by idealness.
 
 TIER 0 - the existing client base (5+ clients, owner-stated,

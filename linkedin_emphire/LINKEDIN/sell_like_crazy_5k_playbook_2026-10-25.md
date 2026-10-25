@@ -1,5 +1,13 @@
 # Sell Like Crazy -> the $5K playbook (2026-10-25)
 
+PIVOT NOTE (2026-10-25 night): the owner directed foreign-first
+targeting ("target foreign market more than local"). The
+authoritative re-point, ICP v3 and the post/comment/DM effects,
+lives in LINKEDIN/foreign_first_pivot_2026-10-25.md. This
+playbook has been edited in place to match it (personas,
+urgency order, lantern order, 30-day sequence, open decisions).
+Nigeria is the secondary trust lane, not deleted.
+
 Book: Sell Like Crazy, Sabri Suby (repo: books/sell-like-crazy.md,
 6,066 lines). Prior extract: linkedin_emphire/STRATEGY/
 BOOK_EXTRACTS/04_sell-like-crazy_principles.md (S1-S25, mapped
@@ -17,18 +25,31 @@ exactly what the book predicts: traffic with no offer converts
 to audience, not revenue. The fix is not more traffic. The fix
 is the offer + the buyer + the first-10-conversations system.
 
-## 1. Phase 1 - Dream buyer (done in the research doc)
+## 1. Phase 1 - Dream buyer (done in the research doc,
+re-pointed foreign-first)
 
-Two personas profiled with the nine questions (research doc
-section 4): the founder mid-deal (Tier 2) and the Nigerian
-bank security lead (Tier 1). Buyer vocabulary is extracted:
-"the agent", "the evals", "the questionnaire", "proof",
-"board assurance", "CBN requirement". All outbound copy uses
-these words, not consultant words.
+Personas profiled with the nine questions (pivot doc section 1,
+supersedes research doc section 4 for the sprint):
+- PRIMARY: the FOREIGN founder / CTO mid-deal (Tier 1). The
+  conversation in their head is "my deal is stuck on the
+  security questionnaire, and the audit quote is $15K and six
+  weeks."
+- SECONDARY: the FOREIGN EU-AI-Act-exposed CISO / risk lead
+  (Tier 2). The conversation is "Article 50 is live, the
+  marking grace closes 2 December, and I have no documented
+  answer for the board."
+- TRUST LANE (demoted): the Nigerian bank / fintech security
+  lead (Tier 4). The conversation is "the CBN wants proof our
+  AI is controlled."
+Buyer vocabulary (all outbound copy uses these, not
+consultant words): "the agent", "the evals", "the
+questionnaire", "proof", "SOC 2", "who signed off on this"
+(founder); "Article 50", "marking", "grace period", "audit
+trail", "the board" (EU lead); "board assurance", "CBN
+requirement", "fraud loss" (Nigeria trust lane).
 Rule S3 (Collier): enter the conversation already taking
-place in the buyer's mind. The founder's conversation is "my
-deal is stuck on security". The bank lead's conversation is
-"the CBN wants proof our AI is controlled".
+place in the buyer's mind. Lead with the founder and the EU
+lead; the bank lead is the trust lane, not the opening move.
 
 ## 2. Phase 4 - The Godfather Offer (build this first)
 
@@ -65,14 +86,15 @@ RISK REVERSAL: the 48-hour first finding is free in the price
 and delivered before any deep work; if it finds nothing
 material, the owner can walk with the scan in hand (this is
 the honest version of "outrageous then pull back", S15).
-URGENCY (only where a real date exists, verified):
+URGENCY (only where a real date exists, verified; foreign-
+first order per the pivot):
 - EU-exposed targets: "Article 50 has applied since 2 August;
   the marking grace period closes 2 December."
-- Nigeria targets: "the CBN AML-AI roadmaps are in; the audit
-  requirement is annual; your deadline is the CBN's, not
-  mine."
-- Startup targets: "your questionnaire has a due date; this
-  finishes before it."
+- Foreign startup targets: "your questionnaire has a due date;
+  this finishes before it."
+- Nigeria targets (trust lane, secondary): "the CBN AML-AI
+  roadmaps are in; the audit requirement is annual; your
+  deadline is the CBN's, not mine."
 WHO ACTS NOW: the buyer with a dated trigger (deal, launch,
 DD, regulator). Everyone else is the 97% (S6/S7): they get
 the education content and the list, not the slot.
@@ -124,34 +146,54 @@ has no list yet. The adaptation, using channels that ARE
 allowed:
 - LANTERN 1 (LinkedIn, the owned-ish one): 3 posts/week in
   the vulnzero format (named claim -> the check -> the
-  rewrite). End-of-post CTA rotation: (a) none (pure
+  rewrite), SUBJECT MATTER FOREIGN-FIRST per the pivot doc
+  section 2: track 1 a named foreign agent-product / vendor
+  claim teardown (EchoLeak, ForcedLeak / PipeLeak, the CVSS
+  9.4 chain, the 492 unauthenticated MCP servers, the 1,184
+  malicious ClawHub skills), track 2 EU AI Act Article 50
+  mechanics (the dated hook: live since 2 Aug, marking grace
+  closes 2 Dec, penalties to EUR 15M; never "pushed to 2027"),
+  track 3 enterprise controls / questionnaire / mid-market
+  agent incident. No dedicated Nigeria content track during
+  the sprint. End-of-post CTA rotation: (a) none (pure
   education), (b) "the method is in the five-tests repo"
   (repo link in first comment), (c) once every two weeks,
   "two slots a month for the Agent Gate; the DM is open".
   The 10-25 analytics say the specific format is the 4x
   out-performer; the lens posts continue as connective tissue,
   not as the lead.
-- LANTERN 2 (connection notes, the cold lane): 3-5/day from
-  the 12 named prospects + the hiring-trigger companies,
-  using the per-prospect approaches already specified in the
-  client file. Note structure (verified by the channel
-  research): specific observation about their context + one
-  line on what I do for companies like theirs + one shared
-  artifact + 15-minute ask. No pitch in message one.
+- LANTERN 2 (connection notes, the cold lane): 3-5/day, ~80%
+  foreign named (client file Tier 1 global + Tier 3 hiring
+  triggers), ~20% keeping the three Nigeria leads warm, in
+  the pivot doc order: Deriv (Rotimi Akinyele) -> Equifax
+  (Koppen) -> RealPage (Kimmerle) -> Datasaur (Lee) -> Harvey
+  (Gonella) -> Brex (Tai) -> the hiring-trigger companies
+  (Anrok, Fresenius, Life360, Trustly). Per-person approaches
+  already specified in the client file. Note structure
+  (verified by the channel research): specific observation
+  about their context + one line on what I do for companies
+  like theirs + one shared artifact + 15-minute ask. No pitch
+  in message one.
 - LANTERN 3 (DM nurture, the 97%): a three-step value sequence
-  within LinkedIn DM limits: step 1 value (the teardown or a
-  specific observation on their product), step 2 value (the
-  five-tests repo, "run it, tell me what breaks"), step 3
-  soft CTA (the 30-minute diagnosis, "no deck, I ask two
-  questions and you decide"). No step is a hard sell (S16).
+  within LinkedIn DM limits: step 1 value (a foreign teardown
+  or a specific observation on their product), step 2 value
+  (the five-tests repo, "run it, tell me what breaks"), step
+  3 soft CTA (the 30-minute diagnosis, "no deck, I ask two
+  questions and you decide"; the named trigger is a deal, a
+  launch, DD, a questionnaire, or the EU 2 December marking
+  grace). No step is a hard sell (S16).
 - LANTERN 4 (Upwork, the floor lane): the two existing
   listings retitled to the offer language (Agent Gate entry
   tier + the vCISO-bench tier); proposals only where the job
   has a dated trigger or a real scope; proposals open with
   the diagnostic question, not the credentials.
-- LANTERN 5 (Nigeria, the trust lane): written-first outreach
-  to the three named security leads, formal, CBN-circular-
-  anchored, in-person offer. One per week, not all at once.
+- LANTERN 5 (Nigeria, the trust lane; SECONDARY per the
+  pivot, foreign-first): keep the three named security leads
+  (Afolabi, Femi-Oyewole, Chigozirim) warm; the formal
+  written-first outreach (CBN-circular-anchored, in-person
+  offer) runs once the foreign lane has a call in motion, not
+  as the opening move; any local win becomes the case study
+  that strengthens the foreign pitch.
 - LANTERN 6 (channel partners, the leverage lane): 1-2
   conversations with vCISO/fractional/MSP operators: "I am
   your AI red-team bench; you carry the board, I carry the
@@ -194,16 +236,19 @@ WEEK 1 (build the machine):
 - D5-D7: first 10 connection notes (named prospects +
   hiring triggers).
 
-WEEK 2 (cold + trust lanes running):
-- 3-5 notes/day (total ~15). First Nigeria written-first
-  outreach (one lead). EU-deadline note to any EU-exposed
-  target.
+WEEK 2 (cold lanes running, foreign-first):
+- 3-5 notes/day (total ~15), foreign-first order: Deriv ->
+  Equifax -> RealPage -> Datasaur -> Harvey -> Brex -> hiring
+  triggers (Fresenius first for the EU deadline).
+- Nigeria written-first lane: keep the three leads warm; the
+  formal note runs only once a foreign call is in motion.
 - First DM nurture sequences started (3 steps, spaced).
 - 1-2 calls booked; diagnosis-first script in use.
 
 WEEK 3 (proof + second wave):
 - Publish the flagship teardown (Truefolio with Hod's OK, or
-  the next named public claim) in the vulnzero format.
+  the next named public claim, FOREIGN NAMED CLAIM PREFERRED
+  per the pivot) in the vulnzero format.
 - Notes round 2 (fresh triggers, no repeat).
 - 1-2 more calls. First 48-hour Quick Scan delivered (to
   whoever took the call).
@@ -260,6 +305,10 @@ DOES NOT SETTLE (owner decisions):
   10-24).
 4. Whether the Truefolio teardown publishes, and in what
   shape (his OK is the gate, already agreed in principle).
-5. The Nigeria lead who gets the first written-first note.
+5. (Updated for the pivot) Confirm foreign-first primary /
+   Nigeria secondary vs "only foreign"; confirm the foreign
+   note order (Deriv first is recommended on trigger
+   recency).
 
-Last updated: 2026-10-25 evening (Africa/Lagos).
+Last updated: 2026-10-25 night (Africa/Lagos; foreign-first
+pivot applied, see LINKEDIN/foreign_first_pivot_2026-10-25.md).

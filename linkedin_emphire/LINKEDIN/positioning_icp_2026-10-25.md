@@ -53,6 +53,15 @@ DIAGNOSIS (four lines):
 ## The target demographic: three tiers, ranked for THIS
 position
 
+SUPERSEDED NOTE (2026-10-25 night): the owner directed
+foreign-first targeting, so the foreign tiers below (AI-
+native, mid-market, EU-AI-Act-exposed) now rank ABOVE the
+Nigeria tier, which is the secondary trust lane. The
+authoritative re-ranked ICP (v3) and the post/comment/DM
+effects are in LINKEDIN/foreign_first_pivot_2026-10-25.md.
+The tier descriptions below remain accurate; their order is
+what changed.
+
 Ranking uses the owner's structural edges: Lagos proximity
 + timezone to West Africa, cost position, proof layer,
 and the product = pre-deployment agent red team with a
@@ -201,11 +210,15 @@ opener and make the deliverable explicit in the body.
    MSP operators on the bench pitch ("I am your AI red-
    team bench; you carry the board, I carry the evals
    and the report"). Deal flow, not end clients.
-6. NIGERIA FIRST: the first two to three paid
-   engagements come from Tier 1 (trust speed, in person,
-   case studies); they fund the global climb. Lagos at
-   3% of profile visitors and the Indian metros rising
-   are seeds, not the target.
+6. NIGERIA FIRST: SUPERSEDED (2026-10-25 night, owner
+   directed foreign-first targeting). The first paid
+   engagements come from the foreign lanes (Tier 0 existing
+   clients + foreign AI-native + EU-AI-Act-exposed); Nigeria
+   is the secondary trust lane that runs after a foreign
+   call is in motion, and any local win becomes the case
+   study. See LINKEDIN/foreign_first_pivot_2026-10-25.md.
+   (Lagos at 3% of profile visitors and the Indian metros
+   rising were seeds, not the target - unchanged.)
 7. MEASURE (ties into the 10-30 review): track
    connection accepts on the prospect list, DMs that
    reach the qualification question, and audit
