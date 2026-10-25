@@ -16,9 +16,9 @@ BreakingAI) as proof. CTA aimed at the buyer.
 
 ABOUT TEXT (copy from the line below to the email):
 
-I trained as a Medical Laboratory Scientist.
+I trained as a Medical Laboratory Scientist. Now I break AI systems on purpose.
 
-The lab taught me the thing I do now. A result only means something if the check behind it is real. A test gives you a number, the number can be wrong, and nothing goes wrong until someone trusts it. I spent years learning what a trustworthy check looks like.
+A result only means something if the check behind it is real. A test gives you a number, the number can be wrong, and nothing goes wrong until someone trusts it. I spent years learning what a trustworthy check looks like.
 
 Today I'm a software engineer who points that training at AI systems. I red team agents before they get keys, and I build the check, the thing that tells you the eval was real and the dashboard is green for the right reasons. The work is public: my five tests for breaking an agent live at github.com/Teamthy/ai-redteam-five-tests, and I write about the lane under BreakingAI.
 
@@ -42,9 +42,20 @@ one from the lab bench."
   you'll = 2, none forced, human placement).
 - No banned slop (no leverage/delve/harness/landscape/foster/
   seamless/cutting-edge/game-changer).
-- Plain words (the thing I do now, the honest parts, I read them),
-  uneven paragraph lengths (9/48/66/34/24/17 + signature block),
+- Plain words (the honest parts, I read them, on purpose), uneven
+  paragraph lengths (11/39/66/34/24/17 + signature block),
   first-person throughout, no third-person resume voice.
+- 10-24b first-line change (owner request): "I trained as a Medical
+  Laboratory Scientist. Now I break AI systems on purpose." The
+  second beat adds the red team hook and the plain-word tell ("on
+  purpose"). Ripple: paragraph two's old opener "The lab taught me
+  the thing I do now." deleted as redundant after the new "Now"
+  line; "that training" in paragraph three now traces to the lab
+  line directly. Alternatives offered, not shipped: B plain hook
+  "I spent years checking whether a lab result was real. Now I
+  check AI systems." (credential moves to para two) / C tension
+  hook "A green dashboard is a claim, not a result." (buries the
+  MLS differentiator, not recommended).
 - No fabricated claims: MLS = real origin; red team activity =
   public repo (ai-redteam-five-tests) + BreakingAI posts + 5
   failure modes article + 116pp PDF; "across the stack" = owner's
