@@ -429,6 +429,65 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   tight, optional demo-of-lens-meta-post only. See
   10-25 verbatim item 4B.
 
+## Skip log (10-26 morning)
+- FasoNova / 14-year-old builder (Gurpreet Moffar post,
+  Iyinoluwa Aboyeji repost, "now"): rung 6, off-lane youth
+  builder story, no security claim/number/line to land on,
+  repost surface (weak), a security point would be a
+  bolted-on lecture.
+- Tiago Forte (17m, book R&D process, 500+ beta readers):
+  rung 6, OUT OF LANE (productivity/book promo), CTA post
+  feeding the book funnel; same class as the 10-25 entry.
+- Alex Hormozi (47m, "brutal truth" 4-liner): rung 6,
+  platitude, no claim/number/choice, argument test fails.
+- Lenny Rachitsky (47m, PMF guide podcast + 4 sponsor
+  links): rung 6, podcast promo, off-lane, no in-lane
+  claim, comment feeds the funnel.
+- Mike Beckham via Iyinoluwa Aboyeji (1h, EBITDA/capital
+  founder metric): rung 6, off-lane founder-finance
+  platitude, weak repost surface.
+- Daniel Miessler (1h, code vs intent source-of-truth):
+  OUT OF LANE (workflow hot take, no security claim).
+  NOTE: high-value security-adjacent author, keep the
+  surface hot for an in-lane post, do not burn it here.
+- Ivan Lee REPOST (Datasaur hackathon, 1h): NO COMMENT
+  TARGET (original post author UNKNOWN from paste;
+  comments attach to the original). CLIENT SIGNAL:
+  fractional CMO agent on CoCo + Anthropic, 4 years of
+  company data, budget-reallocation recommendations ->
+  potential_clients file updated (Tier 1, foreign note
+  order #4, approach line now references the hackathon).
+- "Always inspired by the journeys our Learners" (Iyinoluwa
+  Aboyeji repost, 2h): rung 6, generic one-liner.
+- Learn2Earn NG via Iyinoluwa Aboyeji (2h, Flow Pay
+  fellowship): rung 6, education funnel (same class as the
+  10-25 Learn2Earn skip), CTA post, Nigeria-local (foreign-
+  first pivot demotes local content).
+- Hamel Husain via Shreya Shankar (2h, now at OpenAI,
+  applied Evals): career update, no claim to check. WATCH:
+  the evals-education community's most visible practitioner
+  is now inside OpenAI; ai.hamel.dev stays a resource;
+  Hamel stays on the carried follow list, no new action.
+- Jerry Liu (3h, OCRia-1 37-page report): rung 6, OUT OF
+  LANE (OCR/document parsing, not agent security), vendor-
+  technical CTA.
+- GaryVee "Judge the Judger" (3h) + Julia Suzuki
+  "Visualizing is Understanding" (3h): podcast episode
+  cards, not real post surfaces.
+- Alejandro Saucedo "The Machine Learning Engineer #410"
+  (4h): same issue as 10-25 item 11 (77w HUMAN draft
+  logged, override candidate, swap-Sam call pending the
+  owner). Re-notification, not new content; status
+  unchanged.
+- Endrit Restelica "Is AI voice finally solved?" (Dessa /
+  Block, 22m): NOT skipped - evaluated in-lane-adjacent,
+  HUMAN 78w DRAFT logged (the memory-as-asset angle; the
+  voice-auth motif is burned ~4h on the Tyler Kelley
+  Dessa post). Placement: 4th action today after Rock
+  reply, Salman reply, Oguzhan comment; owner may hold it
+  to tomorrow to separate the two same-day voice-AI
+  comments. See 10-26 verbatim item 4.
+
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
   home turf, or active thread partner) with their tier.
@@ -441,7 +500,15 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
 - Rebuild the whole list from the network read every 90 days,
   aligned with the 90-day tracker snapshot.
 
-Last refreshed: 2026-10-25 (10-25 morning feed
+Last refreshed: 2026-10-26 (10-26 morning feed capture:
+10-26 skip log opened (13 entries incl. Miessler watch
+note + Hamel OpenAI watch note), Endrit Dessa post
+evaluated (HUMAN 78w draft, not skipped), Ivan Lee
+repost = Datasaur hackathon client signal (no comment
+target, file updated), owner agent-layer post live (72
+imp at 1h), +5 followers, Tyler/Fred/Rock engagement on
+owner comments captured).
+Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip
 log opened, Love Babbar 40,346-imp record noted).

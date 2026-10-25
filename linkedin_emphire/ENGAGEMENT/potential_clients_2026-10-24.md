@@ -107,7 +107,21 @@ Trigger ammunition (all verifiable, citable in outreach):
    CEO authorizing a red-team report is one conversation, and the
    report becomes a sales asset he can reuse on every enterprise
    deal.
-   Approach: the report-as-sales-asset angle.
+   SIGNAL 10-26 (his repost of the team's hackathon post):
+   Datasaur built a "fractional CMO" agent at a Snowflake
+   hackathon (unlimited CoCo + Anthropic token access),
+   grounded in 4 years of anonymized Datasaur marketing
+   channel data; the agent "identifies the most productive
+   channels and makes weekly recommendations on where to
+   reallocate your budget" = an agent that touches money-
+   allocation decisions, running on company data. The audit
+   surface is live, not hypothetical.
+   Approach: the report-as-sales-asset angle, now with a
+   live hook - reference the hackathon's fractional CMO: an
+   agent making budget reallocation recommendations on four
+   years of company data is exactly the agent that wants the
+   eval-before-live check before it gets a bigger budget than
+   the team's.
 
 5. Nick Gonella - Security Engineering Manager, Harvey (legal AI,
    156K-follower company, 60%+ of AmLaw 100).

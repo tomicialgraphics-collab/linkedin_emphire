@@ -110,3 +110,32 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   demand" tier; mid-market regulated enterprises = the
   big pool; 30-day demo-shift plan; "what we are not
   doing" list).
+
+## Read (2026-10-26, morning feed capture)
+
+- OWNER POST LIVE (published by owner): the 225w agent-layer
+  AI-safety post (DAILY CONTENT/drafts/2026-10-24_ai-safety-
+  agent-layer.md, cc94ec5, pending approve since 10-24) =
+  "Most AI safety testing stops where the model ends... The
+  model has no keys. The agent has all of them." 72
+  impressions at 1h. FIRST post of the foreign-first
+  content track 1 (named foreign incident teardown, per
+  LINKEDIN/foreign_first_pivot_2026-10-25.md). Baseline
+  compare against 10-25 full-day posts (lens meta 258,
+  Tesla 326, P&L micro 18): 72 in the first hour is a
+  healthy start; full-day number owed at next paste.
+- FOLLOWERS: +5 in the window (Gianpaolo Pavone + 4
+  others, ~4h); total 753 at 10-25 evening analytics ->
+  ~758.
+- ENGAGEMENT ON OWNER COMMENTS (all on yesterday's
+  comments): Tyler Kelley LIKED the password comment on
+  his Dessa post (265 reactions / 100 comments on the
+  post); Fred Wilmot + 1 other AND Rock Lambros + 1 other
+  both reacted to the CxBOM comment on the [un]prompted
+  Stage 2 post -> the thread partner and the co-presenter
+  both engaged with the CxBOM point. Strongest thread
+  signal of the window. CxBOM validator run = next-week
+  follow-up play (10-25 item 7).
+- TODAY'S POSTED COMMENTS AT PASTE: 0 confirmed. Queue:
+  Rock 59w reply -> Salman 76w reply -> Oguzhan 119w new
+  -> Endrit 78w new (60+ min spacing, cap holds).
