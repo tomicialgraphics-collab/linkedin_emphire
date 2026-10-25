@@ -151,6 +151,19 @@ incident hooks + 5 tips, argument test passes in-lane
 via item 4 (permission list vs action log), 80w
 HUMAN drafted = 10-25 verbatim item 4D, send
 recommended; follow-back audit open),
+Alejandro Saucedo (The ML Engineer newsletter, 70k+;
+AI & Tech Executive @ Zalando, Advisor UN/EU/ACM;
+recurring weekly roundup, issue #410 at 10-25 paste;
+relationship marker not pasted = UNKNOWN; added
+10-25 night) - 10-25 night: #410 roundup, OpenAI
+frontier-training lockdown + agent-vs-agent red-team
+piece is dead-center lane (cache-timing covert
+channel, "future models find holes they don't know
+about yet"), 77w HUMAN drafted = 10-25 verbatim
+item 11; cap full at 8 -> LOGGED-OVERRIDE
+candidate (suggested swap: Sam 58w to tomorrow),
+owner's call; audience = ML practitioners, adjacent
+not hiring
 Hitesh Choudhary (Back to Building with AI; x founder
 LCO (acquired), x CTO, Sr. Director at PW; 2 YT
 channels 1M & 700k+; Chai aur Code; following; added
