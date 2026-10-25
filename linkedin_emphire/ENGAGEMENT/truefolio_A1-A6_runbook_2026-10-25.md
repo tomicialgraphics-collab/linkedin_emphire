@@ -18,8 +18,12 @@ STATUS (10-25 evening, updated as owner executes):
 - A2 LITE still possible: tap ANY institution in the
   picker, screenshot the Plaid disclosure screen if it
   renders before login, then back out. No credentials.
-- A6 fully executable on the empty account (settings
-  list, deletion control, leaderboard opt-in question).
+- A6 DONE (6g): leaderboard = opt-in via Public
+  Portfolio only ("Anything else removes you from it");
+  delete in-app present (button says "permanently" vs
+  policy 30-day restore, dialog untested); no data
+  export (not promised); report channels x2;
+  brokerage-removal revocation test not executable.
 - DECIDER RESOLVED (10-25, item 6f): the ACTIVITY tab
   carries trades only: 8 rows, zero deposit/withdrawal
   rows, 5 missing buys of held positions, and the

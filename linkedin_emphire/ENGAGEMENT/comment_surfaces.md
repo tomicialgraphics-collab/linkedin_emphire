@@ -234,8 +234,11 @@ claim); ack DM 99w drafted; 10-25 evening: Hod replied
 drafted), broker not in Plaid list (6d, fallback),
 A3 logged-out check = login wall (6e), ACTIVITY tab
 paste = 8 trades, ZERO cash-flow rows, 5 missing buys,
-8-month window gap -> P2 holds sharper (6f); REMAINING
-= A6 settings pass + cleanup; 154w reply sendable)
+8-month window gap -> P2 holds sharper (6f); A6 DONE
+(6g: leaderboard = Public-Portfolio-only, delete in-app,
+report channels x2, no export); PROTOCOL COMPLETE except
+owner cleanup (delete w/ dialog screenshot, or keep) +
+154w DM send confirm; THEN full report + follow-up)
 
 ## Groups (free distribution; separate from the comment round)
 - Group 6773411: the 90-day top performer is a post in this group
