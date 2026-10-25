@@ -136,16 +136,23 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   both engaged with the CxBOM point. Strongest thread
   signal of the window. CxBOM validator run = next-week
   follow-up play (10-25 item 7).
-- TODAY'S POSTED COMMENTS AT PASTE: 0 confirmed. Queue:
-  Rock 59w reply -> Salman 76w reply -> Oguzhan 119w new
-  (OUT) -> Endrit 78w new (HUMAN) -> Dario Melo 114w new
-  (OUTSTANDING) -> Brad Wolfe 79w new (HUMAN; 6th action,
-  60+ min spacing; 4 new comments stay <=2 per 2h
-  window; 6 total under the 8 base cap; OUTSTANDING count
-  held at 2 = Oguzhan + Dario, per the max-2-a-day mode
-  rule, which is why Wolfe is HUMAN not OUTSTANDING).
-  Dario = tier 1 reach (follows owner, physical AI
-  series), 10-26 verbatim item 6. Wolfe = tier 2 home
-  turf (COFO agent controls, 2nd, finance-side controls
-  buyer), re-performance fourth question, 10-26 verbatim
-  item 7; optional Connect flagged.
+- TODAY'S QUEUE STATE (updated after the 4th 10-26
+  paste): Brad Wolfe 79w HUMAN = POSTED (owner). The
+  rest of the queue (Rock 59w reply, Salman 76w reply,
+  Oguzhan 119w OUT, Endrit 78w HUMAN, Dario 114w
+  OUTSTANDING) = posted status not confirmed in the
+  pastes; the owner's post count today is therefore at
+  least 1 (Wolfe), total unknown. Plan-of-record for the
+  day was 6 actions (all <=2 per 2h, 4 new comments at
+  60+ min spacing, 2 OUTSTANDING max = Oguzhan + Dario).
+- WOLFE THREAD (10-26, item 8): the 79w comment is live
+  and is the newest item on the post. The author (COFO,
+  2nd) is an active thread-builder and independently
+  posted the re-performance line at 42m = convergence
+  with the owner's comment (green light). No second
+  owner comment on this post. CONNECT NOW recommended
+  (note drafted, item 8). Watch the author's reply to
+  the owner's comment = conversion moment (then DM with
+  the bench pitch). New surface: Anthonette Ochieze
+  Adanyin (AI security, 2nd, not followed) added to
+  tier 2 + follow-back flag.

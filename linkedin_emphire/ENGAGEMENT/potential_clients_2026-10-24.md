@@ -235,11 +235,22 @@ Trigger ammunition (all verifiable, citable in outreach):
   carries boards without security teams = the "I am your AI
   red-team bench" pitch; his audience (COFOs, ex-PwC finance
   leaders) is the controls buyer. LOW-MEDIUM priority;
-  10-26 HUMAN 79w comment drafted (verbatim item 7: re-
-  performance as the missing fourth question). Connect is an
-  optional owner action; note references the fourth-question
-  angle, no pitch in message one; no DM until a second
-  exchange.
+  10-26 HUMAN 79w comment = POSTED (verbatim item 7: re-
+  performance as the missing fourth question). THREAD LIVE
+  (10-26, item 8): he is an active thread-builder (~17 self-
+  comment one-liners + substantive replies to every
+  commenter) and independently posted the re-performance
+  line at 42m ("If an auditor cannot re-perform the run from
+  the trail, the trail is decoration") = CONVERGENCE with
+  the owner's comment (green light, not collision). No
+  second owner comment on this post. CONNECT NOW (was
+  optional): the live thread + convergence warrant it;
+  connect note drafted in item 8 (references both exact
+  lines, one line on what I do, soft "trade notes" CTA, no
+  pitch). WATCH: his reply to the owner's comment is the
+  conversion moment -> then a DM with the bench pitch /
+  qualification question, not another public comment. No
+  DM until that reply lands.
 
 ## Adjacent-lane flags (thread partners first, not primary
 ## targets)
