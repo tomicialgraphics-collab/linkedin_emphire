@@ -208,7 +208,13 @@ owner 119w live (11 reactions), Salman replied quoting
 the owner's "check you can't re-run is a claim" line and
 asked a named question (repro-file filing bar),
 INTERACTIVE 76w drafted = 10-25 verbatim item 1,
-thread-exempt reply, owner to send), Chris H., Madhan
+thread-exempt reply; 10-25 night: janas local-80B
+post (10m), honest-teardown shape, in-lane, 79w
+HUMAN drafted = 10-25 verbatim item 9 (trust-boundary
+on toolchain angle, re-run motif burned <24h for this
+author, not reused), send recommended now; 76w reply
+HELD to tomorrow (no same-day double-tap)), Chris H.,
+Madhan
 Vadlamudi, Ned Lowe,
 Sudarshan Thorat, Sumit Gupta (130K+ data engineering /
 AI-B2B creator, 2nd, off-lane, recurring surface:
