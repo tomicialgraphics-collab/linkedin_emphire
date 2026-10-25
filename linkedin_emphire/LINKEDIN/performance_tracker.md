@@ -68,7 +68,7 @@ UTC by LinkedIn. Deltas as shown by LinkedIn.
 - Sam p=0.939 comment: 920 (10-24 refresh) → 1,636 overnight. Apple "You are the lookup" comment: 14 reactions (strongest reaction count on a comment this week). Paolo item 23 (83w, overnight logged-override): SENT, 3 reactions at first capture. Luís 65w: SENT, 3 reactions.
 - 3 owner posts in a 7h window: lens meta post (7h, 258 imp), Tesla roadster (6h, 326 imp), P&L/debate micro (4h, 18 imp). The 18-imp one is comment-shaped as a standalone (references an absent author) = anomaly, left in place (edit/repost would cost existing traction); no fourth post today.
 - +5 followers (684 → ~689, unverified until next export), 40 profile views in window.
-- 10-25 comment count at capture: 3 used (Paolo 23, Luís 65w, Salman R2); 2h window guardrail active → new comments from ~60min post-capture.
+- 10-25 comment count at capture: 2 used (Paolo 23, Luís 65w). Correction from the 10-25 re-paste: the "repro file" text is SALMAN'S reply to the owner's 119w comment (mislabeled in the morning capture); the 119w comment is at 11 reactions / 6 imp. INTERACTIVE 76w reply drafted (repro-as-filing-bar + proof-as-upgrade-layer split; reply = thread-exempt, sendable now) = 3rd action. NEW comments (e.g. Ruben Hassid 72w) still ~60min out per the 2h clustering rule.
 - 10-30 snapshot baseline note: the 40,346 comment and the 3-post day raise the baseline; the throttling check (impression drop after the 10-12 burst) must compare against this week, not 10-23.
 - OPEN: vulnzero v2 (scheduled 10-25) not visible as posted; full 250w text lost with /tmp, reconstruction offered (surviving material in 10-24 verbatim DEMO record). Salman's reply to the R2 not rendered in paste (re-paste requested).
 

@@ -181,7 +181,13 @@ Alex Banks, Sam Illingworth (Slow AI), al neitsch, Endrit
 Restelica, Helen Oakley (Zenity), Robinson Miranda, Tanay
 Kothari, Salman Lakhani (SIGNAL/NOISE corroboration board;
 10-24 confirmed author of the Sweden post, thread partner,
-follow-back pending), Chris H., Madhan Vadlamudi, Ned Lowe,
+follow-back pending; 10-25: Anthropic+Theorem post,
+owner 119w live (11 reactions), Salman replied quoting
+the owner's "check you can't re-run is a claim" line and
+asked a named question (repro-file filing bar),
+INTERACTIVE 76w drafted = 10-25 verbatim item 1,
+thread-exempt reply, owner to send), Chris H., Madhan
+Vadlamudi, Ned Lowe,
 Sudarshan Thorat, Sumit Gupta (130K+ data engineering /
 AI-B2B creator, 2nd, off-lane, recurring surface:
 idempotent-sink argument referenced in Michal thread;
