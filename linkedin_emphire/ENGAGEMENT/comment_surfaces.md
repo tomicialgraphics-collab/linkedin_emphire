@@ -216,7 +216,16 @@ Plaid"; ACCEPTED on owner's terms (re-run test against a
 known case + Plaid scope / display-layer check), DM 113w
 drafted = 10-25 verbatim item 6; NO public post/review
 about Truefolio without his explicit OK; future content +
-portfolio item 3 option)
+portfolio item 3 option. 10-25 4:18 PM: link sent
+(truefolio.app), PUBLIC REVIEW executed from sandbox
+= verbatim item 6b (holdings table passes re-compute;
+TWR +15.92% has no denominator; landing -2.10% example
+not reconstructable; privacy policy effective 10-24
+has template over-reach vs "fundamentally private"
+positioning; risk score = counterfactual; Plaid scope
+claim published + consistent); owner runs in-app
+protocol A1-A6 (deposit-strip test = their headline
+claim); ack DM 99w drafted; capture + write-up next)
 
 ## Groups (free distribution; separate from the comment round)
 - Group 6773411: the 90-day top performer is a post in this group
