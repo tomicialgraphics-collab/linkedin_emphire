@@ -45,6 +45,10 @@ Phone or laptop works; laptop is easier for the incognito checks.
     transactions
   - must NOT read: trade, transfer, deposit, withdraw, edit
   - anything trade/transfer-adjacent = finding, screenshot it.
+  - Expected wording per their /security page: restricted to
+    the /investments/holdings and /investments/transactions
+    endpoints. If the Plaid screen lists anything broader
+    than that, it is a finding.
 - If there's a "connect another account" option later, note which
   account types it offers (brokerage only? banks too?) and what
   Plaid scope the bank option would request.
@@ -55,9 +59,12 @@ Phone or laptop works; laptop is easier for the incognito checks.
 This is the one that tests "others see percentages, never your
 dollar amounts."
 
-- Settings or Profile: find sharing / visibility / public profile /
-  leaderboard. Screenshot the settings UI itself (it shows what's
-  controllable, which is part of the audit).
+- The display switch is the "Private $ / Public %" toggle ON
+  THE PORTFOLIO PAGE (confirmed in the empty state). With
+  holdings loaded, flip it to Public %; if the app previews
+  the public view, capture it. The Step 2 screen also said
+  visibility is changeable "anytime in Settings", so check
+  Settings too and screenshot both.
 - Set the profile to public, or join the leaderboard, whatever the
   mechanism is.
 - Now view it as a visitor. Do NOT use your logged-in session:
@@ -87,7 +94,9 @@ dollar amounts."
 
 - In the app: find the performance / TWR / Skill Score page.
   Record the periods it shows (1M / 3M / 6M / 1Y / since
-  inception) and the number for each.
+  inception) and the number for each. Their landing page
+  promises a "1-month, 3-month, and 1-year" TWR comparison,
+  so make sure 1M / 3M / 1Y are the three you capture.
 - At your brokerage: pull the same account's own time-weighted
   returns for the same periods (most brokers have a performance
   report; if not, monthly account returns + your deposit dates is
@@ -137,6 +146,18 @@ Test it on your own account.
   only, that's a mismatch vs their own policy.)
 - Do NOT actually delete anything unless you're done with the
   account.
+- Leaderboard participation: is being on the leaderboard
+  default or opt-in? Can a member hide their name or returns?
+  Log exactly what the control says (35 members are already
+  listed by real name with risk labels and returns).
+- Removal-revokes claim: their /security page says removing
+  a brokerage "revokes the brokerage connection". If you
+  disconnect and reconnect during cleanup, note whether a
+  fresh Plaid login is required (token revoked) or it
+  silently reconnects (token kept). Record which.
+- "Report Data/Math Issue" link exists in the sidebar (seen
+  in the empty state): a dedicated data-integrity channel;
+  one line in the report.
 - Capture: the settings list screenshot, one line per control:
   present / absent / what it says.
 
