@@ -202,6 +202,19 @@ thread, 59w reply queued; 10-25 [un]prompted II post =
 Stage 2 opener w/ Fred Wilmot, CxBOM release, 78w
 HUMAN drafted = 10-25 verbatim item 7), Tarique Smith
 (Zero Day Agent),
+Brad Wolfe (AI/Operational CFO - COFO | 15 yrs | 80+
+M&A | 5 exits | 3 NASDAQ CFO seats | JD/MBA ExPWC |
+wolfepacks.com; 2nd, NOT connected, added 10-26
+morning): agent-controls post (the receipt proves it
+ran, not that it was right; Melillo receipt rule;
+three questions: inputs right / trace later / owner +
+access + review). Dead-center lane, finance-side
+controls buyer. HUMAN 79w drafted (10-26 verbatim item
+7: re-performance as the missing fourth question, his
+#2 = the read-only half of it), 6th action today;
+mode rule kept (day at 2 OUTSTANDING). Optional
+Connect for the owner (note references the fourth-
+question angle, no pitch in one).
 Nathan Hamiel (Sr Dir Research, AI security, keynote speaker,
 following, added 10-24 evening),
 Kevin Payne (GTM Engineer at LawVu, following, 200+
@@ -524,7 +537,11 @@ target, file updated), owner agent-layer post live (72
 imp at 1h), +5 followers, Tyler/Fred/Rock engagement on
 owner comments captured; second 10-26 paste: Dario Melo
 (physical AI economics ep 2/4, follows owner) added to
-tier 1 + OUTSTANDING 114w drafted, queue now 5 actions).
+tier 1 + OUTSTANDING 114w drafted, queue now 5 actions;
+third 10-26 paste: Brad Wolfe (COFO agent-controls, 2nd)
+added to tier 2 + HUMAN 79w drafted (re-performance
+fourth question; day at the 2-OUTSTANDING cap, so
+HUMAN not OUTSTANDING), queue now 6 actions).
 Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip

@@ -223,6 +223,23 @@ Trigger ammunition (all verifiable, citable in outreach):
   (NY, 3K followers). https://www.linkedin.com/in/stafordtituss/
   Peer-level; offensive-security + AI social-engineering focus;
   cross-referral candidate. (Flag: small org, verify current scope.)
+- Brad Wolfe - AI/Operational CFO (COFO) | 15 Years | 80+ M&A |
+  5 Exits | 3 NASDAQ CFO Seats | JD/MBA, ExPWC (2nd degree, NOT
+  connected; flagged 2026-10-26).
+  https://www.linkedin.com/in/brad-wolfe-b912047/
+  The finance side of the agent-controls conversation: his
+  receipt post (status comes from the record, not the reply;
+  three questions - inputs right / trace later / named owner +
+  own access + quarterly review) is the board-assurance buyer
+  on the CFO side, not the CISO side. Channel/bench fit: he
+  carries boards without security teams = the "I am your AI
+  red-team bench" pitch; his audience (COFOs, ex-PwC finance
+  leaders) is the controls buyer. LOW-MEDIUM priority;
+  10-26 HUMAN 79w comment drafted (verbatim item 7: re-
+  performance as the missing fourth question). Connect is an
+  optional owner action; note references the fourth-question
+  angle, no pitch in message one; no DM until a second
+  exchange.
 
 ## Adjacent-lane flags (thread partners first, not primary
 ## targets)
