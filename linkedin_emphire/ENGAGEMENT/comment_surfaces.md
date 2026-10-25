@@ -143,7 +143,14 @@ in-lane voice-verification angle, argument test
 passes, 72w drafted = 10-25 verbatim item 4A, send
 ~60min from capture (2h window guardrail), recommend
 send; author block degree/headline not pasted, not
-guessed)
+guessed),
+Venkata Naga Sai Kumar Bysani (AI engineer / tech
+creator 350K+, LinkedIn Learning instructor, FOLLOWS
+THE OWNER; 10-25: bank-security listicle with 4
+incident hooks + 5 tips, argument test passes in-lane
+via item 4 (permission list vs action log), 80w
+HUMAN drafted = 10-25 verbatim item 4D, send
+recommended; follow-back audit open)
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
