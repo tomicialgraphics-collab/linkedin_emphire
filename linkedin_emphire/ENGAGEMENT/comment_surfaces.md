@@ -150,7 +150,18 @@ THE OWNER; 10-25: bank-security listicle with 4
 incident hooks + 5 tips, argument test passes in-lane
 via item 4 (permission list vs action log), 80w
 HUMAN drafted = 10-25 verbatim item 4D, send
-recommended; follow-back audit open)
+recommended; follow-back audit open),
+Hitesh Choudhary (Back to Building with AI; x founder
+LCO (acquired), x CTO, Sr. Director at PW; 2 YT
+channels 1M & 700k+; Chai aur Code; following; added
+10-25 night) - 10-25 night: "in the age of AI, do you
+still need to learn programming properly" + 5
+learnings + "depth is your passport, AI is your
+translator" + depth-vs-multi-stacks question. Tier 1
+reach, OFF-LANE (programming education); 44w
+INTERACTIVE drafted = 10-25 verbatim item 8;
+recommendation SKIP today (cap + lane fit), sendable
+if owner wants the reach/follower play
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
