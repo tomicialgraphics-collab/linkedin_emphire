@@ -63,6 +63,15 @@ UTC by LinkedIn. Deltas as shown by LinkedIn.
 - Read: the profile is being read by the ICP layer (security/research + big tech), so the ~7% view-rate weakness is now a conversion problem on a surface that is already receiving the right traffic. Profile headline/About work stays the next lever.
 - Actions (proposed, owner approval pending, none executed): follow-back Salman Arain (named, ICP, thread partner from the morning Sweden reply; the thread is the bridge). No DMs (thread is doing the work, day cap 8/8 hit). Sree Harsha and Bryan Eaton: 3rd degree, weak ICP fit, skip.
 
+### Read (2026-10-25, morning feed capture)
+- LOVE BABBAR "budget decision" comment (posted 10-24): 40,346 impressions = archive record for a single comment. The "number with a denominator" pair is now the account's most banked line (also in the Tesla post and the 4h P&L post). The original post is still climbing; this is the comment channel doing its job on a mass-audience topic.
+- Sam p=0.939 comment: 920 (10-24 refresh) → 1,636 overnight. Apple "You are the lookup" comment: 14 reactions (strongest reaction count on a comment this week). Paolo item 23 (83w, overnight logged-override): SENT, 3 reactions at first capture. Luís 65w: SENT, 3 reactions.
+- 3 owner posts in a 7h window: lens meta post (7h, 258 imp), Tesla roadster (6h, 326 imp), P&L/debate micro (4h, 18 imp). The 18-imp one is comment-shaped as a standalone (references an absent author) = anomaly, left in place (edit/repost would cost existing traction); no fourth post today.
+- +5 followers (684 → ~689, unverified until next export), 40 profile views in window.
+- 10-25 comment count at capture: 3 used (Paolo 23, Luís 65w, Salman R2); 2h window guardrail active → new comments from ~60min post-capture.
+- 10-30 snapshot baseline note: the 40,346 comment and the 3-post day raise the baseline; the throttling check (impression drop after the 10-12 burst) must compare against this week, not 10-23.
+- OPEN: vulnzero v2 (scheduled 10-25) not visible as posted; full 250w text lost with /tmp, reconstruction offered (surviving material in 10-24 verbatim DEMO record). Salman's reply to the R2 not rendered in paste (re-paste requested).
+
 ### Next snapshots
 - Weekly: 2026-10-30
 - 90-day: 2026-11-23

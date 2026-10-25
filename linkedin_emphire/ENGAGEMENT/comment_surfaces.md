@@ -134,7 +134,16 @@ example, "verify that security fixes actually make it
 into production", video link. Tier 1, named-human
 security publication, in-lane. OUTSTANDING 119w
 drafted 10-24 evening, day at ceiling, tomorrow
-queue, proposed FIRST)
+queue, proposed FIRST),
+Ruben Hassid (big AI creator; 10-24 skip = "19 things
+to delete from Claude" productivity promo, weak fit;
+10-25: Dessa/Block voice post, "no longer trust any
+phone conversation" + secret-password guardrail =
+in-lane voice-verification angle, argument test
+passes, 72w drafted = 10-25 verbatim item 4A, send
+~60min from capture (2h window guardrail), recommend
+send; author block degree/headline not pasted, not
+guessed)
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
@@ -178,7 +187,14 @@ AI-B2B creator, 2nd, off-lane, recurring surface:
 idempotent-sink argument referenced in Michal thread;
 10-24 roadmap post, category 7 shape, argument test
 passes, 78w drafted = verbatim item 24, held to 10-25
-queue slot 12, reach-optional)
+queue slot 12, reach-optional), Neil Sahota (strategy
+creator, neilsahota.com; 10-25: assumptions as
+assets/liabilities post, 22m, author block not pasted
+= degree/headline UNKNOWN; off security lane but the
+lens applies post-lens-meta-post, argument test
+passes in-lens, 71w drafted = 10-25 verbatim item
+4B, HELD, optional send only as live demo of the 7h
+lens meta post, not auto-queued)
 
 ## Groups (free distribution; separate from the comment round)
 - Group 6773411: the 90-day top performer is a post in this group
@@ -315,6 +331,30 @@ queue slot 12, reach-optional)
   comments a real checkable claim in lane, or the
   owner wants the 1st-degree relationship play.
 
+## Skip log (10-25)
+- Endrit Restelica (1h at capture): NVIDIA GTC Berlin
+  Microducks / Pollen Robotics / Hugging Face, open
+  source $399 duck robots. Robotics fluff, zero lane
+  fit, "Follow Endrit for more" CTA close.
+- Iyinoluwa Aboyeji repost (6h): Compass Labs
+  stablecoin yield/treasury pitch (Lagos, Moonshot
+  Oct 28-29). Fintech channel, not AI-security ICP,
+  company-pitch shape. Moonshot attendance = calendar
+  decision, not a comment.
+- Iyinoluwa Aboyeji repost Learn2Earn NG (6h):
+  tutorial-hell → Kola AI customer service. Education
+  funnel, not lane.
+- Blossom Affia self-reposts (7h, x2): visa approved
+  + faith posts. Not lane.
+- AI layoffs / $725B post (1h): already commented
+  10-24 (Love Babbar item, 40,346 imp overnight); no
+  second move on the same post.
+- Neil Sahota (22m): evaluated, NOT skipped on
+  quality (argument test passes in-lens) but HELD:
+  off security lane, author block unknown, 2h window
+  tight, optional demo-of-lens-meta-post only. See
+  10-25 verbatim item 4B.
+
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
   home turf, or active thread partner) with their tier.
@@ -327,7 +367,11 @@ queue slot 12, reach-optional)
 - Rebuild the whole list from the network read every 90 days,
   aligned with the 90-day tracker snapshot.
 
-Last refreshed: 2026-10-24 (protocols 7-10 added:
+Last refreshed: 2026-10-25 (10-25 morning feed
+capture: Ruben Hassid added to tier 1 (Dessa voice
+post), Neil Sahota added to tier 3 (held), 10-25 skip
+log opened, Love Babbar 40,346-imp record noted).
+Previous: 2026-10-24 (protocols 7-10 added:
 comment modes + slop detector + source rule +
 profile read and method ladder, 10-24 humanization
 fine-tune; daily cap expanded 8 base / 12 max with
