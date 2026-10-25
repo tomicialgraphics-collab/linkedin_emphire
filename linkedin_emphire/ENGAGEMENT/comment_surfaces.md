@@ -207,7 +207,16 @@ assets/liabilities post, 22m, author block not pasted
 lens applies post-lens-meta-post, argument test
 passes in-lens, 71w drafted = 10-25 verbatim item
 4B, HELD, optional send only as live demo of the 7h
-lens meta post, not auto-queued)
+lens meta post, not auto-queued), Hod Bublil (1st
+degree, Senior SWE @ Google, Cofounder & CEO @ Truefolio;
+10-25 4:11 PM DM inbound: engineer's eye on TWR math +
+onboarding, founder-led beta ~180 engineers, claims
+"institutional-grade TWR" + "strictly read-only via
+Plaid"; ACCEPTED on owner's terms (re-run test against a
+known case + Plaid scope / display-layer check), DM 113w
+drafted = 10-25 verbatim item 6; NO public post/review
+about Truefolio without his explicit OK; future content +
+portfolio item 3 option)
 
 ## Groups (free distribution; separate from the comment round)
 - Group 6773411: the 90-day top performer is a post in this group
