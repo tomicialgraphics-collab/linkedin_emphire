@@ -210,6 +210,27 @@ Trigger ammunition (all verifiable, citable in outreach):
   Peer-level; offensive-security + AI social-engineering focus;
   cross-referral candidate. (Flag: small org, verify current scope.)
 
+## Adjacent-lane flags (thread partners first, not primary
+## targets)
+
+- Oguzhan Tekin - AI Cost & Efficiency | Applied ML |
+  FinOps Certified Professional (2nd degree, not followed
+  back, no thread history; flagged 2026-10-25 night).
+  https://www.linkedin.com/in/oguzhan-tekin/
+  Careful technical writer, own blog (oguzhantekin.com):
+  METR review of Anthropic's Aug 2026 risk report
+  (monitor flagged ~1% of actions with reasoning vs ~50%
+  without, same record) + "Cheap Verifiers, Large Blind
+  Spots" preprint digest (verifier dashboard ~3% error vs
+  14-32% independently measured; single seed, not
+  peer-reviewed; he flags both caveats). His world =
+  inference cascades + agents with real system access in a
+  cost context = audit-surface adjacency. Commented
+  2026-10-25 with the over-provisioning point (verbatim
+  item 15). LOW-MEDIUM priority; no DM until a second
+  thread exchange; approach = continue the
+  permissions-vs-vCPU thread if he replies.
+
 ## Outreach discipline (matches existing engagement rules)
 
 - Connection notes: 3-5/day, never generic, one specific
@@ -227,4 +248,5 @@ Trigger ammunition (all verifiable, citable in outreach):
   the anonymized real-client report are the proof layer (files
   with owner).
 
-Last updated: 2026-10-24 night (Africa/Lagos).
+Last updated: 2026-10-25 night (Africa/Lagos; adjacent-
+lane flag Oguzhan Tekin added).
