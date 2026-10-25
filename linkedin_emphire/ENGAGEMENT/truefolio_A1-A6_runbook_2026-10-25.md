@@ -65,6 +65,12 @@ dollar amounts."
   - open it in an incognito/private window (laptop), or ask no one
     and just use the share link in incognito
   - if there's a leaderboard page, open that in incognito too.
+  - KNOWN GATE (from the Step 2 screen): "only members who have
+    connected their own brokerage can see any portfolio." So the
+    logged-out visitor check may be a login wall, not a profile.
+    Record exactly what a logged-out visitor sees (wall or
+    profile), and that "public" means "connected members", not
+    "the internet".
 - On the public view, check every surface: profile header,
   holdings/allocation block, performance block, leaderboard row.
   Zoom in. The check is binary: any dollar-denominated figure
