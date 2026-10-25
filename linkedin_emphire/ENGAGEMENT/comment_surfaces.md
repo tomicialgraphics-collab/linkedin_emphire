@@ -229,7 +229,13 @@ has template over-reach vs "fundamentally private"
 positioning; risk score = counterfactual; Plaid scope
 claim published + consistent); owner runs in-app
 protocol A1-A6 (deposit-strip test = their headline
-claim); ack DM 99w drafted; capture + write-up next)
+claim); ack DM 99w drafted; 10-25 evening: Hod replied
+4:31 (activity-tab claim; item 6c + 154w reply
+drafted), broker not in Plaid list (6d, fallback),
+A3 logged-out check = login wall (6e), ACTIVITY tab
+paste = 8 trades, ZERO cash-flow rows, 5 missing buys,
+8-month window gap -> P2 holds sharper (6f); REMAINING
+= A6 settings pass + cleanup; 154w reply sendable)
 
 ## Groups (free distribution; separate from the comment round)
 - Group 6773411: the 90-day top performer is a post in this group

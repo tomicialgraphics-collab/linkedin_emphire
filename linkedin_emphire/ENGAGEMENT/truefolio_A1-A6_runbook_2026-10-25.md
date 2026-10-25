@@ -20,11 +20,14 @@ STATUS (10-25 evening, updated as owner executes):
   renders before login, then back out. No credentials.
 - A6 fully executable on the empty account (settings
   list, deletion control, leaderboard opt-in question).
-- DECIDER: the /sample ACTIVITY tab paste. If it carries
-  trades AND cash flows with dates, the +15.92% gets
-  re-run in the sandbox on Truefolio's own frozen data
-  (stronger evidence than the owner's account). If
-  trades only, P2 holds in full.
+- DECIDER RESOLVED (10-25, item 6f): the ACTIVITY tab
+  carries trades only: 8 rows, zero deposit/withdrawal
+  rows, 5 missing buys of held positions, and the
+  displayed window (Mar 11 2025 - Jul 22 2026) does not
+  cover the measurement window (Since Sep 3 2024). P2
+  holds, sharper. The +15.92% re-run stays an ask, not
+  an execution; the 154w DM to Hod is evidence-backed
+  and sendable.
 - Cleanup: owner decides delete vs keep the empty
   account.
 
