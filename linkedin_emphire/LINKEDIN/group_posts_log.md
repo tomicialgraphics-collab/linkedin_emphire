@@ -244,16 +244,21 @@ Machine Learning, Python, Analytics & RAG"
         non-cash convertible-debt fair value); valuation
         talk $1.5T-$2T; confidential draft 6/1/2026,
         public filing after weeks of leaked drafts.
-        Owner asked REPOST WITH THOUGHT: drafted
-        (paste-ready in chat, ~120w, owner register, no
-        dashes per rule 9, includes verified numbers,
-        verification angle). Second "hashtags" call 10-26:
-        final line added #AIGovernance #ResponsibleAI
+        Owner asked REPOST WITH THOUGHT: DRAFTED, then
+        POSTED (owner confirmed 10-26; placement = repost
+        on own feed, comment under Allie's post NOT used).
+        Paste-ready was ~120w, owner register, no dashes
+        per rule 9, includes verified numbers,
+        verification angle. Second "hashtags" call 10-26:
+        final line #AIGovernance #ResponsibleAI
         #RiskManagement #IPO #Anthropic; hashtag rule
         extended to feed posts / reposts (see rule 5).
-        NOTE: same core point as the comment above;
-        recommend one placement only (repost preferred,
-        own-feed reach); owner picks.
+        NEXT MOVE: repost live on the owner's feed;
+        engagement from Allie (or anyone from that
+        thread) on the owner's post = DM trigger; no
+        proactive DM. If the Unger S-1 comment is still
+        unposted, the double-S-1 flag stands (angles
+        distinct, owner's call).
 10-26  ANDELA x OPENAI (Cory Hymel, Andela Head of
         Research) - post: "Buying AI licenses isn't an AI
         strategy. We tested what happens when you actually
