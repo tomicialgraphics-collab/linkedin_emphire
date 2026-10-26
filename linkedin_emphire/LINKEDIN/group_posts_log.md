@@ -60,6 +60,31 @@ WEEK 3 slots: D15 #2 Enterprise AI (private) | D16 #20 Tech
 Startup CEOs & Investors | D17 #8 CSORoundtable | then loop
 with fresh angles (no repeated themes).
 
+10-26 CANDIDATE GROUP (owner in-app, name confirmed by owner):
+"Agentic AI & Data Science: AI Agents, Generative AI, LLMs,
+Machine Learning, Python, Analytics & RAG"
+- NOT on the verified 20, NOT in any external listicle found
+  (searched scmdojo 50-list Sep 2026 + general web). Existence
+  verified in-app only. Verification level: IN-APP ONLY.
+- In-app facts (owner paste): public; posts require ADMIN
+  APPROVAL; created Apr 2016 (renamed old data-science group
+  pattern - the 2025-era keyword-stuffed name on a 2016 shell);
+  +279 members last week (spike may be partly rename-inflated);
+  10-rule policy: links allowed WITH context (rule 2), NO
+  promotional links (rule 7), NO unsolicited DMs/lead-gen
+  (rule 7), security/safety/evals content explicitly
+  encouraged (rule 9), opinions must be distinguished from
+  proven results (rule 5).
+- In-app activity test (owner to do, 30s): last 10 member
+  posts = recent (days not months), substantive member
+  content, posts getting comments. If all pass -> keep,
+  enters rotation as #21. If dead -> drop.
+- Join status: UNCONFIRMED (owner pasted the About page after
+  joining #1; ask).
+- D2 post v2 (rules-tightened, "Source in comments" line,
+  incident-writeups line marked as personal observation)
+  passes these rules unchanged - paste-ready in chat.
+
 10-26 IN-APP STATE (owner screenshot of #9's group page):
 - #9 CISO: Meaningful Metrics = PRIVATE LISTED, 5,844 members,
   owner's join request PENDING (Withdraw Request showing).
