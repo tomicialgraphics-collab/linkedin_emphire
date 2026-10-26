@@ -122,6 +122,39 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  TANYA JANCA (cybersecurity keynote speaker, secure
+        coding trainer, bestselling author; #AppSec
+        #AIsecurity; DevSec Station podcast; 1st
+        connection) - post (25m at capture): "Your AI
+        agent's instructions are NOT the same as its
+        permissions"; prompt is not control; greeting-app
+        story (Claude did more than intended); lesson:
+        "design your security controls around an agent's
+        EFFECTIVE capabilities, not just your expectations
+        of its behaviour." LANE CHECK: CORE LANE -
+        capability-vs-permission is exactly the
+        Arcezia Class B (privilege-launch) / authority-
+        framing territory. Her audience (AppSec developers
+        + AI integrators) = the people wiring agents in =
+        T1-adjacent + top authority surface.
+        COMMENT DRAFTED (paste-ready in chat, ~165w):
+        builds on the greeting-app story ("the gap isn't a
+        one-time discovery - it grows"); effective
+        capability is a RUNTIME property, not design-time;
+        dependency/model/tool change grows the capability
+        set silently on the permission side only ("the
+        prompt still says good morning"); the control can't
+        be a list written once - it has to be re-run, every
+        time the stack changes, with a record of the
+        answers; closer "The design-time threat model tells
+        you where to look. The re-run tells you what's
+        actually there now." Two "re-run" - CUMULATIVE
+        MOTIF FLAG (high density this week; owner can
+        strip). No pitch, no link, no emoji. DRAFTED,
+        unconfirmed until owner says posted.
+        NEXT MOVE: authority/channel surface (speaker,
+        author, podcast); no DM unless she engages with the
+        owner specifically.
 10-26  PAOLO PERRONE ("Shipping Production AI: Agents,
         Inference, GPU. Read by 1M+ AI engineers") - on the
         owner's 2d-old comment in the 25-assistants/1-command
