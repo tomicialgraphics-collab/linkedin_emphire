@@ -178,6 +178,56 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  ALLIE K. MILLER (#1 most followed voice in AI
+        business, 2M; ex-Amazon/IBM, Fortune 500 AI
+        advisor, speaker, 400K-student course) - post
+        (4m) + comment: "Anthropic S-1 is officially
+        public." Two visible Claude Code builders left
+        last week (read as IPO signal). Her "AI research"
+        of 6 recent tech IPOs points to an IPO window of
+        Nov 17 2026 to Feb 28 2027 (absent a Cerebras
+        withdrawal/refile). Valuation 15x since last
+        summer; 4yr vesting / 1yr cliff, $4M RSU example
+        = $20M+; SF housing tip. S-1 link in comments (SEC
+        EDGAR, Reg No. 333, THE ANTHROPIC PBC, Dario
+        Amodei CEO, filed 10/26/2026; cover image
+        attached by owner). ROOM: DECISION-MAKER /
+        investor. 2M = BIGGEST reach surface today (above
+        Paolo 1M); the exact other-end valuation room.
+        LANE: adjacent but in-lane via a DELIBERATELY
+        DIFFERENT angle from the Unger S-1 comment
+        (Unger = "the only risk factor with no instrument
+        behind it", i.e. content of one factor). Allie =
+        the INSTITUTIONAL CONSEQUENCE of the document: AI
+        risk becomes a priced / accountable / checkable
+        line item for the first time; disclosure names the
+        risk but verification is what holds the valuation.
+        No financial prediction or buy advice; no IPO-date
+        call.
+        COMMENT DRAFTED (paste-ready in chat, ~140w,
+        decision-maker register: consequence-first, zero
+        motif words, no dashes per rule 9): "The S-1 is
+        the bigger story than the IPO date... For the
+        first time, a frontier AI company has to put its
+        risks in writing, dated and named, and file them
+        with a regulator. That moves AI risk from a debate
+        into a line item. An underwriter now prices it. A
+        board is now accountable for it. A diligence team
+        now has something to check... It names the risk.
+        It doesn't show the verification behind it. 'We
+        manage model behavior' stays a claim until a third
+        party can check it independently. The valuation is
+        the number everyone's quoting this week. Whether
+        that number holds depends on the quieter part of
+        the document, the part that says what the company
+        can actually prove." DRAFTED, unconfirmed until
+        owner says posted.
+        FLAG: two S-1-adjacent comments in one day (Unger
+        + Allie). If the Unger one is up, owner may still
+        post this (angles distinct) or hold to avoid same
+        document repetition; owner decision.
+        NEXT MOVE: 2M reach surface (T3/channel); no DM
+        until owner engages.
 10-26  ANDELA x OPENAI (Cory Hymel, Andela Head of
         Research) - post: "Buying AI licenses isn't an AI
         strategy. We tested what happens when you actually
