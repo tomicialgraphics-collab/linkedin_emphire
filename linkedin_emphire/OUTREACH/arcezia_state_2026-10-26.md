@@ -110,3 +110,47 @@ at close.
   then nothing until his markup; if no markup by tonight,
   the one-line nudge goes out tomorrow morning before the
   key gate.
+- 10-26 9:34 AM (owner, from this paste): FOLLOW-UP DM
+  SENT - confirmed, it appears in the DM thread. The
+  earlier "DRAFTED (unconfirmed)" state is closed.
+- 10-26 5:47 PM (Praveen, THIS PASTE): "One my closest
+  person passed away today! I am going out of station in
+  very urgent situation." (with reaction emojis)
+  STATE CHANGE - SCHEDULE IN CRISIS:
+  * His markup (10-24 same-day commitment) did not arrive;
+    he is now out of station, away from everything.
+  * 10-27 KEY GATE cannot clear: written agreement needs
+    his markup/acceptance and he is away. The gate holds
+    naturally - there is nothing to send, no work starts.
+    This is the gate doing what it was designed to do.
+  * 27th/29th test window + 30th report: ON HOLD, full
+    reschedule needed when he is back.
+  * The "tomorrow morning nudge" fallback planned earlier
+    today: VOID - do NOT send. Do not chase a man in
+    mourning about scope markup. No nudge of any kind
+    until he re-engages.
+  * The 10-30 written-reference reminder does not die; it
+    moves with the reschedule (collect at the NEW report
+    handoff).
+  * 10-27 test prep (arcezia_test_prep_2026-10-27.md):
+    HELD - no prep action for the 27th; the document stays
+    valid for the new window.
+  OWNER'S REPLY: DRAFTED (delivered in chat) - condolences
+  + zero pressure + "when things settle, we'll re-agree
+  the dates in writing and I'll slot you in"; no dates,
+  no key, no business nouns, no emoji: "I'm sorry,
+  Praveen. Truly sorry for your loss. / Please don't give
+  our work any thought right now - nothing needs anything
+  from you. Take the time you need. / When things settle,
+  we'll re-agree the dates in writing and I'll slot you
+  in. No deadline from my side, and no need to reply to
+  this." SEND UNCONFIRMED until owner says sent.
+  NEXT CONTACT: only if/when he replies, or ONE line in
+  ~5-7 days if he hasn't ("How are you holding up?
+  Whenever you're ready, we'll re-agree the dates - no
+  rush."). Reschedule is his or the owner's to propose;
+  minimum window = two test days + report day; key-gate
+  rule unchanged (written agreement first, then key).
+  CHARACTER NOTE: this moment is the foundation of the
+  written reference - zero pressure and no schedule panic
+  here is the material that reference will describe.
