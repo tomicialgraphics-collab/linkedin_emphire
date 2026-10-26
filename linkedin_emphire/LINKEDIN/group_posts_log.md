@@ -147,7 +147,8 @@ Machine Learning, Python, Analytics & RAG"
         from now" = his exit-ready brand; "companies you
         work with" COFO-fit close). Same rules: no $5K, no
         deck, one soft offer, one diagnostic question.
-        SEND UNCONFIRMED.
+        -> SENT (owner confirmed in chat, 10-26). Waiting on
+        his reply; next-step rule unchanged.
         NEXT-STEP RULE: he replies with substance ->
         message two = $5K Agent Gate (48 hours, 2
         slots/month) for the companies he's CFO of.
