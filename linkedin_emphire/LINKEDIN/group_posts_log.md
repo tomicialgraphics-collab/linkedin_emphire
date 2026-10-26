@@ -121,6 +121,16 @@ Machine Learning, Python, Analytics & RAG"
   CISO2CISO (already joined) - owner's call. Default: D1
   stays with #9, posts the day it's approved.
 
+## DM / CONNECT LOG (group-sourced, same day)
+10-26  WOLFE, Brad - CONNECT ACCEPTED (owner confirmed in
+        chat). DM v2 (the saved thread-referencing draft,
+        no $5K in message one) re-delivered to owner in
+        chat; SEND UNCONFIRMED until owner says sent.
+        NEXT-STEP RULE: only if he replies with substance
+        (a flow / a concern / "we have X in production") ->
+        message two = the $5K Agent Gate (48 hours, 2
+        slots/month). No price before that.
+
 LOG:
 10-26  #9 CISO: Meaningful Metrics  -  DRAFTED, join request
         PENDING (private listed) - post blocked until approval;
