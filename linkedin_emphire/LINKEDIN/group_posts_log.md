@@ -82,3 +82,10 @@ LOG:
         PENDING (private listed) - post blocked until approval;
         post text delivered to owner in chat, unconfirmed
         until they say POSTED
+10-26  #1 Agentic AI Engineering (10308230) - JOINED (owner
+        confirmed in chat). D2 post (unauthenticated MCP
+        surface) DRAFTED and delivered to owner in chat;
+        owner may post it today (fresh-join first post) or
+        tomorrow per the rotation - if today, the rest of the
+        week shifts one slot earlier. Paste unconfirmed until
+        owner says POSTED.
