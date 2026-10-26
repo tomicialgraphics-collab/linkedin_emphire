@@ -193,28 +193,33 @@ Machine Learning, Python, Analytics & RAG"
           wallet misalignment thread), Reed Hepler (Matt
           Wolfe blocking-agents thread), Vika (AEO thread),
           Welsch (Gartner HR thread).
-        ENGAGED (DRAFTED, paste-ready in chat):
+        ENGAGED (all three POSTED, owner "all posted" 10-26):
         * CHRIS H. (live event "Your AI Tool Is Approved,
           Are Its Actions?" w/ Rob Allen, ThreatLocker):
           CORE LANE (vendor approval vs action governance,
           capability vs permission, pre-deployment test).
           ~130w, closes on a substantive question (how the
           pre-deployment test stays true after model/
-          tooling changes). DRAFTED, unconfirmed.
+          tooling changes). POSTED (owner confirmed 10-26).
+          NEXT: no DM unless host/guest engages the owner;
+          re-engage if the session content surfaces.
         * AMJAD MASAD (Replit for Business / Self-Driving
           Company; YC GP, high-reach decision-maker): hook
           = his line "a record of everything the agents
           did." ~95w, log-vs-check split, "judged by how
           cleanly the record holds up when it's tested."
-          Constructive, not contrarian. DRAFTED,
-          unconfirmed.
+          Constructive, not contrarian. POSTED (owner
+          confirmed 10-26). NEXT: no DM unless he engages;
+          top-tier decision-maker surface, engagement = DM
+          trigger.
         * WELSCH (in-thread reply to owner's Gartner
           insurance comment: "Keep an eye out for an
           entirely new product..."): relationship, light
-          ~24w, no pitch. DM trigger technically met (he
-          engaged the owner); recommend light in-thread
-          reply now, relationship DM later (channel, not
-          the $5K Agent Gate buyer sequence).
+          ~24w, no pitch. POSTED (owner confirmed 10-26).
+          DM trigger was technically met (he engaged the
+          owner); relationship DM HELD (channel, not the
+          $5K Agent Gate buyer sequence) - revisit only if
+          he re-engages or teases the product publicly.
         S-1 TRIO (Endrit, Matt Wolfe, Allie): the S-1
         statement is already made via the Allie REPOST
         (POSTED). SKIP Endrit + Matt Wolfe to avoid a
@@ -446,11 +451,16 @@ Machine Learning, Python, Analytics & RAG"
         room that speaks." One "re-performed" - CUMULATIVE
         MOTIF FLAG: 3rd public surface this week with a
         motif word (Dario + this; D1/D2 pending); strip
-        offered to owner. No pitch, no link. DRAFTED,
-        unconfirmed until owner says posted.
-        NEXT MOVE: reach/credibility surface + far-out
-        channel possibility (speaker/trainer); no DM unless
-        he engages with the owner specifically.
+        offered to owner. No pitch, no link. COMMENT
+        POSTED (confirmed via his reply: in the 10-26
+        feed WELSCH REPLIED to the owner's comment, "Keep
+        an eye out for an entirely new product...", and
+        LIKED it). THREAD CLOSED OUT 10-26: owner comment
+        live -> Welsch engaged (reply + like) -> owner
+        in-thread reply posted ("all posted").
+        NEXT MOVE: channel warm, not buyer; relationship
+        DM held; re-engage if he launches the teased
+        product or replies again.
 10-26  ANDREW UNGER (frontier investor; early in Ramp,
         Cognition, Modal + 20 more) - post (28m at capture):
         Anthropic S-1 risk factor - "concern for model
