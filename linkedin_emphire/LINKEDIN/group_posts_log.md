@@ -183,6 +183,43 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  THE AI COLONY (AI content page, ~42K followers;
+        engagement-ring comment section of other content
+        pages trading "yeah"/"yup") - post: "Is AI voice
+        finally solved?" on Jack Dorsey / Block's
+        "Dessa" voice model (learned by listening only;
+        laughs mid-sentence, interrupts, finishes
+        thoughts, sarcasm, emotional, listens while
+        speaking); poster's concerns: call centers,
+        phone scams, AI companionship addiction. ROOM:
+        general AI news / content page (not a security,
+        decision-maker, or practitioner room; comment
+        section = content-farm engagement ring). LANE:
+        in-lane via the "voice as a retired
+        verification channel" reframe (the "call to
+        confirm" is a cheap verifier a convincing clone
+        breaks; "it sounds like them" stops being
+        evidence). NOT a bolt-on, but LOW-TIER surface
+        (42K content page; not a buyer / authority /
+        decision-maker / big reach).
+        COMMENT DRAFTED (paste-ready in chat, ~150w,
+        accessible, check/verifier/evidence vocab, no
+        dashes, no pitch): "the companionship worries
+        are real, but the bigger story is hiding inside
+        the scams line"; "we built an entire
+        verification habit around the phone call... It
+        was a cheap check, but it was a check."; "A
+        voice that laughs mid-sentence, interrupts, and
+        finishes your thoughts doesn't just make scams
+        more convincing. It retires the call as a way to
+        verify who someone is."; closer "Every bank,
+        family, and support line that treats a familiar
+        voice as a pass has just lost its verifier."
+        RECOMMENDATION to owner: SKIP, or post only for
+        visibility/practice; strong on-brand angle,
+        low-tier room. DRAFTED, unconfirmed.
+        NEXT MOVE: no DM (not a relationship surface);
+        skip is consistent with the lane.
 10-26  AMJAD MASAD (Replit founder, YC GP; high-reach
         decision-maker) - NEW post (1m, SEPARATE from the
         Replit for Business post the owner already
