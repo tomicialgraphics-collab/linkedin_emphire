@@ -66,24 +66,31 @@ Machine Learning, Python, Analytics & RAG"
 - NOT on the verified 20, NOT in any external listicle found
   (searched scmdojo 50-list Sep 2026 + general web). Existence
   verified in-app only. Verification level: IN-APP ONLY.
+- JOINED (member view "Start a public post" in owner paste).
+  212,128 members. 8 owner connections in it (incl. Gergely
+  Katona). Admins: Rajoo Jha (owner, VP Tech nirvanaHealth),
+  Devya Jha, Aashutosh Kumar.
 - In-app facts (owner paste): public; posts require ADMIN
-  APPROVAL; created Apr 2016 (renamed old data-science group
-  pattern - the 2025-era keyword-stuffed name on a 2016 shell);
-  +279 members last week (spike may be partly rename-inflated);
-  10-rule policy: links allowed WITH context (rule 2), NO
-  promotional links (rule 7), NO unsolicited DMs/lead-gen
-  (rule 7), security/safety/evals content explicitly
-  encouraged (rule 9), opinions must be distinguished from
-  proven results (rule 5).
-- In-app activity test (owner to do, 30s): last 10 member
-  posts = recent (days not months), substantive member
-  content, posts getting comments. If all pass -> keep,
-  enters rotation as #21. If dead -> drop.
-- Join status: UNCONFIRMED (owner pasted the About page after
-  joining #1; ask).
-- D2 post v2 (rules-tightened, "Source in comments" line,
-  incident-writeups line marked as personal observation)
-  passes these rules unchanged - paste-ready in chat.
+  APPROVAL (light - spam gets through); created Apr 2016
+  (renamed old data-science group pattern); +279 members
+  last week; 10-rule policy (links with context allowed, no
+  promotional links, no unsolicited DMs, security content
+  encouraged rule 9, opinions marked as opinions rule 5).
+- ACTIVITY TEST RESULT (from owner's 34-post feed paste):
+  freshness STRONG (34 posts/~36h); substance ~30% (8-10 real
+  posts among recruiters/course-sellers/vendor promos/quiz
+  polls); engagement sparse (0-2 comments, 0-20 likes).
+  VERDICT: REACH room, not conversation room. Play = COMMENT
+  on live threads > cold post (burial risk 30+ posts/day).
+- TODAY'S PLAY IN THIS GROUP: two paste-ready expert comments
+  drafted and delivered to owner in chat (Aarav Gupta
+  drift post; Ali Haris dashboard-attribution post). DRAFTED,
+  unconfirmed until owner says POSTED. Motif: used "replay",
+  kept re-run/tie-out budget intact for the posts.
+- D2 cold post REMAINS aimed at #1 (10308230).
+- Connect candidates surfaced from feed: Swarnabh D. (open-
+  source agent builder), Aarav Gupta (production AI),
+  Abhishek Jain (AVP infra). Notes on request.
 
 10-26 IN-APP STATE (owner screenshot of #9's group page):
 - #9 CISO: Meaningful Metrics = PRIVATE LISTED, 5,844 members,
