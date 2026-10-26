@@ -122,6 +122,27 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  MATT WOLFE (YouTube 1M+, AI news creator) - post
+        (7m at capture): websites blocking AI agents
+        (Verge: Amazon, Delta, Yelp, JPMorgan Chase,
+        Charles Schwab restricting agents); "AI labs
+        doomed if they don't fix this." LANE CHECK:
+        in-lane - mirror of the D2 unauthenticated-MCP
+        theme (the web closes because it can't authenticate
+        agents; the tool side ships open).
+        COMMENT DRAFTED (paste-ready in chat): "the
+        blocking isn't the bug, it's the only sane
+        default"; reframes his ask from "labs cooperate"
+        to AGENT IDENTITY (principal / scope /
+        accountability credential); irony line = tool side
+        unauthenticated while web slams the door (no "490"
+        number - D2 keeps it canonical); closer "The
+        agents that win in 2027 won't be the most capable
+        ones. They'll be the ones the internet can
+        verify." No pitch, no link, no motif words.
+        DRAFTED, unconfirmed until owner says posted.
+        NEXT MOVE: reach surface, not ICP buyer; no DM
+        unless he responds to the owner specifically.
 10-26  SALMAN LAKHANI (AI founder & builder; WealthRx,
         KreoGrid, TZUR Impact; SIGNAL/NOISE open-source) -
         owner's 76w comment on his local-AI trust-boundary
