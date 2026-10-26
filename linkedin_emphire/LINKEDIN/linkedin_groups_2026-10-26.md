@@ -119,8 +119,11 @@ THE 20 (by cluster):
 8. CSORoundtable (public, small, exec). linkedin.com/group/515.
    ROLE: small + exec = high signal; one good answer per week
    is enough to be visible to every member.
-9. CISO: Meaningful Metrics (public). linkedin.com/groups/36315.
-   ROLE: the "what evidence remains when the dashboard
+9. CISO: Meaningful Metrics (PRIVATE LISTED, 5,844 members -
+   in-app 10-26; join request pending; activity ~+1 member/
+   week - small room, high visibility per post).
+   https://www.linkedin.com/groups/36315. ROLE: the "what
+   evidence remains when the dashboard
    disappears" room (the Wolfe ledger post is native here);
    the re-runnable-report point is the exact contribution.
 10. Computer Security Institute (~500K, public, broad).

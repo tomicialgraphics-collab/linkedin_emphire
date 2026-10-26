@@ -52,7 +52,33 @@ WEEK 3 slots: D15 #2 Enterprise AI (private) | D16 #20 Tech
 Startup CEOs & Investors | D17 #8 CSORoundtable | then loop
 with fresh angles (no repeated themes).
 
+10-26 IN-APP STATE (owner screenshot of #9's group page):
+- #9 CISO: Meaningful Metrics = PRIVATE LISTED, 5,844 members,
+  owner's join request PENDING (Withdraw Request showing).
+  D1 post BLOCKED until approved - post text is saved in the
+  chat + here, paste-ready the moment it's approved.
+  Activity ~+1 member/last week (small room, high visibility
+  per post). 4 members located in Lagos.
+- ALREADY JOINED (owner sidebar, 10-26): Computer Security
+  Institute (#10) - confirmed; CISO2CISO Global Cyber Security
+  Group (#7) - confirmed, name in-app confirms the CSIG merge;
+  plus 3 TRUNCATED names needing exact match: "Artificial
+  Intelligence, Machine...", "Cyber Laws, Information
+  Secur...", "Banking Cybersecurity Professi..." (last two may
+  not exactly match #18 "Cyber Law & Information Security"
+  and #14 "Banking IT Security Professionals - BISP" - owner
+  to confirm exact names).
+- Right-column suggestions on that page (Data Analytics AI ML
+  238K, AI Data & Tech Leaders 289K, Python Developers 834K
+  etc.) = LinkedIn recommendation engine, NOT our list -
+  ignore (off-lane noise).
+- If owner wants a post out TODAY instead of waiting for #9
+  approval: the D1 theme (verification gap) can move to #7
+  CISO2CISO (already joined) - owner's call. Default: D1
+  stays with #9, posts the day it's approved.
+
 LOG:
-10-26  #9 CISO: Meaningful Metrics  -  DRAFTED (post text
-        delivered to owner in chat; owner paste unconfirmed
-        until they say POSTED)
+10-26  #9 CISO: Meaningful Metrics  -  DRAFTED, join request
+        PENDING (private listed) - post blocked until approval;
+        post text delivered to owner in chat, unconfirmed
+        until they say POSTED
