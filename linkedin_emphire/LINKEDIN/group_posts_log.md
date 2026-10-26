@@ -84,13 +84,17 @@ Machine Learning, Python, Analytics & RAG"
   on live threads > cold post (burial risk 30+ posts/day).
 - TODAY'S PLAY IN THIS GROUP: two paste-ready expert comments
   drafted and delivered to owner in chat (Aarav Gupta
-  drift post; Ali Haris dashboard-attribution post). DRAFTED,
-  unconfirmed until owner says POSTED. Motif: used "replay",
-  kept re-run/tie-out budget intact for the posts.
-- D2 cold post REMAINS aimed at #1 (10308230).
+  drift post; Ali Haris dashboard-attribution post).
+  POSTED 10-26 (owner confirmed in chat; read as covering
+  these two - if D2 was also posted, correct on next
+  exchange). Motif: used "replay", kept re-run/tie-out
+  budget intact for the posts.
+- D2 cold post REMAINS aimed at #1 (10308230). POST STATUS:
+  UNCONFIRMED (owner's "posted" message ambiguous - asked).
 - Connect candidates surfaced from feed: Swarnabh D. (open-
   source agent builder), Aarav Gupta (production AI),
-  Abhishek Jain (AVP infra). Notes on request.
+  Abhishek Jain (AVP infra). Owner has not picked - notes
+  on request.
 
 10-26 IN-APP STATE (owner screenshot of #9's group page):
 - #9 CISO: Meaningful Metrics = PRIVATE LISTED, 5,844 members,
