@@ -638,6 +638,15 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   relevant): parallel coding agents, isolated worktrees,
   atomic task claims, human approval gate - known to the
   owner as red-team surface, no comment.
+- (10-26 feed #3) Mouad Hoummani (8m, 3rd+, student at
+  Facult Polydisciplinaire de Khouribga, GETTY-ai business-
+  model post): SKIP, rung 6, OUT OF LANE (AI business /
+  economics opinion, gen-AI vs stock photography, no
+  security claim, no technical line to land on, no agent /
+  safety angle). Conversation-starter post with an audience
+  question + follow CTA; a comment from the owner's lane
+  would be a bolted-on lecture. Student, no commercial
+  signal, no client flag, no action.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
@@ -689,7 +698,10 @@ degree; no 4th comment; DM v2 DRAFTED = send now, item
 like), Soren Starup Nielsen + follower (~760), 8 new
 Wolfe posts (2 queued for tomorrow: ASSISTANT THAT SAYS
 NO + NAME THE LINE), 8 feed-#2 skips, Masad Foundation
-volunteer opportunity logged (owner decision)).
+volunteer opportunity logged (owner decision); ninth 10-26
+paste: Mouad Hoummani (student, 3rd+, Getty AI business-
+model opinion post) -> SKIP rung 6 out-of-lane (skip log
+entry 15, feed #3)).
 Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip
