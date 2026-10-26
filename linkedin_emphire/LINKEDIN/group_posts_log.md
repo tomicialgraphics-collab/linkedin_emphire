@@ -123,13 +123,27 @@ Machine Learning, Python, Analytics & RAG"
 
 ## DM / CONNECT LOG (group-sourced, same day)
 10-26  WOLFE, Brad - CONNECT ACCEPTED (owner confirmed in
-        chat). DM v2 (the saved thread-referencing draft,
-        no $5K in message one) re-delivered to owner in
-        chat; SEND UNCONFIRMED until owner says sent.
-        NEXT-STEP RULE: only if he replies with substance
-        (a flow / a concern / "we have X in production") ->
-        message two = the $5K Agent Gate (48 hours, 2
-        slots/month). No price before that.
+        chat). PROFILE VERIFIED (owner screenshot, 10-26):
+        PE-backed Tech & Services CFO / AI-Operational CFO
+        (COFO); "AI Strategy Is a Capital Allocation Problem";
+        3 NASDAQ CFO seats (ASUR, FALC, ECZCORP); 80+ M&A /
+        5 PE-backed exits ($50M-$500M range); ExPwC, CPA, JD,
+        Kellogg MBA; Austin TX; 17,527 followers; 17 mutual
+        connections; banner "AVAILABLE NOW FOR CFO ROLES".
+        REPOSITIONING: dual value - (a) BUYER: the companies
+        he CFOs will face the agent questionnaire; (b)
+        CHANNEL (Lantern 6): 17.5K-follower PE CFO, exit/DD
+        language = native fit for the check-not-the-log
+        register. Channel ask NOT in message two - the check
+        conversation earns it (message three at the latest,
+        one line, and only if he engages at strategy level).
+        DM v2 (thread-referencing draft, no $5K in message
+        one) delivered to owner in chat; optional COFO-fit
+        tweak offered ("your teams" -> "the companies you
+        work with"); SEND UNCONFIRMED.
+        NEXT-STEP RULE: he replies with substance ->
+        message two = $5K Agent Gate (48 hours, 2
+        slots/month) for the companies he's CFO of.
 
 LOG:
 10-26  #9 CISO: Meaningful Metrics  -  DRAFTED, join request
