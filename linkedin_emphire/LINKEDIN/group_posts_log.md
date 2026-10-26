@@ -183,6 +183,70 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  FEED CAPTURE (late batch) - triage + 3 DRAFTED.
+        OWNER'S CONTENT PERFORMANCE (notifications):
+        * Chroma/Replit "context engine" comment = 3,012
+          impressions (strong signal; the context-as-
+          unverified-layer angle is landing).
+        * Article 50 post live, 117 impressions, growing.
+        * Likes on owner's comments: Rock Lambros (OpenAI
+          wallet misalignment thread), Reed Hepler (Matt
+          Wolfe blocking-agents thread), Vika (AEO thread),
+          Welsch (Gartner HR thread).
+        ENGAGED (DRAFTED, paste-ready in chat):
+        * CHRIS H. (live event "Your AI Tool Is Approved,
+          Are Its Actions?" w/ Rob Allen, ThreatLocker):
+          CORE LANE (vendor approval vs action governance,
+          capability vs permission, pre-deployment test).
+          ~130w, closes on a substantive question (how the
+          pre-deployment test stays true after model/
+          tooling changes). DRAFTED, unconfirmed.
+        * AMJAD MASAD (Replit for Business / Self-Driving
+          Company; YC GP, high-reach decision-maker): hook
+          = his line "a record of everything the agents
+          did." ~95w, log-vs-check split, "judged by how
+          cleanly the record holds up when it's tested."
+          Constructive, not contrarian. DRAFTED,
+          unconfirmed.
+        * WELSCH (in-thread reply to owner's Gartner
+          insurance comment: "Keep an eye out for an
+          entirely new product..."): relationship, light
+          ~24w, no pitch. DM trigger technically met (he
+          engaged the owner); recommend light in-thread
+          reply now, relationship DM later (channel, not
+          the $5K Agent Gate buyer sequence).
+        S-1 TRIO (Endrit, Matt Wolfe, Allie): the S-1
+        statement is already made via the Allie REPOST
+        (POSTED). SKIP Endrit + Matt Wolfe to avoid a
+        triple S-1 (templated risk). Matt Wolfe's post is
+        pure valuation/finance (out of lane for that post;
+        active DM sequence is the right channel for agent
+        controls). If owner wants a second S-1 touch, the
+        ONLY differentiated angle is Endrit's "90% of code
+        by Claude + existential-risk warning" (a company
+        whose product writes 90% of its own code warns of
+        existential risk); not drafted, offered on request.
+        SKIP (off-lane, one line each): Ivan Lee x2
+        (podcast + event promos), Michael Afolabi ICSC
+        2026 (Abuja Open Banking/API Security conference
+        promo, adjacent, optional local-community play),
+        Iyinoluwa Kratu (edtech offline AI tutor, off-
+        lane), Rock Lambros PHP2Shell (patching/IR + AI-
+        attacker advantage, off-lane for this post; note
+        Rock liked owner's comment = existing Rock thread
+        warmed), Tiago Forte x2 (productivity + book
+        launch, off-lane), Amjad article share (same as
+        Replit post), Bolaji Adebayo x2 (mindset + tech
+        jobs, off-lane), Clint Gibler (mobile app
+        hardening/reverse engineering, different security
+        sub-lane), Lenny Rachitsky (sales/Power of Pull,
+        off-lane), Bob van Luijt (Weaviate offsite, off-
+        lane), Alex Hormozi (books list, off-lane),
+        Chandrika Quivly (churn analytics, off-lane;
+        light client signal: YC F26 founder, 10k+
+        accounts, AI-native = plausible future gate
+        buyer). Vika AEO: already engaged earlier; Vika
+        liked owner's comment (no new action).
 10-26  ALLIE K. MILLER (#1 most followed voice in AI
         business, 2M; ex-Amazon/IBM, Fortune 500 AI
         advisor, speaker, 400K-student course) - post
