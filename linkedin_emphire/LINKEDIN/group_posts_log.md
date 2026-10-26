@@ -122,6 +122,30 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  ANDREW UNGER (frontier investor; early in Ramp,
+        Cognition, Modal + 20 more) - post (28m at capture):
+        Anthropic S-1 risk factor - "concern for model
+        welfare" might delay retiring old models; "Pretty
+        wild." LANE CHECK: in-lane-adjacent - governance/
+        audit register, NOT the consciousness debate
+        (decline the bait); the point = the only risk
+        factor in the document with no instrument behind
+        it. His book (Cognition, Modal) = Agent Gate buyer
+        pool -> high-value reach surface.
+        COMMENT DRAFTED (paste-ready in chat, ~110w):
+        "The interesting part isn't whether it's true";
+        triad (competitors counted / regulators named /
+        outages dated) vs welfare = no metric, no verifier,
+        no audit trail; "act on before it can measure";
+        closer "the board will eventually ask the same
+        question an auditor asks: what's the check? Right
+        now, the honest answer is: there isn't one."
+        Document observation, not a claim about Anthropic's
+        systems (safe to publish). No pitch, no link,
+        concept-word closer only (motif budget intact).
+        DRAFTED, unconfirmed until owner says posted.
+        NEXT MOVE: no DM unless he engages with the owner
+        specifically.
 10-26  MATT WOLFE (YouTube 1M+, AI news creator) - post
         (7m at capture): websites blocking AI agents
         (Verge: Amazon, Delta, Yelp, JPMorgan Chase,
