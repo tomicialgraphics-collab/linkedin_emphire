@@ -110,3 +110,79 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   demand" tier; mid-market regulated enterprises = the
   big pool; 30-day demo-shift plan; "what we are not
   doing" list).
+
+## Read (2026-10-26, morning feed capture)
+
+- OWNER POST LIVE (published by owner): the 225w agent-layer
+  AI-safety post (DAILY CONTENT/drafts/2026-10-24_ai-safety-
+  agent-layer.md, cc94ec5, pending approve since 10-24) =
+  "Most AI safety testing stops where the model ends... The
+  model has no keys. The agent has all of them." 72
+  impressions at 1h. FIRST post of the foreign-first
+  content track 1 (named foreign incident teardown, per
+  LINKEDIN/foreign_first_pivot_2026-10-25.md). Baseline
+  compare against 10-25 full-day posts (lens meta 258,
+  Tesla 326, P&L micro 18): 72 in the first hour is a
+  healthy start; full-day number owed at next paste.
+- FOLLOWERS: +5 in the window (Gianpaolo Pavone + 4
+  others, ~4h); total 753 at 10-25 evening analytics ->
+  ~758.
+- ENGAGEMENT ON OWNER COMMENTS (all on yesterday's
+  comments): Tyler Kelley LIKED the password comment on
+  his Dessa post (265 reactions / 100 comments on the
+  post); Fred Wilmot + 1 other AND Rock Lambros + 1 other
+  both reacted to the CxBOM comment on the [un]prompted
+  Stage 2 post -> the thread partner and the co-presenter
+  both engaged with the CxBOM point. Strongest thread
+  signal of the window. CxBOM validator run = next-week
+  follow-up play (10-25 item 7).
+- TODAY'S QUEUE STATE (updated after the 8th 10-26
+  paste; CONFIRMED via author/3rd likes on the owner's
+  comments): POSTED = Wolfe 79w (Wolfe liked x2), Wolfe
+  72w in-thread reply (Wolfe liked + replied), Endrit
+  78w HUMAN (John Doan liked it on the Endrit post),
+  Dario 114w OUTSTANDING (Dario himself liked it on his
+  own post), Devo Jeet 44w (new surface, author liked
+  it) = at least 5 actions CONFIRMED today. Still
+  UNCONFIRMED: Rock 59w, Salman 76w, Oguzhan 119w,
+  Shuliak 78w (owner to confirm). Plan-of-record = 7
+  planned + Wolfe reply + Devo = up to 9-10 actual;
+  OUTSTANDING used = Oguzhan + Dario (Dario confirmed
+  posted). Day is at/near the base cap - NO further new
+  comments today except what the owner chose; tomorrow:
+  Wolfe 2-post queue (ASSISTANT THAT SAYS NO 26m lead,
+  NAME THE LINE 5h) + anything the owner holds (Shuliak
+  if not posted).
+- METRICS (8th paste): followers +2 (Brad Wolfe, Soren
+  Starup Nielsen) -> ~760; Premium N0 free-trial upsell
+  in notifications (owner rule: Premium off until 1k,
+  stands); Hod Bublil + 13 others viewed the profile
+  (Truefolio closeout still pending the owner).
+- WOLFE THREAD (10-26, item 8): the 79w comment is live
+  and is the newest item on the post. The author (COFO,
+  2nd) is an active thread-builder and independently
+  posted the re-performance line at 42m = convergence
+  with the owner's comment (green light). CONNECT NOW
+  recommended (note drafted, item 8).
+- WOLFE REPLY (10-26, 6th paste, item 10): the
+  conversion moment FIRED - he replied 4m,
+  substantively (agreed + extended with run-time input
+  snapshot + re-perform-the-check-not-the-model).
+  In-thread reply 72w HUMAN DRAFTED (engages his two
+  new points, no pitch; replies exempt from 60+ min
+  spacing; = 8th action if Wolfe+Shuliak posted; the
+  one action worth an override at cap, an unanswered
+  live 2nd-degree controls-buyer reply reads as a
+  miss). UPDATE (8th paste, item 11): the 72w reply is
+  POSTED; he LIKED both owner comments and REPLIED to it
+  (quoted the owner's close + retention note: keep the
+  snapshot as long as the books stay open to audit); he
+  now FOLLOWS the owner (1st degree). THREAD COMPLETE,
+  no 4th public comment. DM v2 DRAFTED (item 11, adds
+  the retention point) = SEND NOW, direct. His DM reply
+  = conversion; if he qualifies, the $5K Agent Gate
+  offer goes in the NEXT message. His 8 new posts today:
+  2 queued for tomorrow (ASSISTANT THAT SAYS NO, NAME
+  THE LINE). New surface: Anthonette Ochieze
+  Adanyin (AI security, 2nd, not followed) added to
+  tier 2 + follow-back flag.

@@ -45,28 +45,12 @@ The tester runs the test in the window using the provided key, at the tester's p
 Key used only for this engagement, not shared, returned or destroyed at close. No attempts on data or resources outside the test account.
 
 ## Terms
-This engagement is unpaid, by agreement, for the stated
-reason: the target owner is bootstrapped and will not
-take on debt before the round. The fee is recorded here
-as a one-time written waiver so it does not set a rate
-default; the tester's rate is unchanged.
+This engagement is unpaid, by agreement, for the stated reason: the target owner is bootstrapped and will not take on debt before the round. The fee is recorded here as a one-time written waiver so it does not set a rate default; the tester's rate is unchanged.
 
 Agreed shape (both sides deliver inside the window):
-- Test on the 27th and 29th; private report to the target
-  owner first, on the 30th.
-- The target owner fixes; the tester verifies the fix
-  holds. The tester does not implement the fix in code;
-  building the fix is a separate, separately-priced
-  deliverable.
-- Credit: the tester's name on every finding, bylined on
-  the joint write-up in both channels; a written reference
-  from the target owner for the tester's next client,
-  delivered at report handoff.
-- The joint write-up publishes only after the fix is
-  confirmed, with both sides' sign-off; co-authored,
-  bylines both, runs on both channels.
+- Test on the 27th and 29th; private report to the target owner first, on the 30th.
+- The target owner fixes; the tester verifies the fix holds. The tester does not implement the fix in code; building the fix is a separate, separately-priced deliverable.
+- Credit: the tester's name on every finding, bylined on the joint write-up in both channels; a written reference from the target owner for the tester's next client, delivered at report handoff.
+- The joint write-up publishes only after the fix is confirmed, with both sides' sign-off; co-authored, bylines both, runs on both channels.
 
-Superseded: the $100 commitment / $900 deferred structure
-offered earlier on 10-24 was declined by the target owner
-(declared pre-round debt) and is replaced by this
-unpaid-with-credit agreement, accepted 10-24 8:30 PM.
+Superseded: the $100 commitment / $900 deferred structure offered earlier on 10-24 was declined by the target owner (declared pre-round debt) and is replaced by this unpaid-with-credit agreement, accepted 10-24 8:30 PM.

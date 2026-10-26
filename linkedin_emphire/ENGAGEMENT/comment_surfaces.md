@@ -176,6 +176,21 @@ INTERACTIVE drafted = 10-25 verbatim item 8;
 recommendation SKIP today (cap + lane fit), sendable
 if owner wants the reach/follower play
 
+Dario Melo (AI & Technology Strategist | Author &
+Engineer | Creator of Machines and Power | Data Economy,
+Physical AI & Strategic Foresight; FOLLOWS THE OWNER;
+runs a 4-episode Physical AI economics series; added
+10-26 morning): Physical AI growth post, episode 2/4,
+fully sourced (SAG Aug 2026, IFR World Robotics Sep
+2026, Barclays Jan 2026, Intuitive FY2025, Interact
+Analysis, Gecko, Pudu). Lane-adjacent via the fence/
+containment line ("A fenced cell is a solved
+environment" is actually a safety-architecture claim);
+argument test passes on the missing containment cost
+line in his value thesis. OUTSTANDING 114w drafted
+(10-26 verbatim item 6: "The check just needs a body"),
+5th action today, owner may hold to tomorrow. Follow-
+back audit: confirm owner follows him back.
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
@@ -187,6 +202,62 @@ thread, 59w reply queued; 10-25 [un]prompted II post =
 Stage 2 opener w/ Fred Wilmot, CxBOM release, 78w
 HUMAN drafted = 10-25 verbatim item 7), Tarique Smith
 (Zero Day Agent),
+Brad Wolfe (AI/Operational CFO - COFO | 15 yrs | 80+
+M&A | 5 exits | 3 NASDAQ CFO seats | JD/MBA ExPWC |
+wolfepacks.com; 2nd, NOT connected, added 10-26
+morning): agent-controls post (the receipt proves it
+ran, not that it was right; Melillo receipt rule;
+three questions: inputs right / trace later / owner +
+access + review). Dead-center lane, finance-side
+controls buyer. HUMAN 79w = POSTED (owner, 10-26;
+re-performance as the missing fourth question, his #2 =
+the read-only half of it). THREAD UPDATE 10-26: author
+is an ACTIVE THREAD-BUILDER (~17 self-comment one-
+liners + substantive replies to every commenter, incl.
+Muneeb's independent-source test and Anthonette's hard-
+gate); he independently posted the re-performance line
+at 42m ("If an auditor cannot re-perform the run from
+the trail, the trail is decoration") = CONVERGENCE with
+the owner's comment, green light; no author reply to the
+owner's comment yet (owner's is newest). DECISION: no
+second owner comment on this post (would repeat the
+point); CONNECT NOW (connect note drafted, 10-26
+verbatim item 8); watch the author's reply to the
+owner's comment = the conversion moment (then DM with
+the bench pitch, not another public comment).
+UPDATE 10-26 (6th paste): CONVERSION MOMENT FIRED - he
+replied 4m, substantively: agreed + EXTENDED with two
+new mechanisms (snapshot the inputs at run time;
+re-perform the CHECK not the model, because the model
+is non-deterministic and the tie-out isn't). Decision
+revised (item 10, logged transparently): short in-
+thread reply DRAFTED (72w HUMAN, engages his two new
+points, no pitch) - replies exempt from 60+ min
+spacing; DM DRAFTED (bench pitch + qualification
+question, sent only AFTER the in-thread reply lands).
+In-thread reply = 8th action if Wolfe+Shuliak posted.
+UPDATE 10-26 (8th paste): THREAD COMPLETE (3 rounds). The
+owner's 72w reply is LIVE; he LIKED both owner comments and
+replied to it: quoted the owner's close back ("an assertion,
+not a guess") + retention note (keep the snapshot as long as
+the books stay open to audit; the question arrives a year
+later). He now FOLLOWS the owner (1st degree, was 2nd).
+DECISION: no fourth public comment (exchange is complete; a
+4th = chasing). DM CONDITION MET -> DM v2 DRAFTED (item 11;
+adds the retention point), send now, direct (he follows).
+His 8 new posts today (26m-8h): NONE commented today (cap +
+just closed); TOMORROW queue = "THE ASSISTANT THAT SAYS NO"
+(26m, best) + "NAME THE LINE BEFORE YOU BUY THE TOOL" (5h).
+Anthonette Ochieze Adanyin (Premium, 2nd, NOT followed;
+Lead Data Scientist | AI Engineer | AI Security |
+TechWomen100 Winner 2026 | Speaker; added 10-26 from the
+Wolfe thread): in-lane comment (GIGO, reconcile source
+before the agent runs); tier 2 home turf (AI security).
+No comment owed from the owner (one strong contribution
+per post; the author already engaged her). FOLLOW-BACK
+flag: 2nd + not followed. Watch her own posts for the
+next surface; light client note (in-lane AI security
+person; no action this turn).
 Nathan Hamiel (Sr Dir Research, AI security, keynote speaker,
 following, added 10-24 evening),
 Kevin Payne (GTM Engineer at LawVu, following, 200+
@@ -212,6 +283,29 @@ non-capped 1st-degree DM)
 ## Tier 3 — builder / adjacent layer + active thread partners
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
 Ife Abimbola-Olulesi (Proof), Shehbaz Pathan (RAG / agent memory),
+Oleksandr Shuliak (1st; Business Process & Systems
+Analyst | Requirements | AI & Automation Analysis |
+Responsible AI; exploring "Responsible AI Business
+Architecture (RABA)"; added 10-26 from the "when does a
+valid AI authorization stop being sufficient" post;
+in-lane-adjacent governance/oversight, his gap = a
+material change OUTSIDE the conditions the system was
+designed to observe; HUMAN 78w DRAFTED = 10-26 verbatim
+item 9: the permission-as-snapshot / re-run-against-
+current-environment angle, answers his "what evidence
+suffices" + "observer vs decision-maker" questions;
+7th action if the queue posted, 60+ min spacing, owner
+may hold to tomorrow at cap; light client flag =
+governance-side controls buyer, the 3rd persona angle),
+Devo Jeet (developer-education creator, Hinglish, "Chai
+aur Code" video; added 10-26 8th paste from the
+"prompt your way through everything?" post; owner's 44w
+comment LIVE and LIKED by the author - "Point 3 is the one
+I live with, from the other side... which boundary, which
+input, which tool"; the attacker's view of his vocabulary
+point; tier 3 adjacent, no client flag (educator, no
+budget signal), no DM, follow-back flag only; degree
+UNKNOWN),
 Alex Banks, Sam Illingworth (Slow AI), al neitsch, Endrit
 Restelica, Helen Oakley (Zenity), Robinson Miranda, Tanay
 Kothari, Salman Lakhani (SIGNAL/NOISE corroboration board;
@@ -429,6 +523,131 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   tight, optional demo-of-lens-meta-post only. See
   10-25 verbatim item 4B.
 
+## Skip log (10-26 morning)
+- FasoNova / 14-year-old builder (Gurpreet Moffar post,
+  Iyinoluwa Aboyeji repost, "now"): rung 6, off-lane youth
+  builder story, no security claim/number/line to land on,
+  repost surface (weak), a security point would be a
+  bolted-on lecture.
+- Tiago Forte (17m, book R&D process, 500+ beta readers):
+  rung 6, OUT OF LANE (productivity/book promo), CTA post
+  feeding the book funnel; same class as the 10-25 entry.
+- Alex Hormozi (47m, "brutal truth" 4-liner): rung 6,
+  platitude, no claim/number/choice, argument test fails.
+- Lenny Rachitsky (47m, PMF guide podcast + 4 sponsor
+  links): rung 6, podcast promo, off-lane, no in-lane
+  claim, comment feeds the funnel.
+- Mike Beckham via Iyinoluwa Aboyeji (1h, EBITDA/capital
+  founder metric): rung 6, off-lane founder-finance
+  platitude, weak repost surface.
+- Daniel Miessler (1h, code vs intent source-of-truth):
+  OUT OF LANE (workflow hot take, no security claim).
+  NOTE: high-value security-adjacent author, keep the
+  surface hot for an in-lane post, do not burn it here.
+- Ivan Lee REPOST (Datasaur hackathon, 1h): NO COMMENT
+  TARGET (original post author UNKNOWN from paste;
+  comments attach to the original). CLIENT SIGNAL:
+  fractional CMO agent on CoCo + Anthropic, 4 years of
+  company data, budget-reallocation recommendations ->
+  potential_clients file updated (Tier 1, foreign note
+  order #4, approach line now references the hackathon).
+- "Always inspired by the journeys our Learners" (Iyinoluwa
+  Aboyeji repost, 2h): rung 6, generic one-liner.
+- Learn2Earn NG via Iyinoluwa Aboyeji (2h, Flow Pay
+  fellowship): rung 6, education funnel (same class as the
+  10-25 Learn2Earn skip), CTA post, Nigeria-local (foreign-
+  first pivot demotes local content).
+- Hamel Husain via Shreya Shankar (2h, now at OpenAI,
+  applied Evals): career update, no claim to check. WATCH:
+  the evals-education community's most visible practitioner
+  is now inside OpenAI; ai.hamel.dev stays a resource;
+  Hamel stays on the carried follow list, no new action.
+- Jerry Liu (3h, OCRia-1 37-page report): rung 6, OUT OF
+  LANE (OCR/document parsing, not agent security), vendor-
+  technical CTA.
+- GaryVee "Judge the Judger" (3h) + Julia Suzuki
+  "Visualizing is Understanding" (3h): podcast episode
+  cards, not real post surfaces.
+- Alejandro Saucedo "The Machine Learning Engineer #410"
+  (4h): same issue as 10-25 item 11 (77w HUMAN draft
+  logged, override candidate, swap-Sam call pending the
+  owner). Re-notification, not new content; status
+  unchanged.
+- Endrit Restelica "Is AI voice finally solved?" (Dessa /
+  Block, 22m): NOT skipped - evaluated in-lane-adjacent,
+  HUMAN 78w DRAFT logged (the memory-as-asset angle; the
+  voice-auth motif is burned ~4h on the Tyler Kelley
+  Dessa post). Placement: 4th action today after Rock
+  reply, Salman reply, Oguzhan comment; owner may hold it
+  to tomorrow to separate the two same-day voice-AI
+  comments. See 10-26 verbatim item 4.
+- Steven Bartlett (3m, Mark Cuban interview promo,
+  "Out now on all platforms"): SKIP, rung 6, OUT OF
+  LANE (creator-economy / entrepreneurship / life-story
+  podcast promo; no AI, no security, no agent, no
+  technical claim or number to build on - the $5.7B
+  sale is biography, not a claim). Same class as the
+  Lenny Rachitsky podcast-promo and GaryVee/Julia
+  Suzuki episode-card skips. Comment feeds the funnel
+  (visible comments are "going to find this now"
+  energy). TWO BRIDGES CONSIDERED AND REJECTED: (1)
+  the "stop learning = someone else gets ahead" line
+  would take a generic operator-advice comment that
+  fits any business post, not the owner's lane; (2)
+  the "another financial bubble is forming" line would
+  take a contrarian AI-bubble take on a celebratory
+  promo = tone mismatch + a market call not to make on
+  his feed. Owner is Following (big account, no thread
+  history); he is NOT a red-team buyer (creator-economy
+  media, no AI budget signal) - no client flag, no DM,
+  no Connect. Reach note only: if the owner ever wants
+  podcast/content appearances, Bartlett is a future
+  CONTENT-surface play (outbound, not a comment).
+- (10-26 feed #2) Ruben Hassid (1h, "My mom asked me, What
+  the hell is Claude?"): funnel post (Wispr.ai +
+  skillsclau.de download steps), off-lane usage tutorial, no
+  security claim; surface stays hot (tier 1, 10-25), keep
+  for an in-lane post.
+- (10-26 feed #2) Daniel Miessler (3h, PHP2Shell affected-
+  products list + lnkd.in link): classic web-vuln list
+  dump, off the owner's AI-agent lane; source not fully
+  readable (lnkd.in -> client-rendered); per the 10-26
+  morning note keep the surface hot for an in-lane post.
+- (10-26 feed #2) Tanya Janca (9h, PIPEDA nonprofit
+  privacy gap + Crime Stoppers): Canadian privacy law +
+  video funnel (twp.ai), off the owner's AI lane; keep the
+  surface warm (major security educator).
+- (10-26 feed #2) Bolaji Adebayo x3 (positive-confession
+  mindset post, birthday repost): platitude, off-lane,
+  repost surface.
+- (10-26 feed #2) Blossom Affia (2h, "Touchdown Lusaka,
+  Zambia" + repost): personal-branding / travel, off-lane;
+  carried follow-back list, no new action.
+- (10-26 feed #2) Lior Alexander repost / Josh Sirota (4h,
+  Leverage IL talk, $100B AI infra / sovereign AI): VC
+  thought-leadership, no claim to engage, off-lane.
+- (10-26 feed #2) Hamel Husain repost / Ben Erez (8h,
+  "frontier labs are hiring the people they created the
+  jobs for"): career-market observation, off-lane; keep
+  Hamel warm (now at OpenAI, applied Evals).
+- (10-26 feed #2) Iyinoluwa Aboyeji repost / Emmanuel
+  Eyung (9h, "Multi-Agent Orchestrator", Go, git worktrees,
+  open source): weak REPOST surface (comment attaches to
+  the original small-dev launch post), launch/CTA post,
+  dev-tooling not security. TOOL NOTED (agent-infra
+  relevant): parallel coding agents, isolated worktrees,
+  atomic task claims, human approval gate - known to the
+  owner as red-team surface, no comment.
+- (10-26 feed #3) Mouad Hoummani (8m, 3rd+, student at
+  Facult Polydisciplinaire de Khouribga, GETTY-ai business-
+  model post): SKIP, rung 6, OUT OF LANE (AI business /
+  economics opinion, gen-AI vs stock photography, no
+  security claim, no technical line to land on, no agent /
+  safety angle). Conversation-starter post with an audience
+  question + follow CTA; a comment from the owner's lane
+  would be a bolted-on lecture. Student, no commercial
+  signal, no client flag, no action.
+
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
   home turf, or active thread partner) with their tier.
@@ -441,7 +660,49 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
 - Rebuild the whole list from the network read every 90 days,
   aligned with the 90-day tracker snapshot.
 
-Last refreshed: 2026-10-25 (10-25 morning feed
+Last refreshed: 2026-10-26 (10-26 morning feed capture:
+10-26 skip log opened (13 entries incl. Miessler watch
+note + Hamel OpenAI watch note), Endrit Dessa post
+evaluated (HUMAN 78w draft, not skipped), Ivan Lee
+repost = Datasaur hackathon client signal (no comment
+target, file updated), owner agent-layer post live (72
+imp at 1h), +5 followers, Tyler/Fred/Rock engagement on
+owner comments captured; second 10-26 paste: Dario Melo
+(physical AI economics ep 2/4, follows owner) added to
+tier 1 + OUTSTANDING 114w drafted, queue now 5 actions;
+third 10-26 paste: Brad Wolfe (COFO agent-controls, 2nd)
+added to tier 2 + HUMAN 79w drafted (re-performance
+fourth question; day at the 2-OUTSTANDING cap, so
+HUMAN not OUTSTANDING), queue now 6 actions; fourth
+10-26 paste: Wolfe 79w = POSTED, author = active thread-
+builder with independent re-performance convergence
+(42m), no second owner comment, CONNECT NOW (note
+drafted, item 8), Anthonette Ochieze Adanyin added to
+tier 2 + follow-back flag; fifth 10-26 paste: Oleksandr
+Shuliak (1st, Responsible AI / governance, RABA) added
+to tier 3 + HUMAN 78w drafted (permission-as-snapshot /
+re-run against current environment, item 9); sixth
+10-26 paste: Wolfe reply = CONVERSION MOMENT FIRED
+(substantive, extended with run-time input snapshot +
+re-perform-the-check-not-the-model); decision revised
+no-second-comment -> short in-thread reply 72w HUMAN
+DRAFTED + DM DRAFTED, DM after the reply lands (item
+10); seventh 10-26 paste: Steven Bartlett (Mark Cuban
+podcast promo) -> SKIP rung 6 out-of-lane (skip log
+entry 14; two bridges considered and rejected; reach/
+content-surface note only, no client flag); eighth 10-26
+paste: Wolfe thread COMPLETE round 3 (he liked both owner
+comments, retention reply, now FOLLOWS owner = 1st
+degree; no 4th comment; DM v2 DRAFTED = send now, item
+11), Devo Jeet added tier 3 (44w comment LIVE + author
+like), Soren Starup Nielsen + follower (~760), 8 new
+Wolfe posts (2 queued for tomorrow: ASSISTANT THAT SAYS
+NO + NAME THE LINE), 8 feed-#2 skips, Masad Foundation
+volunteer opportunity logged (owner decision); ninth 10-26
+paste: Mouad Hoummani (student, 3rd+, Getty AI business-
+model opinion post) -> SKIP rung 6 out-of-lane (skip log
+entry 15, feed #3)).
+Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip
 log opened, Love Babbar 40,346-imp record noted).

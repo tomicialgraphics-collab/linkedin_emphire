@@ -107,7 +107,21 @@ Trigger ammunition (all verifiable, citable in outreach):
    CEO authorizing a red-team report is one conversation, and the
    report becomes a sales asset he can reuse on every enterprise
    deal.
-   Approach: the report-as-sales-asset angle.
+   SIGNAL 10-26 (his repost of the team's hackathon post):
+   Datasaur built a "fractional CMO" agent at a Snowflake
+   hackathon (unlimited CoCo + Anthropic token access),
+   grounded in 4 years of anonymized Datasaur marketing
+   channel data; the agent "identifies the most productive
+   channels and makes weekly recommendations on where to
+   reallocate your budget" = an agent that touches money-
+   allocation decisions, running on company data. The audit
+   surface is live, not hypothetical.
+   Approach: the report-as-sales-asset angle, now with a
+   live hook - reference the hackathon's fractional CMO: an
+   agent making budget reallocation recommendations on four
+   years of company data is exactly the agent that wants the
+   eval-before-live check before it gets a bigger budget than
+   the team's.
 
 5. Nick Gonella - Security Engineering Manager, Harvey (legal AI,
    156K-follower company, 60%+ of AmLaw 100).
@@ -209,6 +223,63 @@ Trigger ammunition (all verifiable, citable in outreach):
   (NY, 3K followers). https://www.linkedin.com/in/stafordtituss/
   Peer-level; offensive-security + AI social-engineering focus;
   cross-referral candidate. (Flag: small org, verify current scope.)
+- Brad Wolfe - AI/Operational CFO (COFO) | 15 Years | 80+ M&A |
+  5 Exits | 3 NASDAQ CFO Seats | JD/MBA, ExPWC (2nd degree, NOT
+  connected; flagged 2026-10-26).
+  https://www.linkedin.com/in/brad-wolfe-b912047/
+  The finance side of the agent-controls conversation: his
+  receipt post (status comes from the record, not the reply;
+  three questions - inputs right / trace later / named owner +
+  own access + quarterly review) is the board-assurance buyer
+  on the CFO side, not the CISO side. Channel/bench fit: he
+  carries boards without security teams = the "I am your AI
+  red-team bench" pitch; his audience (COFOs, ex-PwC finance
+  leaders) is the controls buyer. LOW-MEDIUM priority;
+  10-26 HUMAN 79w comment = POSTED (verbatim item 7: re-
+  performance as the missing fourth question). THREAD LIVE
+  (10-26, item 8): he is an active thread-builder (~17 self-
+  comment one-liners + substantive replies to every
+  commenter) and independently posted the re-performance
+  line at 42m ("If an auditor cannot re-perform the run from
+  the trail, the trail is decoration") = CONVERGENCE with
+  the owner's comment (green light, not collision). No
+  second owner comment on this post. CONNECT NOW (was
+  optional): the live thread + convergence warrant it;
+  connect note drafted in item 8 (references both exact
+  lines, one line on what I do, soft "trade notes" CTA, no
+  pitch). WATCH: his reply to the owner's comment is the
+  conversion moment -> then a DM with the bench pitch /
+  qualification question, not another public comment.
+  REPLY LANDED (10-26, 6th paste, item 10): he replied
+  to the owner's 79w comment substantively - agreed +
+  EXTENDED with two new mechanisms (snapshot the inputs
+  at run time; re-perform the CHECK, not the model,
+  because the model is non-deterministic and the
+  tie-out isn't). CONVERSION MOMENT. In-thread reply
+  DRAFTED (72w HUMAN, item 10; decision revised from
+  "no second comment" because he raised two new points);
+  DM with bench pitch + qualification question DRAFTED
+  (item 10) - sent only AFTER the in-thread reply
+  lands. Watch his reply to that. STRONGEST client
+  signal of the day: the CFO-side controls buyer is
+  building the same control from the other end, in
+  public. UPDATE (10-26, 8th paste, item 11): THREAD
+  COMPLETE (3 rounds, all substantive, converging); he
+  LIKED both owner comments and now FOLLOWS the owner
+  (1st degree, was 2nd). NO fourth public comment
+  (exchange complete; a 4th = chasing). DM v2 DRAFTED
+  (item 11, adds his retention point) = SEND NOW, direct
+  (he follows the owner; the item 8 connect note is
+  superseded). His DM reply = the conversion moment; if
+  he qualifies (live agents, timeline), the $5K Agent
+  Gate one-paragraph offer goes in the NEXT message, not
+  this one. He posted EIGHT posts today (26m-8h, active
+  daily poster) - none commented today (cap); 2 queued
+  for tomorrow: THE ASSISTANT THAT SAYS NO IS ALREADY ON
+  THE PAYROLL (26m, best) + NAME THE LINE BEFORE YOU BUY
+  THE TOOL (5h). PRIORITY: raised (1st degree + follower
+  + 3-round thread partner + daily poster + CFO-side
+  controls buyer).
 
 ## Adjacent-lane flags (thread partners first, not primary
 ## targets)
@@ -230,6 +301,39 @@ Trigger ammunition (all verifiable, citable in outreach):
   item 15). LOW-MEDIUM priority; no DM until a second
   thread exchange; approach = continue the
   permissions-vs-vCPU thread if he replies.
+- Oleksandr Shuliak - Business Process & Systems Analyst |
+  Requirements | AI & Automation Analysis | Responsible AI
+  (1st degree, a connection; flagged 2026-10-26).
+  https://www.linkedin.com/in/oleksandr-shuliak-49039285/
+  Building out "Responsible AI Business Architecture
+  (RABA)" - his own framework. The controls buyer on the
+  GOVERNANCE side: the analyst/architect who designs
+  agent-oversight and authorization controls, a third
+  persona angle on the day (CFO Wolfe / CISO bank lead /
+  governance analyst). His 10-26 post "When does a valid
+  AI authorization stop being sufficient?" is in-lane-
+  adjacent (the agent-layer authorization question in
+  governance language): identity/permissions/policy all
+  valid but the real-world conditions underlying the
+  original human decision changed, and the hard case is a
+  material change that falls OUTSIDE the conditions the
+  system was designed to observe; his open questions =
+  who can raise the concern / what evidence suffices to
+  suspend reliance / how to respond without making the
+  observer a decision-maker. LOW priority (no
+  budget/intent signal, exploratory framework work, no
+  named org). 10-26 HUMAN 78w drafted (verbatim item 9):
+  permission-as-snapshot + re-run-against-the-current-
+  environment as the sufficient evidence, answering his
+  "what evidence suffices" and "observer vs
+  decision-maker" questions; 7th action if the queue
+  posted, 60+ min spacing, owner may hold to tomorrow at
+  cap. NEXT: watch his RABA follow-ups for the control
+  model he is landing on; if he publishes a RABA model
+  with an authorization-suspension step, that is the DM
+  moment (the owner's re-runnable check is the concrete
+  control for exactly that step). No DM this turn, no
+  pitch, 1 comment max.
 
 ## Outreach discipline (matches existing engagement rules)
 
