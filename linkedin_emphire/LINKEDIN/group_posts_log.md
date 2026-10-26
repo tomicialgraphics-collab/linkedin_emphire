@@ -66,8 +66,13 @@ RULES FOR EVERY POST HERE:
    security rooms = "the board, re-run, tie-out, evidence";
    finance = "board assurance, who signed off".
 5. 100-250 words, plain prose, no emoji. HASHTAGS (owner
-   correction 10-26): ALWAYS include, 3-5 targeted, last line
-   only, no generic noise (#AI, #Technology are banned).
+   correction 10-26; second call same day extends it):
+   ALWAYS include, 3-5 targeted, last line only, no generic
+   noise (#AI, #Technology are banned). Scope: group posts
+   AND personal feed posts / reposts with thought (Allie
+   S-1 repost used #AIGovernance #ResponsibleAI
+   #RiskManagement #IPO #Anthropic). Comment replies stay
+   hashtag free.
    Cluster sets:
    Agent/GenAI (#1-6):  #AIAgents #MCP #GenAI #LLM #AIEngineering
    Security rooms (#7-14): #InfoSec #CISO #CyberSecurity #AISecurity
@@ -242,9 +247,13 @@ Machine Learning, Python, Analytics & RAG"
         Owner asked REPOST WITH THOUGHT: drafted
         (paste-ready in chat, ~120w, owner register, no
         dashes per rule 9, includes verified numbers,
-        verification angle). NOTE: same core point as the
-        comment above; recommend one placement only
-        (repost preferred, own-feed reach); owner picks.
+        verification angle). Second "hashtags" call 10-26:
+        final line added #AIGovernance #ResponsibleAI
+        #RiskManagement #IPO #Anthropic; hashtag rule
+        extended to feed posts / reposts (see rule 5).
+        NOTE: same core point as the comment above;
+        recommend one placement only (repost preferred,
+        own-feed reach); owner picks.
 10-26  ANDELA x OPENAI (Cory Hymel, Andela Head of
         Research) - post: "Buying AI licenses isn't an AI
         strategy. We tested what happens when you actually
