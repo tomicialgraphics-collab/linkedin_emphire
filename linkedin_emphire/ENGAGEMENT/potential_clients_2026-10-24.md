@@ -263,7 +263,23 @@ Trigger ammunition (all verifiable, citable in outreach):
   lands. Watch his reply to that. STRONGEST client
   signal of the day: the CFO-side controls buyer is
   building the same control from the other end, in
-  public.
+  public. UPDATE (10-26, 8th paste, item 11): THREAD
+  COMPLETE (3 rounds, all substantive, converging); he
+  LIKED both owner comments and now FOLLOWS the owner
+  (1st degree, was 2nd). NO fourth public comment
+  (exchange complete; a 4th = chasing). DM v2 DRAFTED
+  (item 11, adds his retention point) = SEND NOW, direct
+  (he follows the owner; the item 8 connect note is
+  superseded). His DM reply = the conversion moment; if
+  he qualifies (live agents, timeline), the $5K Agent
+  Gate one-paragraph offer goes in the NEXT message, not
+  this one. He posted EIGHT posts today (26m-8h, active
+  daily poster) - none commented today (cap); 2 queued
+  for tomorrow: THE ASSISTANT THAT SAYS NO IS ALREADY ON
+  THE PAYROLL (26m, best) + NAME THE LINE BEFORE YOU BUY
+  THE TOOL (5h). PRIORITY: raised (1st degree + follower
+  + 3-round thread partner + daily poster + CFO-side
+  controls buyer).
 
 ## Adjacent-lane flags (thread partners first, not primary
 ## targets)

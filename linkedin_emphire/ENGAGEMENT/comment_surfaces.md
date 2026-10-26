@@ -236,6 +236,18 @@ points, no pitch) - replies exempt from 60+ min
 spacing; DM DRAFTED (bench pitch + qualification
 question, sent only AFTER the in-thread reply lands).
 In-thread reply = 8th action if Wolfe+Shuliak posted.
+UPDATE 10-26 (8th paste): THREAD COMPLETE (3 rounds). The
+owner's 72w reply is LIVE; he LIKED both owner comments and
+replied to it: quoted the owner's close back ("an assertion,
+not a guess") + retention note (keep the snapshot as long as
+the books stay open to audit; the question arrives a year
+later). He now FOLLOWS the owner (1st degree, was 2nd).
+DECISION: no fourth public comment (exchange is complete; a
+4th = chasing). DM CONDITION MET -> DM v2 DRAFTED (item 11;
+adds the retention point), send now, direct (he follows).
+His 8 new posts today (26m-8h): NONE commented today (cap +
+just closed); TOMORROW queue = "THE ASSISTANT THAT SAYS NO"
+(26m, best) + "NAME THE LINE BEFORE YOU BUY THE TOOL" (5h).
 Anthonette Ochieze Adanyin (Premium, 2nd, NOT followed;
 Lead Data Scientist | AI Engineer | AI Security |
 TechWomen100 Winner 2026 | Speaker; added 10-26 from the
@@ -285,6 +297,15 @@ suffices" + "observer vs decision-maker" questions;
 7th action if the queue posted, 60+ min spacing, owner
 may hold to tomorrow at cap; light client flag =
 governance-side controls buyer, the 3rd persona angle),
+Devo Jeet (developer-education creator, Hinglish, "Chai
+aur Code" video; added 10-26 8th paste from the
+"prompt your way through everything?" post; owner's 44w
+comment LIVE and LIKED by the author - "Point 3 is the one
+I live with, from the other side... which boundary, which
+input, which tool"; the attacker's view of his vocabulary
+point; tier 3 adjacent, no client flag (educator, no
+budget signal), no DM, follow-back flag only; degree
+UNKNOWN),
 Alex Banks, Sam Illingworth (Slow AI), al neitsch, Endrit
 Restelica, Helen Oakley (Zenity), Robinson Miranda, Tanay
 Kothari, Salman Lakhani (SIGNAL/NOISE corroboration board;
@@ -582,6 +603,41 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   no Connect. Reach note only: if the owner ever wants
   podcast/content appearances, Bartlett is a future
   CONTENT-surface play (outbound, not a comment).
+- (10-26 feed #2) Ruben Hassid (1h, "My mom asked me, What
+  the hell is Claude?"): funnel post (Wispr.ai +
+  skillsclau.de download steps), off-lane usage tutorial, no
+  security claim; surface stays hot (tier 1, 10-25), keep
+  for an in-lane post.
+- (10-26 feed #2) Daniel Miessler (3h, PHP2Shell affected-
+  products list + lnkd.in link): classic web-vuln list
+  dump, off the owner's AI-agent lane; source not fully
+  readable (lnkd.in -> client-rendered); per the 10-26
+  morning note keep the surface hot for an in-lane post.
+- (10-26 feed #2) Tanya Janca (9h, PIPEDA nonprofit
+  privacy gap + Crime Stoppers): Canadian privacy law +
+  video funnel (twp.ai), off the owner's AI lane; keep the
+  surface warm (major security educator).
+- (10-26 feed #2) Bolaji Adebayo x3 (positive-confession
+  mindset post, birthday repost): platitude, off-lane,
+  repost surface.
+- (10-26 feed #2) Blossom Affia (2h, "Touchdown Lusaka,
+  Zambia" + repost): personal-branding / travel, off-lane;
+  carried follow-back list, no new action.
+- (10-26 feed #2) Lior Alexander repost / Josh Sirota (4h,
+  Leverage IL talk, $100B AI infra / sovereign AI): VC
+  thought-leadership, no claim to engage, off-lane.
+- (10-26 feed #2) Hamel Husain repost / Ben Erez (8h,
+  "frontier labs are hiring the people they created the
+  jobs for"): career-market observation, off-lane; keep
+  Hamel warm (now at OpenAI, applied Evals).
+- (10-26 feed #2) Iyinoluwa Aboyeji repost / Emmanuel
+  Eyung (9h, "Multi-Agent Orchestrator", Go, git worktrees,
+  open source): weak REPOST surface (comment attaches to
+  the original small-dev launch post), launch/CTA post,
+  dev-tooling not security. TOOL NOTED (agent-infra
+  relevant): parallel coding agents, isolated worktrees,
+  atomic task claims, human approval gate - known to the
+  owner as red-team surface, no comment.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
@@ -625,7 +681,15 @@ DRAFTED + DM DRAFTED, DM after the reply lands (item
 10); seventh 10-26 paste: Steven Bartlett (Mark Cuban
 podcast promo) -> SKIP rung 6 out-of-lane (skip log
 entry 14; two bridges considered and rejected; reach/
-content-surface note only, no client flag)).
+content-surface note only, no client flag); eighth 10-26
+paste: Wolfe thread COMPLETE round 3 (he liked both owner
+comments, retention reply, now FOLLOWS owner = 1st
+degree; no 4th comment; DM v2 DRAFTED = send now, item
+11), Devo Jeet added tier 3 (44w comment LIVE + author
+like), Soren Starup Nielsen + follower (~760), 8 new
+Wolfe posts (2 queued for tomorrow: ASSISTANT THAT SAYS
+NO + NAME THE LINE), 8 feed-#2 skips, Masad Foundation
+volunteer opportunity logged (owner decision)).
 Previous: 2026-10-25 (10-25 morning feed
 capture: Ruben Hassid added to tier 1 (Dessa voice
 post), Neil Sahota added to tier 3 (held), 10-25 skip

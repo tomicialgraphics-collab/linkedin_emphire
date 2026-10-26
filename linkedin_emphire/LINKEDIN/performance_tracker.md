@@ -136,19 +136,28 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   both engaged with the CxBOM point. Strongest thread
   signal of the window. CxBOM validator run = next-week
   follow-up play (10-25 item 7).
-- TODAY'S QUEUE STATE (updated after the 6th 10-26
-  paste): Brad Wolfe 79w HUMAN = POSTED (owner). The
-  rest of the queue (Rock 59w reply, Salman 76w reply,
-  Oguzhan 119w OUT, Endrit 78w HUMAN, Dario 114w
-  OUTSTANDING) = posted status not confirmed in the
-  pastes; the owner's post count today is therefore at
-  least 1 (Wolfe), total unknown. Plan-of-record for the
-  day is now 7 actions: + Oleksandr Shuliak 78w HUMAN
-  DRAFT (10-26 verbatim item 9, 7th action; 60+ min from
-  the last new comment; does not touch the 2-OUTSTANDING
-  cap; holds to tomorrow if the day is at the 8 base
-  cap - a 1h-old conceptual post on a 1st-degree
-  connection's feed, the point does not decay).
+- TODAY'S QUEUE STATE (updated after the 8th 10-26
+  paste; CONFIRMED via author/3rd likes on the owner's
+  comments): POSTED = Wolfe 79w (Wolfe liked x2), Wolfe
+  72w in-thread reply (Wolfe liked + replied), Endrit
+  78w HUMAN (John Doan liked it on the Endrit post),
+  Dario 114w OUTSTANDING (Dario himself liked it on his
+  own post), Devo Jeet 44w (new surface, author liked
+  it) = at least 5 actions CONFIRMED today. Still
+  UNCONFIRMED: Rock 59w, Salman 76w, Oguzhan 119w,
+  Shuliak 78w (owner to confirm). Plan-of-record = 7
+  planned + Wolfe reply + Devo = up to 9-10 actual;
+  OUTSTANDING used = Oguzhan + Dario (Dario confirmed
+  posted). Day is at/near the base cap - NO further new
+  comments today except what the owner chose; tomorrow:
+  Wolfe 2-post queue (ASSISTANT THAT SAYS NO 26m lead,
+  NAME THE LINE 5h) + anything the owner holds (Shuliak
+  if not posted).
+- METRICS (8th paste): followers +2 (Brad Wolfe, Soren
+  Starup Nielsen) -> ~760; Premium N0 free-trial upsell
+  in notifications (owner rule: Premium off until 1k,
+  stands); Hod Bublil + 13 others viewed the profile
+  (Truefolio closeout still pending the owner).
 - WOLFE THREAD (10-26, item 8): the 79w comment is live
   and is the newest item on the post. The author (COFO,
   2nd) is an active thread-builder and independently
@@ -164,8 +173,16 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   spacing; = 8th action if Wolfe+Shuliak posted; the
   one action worth an override at cap, an unanswered
   live 2nd-degree controls-buyer reply reads as a
-  miss). DM with bench pitch + qualification
-  question DRAFTED - send AFTER the in-thread reply
-  lands, not instead of it. New surface: Anthonette Ochieze
+  miss). UPDATE (8th paste, item 11): the 72w reply is
+  POSTED; he LIKED both owner comments and REPLIED to it
+  (quoted the owner's close + retention note: keep the
+  snapshot as long as the books stay open to audit); he
+  now FOLLOWS the owner (1st degree). THREAD COMPLETE,
+  no 4th public comment. DM v2 DRAFTED (item 11, adds
+  the retention point) = SEND NOW, direct. His DM reply
+  = conversion; if he qualifies, the $5K Agent Gate
+  offer goes in the NEXT message. His 8 new posts today:
+  2 queued for tomorrow (ASSISTANT THAT SAYS NO, NAME
+  THE LINE). New surface: Anthonette Ochieze
   Adanyin (AI security, 2nd, not followed) added to
   tier 2 + follow-back flag.
