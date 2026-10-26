@@ -228,6 +228,23 @@ Machine Learning, Python, Analytics & RAG"
         document repetition; owner decision.
         NEXT MOVE: 2M reach surface (T3/channel); no DM
         until owner engages.
+        VERIFIED (10-26, web_search): Anthropic, PBC
+        publicly filed Form S-1 with the SEC on 10/26/2026,
+        Nasdaq ticker ANT, EDGAR accession
+        0001628280-26-067168 (accepted 9:00 AM ET), CIK
+        0002130357, file no. 333-299633. Confirmed by
+        Anthropic official (anthropic.com/news/s1-sec) +
+        X, and CNBC/NPR/TechCrunch/Reuters-Verge/Yahoo.
+        H1 2026: revenue $16.3B, net loss $80.7B (largely
+        non-cash convertible-debt fair value); valuation
+        talk $1.5T-$2T; confidential draft 6/1/2026,
+        public filing after weeks of leaked drafts.
+        Owner asked REPOST WITH THOUGHT: drafted
+        (paste-ready in chat, ~120w, owner register, no
+        dashes per rule 9, includes verified numbers,
+        verification angle). NOTE: same core point as the
+        comment above; recommend one placement only
+        (repost preferred, own-feed reach); owner picks.
 10-26  ANDELA x OPENAI (Cory Hymel, Andela Head of
         Research) - post: "Buying AI licenses isn't an AI
         strategy. We tested what happens when you actually
