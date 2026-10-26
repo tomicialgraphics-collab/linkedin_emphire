@@ -141,6 +141,13 @@ Machine Learning, Python, Analytics & RAG"
         one) delivered to owner in chat; optional COFO-fit
         tweak offered ("your teams" -> "the companies you
         work with"); SEND UNCONFIRMED.
+        -> OWNER REQUESTED REWRITE (10-26). DM v3 delivered:
+        COFO/exit register (agent risk "allocatable" = his
+        capital-allocation headline; "diligence team a year
+        from now" = his exit-ready brand; "companies you
+        work with" COFO-fit close). Same rules: no $5K, no
+        deck, one soft offer, one diagnostic question.
+        SEND UNCONFIRMED.
         NEXT-STEP RULE: he replies with substance ->
         message two = $5K Agent Gate (48 hours, 2
         slots/month) for the companies he's CFO of.
