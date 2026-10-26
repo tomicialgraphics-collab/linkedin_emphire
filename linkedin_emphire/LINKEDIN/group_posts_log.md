@@ -183,6 +183,51 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  OWN FEED POST (original, not a comment or
+        repost): "verified IPO post for my feed" (owner
+        request, same turn Matt Wolfe S-1 comment marked
+        POSTED). ANGLE: the $80.7B net loss vs the $693M
+        operating loss; the most-quoted number is an
+        accounting construct (non-cash fair-value mark on
+        convertible debt); the "dashboard vs re-run" theme
+        applied to the S-1's own financials. DISTINCT
+        from the Allie REPOST-WITH-THOUGHT (risk
+        disclosure: document names risk, no verification)
+        and from the Endrit + Matt Wolfe comments (90%
+        metric; trust->verification). Facts VERIFIED
+        (web_search, from the filing via TechCrunch /
+        Yahoo / Reuters / ppc.land): filed today, Nasdaq
+        ANT, H1 revenue $16.3B, net loss $80.7B (largely
+        non-cash convertible-debt fair value), operating
+        loss $693M (up from $2.1B op loss H1 2025 per
+        TechCrunch). No financial advice, no prediction,
+        no link.
+        POST DRAFTED (paste-ready in chat, ~150w,
+        decision-maker + practitioner hybrid, ~2x
+        "re-run", no dashes, hashtags last line
+        #IPO #Anthropic #AIGovernance #RiskManagement):
+        headline "Everyone is quoting Anthropic's $80.7
+        billion loss. Almost nobody is checking what it
+        actually is."; "First half revenue: $16.3
+        billion. Net loss: $80.7 billion. That second
+        number is the one going around the feed."; "the
+        filing attributes the bulk of that loss to a
+        non-cash charge, the fair-value mark on the
+        company's own convertible debt. The operating
+        loss was $693 million."; "Those are two
+        different claims, and only one of them is about
+        the business. One is a mark on paper. The other
+        is what it cost to run the company."; closer "The
+        number is never the answer. The answer is the
+        re-run... The only number worth quoting is the
+        one that survives the re-run." Two alt headlines
+        offered. DRAFTED, unconfirmed until owner says
+        posted.
+        NOTE: second S-1-themed post on the owner's own
+        feed today (first = Allie repost-with-thought);
+        brand reinforcement (the "verify the number"
+        person), distinct angle (financials vs risk
+        disclosure).
 10-26  MATT WOLFE (YouTube creator, 1M+; "Helping you stay
         informed about AI"; COFO, PE-backed; ACTIVE DM
         sequence v3 sent, waiting on his reply) - NEW
@@ -219,8 +264,8 @@ Machine Learning, Python, Analytics & RAG"
         investors are bullish. It's whether the number
         survives the transition from trust to
         verification. That's the part of the chart that
-        doesn't show up in the bar heights." DRAFTED,
-        unconfirmed until owner says posted.
+        doesn't show up in the bar heights." POSTED (owner
+        confirmed 10-26, "posted").
         NOTE: owner's THIRD S-1 engagement today (Allie
         repost, Endrit comment, this); the three are
         distinct angles; recommend this be the LAST S-1
