@@ -37,18 +37,29 @@ TIMELINE OF RECORD:
   the redacted PDF. His tone is precise and forward;
   "reproducible" is his word, and it is the same discipline
   the whole engagement runs on.
+- 10-26 (later): OWNER SENT THE SCOPE EMAIL to
+  bbb.praveen001@gmail.com (text in the body, per the
+  delivery note; the PDF remains at OUTREACH/
+  arcezia_scope_2026-10-24.pdf as the on-hand copy). The
+  no-deploy line was NOT in the sent version (owner never
+  confirmed adding it; if it becomes an issue at markup,
+  add it then, one line, his to keep or strike).
 
-OPEN ITEM (the only one): scope email arrival UNCONFIRMED.
-His "once it arrives" (10-26 8:56 AM) + the 10-25 "owner's
-turn" record = the email may or may not be in
-bbb.praveen001@gmail.com. Owner to confirm:
-- If NOT sent: send OUTREACH/arcezia_scope_2026-10-24.pdf
-  TODAY. His same-day markup keeps the written agreement
-  before the morning-of-27th key, as promised.
-- If sent (late 10-24 or 10-25): a one-line nudge this
-  morning ("scope is in your inbox - I'll mark it up today")
-  keeps his same-day promise on the schedule. Do not let it
-  sit: the key is gated on the written agreement.
+SCOPE EMAIL: SENT (10-26, owner, to bbb.praveen001@gmail.com).
+The only remaining dependency is his markup. Flow from here:
+- He marks up the scope (his 10-24 commitment: same day).
+- Owner confirms/accepts his markup in writing. Send his
+  version to the agent for a diff against the record
+  (arcezia_scope_2026-10-24.md); any change gets a
+  read-through before it is accepted.
+- Written agreement = both sides. Then, and ONLY then, the
+  key goes out the morning of the 27th (one-time email,
+  deleted after receipt). Do not let the key move before
+  the written agreement lands.
+- If his markup does not come today: one gentle nudge
+  tomorrow morning BEFORE the key gate ("just checking the
+  scope landed fine - any markup on your side?"). Do not
+  chase harder; the gate protects the owner either way.
 
 FLAG (owner decision): the "no-deploy clause" that was
 pending as of 10-25 was never written into the scope doc and
