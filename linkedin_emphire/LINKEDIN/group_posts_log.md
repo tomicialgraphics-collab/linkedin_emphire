@@ -183,6 +183,44 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  ENDRIT RESTELICA (AI/Tech/Marketing reach voice,
+        +8M followers, +1B views; brand/community scaling)
+        - post (13m): Anthropic IPO filed today; net loss
+        $80.7B, revenue $16.3B, $2T valuation; details
+        from the SEC filing (existential-risk warning,
+        $6.6M revenue/employee, ~5,300 employees, 90%+ of
+        September code by Claude, 900% NRR, Nasdaq ANT,
+        Goldman + Morgan Stanley, employees "Ants"). ROOM:
+        DECISION-MAKER / general business (huge reach, not
+        a security room). LANE: in-lane via the 90% line
+        (self-reported, unit-undefined metric about agent-
+        written code) + the existential-risk juxtaposition.
+        DISTINCT from the Allie repost ("the doc names the
+        risk, no verification") and the Unger angle
+        ("the model-welfare factor has no instrument"):
+        this one is "the 90% is a self-measured, undefined
+        metric; a registration statement is not an audit;
+        can anyone outside re-run it?"
+        COMMENT DRAFTED (paste-ready in chat, ~135w,
+        decision-maker register, accessible, one "re-run",
+        no dashes, no financial advice): the 90% line
+        "deserves a second look, the cleanest example of
+        the problem the rest of the filing describes";
+        "a number the company measured about itself, in a
+        document meant to sell the company"; undefined
+        units (lines/commits/merged work; human-rewritten
+        Claude output); "a registration statement is not
+        an audit"; "the company doing the counting is the
+        one making the existential-risk warning"; closer
+        "the real question under that 90% is not whether
+        it's true. It's whether anyone outside the company
+        could re-run the measurement and get the same
+        number. That's the difference between a metric and
+        a claim." DRAFTED, unconfirmed until owner says
+        posted.
+        NEXT MOVE: massive reach surface (T3/channel); no
+        DM unless he engages; owner's second S-1 touch of
+        the day (first = Allie repost).
 10-26  FEED CAPTURE (late batch) - triage + 3 DRAFTED.
         OWNER'S CONTENT PERFORMANCE (notifications):
         * Chroma/Replit "context engine" comment = 3,012
@@ -221,16 +259,15 @@ Machine Learning, Python, Analytics & RAG"
           $5K Agent Gate buyer sequence) - revisit only if
           he re-engages or teases the product publicly.
         S-1 TRIO (Endrit, Matt Wolfe, Allie): the S-1
-        statement is already made via the Allie REPOST
-        (POSTED). SKIP Endrit + Matt Wolfe to avoid a
-        triple S-1 (templated risk). Matt Wolfe's post is
-        pure valuation/finance (out of lane for that post;
-        active DM sequence is the right channel for agent
-        controls). If owner wants a second S-1 touch, the
-        ONLY differentiated angle is Endrit's "90% of code
-        by Claude + existential-risk warning" (a company
-        whose product writes 90% of its own code warns of
-        existential risk); not drafted, offered on request.
+        statement is made via the Allie REPOST (POSTED).
+        MATT WOLFE: still SKIP (pure valuation/finance,
+        out of lane for that post; active DM sequence is
+        the right channel). ENDRIT: owner re-pasted the
+        post (13m) = wants the second S-1 touch; DRAFTED
+        on the differentiated 90%-line angle (see ENDRIT
+        entry at top of this section). Distinct enough
+        from the Allie repost and the Unger angle to avoid
+        the templated look.
         SKIP (off-lane, one line each): Ivan Lee x2
         (podcast + event promos), Michael Afolabi ICSC
         2026 (Abuja Open Banking/API Security conference
