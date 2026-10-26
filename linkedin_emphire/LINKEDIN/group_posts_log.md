@@ -17,8 +17,16 @@ RULES FOR EVERY POST HERE:
    "the agent, the evals, the questionnaire, proof";
    security rooms = "the board, re-run, tie-out, evidence";
    finance = "board assurance, who signed off".
-5. 100-250 words, plain prose, no emoji, hashtags only if
-   native to that group's culture (default: none).
+5. 100-250 words, plain prose, no emoji. HASHTAGS (owner
+   correction 10-26): ALWAYS include, 3-5 targeted, last line
+   only, no generic noise (#AI, #Technology are banned).
+   Cluster sets:
+   Agent/GenAI (#1-6):  #AIAgents #MCP #GenAI #LLM #AIEngineering
+   Security rooms (#7-14): #InfoSec #CISO #CyberSecurity #AISecurity
+   Governance (#18):     #AIGovernance #ResponsibleAI #AICompliance
+   Finance (#19-20):     #FinTech #RegTech #RiskManagement #BoardGovernance
+   Pick the 3-5 closest to that day's theme, never all 5 if
+   3 fit better.
 6. Motif budget: re-run/re-perform/tie-out allowed ~1x/week
    across posts total (owner can veto).
 7. Client-specific findings (Arcezia etc.) may be used
@@ -85,7 +93,10 @@ LOG:
 10-26  #1 Agentic AI Engineering (10308230) - JOINED (owner
         confirmed in chat). D2 post (unauthenticated MCP
         surface) DRAFTED and delivered to owner in chat;
-        owner may post it today (fresh-join first post) or
+        HASHTAG LINE ADDED after owner correction ("hashtags"
+        = standing rule change, see rule 5):
+        #AIAgents #MCP #AIEngineering #LLM
+        Owner may post it today (fresh-join first post) or
         tomorrow per the rotation - if today, the rest of the
         week shifts one slot earlier. Paste unconfirmed until
         owner says POSTED.
