@@ -83,6 +83,14 @@ RULES FOR EVERY POST HERE:
 8. After the owner pastes, mark the day POSTED here.
    Groups count against the daily action cap (a group post
    is a post).
+9. NO DASH PUNCTUATION (owner instruction 10-26, "avoid
+   dashes"): no em dash, no en dash, no spaced hyphen used
+   as a sentence separator, in any deliverable or chat
+   prose. Use commas, colons, periods, or parentheses
+   instead. Hyphens inside compound words (re-run,
+   design-time, decision-maker) are unaffected. Pending
+   drafts that still contain spaced hyphens are reissued
+   dash-free when next requested.
 
 ROTATION (17 joinable groups; #15-17 RAI/EAIGG/GCRAI are
 org communities - no post inside, they get comment-drafts on
