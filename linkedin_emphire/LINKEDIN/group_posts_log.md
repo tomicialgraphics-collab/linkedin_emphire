@@ -122,6 +122,33 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  SALMAN LAKHANI (AI founder & builder; WealthRx,
+        KreoGrid, TZUR Impact; SIGNAL/NOISE open-source) -
+        owner's 76w comment on his local-AI trust-boundary
+        post (80B on laptop, "two stars one commit") -
+        CONFIRMED POSTED (20h ago, 11 reactions; was
+        "unconfirmed" in the 10-26 queue - moved to
+        confirmed). SALMAN REPLIED (32m at capture):
+        adopted the framing ("local moves the trust from a
+        vendor you can audit on paper to a C binary with
+        one commit"), offered the no-network container,
+        asked a NAMED-EXPERT QUESTION: "What do you check
+        first before trusting a repo that small?"
+        REPLY DRAFTED (paste-ready in chat): first check =
+        what it does before it does anything useful
+        (network surface - "make the repo earn the network"
+        on his own container move); then 1) what it reads
+        ("reads the weights" vs "reads the mailbox"),
+        2) the loader path (small enough to audit by hand
+        in an evening vs vendor stack auditable only on
+        paper); closer "The repo is what it says about
+        itself. The sandbox is what it does. I trust the
+        second." No pitch, no link, motif-light (weekly
+        budget: Dario + D1 + D2 pending). DRAFTED,
+        unconfirmed until owner says posted.
+        NEXT MOVE: no DM until reply live; if he engages
+        again -> value-first DM (founder with multiple AI
+        companies = T1-adjacent + open-source peer).
 10-26  DARIO MELO (AI & Technology Strategist, author,
         "economics of Physical AI" episode series) - owner's
         114w comment on his robotics/post-factory thesis
