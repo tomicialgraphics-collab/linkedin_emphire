@@ -96,3 +96,15 @@ the agreed publication (both sign-offs); the redacted report
 must never be shared with anyone other than Praveen; the
 live test account key is single-use, not shared, destroyed
 at close.
+
+- 10-26 (later, after the scope email): OWNER SENT THE
+  FOLLOW-UP DM to Praveen (verbatim): "Praveen, the scope
+  just went to bbb.praveen001@gmail.com, the full written
+  record of what we agreed: testing on the 27th and 29th,
+  report to you first on the 30th, your fixes, my
+  verification, write-up after sign-off. Mark up anything
+  that needs it. Once we've both agreed it in writing, the
+  test key goes out the morning of the 27th." Now waiting
+  on his markup. Next owner action: nothing until he
+  replies; if no markup by tonight, the one-line nudge
+  goes out tomorrow morning before the key gate.
