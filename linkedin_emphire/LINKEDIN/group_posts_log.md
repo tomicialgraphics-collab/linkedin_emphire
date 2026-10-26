@@ -122,6 +122,35 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  PAOLO PERRONE ("Shipping Production AI: Agents,
+        Inference, GPU. Read by 1M+ AI engineers") - on the
+        owner's 2d-old comment in the 25-assistants/1-command
+        thread (eval-checks denominator, silent swap
+        replicating everywhere; 1,474 impressions per owner
+        paste). PAOLO REPLIED (1h at capture): endorsed the
+        GATE with his own 2-year war story (models never
+        shipped until CI + drift checks ran on their own;
+        "a gate survives staff turnover"). NO QUESTION - an
+        extension, so the reply is short and picks up HIS
+        line.
+        REPLY DRAFTED (paste-ready in chat, ~65w): "The
+        person who wrote the check leaves; the check
+        doesn't"; "turns a gate from a memory into an
+        institution"; "Memory walks out the door every
+        afternoon. A check that runs itself doesn't.";
+        close "a gate that survived turnover is a gate
+        someone's going to trust with the next model, not
+        just the last one" (reconnects to the silent-swap
+        point). Motif-light (no motif words). No pitch, no
+        link. DRAFTED, unconfirmed until owner says
+        posted.
+        REACH NOTE: biggest audience on today's board
+        (1M+ production AI engineers = the core T1 pool for
+        the Agent Gate).
+        NEXT MOVE: no DM yet - he endorsed, didn't ask.
+        Trigger = further engagement (a question, a reply to
+        the reply, a mention) -> value-first DM, one
+        specific teardown, no offer.
 10-26  ANDREAS WELSCH (Human AI thought leader; keynote
         speaker, corporate trainer, LinkedIn Learning
         instructor, 2x best-selling author; "Chief Human
