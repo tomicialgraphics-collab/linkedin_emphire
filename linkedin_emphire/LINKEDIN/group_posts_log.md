@@ -170,6 +170,40 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  ANDELA x OPENAI (Cory Hymel, Andela Head of
+        Research) - post: "Buying AI licenses isn't an AI
+        strategy. We tested what happens when you actually
+        guide how engineers use them." 3-week Codex
+        enablement program, practical workflows, findings
+        + "the principles that made the learning
+        measurable"; video + full research link. ROOM:
+        DECISION-MAKER (engineering leaders / CTOs / AI
+        strategists; Andela = large AI-engineering org,
+        agent-heavy, its client base = other-end buyers).
+        LANE: adjacent, but the bridge is OPENED BY THE
+        POST'S OWN LOGIC - "a license isn't a strategy" ->
+        so what completes it? Enablement measures
+        learning, not behavior/scope. Not a bolt-on.
+        COMMENT DRAFTED (paste-ready in chat, ~115w,
+        decision-maker register per two-room protocol:
+        consequence-first, ZERO motif words, method as
+        one line, close = two-halves contrast): "the
+        right opening - and it leaves exactly one gap
+        open"; enablement answers "can our engineers use
+        this well?" (good question, measurable learning
+        is real); the question that arrives right after
+        scale is different: "what can the agent do that
+        the workflow never taught it, and how do you
+        know?"; "when hundreds of engineers are running
+        agents, that's where the risk concentrates";
+        closer "Learning tells you the engineers are
+        ready. A check tells you the agent is. Those are
+        two different things - and most strategies only
+        have the first." No pitch, no link, no emoji.
+        DRAFTED, unconfirmed until owner says posted.
+        NEXT MOVE: buyer + channel surface (Andela runs
+        agent-heavy work at scale; Cory Hymel = research
+        channel); no DM until the owner engages.
 10-26  TANYA JANCA (cybersecurity keynote speaker, secure
         coding trainer, bestselling author; #AppSec
         #AIsecurity; DevSec Station podcast; 1st
