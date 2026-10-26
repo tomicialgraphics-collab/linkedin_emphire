@@ -3,6 +3,54 @@
 # give me group specific post daily that should be pasted to
 # specific group")
 
+TWO-ROOM REGISTER (10-26, owner strategy direction):
+The network has two ends. Classify EVERY surface before
+drafting:
+- PRACTITIONER ROOM (red-teaming / AI safety / AI security
+  experts, AppSec, agent engineers - Dario, Paolo, Tanya,
+  Salman-as-practitioner, Praveen, Unger-as-investor-pool):
+  METHOD-FIRST register. Lead with the check (evidence,
+  re-performance, tie-out). Motif words allowed within
+  budget. Purpose: credibility + channels + the moat
+  ("a check good enough that experts argue with it in
+  public").
+- DECISION-MAKER ROOM (founders / COFO / COO / CFO / CISO /
+  risk-compliance owners who deploy AI or are mandated -
+  Wolfe, Salman-as-founder, F&B regtech members, startup-CEO
+  group members): CONSEQUENCE-FIRST register. Lead with the
+  question they can't answer yet ("what can your agent
+  touch, and how do you know?"); name the forcing function
+  (board, insurer, customer, regulator, diligence - 2 Dec
+  marking, 2027 Annex III); the method appears ONLY as a
+  one-sentence answer to "how would you know?"; close with
+  a decision or a deadline, never with the method. Motif
+  words: avoid in this register. Purpose: the buyer.
+- TARGET TRAP: "no prior knowledge" alone is not a buyer
+  (no pain = no purchase). The ICP is AT RISK + CAN'T
+  VERIFY - the compliance-exposed non-expert. The forcing
+  function (regulation deadline, customer due diligence,
+  insurer, board, PE diligence, incident) is the trigger.
+  WOLFE = the live proof case (COFO, non-security
+  background, AI in production at companies he oversees;
+  DM v3 already in the buyer register - "allocatable
+  risk", "a diligence team a year from now"). His reply is
+  the first live test of the other end.
+- ROTATION NOTE: D3 (F&B Fintech RegTech) and D4 (Tech
+  Startup CEOs & Investors) are decision-maker rooms; the
+  14-day plan alternates registers. Article 50 (04476d8) is
+  the decision-maker post. The expert track keeps running -
+  it is the moat that makes the other end believe the
+  check.
+- REGISTER SAMPLE (decision-maker room, no pitch,
+  paste-ready when a founder/exec posts about shipping or
+  deploying AI): "Congrats on shipping. The question that
+  decides whether this survives its first quarter: what can
+  the agent touch, and how do you know? A demo answers the
+  first half. Only a check an independent party can verify
+  answers the second - and that's the question your
+  customers, insurers, or board will ask before someone
+  else asks it."
+
 RULES FOR EVERY POST HERE:
 1. One post per day, ONE specific group (rotation below).
    Same group at most once per 7 days. Never the same
