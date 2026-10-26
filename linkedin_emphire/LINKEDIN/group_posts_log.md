@@ -122,6 +122,38 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  ANDREAS WELSCH (Human AI thought leader; keynote
+        speaker, corporate trainer, LinkedIn Learning
+        instructor, 2x best-selling author; "Chief Human
+        Agentic AI Officer") - post (39m at capture):
+        Gartner HR Symposium keynote takeaways (95 min/day
+        saved, only 20 to strategic work; 71% weekly
+        adoption; few measure value); his "most interesting
+        insight" = a new kind of AI insurance for IP
+        leakage into frontier models + claims of bias in
+        AI-supported HR decisions. LANE CHECK: in-lane via
+        the INSURANCE line only (assurance as an economic
+        layer - the Dario register, HR audience); do not
+        take the HR-fluency thread (his lane).
+        COMMENT DRAFTED (paste-ready in chat, ~135w):
+        "the insurance line is the one worth sitting with";
+        insurers price on evidence; both risk classes
+        settled on the audit trail; two mini-briefs (IP
+        leakage = which egress controlled / which model
+        touched what / by what record; bias claim = inputs,
+        model version, decision path, re-performable);
+        "most orgs tracking 95 minutes can't produce that
+        record"; "the insurance market is a lagging
+        indicator"; closer "on the day the question
+        arrives, the evidence is the only thing in the
+        room that speaks." One "re-performed" - CUMULATIVE
+        MOTIF FLAG: 3rd public surface this week with a
+        motif word (Dario + this; D1/D2 pending); strip
+        offered to owner. No pitch, no link. DRAFTED,
+        unconfirmed until owner says posted.
+        NEXT MOVE: reach/credibility surface + far-out
+        channel possibility (speaker/trainer); no DM unless
+        he engages with the owner specifically.
 10-26  ANDREW UNGER (frontier investor; early in Ramp,
         Cognition, Modal + 20 more) - post (28m at capture):
         Anthropic S-1 risk factor - "concern for model
