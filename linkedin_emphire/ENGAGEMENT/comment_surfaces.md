@@ -246,6 +246,41 @@ reach surface. DRAFTED, not posted; today's posted
 count 1 (Love Babbar); the Federico 88w is also still
 DRAFTED, if both go up today the owner spaces them 60+
 min and keeps the 2h window under 3.
+Daniel Miessler (PurpleLabs AI founder, Security
+Triad; owner Following; known high-value security
+author; 10-26 skips x2 explicitly "keep the surface
+hot for an in-lane post" (code-vs-intent hot take;
+PHP2Shell affected-products list dump)): 10-27, 1m at
+capture: Kusari partner live-demo promo (Thu 10-29,
+9am PT / 12pm ET, sign-up link; Andrew Martin of
+ControlPlane, Hacking Kubernetes, compromises a
+running app through a normally installed package;
+Kusari CEO Tim Miller traces it from source and opens
+the fix). Promo wrapper, but the in-lane core is his
+tracing paragraph: "we won't get a handle on supply
+chain security until we can see everything we've
+installed, everywhere ... Whatever they can't read
+basically shows up as clean, and that kind of scares
+me." FIRST in-lane Miessler surface this week = the
+surface-hot instruction is satisfied. 89w HUMAN
+drafted (10-27, in chat): concession on his fear
+line, the generalization ("any report you can't
+re-run is a clean you bought, not a clean you
+earned"), the unit = install-to-behavior trace a
+stranger can re-run, flat close on the two questions
+(how much of the stack did it actually read; can that
+answer be re-produced, not just asserted). No CTA to
+the event, no link, no hashtags, no greeting. No
+client flag (creator/partner promo, not an audit
+buyer); reach surface, biggest name on today's board.
+DRAFTED, not posted; today's posted count 1 (Love
+Babbar); board: Federico 88w + Jerry 78w + this 89w
+all DRAFTED; if several go up, 60+ min spacing, 2h
+window under 3; NOTE the re-run motif load (third
+same-motif comment today if all three post), owner
+chooses. Event time if the owner wants to watch:
+Thu 10-29, 17:00 Lagos.
+
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
