@@ -829,6 +829,37 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   reasons, repetition tax first); MOVE = register and
   attend Wed 18:00 Lagos with the prepared Q&A question.
 
+- Hemlock (YC F26) company page (launch post, 10-27 at
+  paste: egocentric cameras + EMG bracelet capturing
+  force signal for physical-AI training data; adding
+  the data improved Pi0.5 success by 10x and Gemini 4
+  Argon by 2.7x on force-sensitive manipulation tasks;
+  founder Julian Olschwang, CMU ECE/robotics, UCLA
+  Biomechatronics Lab, 4 wearable-tech patents;
+  lnkd.in launch link + "Congrats on the launch,
+  Julian!" celebration close): SKIP. (1) Off-lane
+  surface: robotics / physical-AI training-data
+  infrastructure, no security, agent, or red-teaming
+  claim, nothing for the owner's evidence / re-run
+  register to point at without a bolted-on lecture.
+  (2) Launch/CTA promo surface: company page, link,
+  celebration tone, low-value comment surface for
+  personal brand; audience = physical-AI researchers +
+  YC/VC, not the owner's practitioner room or
+  decision-maker room. (3) The only checkable claim
+  (the 10x / 2.7x benchmark) would force the
+  denominator / re-run line, already spent today
+  (Love Babbar posted, Federico 88w DRAFTED, Miessler
+  89w DRAFTED) = motif repetition tax within the day.
+  (4) No client persona match: YC startup founder
+  building data infrastructure, not an at-risk
+  compliance-exposed non-expert, no audit buyer.
+  No fallback drafted (the line is spent today and
+  company-page placement value is low); if the owner
+  wants in anyway, draft on request. MOVE: none owed;
+  physical-AI-adjacent note for the carried physical-
+  AI thread (Dario Melo, Juan Carlos) if it resumes.
+
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
   home turf, or active thread partner) with their tier.
