@@ -183,6 +183,109 @@ Machine Learning, Python, Analytics & RAG"
   stays with #9, posts the day it's approved.
 
 ## THREAD STATE (public, same day)
+10-26  FEED CAPTURE (late, 24h window) - large; triage +
+        performance + 1 DRAFTED + 2 need owner input.
+        OWNER CONTENT CONFIRMED LIVE (from this capture):
+        * Verified IPO post ($80.7B loss) is LIVE (Arslan
+          Iqbal + 1 reacted) -> mark POSTED.
+        * PHP2Shell post (CVE-2026-109618/109619, parsing-
+          layer RCE, AI-assisted find, "your check has to
+          reach the layer you do not own") is LIVE, 120
+          impressions. Owner post, red-team lane.
+        * Article 50 post: 139 impressions (up from 117).
+        * Weekly: "Your posts got 2,278 impressions last
+          week." New followers: Emma Shad + 3 others.
+        COMMENT PERFORMANCE (all live): $725B AI spend /
+        layoffs "budget decision" = 52,885 impressions
+        (huge); Endrit "AI agents at US banks" = 5,932;
+        Chroma/Replit "context engine" = 3,020 (up from
+        3,012); BERA chatbot "p = 0.939" = 1,671; Google
+        agent installer "fourth bullet: eval checks" =
+        1,482; AI security/system-design "companies can
+        trust" = 216. Likes/reactions on owner comments:
+        Akshatha S. (Amjad Replit), RedLens AI (eval
+        answer key), Rock Lambros (OpenAI wallet), Reed
+        Hepler (Matt Wolfe blocking), Dario Melo (physical
+        AI), Vika (AEO), Andela (enablement), Darren
+        Goonawardana +1 (Welsch Gartner x2), Welsch +1
+        (Gartner).
+        NEEDS OWNER INPUT (2 mentions; owner's comments
+        visible, SALMAN'S actual mention text NOT in
+        capture): (1) SALMAN LAKHANI mentioned owner on
+        the "janas" repo thread (80B MoE on laptop, disk
+        bandwidth); owner's last comment asks "Would you
+        add anything for the conversion step?" (2) SALMAN
+        LAKHANI mentioned owner on the Anthropic fuzzer /
+        OSS-Fuzz proof thread (Claude proved 123 libs
+        crash-free under 64MB); owner's last comment asks
+        "Who should hand out the badge, the lab that ran
+        the proof or the project that accepts the fix?"
+        -> owner to paste Salman's text; then draft
+        replies. Warm-contact threads, worth a fast turn.
+        ENGAGED (DRAFTED, paste-ready in chat):
+        * BRAD WOLFE (COFO, wolfepacks.com, 80 M&A deals;
+          ACTIVE DM sequence re Agent Gate) - post "FINANCE
+          PRICES THINGS IT CANNOT PROVE EVERY SINGLE
+          QUARTER" (9h): AI risk to the board, "you can't
+          audit it" objection, finance already prices
+          uncertain losses (warranty reserve, litigation
+          accrual, bad debt) = "unassigned, not
+          unpriceable"; whoever estimates owns the miss;
+          cost of moving arrives with a vendor quote.
+          LANE: in-lane (AI risk auditability/evidence,
+          assurance to the board); separate public surface
+          from the Agent Gate DM sequence. ~150w, "re-run"
+          x2, no dashes, no pitch: "'Unassigned, not
+          unpriceable' is the right diagnosis"; "a
+          warranty reserve is an estimate too, but it is
+          anchored... an actuarial method someone can
+          re-run"; "AI risk has no such anchor, because
+          nothing yet produces the underlying number";
+          "the cost of moving arrives with a number and
+          the cost of the risk arrives without one";
+          closer "The fix is not to force someone to own
+          the line. It's to build the check that makes
+          the line ownable." DRAFTED, unconfirmed.
+        OPTIONS (in-lane, offered, not drafted):
+        * ROCK LAMBROS published "Context Bill of
+          Materials: A Record of What Your AI Agent Read"
+          (RockCyber Musings, 23m) - very in-lane (context
+          as audit trail); warm contact; publication post,
+          offer comment if commentable.
+        * HAMEL HUSAIN (reposted Pol John Cruz) "AI x
+          Reliability Engineering / FMECA" (7h) - in-lane
+          (failure modes, evals, "evaluated in the early
+          stages"); warm evals contact; tied to a course
+          promo; offer on request.
+        SKIP (off-lane / already handled, grouped): Tiago
+        Forte x3 (ARC/book), Alex Banks (SpaceX AI stack,
+        valuation), Rimini Makama (zero-rated ed), Luís
+        Rodrigues (Stanford courses), Enzi Prize/Moonshot
+        Lagos (inference cost, semi), Ads Dawson/Adrian
+        Wood (0day talk), Kieran Drew (fiction), Ruben
+        Hassid (ChatGPT deletion how-to), Paul Roetzer
+        (MAICON mgmt), Endrit (Microsoft layoffs), Rita
+        Olapade (org structuring HR promo), Tolulope
+        Michael (Google security acquisition news),
+        Bolaji Adebayo x4 (job tips/mindset/LinkedIn),
+        Jean-Marie John-Mathews (French agent-misbehavior,
+        in-lane but French, skip on language), Sam
+        Illingworth (AI research trust, semi), Neil Sahota
+        (content ownership IP), Blossom Affia x4 (personal
+        /branding), Hamel/Luca Pozzi (course promo), Eze
+        Peace (LinkedIn strategy), Credence (Jollof
+        analogy), Alex Hormozi (photo), Greg Isenberg
+        (ChatGPT dots, sponsored), Jerry Liu (OCRia-1
+        benchmark), Lenny Rachitsky (design partners).
+        Already handled/live: Endrit/Matt/Allie S-1,
+        Chris H., Tanya (DRAFTED), Andela (live, Andela
+        liked), Vika, Chandrika, Amjad x2 (a16z DRAFTED;
+        Replit-for-Business live + Akshatha like), Welsch
+        (live), Dario (live), Rock PHP2Shell (owner has
+        own PHP2Shell post).
+        NEXT: owner pastes Salman's mention text (2
+        threads); Brad Wolfe finance comment paste-ready;
+        IPO post -> POSTED.
 10-26  THE AI COLONY (AI content page, ~42K followers;
         engagement-ring comment section of other content
         pages trading "yeah"/"yup") - post: "Is AI voice
@@ -309,8 +412,8 @@ Machine Learning, Python, Analytics & RAG"
         number is never the answer. The answer is the
         re-run... The only number worth quoting is the
         one that survives the re-run." Two alt headlines
-        offered. DRAFTED, unconfirmed until owner says
-        posted.
+        offered. POSTED (confirmed via late feed capture:
+        live with Arslan Iqbal + 1 reacted).
         NOTE: second S-1-themed post on the owner's own
         feed today (first = Allie repost-with-thought);
         brand reinforcement (the "verify the number"
