@@ -16,3 +16,5 @@ drafts (drafts live in conversation history and in response_templates convention
   Paolo Perrone (Apple fm) comment and its 2,753/3,722-impression replies.
 - `2026-10-24_to_2026-10-24_verbatim.md` — 10-24 window (ongoing): Craig G. inference-bubble
   comment (posted verbatim) + Craig's agreement reply disclosing the small-model engine.
+- `2026-10-27_to_2026-10-27_verbatim.md`: 10-27 evening, Dario Melo thread, owner 114w fence
+  comment LIVE + Juan Carlos Avila Villalba (Claro Colombia) 3rd+ reply, 64w reply DRAFTED.
