@@ -1,7 +1,7 @@
 # Sample Findings Report, AI Agent Red Team
 ## Full draft for the Arcezia trust artifact (10-28 send)
 
-Working file. Render to PDF for sending. Filename when sent:
+Working file. Rendered 10-27: sample_findings_report_full.pdf (3 pages, via render_sample_findings_pdf.py, reportlab). Editorial pass applied in the render: engagement line now says one-sitting window; count-check kept in the HOLDS section. Filename when sent:
 redacted_engagement_sample_findings.pdf is NOT accurate for
 this version; the sent filename is
 sample_findings_report_full.pdf, because this document is
