@@ -341,6 +341,36 @@ not an audit buyer); home-turf hiring surface.
 DRAFTED, not posted; today's posted count 1 (Love
 Babbar), this is #2, 60+ min spacing likely met, owner
 times it.
+Clint Gibler (Cyber @ OpenAI, tl;dr sec newsletter;
+owner Following; already in the tier 2 name list):
+10-27, 6m at capture, edited: PHP2Shell webinar promo
+with CrowdStrike, Wed 2026-10-28 10:00-10:45 AM PT
+(= 18:00-18:45 Lagos), register link, CC Adam Meyers +
+Anthony Roman; agenda: exposure, fixes, investigating
+suspicious activity + frontier AI changing vuln
+discovery. SKIP for a comment, three documented
+reasons: (1) PHP2Shell is the owner's own material this
+week (NSA advisory, ~1.5M unpatched, not on KEV) and
+the audience's feed already carries 4+ owner presence
+points this week, a comment here is a 5th+ =
+repetition tax (rule set by the 10-25 skip log), (2)
+promo/CTA surface, no substantive line to land on, (3)
+cap: this would be comment #3 today inside the 2h
+window, and the Federico comment 2h ago already carries
+the discovery-vs-response theme. MOVE: register +
+attend Wed 18:00 Lagos; the owner is in the room where
+his own incident is discussed by OpenAI + CrowdStrike;
+one Q&A question prepared (event chat, not a public
+comment, drafted in chat): "When a vulnerability is
+found by a model, the abuse is likely too. What should
+the response side standardize on, so that assessment,
+fixing, and investigation can consume that evidence
+without re-deriving it?" Post-event: if a recording or
+summary post ships, that is a fresh surface, only if
+the PHP2Shell repetition budget allows at that point.
+Fallback comment (55w) drafted in chat in case the
+owner wants a public touch today anyway; flagged as
+presence #5.
 
 ## Tier 3 — builder / adjacent layer + active thread partners
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
