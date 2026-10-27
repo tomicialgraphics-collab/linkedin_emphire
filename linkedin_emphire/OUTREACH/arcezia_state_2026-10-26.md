@@ -113,12 +113,81 @@ at close.
 - 10-26 9:34 AM (owner, from this paste): FOLLOW-UP DM
   SENT - confirmed, it appears in the DM thread. The
   earlier "DRAFTED (unconfirmed)" state is closed.
+- 10-26 4:08 PM (Praveen, EMAIL, THIS PASTE, verbatim):
+  "This matches what we agreed. Six markups: / 1. Chains
+  run within one session. Two known open items aren't
+  counted as findings: harm split across separate
+  sessions, and actions on files or records outside what
+  the account declared. / 2. Privilege launches count when
+  the launch goes through the gate as a call. / 3. Target:
+  api.arcezia.com with the test key, plus the public docs
+  and SDK. Also out of scope: the dashboard and admin
+  routes, denial of service (stay under the key's limit),
+  timing or side-channel work on internals, and
+  contacting anyone but me. / 4. Synthetic data only. /
+  5. Each repro: exact request, full response, time in
+  UTC. / 6. Nothing about a finding goes public before its
+  fix is confirmed. The write-up says it was unpaid. /
+  Could you send one past write-up or repo of yours
+  first? / Reply 'agreed' and the key goes out on the
+  27th."
+  READ: the markup the 5:47 PM DM note assumed missing had
+  arrived by email 79 minutes earlier; the DM-only view
+  was incomplete. All six markups are inside his authority
+  as target owner; assessment:
+  * M1 single-session chains: accept (matches the key and
+    account model; cleaner repros).
+  * M1b two known open items excluded from findings:
+    accept (standard known-issue exclusion). LOGGED so the
+    report can cite the exclusion: (a) harm split across
+    separate sessions, (b) actions on files or records
+    outside what the account declared.
+  * M2 gated-call privilege launches: accept
+    (clarification of the adk-python triage class, not a
+    narrowing).
+  * M3 target = api.arcezia.com plus docs plus SDK; added
+    out of scope (dashboard and admin routes, DoS under
+    the key's limit, timing or side-channel on internals,
+    no contacting anyone but him): accept, all consistent
+    with the external behavioral method.
+  * M4 synthetic data only: accept (protects the target;
+    consistent with the test-account-only scope).
+  * M5 repro format (exact request, full response, UTC
+    time): accept, strengthens the report.
+  * M6 no publication before fix confirmation (already in
+    the scope) plus the write-up discloses the unpaid
+    terms: accept (his brand, his call; consistent with
+    the one-time waiver record).
+  RECOMMENDATION: accept all six as written, in one
+  email, in writing (the engagement runs on the written
+  record). The only one that narrows the attack surface
+  is M1b (cross-session persistence is where agent gates
+  most often fail); still accept, it is a known-issue
+  exclusion and it goes in the report's scope note.
+  HIS ASK (past write-up or repo): already answered in
+  practice, the redacted report went out by DM 10-24
+  8:58 PM and he praised it 10-26 8:56 AM ("a real report
+  with the client's confidentiality respected"); the repo
+  answer is the public tooling:
+  github.com/Teamthy/ai-redteam-five-tests. Point to both;
+  nothing new to produce.
+  THE 'AGREED' LOOP: "reply 'agreed' and the key goes out
+  on the 27th" is superseded by the bereavement sequence
+  that followed (5:47 PM DM, the owner's 7:50 PM
+  condolence, his 10-27 3:03 PM acknowledgment). The 27th
+  key gate stays closed; the key moves only with the
+  rescheduled window after written re-agreement of the
+  dates.
+
 - 10-26 5:47 PM (Praveen, THIS PASTE): "One my closest
   person passed away today! I am going out of station in
   very urgent situation." (with reaction emojis)
   STATE CHANGE - SCHEDULE IN CRISIS:
-  * His markup (10-24 same-day commitment) did not arrive;
-    he is now out of station, away from everything.
+  * MARKUP CORRECTION (10-27, from the owner's email
+    paste): his markup DID arrive, by email, at 4:08 PM on
+    10-26 (the six markups; see the entry above this
+    one); this note was written from the DM thread alone.
+    He is out of station, away from everything.
   * 10-27 KEY GATE cannot clear: written agreement needs
     his markup/acceptance and he is away. The gate holds
     naturally - there is nothing to send, no work starts.
@@ -175,3 +244,31 @@ STATUS AS OF 10-27 3:03 PM: ON HOLD (bereavement). All
 Arcezia work paused; the engagement stands on its 10-24
 terms and moves only when he re-engages. 500 counter: no
 impact (no consent exchange here).
+- 10-27 evening (owner email paste, THIS CAPTURE):
+  DECISION RECOMMENDED, draft delivered in chat. Send ONE
+  short email to Praveen (tomorrow morning, 10-28, not
+  tonight): accept all six markups as written, point to
+  the redacted report already in his inbox (10-24) and to
+  the public tooling repo for the method, and explicitly
+  park the key and the dates until his return, no
+  deadline, no need to reply. Zero pressure wording
+  throughout. This clears every open item on his plate
+  (the markups, the write-up/repo ask, the 'agreed' loop)
+  so his return starts from a closed written record.
+  ALTERNATIVE (owner's call): full silence until he
+  re-engages; cost = the six markups and the repo ask
+  stay unanswered on his side, and the written record
+  stays incomplete for the two M1b exclusions.
+  SEND UNCONFIRMED until the owner sends.
+  SCOPE ARTIFACT: the six markups are NOT yet in
+  arcezia_scope_2026-10-24.md (deal artifact, owner
+  approval required). Once the acceptance email is sent
+  and confirmed, append the six as an ACCEPTED MARKUPS
+  section in the working .md; regenerate the PDF only if
+  the owner wants a v2 for the record.
+
+STATUS AS OF 10-27 EVENING: ON HOLD (bereavement). Six
+markups received and assessed, all recommended accepted,
+acceptance email DRAFTED (send 10-28 morning);
+reschedule and key gate move together; no consent ask, no
+nudge, 500 counter untouched.
