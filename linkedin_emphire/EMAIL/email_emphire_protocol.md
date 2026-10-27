@@ -111,11 +111,15 @@ content. Stage 1 P.S. is the receipt line (the magnet, not a sale).
 
 R13 THE WEEKLY VERIFIED RESEARCH IS THE SPINE. One verified
 research email a week (the W), every week, to everyone on the list
-plus the onboarding layer. "Verified" means the owner ran the
-re-run and logged the fingerprint, not that the owner cited the
-number. If no candidate passes the quality gate that week, the
-honest week email goes out instead (short, true, cadence kept).
-The research loop spec lives in the playbook, section 3.
+plus the onboarding layer. "Verified" means the re-run was run and
+the fingerprint logged, not that the number was cited, and every
+item states who ran what (agent re-run, or verified to source with
+the live re-run flagged as an owner job). The agent produces the
+VERIFIED LIST (2 to 4 receipts) each slot; the owner scans it and
+picks one; the pick is the weekly send (weekly pipeline, below).
+If no candidate passes the quality gate that week, the honest
+week email goes out instead (short, true, cadence kept). The
+research loop spec lives in the playbook, section 3.
 
 R14 PERSONALIZED WEEKLY, HONESTLY. Three layers: (1) the first line
 is merged from the contact record (name + their context, 1 to 3
@@ -180,6 +184,52 @@ Weekly verified research template (the spine, every week):
   (footer)
 If no candidate passes the gate this week, send the honest week
 email instead (short, true, cadence kept, R13).
+
+## WEEKLY PIPELINE (roles and handoffs, owner workflow 2026-10-27)
+
+The owner directed the operating rhythm: the agent runs the
+research, the owner scans the verified list, then the agent gives
+the personalized email for each contact. Four steps, two roles.
+
+STEP 1 (agent): RUN THE RESEARCH. Run the weekly research loop
+(candidate pool, quality gate, the re-runs, the fingerprints).
+Output: the VERIFIED LIST, 2 to 4 items, each a full receipt
+(claim, result, method, honest line), the fingerprint, a stated
+who-ran-what line (what the agent ran versus what is flagged as
+an owner job), the two framings (practitioner, decision-maker),
+the subject options (1 to 20 chars), the why-this-week, and the
+owner scan checklist. File: EMAIL/research/
+YYYY-MM-DD_slotN_verified_list.md. Hand to the owner.
+
+STEP 2 (owner): SCAN THE LIST. Check the inputs (the scan
+checklist per item), pick one item (or adjust a line, or pass to
+the honest week). Nothing sends before the owner's pick. Record
+the pick in the file (PICK line).
+
+STEP 3 (agent): PERSONALIZED SENDS. After the pick, generate the
+personalized email for each contact on the list, one per
+contact, in EMAIL/sends/YYYY-Www.md (created at the first send):
+- Layer 1, the first line: merged from the contact record
+  (R14). For contacts with a LinkedIn (all current captures do),
+  use their actual thread, post, or role, 1 to 3 real facts
+  (Hormozi L12). For email-only contacts, the source line.
+- Layer 2, the framing: practitioner or decision-maker first
+  paragraph, per the contact's room (R7).
+- The shared body: the four lines, the honest line, the teaser
+  (if real), the P.S. (R12), the footer (R9).
+Hand the send file to the owner. Nothing is queued before the
+owner's read-through.
+
+STEP 4 (owner): SEND. Send or queue per contact. Mark SENT (R10).
+Log opens and replies in the KPI table. Every reply enters the
+1:1 lane (hand-written, same day, R14 layer 3).
+
+File conventions: research lists in EMAIL/research/ (one file per
+slot, permanent record). Personalized sends in EMAIL/sends/ (one
+file per send week, per-contact blocks with state: DRAFTED,
+SENT, REPLIED). The research file is where the verified list
+lives for the owner to scan; the sends file is where the
+personalized output lives for the owner to approve.
 
 ## PLATFORM SETUP (free tier, platform-agnostic)
 

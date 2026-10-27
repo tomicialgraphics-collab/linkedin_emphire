@@ -237,11 +237,23 @@ kept, nothing is fabricated, and the honesty is a P-group
 signal. (No-fabrication rule, E-8, R8.)
 
 RESEARCH LOG (newest on top):
+10-27  SLOT 1  week of 10-27 to 11-02. 2 items produced, both
+        AWAITING OWNER SCAN. Item 1 (recommended): the S-1 number
+        the filing does not contain ($6.6M per employee is a
+        management number about Q3 2026, a quarter not in the
+        document; filing-supported number is $3.7M at 5,300
+        headcount; Q3 of about $15.3B would bridge it; the 90%
+        of code figure has no definition). Re-run executed by the
+        agent, fingerprint in the file. Item 2: ClawHub screen
+        state (1,184 historical, 0.69% scanner agreement, 5
+        unblocked after screening; live registry re-scan flagged
+        as an owner job). Full receipts, framings, subject
+        options, and the owner scan checklist in EMAIL/research/
+        2026-10-27_slot1_verified_list.md. Owner workflow
+        codified (protocol, weekly pipeline): agent runs the
+        research, owner scans the list, agent produces the
+        personalized sends per contact.
 10-27  DIVISION-0  loop established. No production slot yet.
-        First slot: week of 10-27 to 11-02, candidate pool to be
-        seeded from the live LINKEDIN feed captures (the 490
-        unauth MCP servers are already in the pool and were used
-        for E3, so slot 1 should be a fresh number).
 
 ## 4. The 500 verified email plan
 
