@@ -209,14 +209,26 @@ Machine Learning, Python, Analytics & RAG"
         AI), Vika (AEO), Andela (enablement), Darren
         Goonawardana +1 (Welsch Gartner x2), Welsch +1
         (Gartner).
-        NEEDS OWNER INPUT (1 remaining; owner's comments
-        visible, SALMAN'S actual mention text was NOT in
-        capture; fuzzer thread text now received):
+        SALMAN MENTIONS - BOTH TEXTS RECEIVED (10-27),
+        BOTH DRAFTED:
         (1) SALMAN LAKHANI mentioned owner on
         the "janas" repo thread (80B MoE on laptop, disk
-        bandwidth); owner's last comment asks "Would you
-        add anything for the conversion step?" -> text
-        still needed. (2) SALMAN LAKHANI fuzzer / OSS-Fuzz
+        bandwidth); Salman's 2h reply @mentions owner:
+        size point is a good turn (one-commit repo is a
+        risk but small enough to actually read, a big
+        vendor stack never is); proposes "unplug the
+        network, watch what it opens, then read the
+        loader"; says he may write it up as a short
+        checklist; asks WOULD YOU ADD ANYTHING FOR THE
+        CONVERSION STEP -> DRAFTED, paste-ready in chat:
+        the converter is new code run with the weights
+        (same two-star one-commit repo); pin the
+        converter commit + run a fixed prompt set
+        through reference vs converted within tolerance
+        (only check that catches a bad MoE expert
+        mapping, won't crash, tok/s won't show it); no
+        verified conversion = number usable, model a
+        claim. (2) SALMAN LAKHANI fuzzer / OSS-Fuzz
         thread: TEXT RECEIVED (10-27). Salman's 2h reply
         @mentions owner: repro is what lets a maintainer
         act, proof changes weight, unpaid maintainers
@@ -291,12 +303,12 @@ Machine Learning, Python, Analytics & RAG"
         Replit-for-Business live + Akshatha like), Welsch
         (live), Dario (live), Rock PHP2Shell (owner has
         own PHP2Shell post).
-        NEXT: Salman fuzzer thread DRAFTED (owner to
-        paste); Salman janas thread (80B MoE / disk
-        bandwidth) still needs owner's text; Brad Wolfe
-        finance comment paste-ready (owner to confirm
-        posted); IPO post -> POSTED (done, capture-
-        confirmed).
+        NEXT: BOTH Salman mentions DRAFTED (owner to
+        paste: fuzzer/badge + janas/conversion-step);
+        Brad Wolfe finance comment paste-ready (owner to
+        confirm posted); IPO post -> POSTED (done,
+        capture-confirmed); Rock Lambros Context-BOM +
+        Hamel FMECA options still open (y/n).
 10-26  THE AI COLONY (AI content page, ~42K followers;
         engagement-ring comment section of other content
         pages trading "yeah"/"yup") - post: "Is AI voice
