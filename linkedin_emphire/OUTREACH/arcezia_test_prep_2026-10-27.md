@@ -1,4 +1,5 @@
 # Arcezia action-gate test - PREP (tester side)
+STATUS: ON HOLD as of 10-27 (bereavement, see arcezia_state_2026-10-26.md). No prep action until the rescheduled window.
 For: the 27th/29th testing window. Scope of record: OUTREACH/
 arcezia_scope_2026-10-24.md (as sent to Praveen 10-26, pending
 his markup). This is working prep, not part of the sent

@@ -13,6 +13,20 @@ TIMELINE OF RECORD:
   commitment / $900 deferred structure was declined (his
   pre-round-debt rule) and is superseded - this is in the
   scope doc itself.
+- 10-27 CORRECTION (owner's direct statement, THIS
+  CAPTURE): the redacted past-engagement report was NEVER
+  SENT. This entry's "sent" state is superseded; it was an
+  unconfirmed record. Workspace check 10-27: no redacted
+  client report exists in the workspace. The only
+  findings-report artifact is the owner's own-project
+  sample (UPWORK/sample_findings_report.md +
+  gallery/sample_findings_report.pdf: six prompt-injection
+  attempts on the owner's own chatbot, four worked, exact
+  four-part format, own project, free to show in full).
+  Awaiting owner pick (asked in chat 10-27): attach a
+  redacted client report if one exists outside the
+  workspace, else send the own-project sample plus the
+  public repo, labeled accurately.
 - Night of the close (owner 8:58 PM DM): the owner sent the
   REDACTED ANONYMIZED past-engagement report by DM ("closest
   thing to what the Arcezia report will look like, same shape,
@@ -113,12 +127,91 @@ at close.
 - 10-26 9:34 AM (owner, from this paste): FOLLOW-UP DM
   SENT - confirmed, it appears in the DM thread. The
   earlier "DRAFTED (unconfirmed)" state is closed.
+- 10-26 4:08 PM (Praveen, EMAIL, THIS PASTE, verbatim):
+  "This matches what we agreed. Six markups: / 1. Chains
+  run within one session. Two known open items aren't
+  counted as findings: harm split across separate
+  sessions, and actions on files or records outside what
+  the account declared. / 2. Privilege launches count when
+  the launch goes through the gate as a call. / 3. Target:
+  api.arcezia.com with the test key, plus the public docs
+  and SDK. Also out of scope: the dashboard and admin
+  routes, denial of service (stay under the key's limit),
+  timing or side-channel work on internals, and
+  contacting anyone but me. / 4. Synthetic data only. /
+  5. Each repro: exact request, full response, time in
+  UTC. / 6. Nothing about a finding goes public before its
+  fix is confirmed. The write-up says it was unpaid. /
+  Could you send one past write-up or repo of yours
+  first? / Reply 'agreed' and the key goes out on the
+  27th."
+  READ: the markup the 5:47 PM DM note assumed missing had
+  arrived by email 79 minutes earlier; the DM-only view
+  was incomplete. All six markups are inside his authority
+  as target owner; assessment:
+  * M1 single-session chains: accept (matches the key and
+    account model; cleaner repros).
+  * M1b two known open items excluded from findings:
+    accept (standard known-issue exclusion). LOGGED so the
+    report can cite the exclusion: (a) harm split across
+    separate sessions, (b) actions on files or records
+    outside what the account declared.
+  * M2 gated-call privilege launches: accept
+    (clarification of the adk-python triage class, not a
+    narrowing).
+  * M3 target = api.arcezia.com plus docs plus SDK; added
+    out of scope (dashboard and admin routes, DoS under
+    the key's limit, timing or side-channel on internals,
+    no contacting anyone but him): accept, all consistent
+    with the external behavioral method.
+  * M4 synthetic data only: accept (protects the target;
+    consistent with the test-account-only scope).
+  * M5 repro format (exact request, full response, UTC
+    time): accept, strengthens the report.
+  * M6 no publication before fix confirmation (already in
+    the scope) plus the write-up discloses the unpaid
+    terms: accept (his brand, his call; consistent with
+    the one-time waiver record).
+  RECOMMENDATION: accept all six as written, in one
+  email, in writing (the engagement runs on the written
+  record). The only one that narrows the attack surface
+  is M1b (cross-session persistence is where agent gates
+  most often fail); still accept, it is a known-issue
+  exclusion and it goes in the report's scope note.
+  HIS ASK (past write-up or repo): LIVE PRECONDITION (he
+  wants it before the key goes out). CORRECTION 10-27
+  (owner's statement): the redacted report was never sent;
+  his 10-26 8:56 AM line ("a real report with the client's
+  confidentiality respected") most likely responded to the
+  described approach, not a received PDF. What is actually
+  on hand: (a) the own-project sample findings report
+  (UPWORK/sample_findings_report.md + gallery
+  sample_findings_report.pdf, own chatbot, real testing,
+  exact four-part format, free to publish in full), (b)
+  the public tooling repo:
+  github.com/Teamthy/ai-redteam-five-tests. His OR is
+  satisfied by either (a) or (b); (a)+(b) is strongest.
+  Honesty constraint: the email must label exactly what is
+  attached. Own-project = "my own project, not a client".
+  A redacted client report may exist outside the
+  workspace; owner to confirm (A/B pick asked in chat).
+  THE 'AGREED' LOOP: "reply 'agreed' and the key goes out
+  on the 27th" is superseded by the bereavement sequence
+  that followed (5:47 PM DM, the owner's 7:50 PM
+  condolence, his 10-27 3:03 PM acknowledgment). The 27th
+  key gate stays closed; the key moves only with the
+  rescheduled window after written re-agreement of the
+  dates.
+
 - 10-26 5:47 PM (Praveen, THIS PASTE): "One my closest
   person passed away today! I am going out of station in
   very urgent situation." (with reaction emojis)
   STATE CHANGE - SCHEDULE IN CRISIS:
-  * His markup (10-24 same-day commitment) did not arrive;
-    he is now out of station, away from everything.
+  * MARKUP CORRECTION (10-27, from the owner's email
+    paste): his markup DID arrive, by email, at 4:08 PM on
+    10-26 (the six markups; see the entry above this
+    one); this note was written from the DM thread alone.
+    He is out of station, away from everything.
   * 10-27 KEY GATE cannot clear: written agreement needs
     his markup/acceptance and he is away. The gate holds
     naturally - there is nothing to send, no work starts.
@@ -144,13 +237,81 @@ at close.
   from you. Take the time you need. / When things settle,
   we'll re-agree the dates in writing and I'll slot you
   in. No deadline from my side, and no need to reply to
-  this." SEND UNCONFIRMED until owner says sent.
-  NEXT CONTACT: only if/when he replies, or ONE line in
-  ~5-7 days if he hasn't ("How are you holding up?
-  Whenever you're ready, we'll re-agree the dates - no
-  rush."). Reschedule is his or the owner's to propose;
-  minimum window = two test days + report day; key-gate
-  rule unchanged (written agreement first, then key).
+  this."
+- 10-27 7:50 PM (owner, THIS PASTE): CONDOLIENCE DM SENT:
+  the drafted text, verbatim as captured in the thread.
+  The 10-26 "SEND UNCONFIRMED" state is closed; the
+  carried "Praveen reply sent?" item is RESOLVED.
+- 10-27 3:03 PM (Praveen, THIS PASTE, latest): "Thanks for
+  understanding!" + reaction set (clap, thumbs up, smile).
+  READ: acknowledgment, not a question; the thread is at
+  its natural end. MOVE: NO REPLY. The owner's message
+  already said no reply was needed, and a second message
+  puts him back at the screen in mourning. Hold stays
+  exactly as set: no nudge, no consent ask, no business
+  nouns until he re-engages; the key gate stays
+  unsatisfied by design (his markup never arrived).
+  NEXT CONTACT: only if/when he re-engages, or ONE line in
+  ~5-7 days if he hasn't (window now ~11-01 to 11-03:
+  "How are you holding up? Whenever you're ready, we'll
+  re-agree the dates. No rush."). Reschedule is his or
+  the owner's to propose; minimum window = two test days +
+  report day; key-gate rule unchanged (written agreement
+  first, then key). The 27th/29th/30th milestones are all
+  void and move with the reschedule (the 10-30 written
+  reference moves too).
   CHARACTER NOTE: this moment is the foundation of the
-  written reference - zero pressure and no schedule panic
+  written reference. Zero pressure and no schedule panic
   here is the material that reference will describe.
+
+STATUS AS OF 10-27 3:03 PM: ON HOLD (bereavement). All
+Arcezia work paused; the engagement stands on its 10-24
+terms and moves only when he re-engages. 500 counter: no
+impact (no consent exchange here).
+- 10-27 evening (owner email paste, THIS CAPTURE):
+  DECISION RECOMMENDED, draft delivered in chat, then
+  REVISED (owner: "ive not sent past write up"): the
+  first draft's line "the redacted report I sent on the
+  24th is already in your inbox" is FALSE and withdrawn.
+  Revised plan: send ONE short email (tomorrow morning,
+  10-28, not tonight) that accepts all six markups as
+  written, answers the write-up/repo precondition with the
+  actual artifact (pending owner A/B pick above, label
+  accordingly), and parks the key and the dates until his
+  return, no deadline, no need to reply. Zero pressure wording
+  throughout. This clears every open item on his plate
+  (the markups, the write-up/repo ask, the 'agreed' loop)
+  so his return starts from a closed written record.
+  ALTERNATIVE (owner's call): full silence until he
+  re-engages; cost = the six markups and the repo ask
+  stay unanswered on his side, and the written record
+  stays incomplete for the two M1b exclusions.
+  SEND UNCONFIRMED until the owner sends.
+  SCOPE ARTIFACT: the six markups are NOT yet in
+  arcezia_scope_2026-10-24.md (deal artifact, owner
+  approval required). Once the acceptance email is sent
+  and confirmed, append the six as an ACCEPTED MARKUPS
+  section in the working .md; regenerate the PDF only if
+  the owner wants a v2 for the record.
+
+- 10-27 (owner pick, THIS CAPTURE): A/B RESOLVED, option
+  A. A redacted real-client report exists on hand outside
+  the workspace; the owner attaches it to the email
+  himself. Final draft v3 delivered in chat (paste-ready).
+  PRE-SEND CHECKLIST: (1) the attachment is ACTUALLY
+  attached (the 10-24 miss was exactly an unkept
+  attachment promise; verify before hitting send), (2)
+  re-run the redaction standard on the file: strip names,
+  product, URLs/domains/endpoints, codenames, real
+  data/PII, real dates, titles, unique infra,
+  re-identifying combos; keep the 4-part format,
+  severity, root-cause class, fix pattern, verification.
+  SEND: tomorrow morning 10-28, not tonight. SEND
+  UNCONFIRMED until the owner says sent.
+
+STATUS AS OF 10-27 LATE: ON HOLD (bereavement). Six
+markups received and assessed, all accepted in draft v3;
+artifact pick resolved (redacted report, owner attaches);
+email v3 DRAFTED, send 10-28 morning; reschedule and key
+gate move together; no consent ask, no nudge, 500 counter
+untouched.
