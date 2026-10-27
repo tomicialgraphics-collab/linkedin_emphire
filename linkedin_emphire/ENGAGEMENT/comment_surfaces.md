@@ -224,8 +224,9 @@ is a runtime question"), concession on his close line,
 flat close on the re-perform line, no flattery in line
 one. No client flag (education/creator, not an audit
 buyer); reach surface, placement already proven on this
-author. DRAFTED, not posted; 0 posted today, this is
-comment #1, within the cap.
+author. 96w HUMAN = POSTED (owner, 10-27, "posted"
+confirmed); today's posted count: 1 (within cap);
+reactions and impressions owed at next paste.
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
