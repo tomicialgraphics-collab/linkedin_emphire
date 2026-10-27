@@ -294,8 +294,24 @@ impact (no consent exchange here).
   section in the working .md; regenerate the PDF only if
   the owner wants a v2 for the record.
 
-STATUS AS OF 10-27 EVENING: ON HOLD (bereavement). Six
-markups received and assessed, all recommended accepted,
-acceptance email DRAFTED (send 10-28 morning);
-reschedule and key gate move together; no consent ask, no
-nudge, 500 counter untouched.
+- 10-27 (owner pick, THIS CAPTURE): A/B RESOLVED, option
+  A. A redacted real-client report exists on hand outside
+  the workspace; the owner attaches it to the email
+  himself. Final draft v3 delivered in chat (paste-ready).
+  PRE-SEND CHECKLIST: (1) the attachment is ACTUALLY
+  attached (the 10-24 miss was exactly an unkept
+  attachment promise; verify before hitting send), (2)
+  re-run the redaction standard on the file: strip names,
+  product, URLs/domains/endpoints, codenames, real
+  data/PII, real dates, titles, unique infra,
+  re-identifying combos; keep the 4-part format,
+  severity, root-cause class, fix pattern, verification.
+  SEND: tomorrow morning 10-28, not tonight. SEND
+  UNCONFIRMED until the owner says sent.
+
+STATUS AS OF 10-27 LATE: ON HOLD (bereavement). Six
+markups received and assessed, all accepted in draft v3;
+artifact pick resolved (redacted report, owner attaches);
+email v3 DRAFTED, send 10-28 morning; reschedule and key
+gate move together; no consent ask, no nudge, 500 counter
+untouched.
