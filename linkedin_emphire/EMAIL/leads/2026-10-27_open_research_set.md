@@ -82,8 +82,12 @@ ICP fit: a new global CISO at a top-10 US bank while the bank
 regulators literally ask the agentic-AI questions. The forcing
 function is the regulator, named in the press.
 Room: decision-maker
-LINKEDIN: at note stage (identity verified via three independent
-appointment reports)
+LINKEDIN: https://www.linkedin.com/in/ann-barron-dicamillo-46286b50/
+[verified 10-27: profile surfaced, name + US Bank EVP CISO +
+Minneapolis matched; FSSCC chair confirmed in the same
+profile; fresh trigger: her Help Net Security interview 10-06,
+the CISO role now covers AI governance, "no single leader can
+own all of it"]
 NOTE ANGLE: "The OCC/FDIC/Fed agentic questions in the 10-14
 report read like an audit scope. I build the answer to exactly
 those questions: limits, approval, audit trail, kill switch. One
@@ -116,7 +120,12 @@ ICP fit: a first CISO is by definition an organization that can't
 verify yet; his own announcement names malicious AI use as the
 mandate. Crypto ecosystem = at risk, high velocity.
 Room: decision-maker
-LINKEDIN: at note stage (identity verified via csoonline)
+LINKEDIN: at note stage (identity verified via his own X @_mwc
+bio + coingape 07-10 + crypto.news 07-08 + solanapolicyinstitute
++ cisotribune; slug did not surface, open via X or search
+directly; fresh trigger: Solana "Bits to Bricks" episode 09-19,
+the 116M Coldcard hack and "what a code audit does and does not
+verify")
 NOTE ANGLE: "A first CISO inherits the question nobody has
 answered yet: does the ecosystem actually see what the AI agents
 do? That's an inventory plus re-run question. I send one receipt
@@ -135,8 +144,11 @@ ICP fit: he is now the CTO of a fintech (buyer) and publicly
 articulates the control model (practitioner credibility). He is
 the person who would buy the re-run receipt for his own agents.
 Room: decision-maker (CTO at a fintech)
-LINKEDIN: at note stage (identity verified via tenetsecurity
-interview + company pages)
+LINKEDIN: https://www.linkedin.com/in/davidschwed
+[verified 10-27: profile surfaced (title CTO @ Openreserve);
+role confirmed via his X @dschwed + Banking Dive 09-04 + the
+OCC no-objection letter; fresh trigger: OCC conditional
+approval of the national bank charter 09-03]
 NOTE ANGLE: "Your 'agent as employee' framing needs the
 deterministic check to actually be deterministic. I re-run the
 numbers that come out of agent decisions and flag the ones that
@@ -151,8 +163,10 @@ ICP fit: a new CISO at a regulated US bank in the middle of the
 regulator's agentic-AI scrutiny window (see O4). Classic at-risk
 + can't-verify with a board on the other side.
 Room: decision-maker
-LINKEDIN: at note stage (identity verified via nationalcioreview
-+ FinAi News)
+LINKEDIN: https://www.linkedin.com/in/stephen-mcmaster-b7568116/
+[verified 10-27: surfaced via Crunchbase sameAs, name + CISO +
+Western Alliance matched, Chandler AZ; fresh context: the hire
+came after a third-party vendor data breach, BriefGlance 04-19]
 NOTE ANGLE: "You said AI changed how we defend. The regulator
 is asking the same thing as a questionnaire now. I turn the
 answers into receipts: one re-run a week, the method inside."
@@ -210,8 +224,11 @@ background.
 ICP fit: same CBN forcing functions (CSAT, AML-AI 18-month
 deadline, annual third-party audit of AI systems).
 Room: decision-maker
-LINKEDIN: at note stage (identity verified via cybermagazine
-Top 10, 2026-04-29)
+LINKEDIN: https://www.linkedin.com/in/harrisonnnaji/
+[verified 10-27: profile surfaced, name + GCISO + FirstBank +
+Lagos matched; fresh trigger: IIA Nigeria Conference 2026
+session on auditing digital banking, fraud risk and
+cybersecurity controls]
 
 N3. DR. ISAAC TOYIN GBENLE, CISO, African Development Bank Group
 Trigger: ICSC 2026 speaker (icsc.ng, speaker page live 10-27);
@@ -219,7 +236,9 @@ PhD, CISA, PMP; "Enterprise Information Risk Management Expert."
 ICP fit: multilateral bank, cross-border, regulated, public
 mandate on information risk.
 Room: decision-maker
-LINKEDIN: at note stage (identity verified via icsc.ng)
+LINKEDIN: https://www.linkedin.com/in/isaacgbenlephd/
+[verified 10-27: profile surfaced, name + AfDB + CISO role
+matched, 2K followers]
 
 ### NIGERIA TRIGGERS (new, verified this session, for the notes)
 - CBN CSAT circular 2026-03-30: banks 3 weeks, OFIs 5 weeks to
@@ -338,5 +357,8 @@ New AI role at C-suite level; 85% of employees have GenAI access.
   (R15).
 
 Last updated: 2026-10-27 (open research set: 8 tier 1 + 10 tier 2
-new names, 3 Nigeria new names, 9 research pool additions; 3
-URLs verified this session: Totev, Baybeck, Odediran)
+new names, 3 Nigeria new names, 9 research pool additions; 8
+URLs verified this session: Totev, Baybeck, Barron-DiCamillo,
+Schwed, McMaster, Odediran, Nnaji, Gbenle; 3 at note stage:
+Walton, Coudray, Coates; send blocks in EMAIL/sends/2026-10-27_
+open_research_notes.md, all DRAFTED behind the owner scan gate)
