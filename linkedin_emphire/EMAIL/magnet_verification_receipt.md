@@ -91,8 +91,14 @@ DELIVER (within 48 hours, in writing):
   works." Then silence.
 
 CAP: two per month. When both are taken, the waitlist gets the
-weekly teardowns and the next slot is named by month, not by
+weekly research and the next slot is named by month, not by
 countdown (R8).
+
+REFERRAL LINE (after every personal receipt delivery, Hormozi
+L20, the 500 plan lane 3):
+  "If someone you know runs an agent like this and wants their
+  own receipt, two slots a month, forward this line."
+Receipt recipients are the warmest referrers on the list.
 
 ## CAPTURE COPY (paste-ready, all three points)
 

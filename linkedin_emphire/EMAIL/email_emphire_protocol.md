@@ -6,10 +6,25 @@ DIVISION: EMAIL (sibling of LINKEDIN, OUTREACH, ENGAGEMENT)
 ESTABLISHED: 2026-10-27
 MAGNET: the free single-agent verification receipt (two a month, real)
 STAGE: 1 of 3 (capture + value, zero offer)
-PLAYBOOK LINK: LINKEDIN/sell_like_crazy_5k_playbook_2026-10-25.md,
-section 3, the line "OPEN DECISION: build an owned email capture for
-the HVCO". That decision is now made (owner, 2026-10-27: staged build,
-free single-agent verification receipt as the magnet, no platform yet).
+TARGET: 500 verified emails (verified = double opt-in confirmed +
+consent record). 500 is the list maturity target and the point at
+which the list moves to owned infrastructure (move decision at
+~300, migration by ~500, platform section below). It is not the
+revenue gate: the stage 2 gate is 100.
+RHYTHM: one personalized verified-research email a week (the W
+spine) + E1 to E6 onboarding for new arrivals + the 1:1 lane for
+every reply.
+PLAYBOOK LINKS:
+1. LINKEDIN/sell_like_crazy_5k_playbook_2026-10-25.md, section 3,
+"OPEN DECISION: build an owned email capture for the HVCO". Made
+(owner, 2026-10-27: staged build, free receipt magnet, no platform
+yet).
+2. EMAIL/sell_like_crazy_email_emphire_2026-10-27.md: the email
+marketing empire playbook, grounded in books/sell-like-crazy.md
+(email chapter, Phase 8) + the Hormozi extracts (01 to 03 in
+STRATEGY/BOOK_EXTRACTS). Owner direction 2026-10-27: verified
+research weekly, 500 verified emails from clients and buyers,
+personalized weekly sends, irresistible.
 This division is the owned channel underneath LANTERN 1 to 6. The
 Lanterns bring people. The list keeps them.
 
@@ -77,10 +92,48 @@ R10 RECORD SENDS ONLY AFTER THE OWNER SAYS SENT. Same discipline as
 the LINKEDIN log: DRAFTED until sent, SENT on the owner's word,
 OPENED/REPLIED on data. Nothing is marked delivered from hope.
 
+R11 THE P-GROUP TEST (Suby, the email chapter). Every send must
+look personal or it does not send. Plain text only, no HTML, no
+images, no logo in the header. Personal sender name and address
+(notes@ or sales@ never). Subject 1 to 20 characters, lowercase,
+curiosity, no formula ("7 secrets to X" is banned, it causes email
+blindness). First line of the body is the contact's first name plus
+their context (the personalization engine, below). Preheader is a
+mid-sentence hook, never the whole story. One CTA, written as a
+command, not a question ("reply with the date", not "could you
+reply with the date?").
+
+R12 GOODWILL 2/3 (Suby). Two thirds of all sends are pure value
+(the weekly research, the onboarding value). At most one third
+carry an offer, and the offer lives in the P.S. only, never in the
+first two lines. The body must stand alone as a valuable piece of
+content. Stage 1 P.S. is the receipt line (the magnet, not a sale).
+
+R13 THE WEEKLY VERIFIED RESEARCH IS THE SPINE. One verified
+research email a week (the W), every week, to everyone on the list
+plus the onboarding layer. "Verified" means the owner ran the
+re-run and logged the fingerprint, not that the owner cited the
+number. If no candidate passes the quality gate that week, the
+honest week email goes out instead (short, true, cadence kept).
+The research loop spec lives in the playbook, section 3.
+
+R14 PERSONALIZED WEEKLY, HONESTLY. Three layers: (1) the first line
+is merged from the contact record (name + their context, 1 to 3
+real facts, Hormozi L12); (2) the body is one of two framings of
+the same research (practitioner method-first, decision-maker
+consequence-first, per R7); (3) every reply enters the 1:1 lane,
+hand-written same day, never batched, the only lane that carries
+the offer (after the gate). At 500, layers 1 and 2 are templated
+personalization and layer 3 is hand. That is what personalized
+means at this scale, and it is stated in the log, not faked.
+
 ## STAGES
 
-STAGE 1 (NOW): capture + magnet + E1 to E6 + the standing weekly
-teardown note. Zero offer. Goal: a list that replies.
+STAGE 1 (NOW): capture + magnet + the weekly verified research
+(W spine) + E1 to E6 onboarding + the 1:1 lane. Zero offer.
+Goals: a list that replies, 500 verified emails (the 500 plan in
+the playbook, section 4: lane 0 seed consent asks, lane 1 buyer
+pipeline, lane 2 content lane, lane 3 referrals).
 
 STAGE 2 (GATED): the first offer email (Agent Gate). Copy is
 DRAFTED and HELD in EMAIL/sequence_02_offer.md. The gate, restated:
@@ -102,20 +155,31 @@ E3    T+7    a number I re-ran this week live teardown (490 unauth MCP servers, 
 E4    T+14   run this on your own agent  the five-tests repo, the DIY path                      run or reply  DRAFTED
 E5    T+21   what a claim costs when it is yours  consequence-first, dated triggers, no ask     none      DRAFTED
 E6    T+28   one question                the qualifier (tested it vs tested a demo)             reply     DRAFTED
-W     weekly after E6  one number, re-run (date)  standing teardown, format below               none      TEMPLATE
+W     weekly, spine  one number           the personalized verified research (R13, R14), two
+                                          framings of one research, format below                none      TEMPLATE
 
 Full copy: E1 to E6 in EMAIL/sequence_01_welcome.md. Stage 2 in
 EMAIL/sequence_02_offer.md. The magnet and all capture copy in
-EMAIL/magnet_verification_receipt.md.
+EMAIL/magnet_verification_receipt.md. The research loop, the
+personalization engine, the 500 plan, and the send system in
+EMAIL/sell_like_crazy_email_emphire_2026-10-27.md.
 
-Weekly teardown template (standing after E6):
-  SUBJECT: one number, re-run (the date)
-  CLAIM: the vendor or benchmark number, one line
+Weekly verified research template (the spine, every week):
+  SUBJECT: one number  (1 to 20 chars, lowercase, R11)
+  FIRST LINE (merged, R14): "{first name}, {their context}."
+  FRAMING (per room, R14): practitioner first paragraph
+  (method-first) or decision-maker first paragraph
+  (consequence-first, the forcing function, close on the date)
+  CLAIM: the named claim with its number, one line
   RESULT: what the re-run showed, one to two lines, the number
   METHOD: how to re-run it, the fingerprint, the source
   HONEST LINE: what it does not prove, one line
   (one line: why this week)
+  TEASER: next week's number, only if it is real (R8)
+  P.S. (stage 1, R12): the receipt line, two a month, free
   (footer)
+If no candidate passes the gate this week, send the honest week
+email instead (short, true, cadence kept, R13).
 
 ## PLATFORM SETUP (free tier, platform-agnostic)
 
@@ -143,16 +207,22 @@ No platform yet (owner, 2026-10-27). Setup order:
 
 ## KPIs (weekly, logged in the KPI table below)
 
-LIST: net new, unsubscribes, gate progress (100 contacts / 2
-receipts delivered / 1 receipt reply)
-OPEN: percent (warm consent list benchmark 35 to 55. Under 25 after
-5 sends = subject problem, rewrite subjects, keep bodies)
-REPLY: count and percent (the real conversion metric. A reply moves
-the person to a 1:1 lane, DM or email, whichever they chose. The
-list is where trust is banked, not where the sale happens)
-RECEIPTS: requested, scheduled, delivered
+ENGAGED (the score, Hormozi L1): replies plus receipt requests,
+count. A reply moves the person to the 1:1 lane, hand-written,
+same day. The list is where trust is banked, not where the sale
+happens.
+LIST: verified count against the 500 target (the 500 plan,
+playbook section 4), net new by lane (0 seed, 1 buyer pipeline,
+2 content, 3 referral), unsubscribes, gate progress (100
+contacts / 2 receipts delivered / 1 receipt reply)
+DELIVERED: bounce and complaint rates (the first of Suby's three
+things; sender score check monthly, playbook section 6)
+OPEN: percent (warm consent list benchmark 35 to 55. Under 25
+after 5 sends = subject problem, rewrite subjects, keep bodies.
+Hygiene, not the score)
+RECEIPTS: requested, scheduled, delivered, referral line sent
 UNSUB: percent per send (over 2 on any send = the note is not
-delivering, check teardown quality before the next send)
+delivering, check research quality before the next send)
 
 ## KILL / HOLD RULES (SLC discipline, from the playbook)
 
@@ -165,10 +235,31 @@ delivering, check teardown quality before the next send)
   is a sales trust list, not a media list.
 - Any reply: the person leaves the batch lane and enters 1:1. Never
   run a campaign at someone who has talked to you.
+- Base-case velocity (500 plan) under 15 verified a week for three
+  weeks: the magnet is the problem before the message is (Hormozi
+  L13). Change the magnet wording or the capture reason, not the
+  touch volume.
+- Three consecutive non-opens per contact: quiet list, monthly
+  sends (sender reputation is driven by engagement, Suby E-3).
+  Quiet list contacts are still on the list, just at a lower
+  cadence.
 
 ## SEND LOG (newest on top)
 
-10-27  DIVISION-0  EMAIL EMPIRE ESTABLISHED. Staged build (owner
+10-27  DIVISION-2  EMAIL EMPIRE v2 (owner direction, 2026-10-27):
+        verified research every week (R13, the W spine), 500
+        verified emails from clients and buyers (the 500 plan,
+        playbook section 4), personalized weekly sends (R14, the
+        3-layer personalization engine), irresistible (the value
+        equation on the receipt). Playbook drafted from
+        books/sell-like-crazy.md (email chapter, Phase 8, read in
+        full) + Hormozi extracts 01 to 03. R11 to R14 added (P
+        group, goodwill 2/3, research spine, personalized).
+        Subjects shortened to the 1 to 20 char rule. All copy
+        still DRAFTED; nothing sends until platform + first
+        consented capture.
+
+10-27  DIVISION-1  EMAIL EMPIRE ESTABLISHED. Staged build (owner
         decision): magnet = free single-agent verification receipt
         (two a month, real), stage 1 = capture + E1 to E6 + weekly
         teardown, stage 2 gate = 100 contacts + 2 receipts

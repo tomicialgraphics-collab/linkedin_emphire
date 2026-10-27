@@ -3,6 +3,10 @@
 # no slots anywhere in this file. CTAs are reply / read / run only.
 # All copy: dash-free (R3), banned-word clean (R4), motif budget
 # 1 to 2 per email (R5), one idea one CTA (R6).
+# P-group (R11): plain text, subject 1 to 20 chars lowercase, and
+# at send time the body's first line is merged to "{first name},
+# {their context}." (R14). Onboarding only; the weekly spine (W)
+# is the standing send, template in the protocol.
 
 FOOTER (R9, on every send, source line varies per contact):
   Timothy Olusanya
@@ -59,7 +63,7 @@ about. I can run two a month, free.
 {footer}
 
 ============================================================
-E2 (T+3)  SUBJECT: how to read one of these
+E2 (T+3)  SUBJECT: how to read it
 Purpose: make the format stick. The method line is the
 differentiator. Register: method-first. Motifs: re-run x1,
 claim/result x2 (the concept, not the catchphrase).
@@ -88,7 +92,7 @@ part.
 {footer}
 
 ============================================================
-E3 (T+7)  SUBJECT: a number I re-ran this week
+E3 (T+7)  SUBJECT: a number
 Purpose: the live teardown. Source: the owner's own D2 group post
 (490 unauthenticated public MCP servers, posted, "MCP is a good
 protocol. The protocol is not the threat. The unauthenticated
@@ -123,7 +127,7 @@ month.
 {footer}
 
 ============================================================
-E4 (T+14)  SUBJECT: run this on your own agent
+E4 (T+14)  SUBJECT: run this
 Purpose: the DIY path. The five-tests repo, public, built to be
 run by the owner of the agent. Register: method-first. Motifs:
 re-run x1, receipt x1.
@@ -151,7 +155,7 @@ line is for.
 {footer}
 
 ============================================================
-E5 (T+21)  SUBJECT: what a claim costs when it is yours
+E5 (T+21)  SUBJECT: when it's yours
 Purpose: the consequence email. Decision-maker register, no ask,
 no method, closes on the date. Facts used (verified): Art 50 live
 2 Aug 2026, marking grace closes 2 Dec 2026, Annex III applies
@@ -206,10 +210,14 @@ will not be me.
 {footer}
 
 ============================================================
-W (weekly, after E6)  SUBJECT: one number, re-run (the date)
-Standing teardown, template in the protocol. One number a week,
-four lines, one why-this-week line, footer. No CTA unless the
-number is re-runnable by the reader, then the CTA is "run it".
+W (weekly, the spine)  SUBJECT: one number
+The personalized verified research (protocol R13, R14). One number
+a week, verified by the owner running the re-run. Full template in
+the protocol (merged first line, per-room framing, the four lines,
+the honest line, the teaser, the P.S., the footer). No CTA unless
+the number is re-runnable by the reader, then the CTA is "run it".
+If no number passes the gate this week, the honest week email goes
+out instead (short, true, cadence kept).
 ============================================================
 
 ## SEQUENCE STATE
