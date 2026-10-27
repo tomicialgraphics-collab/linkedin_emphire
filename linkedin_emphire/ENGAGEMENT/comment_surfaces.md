@@ -759,6 +759,41 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   would be a bolted-on lecture. Student, no commercial
   signal, no client flag, no action.
 
+## Skip log (10-27)
+- Aiswarya Venkitesh (34m, "12 AI system design concepts
+  every LLM engineer should know", twelve one-line
+  concepts + newsletter CTA + audience question; 2nd;
+  Microsoft Principal Cloud Solution AI Architect, big
+  creator audience): SKIP. (1) Off-lane surface:
+  educational listicle, same class as Hitesh 10-25
+  (OFF-LANE, programming education); every item is a
+  single boilerplate sentence, nothing to point at under
+  the specific-point rule. (2) Thread saturation: both
+  in-lane angles already sit in the visible thread
+  (Poornachandra: evals underrated; Naman Pandey: evals
+  early; Prashant Rathi: guardrails against edge cases,
+  author reply "adversarial testing is important"), the
+  owner's comment would be a third occurrence of the same
+  point inside the thread. (3) The author's close ("the
+  difference between an LLM demo and a reliable AI
+  product") is the owner's demo/trust line, already run
+  today on Love Babbar = motif repetition within the
+  day. (4) Comment section shows an engagement-pod
+  fingerprint (dozens of near-identical "1 reaction /
+  11" premium 3rd+ entries), low placement value.
+  Listicle precedent (10-24): decays slowly, no
+  freshness loss from waiting. INTERACTIVE fallback (36w,
+  answers her question) only if the owner wants the
+  reach play: "Guardrails. It's the only concept on the
+  list whose failure arrives as an incident instead of a
+  metric, and the only one that should be tested
+  adversarially before the first user, not after the
+  first complaint."
+- Clint Gibler (6m, PHP2Shell webinar promo): SKIP for a
+  comment, see his tier 2 entry (three documented
+  reasons, repetition tax first); MOVE = register and
+  attend Wed 18:00 Lagos with the prepared Q&A question.
+
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
   home turf, or active thread partner) with their tier.
