@@ -227,6 +227,25 @@ buyer); reach surface, placement already proven on this
 author. 96w HUMAN = POSTED (owner, 10-27, "posted"
 confirmed); today's posted count: 1 (within cap);
 reactions and impressions owed at next paste.
+Jerry Liu (Co-founder/CEO @ LlamaIndex; owner Following;
+already in the tier 1 name list; tier 1 reach,
+AI-engineering audience): 10-27, 5m at capture:
+Anthropic S-1 post (318 pages, filed 10-26 per his post,
+"biggest IPO in history") plus a LlamaParse-built
+highlights reader on Vercel, shoutout to Zhaoqi Li.
+Lane-adjacent via the synthesis line: an AI reader
+compressing a legal filing into highlights is the
+owner's tie-out/evidence territory applied to financial
+documents. 78w HUMAN drafted (10-27, in chat): the
+highlights-become-the-document failure mode, the
+traceable-to-page-and-line check with the tie-out shown
+on click, "synthesis is a compression, not a proof",
+flat close, compliment in position 2, no flattery in
+line one. No client flag (vendor CEO, product post);
+reach surface. DRAFTED, not posted; today's posted
+count 1 (Love Babbar); the Federico 88w is also still
+DRAFTED, if both go up today the owner spaces them 60+
+min and keeps the 2h window under 3.
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
