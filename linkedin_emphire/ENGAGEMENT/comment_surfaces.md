@@ -202,6 +202,30 @@ client flag (cloud ops, not an audit buyer); foreign
 practitioner, warm public social proof on a tier 1
 surface. Follow-back audit: confirm owner follows him
 back.
+Love Babbar (Building CodeHelp One | SSB Recommended |
+TedX Speaker | Ex-Amazon | Ex-Microsoft; owner Following
+per the 10-27 capture; tier 1 reach, developer education
+audience; PROVEN SURFACE: the 10-24 comment on his AI
+jobs vs $725B infrastructure post logged 40,346
+impressions overnight): 10-27, 7m at capture: "Stop
+building AI agents until you understand these 4 things"
+(context, tool permissions, failure handling,
+evaluation). His close is the owner's thesis near
+verbatim ("A demo proves that your agent can work.
+Proper testing proves whether you can trust it") =
+independent statement of the demo/trust line in front of
+a massive audience. Dead-center lane via item 4
+(evaluation) and item 2 (tool permissions = the
+action-gate class). 96w HUMAN drafted (10-27, in chat):
+re-performability ("a suite only the author can interpret
+is a demo with extra steps") + action surface vs answer
+surface ("permissions are set once, routing around them
+is a runtime question"), concession on his close line,
+flat close on the re-perform line, no flattery in line
+one. No client flag (education/creator, not an audit
+buyer); reach surface, placement already proven on this
+author. DRAFTED, not posted; 0 posted today, this is
+comment #1, within the cap.
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
