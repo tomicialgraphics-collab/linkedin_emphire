@@ -209,19 +209,27 @@ Machine Learning, Python, Analytics & RAG"
         AI), Vika (AEO), Andela (enablement), Darren
         Goonawardana +1 (Welsch Gartner x2), Welsch +1
         (Gartner).
-        NEEDS OWNER INPUT (2 mentions; owner's comments
-        visible, SALMAN'S actual mention text NOT in
-        capture): (1) SALMAN LAKHANI mentioned owner on
+        NEEDS OWNER INPUT (1 remaining; owner's comments
+        visible, SALMAN'S actual mention text was NOT in
+        capture; fuzzer thread text now received):
+        (1) SALMAN LAKHANI mentioned owner on
         the "janas" repo thread (80B MoE on laptop, disk
         bandwidth); owner's last comment asks "Would you
-        add anything for the conversion step?" (2) SALMAN
-        LAKHANI mentioned owner on the Anthropic fuzzer /
-        OSS-Fuzz proof thread (Claude proved 123 libs
-        crash-free under 64MB); owner's last comment asks
-        "Who should hand out the badge, the lab that ran
-        the proof or the project that accepts the fix?"
-        -> owner to paste Salman's text; then draft
-        replies. Warm-contact threads, worth a fast turn.
+        add anything for the conversion step?" -> text
+        still needed. (2) SALMAN LAKHANI fuzzer / OSS-Fuzz
+        thread: TEXT RECEIVED (10-27). Salman's 2h reply
+        @mentions owner: repro is what lets a maintainer
+        act, proof changes weight, unpaid maintainers
+        should not be the test bench for every lab; asks
+        WHO HANDS OUT THE BADGE, lab or project (badge
+        question is SALMAN'S; earlier capture
+        misattributed it to owner's comment). -> DRAFTED,
+        paste-ready in chat: project badges, and only
+        after running the repro; the lab owes a minutes-
+        fast repro on the environment the project ships;
+        no repro = claim pile, no queue; closes on the
+        unpaid-maintainer line. Warm contact, worth a
+        fast turn.
         ENGAGED (DRAFTED, paste-ready in chat):
         * BRAD WOLFE (COFO, wolfepacks.com, 80 M&A deals;
           ACTIVE DM sequence re Agent Gate) - post "FINANCE
@@ -283,9 +291,12 @@ Machine Learning, Python, Analytics & RAG"
         Replit-for-Business live + Akshatha like), Welsch
         (live), Dario (live), Rock PHP2Shell (owner has
         own PHP2Shell post).
-        NEXT: owner pastes Salman's mention text (2
-        threads); Brad Wolfe finance comment paste-ready;
-        IPO post -> POSTED.
+        NEXT: Salman fuzzer thread DRAFTED (owner to
+        paste); Salman janas thread (80B MoE / disk
+        bandwidth) still needs owner's text; Brad Wolfe
+        finance comment paste-ready (owner to confirm
+        posted); IPO post -> POSTED (done, capture-
+        confirmed).
 10-26  THE AI COLONY (AI content page, ~42K followers;
         engagement-ring comment section of other content
         pages trading "yeah"/"yup") - post: "Is AI voice
