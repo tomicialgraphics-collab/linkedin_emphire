@@ -13,6 +13,20 @@ TIMELINE OF RECORD:
   commitment / $900 deferred structure was declined (his
   pre-round-debt rule) and is superseded - this is in the
   scope doc itself.
+- 10-27 CORRECTION (owner's direct statement, THIS
+  CAPTURE): the redacted past-engagement report was NEVER
+  SENT. This entry's "sent" state is superseded; it was an
+  unconfirmed record. Workspace check 10-27: no redacted
+  client report exists in the workspace. The only
+  findings-report artifact is the owner's own-project
+  sample (UPWORK/sample_findings_report.md +
+  gallery/sample_findings_report.pdf: six prompt-injection
+  attempts on the owner's own chatbot, four worked, exact
+  four-part format, own project, free to show in full).
+  Awaiting owner pick (asked in chat 10-27): attach a
+  redacted client report if one exists outside the
+  workspace, else send the own-project sample plus the
+  public repo, labeled accurately.
 - Night of the close (owner 8:58 PM DM): the owner sent the
   REDACTED ANONYMIZED past-engagement report by DM ("closest
   thing to what the Arcezia report will look like, same shape,
@@ -164,13 +178,23 @@ at close.
   is M1b (cross-session persistence is where agent gates
   most often fail); still accept, it is a known-issue
   exclusion and it goes in the report's scope note.
-  HIS ASK (past write-up or repo): already answered in
-  practice, the redacted report went out by DM 10-24
-  8:58 PM and he praised it 10-26 8:56 AM ("a real report
-  with the client's confidentiality respected"); the repo
-  answer is the public tooling:
-  github.com/Teamthy/ai-redteam-five-tests. Point to both;
-  nothing new to produce.
+  HIS ASK (past write-up or repo): LIVE PRECONDITION (he
+  wants it before the key goes out). CORRECTION 10-27
+  (owner's statement): the redacted report was never sent;
+  his 10-26 8:56 AM line ("a real report with the client's
+  confidentiality respected") most likely responded to the
+  described approach, not a received PDF. What is actually
+  on hand: (a) the own-project sample findings report
+  (UPWORK/sample_findings_report.md + gallery
+  sample_findings_report.pdf, own chatbot, real testing,
+  exact four-part format, free to publish in full), (b)
+  the public tooling repo:
+  github.com/Teamthy/ai-redteam-five-tests. His OR is
+  satisfied by either (a) or (b); (a)+(b) is strongest.
+  Honesty constraint: the email must label exactly what is
+  attached. Own-project = "my own project, not a client".
+  A redacted client report may exist outside the
+  workspace; owner to confirm (A/B pick asked in chat).
   THE 'AGREED' LOOP: "reply 'agreed' and the key goes out
   on the 27th" is superseded by the bereavement sequence
   that followed (5:47 PM DM, the owner's 7:50 PM
@@ -245,13 +269,16 @@ Arcezia work paused; the engagement stands on its 10-24
 terms and moves only when he re-engages. 500 counter: no
 impact (no consent exchange here).
 - 10-27 evening (owner email paste, THIS CAPTURE):
-  DECISION RECOMMENDED, draft delivered in chat. Send ONE
-  short email to Praveen (tomorrow morning, 10-28, not
-  tonight): accept all six markups as written, point to
-  the redacted report already in his inbox (10-24) and to
-  the public tooling repo for the method, and explicitly
-  park the key and the dates until his return, no
-  deadline, no need to reply. Zero pressure wording
+  DECISION RECOMMENDED, draft delivered in chat, then
+  REVISED (owner: "ive not sent past write up"): the
+  first draft's line "the redacted report I sent on the
+  24th is already in your inbox" is FALSE and withdrawn.
+  Revised plan: send ONE short email (tomorrow morning,
+  10-28, not tonight) that accepts all six markups as
+  written, answers the write-up/repo precondition with the
+  actual artifact (pending owner A/B pick above, label
+  accordingly), and parks the key and the dates until his
+  return, no deadline, no need to reply. Zero pressure wording
   throughout. This clears every open item on his plate
   (the markups, the write-up/repo ask, the 'agreed' loop)
   so his return starts from a closed written record.
