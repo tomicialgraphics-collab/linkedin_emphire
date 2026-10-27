@@ -131,6 +131,17 @@ the offer (after the gate). At 500, layers 1 and 2 are templated
 personalization and layer 3 is hand. That is what personalized
 means at this scale, and it is stated in the log, not faked.
 
+R15 VERIFIED URL FOR THE COLD DM. For every contact with a
+LinkedIn profile, the send block carries their LinkedIn URL,
+verified, for the owner's cold DM. Three states, no others:
+capture-verified (the capture itself came from that profile, a
+DM, a comment, a reply, verified by construction), search-
+verified (found by search, name plus role plus company matched,
+profile confirmed active), unverified (never carried in a send
+block). An unverified URL is flagged in the record as unverified
+and left out of the send file until it is verified. A DM to the
+wrong profile is worse than no DM.
+
 ## STAGES
 
 STAGE 1 (NOW): capture + magnet + the weekly verified research
@@ -215,14 +226,41 @@ contact, in EMAIL/sends/YYYY-Www.md (created at the first send):
   (Hormozi L12). For email-only contacts, the source line.
 - Layer 2, the framing: practitioner or decision-maker first
   paragraph, per the contact's room (R7).
+- The LinkedIn URL, for contacts with a profile (R15): verified,
+  for the owner's cold DM. Capture contacts (lanes 1 to 3) are
+  capture-verified by construction. Seed contacts (lane 0) are
+  search-verified by the agent (name plus role plus company
+  match, active profile) before they enter the send file.
 - The shared body: the four lines, the honest line, the teaser
   (if real), the P.S. (R12), the footer (R9).
+
+Per-contact block format in the sends file:
+  CONTACT: {name}
+  EMAIL: {address}
+  LINKEDIN: {url} [{capture-verified | search-verified}]
+  (or: LINKEDIN: none)
+  ROOM: {practitioner | decision-maker}
+  SOURCE: {capture source + context line}
+  SUBJECT: {subject}
+  PREVIEW: {first line of body}
+  FIRST LINE: {merged first line, R14 layer 1}
+  FRAMING: {room framing paragraph, R14 layer 2}
+  BODY: {shared four lines + honest line + teaser}
+  P.S.: {stage line, R12}
+  FOOTER: {source line, R9}
+  STATE: DRAFTED (becomes SENT on the owner's word, R10)
+
 Hand the send file to the owner. Nothing is queued before the
 owner's read-through.
 
-STEP 4 (owner): SEND. Send or queue per contact. Mark SENT (R10).
-Log opens and replies in the KPI table. Every reply enters the
-1:1 lane (hand-written, same day, R14 layer 3).
+STEP 4 (owner): SEND. Send or queue per contact (email). For
+contacts with a verified URL, the cold DM goes out from the URL
+(the DM is the same note's first line plus the receipt offer,
+short, per the DM capture copy in the magnet file). Mark SENT
+(R10). Log opens and replies in the KPI table. Every reply enters
+the 1:1 lane (hand-written, same day, R14 layer 3). A contact
+reached on both channels is logged with both touches, and the
+three-touch cap (Hormozi L5) counts across both.
 
 File conventions: research lists in EMAIL/research/ (one file per
 slot, permanent record). Personalized sends in EMAIL/sends/ (one
@@ -296,6 +334,15 @@ delivering, check research quality before the next send)
 
 ## SEND LOG (newest on top)
 
+10-27  DIVISION-3  owner workflow refinement: personalized send
+        blocks now carry the verified LinkedIn URL for contacts
+        with a profile (R15, three states: capture-verified,
+        search-verified, unverified never ships), for the
+        owner's cold DM. Per-contact block format fixed in the
+        weekly pipeline (step 3). Seed (lane 0) URLs are
+        search-verified by the agent before they enter a send
+        file. Three-touch cap counts across email plus DM.
+
 10-27  DIVISION-2  EMAIL EMPIRE v2 (owner direction, 2026-10-27):
         verified research every week (R13, the W spine), 500
         verified emails from clients and buyers (the 500 plan,
@@ -318,10 +365,11 @@ delivering, check research quality before the next send)
         Nothing is sent until the owner confirms platform setup and
         the first consented capture.
 
-## CONTACTS LOG (newest on top, per R1)
+## CONTACTS LOG (newest on top, per R1 and R15)
 
-(none yet. First entry: date, name, source, consent timestamp,
-consent line used, tier)
+(none yet. First entry: date, name, email, linkedin url with
+verification state (capture-verified / search-verified / none),
+source, consent timestamp, consent line used, room)
 
 ## KPI TABLE (weekly, newest on top)
 

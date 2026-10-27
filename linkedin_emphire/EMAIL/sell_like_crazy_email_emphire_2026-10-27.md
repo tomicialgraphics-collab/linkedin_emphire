@@ -323,6 +323,12 @@ scale.
 THE CONTACT RECORD (one row per contact, the CONTACTS LOG plus
 these fields):
 - name: first name
+- email: the address (post double opt-in)
+- linkedin url: the profile URL, verified, for the cold DM
+  (protocol R15), or none
+- url verification: capture-verified (the capture came from that
+  profile), search-verified (name plus role plus company matched,
+  profile active), or unverified (carried nowhere until verified)
 - source: which DM, article, or comment, with a 5-word context
   line ("MCP thread, 10-27", "Article 50, EU deadline")
 - room: practitioner or decision-maker (the two-room register)
@@ -333,6 +339,17 @@ these fields):
 - receipt: none, requested, or delivered, with date
 - reply state: never replied, replied date, 1:1 lane
 - open state: last open date (for hygiene, below)
+
+URL VERIFICATION (R15, owner direction 2026-10-27): the
+personalized send block carries the verified LinkedIn URL for
+every contact who has a profile, because the owner runs the cold
+DM from the same note. Capture contacts (lanes 1 to 3) are
+capture-verified by construction: the DM, comment, or reply came
+from that profile. Seed contacts (lane 0) are search-verified by
+the agent before they enter a send file: the search result must
+match name, role, and company, and the profile must be active.
+Unverified URLs never ship in a send block. A DM to the wrong
+profile is worse than no DM.
 
 LAYER 1, THE FIRST LINE (merge, every email, every contact):
   "{first name}, {their context}."
@@ -413,9 +430,13 @@ PLAYBOOK: DRAFTED (this file)
 SWIPE FILE: NOT BUILT (first task after platform setup, one
 sitting: subscribe to the niche newsletters, build the folders,
 write the "the herd does X, we do the opposite" notes)
-FIRST RESEARCH SLOT: week of 10-27 to 11-02 (candidate pool
-seeds in the RESEARCH LOG above)
-FIRST CONSENT ASKS (lane 0): not started (copy ready in section 4)
+RESEARCH SLOT 1: VERIFIED LIST PRODUCED, awaiting owner scan and
+pick (EMAIL/research/2026-10-27_slot1_verified_list.md)
+URL VERIFICATION (R15): ACTIVE (owner direction 2026-10-27, send
+blocks carry the verified LinkedIn URL for the cold DM)
+FIRST CONSENT ASKS (lane 0): not started (copy ready in section 4;
+seed URLs get search-verified by the agent before any send file)
 500 COUNTER: 0 / 500
 
-Last updated: 2026-10-27 (playbook drafted from the books)
+Last updated: 2026-10-27 (playbook drafted from the books, slot 1
+list produced, R15 URL rule added)
