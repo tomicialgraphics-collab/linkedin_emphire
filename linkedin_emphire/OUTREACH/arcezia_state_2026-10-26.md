@@ -144,13 +144,34 @@ at close.
   from you. Take the time you need. / When things settle,
   we'll re-agree the dates in writing and I'll slot you
   in. No deadline from my side, and no need to reply to
-  this." SEND UNCONFIRMED until owner says sent.
-  NEXT CONTACT: only if/when he replies, or ONE line in
-  ~5-7 days if he hasn't ("How are you holding up?
-  Whenever you're ready, we'll re-agree the dates - no
-  rush."). Reschedule is his or the owner's to propose;
-  minimum window = two test days + report day; key-gate
-  rule unchanged (written agreement first, then key).
+  this."
+- 10-27 7:50 PM (owner, THIS PASTE): CONDOLIENCE DM SENT:
+  the drafted text, verbatim as captured in the thread.
+  The 10-26 "SEND UNCONFIRMED" state is closed; the
+  carried "Praveen reply sent?" item is RESOLVED.
+- 10-27 3:03 PM (Praveen, THIS PASTE, latest): "Thanks for
+  understanding!" + reaction set (clap, thumbs up, smile).
+  READ: acknowledgment, not a question; the thread is at
+  its natural end. MOVE: NO REPLY. The owner's message
+  already said no reply was needed, and a second message
+  puts him back at the screen in mourning. Hold stays
+  exactly as set: no nudge, no consent ask, no business
+  nouns until he re-engages; the key gate stays
+  unsatisfied by design (his markup never arrived).
+  NEXT CONTACT: only if/when he re-engages, or ONE line in
+  ~5-7 days if he hasn't (window now ~11-01 to 11-03:
+  "How are you holding up? Whenever you're ready, we'll
+  re-agree the dates. No rush."). Reschedule is his or
+  the owner's to propose; minimum window = two test days +
+  report day; key-gate rule unchanged (written agreement
+  first, then key). The 27th/29th/30th milestones are all
+  void and move with the reschedule (the 10-30 written
+  reference moves too).
   CHARACTER NOTE: this moment is the foundation of the
-  written reference - zero pressure and no schedule panic
+  written reference. Zero pressure and no schedule panic
   here is the material that reference will describe.
+
+STATUS AS OF 10-27 3:03 PM: ON HOLD (bereavement). All
+Arcezia work paused; the engagement stands on its 10-24
+terms and moves only when he re-engages. 500 counter: no
+impact (no consent exchange here).
