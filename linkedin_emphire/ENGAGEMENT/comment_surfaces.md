@@ -288,9 +288,20 @@ Team), Clint Gibler (OpenAI), Ian W. (Promptfoo / OpenAI), Joseph
 Thacker, Rebecca Huteson, Alex Combessie (Giskard), Keren Katz
 (Zenity, OWASP Agentic Top 10), Hyrum Anderson (Abundant Security),
 Rock Lambros (Zenity; thread partner 10-24 "Huh?"
-thread, 59w reply queued; 10-25 [un]prompted II post =
-Stage 2 opener w/ Fred Wilmot, CxBOM release, 78w
-HUMAN drafted = 10-25 verbatim item 7), Tarique Smith
+thread, 59w reply queued, owner pending; 10-25
+[un]prompted II post = Stage 2 opener w/ Fred Wilmot,
+CxBOM release, 78w HUMAN drafted = 10-25 verbatim
+item 7, POSTED: 239 imp at 10-27, Fred Wilmot AND
+Rock both reacted to the comment = strongest thread
+signal of the week; 10-27 post-event CxBOM record
+post (2h, five open issues, trust-by-delivery,
+digest-match finalize gate, audit flag false while
+findings open, cxbom.org + blog + paper live):
+follow-up play per 10-25 item 7 = run their validator
+against their fixtures, next-week content item;
+88w HUMAN alternative DRAFTED (10-27 verbatim item 7)
+if the owner wants the public touch, flagged: third
+Rock action in 3 days, owner's call), Tarique Smith
 (Zero Day Agent),
 Brad Wolfe (AI/Operational CFO - COFO | 15 yrs | 80+
 M&A | 5 exits | 3 NASDAQ CFO seats | JD/MBA ExPWC |
@@ -426,6 +437,54 @@ Fallback comment (55w) drafted in chat in case the
 owner wants a public touch today anyway; flagged as
 presence #5.
 
+Alex Tamkin (Anthropic researcher; on the audience
+list since 10-24; tier 2 home turf via the
+agent-trust/oversight lane): 10-27, 15h at paste:
+randomized trial, 50 professional data analysts,
+agent's lean randomly assigned, analysts went with
+the agent's option 86% of the time; asked why, 77%
+repeated the agent's argument in at least one answer
+(sometimes word for word), only 15% credited the
+agent, about half called the final recommendation
+more their own; not low-effort (one analyst 40+
+min); agent users finished faster with far fewer
+serious errors than the 11 who worked alone; authors
+strengthened the lean on purpose, single model,
+1h task; close: 'human in the loop' might provide
+less assurance than people expect. 133w HUMAN
+DRAFTED (10-27 verbatim item 6): the 77%
+verbatim-repetition line (loop parroting, not
+checking), "assurance was never the human's, it was
+the agent's confidence signed by the human",
+control = the loop re-runnable without the agent,
+close on the 15%. Fresh thread, fresh object (human
+judgment delegation, not the model/benchmark/patch
+the owner has run all week), decision-maker bridge
+(HITL is the assurance claim boards and customers
+buy). No client flag (researcher, not an audit
+buyer); practitioner/research audience. DRAFTED, not
+posted.
+OWASP GenAI Security Project (named org, 33K
+followers, on the audience list since 10-24; tier 2
+home turf, this audience hires): 10-27, 17h at
+paste: LLM Exploit Generation Phase 2 report
+(Agentic vs Classic Offensive Approaches), 15-month
+Threat Intelligence Initiative, human-guided
+chatbots + autonomous agent frameworks against live
+HTB machines post-training-cutoff, real-actor
+constraints (cost, guardrails, rate limits, no
+scoreboard); key lines: where LLMs accelerate
+attacks vs where human expertise stays essential,
+the harness mattered more than the model,
+guardrails should not be relied on, "cyber
+benchmark scores shouldn't be read as threat
+intelligence", what the July 2026 frontier-lab
+incidents do and don't tell us. THIRD CANDIDATE of
+this capture (after Tamkin item 6 and the Rock item
+7 alternative); in-lane, named org, specific
+report, but the benchmark-vs-threat-intel line
+would be a fifth same-motif comment today if
+posted; DRAFT ON REQUEST, not drafted this pass.
 ## Tier 3 — builder / adjacent layer + active thread partners
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
 Ife Abimbola-Olulesi (Proof), Shehbaz Pathan (RAG / agent memory),
@@ -859,6 +918,79 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   wants in anyway, draft on request. MOVE: none owed;
   physical-AI-adjacent note for the carried physical-
   AI thread (Dario Melo, Juan Carlos) if it resumes.
+
+- Tanya Janca (13h, PHP2Shell assume-breach post,
+  Dream Research 25 compromised systems, webshells +
+  persistence, two questions: patched? investigated
+  for prior exploitation?): SKIP, repetition tax
+  first: sixth PHP2Shell presence this week (owner's
+  own material; advisory, 1.5M unpatched, NSA,
+  vulnzero post, the advisory-inventory comment at
+  239 imp, Clint webinar), and the "investigate
+  whether it was exploited before you patched" half
+  is the same verification line the owner's 239-imp
+  comment already ran. Keep the surface hot (tier 1,
+  named human security publication).
+- Hamel Husain (1m, Evals for AI Engineers book
+  launch + Nov 12 Bay Area meetup, free signed
+  copy, "some fundamentals of evals won't change as
+  models improve"): SKIP, launch/event CTA surface
+  (celebration + sign-up link), low placement value
+  for a comment; the "fundamentals won't change"
+  line sits next to the owner's burned evals/re-run
+  motif for the week. Keep the surface hot (tier 1,
+  now at OpenAI; the book is a resource for the
+  evals thread). INTERACTIVE fallback on request
+  only.
+- Daniel Miessler x3 (1h each): code-vs-intent
+  REPOST (weak repost surface + same off-lane hot
+  take as the 10-26 skip), "1,500% jump in forward
+  deployed AI engineers in China" (stat, off-lane),
+  "Microsoft has offered to buy out an entire
+  quarter of their workforce" (hot take, off-lane):
+  SKIP x3, stat/hot-take class, and the surface is
+  already hot on the Kusari 89w DRAFTED (today).
+- Love Babbar (13h, Microsoft 60,000 voluntary exit
+  offer): SKIP, corporate workforce news, off-lane
+  for this author's PROVEN in-lane usage (the 96w
+  evals comment is POSTED today; keep the surface
+  hot for the next in-lane post).
+- Jerry Liu (15h, GPT 6.1 Terra ParseBench table
+  parsing post): SKIP, OCR/document-parsing vendor
+  post, off-lane (same class as the 10-26 OCRia-1
+  skip); his S-1 reader post (23h) is already
+  engaged (78w DRAFTED).
+- Ads Dawson (2h, [un]prompted day-1 highlights, AI
+  SOC evals, botsbench/louie, 70% -> 96% Splunk
+  Boss of the SOC, "harnesses are eating prompts,
+  models are eating harnesses"): SKIP, conference
+  self-promo surface (talk highlights, slides in
+  comments, DM CTA) and the [un]prompted/CxBOM
+  thread is already hot for the day (owner comment
+  live at 239 imp with reactions from both
+  presenters). Keep Ads Dawson warm (botsbench + AI
+  timelining = future content hooks).
+- Bulk off-lane, no action (10-27 late paste): Brad
+  Wolfe x7 finance posts (his lane, owner's
+  collaborator, no comment action; DM v3 out since
+  10-26), Alex Hormozi x2, Tiago Forte x2 (book),
+  Ruben Hassid x2 (usage tutorials), Haoma
+  Worgwu/ChatGPT GDPR steps (privacy tutorial),
+  Bolaji x4 + Blossom x3 + Ugwoke (creator/platitude
+  class, carried follow-back), Enzi Prize reposts
+  x2 (owner already engaged, celebrated),
+  Iyinoluwa Aboyeji reposts (Talent Nation pre-seed,
+  Enzi talent panel, Future Caribbean; off-lane),
+  Lenny Rachitsky (jobs), Neil Sahota (AI business
+  strategy), Egor Pushkin (OCI agent webinar, vendor
+  CTA), Weaviate x2 + Decagon + adaption (vendor
+  posts), Chinasa Okolo x2 (advisory board,
+  fellowship), Kieran Drew x2 (writing), Allie
+  Miller (goals), Elena Bobkova, Jesse Zhang, Amjad
+  Masad (story), Patrick Bet-David, Guido Penta
+  (Italian event), Endrit 4h AI-graphics post (off-
+  lane; his 16h IPO post already engaged at 263
+  imp), job ads, LinkedIn UI cards.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
