@@ -70,6 +70,29 @@ TRADEOFF FLAGGED: the rewrite gives up the explicit career-switcher
 line above). The MLS origin story still serves switchers implicitly:
 lab to AI security is itself the switch.
 
-HEADLINE: not pasted, not touched. If the headline under the name
-still reads generic, it needs the same pass; owner to paste it and
-it gets a draft in the same format.
+HEADLINE + SUBHEADLINE: DRAFTED 10-28 (owner request
+"headline and subjeadline"), pending owner paste.
+HEADLINE (field under the name, 220-char limit, 108 chars):
+"I red team AI agents before they get keys, and I build
+the check that tells you the green dashboard is real."
+SUBHEADLINE = the locked About line 1 (owner choice 10-25),
+unchanged: "I trained as a Medical Laboratory Scientist.
+Now I break AI systems on purpose."
+SEQUENCE LOGIC: headline carries the lane + value
+(the hook a commenter sees in the card), subheadline
+carries the origin twist that pulls into the About. No
+overlap: the headline has no MLS, the subheadline has no
+check/dashboard vocabulary; "break ... on purpose" stays
+exclusive to the subheadline.
+ALTERNATIVE headline (96 chars, fragment second beat):
+"I red team AI agents before they get keys. The check
+that tells you the green dashboard is real."
+GATES: same as the About (0 dashes, 0 curly quotes,
+straight text, no slop, no fabricated claims, no client
+names, no numbers, no follower counts); "keys" and
+"the check" and "green dashboard" are the owner's own
+established lines from the About draft; "I'm/you'll"
+contractions avoided in the headline (0 contractions).
+STATUS: DRAFTED, owner pastes; mark PASTED when he says
+so (then the About draft's "HEADLINE: not pasted" line is
+fully retired).
