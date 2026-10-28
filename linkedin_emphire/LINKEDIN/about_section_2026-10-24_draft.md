@@ -75,15 +75,25 @@ HEADLINE + SUBHEADLINE: DRAFTED 10-28 (owner request
 HEADLINE (field under the name, 220-char limit, 108 chars):
 "I red team AI agents before they get keys, and I build
 the check that tells you the green dashboard is real."
-SUBHEADLINE = the locked About line 1 (owner choice 10-25),
-unchanged: "I trained as a Medical Laboratory Scientist.
-Now I break AI systems on purpose."
-SEQUENCE LOGIC: headline carries the lane + value
-(the hook a commenter sees in the card), subheadline
-carries the origin twist that pulls into the About. No
-overlap: the headline has no MLS, the subheadline has no
-check/dashboard vocabulary; "break ... on purpose" stays
-exclusive to the subheadline.
+SUBHEADLINE: REWRITTEN 10-28 (owner request "rewrite
+subheadline"). The first version reused the About line 1
+verbatim, which would have shown twice on the profile
+(card + About top); the rewrite carries the same MLS
+origin as stakes, not as a credential repeat, so the
+About line 1 still lands as the explicit reveal below.
+"In the lab, a wrong number ends up in the patient's
+record. Now I find the wrong numbers in AI."
+ALTERNATIVE subheadline (shorter, drier): "I was trained
+where a wrong number isn't a typo. Now I check AI the
+same way."
+SEQUENCE LOGIC (updated): headline = identity + method
+(red team before keys + the check/green dashboard),
+subheadline = origin + stakes (the lab standard, then
+the lane). No overlap: the subheadline has no
+red-team/check/dashboard words, the headline has no lab
+words; the card hints the origin, the About line 1
+states it. Strategic note honored: the MLS is the origin
+of the verification standard, not the unusual part.
 ALTERNATIVE headline (96 chars, fragment second beat):
 "I red team AI agents before they get keys. The check
 that tells you the green dashboard is real."
