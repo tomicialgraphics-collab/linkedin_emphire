@@ -1077,6 +1077,52 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   target on PR surfaces); engage on her
   personal-voice in-lane post or a direct follow,
   not on the foundation's press thread.
+- Jerry Liu (22m at paste, LlamaIndex, "Introducing
+  the Document Parsing Protocol (DPP)": hundreds of
+  OCR models parse differently, many errors
+  ambiguous e.g. split tables sharing a header,
+  "it's an issue that plagues most parse benchmarks
+  too, because they inherently reward a certain
+  style even if other styles might be semantically
+  correct", 140 curated rules covering tables /
+  forms / charts, "use DPP as an evaluation rubric
+  for LLMs", "not a full evaluation benchmark
+  (yet), but an initial evaluation guide", lnkd.in
+  protocol + blog links): SKIP. (1) Documented
+  class: this author's OCR / document-parsing
+  vendor posts, same class as the 10-27 GPT 6.1
+  Terra ParseBench skip (itself logged as same
+  class as the 10-26 OCRia-1 skip); freshness is
+  not the reason (22m, fresh), the class is.
+  (2) Launch / CTA surface: product announcement,
+  two links, "Check it out", the Hemlock / Ads
+  Dawson class. (3) One bridge considered and
+  rejected: the self-declared rubric line, the 140
+  rules make "correct" a defined format, so the
+  part that decides whether DPP is a rubric or a
+  benchmark is the labels behind them: who decided
+  the correct representation, and can a reviewer
+  who wasn't in the curation re-derive that
+  decision without the LlamaIndex team; a rubric
+  whose ground truth is trust is a style guide, a
+  rubric whose ground truth is re-derivable is a
+  check. Rejected on placement (critique landing
+  on the author's own protocol launch, two links,
+  vendor thread) and on the criterion / re-derive
+  motif already burned this week (Love Babbar 96w
+  POSTED, Jerry 78w DRAFTED, Tamkin 132w, Allie
+  129w DRAFTED, Andrey thread). (4) The Jerry
+  surface is already hot with a queued in-lane
+  draft (78w page/line tie-out for his S-1 reader
+  post); do not spend the author on a vendor post
+  while the in-lane one waits. Keep the surface
+  hot (tier 1, Following, LlamaIndex = RAG / agent
+  data layer). MOVE: none; content note if the
+  document-parsing / RAG thread ever resumes (DPP =
+  140-rule parsing rubric, ground-truth curation is
+  its open question); if the owner wants in
+  anyway, the label-re-derivability line above is
+  the drafted direction, say so.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
