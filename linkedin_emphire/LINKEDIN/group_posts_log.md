@@ -953,3 +953,22 @@ LOG:
         tomorrow per the rotation - if today, the rest of the
         week shifts one slot earlier. Paste unconfirmed until
         owner says POSTED.
+10-28  #19 Finance & Banking Fintech Regtech - D3 DRAFTED
+        and delivered to owner in chat ("post for today").
+        Theme per rotation: who signed off on the agent
+        (board assurance). DECISION-MAKER ROOM register:
+        consequence-first open (the board approved the
+        agent, but who signed off, and on what?), forcing
+        functions named (audit, insurance renewal, customer
+        diligence), method exactly once as the answer to
+        "how do you know?" (someone you did not hire reaches
+        the same verdict from the evidence), close on a
+        decision before the next board meeting + flat line
+        "the signature you have is the one you did not
+        earn." 190 words, no links, no pitch, no motif
+        words (re-run/tie-out budget intact for D4-D5),
+        hashtags: #FinTech #RegTech #RiskManagement
+        #BoardGovernance. Status: DRAFTED. Owner must be a
+        member of #19 to post (join status unconfirmed;
+        in-app joins confirmed 10-26 = #7, #10, 3 truncated
+        names). Mark POSTED when owner confirms.
