@@ -280,6 +280,44 @@ window under 3; NOTE the re-run motif load (third
 same-motif comment today if all three post), owner
 chooses. Event time if the owner wants to watch:
 Thu 10-29, 17:00 Lagos.
+Allie K. Miller (Tier 1, 2M, #1 Most Followed Voice in AI
+Business, ex-Amazon/IBM, Following; added 10-28 morning) -
+10-28: $500/24h experiment, gave OpenAI's Dot (always-on
+personal agent) a budget and an afternoon to plan; her two
+roles = (1) data permissions (2) showing up. Pros: genuinely
+fun afternoon, no planning texts. Cons: bad at pivoting,
+repeatedly emailed one restaurant from her personal email
+(apologized), pinged friends she knew were sick or out of
+town, kept thinking she was gluten-free, forgot promised
+reminders, $500 budget mostly free activities, Dot can't
+purchase natively. Three learnings: (1) AI-to-AI email
+exchange, "proxy communication layers are about to pop up
+everywhere"; (2) some people reply to AI, many find it
+strange; (3) "Identity verification will be a shitshow" -
+Hannah subway'd 30 min not knowing she'd show up; how does
+an agent prove it works for a human, how does the recipient
+trust it enough to act? Close: "I sent more apologies for
+the AI than it would have taken to plan the afternoon
+myself." In-lane, dead center: her cons are all the same
+failure (state never re-checked before the act), role 1 =
+the keys line, point 3 = the decision-maker trust problem
+in consumer clothing. 129w HUMAN DRAFTED (verbatim item
+9): cons collapsed to one con (no re-check before the
+act), the missing control named (a second look per
+action, not one at the start), point 3 extended (Hannah
+on a ping she couldn't verify; the apology is the
+after-the-fact receipt; until the agent can hand the
+receiver something to check without a call, the human is
+the verification layer). Door metaphor borrowed from her
+wall/door line. No CTA, no link, no hashtags, no
+greeting. ALTERNATIVE 62w (pure point-3/identity angle,
+verbatim item 9) if he wants the shorter one.
+BOARD FLAG (10-28 posted/queued motif load): D3 group
+post POSTED today = 0 motif words; this draft carries 2
+(re-checked, check) plus her own words (verification,
+proof). If Tamkin 132w also posts today the day reaches
+~5 motif items - 60+ min spacing if both go up.
+STATUS: DRAFTED, owner pastes when he chooses.
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
