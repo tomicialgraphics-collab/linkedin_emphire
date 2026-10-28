@@ -318,6 +318,13 @@ post POSTED today = 0 motif words; this draft carries 2
 proof). If Tamkin 132w also posts today the day reaches
 ~5 motif items - 60+ min spacing if both go up.
 STATUS: DRAFTED, owner pastes when he chooses.
+Rumman Chowdhury (IAEF founder, ex-HAI Berkeley;
+reach, tier 1, added 10-28): no comment target on
+foundation/PR surfaces (10-28 skip: 3w RoW story
+repost, org PR class, policy/donor audience,
+stale); the lane's institutional twin, prospective
+reference/partner; engage on her personal-voice
+in-lane post or a direct follow.
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
@@ -1035,6 +1042,41 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   (Italian event), Endrit 4h AI-graphics post (off-
   lane; his 16h IPO post already engaged at 263
   imp), job ads, LinkedIn UI cards.
+- Dr. Rumman Chowdhury / IAEF (3w at paste, her
+  repost of the IAEF company page: Rest of World
+  story on the RoW event, "I don't think any of us
+  think we live in a world in which AI models are
+  adequately secure" + "Don't wait for the U.S. or
+  big tech companies to fix AI safety. Take it into
+  your own hands." + IAEF building infrastructure to
+  lower the cost of third-party AI evaluation and
+  training evaluators in their own industries, RoW
+  link): SKIP. (1) Stale: 3 weeks old, thread cold,
+  no placement value for a comment (freshness
+  guardrail). (2) Org PR / media surface: company
+  page + founder repost + "Read the full story"
+  link, the same class as the Hemlock launch and
+  Ads Dawson conference skips. (3) Audience =
+  sovereign-AI policy / donors / foundation, not the
+  practitioner room or the decision-maker room; no
+  buyer in the thread. (4) The only in-lane line
+  (the cost barrier is evidence a stranger can
+  re-derive, not evaluator headcount) is the burned
+  re-run motif for the week = repetition tax. Two
+  bridges considered and rejected: (a) "take it
+  into your own hands" -> the hands need a receipt,
+  the artifact side is the missing half of IAEF's
+  evaluator side; (b) the "adequately secure" quote
+  -> secure is a property of the trail, not of the
+  model. Both rejected on placement: unprompted
+  critique on the founder's own foundation press
+  post, 3 weeks cold. WATCH: Rumman Chowdhury
+  added tier 1 (reach; IAEF is the institutional
+  twin of the owner's independent-evaluation lane,
+  prospective reference / partner, not a comment
+  target on PR surfaces); engage on her
+  personal-voice in-lane post or a direct follow,
+  not on the foundation's press thread.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
