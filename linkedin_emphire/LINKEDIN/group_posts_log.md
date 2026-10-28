@@ -971,4 +971,5 @@ LOG:
         #BoardGovernance. Status: DRAFTED. Owner must be a
         member of #19 to post (join status unconfirmed;
         in-app joins confirmed 10-26 = #7, #10, 3 truncated
-        names). Mark POSTED when owner confirms.
+        names). POSTED (owner screenshot 10-28: live in
+        feed with the hashtag line intact).

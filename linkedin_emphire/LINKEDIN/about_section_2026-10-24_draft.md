@@ -103,6 +103,20 @@ names, no numbers, no follower counts); "keys" and
 "the check" and "green dashboard" are the owner's own
 established lines from the About draft; "I'm/you'll"
 contractions avoided in the headline (0 contractions).
-STATUS: DRAFTED, owner pastes; mark PASTED when he says
-so (then the About draft's "HEADLINE: not pasted" line is
-fully retired).
+STATUS: DEPLOYED AS BANNER IMAGE 10-28 (owner
+screenshot): the headline (main block) and the
+rewritten subheadline (small block) are rendered in
+the profile banner with the name + "Software Engineer
+| AI Safety | AI Red Teaming" at the bottom left;
+both texts used verbatim. The LIVE HEADLINE FIELD
+still reads the older pipe list ("Software Engineer |
+AI Red Teaming | Breaking AI products before users do
+| We...") and is truncated mid-item at "We..." in the
+profile card. FLAG (10-28): the banner only shows on
+the profile itself; the field is what shows in search,
+suggestions, and next to every comment (the conversion
+surface per performance_tracker). Recommendation:
+paste the 108-char headline into the field, or at
+minimum finish the truncated "We..." item so the card
+does not end mid-word. Owner's call; the About text
+paste is still pending separately.
