@@ -940,8 +940,14 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   line sits next to the owner's burned evals/re-run
   motif for the week. Keep the surface hot (tier 1,
   now at OpenAI; the book is a resource for the
-  evals thread). INTERACTIVE fallback on request
-  only.
+  evals thread). OVERRIDDEN 10-27 (owner re-pasted the post at 14m):
+  88w HUMAN DRAFTED (10-27 verbatim item 8), the
+  re-runnability fundamental (the property that
+  survives model improvement), book-specific
+  compliment in position 2, flat close "stops being
+  a tribal skill". BOARD FLAG: sixth re-run-adjacent
+  item today if posted; owner picks the weight and
+  the spacing.
 - Daniel Miessler x3 (1h each): code-vs-intent
   REPOST (weak repost surface + same off-lane hot
   take as the 10-26 skip), "1,500% jump in forward
