@@ -1122,7 +1122,19 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   140-rule parsing rubric, ground-truth curation is
   its open question); if the owner wants in
   anyway, the label-re-derivability line above is
-  the drafted direction, say so.
+  the drafted direction, say so. OVERRIDDEN 10-28
+  (owner "YES"): 131w HUMAN DRAFTED (verbatim item
+  11) in the exact direction the skip logged, the
+  style-vs-semantics extension plus the
+  label-re-derivability line as the rubric-to-
+  benchmark step; frame = his stated roadmap (he
+  wrote "not a full evaluation benchmark yet"),
+  never a critique of the curation; board flag:
+  2 motif words (re-derive, re-derivable) joins
+  the heavy 10-28 queue (Love Babbar POSTED, Allie
+  129w, Jerry 78w S-1, Tamkin 132w DRAFTED), 60+
+  min spacing if several post, owner picks weight.
+  STATUS: DRAFTED, owner pastes when he chooses.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
