@@ -8,20 +8,35 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
+- **Writing: `/blog` and twelve articles.** A new route group,
+  `/blog` plus twelve `/blog/<slug>` pages, statically generated from
+  `web/lib/articles/`. The articles cover the five disciplines this
+  project sits in: ai red teaming (the prompt is not a wall, surface
+  drift, the failure-mode matrix), security (verification, negative
+  controls), research engineering (auditing the judge, exact
+  confidence intervals), evaluation (provenance as part of the claim,
+  the bundle record schema) and software engineering (exit codes as a
+  contract, stateless deployment). Every number in them traces to a
+  committed artifact in this repository, and each article ends with
+  its verified-against list.
+- **LinkedIn.** The author's profile
+  ([linkedin.com/in/olusanya-timothy](https://www.linkedin.com/in/olusanya-timothy))
+  linked at the strategic points: the landing hero, the site footer,
+  the top navigation, and every article byline.
 - **Vercel deploy adapter** (the repository deploys as-is, one
   project): root ASGI entry (`main.py`), `vercel.json` in the
   Services model (`web` = the Next static export, `api` = the FastAPI
   app, `/api/*` rewritten to the function with the path preserved),
   `.python-version` (3.12) and `uv.lock` for Vercel's
   `uv sync --locked`.
-- **Multi-page static site**: the hash router is gone. Twenty-one
+- **Multi-page static site**: the hash router is gone. Thirty-four
   real, prerendered, deep-linkable routes: `/`, `/runs`, one page per
   committed run (`/runs/demo`, `/runs/demo-f2`,
-  `/runs/demo-stability/a`, `/runs/demo-stability/b`), `/compare`
-  (with `?a=`/`?b=` deep links from a run page), `/method`,
-  `/format`, `/matrix`, `/harness`, `/families` + `/families/f1` +
-  `/families/f2`, `/asi`, `/repro`, `/cli`, `/changelog`, `/security`,
-  `/contribute`, `/license`.
+  `/runs/demo-stability/a`, `/runs/demo-stability/b`), `/blog` + the
+  twelve `/blog/<slug>` pages, `/compare` (with `?a=`/`?b=` deep links
+  from a run page), `/method`, `/format`, `/matrix`, `/harness`,
+  `/families` + `/families/f1` + `/families/f2`, `/asi`, `/repro`,
+  `/cli`, `/changelog`, `/security`, `/contribute`, `/license`.
 - The `/api/docs` endpoint now also serves the repository's own
   records: `CHANGELOG.md`, `SECURITY.md`, `CONTRIBUTING.md`, `LICENSE`.
 - `create_app` takes an explicit deployment root: on Vercel the app
@@ -39,6 +54,14 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Fixed
 
+- Static serving of the Next.js export: Starlette's `StaticFiles`
+  resolves exact files and directory indexes only, so extensionless
+  export routes (`/runs`, `/runs/demo`, `/blog/<slug>`) 404'd when a
+  route file shared its name with a directory of detail pages. The
+  mount now uses `StaticExport`, which applies the resolution order
+  static hosts use (exact file, then `<path>.html`, then
+  `<path>/index.html`, then the 404 page), covered by
+  `test_static_export_serves_extensionless_routes`.
 - `/api/runs` now lists nested runs (`runs/demo-stability/a`), which
   the top-level scan silently hid from the run list and the compare
   page dropdowns.

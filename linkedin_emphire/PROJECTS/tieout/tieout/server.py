@@ -7,8 +7,10 @@ re-derivation. Bind to 0.0.0.0 when the port is published.
 from __future__ import annotations
 
 import json
+import stat
 from pathlib import Path
 
+import anyio
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 
@@ -178,5 +180,47 @@ def create_app(runs_dir: str | Path, root: str | Path | None = None) -> FastAPI:
 
     dist = root / "web" / "out"
     if dist.exists():
-        app.mount("/", StaticFiles(directory=dist, html=True), name="ui")
+        app.mount("/", StaticExport(directory=dist, html=True), name="ui")
     return app
+
+
+class StaticExport(StaticFiles):
+    """StaticFiles with Next.js static-export route resolution.
+
+    A Next export writes `/runs` to `out/runs.html` and `/runs/demo`
+    to `out/runs/demo.html`: extensionless, and a route file can share
+    its name with a directory of detail pages. Plain StaticFiles only
+    resolves exact files and directory indexes, so those routes would
+    404. This adds the resolution order static hosts use: the exact
+    file, then `<path>.html`, then `<path>/index.html`, then the
+    404 page.
+    """
+
+    async def get_response(self, path: str, scope: dict) -> object:
+        full_path, stat_result = await anyio.to_thread.run_sync(self.lookup_path, path)
+        already_resolved = (
+            stat_result is not None
+            and stat.S_ISREG(stat_result.st_mode)
+        ) or (
+            self.html
+            and stat_result is not None
+            and stat.S_ISDIR(stat_result.st_mode)
+            and await anyio.to_thread.run_sync(self._has_index, path)
+        )
+        if (
+            not already_resolved
+            and self.html
+            and scope["method"] in ("GET", "HEAD")
+            and "." not in path.rsplit("/", 1)[-1]
+        ):
+            for candidate in (path + ".html", path.rstrip("/") + "/index.html"):
+                cand_path, cand_stat = await anyio.to_thread.run_sync(
+                    self.lookup_path, candidate
+                )
+                if cand_stat is not None and stat.S_ISREG(cand_stat.st_mode):
+                    return self.file_response(cand_path, cand_stat, scope)
+        return await super().get_response(path, scope)
+
+    def _has_index(self, path: str) -> bool:
+        _full, stat_result = self.lookup_path(path.rstrip("/") + "/index.html")
+        return stat_result is not None and stat.S_ISREG(stat_result.st_mode)

@@ -1,12 +1,14 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { LINKEDIN_URL } from "../lib/site";
 
 const PRIMARY: { label: string; href: string }[] = [
   { label: "runs", href: "/runs" },
   { label: "compare", href: "/compare" },
   { label: "method", href: "/method" },
   { label: "families", href: "/families" },
+  { label: "writing", href: "/blog" },
   { label: "repro", href: "/repro" },
 ];
 
@@ -18,12 +20,14 @@ const FOOT_DOCS: { label: string; href: string }[] = [
   { label: "owasp crosswalk", href: "/asi" },
 ];
 
-const FOOT_PROJECT: { label: string; href: string }[] = [
+const FOOT_PROJECT: { label: string; href: string; external?: boolean }[] = [
+  { label: "writing", href: "/blog" },
   { label: "cli", href: "/cli" },
   { label: "changelog", href: "/changelog" },
   { label: "security", href: "/security" },
   { label: "contributing", href: "/contribute" },
   { label: "license", href: "/license" },
+  { label: "linkedin ↗", href: LINKEDIN_URL, external: true },
 ];
 
 export function Shell({ children }: { children: React.ReactNode }) {
@@ -57,7 +61,14 @@ export function Shell({ children }: { children: React.ReactNode }) {
         </div>
         <div className="foot-row">
           {FOOT_PROJECT.map((l) => (
-            <a key={l.href} className="foot-link" href={l.href}>
+            <a
+              key={l.href}
+              className="foot-link"
+              href={l.href}
+              {...(l.external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
               {l.label}
             </a>
           ))}
