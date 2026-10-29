@@ -1035,7 +1035,90 @@ from the hiring side of the tier; spacing
 1h+ from the day's other pending
 drafts.
 
+Amanda Minnich (Following the owner;
+Principal Research Manager, Microsoft AI
+Red Team Research Team (AIRT); 10-29
+15m paste, HIRING post, AIRT, two senior
+research roles fully remote US ONLY):
+(1) post-training large models for
+cybersecurity tasks ->
+apply.careers.microsoft.com job
+1970393557040982 (page fetched,
+substantive read not completed, the
+post's description stands); (2) swarm
+behavior / agentic security -> job
+1970393557041155, READ 10-29 ("Member
+of Technical Staff (Senior AI Security
+Researcher)", 0 days/wk in-office,
+posted 29 Oct 2026, job number
+200062059; "research adversarial AI-
+agent systems, with an emphasis on
+coordinated and swarm-like behavior...
+build instrumented environments to
+characterize campaigns, identify
+behavioral signatures, trace
+provenance, and evaluate methods for
+interrupting and containing coordinated
+offensive agent swarms... how
+coordination, adaptation, and evasion
+emerge across changing agent
+populations, tools, and operating
+conditions"). CALL: TIER 2 home turf,
+the canonical AI red team org; the JD's
+own language = the owner's evidence
+lane; US-only remote = PRACTITIONER
+presence, not job-seek (Aithos
+precedent); the comment = the swarm
+evidence wall (probe easy, evidence
+not; per-agent per-turn attribution as
+the re-derivation unit; traces that
+hold a signature and none of the
+provenance). 137w / 793c HUMAN DRAFTED
+(verbatim item 34, /tmp/amanda_airt_-
+comment.txt). BOARD: highest-signal
+Tier 2 post of the day; spacing 1h+.
+
 ## Tier 3 — builder / adjacent layer + active thread partners
+
+Adnan Masood, PhD (UST Chief AI
+Architect; Microsoft Regional Director;
+Microsoft MVP (AI) alumnus; InfoWorld
+contributor; 10-29 15m paste, share of
+his InfoWorld article "AI ROI beyond
+pilots: Measuring outcomes in
+production" 28 Sep 2026): article READ
+IN FULL 10-29 (both chunks; bit.ly
+resolution): ROI = measurement problem
+with clear boundaries, workflow = unit
+of value, baseline before GenAI ("A
+baseline creates credibility when
+results look good and when results look
+flat"), 4-layer metrics stack (activity
+/ quality under policy / workflow /
+business), instrument where work is
+done (timestamps, status changes, final
+dispositions), cohort comparison,
+failure modes incl. "self-reported time
+savings and no baseline" + "value
+claims based on usage alone", 90-day
+plan + 7-item checklist. CALL:
+on-lane-adjacent enterprise governance
+voice (his stated focus = model
+evaluation and monitoring); decision-
+maker register; the owner's evidence
+lane connects at his quality layer
+(correctness under policy needs the run
+record sufficient to re-derive the
+verdict: prompt, model version,
+retrieved content, policy check; the
+twin failure = self-reported quality
+with no re-run; ROI stands when a
+stranger re-derives the quality number
+from the record, not the survey). 119w
+/ 705c HUMAN DRAFTED (verbatim item 33,
+/tmp/masood_roi_comment.txt). BOARD:
+spacing 1h+.
+
 
 Charmaine Threat (1st, Architect of
 Supervisory Authority Systems; AI Governance
