@@ -651,6 +651,18 @@ handed to the owner.
    or delivered about anything the record does
    not show as confirmed. Only DRAFTED, ARMED, or
    SENT-CONFIRMED, per the logs.
+7. LINKS ON REQUEST ONLY: no link of any
+   kind (repo URL, profile URL, document URL)
+   ships in any deliverable unless the recipient
+   explicitly asked for the link in that same
+   conversation. Name the thing without the
+   link (repo named, no URL); if the recipient
+   asks for the link, then and only then send
+   it. Standing rule 10-29, owner verbatim:
+   'dnt always add the repo link unless
+   requested', issued after the Behar R5 draft
+   carried the five-tests URL on a request the
+   owner judged insufficient.
 
 A deliverable that fails any check gets fixed
 before it is presented. It does not ship.
