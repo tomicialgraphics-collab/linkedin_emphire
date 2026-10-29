@@ -1,0 +1,18 @@
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# node
+web/node_modules/
+web/dist/
+
+# generated runs (the committed demo run is the reproducible public sample)
+runs/*
+!runs/demo/
+
+# environment
+.env

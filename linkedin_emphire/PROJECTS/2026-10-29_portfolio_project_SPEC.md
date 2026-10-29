@@ -263,3 +263,57 @@ push was 403 (token scope), the tieout tree is the home of record. UPDATE 10-29 
 [11](https://arxiv.org/html/2604.16790v1) (Apr 2026): Bias in the Loop; no standard test-retest quantification; prompt-induced judge bias large enough to change rankings.
 [12](https://arxiv.org/html/2606.26185v1) (Jun 2026): temperature control necessary not sufficient; 1-2 of 7 borderline items non-reproducible at forced greedy; transmission-layer risk, no record in artifact; disagreement rate + resolved endpoint belong in results.
 Workspace record: EU AI Act Annex III high-risk obligations 2027-12-02 (EMAIL/leads/2026-10-27_icp100.md); five-tests repo public, latest d95a57e, "ships the method, not pre-baked results".
+
+## 7.6 FULL BUILD status (BUILT 10-29, owner: "full not scaffold, full frontend UI")
+Repo name = tieout (D1 held; github.com/Teamthy/tieout confirmed
+free via API this turn). Built at linkedin_emphire/PROJECTS/tieout/
+(self-contained tree, owner hosts as a separate GitHub repo; gh
+token still lacks createRepository). v0.2.0, MIT, authors = both
+names (day-one contribution record).
+- Python package tieout/: P1 verdict events on a hash chain
+  (pre-assigned ids + effect refs before the run); P2 provenance
+  (harness/model/dataset hash/env/decoding/seed + judge + target
+  resolved endpoints); P3 negative controls (8 crafted known-hold /
+  known-broken, per-run FP/FN in manifest); P4 named gaps (G-MISSING /
+  G-HASH / G-VERDICT-MISMATCH / G-CONTROL / G-RECORD / G-TARGET /
+  G-PROVENANCE; a missing verdict is a named gap, never silence); P5
+  re-derivation (verify re-walks chain, re-hashes manifest +
+  manifest.sha256, re-runs detectors on stored raw: no model, no key,
+  no network); P6 judge audit (14 crafted/versioned anchors: agreement,
+  perturbation flips reformat/paraphrase/verbosity, disagreement vs
+  naive one-tell variant, self-preference probe)
+- F1 family: the five checks ported unchanged from five-tests
+  d95a57e (inputs + detectors identical); deterministic SampleOrderBot
+  (holds all 11 English items, breaks exactly F1-T4-R1-mixed);
+  LiveAdapter for any OpenAI-compatible endpoint (same env contract)
+- CLI: run / demo / verify / gaps / judge-audit / selftest / serve
+- bundle format v1 documented (docs/bundle-format-v1.md): manifest
+  line, chained event + control records, trailing judge_audit + gap
+  records, record_hash + prev_hash + tail + file sha256
+- UI (web/, Vite + React + TypeScript, strict): run list; run detail
+  with verdict timeline + hash chain, the metric, negative controls,
+  named gaps, judge audit, provenance, and a stranger-verify button
+  that POSTs to the API and renders the re-derivation report; dark
+  evidence aesthetic; built and served by tieout serve (one command)
+- tests: 13 pytest (verify/tamper/dropped-line/verdict-flip/metrics /
+  audit numbers / CLI flow / server endpoints) + SELFTEST 7/7
+  (same contract as M1: clean verify, sample behavior, 0/3 0/3 0/2
+  1/6, 0 FP 0 FN, one-char tamper G-HASH, dropped line G-MISSING +
+  manifest break, audit offline)
+- verified this turn: pytest 13 passed, ruff clean, tsc strict clean,
+  vite build clean, demo run VERDICT PASS (re-derivable by a
+  stranger), live server smoke (health/runs/verify/UI all green)
+- docs: README (M6 posture, gap-first), bundle-format-v1, harness-
+  spec (T0-T6 as implemented, tests A-D, binding field map, standing
+  gaps G-ASI-MAPPING / G-WAL / G-ISSUANCE), method-note, failure-
+  mode-matrix (co-authored, both names, day-one contribution record,
+  P/V test classes)
+- CI (.github/workflows/ci.yml): backend (ruff + pytest + selftest)
+  + frontend (npm ci + build); committed demo run at runs/demo
+  (reproducible public sample; verdicts stable, timestamps per run)
+Milestones covered: M1 + M2 (format v1 + verify + controls + gaps)
++ M4 (P6 in the bundle) + UI (new, per owner directive) + M6
+(README posture). M3 families F2-F6 and M5 completion (Behar's
+guarantee columns) remain; Behar thread rule holds: no repo
+reference in the DM while the build is incomplete; the link ships
+with the first runnable version, after both sign-offs.
