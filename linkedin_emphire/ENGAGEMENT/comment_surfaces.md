@@ -1209,18 +1209,27 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   STATUS: DRAFTED, owner pastes when he chooses.
 - Bulk off-lane / class skips (10-28 late capture,
   deduped against the morning triage): Brad Wolfe
-  x11 finance posts (1h-8h: KEANY eliminate-
-  before-automating (1h, "stop producing it for one
-  cycle and see who notices", the $247-to-$202
-  roll-up example repeated from the 8h post), ADD-
-  BACK diligence, GRAPH vs DEFINITIONS, CLEAN FOR
-  THE USE / DEFINE FOR THE COMPANY, REVIEWER STOPS
-  REVIEWING / measure the queue, SPEND IS NOT A
-  RETURN, moat / Jeff Srour business case, IT LOGS
-  THE AGENT. NOBODY LOGS THE DECISION., AGENT
-  NEVER WENT THROUGH ONBOARDING., AUTONOMY IS A
-  PROMOTION. NOT A SETTING., INTEGRATION PROBLEM
-  inherited in roll-ups) - collaborator rule unchanged (no
+  x12 finance posts (1m-8h: THE AGENT CANNOT
+  GRADE ITS OWN WORK (1m, the strongest register-
+  collision post of the day: dashboard metrics are
+  the agent's own account, silent failure is the
+  case where the account is wrong, finance already
+  solved it, reconcile to a record somebody else
+  created, the one number to watch = the break
+  rate, "an agent that reports its own success is a
+  preparer reviewing his own work", credit Vijay
+  Reddy), KEANY eliminate-before-automating (1h,
+  "stop producing it for one cycle and see who
+  notices", the $247-to-$202 roll-up example
+  repeated from the 8h post), ADD-BACK diligence,
+  GRAPH vs DEFINITIONS, CLEAN FOR THE USE / DEFINE
+  FOR THE COMPANY, REVIEWER STOPS REVIEWING /
+  measure the queue, SPEND IS NOT A RETURN, moat /
+  Jeff Srour business case, IT LOGS THE AGENT.
+  NOBODY LOGS THE DECISION., AGENT NEVER WENT
+  THROUGH ONBOARDING., AUTONOMY IS A PROMOTION.
+  NOT A SETTING., INTEGRATION PROBLEM inherited in
+  roll-ups) - collaborator rule unchanged (no
   comment action on his finance posts; the
   relationship runs the DM thread and the live
   events today); four posts carry owner-register
@@ -1236,7 +1245,23 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   see who notices" + the owner twist: the one-cycle
   test finds the owner, not the value, a report
   that survives the test still needs evidence that
-  it does anything). Hamel
+  it does anything), GRADE-ITS-OWN-WORK ("reconcile
+  to a record somebody else created" + the break
+  rate as the one number to watch; the Q&A version:
+  most agent dashboards are self-reported, what is
+  the one external record the agent's output is
+  reconciled to today, and what is its break
+  rate?). D4 CONTENT NOTE: the reconcile-to-an-
+  external-record / break-rate angle is the
+  leading alternative seed for tomorrow's D4 group
+  post (#3, "what happens after the agent's tool
+  call"; the planned Arcezia shape stays, owner
+  picks at D4 draft time). No public comment on any
+  of the 12: the lane collision is the reason to
+  keep the collaborator rule, the register is
+  shared, a comment reads as a teammate, and the
+  DM thread (v3 out, his reply pending) + today's
+  event are the channel. Hamel
   Husain x3 (Ghulam Mustafa book testimonial 8m with
   book link + 14 hashtags, Dan Olsen Nov 12 event
   "selling out" CTA 6h, Alex S. Seattle lineage
