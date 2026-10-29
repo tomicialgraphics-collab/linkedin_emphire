@@ -100,8 +100,19 @@ populations, tools, and operating conditions."
 Amanda's post: "Please apply via the posting links, as I am very behind on my
 LinkedIn messages!" A short note AFTER submission (not before) is
 courteous and gives a human path: applied to the agentic role, one line on
-why the fit is real, location availability stated plainly. Draft on request.
-Keep it under 60 words. Her reply channel is slow, so set expectations.
+why the fit is real, location availability stated plainly.
+NOTE DRAFTED 10-29 (55w / 343c, /tmp/amanda_airt_note.txt; gate: 0 dashes,
+0 hashtags, 0 URLs, 1 contraction, no opener per PART 12):
+"Applied to the agentic role. I build red-team infrastructure for LLM and
+agentic systems, and everything I ship has to be re-derivable: an open-source
+harness with five reproducible failure checks, plus a public 21-part series on
+failures in shipped AI. I'm US-authorized, based in Lagos, happy to talk
+through what the role needs on location."
+DELIVERY: send only AFTER the owner submits the application. If the owner is
+1st-degree with Amanda, DM. If not, it travels as a reply under her post
+(he already has the 137w practitioner comment drafted there; the note comes
+after, as a separate reply, not folded into the comment). Her reply channel
+is slow, so set expectations.
 
 ## IF THE LOCATION GATE IS A HARD STOP
 Same package transfers to these (all read 10-29 as "similar jobs" on the JD
