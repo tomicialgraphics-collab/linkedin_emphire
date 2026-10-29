@@ -826,9 +826,10 @@ Global Dialogue on AI Governance input
 (enforceable institutional design); 6mo
 "Ethical Governance of AGI and ASI" (9pp).
 CALL: DM (owner request: "i need to send him
-aa dm"), no greeting per PART 12, payload
-first line, one concrete question, no
-pitch/link. Angle = his 5mo governed-execution
+aa dm"), warm greeting first line per owner
+request 10-29 (overrides PART 12 for this DM
+only), then the payload, one concrete
+question, no pitch/link. Angle = his 5mo governed-execution
 post: the five questions are the right list,
 replay is the one that separates governance
 from a dashboard; in practice the replay
@@ -839,7 +840,7 @@ recorded, so the evidence chain holds for the
 happy path and collapses at incident review;
 question: which of the five can a deployed
 agent system actually produce after the fact
-today. DRAFTED (89w / 530c HUMAN, verbatim
+today. DRAFTED (96w / 567c HUMAN, verbatim
 item 24). CLASS: in-lane policy/research
 register (governance, restricted-access
 systems, systemic risk), 1st-degree new
