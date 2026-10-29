@@ -1078,6 +1078,63 @@ provenance). 137w / 793c HUMAN DRAFTED
 comment.txt). BOARD: highest-signal
 Tier 2 post of the day; spacing 1h+.
 
+Tarique Smith (1st; Co-Founder & Chief
+Scientist, Cogensec | Adversarial AI
+Security Researcher | AI Safety & AI
+Red-Teaming Leader | "Securing
+autonomous systems from the inside
+out"; 10-29 6m paste, EndoStack LAUNCH
+post, security-first workflows for
+coding agents, MIT open source): /
+tarique-mode = 23 playbooks + five
+gates (Plan: read before changing;
+Threat-model: trust boundaries + abuse
+paths before logic; Build: failing
+tests first, smallest fix; Review:
+security review of the final diff,
+every finding needs file:line + exploit
+path; Verify: re-run the real
+reproduction and attach the evidence);
+37 skills + 25 principles (arena,
+swarm, interrogate, blast-radius);
+issue text/logs/tool output = untrusted
+data never instructions; read-only
+subagents for read/review; 15 agent
+CLIs (Claude Code, Cursor, Codex,
+Gemini CLI, Copilot, Goose, Amp, Kiro,
+Cline, Roo Code, OpenCode, Aider, Zed,
+Junie, Devin Desktop); /try-endostack
+= 5-min file server with a bug whose
+obvious one-line fix leaks secrets.
+BOOKING LINK (intro.co/TariqueSmith)
+FETCH FAILED 403, no dependency. CALL:
+TIER 2 home turf, vendor/builder,
+extend not audit; the comment = the
+evidence-durability extension (gates
+make the agent PRODUCE evidence; the
+open question = what the evidence is
+good for after the session; finding
+with file:line + exploit path = claim
+about a run, fact when a stranger re-
+runs the reproduction clean; pin model
+version + environment + reproduction;
+coding agents' structural advantage =
+every input is a file, evidence can be
+closed; close: gates make the agent
+produce it, the pipeline's job is to
+make it re-derive without the
+session). 124w / 717c HUMAN DRAFTED
+(verbatim item 35, /tmp/tarique_-
+endostack_comment.txt). LANE
+CONVERGENCE NOTE: his Verify gate is
+convergent design with the owner's
+re-derivation thesis on the coding-
+agent surface; watch for the M5
+note's related-work positioning (no
+public reference in the comment).
+BOARD: spacing 1h+. STATUS: DRAFTED,
+owner to paste.
+
 ## Tier 3 — builder / adjacent layer + active thread partners
 
 Adnan Masood, PhD (UST Chief AI
