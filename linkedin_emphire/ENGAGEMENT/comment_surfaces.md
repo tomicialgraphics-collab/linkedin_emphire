@@ -780,6 +780,79 @@ register, zero competitive framing; he follows
 the owner, visibility works both ways.
 ## Tier 3 — builder / adjacent layer + active thread partners
 
+Behar Dalipi (NEW CONNECTION 10-29, owner
+connected after his profile view, he accepted;
+Skopje, North Macedonia; Independent Researcher
+| AI Governance, Ethics & Frontier Model Policy
+| Restricted-Access Systems | Human-Centered AI
+| Inventor USPTO; 500+ connections, 523
+followers; background applied sciences, public
+health, philosophy, USPTO patent portfolio):
+current work = a policy brief on governance
+frameworks for restricted-access frontier
+models (submitted for review) + a working paper
+on risk architectures, access control, and
+alignment strategies; four core dimensions:
+structural risk analysis, governance and
+access-control frameworks, human-centered
+integration, applied system design and
+responsible innovation; open to collaboration
+with research institutions, policy
+organisations, AI governance teams,
+interdisciplinary groups. POSTS READ from
+capture (10-29, profile paste): 4mo "The
+Missing Category" (18pp working paper ->
+SSRN): frontier models withheld from the
+market but distributed to chosen partners
+under private contract are operationally
+active but institutionally unmarked; the gap
+is bidirectional (private labs exercise
+state-like power without public oversight;
+June 2026 a deployed frontier model was
+withdrawn from an entire class of users by
+executive directive with no process and no
+appeal); 5mo "technical enforcement vs
+governed execution": five questions (who
+holds authority, lawful basis, admissible
+scope, evidence chain, continuity/custody/
+receipt/replay obligations) + "governance
+cannot remain a dashboard, a wrapper, or a
+policy memo sitting outside runtime";
+5mo governance constrains AI, accountability
+must be operational (human ownership,
+auditable systems, proportional oversight,
+legal clarity, public legitimacy); 6mo UN
+Global Dialogue on AI Governance input
+(enforceable institutional design); 6mo
+"Ethical Governance of AGI and ASI" (9pp).
+CALL: DM (owner request: "i need to send him
+aa dm"), no greeting per PART 12, payload
+first line, one concrete question, no
+pitch/link. Angle = his 5mo governed-execution
+post: the five questions are the right list,
+replay is the one that separates governance
+from a dashboard; in practice the replay
+breaks where the state at decision time (model
+version, credential, prompt config) and the
+gate's decision on the blocked action are not
+recorded, so the evidence chain holds for the
+happy path and collapses at incident review;
+question: which of the five can a deployed
+agent system actually produce after the fact
+today. DRAFTED (89w / 530c HUMAN, verbatim
+item 24). CLASS: in-lane policy/research
+register (governance, restricted-access
+systems, systemic risk), 1st-degree new
+connection, warm signal (viewed the owner's
+profile first); prospective peer/reference/
+future collaborator (he is open to
+collaboration), NOT an ICP buyer (researcher,
+not at-risk+can't-verify); the DM plants the
+practice-to-policy bridge without pitching;
+if he engages, the next step is the Missing
+Category paper + his framework.
+
+
 Charlie Rosier (1st, Co-founder @Rubi, helping
 teams work with AI, non-technical founder turned
 certified Lovable Expert): 10-29, 2m at paste:
