@@ -1209,18 +1209,21 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   STATUS: DRAFTED, owner pastes when he chooses.
 - Bulk off-lane / class skips (10-28 late capture,
   deduped against the morning triage): Brad Wolfe
-  x10 finance posts (2m-8h: ADD-BACK diligence,
-  GRAPH vs DEFINITIONS, CLEAN FOR THE USE / DEFINE
-  FOR THE COMPANY, REVIEWER STOPS REVIEWING /
-  measure the queue, SPEND IS NOT A RETURN, moat /
-  Jeff Srour business case, IT LOGS THE AGENT.
-  NOBODY LOGS THE DECISION., AGENT NEVER WENT
-  THROUGH ONBOARDING., AUTONOMY IS A PROMOTION.
-  NOT A SETTING., INTEGRATION PROBLEM inherited in
-  roll-ups) - collaborator rule unchanged (no
+  x11 finance posts (1h-8h: KEANY eliminate-
+  before-automating (1h, "stop producing it for one
+  cycle and see who notices", the $247-to-$202
+  roll-up example repeated from the 8h post), ADD-
+  BACK diligence, GRAPH vs DEFINITIONS, CLEAN FOR
+  THE USE / DEFINE FOR THE COMPANY, REVIEWER STOPS
+  REVIEWING / measure the queue, SPEND IS NOT A
+  RETURN, moat / Jeff Srour business case, IT LOGS
+  THE AGENT. NOBODY LOGS THE DECISION., AGENT
+  NEVER WENT THROUGH ONBOARDING., AUTONOMY IS A
+  PROMOTION. NOT A SETTING., INTEGRATION PROBLEM
+  inherited in roll-ups) - collaborator rule unchanged (no
   comment action on his finance posts; the
   relationship runs the DM thread and the live
-  events today); three posts carry owner-register
+  events today); four posts carry owner-register
   lines kept as WEBINAR Q&A candidates for today's
   18:00-18:45 Lagos session: IT LOGS THE AGENT
   ("a control that cannot produce evidence from the
@@ -1228,7 +1231,12 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   cannot show the evidence for the promotion, the
   agent was not promoted, it was assumed"),
   ONBOARDING ("pull your last quarterly user access
-  review and count the agents on it"). Hamel
+  review and count the agents on it"), KEANY
+  elimination ("stop producing it for one cycle and
+  see who notices" + the owner twist: the one-cycle
+  test finds the owner, not the value, a report
+  that survives the test still needs evidence that
+  it does anything). Hamel
   Husain x3 (Ghulam Mustafa book testimonial 8m with
   book link + 14 hashtags, Dan Olsen Nov 12 event
   "selling out" CTA 6h, Alex S. Seattle lineage
