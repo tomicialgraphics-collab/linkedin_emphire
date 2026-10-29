@@ -247,7 +247,7 @@ docs/harness-spec.md are now in the tieout tree (local main
 73f008c) and ride with the zip; the Behar note is the first
 co-authored artifact of the project (M5 is no longer 'to build',
 it is 'to complete with a second named author'); the five-tests
-push was 403 (token scope), the tieout tree is the home of record.
+push was 403 (token scope), the tieout tree is the home of record. UPDATE 10-29 late: owner directive 'do not reference the project, it is not yet fully built' - the Behar DM no longer references the tieout repository; R6 v2 delivers the matrix + harness spec inline and links the existing public five-tests implementation (d95a57e, live-verified); the harness lands there as a first-version commit; the tieout tree + zip were wiped from the sandbox workspace 10-29 late (rebuild = record + public source).
 
 ## 8. Sources (fetched/searched 10-29)
 [1](https://vdf.ai/blog/ai-red-teaming-tools/) AI Red Teaming Tools 2026 (vdf.ai, Oct 2026): garak 0.17.0 9 Sep 2026, agent breaker probe since 0.15.0; promptfoo 0.124.0, part of OpenAI, agent plugins; PyRIT, DeepTeam 1.0.9, Giskard v3, Spikee, AgentDojo; star counts.
