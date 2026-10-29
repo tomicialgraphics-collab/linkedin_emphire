@@ -76,6 +76,28 @@ a:hover {
   border-bottom: none;
   letter-spacing: 0.6px;
 }
+.art-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: none;
+  letter-spacing: 0.2px;
+}
+.art-title:hover {
+  color: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.verify-list {
+  margin: 8px 0 4px;
+  padding-left: 18px;
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.verify-list li {
+  margin: 3px 0;
+}
+
 .foot-link:hover {
   color: var(--text);
   letter-spacing: 0.4px;

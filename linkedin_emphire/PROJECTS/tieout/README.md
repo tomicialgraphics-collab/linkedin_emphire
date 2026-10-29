@@ -155,14 +155,16 @@ tieout serve --port 8000 --runs-dir runs
 
 One command serves the API and the built UI. The UI (Next.js, static
 export, black and white on purpose) is a viewer for tieout's own
-evidence bundles, not an LLM observability dashboard. Twenty-one real
-routes, each its own prerendered page, each deep-linkable:
+evidence bundles, not an LLM observability dashboard. Thirty-four
+real routes, each its own prerendered page, each deep-linkable:
 
 | route | page |
 |-------|------|
 | `/` | landing: the gap, the six pillars, capabilities, verify-it-yourself, the artifact |
 | `/runs` | the run list: verdicts, controls, gaps per bundle |
 | `/runs/demo`, `/runs/demo-f2`, `/runs/demo-stability/a`, `/runs/demo-stability/b` | one page per committed run: the full bundle, verdict timeline with the hash chain, the metric with its exact CI, controls, gaps, judge audit, provenance with the environment packages, and a stranger verify you can trigger from the page |
+| `/blog` | writing: twelve articles across ai red teaming, security, research engineering, evaluation and software engineering; every number traces to a committed record in this repository |
+| `/blog/<slug>` | one page per article (twelve slugs), each ending with its verified-against list: the bundle, the manifest field, the test or the cited artifact the numbers came from |
 | `/compare` | cross-run stability: pick two runs (or arrive from a run page via `?a=`), aligned table, verdict flips inverted, transcript drift counted, rates with exact CIs |
 | `/method` | the method note |
 | `/format` | the bundle format v1.1 spec |

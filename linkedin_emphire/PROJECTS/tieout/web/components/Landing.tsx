@@ -1,5 +1,7 @@
 "use client";
 
+import { LINKEDIN_URL } from "../lib/site";
+
 const PILLARS: { id: string; name: string; line: string }[] = [
   { id: "P1", name: "verdict event", line: "one record per check: action, policy version, decision, effect reference, in one event, ids pre-assigned before the attempt" },
   { id: "P2", name: "provenance", line: "exact harness, model, dataset hash, environment, decoding, seed, and the resolved endpoint of every judge call" },
@@ -33,6 +35,14 @@ export function Landing() {
           </a>
           <a className="btn" href="/matrix">
             failure-mode matrix
+          </a>
+          <a
+            className="btn"
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            connect on linkedin ↗
           </a>
         </div>
       </div>

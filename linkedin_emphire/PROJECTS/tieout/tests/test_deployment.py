@@ -73,6 +73,45 @@ def test_explicit_root_serves_content_from_deployment_tree(tmp_path):
     assert c.post("/api/runs/demo/verify").json()["verdict"] == "PASS"
 
 
+def test_static_export_serves_extensionless_routes(tmp_path):
+    """The static mount must resolve Next.js export routes: a route file
+    can share its name with a directory of detail pages (runs.html next
+    to runs/demo.html), and neither carries the .html extension."""
+    root = tmp_path / "deploy"
+    (root / "runs").mkdir(parents=True)
+    web = root / "web" / "out"
+    (web / "runs").mkdir(parents=True)
+    (web / "blog").mkdir()
+    (web / "index.html").write_text("<title>home</title>", encoding="utf-8")
+    (web / "runs.html").write_text("<title>runs list</title>", encoding="utf-8")
+    (web / "runs" / "demo.html").write_text("<title>run demo</title>", encoding="utf-8")
+    (web / "blog.html").write_text("<title>writing</title>", encoding="utf-8")
+    (web / "blog" / "surface-drift.html").write_text(
+        "<title>surface drift</title>", encoding="utf-8"
+    )
+    (web / "404.html").write_text("not found page", encoding="utf-8")
+    asset = web / "_next" / "static"
+    asset.mkdir(parents=True)
+    (asset / "chunk.js").write_text("console.log(1)", encoding="utf-8")
+
+    c = TestClient(create_app(root / "runs", root=root))
+    assert c.get("/").status_code == 200
+    r = c.get("/runs")
+    assert r.status_code == 200
+    assert "runs list" in r.text
+    r = c.get("/runs/demo")
+    assert r.status_code == 200
+    assert "run demo" in r.text
+    assert c.get("/blog").status_code == 200
+    r = c.get("/blog/surface-drift")
+    assert r.status_code == 200
+    assert "surface drift" in r.text
+    assert c.get("/_next/static/chunk.js").status_code == 200
+    r = c.get("/blog/none")
+    assert r.status_code == 404
+    assert "not found page" in r.text
+
+
 def test_verify_report_persisted_when_writable(tmp_path):
     c = make_client(tmp_path)
     r = c.post("/api/runs/demo/verify")
