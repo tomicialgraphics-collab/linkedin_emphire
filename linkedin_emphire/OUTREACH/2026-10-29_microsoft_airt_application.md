@@ -123,7 +123,22 @@ page; US-based, verify each JD's location clause before applying):
   (Redmond)
 - 1970393556952558 Security Researcher (Redmond)
 
+## FORM SCREENING ANSWERS (owner pasted the live questions 10-29, mid-form)
+- "Are you legally authorized to work in the country/region you are
+  applying for?" -> **YES** (US work auth confirmed; role is US-based)
+- "…will you now or in the future require the company's sponsorship for an
+  immigration-related employment benefit (work visa, work permit, etc.)?"
+  -> **NO** (already holds US work auth; not asking Microsoft to sponsor).
+  Caveat given: answer YES only if Microsoft must sponsor a visa to work in
+  the US; NO is correct when he already holds the authorization (citizenship,
+  permanent residency, or a status he keeps without company filing).
+- Note: the form's "Answering these questions will not in any way disqualify
+  you" line is EEO/anti-discrimination boilerplate; the answers still feed
+  eligibility screening. The live hard gate remains the work-LOCATION step
+  (US-only-remote + based in Nigeria), not the authorization questions.
+
 ## STATUS
-DRAFTED (all three deliverables ready). Owner to submit via the apply link.
-Awaiting: confirmation of submission; whether the form allowed the location
-he needs; whether an Amanda follow-up note is wanted.
+IN PROGRESS (owner is mid-form on apply.careers.microsoft.com). Deliverables
+ready; authorization + sponsorship questions answered (Yes / No). Awaiting:
+confirmation of submission; whether the location field accepted what he
+needs; whether the Amanda follow-up note gets sent.
