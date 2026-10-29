@@ -1218,7 +1218,26 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   created, the one number to watch = the break
   rate, "an agent that reports its own success is a
   preparer reviewing his own work", credit Vijay
-  Reddy), KEANY eliminate-before-automating (1h,
+  Reddy): OVERRIDDEN 10-28 (owner "give comment"):
+  130w HUMAN DRAFTED (verbatim item 14) as a peer
+  extension, not a summary, two gaps the post does
+  not cover (1) the 'someone else' record inside an
+  agent stack is often a tool response the agent
+  itself called = a mirror, not a witness, a break
+  rate against its own API responses measures
+  consistency not correctness; (2) for most agent
+  work no one else's record exists, the tie-out
+  ends and the trail begins, the run logs its input
+  / config / verdict and a stranger re-derives;
+  close loops back to his own words (the
+  reconciliation for when the other side exists,
+  the trail for when it doesn't, or the dashboard
+  is still self-reported). Tone = the 10-26
+  three-round thread dynamic (extend, do not
+  compete); board: 2 motif words (tie-out,
+  re-derives) joins the heavy 10-28 queue, 60+ min
+  spacing, owner picks the weight. KEANY
+  eliminate-before-automating (1h,
   "stop producing it for one cycle and see who
   notices", the $247-to-$202 roll-up example
   repeated from the 8h post), ADD-BACK diligence,
