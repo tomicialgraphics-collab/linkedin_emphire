@@ -483,7 +483,7 @@ heaviest of the week (Saurabh r2 157w, Wolfe r3
 69w, Alex 150w, Eduardo 158w, Pascal 143w, Steve
 DM 65w all pending) - owner picks the weight; 60+
 min spacing from whichever of his earlier posts
-gets the carried draft.
+gets the carried draft. 10-29 REPOST: owner requested a repost with thought of the same post; DRAFTED (183w / 1004c, headline + subheadline, 4 hashtags, paste-ready as a share-with-thought) = verbatim item 22; comment item 21 remains a separate DRAFTED.
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
