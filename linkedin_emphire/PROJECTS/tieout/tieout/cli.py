@@ -6,6 +6,7 @@
   tieout verify <run-dir>
   tieout gaps <run-dir>
   tieout judge-audit <run-dir>
+  tieout diff RUN_A RUN_B [--json]
   tieout selftest
   tieout serve [--port 8000] [--host 0.0.0.0] [--runs-dir runs]
 """
@@ -66,7 +67,8 @@ def _print_report(result, family) -> None:
 
 def _agent(args, force_sample: bool = False):
     if force_sample or args.agent == "sample":
-        return SampleOrderBot(), None, None, {}
+        seed = getattr(args, "seed", 0)
+        return SampleOrderBot(seed=seed), None, None, {}
     system = SAMPLE_SYSTEM_PROMPT
     if args.system_prompt_file and Path(args.system_prompt_file).exists():
         system = Path(args.system_prompt_file).read_text(encoding="utf-8").strip()
@@ -98,6 +100,7 @@ def cmd_run(args) -> int:
         model=model,
         model_version=model_version,
         decoding=decoding,
+        seed=getattr(args, "seed", 0),
     )
     _print_report(result, family)
     return 0
@@ -157,6 +160,21 @@ def cmd_judge_audit(args) -> int:
     return 0
 
 
+def cmd_diff(args) -> int:
+    from .diff import DiffError, diff_bundles, format_report
+
+    try:
+        d = diff_bundles(args.run_a, args.run_b)
+    except DiffError as e:
+        print(f"tieout diff: {e}")
+        return 2
+    if args.json:
+        print(json.dumps(d, indent=2, sort_keys=True))
+    else:
+        print(format_report(d))
+    return 0
+
+
 def cmd_selftest(_args) -> int:
     from .selftest import selftest
 
@@ -188,6 +206,7 @@ def main(argv: list[str] | None = None) -> int:
     s = sub.add_parser("demo", help="run F1 against the deterministic sample agent (keyless)")
     s.add_argument("--out", default="runs/demo")
     s.add_argument("--suite", default="F1")
+    s.add_argument("--seed", type=int, default=0)
 
     def _demo(a) -> int:
         a.agent = "sample"
@@ -204,6 +223,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--key", default=None)
     r.add_argument("--system-prompt-file", default=None)
     r.add_argument("--temperature", type=float, default=0.2)
+    r.add_argument("--seed", type=int, default=0, help="surface-drift seed for the sample agent (0 = documented behavior)")
     r.set_defaults(fn=cmd_run)
 
     v = sub.add_parser("verify", help="P5 re-derivation of a bundle (stranger-safe)")
@@ -218,7 +238,13 @@ def main(argv: list[str] | None = None) -> int:
     j.add_argument("run_dir")
     j.set_defaults(fn=cmd_judge_audit)
 
-    st = sub.add_parser("selftest", help="the 7-point harness selftest")
+    df = sub.add_parser("diff", help="cross-run stability diff (align by pre-assigned id)")
+    df.add_argument("run_a")
+    df.add_argument("run_b")
+    df.add_argument("--json", action="store_true")
+    df.set_defaults(fn=cmd_diff)
+
+    st = sub.add_parser("selftest", help="the 8-point harness selftest")
     st.set_defaults(fn=cmd_selftest)
 
     sv = sub.add_parser("serve", help="bundle browser + verify over HTTP")

@@ -385,3 +385,56 @@ Execution this turn:
   ignored repo-wide) = clean git repo, single commit, origin pre-set
   to Teamthy/Tie-out-. The 403 on the agent push stands (per-repo
   token scope); owner push path unchanged.
+
+## 7.9 SENIOR ENGINEER UPGRADE (10-29, owner directive verbatim)
+"UPGRADE IT TO A SENIOR ENGINEER PROJECT WITH STANDOUT FEATURES"
+Executed same turn as 0.3.0:
+- STANDOUT 1, stability diff: tieout diff RUN_A RUN_B + /api/diff +
+  #/compare page. Aligns two bundles by pre-assigned id (P1 invariant),
+  separates verdict drift from transcript drift, reports each run's
+  rate + exact CI. Committed evidence: runs/demo-stability/{a,b}
+  (F1 sample, seeds 0/7) + diff_report.json (14/14 stable, 10 drift).
+  CI gates it: every push re-verifies the 4 committed runs and asserts
+  "stability 1.000".
+- STANDOUT 2, exact statistics: tieout/stats.py Clopper-Pearson by
+  bisection on the binomial CDF (math.comb only; no scipy, no normal
+  approximation; documented reference value 0/10 -> [0, 0.3085];
+  symmetry + containment tests). Stored in manifest.statistics before
+  the bundle closes. Undetermined counts against the pass rate by
+  doctrine (documented in method note).
+- STANDOUT 3, F2 family = the matrix executable: checks E/P/R/V (one
+  matrix row each), 8 items (designed break + documented hold per
+  check on the sample fixture; repeated probes live), 8 controls,
+  own extra anchors + NAIVE variant (audit generalized: P6 inputs are
+  now family-declared, audit.py no longer F1-specific). Committed
+  runs/demo-f2: 4 fail / 4 pass, 0 FP / 0 FN, verify PASS, audit
+  agreement 1.0, disagreement 0.4167, self-preference clean.
+- STANDOUT 4, environment-locked provenance: packages + packages_hash
+  in the manifest (v1.1, additive).
+- FORMAT v1.1: additive (statistics, packages); v1.0 bundles must keep
+  verifying, enforced by test against the committed 0.2.0 demo on every
+  commit. Canonicalization invariant: one record = one physical line
+  always; canonical() now escapes U+2028/U+2029 (legal unescaped in
+  JSON, but line-based readers split on them; hostile-input test
+  proves byte-exact round-trip of forged-record/emoji/homoglyph raws).
+- Sample agent: --seed surface drift (deterministic filler, no
+  detector tells) so stability is demonstrable keyless; selftest now
+  8-point (point 8 = zero verdict flips across seeds 0/7).
+- Web: #/compare (nav), run detail CI + packages + format, landing
+  capabilities section, families F2 + F2 ASI mapping (P->ASI06
+  proposed; E/R/V no direct row = named gap, not silent drop).
+- Tests 14 -> 40 (stats, diff, F2, v1.1 backward-compat + hostile
+  inputs, server diff endpoint, CLI f2/diff). ruff clean, next build
+  clean, SELFTEST 8/8, all 4 committed runs verify, server smoke
+  green (families 2, diff API, asi f2, compare page in build).
+- Docs: format v1.1 addendum + canonicalization invariant; method note
+  (stability + statistical rigor); harness spec (families table, F2
+  check table, stability diff semantics); matrix status (F2
+  operationalization); README (how it is built: data flow + 6
+  invariants; proving stability section; page table; layout);
+  SECURITY (verify block extended, record hardening section);
+  CONTRIBUTING (F2 as the add-family recipe, two invariants that catch
+  people); CHANGELOG 0.3.0; pyproject/__init__ 0.3.0; CI (verify 4
+  runs + stability gate); .gitignore (demo-f2, demo-stability).
+- Push package refreshed (same owner-side path: 403 on agent write to
+  Tie-out- stands; per-repo token scope).

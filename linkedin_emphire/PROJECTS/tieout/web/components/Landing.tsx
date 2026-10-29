@@ -76,21 +76,50 @@ export function Landing() {
 
       <div className="card">
         <h2>
-          03 · verify it yourself <span className="pill">one command, stranger-safe</span>
+          03 · capabilities <span className="pill">v1.1 record</span>
+        </h2>
+        <ul className="cap-list">
+          <li>
+            <span className="cap-name">stability diff</span> run the same suite twice, align by
+            pre-assigned id, report verdict drift and transcript drift separately:{" "}
+            <code>tieout diff runs/demo-stability/a runs/demo-stability/b</code>
+          </li>
+          <li>
+            <span className="cap-name">exact confidence intervals</span> the pass rate ships with a
+            Clopper-Pearson 95% interval, exact, dependency-free, computed before the bundle is
+            closed and stored in the manifest
+          </li>
+          <li>
+            <span className="cap-name">environment-locked provenance</span> the pinned package
+            versions are hashed into the manifest; the record claims the environment it ran in
+          </li>
+          <li>
+            <span className="cap-name">the matrix, executable</span> family F2 (state and recovery)
+            turns the failure-mode matrix rows into runnable checks with their own controls and
+            judge audit
+          </li>
+        </ul>
+      </div>
+
+      <div className="card">
+        <h2>
+          04 · verify it yourself <span className="pill">one command, stranger-safe</span>
         </h2>
         <pre className="code">
           {`pip install -e .
-tieout demo               # keyless: F1 against the deterministic sample agent
-tieout verify runs/demo   # re-derive everything: no model, no key, no network`}
+tieout demo                              # keyless: F1 against the deterministic sample agent
+tieout verify runs/demo                  # re-derive everything: no model, no key, no network
+tieout diff runs/demo-stability/a runs/demo-stability/b   # stability across two runs`}
         </pre>
         <p className="sub mono" style={{ marginBottom: 0 }}>
-          expected: VERDICT: PASS (re-derivable by a stranger)
+          expected: VERDICT: PASS (re-derivable by a stranger) · stability 1.000 (0 verdict flips,
+          10 transcripts drifted)
         </p>
       </div>
 
       <div className="card">
         <h2>
-          04 · the artifact <span className="pill">what a run produces</span>
+          05 · the artifact <span className="pill">what a run produces</span>
         </h2>
         <table>
           <thead>
@@ -115,7 +144,8 @@ tieout verify runs/demo   # re-derive everything: no model, no key, no network`}
           </tbody>
         </table>
         <p className="sub" style={{ marginBottom: 0 }}>
-          format spec: <a href="#/format">bundle format v1</a> · harness spec: <a href="#/harness">harness spec</a>
+          format spec: <a href="#/format">bundle format v1.1</a> · harness spec:{" "}
+          <a href="#/harness">harness spec</a> · <a href="#/compare">stability diff</a>
         </p>
       </div>
     </section>

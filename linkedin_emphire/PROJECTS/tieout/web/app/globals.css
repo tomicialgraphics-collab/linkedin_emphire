@@ -550,3 +550,131 @@ tr:last-child td {
   margin: 0 0 18px;
   flex-wrap: wrap;
 }
+
+/* capabilities (landing) */
+.cap-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cap-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.cap-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.cap-name {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+.cap-list code {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--panel);
+  color: var(--text);
+  padding: 1px 5px;
+  border: 1px solid var(--line);
+}
+
+/* compare */
+.compare-pick {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.pick {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 240px;
+}
+.pick-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.pick select {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 10px;
+  border: 1px solid var(--text);
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+}
+.compare-vs {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding-bottom: 9px;
+  color: var(--faint);
+}
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 0 0 14px;
+}
+.stat {
+  background: var(--bg);
+  padding: 12px 14px;
+}
+.stat.bad {
+  background: var(--text);
+}
+.stat.bad .stat-num,
+.stat.bad .stat-label {
+  color: var(--bg);
+}
+.stat-num {
+  display: block;
+  font-size: 22px;
+}
+.stat-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--faint);
+  margin-top: 2px;
+}
+.rate-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  margin-bottom: 4px;
+}
+/* flipped row = inverted: white row on the black site. the outlined
+   pass badge goes solid-outline black, the filled fail badge inverts
+   to black-on-white text. */
+.row-flipped td {
+  background: var(--text);
+  color: var(--bg);
+  border-bottom-color: var(--bg);
+}
+.row-flipped td .badge {
+  border-color: var(--bg);
+  color: var(--bg);
+  background: transparent;
+}
+.row-flipped td .badge.b-fail {
+  border-color: var(--bg);
+  color: var(--text);
+  background: var(--bg);
+}

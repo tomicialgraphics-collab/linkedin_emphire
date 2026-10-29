@@ -92,6 +92,9 @@ class Provenance(BaseModel):
     seed: int
     started_at: str
     finished_at: str
+    # v1.1 (additive; absent in v1.0 bundles, which still verify):
+    packages: dict[str, str] | None = None     # pinned versions of the packages in force
+    packages_hash: str | None = None           # sha256 of the canonical packages list
 
 
 class JudgeAudit(BaseModel):
@@ -110,7 +113,7 @@ class JudgeAudit(BaseModel):
 class Manifest(BaseModel):
     """First line of bundle.jsonl. The tail of the chain is fixed here."""
     type: str = "manifest"
-    bundle_format: str = "tieout-bundle/v1"
+    bundle_format: str = "tieout-bundle/v1.1"
     run_id: str
     provenance: Provenance
     expected_item_ids: list[str]   # pre-assigned before the run (P4: absence is nameable)
@@ -120,3 +123,6 @@ class Manifest(BaseModel):
     tail_event_hash: str = ""
     controls_fp: int = 0
     controls_fn: int = 0
+    # v1.1 (additive): exact per-family statistics, computed before the
+    # bundle is closed. Absent in v1.0 bundles; verify accepts both.
+    statistics: list[dict] | None = None

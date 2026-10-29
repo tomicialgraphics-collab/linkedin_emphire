@@ -14,6 +14,11 @@ export function getBundle(id: string): Promise<Bundle> {
   return get<Bundle>(`/api/runs/${encodeURIComponent(id)}`);
 }
 
+export function getDiff(a: string, b: string): Promise<import("./types").DiffResult> {
+  const qs = `a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`;
+  return get<import("./types").DiffResult>(`/api/diff?${qs}`);
+}
+
 export function verifyRun(id: string): Promise<VerifyResult> {
   return fetch(`/api/runs/${encodeURIComponent(id)}/verify`, { method: "POST" }).then(
     async (r) => {

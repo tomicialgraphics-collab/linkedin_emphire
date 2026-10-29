@@ -1,15 +1,37 @@
+export interface CheckStats {
+  check: string;
+  n: number;
+  pass: number;
+  fail: number;
+  undetermined: number;
+}
+
+export interface FamilyStats {
+  family: string;
+  n: number;
+  pass: number;
+  fail: number;
+  undetermined: number;
+  pass_rate: number;
+  ci95: [number, number];
+  checks: CheckStats[];
+}
+
 export interface RunSummary {
   id: string;
   run_id: string;
   agent: string;
   suite: string;
   started_at: string;
+  bundle_format: string;
+  seed: number;
   events: number;
   controls: number;
   verdicts: Record<string, number>;
   controls_fp: number;
   controls_fn: number;
   gaps: number;
+  statistics: FamilyStats[];
 }
 
 export interface VerdictEvent {
@@ -73,6 +95,8 @@ export interface Provenance {
   seed: number;
   started_at: string;
   finished_at: string;
+  packages?: Record<string, string> | null;
+  packages_hash?: string | null;
 }
 
 export interface JudgeAudit {
@@ -99,6 +123,7 @@ export interface Manifest {
   tail_event_hash: string;
   controls_fp: number;
   controls_fn: number;
+  statistics?: FamilyStats[] | null;
 }
 
 export interface Bundle {
@@ -115,6 +140,41 @@ export interface VerifyResult {
   gaps: NamedGap[];
   verdict: "PASS" | "FAIL";
   ok: boolean;
+}
+
+export interface DiffRow {
+  item_id: string;
+  family: string;
+  check: string;
+  action: string;
+  decision_a: string;
+  decision_b: string;
+  flipped: boolean;
+  transcript_drift: boolean;
+}
+
+export interface DiffRate {
+  pass: number;
+  n: number;
+  pass_rate: number;
+  ci95: [number, number];
+}
+
+export interface DiffResult {
+  run_a: string;
+  run_b: string;
+  agent_a: string;
+  agent_b: string;
+  families: string[];
+  aligned: number;
+  only_in_a: string[];
+  only_in_b: string[];
+  verdict_flips: number;
+  transcript_drift: number;
+  stability: number;
+  rate_a: DiffRate;
+  rate_b: DiffRate;
+  rows: DiffRow[];
 }
 
 export interface FamilyDetail {
@@ -145,6 +205,7 @@ export interface AsiF1Row {
 export interface AsiData {
   crosswalk: AsiCrosswalkRow[];
   f1_proposed: AsiF1Row[];
+  f2_proposed: AsiF1Row[];
 }
 
 export type DocKey = "method" | "format" | "matrix" | "harness";

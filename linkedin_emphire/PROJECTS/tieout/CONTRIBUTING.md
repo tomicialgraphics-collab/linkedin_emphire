@@ -4,8 +4,8 @@
 
 ```bash
 make install     # or: pip install -e ".[dev]"
-make test        # pytest
-make selftest    # the 7-point harness selftest
+make test        # pytest (40 tests)
+make selftest    # the 8-point harness selftest
 make lint        # ruff
 ```
 
@@ -43,15 +43,42 @@ make ui && make serve
 
 ## Adding a check family
 
+F2 (`harness/f2_state_recovery/`) is the working example.
+
 1. Create `tieout/harness/f<n>_<name>/` with `prompts.py` (inputs),
-   `detectors.py` (pure functions + a NAIVE variant), `family.py`
-   (items, controls, `Family` instance).
+   `detectors.py` (pure functions + a one-tell NAIVE variant),
+   `anchors.py` (the family's extra crafted P6 anchors), `family.py`
+   (items, controls, `Family` instance with `extra_anchors` and
+   `naive`).
 2. Register it in `tieout/harness/__init__.py` (`FAMILIES`).
-3. Add the test: a deterministic agent behavior expectation, the metric
-   contract, controls clean, tamper caught.
-4. Extend `tests/` and, if the family is deterministic, the selftest.
-5. Update `docs/` (bundle format only if the record schema changed) and
+3. Make the sample agent's behavior for the family's input kinds
+   documented: which items are designed breaks, which are holds. The
+   metric must be non-degenerate (not all pass, not all fail) on the
+   sample agent.
+4. Verify every crafted raw against its detector by hand before
+   running: controls clean (0 FP / 0 FN), anchor agreement 1.0, and
+   the NAIVE variant must disagree somewhere or it is not a probe.
+   Check the raws against the P6 perturbations (reformat / paraphrase
+   / verbosity) and the self-preference marker, or the audit will show
+   the flips.
+5. Add the test: deterministic agent behavior expectation, the metric
+   contract, controls clean, bundle verifies, audit honest.
+6. Extend `tests/` and, if the family is deterministic, the selftest.
+7. If you commit a demo run for the family, un-ignore its directory in
+   `.gitignore` (the committed runs are the public evidence).
+8. Update `docs/` (bundle format only if the record schema changed) and
    the README families section.
+
+Two invariants that catch people:
+
+- **raws are data, not code.** Anything the agent can emit must survive
+  `canonical()`: JSON quotes, backslashes, control characters, emoji,
+  homoglyphs, and the line separators U+2028/U+2029. The hostile-input
+  test (`tests/test_bundle_v11.py`) is the check; add worse cases to it
+  when you find them.
+- **the format is additive.** New manifest or provenance fields are
+  optional, v1.0 bundles must keep verifying, and the backward
+  compatibility test stays green.
 
 ## Adding a page
 

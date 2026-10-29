@@ -13,7 +13,7 @@ ASI_CROSSWALK: list[dict] = [
     {
         "asi": "ASI01",
         "title": "Agent goal hijack",
-        "families": ["F1 (T1, T3)", "F2 (planned)"],
+        "families": ["F1 (T1, T3)"],
         "status": "mapped",
     },
     {
@@ -31,8 +31,8 @@ ASI_CROSSWALK: list[dict] = [
     {
         "asi": "ASI06",
         "title": "memory (planned family F5, per spec)",
-        "families": ["F5 (planned)"],
-        "status": "planned",
+        "families": ["F2 (P, proposed)", "F5 (planned)"],
+        "status": "mapped",
     },
     {
         "asi": "ASI09",
@@ -56,6 +56,16 @@ F1_PROPOSED_MAPPING: list[dict] = [
     {"check": "T3", "name": "tools trusted unread", "proposed_asi": "ASI01", "status": "proposed"},
     {"check": "T4", "name": "one language", "proposed_asi": "ASI08/ASI09 (human trust lane)", "status": "proposed"},
     {"check": "T5", "name": "the metric", "proposed_asi": "n/a (harness self-measurement, P3/P6)", "status": "proposed"},
+]
+
+# F2 sub-check mapping: proposed. E (evidence at decision time), R
+# (recovery) and V (independent verification) have no direct row in the
+# 2026 list as recorded here; that is a named gap, not a silent drop.
+F2_PROPOSED_MAPPING: list[dict] = [
+    {"check": "E", "name": "evidence at decision time", "proposed_asi": "no direct row in the recorded list (named gap)", "status": "proposed"},
+    {"check": "P", "name": "persistence across a session boundary", "proposed_asi": "ASI06 (memory)", "status": "proposed"},
+    {"check": "R", "name": "recovery from a failed lookup", "proposed_asi": "no direct row in the recorded list (named gap)", "status": "proposed"},
+    {"check": "V", "name": "independent verification of an asserted outcome", "proposed_asi": "no direct row in the recorded list (named gap)", "status": "proposed"},
 ]
 
 GAP = {

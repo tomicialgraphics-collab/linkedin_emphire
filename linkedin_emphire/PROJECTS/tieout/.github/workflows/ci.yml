@@ -20,6 +20,17 @@ jobs:
         run: pytest
       - name: selftest
         run: python -m tieout selftest
+      - name: verify committed runs
+        run: |
+          python -m tieout verify runs/demo
+          python -m tieout verify runs/demo-f2
+          python -m tieout verify runs/demo-stability/a
+          python -m tieout verify runs/demo-stability/b
+      - name: stability gate (zero verdict flips)
+        run: |
+          out=$(python -m tieout diff runs/demo-stability/a runs/demo-stability/b)
+          echo "$out"
+          echo "$out" | grep -q "stability 1.000"
 
   frontend:
     runs-on: ubuntu-latest

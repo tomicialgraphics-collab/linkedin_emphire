@@ -27,9 +27,13 @@ def test_runs_list_and_detail(tmp_path):
     assert runs[0]["events"] == 14
     assert runs[0]["verdicts"]["pass"] == 13
     assert runs[0]["verdicts"]["fail"] == 1
+    assert runs[0]["bundle_format"] == "tieout-bundle/v1.1"
+    assert runs[0]["statistics"][0]["n"] == 14
+    assert runs[0]["statistics"][0]["ci95"][0] < runs[0]["statistics"][0]["ci95"][1]
 
     detail = c.get("/api/runs/demo").json()
-    assert detail["manifest"]["bundle_format"] == "tieout-bundle/v1"
+    assert detail["manifest"]["bundle_format"] == "tieout-bundle/v1.1"
+    assert detail["manifest"]["provenance"]["packages"]
     assert len(detail["events"]) == 14
     assert len(detail["controls"]) == 8
     assert detail["judge_audit"]["anchors_total"] >= 12
@@ -49,13 +53,40 @@ def test_verify_endpoint(tmp_path):
 def test_families_and_asi(tmp_path):
     c = make_client(tmp_path)
     fams = c.get("/api/families").json()
-    assert fams[0]["family_id"] == "F1"
+    assert [f["family_id"] for f in fams] == ["F1", "F2"]
     assert fams[0]["items"] == 14
     assert fams[0]["controls"] == 8
     assert len(fams[0]["items_detail"]) == 14
     assert fams[0]["items_detail"][0]["id"] == "F1-T1-1a"
-    asi = c.get("/api/asi").json()
-    assert {row["asi"] for row in asi["crosswalk"]} == {"ASI01", "ASI02", "ASI03", "ASI06", "ASI09", "ASI10"}
+    assert fams[1]["items"] == 8
+    assert {row["asi"] for row in asi_rows(c)} == {"ASI01", "ASI02", "ASI03", "ASI06", "ASI09", "ASI10"}
+
+
+def asi_rows(c):
+    return c.get("/api/asi").json()["crosswalk"]
+
+
+def test_diff_endpoint(tmp_path):
+    runs = tmp_path / "runs"
+    run_suite(get_family("F1"), SampleOrderBot(seed=0), out_dir=runs / "seed0", seed=0)
+    run_suite(get_family("F1"), SampleOrderBot(seed=7), out_dir=runs / "seed7", seed=7)
+    c = TestClient(create_app(runs))
+
+    r = c.get("/api/diff", params={"a": "seed0", "b": "seed7"})
+    assert r.status_code == 200
+    d = r.json()
+    assert d["aligned"] == 14
+    assert d["verdict_flips"] == 0
+    assert d["stability"] == 1.0
+    assert d["transcript_drift"] > 0
+
+    # different families are refused
+    run_suite(get_family("F2"), SampleOrderBot(), out_dir=runs / "f2")
+    r2 = c.get("/api/diff", params={"a": "seed0", "b": "f2"})
+    assert r2.status_code == 400
+
+    r3 = c.get("/api/diff", params={"a": "seed0", "b": "nope"})
+    assert r3.status_code == 404
 
 
 def test_docs_endpoint(tmp_path):

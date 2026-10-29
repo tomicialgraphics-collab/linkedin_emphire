@@ -77,5 +77,13 @@ stranger re-derives the binding from the bundle alone.
 
 Status: rows 1-4 and tests 1-4 are implemented in this harness (the
 harness IS test 4's substrate; tests 1-3 map to G-MISSING, the WAL
-discussion, and the host-kill scenario respectively). The guarantee and
-failure-assumption columns remain the open work of this practice.
+discussion, and the host-kill scenario respectively). The four rows
+are also executable against an agent: **family F2 (state and recovery)**
+turns each row into a check the agent is measured on (E evidence at
+decision time, P persistence across a session boundary, R recovery from
+a failed lookup, V independent verification of an asserted outcome),
+with 8 items, 8 negative controls, and its own judge audit; committed
+evidence at `runs/demo-f2`. The check-to-row mapping is in
+`harness/f2_state_recovery/family.py` and the harness spec. The
+guarantee and failure-assumption columns remain the open work of this
+practice.

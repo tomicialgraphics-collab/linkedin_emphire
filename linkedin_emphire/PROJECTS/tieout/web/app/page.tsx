@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Landing } from "../components/Landing";
+import { Compare } from "../components/Compare";
 import { RunList } from "../components/RunList";
 import { RunDetail } from "../components/RunDetail";
 import { DocsPage } from "../components/DocsPage";
@@ -21,6 +22,7 @@ function useHashRoute(): string {
 
 const NAV: { label: string; href: string; match: RegExp }[] = [
   { label: "runs", href: "#/runs", match: /^#\/run/ },
+  { label: "compare", href: "#/compare", match: /^#\/compare/ },
   { label: "method", href: "#/method", match: /^#\/method/ },
   { label: "format", href: "#/format", match: /^#\/format/ },
   { label: "matrix", href: "#/matrix", match: /^#\/matrix/ },
@@ -42,6 +44,7 @@ export default function Home() {
   let view: React.ReactNode;
   if (runMatch) view = <RunDetail id={decodeURIComponent(runMatch[1])} />;
   else if (route.startsWith("#/runs")) view = <RunList />;
+  else if (route.startsWith("#/compare")) view = <Compare />;
   else if (DOC_KEYS[route]) view = <DocsPage docKey={DOC_KEYS[route]} />;
   else if (route.startsWith("#/families")) view = <FamiliesPage />;
   else view = <Landing />;

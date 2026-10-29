@@ -16,8 +16,18 @@ GENESIS = "0" * 64
 
 
 def canonical(obj: object) -> str:
-    """Canonical JSON: sorted keys, compact separators, no key reordering."""
-    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    """Canonical JSON: sorted keys, compact separators, no key reordering.
+
+    One record must be one physical line, always: the bundle is a
+    line-delimited hash chain that a stranger reads with a text editor.
+    U+2028 (LINE SEPARATOR) and U+2029 (PARAGRAPH SEPARATOR) are legal
+    unescaped inside a JSON string, but line-based readers (Python's
+    str.splitlines and friends) treat them as line breaks. json.dumps
+    never escapes them, so we do, here, once, for every record. Both
+    forms parse back to the same character, so this is lossless.
+    """
+    text = json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    return text.replace("\u2028", "\\u2028").replace("\u2029", "\\u2029")
 
 
 def sha256_text(text: str) -> str:

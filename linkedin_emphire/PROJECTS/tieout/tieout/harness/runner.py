@@ -15,6 +15,7 @@ from ..models import (
     Verdict,
 )
 from ..provenance import snapshot
+from ..stats import family_statistics
 from .agents import AgentError
 from .base import Family
 
@@ -205,6 +206,9 @@ def run_suite(
         seed=seed,
         harness_git=harness_git,
     )
+    # v1.1: exact statistics computed before the bundle is closed, so
+    # the interval is part of the record, not a post-hoc opinion.
+    statistics = [family_statistics(family.family_id, events)]
     manifest = Manifest(
         run_id=run_id,
         provenance=prov,
@@ -215,6 +219,7 @@ def run_suite(
         tail_event_hash=prev,
         controls_fp=fp,
         controls_fn=fn,
+        statistics=statistics,
     )
 
     write_bundle(out_dir, manifest, events, controls, audit_payload, gap_payloads)

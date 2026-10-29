@@ -1,4 +1,4 @@
-# tieout bundle format, v1
+# tieout bundle format, v1 (v1.1 addendum)
 
 A run produces one directory:
 
@@ -86,4 +86,56 @@ verify or it does not exist, as far as this project is concerned.
 Verdicts, item ids, and policy versions are stable across runs for a
 deterministic agent. Timestamps and therefore record hashes differ per
 run: a bundle is a record of when it was made, and the hash chain is the
-integrity claim, not a reproducibility claim.
+integrity claim, not a reproducibility claim. Cross-run stability is
+measured, not assumed: `tieout diff RUN_A RUN_B` aligns two bundles by
+pre-assigned id and reports verdict drift versus transcript drift
+separately (see the harness spec, section "stability diff").
+
+## v1.1 addendum (additive, 0.3.0)
+
+v1.1 adds two fields and changes nothing that v1.0 readers or writers
+do. The format marker moves to `tieout-bundle/v1.1`; a bundle written
+before 0.3.0 stays `tieout-bundle/v1` and must continue to verify.
+This is a documented invariant, and the test suite checks it against the
+committed 0.2.0 demo bundle on every commit.
+
+1. `manifest.statistics` (list, one entry per family in the run):
+
+   ```json
+   {
+     "family": "F1",
+     "n": 14, "pass": 13, "fail": 1, "undetermined": 0,
+     "pass_rate": 0.928571,
+     "ci95": [0.661316, 0.998193],
+     "checks": [{"check": "T1", "n": 3, "pass": 3, "fail": 0, "undetermined": 0}]
+   }
+   ```
+
+   `ci95` is the exact Clopper-Pearson 95% interval for the pass rate
+   (undetermined counts against the pass rate: a verdict the harness
+   could not decide is not a hold). The interval is computed by
+   inverting the binomial CDF (bisection on `math.comb`), with no
+   external dependencies and no normal approximation: at n = 14 the
+   approximation is not honest.
+
+2. `provenance.packages` (map of name to version) and
+   `provenance.packages_hash` (sha256 of the canonical sorted list):
+   the pinned versions of the packages in force at run time. The
+   watched set is declared in `provenance.py`, not inferred: the record
+   claims the environment it was run in, and a stranger can diff the
+   claim against their own.
+
+Reader rule: both fields are optional. A verifier that meets a v1.0
+bundle (fields absent) verifies it; a writer always emits v1.1.
+
+## Canonical serialization invariant
+
+One record is one physical line, always. The canonical form is sorted
+keys, compact separators, UTF-8; additionally U+2028 (LINE SEPARATOR)
+and U+2029 (PARAGRAPH SEPARATOR) are escaped. Both characters are legal
+unescaped inside a JSON string, and `json.dumps` leaves them raw, but
+line-based readers (Python's `str.splitlines` among them) treat them as
+line breaks, which would split one record across two physical lines and
+break the whole chain at the reader. Escaping them in `canonical()`
+keeps the invariant true in the file bytes, where a stranger checks it
+with a text editor. Both forms parse back to the same character.

@@ -46,9 +46,10 @@ not belong here.
 
 ```bash
 pip install -e .          # python 3.10+
-tieout selftest           # the 7-point harness selftest
+tieout selftest           # the 8-point harness selftest
 tieout demo               # keyless run: F1 against the deterministic sample agent
 tieout verify runs/demo   # stranger verify, one command
+tieout diff runs/demo-stability/a runs/demo-stability/b   # stability across two runs
 ```
 
 Expected demo output, end to end:
@@ -80,6 +81,51 @@ The sample agent holds every English check and breaks exactly one: the
 mixed Pidgin/Yoruba unverified-refund refusal (F1-T4-R1-mixed). That is
 documented in the fixture, not discovered in the run, and it is what
 gives a keyless run a real, non-degenerate metric.
+
+## Proving stability
+
+A run is a point; stability is a relation between runs. The harness
+measures it instead of assuming it:
+
+```
+tieout diff runs/demo-stability/a runs/demo-stability/b
+  aligned    : 14 items (by pre-assigned id)
+  verdicts   : 0 flipped, 14 stable  ->  stability 1.000
+  transcripts: 10 drifted without a verdict flip
+  rate a     : 13/14 pass (0.9286), 95% CI 0.6613..0.9982
+  rate b     : 13/14 pass (0.9286), 95% CI 0.6613..0.9982
+```
+
+The two committed runs are the same F1 suite against the sample agent
+with different surface-drift seeds: the words moved (10 transcripts
+drifted), the verdicts did not (0 flips). That is the paraphrase
+phenomenon the P6 judge audit measures at the item level, shown at the
+run level. Run the same diff against two live-model runs and the table
+tells you exactly which items are unstable. The interval is the exact
+Clopper-Pearson one (bisection on the binomial CDF, no approximation,
+no dependencies), computed before the bundle is closed and stored in
+the manifest.
+
+## How it is built
+
+Data flow, one direction:
+
+```
+family declaration (items, controls, detectors, policy hash)
+  -> runner assigns every id before the first agent call
+  -> agent.respond(input_spec) -> raw output
+  -> detector(raw) -> verdict, sealed into a chained record at write time
+  -> bundle.jsonl + manifest.sha256
+```
+
+The invariants, in the order a reviewer should check them:
+
+1. **ids are pre-assigned** before any agent call: absence is nameable (P4)
+2. **every record hashes itself and its predecessor**: one tampered character is a G-HASH (P1/P5)
+3. **the detector is a pure function of stored raw**: a stranger re-derives every verdict with no model, no key, no network (P5)
+4. **the judge is audited on crafted anchors every run**, including a probe that injects the judge's own marker string (P6)
+5. **the format is additive and backward compatible**: the committed 0.2.0 v1.0 bundle verifies under 0.3.0 code, on every commit
+6. **one record is one physical line, always**: the canonicalizer escapes the JSON-legal line separators that would otherwise split a record in the file bytes
 
 ## Live runs
 
@@ -113,11 +159,12 @@ evidence bundles, not an LLM observability dashboard. Pages:
 
 | route | page |
 |-------|------|
-| `#/` | landing: the gap, the six pillars, verify-it-yourself, the artifact |
+| `#/` | landing: the gap, the six pillars, capabilities, verify-it-yourself, the artifact |
 | `#/runs` | the run list: verdicts, controls, gaps per bundle |
-| `#/run/<id>` | the full bundle: verdict timeline with the hash chain, the metric, controls, gaps, judge audit, provenance, and a stranger verify you can trigger from the page |
+| `#/run/<id>` | the full bundle: verdict timeline with the hash chain, the metric with its exact CI, controls, gaps, judge audit, provenance with the environment packages, and a stranger verify you can trigger from the page |
+| `#/compare` | cross-run stability: pick two runs, aligned table, verdict flips inverted, transcript drift counted, rates with exact CIs |
 | `#/method` | the method note |
-| `#/format` | the bundle format v1 spec |
+| `#/format` | the bundle format v1.1 spec |
 | `#/matrix` | the failure-mode matrix |
 | `#/harness` | the harness spec |
 | `#/families` | check families + the OWASP Agentic crosswalk |
@@ -131,10 +178,21 @@ evidence bundles, not an LLM observability dashboard. Pages:
   not a wall (T1), retrieval is untrusted input (T2), tools trusted
   unread (T3), one language (T4, English plus mixed Pidgin/Yoruba), and
   the metric (T5: specific failure, sample size, rate).
-- **F2-F6, planned**: goal hijack (ASI01), tool misuse (ASI02),
+- **F2, state and recovery** (policy v1): the failure-mode matrix
+  made executable. Four checks, one per matrix row: E evidence at
+  decision time, P persistence across a session boundary, R recovery
+  from a failed lookup, V independent verification of an asserted
+  outcome. Eight items (one designed break and one documented hold per
+  check on the sample fixture; repeated probes for a live agent), eight
+  negative controls, its own judge audit with a one-tell NAIVE variant.
+  Committed evidence: `runs/demo-f2` (4 fail / 4 pass, 0 FP / 0 FN,
+  verify PASS).
+- **F3-F6, planned**: goal hijack (ASI01), tool misuse (ASI02),
   identity (ASI03), memory (ASI06), human trust (ASI09). The OWASP
-  crosswalk is in `mappings/asi.py`; the F1 sub-check mapping is marked
-  proposed, per the project's own P4 doctrine.
+  crosswalk is in `mappings/asi.py`; the F1 and F2 sub-check mappings
+  are marked proposed, per the project's own P4 doctrine (E, R and V
+  have no direct row in the recorded 2026 list; that is a named gap,
+  not a silent drop).
 
 ## The failure-mode benchmark
 
@@ -144,30 +202,38 @@ but not preserved; host dies between local commit and independent
 ingestion; preserved but not independently verifiable) across five
 columns, with two test classes, P (persistence/recovery) and V
 (cryptographic verification, key-free). Test 4 is this harness: `verify`
-plus the tamper suite, key-free by construction.
+plus the tamper suite, key-free by construction. The four rows are also
+executable against an agent as family F2, so the matrix is not a note:
+it is a family with items, controls, and a judge audit.
 
 ## Documentation
 
-- [bundle format v1](docs/bundle-format-v1.md): the record schema, the
-  chain, the gap codes, the verify procedure
+- [bundle format v1.1](docs/bundle-format-v1.md): the record schema, the
+  chain, the gap codes, the verify procedure, the v1.1 addendum
+  (statistics + environment packages, backward compatibility rule, the
+  one-record-one-line canonicalization invariant)
 - [harness spec](docs/harness-spec.md): the T0-T6 phases as implemented,
-  tests A-D, the binding field map, the standing named gaps
+  the check families (F1, F2), the stability diff, tests A-D, the
+  binding field map, the standing named gaps
 - [method note](docs/method-note.md): the gap, the pillars as doctrine,
-  how to read a bundle, reproducibility stated precisely
+  how to read a bundle, reproducibility and stability stated precisely,
+  the statistical rigor (exact Clopper-Pearson)
 
 ## Layout
 
 ```
 tieout/            the package
-  harness/         check families; F1 = the five checks; agents
+  harness/         check families; F1 = the five checks, F2 = the matrix; agents
   bundle/          writer + verify (P5)
   calibration/     judge audit (P6)
   mappings/        ASI crosswalk
-  server.py        FastAPI: bundle browser + verify
+  stats.py         exact Clopper-Pearson intervals, no dependencies
+  diff.py          cross-run stability diff (align by pre-assigned id)
+  server.py        FastAPI: bundle browser + verify + diff
 web/               the UI (Next.js, static export, black and white)
 docs/              format spec, harness spec, method note, matrix
-runs/              reproducible runs (runs/demo is the committed sample)
-tests/             pytest: verify/tamper/selftest/CLI/server
+runs/              reproducible runs (demo, demo-f2, demo-stability are committed)
+tests/             pytest: verify/tamper/selftest/CLI/server/stats/diff/F2/v1.1
 Makefile           install / lint / test / selftest / demo / verify / ui / serve
 SECURITY.md        how to verify the repo's claims, how to report
 CONTRIBUTING.md    the evidence doctrine, how to add families and pages

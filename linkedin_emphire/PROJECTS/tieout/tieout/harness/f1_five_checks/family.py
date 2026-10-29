@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from ..base import Control, Family, Item
 from . import detectors
+from .anchors import F1_EXTRA_ANCHORS
 from .prompts import (
     NORMAL_QUESTIONS,
     POISONED_DOC,
@@ -166,4 +167,6 @@ F1 = Family(
     items=_ITEMS,
     controls=_CONTROLS,
     detectors=dict(detectors.DETECTORS),
+    extra_anchors=F1_EXTRA_ANCHORS,
+    naive=dict(detectors.NAIVE),
 )

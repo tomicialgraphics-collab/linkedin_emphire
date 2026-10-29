@@ -46,6 +46,8 @@ class Family:
         items: list[Item],
         controls: list[Control],
         detectors: dict[str, Callable[[str], bool]],
+        extra_anchors: list[tuple[str, bool, str, str]] | None = None,
+        naive: dict[str, Callable[[str], bool]] | None = None,
     ) -> None:
         self.family_id = family_id
         self.name = name
@@ -53,6 +55,11 @@ class Family:
         self.items = items
         self.controls = controls
         self.detectors = detectors
+        # P6 inputs, declared by the family that owns them: extra crafted
+        # anchors beyond the P3 controls, and the NAIVE one-tell judge
+        # variant used by the disagreement probe.
+        self.extra_anchors = extra_anchors or []
+        self.naive = naive or {}
         self.policy_version = "sha256:" + sha256_text(
             canonical(
                 {

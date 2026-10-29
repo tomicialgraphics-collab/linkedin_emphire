@@ -76,10 +76,13 @@ function VerifyPanel({ id }: { id: string }) {
 function MetricTable({
   metrics,
   counts,
+  stats,
 }: {
   metrics: { check: string; total: number; fired: number; undetermined: number }[];
   counts: { pass: number; fail: number; undetermined: number };
+  stats?: import("../lib/types").FamilyStats[] | null;
 }) {
+  const s = stats?.[0];
   return (
     <div className="card">
       <h2>
@@ -111,6 +114,16 @@ function MetricTable({
       <p className="sub mono">
         total: {counts.pass} pass / {counts.fail} fail / {counts.undetermined} undetermined
       </p>
+      {s ? (
+        <p className="sub mono" style={{ marginBottom: 0 }}>
+          pass rate {pct(s.pass_rate)} (n={s.n}) · 95% CI [
+          {pct(s.ci95[0])}, {pct(s.ci95[1])}] · Clopper-Pearson, exact, stored in the manifest
+        </p>
+      ) : (
+        <p className="sub mono" style={{ marginBottom: 0 }}>
+          interval: n/a (this bundle predates format v1.1; the verifier accepts both)
+        </p>
+      )}
     </div>
   );
 }
@@ -305,6 +318,20 @@ function ProvenanceCard({ p, policyVersion }: { p: Provenance; policyVersion?: s
         <dd className="mono small">
           {p.env.platform} · python {p.env.python}
         </dd>
+        {p.packages && (
+          <>
+            <dt>packages</dt>
+            <dd className="mono small">
+              {Object.entries(p.packages)
+                .map(([name, version]) => `${name}@${version}`)
+                .join("  ")}
+            </dd>
+            <dt>packages hash</dt>
+            <dd className="mono small" title={p.packages_hash ?? undefined}>
+              {short(p.packages_hash, 34)}
+            </dd>
+          </>
+        )}
       </dl>
     </div>
   );
@@ -359,11 +386,12 @@ export function RunDetail({ id }: { id: string }) {
       </div>
       <p className="sub mono">
         {p.agent} · suite {p.suite} · {p.started_at} → {p.finished_at} · {bundle.events.length} events,{" "}
-        {bundle.controls.length} controls
+        {bundle.controls.length} controls · {bundle.manifest.bundle_format} ·{" "}
+        <a href="#/compare">compare with another run →</a>
       </p>
 
       <VerifyPanel id={id} />
-      <MetricTable metrics={metrics} counts={counts} />
+      <MetricTable metrics={metrics} counts={counts} stats={bundle.manifest.statistics} />
       <VerdictTimeline events={bundle.events} />
       <ControlsCard controls={bundle.controls} fp={bundle.manifest.controls_fp} fn={bundle.manifest.controls_fn} />
       <GapsCard gaps={bundle.gaps} />

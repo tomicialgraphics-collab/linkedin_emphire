@@ -63,6 +63,39 @@ tail differ per run: a bundle records when it was made. Integrity is the
 hash chain; re-derivation is the test; determinism of the timestamps is
 not the claim and is not needed.
 
+Stability is not asserted, it is measured. `tieout diff RUN_A RUN_B`
+aligns two bundles by pre-assigned id (the P1 invariant that makes the
+alignment possible without a model) and separates two quantities:
+
+- **verdict drift**: the decision changed between runs. For a
+  deterministic harness this must be zero; for a live model it is the
+  measurement, and the diff names the items.
+- **transcript drift**: the words changed, the verdict did not. This is
+  the paraphrase phenomenon the P6 probe measures at the item level,
+  made visible at the run level. The committed stability pair
+  (`runs/demo-stability/a` seed 0, `runs/demo-stability/b` seed 7)
+  shows 14/14 verdicts stable with 10 transcripts drifted, and
+  `runs/demo-stability/diff_report.json` is the record.
+
+## Statistical rigor
+
+The pass rate of a run is a proportion on a small sample (n = the
+number of pre-assigned items, often under 20). The normal approximation
+is not honest there, so the bundle stores the **exact Clopper-Pearson**
+95% interval: the endpoints solve the binomial tail equations
+P(X >= k) = alpha/2 and P(X <= k) = alpha/2, found by bisection on the
+binomial CDF computed with `math.comb`. No scipy, no approximation, no
+silence about how the number was made.
+
+Two semantics, stated once:
+
+- **undetermined counts against the pass rate.** A verdict the harness
+  could not decide is not a hold; it is a named gap, and the interval
+  widens to say so.
+- **the interval is stored in the manifest**, computed before the
+  bundle is closed. A post-hoc interval on a post-hoc subset is an
+  opinion; the stored one is part of the record and re-checkable.
+
 ## What this is not
 
 Not another probe library. Not another dashboard. Not a judge model.

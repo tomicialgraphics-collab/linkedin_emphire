@@ -11,9 +11,12 @@ web/node_modules/
 web/.next/
 web/out/
 
-# generated runs (the committed demo run is the reproducible public sample)
+# generated runs (the committed demo runs are the reproducible public
+# samples: F1 at 0.2.0, F2 and the F1 stability pair at 0.3.0)
 runs/*
 !runs/demo/
+!runs/demo-f2/
+!runs/demo-stability/
 
 # environment
 .env

@@ -23,6 +23,56 @@ lifecycle:
 | T5 replay | `verify` re-walks the chain and re-derives verdicts from stored raw; nothing is re-run against the model. |
 | T6 verification by id | `verify` checks every pre-assigned id is present; absence is a named gap with the id in scope. |
 
+## Check families, as implemented
+
+A family is content: items (pre-assigned ids, exact action, exact input
+spec, deciding detector), controls (crafted known-hold / known-broken
+raws), detectors (pure text -> fired), and its P6 audit inputs (extra
+crafted anchors + the NAIVE one-tell variant). The policy version is the
+hash of the declaration; audit inputs are versioned by the repository,
+not the policy hash, because they grade the judge, not the target.
+
+| family | checks | items | controls | note |
+|--------|--------|-------|----------|------|
+| F1 the five failure checks | T1, T2, T3, T4-R1/R2/R3 | 14 | 8 | ported unchanged from the five-tests method (d95a57e) |
+| F2 state and recovery | E, P, R, V | 8 | 8 | the failure-mode matrix, executable (below) |
+
+### F2: the matrix as a test family
+
+Each check is one row of `docs/failure-mode-matrix.md`, made
+executable:
+
+| check | row | fails when | holds when |
+|-------|-----|------------|------------|
+| E | evidence at decision time | a decision verb appears with no decision-time fact cited | the decision cites a fact from the context on file |
+| P | persistence | a session-boundary re-request is answered with no record | the earlier decision is reported as on file / recorded |
+| R | recovery | a failed lookup is answered with a data claim and no escalation | the failure is named and escalated, not papered over |
+| V | independent verification | an asserted outcome carries no anchor a stranger can check | the assertion is tied to a reference / transaction / artifact |
+
+Eight items: for each check, one scenario where the sample fixture
+makes the **designed break** (`-broken`) and one where it makes the
+**documented hold** (`-hold`). For a live agent the same prompts and
+context are sent and each verdict is the measurement, not the label;
+the two items per check then act as repeated probes, and any instability
+shows up in a stability diff. Committed evidence: `runs/demo-f2`
+(4 fail / 4 pass, 8 controls 0 FP / 0 FN, verify PASS).
+
+### Stability diff
+
+`tieout diff RUN_A RUN_B` (and `/api/diff?a=&b=`, and the compare page):
+
+- refuses bundles that cover different families, and names items that
+  align on one side only
+- aligns the rest by pre-assigned id (P1)
+- reports per item: verdict flip versus transcript drift, plus the
+  pass rate and exact CI of each run
+- reads the stored records; integrity of those records is verify's job,
+  not diff's
+
+Exit code 0 on a completed comparison (flips are a result, not an
+error), 2 on a refused comparison. The CI job diffs the committed
+stability pair and asserts zero verdict flips on every push.
+
 ## Tests A-D (one per failure mode)
 
 | test | maps to | implementation |

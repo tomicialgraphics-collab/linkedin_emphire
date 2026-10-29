@@ -14,8 +14,9 @@ from fastapi.staticfiles import StaticFiles
 
 from . import __version__
 from .bundle.verify import verify_bundle
+from .diff import DiffError, diff_bundles
 from .harness import get_family, list_families
-from .mappings import ASI_CROSSWALK, F1_PROPOSED_MAPPING
+from .mappings import ASI_CROSSWALK, F1_PROPOSED_MAPPING, F2_PROPOSED_MAPPING
 
 
 def create_app(runs_dir: str | Path) -> FastAPI:
@@ -57,6 +58,7 @@ def create_app(runs_dir: str | Path) -> FastAPI:
                 verdicts: dict[str, int] = {}
                 for e in events:
                     verdicts[e["decision"]] = verdicts.get(e["decision"], 0) + 1
+                stats = manifest.get("statistics") or []
                 out.append(
                     {
                         "id": d.name,
@@ -64,12 +66,15 @@ def create_app(runs_dir: str | Path) -> FastAPI:
                         "agent": manifest.get("provenance", {}).get("agent"),
                         "suite": manifest.get("provenance", {}).get("suite"),
                         "started_at": manifest.get("provenance", {}).get("started_at"),
+                        "bundle_format": manifest.get("bundle_format"),
+                        "seed": manifest.get("provenance", {}).get("seed", 0),
                         "events": len(events),
                         "controls": len(controls),
                         "verdicts": verdicts,
                         "controls_fp": manifest.get("controls_fp", 0),
                         "controls_fn": manifest.get("controls_fn", 0),
                         "gaps": len(gaps),
+                        "statistics": stats,
                     }
                 )
         return out
@@ -136,7 +141,22 @@ def create_app(runs_dir: str | Path) -> FastAPI:
 
     @app.get("/api/asi")
     def asi() -> dict:
-        return {"crosswalk": ASI_CROSSWALK, "f1_proposed": F1_PROPOSED_MAPPING}
+        return {
+            "crosswalk": ASI_CROSSWALK,
+            "f1_proposed": F1_PROPOSED_MAPPING,
+            "f2_proposed": F2_PROPOSED_MAPPING,
+        }
+
+    @app.get("/api/diff")
+    def diff(a: str, b: str) -> dict:
+        for rid in (a, b):
+            d = runs_dir / rid
+            if not d.is_dir() or not (d / "bundle.jsonl").exists():
+                raise HTTPException(status_code=404, detail=f"run {rid!r} not found")
+        try:
+            return diff_bundles(runs_dir / a, runs_dir / b)
+        except DiffError as e:
+            raise HTTPException(status_code=400, detail=str(e)) from None
 
     dist = Path(__file__).resolve().parent.parent / "web" / "out"
     if dist.exists():

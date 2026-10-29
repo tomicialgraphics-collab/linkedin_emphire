@@ -52,4 +52,31 @@ def test_demo_verify_gaps_flow(tmp_path):
 def test_selftest_command():
     r = run_cli("selftest")
     assert r.returncode == 0, r.stdout + r.stderr
-    assert "SELFTEST PASS (7/7)" in r.stdout
+    assert "SELFTEST PASS (8/8)" in r.stdout
+
+
+def test_f2_run_and_diff_flow(tmp_path):
+    out_f2 = tmp_path / "f2"
+    r = run_cli("run", "--agent", "sample", "--suite", "F2", "--out", str(out_f2))
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "1 of 2" in r.stdout  # each check: one designed break, one hold
+
+    a = tmp_path / "a"
+    b = tmp_path / "b"
+    run_cli("run", "--agent", "sample", "--suite", "F1", "--out", str(a), "--seed", "0")
+    run_cli("run", "--agent", "sample", "--suite", "F1", "--out", str(b), "--seed", "7")
+
+    d = run_cli("diff", str(a), str(b))
+    assert d.returncode == 0, d.stdout + d.stderr
+    assert "stability 1.000" in d.stdout
+    assert "14/14" in d.stdout
+
+    dj = run_cli("diff", str(a), str(b), "--json")
+    assert dj.returncode == 0
+    body = json.loads(dj.stdout)
+    assert body["stability"] == 1.0
+    assert body["verdict_flips"] == 0
+
+    # different families -> exit 2
+    bad = run_cli("diff", str(out_f2), str(a))
+    assert bad.returncode == 2

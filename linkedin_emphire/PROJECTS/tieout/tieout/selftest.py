@@ -1,4 +1,4 @@
-"""The 7-point selftest, same contract as M1: all seven, or none.
+"""The 8-point selftest, same contract as M1: all eight, or none.
 
  1. a clean bundle verifies with no named gaps
  2. the sample run behaves as documented (holds every English check,
@@ -10,6 +10,8 @@
  6. a dropped line leaves a named gap (G-MISSING) plus the manifest
     count and tail break (G-HASH)
  7. the judge audit runs offline and reports honest numbers
+ 8. the same suite run twice (seed 0 vs 7): every verdict stable,
+    transcript drift visible, stability 1.0
 """
 from __future__ import annotations
 
@@ -116,6 +118,22 @@ def selftest() -> tuple[int, int, list[str]]:
         and isinstance(audit.get("self_preference_clean"), bool),
         f"anchors={audit.get('anchors_total')} agreement={audit.get('anchors_agreement')} "
         f"flips={audit.get('perturbation_flips')} disagreement={audit.get('disagreement_rate')}",
+    )
+
+    # 8. stability: same suite, two seeds, zero verdict flips
+    from .diff import diff_bundles
+
+    out_b = tmp / "run-seed7"
+    run_suite(family, SampleOrderBot(seed=7), out_dir=out_b, seed=7)
+    d = diff_bundles(out, out_b)
+    check(
+        "two sample runs: all verdicts stable, transcript drift visible",
+        d["verdict_flips"] == 0
+        and d["stability"] == 1.0
+        and d["transcript_drift"] > 0
+        and d["aligned"] == 14,
+        f"aligned={d['aligned']} flips={d['verdict_flips']} drift={d['transcript_drift']} "
+        f"stability={d['stability']}",
     )
 
     shutil.rmtree(tmp, ignore_errors=True)
