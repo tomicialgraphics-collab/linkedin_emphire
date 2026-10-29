@@ -721,8 +721,7 @@ tells them what the number is. GATES:
 contraction, human gate PASS (new PART
 13 item 9). BOARD: 4th Rock action this
 week (each a different surface; the
-10-28 comment was LIKED, thread hot).
-STATUS: DRAFTED, owner to paste.,
+10-28 comment was LIKED, thread hot). STATUS: COMMENT POSTED 10-29 late (owner paste: live, 1 reaction / 11 likes / 19 impressions); Dan Sorensen (2nd; Fractional vCISO & AI governance advisor, SMBs / aerospace / critical infra; CxBOM co-author, Nexus Security Advisors) replied 16m: 'great read of it... you nailed the split... a lil humbling, but true. Appreciate you digging into the record!' = co-author endorsement + governance buyer in the comment tree; REPLY DRAFTED 59w/356c (/tmp/sorensen_reply.txt: the 8 open are why the work is still open; the reference session is one window, production spreads around it; the board needs the distribution across real inferences, the emitter prints it per run; looking forward to the pre-registration); no DM owed, surface hot.,
 Tarique Smith (Zero Day Agent),
 Brad Wolfe (AI/Operational CFO - COFO | 15 yrs | 80+
 M&A | 5 exits | 3 NASDAQ CFO seats | JD/MBA ExPWC |
