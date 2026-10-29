@@ -110,6 +110,24 @@ RULES FOR EVERY POST HERE:
    a card (the 10-28 profile banner pattern). The
    body starts with the two lines in that order;
    nothing else changes in the post.
+11. VERIFY EVERY DAILY POST + READ ATTACHED LINKS
+   (owner standing instruction 10-29, "always
+   verify all your answers, reply, post for the
+   day, comment and others; read links if
+   attached"): every daily post, group AND
+   personal feed, passes the full verification
+   pass (voice_dna PART 13) before it is
+   presented: word count of the exact string in
+   python, format gates (rule 9 dashes, rule 5
+   hashtags, PART 12 no opener, 1-4
+   contractions), every fact and number traced
+   to the capture, a committed file, or a page
+   read this turn, every URL attached to the
+   day's capture fetched and read before drafting
+   with takeaways logged, and no state claims
+   beyond what the record shows. A post that
+   fails a check gets fixed, not shipped. The
+   same pass applies to comment replies and DMs.
 
 ROTATION (17 joinable groups; #15-17 RAI/EAIGG/GCRAI are
 org communities - no post inside, they get comment-drafts on

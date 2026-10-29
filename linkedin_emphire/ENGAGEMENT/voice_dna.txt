@@ -600,6 +600,56 @@ Owner direction (10-27): no greetings.
   send 10-28 morning) currently opens with the
   "Praveen," salutation; owner may strip it
   before send.
+
+╔═════════════════════════════════════════════════╗
+║    PART 13: VERIFY EVERY DELIVERABLE (10-29)    ║
+╚═════════════════════════════════════════════════╝
+
+Owner direction (10-29, verbatim): "always verify
+all your answers, reply, post for the day, comment
+and others; read links if attached."
+
+The verification pass, run before ANY deliverable
+leaves the bench: answers, replies, the day's
+posts, comments, DMs, emails, and anything else
+handed to the owner.
+
+1. WORD COUNT: count the exact string that gets
+   delivered, in python, and record the exact
+   number. No approximate counts, no counts of a
+   draft that then changed.
+2. FORMAT GATES: 0 dashes used as separators
+   (rule 9), no greeting or opener line (PART
+   12), no sign-off except the recorded email
+   convention, hashtags only where allowed (last
+   line of a post, never in comment replies),
+   contractions within the 1-4 budget.
+3. FACTUAL GROUNDING: every name, role, company,
+   number, date, statistic, and quoted phrase
+   must trace to one of: (a) the owner's capture
+   as pasted, (b) a committed workspace file,
+   (c) a page fetched and read this turn.
+   Nothing from memory, nothing invented. If a
+   fact cannot be traced, it ships flagged as
+   unverified, not shipped as fact.
+4. READ THE LINKS: when a capture or request
+   carries a URL, fetch and read each one BEFORE
+   writing anything that depends on it, and log
+   the takeaways in the relevant file. Never
+   draft off a headline or a guess at what the
+   link says. If a link cannot be fetched, say
+   so explicitly and name what was not verified.
+5. QUOTES: any quotation of another person's
+   words matches the capture verbatim (case and
+   punctuation included) or is marked near-
+   verbatim.
+6. STATE CLAIMS: never say sent, posted, merged,
+   or delivered about anything the record does
+   not show as confirmed. Only DRAFTED, ARMED, or
+   SENT-CONFIRMED, per the logs.
+
+A deliverable that fails any check gets fixed
+before it is presented. It does not ship.
 ═══════════════════════════════════════════════════
 END OF VOICE DNA
 ═══════════════════════════════════════════════════
