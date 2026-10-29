@@ -1276,7 +1276,29 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   three-round thread dynamic (extend, do not
   compete); board: 2 motif words (tie-out,
   re-derives) joins the heavy 10-28 queue, 60+ min
-  spacing, owner picks the weight. KEANY
+  spacing, owner picks the weight.
+  10-29 UPDATE: the 130w comment POSTED (owner
+  paste: 17m at capture, 4 impressions, 1
+  reaction). WOLFE REPLIED (9m): "both points
+  land", the bank-file point restated in his own
+  words (the bank file has to come from the bank,
+  not from the agent's call to the bank), and he
+  EXTENDED the trail point with a cadence:
+  someone outside the team re-derives a sample
+  each close (the trail as a routine close
+  control). ROUND 3 DRAFTED (70w / 402 chars,
+  verbatim item 16): accept the cadence (the trail
+  gets a heartbeat, re-derivation becomes a
+  routine, not a heroic act), one correction on
+  the sample: re-derive EVERY break (breaks are
+  what the audit is for) plus a random control
+  sample of clean items to measure false alarms
+  (the check's own false-stop cost, his own
+  benchmark in a new dress); a random-only sample
+  audits the easy part. Closing flat line, no
+  open question, the thread can end here; short
+  and closing, do not extend unless he extends
+  again. KEANY
   eliminate-before-automating (1h,
   "stop producing it for one cycle and see who
   notices", the $247-to-$202 roll-up example
