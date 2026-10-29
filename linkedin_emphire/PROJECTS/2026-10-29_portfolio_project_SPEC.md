@@ -230,10 +230,13 @@ Local repo /home/user/tieout, git main, first commit 2a5c53d
   stranger)
 - BLOCKER: gh token (integration) lacks createRepository scope
   ('Resource not accessible by integration'), so the public repo
-  github.com/Teamthy/tieout could not be created from this
-  sandbox. Owner action: create the public repo (one click), then
-  push goes through with the existing token (push scope works), or
-  widen the token. Code is committed locally and persisted.
+  could not be created from this sandbox.
+- OWNER DECISION 10-29 (verbatim: 'i will build in another repo'):
+  the owner hosts the build in his own repo. Handoff ready both
+  ways: (a) local git main at 2a5c53d is push-ready, if the owner
+  names a repo URL the push is one command from this sandbox;
+  (b) source zip /home/user/tieout-m1.zip (56.7 KB, 37 files,
+  no .git, no generated bundles) is drop-in ready for any repo.
 Next: Andrey local run tonight -> his results/ becomes the first
 live-mode bundle (first real-run evidence in the new format);
 M2 = bundle format v1 frozen + full re-derivation report.
