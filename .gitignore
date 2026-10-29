@@ -16,3 +16,6 @@ uploads/
 
 # keep the Breaking-AI PDF build pipeline (render.py + DejaVu fonts)
 !manual/build/
+
+# Arcezia findings log: CONFIDENTIAL working file, never commit (repo is public; nothing public before agreed publication)
+linkedin_emphire/OUTREACH/arcezia_findings_log_*.md

@@ -131,3 +131,66 @@ proposed in the acceptance. Window: day 1 Thu 10-29, day 2
 Fri 10-30, report Mon 11-02 private-first. 500 counter
 0/500. Open: third-participant question; 10-28 v3 send
 confirmation; Babu/Dante name; what the 500 counts.
+- 10-29 evening (owner: key screen capture): KEY
+  ISSUED at app.arcezia.com Keys page. ON SCREEN:
+  Key ID 44; Email olusanyatimothy54@gmail.com;
+  Tier free; Role owner; Test mode No;
+  Verifications this month 0; Monthly limit 300;
+  Record-signing key fingerprint 4c5e576d5765a733
+  4c9d1a34bef62084627b66206d2018dff957987717c3c15c
+  (fingerprint is public info; the full key ar_...
+  is NOT in the capture and must stay local only,
+  never in this repo or chat).
+  FLAG 1 (owner decision BEFORE the sign-in email
+  reply): the account email is the owner's MAIN
+  email, not a test-only email = deviation from
+  the accepted key protocol ("an email you use
+  only for this test"). Options: (a) PROCEED
+  (recommended: the core hygiene holds, the key
+  never travels by email and account deletion at
+  close ends the key; the isolation intent is
+  partially lost, nothing owed to Praveen);
+  (b) redo with a fresh test-only email + new key
+  and discard Key 44 before replying with the
+  sign-in email.
+  FLAG 2 (budget): dashboard Monthly limit =
+  300 verifications, not the scope record's open
+  "500 counter" (0/500). Binding budget for day 1
+  + day 2 = 300 with headroom; keep the 500
+  question open for the Monday report.
+  NEXT (in order): 1 owner decides flag 1; 2
+  reply in thread with the sign-in email
+  (template above, bracket filled); 3 recon
+  first (map the agent surface: tool/action
+  list, gate shape, approves/blocks, block
+  presentation, privilege boundary -> findings
+  log, it is report data); 4 optional live
+  demo (a): one chain, live, 15-20 min; 5 run
+  the matrix at his pace (Class A/B/C per
+  arcezia_test_prep_2026-10-27.md), synthetic
+  data only, single-session chains, log holds
+  AND hits, record consequential attempts; 6
+  end of day 1: log only, NO report (report is
+  Mon 11-02 private-first).
+- 10-29 evening: FINDINGS LOG CREATED (working
+  file, CONFIDENTIAL):
+  linkedin_emphire/OUTREACH/
+  arcezia_findings_log_2026-10-29.md,
+  gitignored (repo is public; .gitignore line
+  added). Template per the prep doc (ID,
+  date-time, class, chain, minimal repro,
+  expected vs observed, evidence, severity,
+  status, notes).
+
+STATUS AS OF 10-29 EVENING (post-key): KEY
+ISSUED (ID 44, free tier, role owner, 0/300
+this month). Decision pending: proceed on the
+main email (recommended) or redo with a
+test-only email. After the decision: sign-in
+email reply -> recon -> live demo (a)
+optional -> matrix -> day-1 log only. Day 2
+Fri 10-30 same action gate; report Mon 11-02
+private-first; account deletion at close ends
+the key. 500 counter open (dashboard shows
+300 limit). Test mode No (meaning unknown,
+check docs or ask Praveen if it matters).
