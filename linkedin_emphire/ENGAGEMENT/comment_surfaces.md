@@ -348,6 +348,66 @@ repost, org PR class, policy/donor audience,
 stale); the lane's institutional twin, prospective
 reference/partner; engage on her personal-voice
 in-lane post or a direct follow.
+Pascal BORNET (FOLLOWING the owner, not 1st; "#1 AI &
+Automation Thought Leader | Best-Selling Author |
+Keynote Speaker | Agentic AI Pioneer | Forbes Tech
+Council | 2M+ Followers"; irreplaceable.ai): 10-29,
+1m at paste: satire post "Google Maps has gone
+agentic" (the agent reasons, reflects, explores;
+"test-time compute while collecting valuable
+real-world feedback", "arriving is an outdated KPI
+from the pre-agentic era", "final route by Q3",
+family may churn), pivot: "autonomy without a
+clearly defined outcome is not intelligence. It is
+a very expensive scenic route." + four-item
+checklist for agents entering organizations (a
+destination it can actually recognize; boundaries
+it cannot quietly reinterpret; checkpoints where
+humans can intervene; a stop condition before the
+token bill reaches the mortgage) + closing
+question: "should we reward the sophistication of
+its reasoning or the boring old fact that it
+actually arrived?" Hashtags #AgenticAI
+#ArtificialIntelligence #Automation #FutureOfWork.
+LINK READ (rule 4): profile site irreplaceable.ai
+fetched = the IRREPLACEABLE book (humanity in the
+age of AI; endorsements Klaus Schwab, Arianna
+Huffington, Marshall Goldsmith, Thomas Davenport,
+Luc Julia of Siri), IRREPLACEABLE Academy, IRQ
+test; his lane = the human side of AI / future of
+work, not security. CALL: tier 1 big reach (2M+,
+leadership audience, comment rides into it); his
+closing question is a direct invite to answer;
+decision-maker room (consequence first, method in
+one sentence, no motif pile-up): the answer =
+arrival, but only arrival that can be checked,
+the driveway is the witness in the car (nobody
+asks the GPS to prove it), most agent stacks have
+no witness because the transcript is the only
+record and a transcript written by the intern
+texting "making great progress!" is the intern's
+word, not evidence; judge on arrival verified
+from outside the agent (the state change it was
+supposed to cause, recorded by the system that
+owns that state, not by the run's log); his four
+items credited, the first does most of the work
+(a destination recognizable enough to be checked
+is a small closed question, not a vibe); close:
+reward the boring fact, keep the reasoning trail
+for making the next run safer, not grading this
+one. DRAFTED (143w / 803c HUMAN, verbatim item 20).
+CLASS: tier 1 thought leader, Following only;
+author / keynote / Forbes Tech Council; audience
+= the buyer room; no client flag; not a technical
+collaborator, public-register extension, zero
+pitch. HISTORY: his 10-26 "would you pay for an
+AI assistant" post carries a 120w DRAFTED (10-26
+verbatim); second in-lane post of his on the
+board, 60+ min spacing if both go up. BOARD:
+biggest-reach surface today (2M+); day queue
+heavy (Saurabh r2 157w, Wolfe r3 69w, Alex 150w,
+Eduardo 158w, Steve DM 65w all pending) - owner
+picks the weight.
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
