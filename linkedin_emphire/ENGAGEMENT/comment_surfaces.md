@@ -558,6 +558,90 @@ this capture (after Tamkin item 6 and the Rock item
 report, but the benchmark-vs-threat-intel line
 would be a fifth same-motif comment today if
 posted; DRAFT ON REQUEST, not drafted this pass.
+Alex Combessie (Giskard co-founder; Security for
+AI, Agent Evaluation; FOLLOWING the owner, not
+1st): 10-29, 1m at paste (edited): "October has
+been a horror month for the security of software
+🎃 Is Giskard compromised with the PHP2Shell,
+Node2Shell, and a backdoored LiteLLM release?
+Short answer is No - we're safe, and no customers
+were affected." + R&D article link. LINK READ
+(PART 13 item 4): giskard.ai/knowledge/php2shell-
+node2shell-and-litellm-supply-chain-exploit
+(10-28, Pierre Le Jeune + Blanca Rivera Campos,
+4 min): (1) PHP2Shell = two critical RCEs in the
+PHP runtime (CVE-2026-109618/109619), details
+leaked 10-20 before disclosure, watchTowr
+reproduced it, active exploitation reported,
+fixes 10-21 (8.5.12/8.4.27/8.3.36/8.2.35);
+Giskard: no PHP, not exposed. (2) Node.js Brotli
+decoder OOB write (CVE-2026-111497), RCE via
+decompressing attacker-controlled data, embedded
+in the official Node binary; patches 22.23.4 /
+24.22.1 / 26.12.1, Node 20 EOL no fix; PoC
+crash-only as of 10-22, no in-the-wild
+exploitation; Giskard: older infra affected
+(dropped with Hub 3.0) but a few last customers
+still ran it, hotfix + security notifications;
+pinned Node 24 image ships affected-range Brotli
+and fetch() auto-negotiates (client-side: a
+malicious server can attack them with a crafted
+Brotli response), checked all places, no
+meaningful exposure. (3) LiteLLM 1.107.0
+backdoored on PyPI + official Docker: credential
+stealer via a .pth file executed at every
+interpreter start (any Python process on the
+host), went after cloud credentials, CI/CD
+secrets, SSH keys, AI coding tool tokens,
+provider keys; pulled within ~2 hours (still
+long enough for CI + fresh installs); Wiz
+reported stolen credentials being tested from
+two IPs, AWS identity checks + Bedrock model
+listing = LLMjacking pattern; "treat the host as
+compromised and rotate every credential it could
+reach"; 1.106.2 is the last clean version;
+Giskard: already dropped LiteLLM, replaced with
+their own open-source giskard-llm ("the right
+call, LiteLLM has now been compromised twice this
+year: March 1.82.7/1.82.8, last week 1.107.0"),
+giskard-oss pins a clean optional dependency,
+all Giskard OSS packages exclude the compromised
+version (transitive-pull class removed).
+Takeaways: supply chain attacks increasing, AI
+cuts both ways (PHP2Shell found by AI-assisted
+researchers, AI helped validate the patch). Five
+controls: pin everything (deps + CI actions,
+version/hash, Renovate), dependency cooldown
+(few days; compromised versions usually spotted
+within hours), avoid long-lived publishing
+tokens (trusted publishing), least-privilege CI
+(per-step secrets, pipeline as attack surface),
+scan workflows (Semgrep on code + CI, zizmor
+being added for GitHub Actions). CALL: NOT the
+7th PHP2Shell news skip of the week, different
+class: a vendor self-verification post by a
+security co-founder who follows the owner, tier 2
+home turf (his audience = the owner's exact
+readers). Comment EXTENDS, does not audit: the
+agent-specific consequence of the LiteLLM
+incident (compromised call path, LLMjacking in
+practice) + the one gap design-time controls
+structurally cannot cover (what the stack did
+while the bad release was live; rotation =
+future, trail = past). 150w / 855 chars HUMAN
+DRAFTED (verbatim item 18). FACT NOTE: the
+article says pulled within ~2 hours (the PyPI
+window), so the draft says "while 1.107.0 was
+live", not "the two hours" (rule 11 item 3).
+BOARD: heavy day (Saurabh r2 157w + Wolfe r3
+69w + Steve DM 65w all pending); this one
+carries the trail / verdict / model-version
+motif family, 60+ min spacing from whatever
+else posts today. CLASS: Giskard = AI security /
+agent evaluation vendor, competitor-adjacent,
+in-lane; peer extension in the Wolfe / Saurabh
+register, zero competitive framing; he follows
+the owner, visibility works both ways.
 ## Tier 3 — builder / adjacent layer + active thread partners
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
 Ife Abimbola-Olulesi (Proof), Shehbaz Pathan (RAG / agent memory),
