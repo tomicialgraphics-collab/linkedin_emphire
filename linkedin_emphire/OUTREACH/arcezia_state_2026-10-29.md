@@ -694,3 +694,23 @@ check docs or ask Praveen if it matters).
   under budget; remaining obligations are downstream and
   not yet due: verifying his fixes and the co-signed
   write-up after the report.
+
+- 10-29 night (kit bug + fix, owner ran make_expected on
+  the real data): the builder crashed with
+  AttributeError ('str' object has no attribute 'get')
+  because the day-1 result file is NOT a flat list - it is
+  wrapped in an envelope {"run_utc", "key_id": 44, "sdk",
+  "cases": [...]}, and iterating the dict yielded the key
+  strings. My fixture test only covered the flat-list
+  format, which is how the bug shipped. FIX in
+  arcezia_kit_make_expected.py: if the top-level JSON is a
+  dict, take data["cases"] (falling back to the first list
+  value), plus a non-object-entry guard; re-tested with a
+  fixture replicating the day-1 envelope (3 cases parsed)
+  + a day-2 list file (3 cases) -> 6-case baseline built,
+  compare against the same file = 3 PASS exit 0. Corrected
+  file handed to the owner; OWNER RERUNS: python
+  arcezia_kit_make_expected.py (expect one skip line for
+  A1c + "Wrote ... with 26 cases."), then python
+  arcezia_kit_compare.py arcezia_results_day2_fix.json
+  (expect 3 PASS + "All cases match").
