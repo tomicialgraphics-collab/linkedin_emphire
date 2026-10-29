@@ -645,6 +645,36 @@ the day; a second round on this thread is the
 owner's strongest reference candidate in the
 network, keep it substantive, do not extend it
 past two rounds without a new question from him.
+Steve Higgins (1st; NEW CONNECTION 10-29; AI
+Engineer, Guernsey, University of Sussex,
+Independent, 429 followers, verified): profile
+capture 10-29: About = designing / building /
+deploying AI projects, RAG on a quantised vector
+store that runs on a Macbook and deploys to AWS,
+AI chatbot digital twin on AWS (Lambda,
+Cloudfront, CDK) with real-time streaming and
+automatic LLM provider failover (cut off at
+"more"). Inbound: LIKED an owner post a few
+minutes BEFORE the connect request (owner knows
+which post, not logged in the capture); owner
+accepted with note "Hi Steve, it's great to
+connect with you. Looking forward to staying in
+touch." 65w HUMAN DRAFTED (verbatim item 17) =
+new-connection DM, practitioner room: the
+failover is the interesting part (every provider
+switch changes the system that answers under the
+same prompt, the model version in the logs stops
+being a single fact), one question an engineer
+can answer concretely (do you log which provider
+answered each turn), no greeting (the note already
+did the hello), no pitch, no link, no hashtags.
+CLASS: in-lane-adjacent builder (RAG = lane 2 of
+the five-failure surface; provider failover =
+model movement under a running system);
+prospective practitioner peer / reference / later
+collab; not an ICP buyer at this stage
+(independent engineer, no company or compliance
+exposure in the capture).
 Oleksandr Shuliak (1st; Business Process & Systems
 Analyst | Requirements | AI & Automation Analysis |
 Responsible AI; exploring "Responsible AI Business
