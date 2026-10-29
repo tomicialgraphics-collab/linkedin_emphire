@@ -973,3 +973,36 @@ LOG:
         in-app joins confirmed 10-26 = #7, #10, 3 truncated
         names). POSTED (owner screenshot 10-28: live in
         feed with the hashtag line intact).
+10-28  PERSONAL FEED post (owner's "post for today";
+        the D3 group slot was already filled and
+        live, so this is the personal post, not a
+        second group post), DRAFTED and delivered
+        to owner in chat. PRACTITIONER ROOM register:
+        point-first open (the incident investigation
+        is about the system as it ran on the day it
+        happened, not the system as it runs today),
+        body = the defense becomes a reconstruction
+        (model version moved, prompt edited, tool
+        list different, the person who knows left)
+        and a reconstruction is an argument, not
+        evidence; an auditor or an insurer does not
+        need to agree with the argument, they need
+        the period; method = the run logs its own
+        configuration, model version, input,
+        verdict, time, so the Tuesday that becomes
+        the incident can be re-derived by someone
+        who wasn't in the room; close = "You will
+        not be asked to prove your agent is safe.
+        You will be asked to prove what it was on
+        the day." 188 words body, no links, no
+        pitch, light motif load (re-derived x1 + the
+        stranger line) after D3 (0), Allie (2), Rock
+        (1) today; hashtags: #AIAgents #AISecurity
+        #AIGovernance. Angle = time-boundedness of
+        the trail (incident evidence must come from
+        the period of the run); not a repeat of D3
+        (sign-off), Allie (stale state / apology
+        receipt), or Rock (BOM re-derivability),
+        different point in the same family.
+        Status: DRAFTED, owner pastes; mark POSTED
+        when he confirms.
