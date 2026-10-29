@@ -561,6 +561,50 @@ posted; DRAFT ON REQUEST, not drafted this pass.
 ## Tier 3 — builder / adjacent layer + active thread partners
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
 Ife Abimbola-Olulesi (Proof), Shehbaz Pathan (RAG / agent memory),
+Saurabh Dhuliya (1st; Founder @SelfuneAI | Assumption
+Verification Layer | Eval systems; added 10-28 late
+capture): 10-28, 3m at paste: self-driving
+verification-layer concept post (detect uncertainty /
+conflicting sensor evidence, identify assumptions
+behind the proposed driving action, independently
+check safety-constraint violations, trigger a
+validated fallback, "challenge its decisions before
+they become dangerous actions"; two questions: where
+should the layer intervene first, perception /
+prediction / planned action, and what existing
+safety mechanism must it outperform to prove its
+value; explicit invite for "technically grounded
+criticism, not just agreement"). 197w HUMAN DRAFTED
+(verbatim item 13): Q1 answered = the action layer
+(the only layer whose check re-runs; perception
+can't re-run, prediction duplicates the planner's
+assumptions; the action check is a small closed
+question, log state + action + constraint set and a
+stranger re-derives the verdict = the trail is an
+audit, not a claim); Q2 answered = beat the
+existing rule-based guardrails on missed hazards
+per distance driven at the same fallback time
+(catch more but stop more = a more expensive
+failure, not a safety win); the critique he asked
+for = the step-2 assumption-identification is a
+re-implementation of the planner, use a constraint
+set owned outside the driving stack, keep the
+fallback outside the AI (a deterministic
+minimum-risk stop is checkable by enumeration = the
+recursion of who verifies the verifier ends there).
+No greeting, no CTA, no link, no hashtags.
+BOARD: 3 posted today (D3 group, Allie 129w, Rock
+88w); this one carries 6 motif-family words (re-run
+x2, re-derive, check x3), placement is a choice if
+it posts, 60+ min spacing. CLASS: in-lane founder
+peer, 1st degree (the closest in-lane builder
+captured to date, the owner's verification register
+as a product in AV); prospective collab / reference,
+later a prospect (a verification layer is itself
+an AI system that needs the owner's re-runnability
+treatment); no client flag at this stage
+(concept post, not an audit buyer), follow-back
+already met (1st).
 Oleksandr Shuliak (1st; Business Process & Systems
 Analyst | Requirements | AI & Automation Analysis |
 Responsible AI; exploring "Responsible AI Business
