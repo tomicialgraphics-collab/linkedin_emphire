@@ -94,9 +94,22 @@ def test_docs_endpoint(tmp_path):
     r = c.get("/api/docs")
     assert r.status_code == 200
     docs = r.json()
-    assert set(docs) == {"method", "format", "matrix", "harness"}
+    assert set(docs) == {
+        "method",
+        "format",
+        "matrix",
+        "harness",
+        "changelog",
+        "security",
+        "contributing",
+        "license",
+    }
     assert docs["method"].startswith("# Method note")
     assert "re-derivation" in docs["format"].lower()
     assert docs["matrix"].startswith("# Failure-mode matrix")
     assert "T0" in docs["matrix"]
     assert docs["harness"].startswith("# Harness spec")
+    assert docs["changelog"].startswith("# Changelog")
+    assert docs["security"].startswith("# Security")
+    assert docs["contributing"].startswith("# Contributing")
+    assert "MIT" in docs["license"]

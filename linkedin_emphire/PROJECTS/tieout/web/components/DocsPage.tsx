@@ -10,33 +10,65 @@ const TITLES: Record<DocKey, { title: string; sub: string; cross: { label: strin
     title: "Method note",
     sub: "the gap, the pillars as doctrine, how to read a bundle, reproducibility stated precisely",
     cross: [
-      { label: "bundle format v1", href: "#/format" },
-      { label: "failure-mode matrix", href: "#/matrix" },
-      { label: "harness spec", href: "#/harness" },
+      { label: "bundle format v1", href: "/format" },
+      { label: "failure-mode matrix", href: "/matrix" },
+      { label: "harness spec", href: "/harness" },
     ],
   },
   format: {
     title: "Bundle format, v1",
     sub: "the record schema, the chain, the gap codes, the verify procedure",
     cross: [
-      { label: "method note", href: "#/method" },
-      { label: "harness spec", href: "#/harness" },
+      { label: "method note", href: "/method" },
+      { label: "harness spec", href: "/harness" },
     ],
   },
   matrix: {
     title: "Failure-mode matrix",
     sub: "four failure modes of decision-time evidence, five columns, two test classes",
     cross: [
-      { label: "harness spec", href: "#/harness" },
-      { label: "method note", href: "#/method" },
+      { label: "harness spec", href: "/harness" },
+      { label: "method note", href: "/method" },
     ],
   },
   harness: {
     title: "Harness spec",
     sub: "the T0-T6 phases as implemented, tests A-D, the binding field map, the standing named gaps",
     cross: [
-      { label: "failure-mode matrix", href: "#/matrix" },
-      { label: "bundle format v1", href: "#/format" },
+      { label: "failure-mode matrix", href: "/matrix" },
+      { label: "bundle format v1", href: "/format" },
+    ],
+  },
+  changelog: {
+    title: "Changelog",
+    sub: "all notable changes, newest first",
+    cross: [
+      { label: "method note", href: "/method" },
+      { label: "cli", href: "/cli" },
+    ],
+  },
+  security: {
+    title: "Security",
+    sub: "scope, verify-don't-trust, disclosure",
+    cross: [
+      { label: "method note", href: "/method" },
+      { label: "reproduce", href: "/repro" },
+    ],
+  },
+  contributing: {
+    title: "Contributing",
+    sub: "how to add a family, a run, or a check, with the rules the code enforces",
+    cross: [
+      { label: "cli", href: "/cli" },
+      { label: "changelog", href: "/changelog" },
+    ],
+  },
+  license: {
+    title: "License",
+    sub: "MIT",
+    cross: [
+      { label: "contributing", href: "/contribute" },
+      { label: "changelog", href: "/changelog" },
     ],
   },
 };
@@ -58,7 +90,7 @@ export function DocsPage({ docKey }: { docKey: DocKey }) {
   return (
     <section>
       <p>
-        <a className="back" href="#/">
+        <a className="back" href="/">
           ← home
         </a>
       </p>

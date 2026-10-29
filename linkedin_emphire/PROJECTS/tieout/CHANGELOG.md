@@ -8,18 +8,34 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
-- Vercel deploy adapter: root ASGI entry (`main.py`), `vercel.json`
-  (Services model: Next static export + FastAPI as a second service,
-  `/api/*` rewritten to the function), `requirements.txt`,
-  `.python-version` (3.11).
-- The verify endpoint's `verify_report.json` write is now best-effort:
+- **Vercel deploy adapter** (the repository deploys as-is, one
+  project): root ASGI entry (`main.py`), `vercel.json` in the
+  Services model (`web` = the Next static export, `api` = the FastAPI
+  app, `/api/*` rewritten to the function with the path preserved),
+  `.python-version` (3.12) and `uv.lock` for Vercel's
+  `uv sync --locked`.
+- **Multi-page static site**: the hash router is gone. Twenty-one
+  real, prerendered, deep-linkable routes: `/`, `/runs`, one page per
+  committed run (`/runs/demo`, `/runs/demo-f2`,
+  `/runs/demo-stability/a`, `/runs/demo-stability/b`), `/compare`
+  (with `?a=`/`?b=` deep links from a run page), `/method`,
+  `/format`, `/matrix`, `/harness`, `/families` + `/families/f1` +
+  `/families/f2`, `/asi`, `/repro`, `/cli`, `/changelog`, `/security`,
+  `/contribute`, `/license`.
+- The `/api/docs` endpoint now also serves the repository's own
+  records: `CHANGELOG.md`, `SECURITY.md`, `CONTRIBUTING.md`, `LICENSE`.
+- `create_app` takes an explicit deployment root: on Vercel the app
+  is imported from an installed wheel, so `runs/`, `docs/` and the
+  root records are resolved against the deployed tree, not the
+  installed package's `__file__`.
+- The verify endpoint's `verify_report.json` write is best-effort:
   on ephemeral / read-only serverless filesystems the report is still
   returned complete in the HTTP response.
 - Tests: the deployed entry serves health, runs, docs and families
   from the repo tree; nested run ids are routable on detail, verify
   and diff; the report persists when writable; verify stays correct
-  on a simulated read-only filesystem.
-- README: the Hosting section (Vercel + container paths).
+  on a simulated read-only filesystem; an explicit deployment root
+  serves its own content (the wheel-installed layout).
 
 ### Fixed
 
@@ -30,6 +46,11 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   default path parameter stops at a slash. Both routes now use the
   `path` converter, so `demo-stability/a` is addressable exactly like
   `demo` (the UI already sent percent-encoded ids).
+
+### Removed
+
+- `requirements.txt`: `pyproject.toml` + `uv.lock` are the single
+  source of truth for the function's dependencies.
 
 ## [0.3.0] - 2026-10-29
 

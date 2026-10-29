@@ -64,6 +64,20 @@ a:hover {
   color: var(--faint);
   font-size: 12px;
   font-family: var(--mono);
+}
+.foot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  padding: 3px 0;
+}
+.foot-link {
+  color: var(--faint);
+  border-bottom: none;
+  letter-spacing: 0.6px;
+}
+.foot-link:hover {
+  color: var(--text);
   letter-spacing: 0.4px;
 }
 

@@ -155,19 +155,24 @@ tieout serve --port 8000 --runs-dir runs
 
 One command serves the API and the built UI. The UI (Next.js, static
 export, black and white on purpose) is a viewer for tieout's own
-evidence bundles, not an LLM observability dashboard. Pages:
+evidence bundles, not an LLM observability dashboard. Twenty-one real
+routes, each its own prerendered page, each deep-linkable:
 
 | route | page |
 |-------|------|
-| `#/` | landing: the gap, the six pillars, capabilities, verify-it-yourself, the artifact |
-| `#/runs` | the run list: verdicts, controls, gaps per bundle |
-| `#/run/<id>` | the full bundle: verdict timeline with the hash chain, the metric with its exact CI, controls, gaps, judge audit, provenance with the environment packages, and a stranger verify you can trigger from the page |
-| `#/compare` | cross-run stability: pick two runs, aligned table, verdict flips inverted, transcript drift counted, rates with exact CIs |
-| `#/method` | the method note |
-| `#/format` | the bundle format v1.1 spec |
-| `#/matrix` | the failure-mode matrix |
-| `#/harness` | the harness spec |
-| `#/families` | check families + the OWASP Agentic crosswalk |
+| `/` | landing: the gap, the six pillars, capabilities, verify-it-yourself, the artifact |
+| `/runs` | the run list: verdicts, controls, gaps per bundle |
+| `/runs/demo`, `/runs/demo-f2`, `/runs/demo-stability/a`, `/runs/demo-stability/b` | one page per committed run: the full bundle, verdict timeline with the hash chain, the metric with its exact CI, controls, gaps, judge audit, provenance with the environment packages, and a stranger verify you can trigger from the page |
+| `/compare` | cross-run stability: pick two runs (or arrive from a run page via `?a=`), aligned table, verdict flips inverted, transcript drift counted, rates with exact CIs |
+| `/method` | the method note |
+| `/format` | the bundle format v1.1 spec |
+| `/matrix` | the failure-mode matrix |
+| `/harness` | the harness spec |
+| `/families`, `/families/f1`, `/families/f2` | the family index and one page per live family |
+| `/asi` | the OWASP Agentic crosswalk (ASI01-ASI10) with the proposed sub-check mapping |
+| `/repro` | the reproduction procedure: exact commands and exact expected output for every committed run |
+| `/cli` | every command and flag, as the parser defines them |
+| `/changelog`, `/security`, `/contribute`, `/license` | the project records, served from the repository |
 
 ## Hosting
 
@@ -178,7 +183,10 @@ Two standard paths, both from the repository as-is:
 static export in `web/`) and `api` (the FastAPI app at the repo root,
 entrypoint `main:app`). Rewrites send `/api/*` to the function and
 everything else to the static site, so the UI stays same-origin. No
-environment variables, no framework overrides. The committed runs
+environment variables, no framework overrides. The Python service
+installs its dependencies from `pyproject.toml` via `uv sync --locked`
+against the committed `uv.lock` (Python 3.12, pinned by
+`.python-version`); the committed runs
 (`runs/demo`, `runs/demo-f2`, `runs/demo-stability`) ship in the
 function bundle, so the site shows real evidence out of the box. One
 serverless property, handled explicitly: the filesystem is ephemeral,

@@ -25,13 +25,13 @@ export function Landing() {
           team that ran it.
         </p>
         <div className="hero-actions">
-          <a className="btn primary" href="#/runs">
+          <a className="btn primary" href="/runs">
             open runs
           </a>
-          <a className="btn" href="#/method">
+          <a className="btn" href="/method">
             read the method
           </a>
-          <a className="btn" href="#/matrix">
+          <a className="btn" href="/matrix">
             failure-mode matrix
           </a>
         </div>
@@ -53,7 +53,7 @@ export function Landing() {
         <p className="doc-p" style={{ marginBottom: 0 }}>
           tieout is built for the fourth layer. It is the public artifact of an independent AI
           security research practice, built to be verified, not trusted, and reviewed cold.{" "}
-          <a href="#/method">Read the full method →</a>
+          <a href="/method">Read the full method →</a>
         </p>
       </div>
 
@@ -144,8 +144,8 @@ tieout diff runs/demo-stability/a runs/demo-stability/b   # stability across two
           </tbody>
         </table>
         <p className="sub" style={{ marginBottom: 0 }}>
-          format spec: <a href="#/format">bundle format v1.1</a> · harness spec:{" "}
-          <a href="#/harness">harness spec</a> · <a href="#/compare">stability diff</a>
+          format spec: <a href="/format">bundle format v1.1</a> · harness spec:{" "}
+          <a href="/harness">harness spec</a> · <a href="/compare">stability diff</a>
         </p>
       </div>
     </section>

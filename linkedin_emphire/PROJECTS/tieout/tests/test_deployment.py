@@ -4,10 +4,13 @@ The repo must deploy as-is: a root ASGI entry (main.py) that serves the
 same app as `tieout serve`, and a verify endpoint that stays correct
 when the filesystem is ephemeral and read-only.
 """
+import shutil
 from pathlib import Path
 
 from fastapi.testclient import TestClient
 from test_server import make_client
+
+from tieout.server import create_app
 
 
 def test_vercel_entry_serves_the_app():
@@ -34,6 +37,40 @@ def test_vercel_entry_serves_the_app():
     assert d.status_code == 200
     assert d.json()["stability"] == 1.0
     assert d.json()["verdict_flips"] == 0
+
+
+def test_explicit_root_serves_content_from_deployment_tree(tmp_path):
+    """Simulates the serverless layout: tieout is installed as a wheel
+    in the function's venv, so the app's __file__ points into
+    site-packages. All content must then come from the explicit
+    deployment root, exactly like main.py passes it."""
+    root = tmp_path / "deploy"
+    (root / "docs").mkdir(parents=True)
+    (root / "runs").mkdir()
+    repo_runs = Path(__file__).resolve().parent.parent / "runs"
+    shutil.copytree(repo_runs / "demo", root / "runs" / "demo")
+    (root / "docs" / "method-note.md").write_text(
+        "# Method note\n\nfrom the deployment tree\n", encoding="utf-8"
+    )
+    (root / "docs" / "bundle-format-v1.md").write_text("# Bundle format\n", encoding="utf-8")
+    (root / "docs" / "failure-mode-matrix.md").write_text("# Matrix\n", encoding="utf-8")
+    (root / "docs" / "harness-spec.md").write_text("# Harness\n", encoding="utf-8")
+    (root / "CHANGELOG.md").write_text("# Changelog\n\nfrom the deployment tree\n", encoding="utf-8")
+    (root / "SECURITY.md").write_text("# Security\n", encoding="utf-8")
+    (root / "CONTRIBUTING.md").write_text("# Contributing\n", encoding="utf-8")
+    (root / "LICENSE").write_text("MIT License\n", encoding="utf-8")
+
+    c = TestClient(create_app(root / "runs", root=root))
+    docs = c.get("/api/docs").json()
+    assert "deployment tree" in docs["method"]
+    assert "deployment tree" in docs["changelog"]
+    assert set(docs) == {
+        "method", "format", "matrix", "harness",
+        "changelog", "security", "contributing", "license",
+    }
+    runs = {r["id"] for r in c.get("/api/runs").json()}
+    assert runs == {"demo"}
+    assert c.post("/api/runs/demo/verify").json()["verdict"] == "PASS"
 
 
 def test_verify_report_persisted_when_writable(tmp_path):
