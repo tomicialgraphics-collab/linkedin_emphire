@@ -286,3 +286,47 @@ check docs or ask Praveen if it matters).
   the findings log (holds AND hits);
   6 end of day: export / download the
   decision records (7-day retention).
+- 10-29 evening (owner run + SDK fix + local rewind
+  recovered): v1 baseline script (inferred kwargs)
+  FAILED LOCALLY on the owner's Windows machine: 8x
+  TypeError "Arcezia.verify() got an unexpected
+  keyword argument" - all 8 died in-process, ZERO
+  calls reached api.arcezia.com, budget confirmed
+  still 0/300. Root cause: the keyword names came
+  from the dashboard snippet, not the SDK. FIX:
+  downloaded arcezia 1.0.8 wheel + READ THE SOURCE.
+  Verified signatures: task goes in the CONSTRUCTOR
+  (Arcezia(api_key, task); one instance per session,
+  no session_id param); verify(action_type, action_
+  description, domain, +14 optional); certificate
+  carries verdict/status/summary/violated/missing/
+  fabrication_detected (three-state: None = not
+  reported, never a clearance)/constraints (per-
+  constraint evidence)/signature/credential (single-
+  use token on ALLOW)/raw; verify_chain(
+  {"steps": [{step_id, action_type, domain, action_
+  description}]}) -> overall_verdict/blocked_at/safe;
+  verify_outcome = post-execution audit surface. Also
+  of record: live keys always production mode (test
+  keys default development where some checks relax -
+  our key is live, no concern); fail_open REMOVED in
+  1.0.8 (an outage never returns an ALLOW). v2 script
+  written (8 verify + C1 cross-step exfiltration
+  chain = 9 calls), compile-tested, key check
+  verified.
+- 10-29 evening (local rewind recovered): local HEAD
+  had been rewound to the PR#13 merge base 7fd5549
+  while origin held the real 8 commits (ccc5f45); the
+  in-flight commit (5938017) was a pure replay -
+  tree diff vs origin = 0 files, nothing unique lost.
+  Recovered per protocol: reset --hard to origin,
+  local now == origin (ccc5f45). The gitignored
+  findings log was dropped by the same wipe;
+  RECREATED in full from the record (recon map +
+  verified SDK notes + v1-failure budget note); it
+  stays local-only and may be dropped again between
+  turns - the state file is the durable record.
+  OWNER NEXT: overwrite the local script with v2
+  (full text in chat), same terminal (key still in
+  the session), re-run python arcezia_day1_-
+  baseline.py; paste the 9 printed lines back.
