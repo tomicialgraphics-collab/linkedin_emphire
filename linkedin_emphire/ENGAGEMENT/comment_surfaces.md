@@ -409,6 +409,82 @@ heavy (Saurabh r2 157w, Wolfe r3 69w, Alex 150w,
 Eduardo 158w, Steve DM 65w all pending) - owner
 picks the weight.
 
+Sam Illingworth (FOLLOWING the owner; Full
+Professor of Critical AI Literacy | Founder of
+Slow AI | Amazon #1 Bestselling Author | Speaker):
+10-29, 1m at paste: new Nature Human Behaviour
+paper, "Turing-like tests for language and vision
+demonstrate a narrowing gap between humans and AI"
+(Zhang et al., published online 26 Oct 2026,
+open access): 72,191 Turing-like tests, 636
+humans + 37 AI agents, 3 language tasks
+(captioning, word association, conversation) + 3
+vision tasks (colour estimation, object
+detection, attention prediction), 1,916 human
+judges (MTurk / Prolific / lab) + 10 AI judges;
+"even simple AI judges beat human judges at
+telling AI answers from human ones. Human judges
+were often the weaker detectors."; on object
+detection + attention prediction the AI judges
+"easily discriminated" and "vastly outperformed"
+human judges; colour was the exception (human
+judges beat the authors' simple task judge,
+GPT-4o still beat humans on all three vision
+tasks); the paper: current AIs are approaching
+the ability to convincingly impersonate humans in
+language and vision, imitation shows minimal
+correlation with conventional AI performance
+metrics = an independent evaluation criterion.
+His closing question: "If people are often the
+weaker judge on tasks like these, which part of
+your own process still rests on a hunch?"
+Hashtags #AIliteracy #HigherEducation
+#AcademicIntegrity #TuringTest #AIinEducation
+#AI #GenAI. LINK READ (rule 4): lnkd.in/eGt84JAw
+FETCH FAILED (proxy error, two attempts); facts
+grounded in the owner's capture (post text) + the
+attached screenshot of the paper's first page
+(abstract, dates, DOI 10.1038/s41562-026-02590-6,
+Zhang et al.); NOT VERIFIED: the paper's full
+text (method detail beyond the abstract). CALL:
+tier 1 big reach, and an ESTABLISHED two-way
+thread partner (10-21 "AI in academic peer
+review" post: owner comment item 41 "a review
+with no check behind it / who holds the
+judgement, a tool that writes the review is a
+judge", Sam replied, owner replied back item
+41b; also on the SIGNAL/NOISE corroboration
+board, surfaces ~line 885). The question is a
+direct invite to the owner's lane; answer = the
+paper is about the JUDGE, not the imitator: the
+quoted finding (AI mimics humans) vs the
+operational finding (the human hunch is a
+fallible detector with a measurable accuracy
+that, on most of these tasks, is the lower one);
+two scope notes (tasks are narrow, imitating
+humans is a per-task quantity; result is judge-
+dependent, simple judge lost to humans on
+colour, GPT-4o won all three vision tasks);
+answer to his question = the part of your
+process that grades; the fix is not AI judge vs
+human hunch but any judge ON THE RECORD: fixed
+procedure, labeled set, accuracy with sample
+size, human or model; close: a hunch has no
+accuracy number, a judge without one is the
+weaker detector. DRAFTED (151w / 817c HUMAN,
+verbatim item 21). CLASS: tier 1 thought leader
++ active thread partner (3 in-lane captures,
+two-way thread established); his lane = critical
+AI literacy / academic integrity / education =
+the buyer room for the "check behind the review"
+register; no client flag; public-register
+extension, zero pitch. BOARD: day queue is the
+heaviest of the week (Saurabh r2 157w, Wolfe r3
+69w, Alex 150w, Eduardo 158w, Pascal 143w, Steve
+DM 65w all pending) - owner picks the weight; 60+
+min spacing from whichever of his earlier posts
+gets the carried draft.
+
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
