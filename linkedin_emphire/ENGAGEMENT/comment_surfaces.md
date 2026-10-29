@@ -1191,6 +1191,42 @@ BOARD: 1st-degree vendor CTO in the exact
 lane; spacing 1h+. STATUS: DRAFTED,
 owner to paste.
 
+
+Gregory Goldshteyn (Following; Quality
+Assurance Leader & AI Coach; 10-29 2m
+paste, Promptfoo AI-testing breakdown,
+"3 Bugs Your Tests Miss" video): LINK
+READ (lnkd.in/gxQkYKfM -> youtube
+sKRhsVtFo0M, DevHacks 360, unlisted
+21:41, 27 Oct: multi-agent Payflow app,
+guard + orchestrator + Jira/Confluence/
+Figma specialists + keyword retrieval,
+asserts on route/guardrail/specialist/
+citations; three text-blind bugs: wrong
+routing & retrieval, anonymous user sees
+internal tickets, poisoned document the
+guard never reads; lines: "how did the
+app get there", "perfectly obedient
+answer is still wrong"; Break Into AI
+Testing cohort promo, engenious
+university). CALL: Tier 2 in-lane QA-to-
+AI voice, practitioner room; comment
+ANSWERS his direct question (biggest
+challenge testing AI products) = the
+run does not outlive the session;
+caught bug vs evidence you can defend
+six months later at postmortem (specialist
+chosen, document retrieved, raw
+response, assertion fired must be in the
+record); close: the routing assertion
+that failed while the text passed proves
+the record matters more than the
+answer; no flattery, no cohort/vendor
+mention. 121w / 679c HUMAN DRAFTED
+(verbatim item 37, /tmp/goldshteyn_-
+promptfoo_comment.txt). BOARD: spacing
+1h+. STATUS: DRAFTED, owner to paste.
+
 ## Tier 3 — builder / adjacent layer + active thread partners
 
 Adnan Masood, PhD (UST Chief AI
