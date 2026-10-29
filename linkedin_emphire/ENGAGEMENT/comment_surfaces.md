@@ -1255,7 +1255,33 @@ campaign repo persists); M1 build lost
 from disk, rebuild on record + public
 five-tests source; the DM unaffected
 (v2 references only the public repo).
-OWNER TO SEND v2 (no repo gate now).
+OWNER TO SEND v2 (no repo gate now). ROUND 6c 10-29 late (owner verbatim:
+'i said do not refernceany repo'): R6 v2
+SUPERSEDED (it named + linked the
+five-tests repo). R6 v3 DRAFTED (920w /
+5449c, /tmp/behar_r6v3.txt, 0 dashes, 0
+contractions, 0 URLs, gate-asserted
+zero repo terms: no http/github/tieout/
+five-tests/clone/repo/link/d95a57e):
+the ID answer unchanged (the core);
+matrix + spec inline unchanged; the
+implementation paragraph replaced with
+'ships with the harness: the first
+runnable version I send carries the
+code and the tests together, and you
+run both, so the examination is the
+run'; 'cold clone' rephrased as a fresh
+machine with nothing beyond the shipped
+code; licensing stays a proposal (MIT
+harness code + CC BY 4.0 note), now
+repo-independent; split unchanged, his
+columns first. THREAD RULE (owner
+directive, this thread only): no repo
+reference of any kind while the build
+is incomplete, not even naming the
+existing five checks; PART 13 item 7
+still governs other deliverables.
+OWNER TO SEND v3.
 
 
 Charlie Rosier (1st, Co-founder @Rubi, helping
