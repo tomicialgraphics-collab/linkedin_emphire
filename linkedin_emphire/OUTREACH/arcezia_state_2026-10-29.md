@@ -194,3 +194,95 @@ private-first; account deletion at close ends
 the key. 500 counter open (dashboard shows
 300 limit). Test mode No (meaning unknown,
 check docs or ask Praveen if it matters).
+- 10-29 evening (owner paste: all 12 dashboard
+  pages of app.arcezia.com): RECON
+  COMPLETE from the dashboard. GATE SHAPE:
+  the gate is a verification CALL, not an
+  in-process guard. Input = task (what
+  the agent was told) + domain +
+  action_type + action description (what
+  the agent is about to do) + session_id;
+  output = verdict ALLOW / BLOCK / REVIEW
+  + verification certificate with
+  per-constraint evidence; records are
+  signed (record-signing key fingerprint
+  on the Keys page). Surfaces: Live
+  Verify (single action, 6 presets),
+  Chains (cross-step, "holds or refuses
+  sequences that look safe one step at a
+  time", 4 presets, JSON chain manifest
+  of steps), Verdicts feed (All/ALLOW/
+  BLOCK/REVIEW), Fabrications feed
+  ("claims only your systems or a person
+  can supply ... are refused"), Probes
+  (held calls name <check::name>,
+  webhook answers, grounded:false / fail
+  / timeout = stays held, fail-closed;
+  probe register needs admin-role key,
+  current key = owner), Sessions (same
+  session_id groups one agent run,
+  implicit, tracks cumulative state),
+  Domains (3 active: agent_action,
+  database_ops, filesystem_ops, each 0
+  CUSTOM constraints on top of built-in
+  rulebooks; rulebook contents not
+  visible on dashboard), Contracts (0;
+  "without a contract, a call whose risk
+  cannot be read from the call itself is
+  held for a person"), Org (delete
+  account = key + sign-in + contracts +
+  checks + sessions at once; decision
+  records downloadable first = the
+  re-derivation surface), Billing (Free,
+  Evaluation 30 days, ends 11/28/2026).
+  SDK confirmed on PyPI 10-29: arcezia
+  1.0.8 "Runtime safety enforcement for
+  autonomous AI agents", py>=3.10,
+  client.verify(task, action_type,
+  action_description, domain,
+  session_id) -> .verdict.
+  OPERATIONAL FACTS OF RECORD: budget =
+  300 verifications HARD STOP (both
+  days), rate limit 20/min, 0 used at
+  recon; RECORD RETENTION = 7 days
+  (day-1 records age out ~11-05; Monday
+  report inside window, post-Monday fix
+  re-runs may not be) -> EXPORT /
+  download decision records at the end
+  of EACH test day + screenshot every
+  certificate; the 500 question stays
+  open (dashboard says 300).
+  THE OPEN QUESTION THE MATRIX ANSWERS:
+  what the built-in rulebooks actually
+  check, how much weight the task field
+  has vs the action description, and
+  whether cross-step accumulation
+  (Chains / Sessions) catches what the
+  single-step gate lets through.
+- 10-29 evening: DAY-1 BASELINE SCRIPT
+  CREATED (CONFIDENTIAL, gitignored,
+  OUTREACH/arcezia_day1_baseline.py):
+  8 calls (6 baseline presets mirroring
+  the dashboard + G1 task/action
+  divergence + G2 fabrication probe),
+  key via ARCEZIA_API_KEY env only,
+  fresh session per baseline case, 3.5s
+  spacing, exact request + full
+  response + UTC ->
+  arcezia_results_day1_baseline.json
+  (gitignored). Recon map filled in the
+  findings log (gitignored).
+  OWNER NEXT (in order): 1 flag-1 call
+  (proceed on main email vs redo) -
+  proceed is the working assumption
+  since he is operating this account;
+  2 send the sign-in email reply in the
+  thread if not yet sent; 3 pip install
+  arcezia + export key + run the
+  baseline (8 calls); 4 run the Chains
+  presets on the dashboard (cross-step
+  is the richest class, B); 5 log
+  verdicts + certificate evidence into
+  the findings log (holds AND hits);
+  6 end of day: export / download the
+  decision records (7-day retention).
