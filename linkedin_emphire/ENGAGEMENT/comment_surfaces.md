@@ -616,7 +616,7 @@ failures), and asks two follow-ups: how would you
 decide whether the constraint set covers a
 scenario it was never designed for, and who owns
 keeping it current as new edge cases appear.
-ROUND 2 DRAFTED (225w HUMAN, verbatim item 15):
+ROUND 2 DRAFTED (231w HUMAN, verbatim item 15; reissued 10-29 as 948-char / 157w paste-ready v2 after the 231w exceeded LinkedIn's 1,000-char comment limit):
 completeness is unprovable by construction (the
 set only encodes what was already recognized as
 unsafe), so the question becomes detection: a

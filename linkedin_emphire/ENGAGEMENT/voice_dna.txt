@@ -617,7 +617,11 @@ handed to the owner.
 1. WORD COUNT: count the exact string that gets
    delivered, in python, and record the exact
    number. No approximate counts, no counts of a
-   draft that then changed.
+   draft that then changed. Comments also get a
+   CHARACTER count against the platform limit
+   (LinkedIn comment = 1,000 chars, gate at 950;
+   the 10-29 Saurabh 231w draft was rejected
+   in-app at 1,4xx chars and reissued at 948).
 2. FORMAT GATES: 0 dashes used as separators
    (rule 9), no greeting or opener line (PART
    12), no sign-off except the recorded email
