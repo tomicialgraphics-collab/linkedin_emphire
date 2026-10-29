@@ -683,7 +683,46 @@ comments) and Rock LIKED the comment (10-28 capture)
 the third-Rock-action-in-3-days flag resolved in the
 owner's favor; the 59w "Huh?" reply stays queued as
 optional (the like already moved the thread, the
-reply no longer needs to carry it), owner's call),
+reply no longer needs to carry it), owner's call), 10-29 late (42m paste): "Dual-Failure
+Multiplier" theory post (CxBOM; untested,
+no trials, no pre-registration; confound
+named; H1 Phi-3.5-mini-instruct attention
+share >10% rel drop vs neutral text
+within 1%; H4 association not causation;
+quality half undesigned; board question
+= % of production context window that is
+untrusted content). ALL 3 LINKS READ IN
+FULL 10-29 (cxbom.org spec 0.3.0 +
+reference ledger operator 0.10% of
+46,205; blog 27 Oct rings + the 45-token
+line; Zenodo v1 26 Oct: 14/23 refused,
+1 partial, 8 open, 1,691/1,692, 75 ms,
+DFM "not yet measured"). COMMENT 155w /
+915c HUMAN DRAFTED (verbatim item 32,
+/tmp/rock_cxbom_comment.txt): the board
+question already has a first number in
+their own reference session (operator
+0.10%); the emitter is the meter for the
+budget, every inference answers it on
+the path; the Dual-Failure design needs
+a binding not a meter (H1/H4/quality
+against the same run's CxBOM record, the
+only common denominator that survives re-
+derivation; same-length control + digest
+let a stranger re-derive which share
+produced which failure); the 8 open
+attacks in v0.3.0 = the accumulating
+unverified examples the multiplier
+claims about; close = the experiment
+tells the board whether the share is the
+right number to budget, the emitter
+tells them what the number is. GATES:
+0 dashes, 0 hashtags, 0 URLs, 1
+contraction, human gate PASS (new PART
+13 item 9). BOARD: 4th Rock action this
+week (each a different surface; the
+10-28 comment was LIKED, thread hot).
+STATUS: DRAFTED, owner to paste.,
 Tarique Smith (Zero Day Agent),
 Brad Wolfe (AI/Operational CFO - COFO | 15 yrs | 80+
 M&A | 5 exits | 3 NASDAQ CFO seats | JD/MBA ExPWC |
