@@ -951,6 +951,51 @@ agent evaluation vendor, competitor-adjacent,
 in-lane; peer extension in the Wolfe / Saurabh
 register, zero competitive framing; he follows
 the owner, visibility works both ways.
+Lauren Toulson (1st, AI Researcher in
+Alignment and Moral decision making @
+Aithos Research Foundation | Formerly at
+UK AI Security Institute; 10-29 42m
+paste, HIRING post, applications close 31
+October): Aithos = independent AI research
+foundation, Amsterdam, founded 2025, two-
+person team, VALUES/ALIGNANCE mission
+(steerability at the individual level;
+value conflict; multi-agent coordination),
+output model = benchmark + open tooling +
+reproducible methodology; role = Research
+Engineer (software stack, the runs,
+research tooling; "numbers in a paper, a
+press release or a regulator briefing
+trace back to a specific commit and
+dataset"; security as part of the
+engineering). JD READ IN FULL 10-29
+(aithos.org/vacancies/research-engineer/
+via the lnkd.in resolution). CONSTRAINT:
+on-site Amsterdam at least 2 days a week,
+final interview prefers in person, EUR
+65k-85k + 8%, apply CV + brief motivation
+letter to hiring@aithos.org by 31
+October. CALL: lane comment (NOT a
+job-seek framing; no link, no hashtags,
+no opener): the hardest adjective =
+reproducible in the strong sense, the
+eval is the small part, the evidence is
+the part that breaks, the evidence layer
+(verdict + provenance + hash chain +
+negative control + offline re-derivation)
+makes "true to the experiment design"
+verifiable. 160w / 870 chars HUMAN
+DRAFTED (verbatim item 31,
+/tmp/aithos_comment.txt). OWNER DECISION
+INPUT: the Amsterdam on-site requirement
+vs the owner's Lagos base; if the owner
+wants to apply anyway, the motivation
+letter is drafted from the tieout /
+five-tests record. BOARD: first this week
+from the hiring side of the tier; spacing
+1h+ from the day's other pending
+drafts.
+
 ## Tier 3 — builder / adjacent layer + active thread partners
 
 Charmaine Threat (1st, Architect of
