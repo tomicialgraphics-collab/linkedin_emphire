@@ -25,7 +25,19 @@ export function Compare() {
     getRuns()
       .then((r) => {
         setRuns(r);
-        if (r.length >= 2) {
+        // deep links: /compare?a=<run>&b=<run> (from a run's detail page)
+        const q = new URLSearchParams(window.location.search);
+        const qa = q.get("a");
+        const qb = q.get("b");
+        const known = (x: string) => r.some((run) => run.id === x);
+        if (qa !== null && qb !== null && known(qa) && known(qb)) {
+          setA(qa);
+          setB(qb);
+        } else if (qa !== null && known(qa)) {
+          setA(qa);
+          const other = r.find((run) => run.id !== qa);
+          if (other) setB(other.id);
+        } else if (r.length >= 2) {
           setA(r[0].id);
           setB(r[1].id);
         } else if (r.length === 1) {
@@ -61,7 +73,7 @@ export function Compare() {
   return (
     <section>
       <p>
-        <a className="back" href="#/">
+        <a className="back" href="/runs">
           ← home
         </a>
       </p>

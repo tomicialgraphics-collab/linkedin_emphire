@@ -208,4 +208,12 @@ export interface AsiData {
   f2_proposed: AsiF1Row[];
 }
 
-export type DocKey = "method" | "format" | "matrix" | "harness";
+export type DocKey =
+  | "method"
+  | "format"
+  | "matrix"
+  | "harness"
+  | "changelog"
+  | "security"
+  | "contributing"
+  | "license";

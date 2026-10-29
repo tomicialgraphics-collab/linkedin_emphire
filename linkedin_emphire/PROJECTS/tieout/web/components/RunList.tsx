@@ -52,7 +52,7 @@ tieout verify runs/demo`}
             {runs.map((r) => (
               <tr key={r.id}>
                 <td className="mono">
-                  <a href={`#/run/${encodeURIComponent(r.id)}`}>{r.id}</a>
+                  <a href={`/runs/${encodeURIComponent(r.id)}`}>{r.id}</a>
                 </td>
                 <td className="mono small">{r.agent}</td>
                 <td className="mono small">{r.started_at}</td>
@@ -74,7 +74,7 @@ tieout verify runs/demo`}
                   )}
                 </td>
                 <td>
-                  <a className="btn" href={`#/run/${encodeURIComponent(r.id)}`}>
+                  <a className="btn" href={`/runs/${encodeURIComponent(r.id)}`}>
                     open
                   </a>
                 </td>

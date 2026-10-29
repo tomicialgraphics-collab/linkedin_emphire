@@ -19,8 +19,13 @@ from .harness import get_family, list_families
 from .mappings import ASI_CROSSWALK, F1_PROPOSED_MAPPING, F2_PROPOSED_MAPPING
 
 
-def create_app(runs_dir: str | Path) -> FastAPI:
+def create_app(runs_dir: str | Path, root: str | Path | None = None) -> FastAPI:
     runs_dir = Path(runs_dir)
+    # Explicit deployment root for serverless bundles: the app may be
+    # imported from an installed wheel (site-packages), where __file__
+    # no longer points at the deployed tree. Local use and the CLI keep
+    # the __file__ default.
+    root = Path(root) if root else Path(__file__).resolve().parent.parent
     app = FastAPI(title="tieout", version=__version__)
 
     def _load(run_id: str):
@@ -137,16 +142,18 @@ def create_app(runs_dir: str | Path) -> FastAPI:
 
     @app.get("/api/docs")
     def docs() -> dict:
-        base = Path(__file__).resolve().parent.parent / "docs"
+        base = root / "docs"
         return {
-            key: (base / fname).read_text(encoding="utf-8")
-            if (base / fname).exists()
-            else ""
-            for key, fname in {
-                "method": "method-note.md",
-                "format": "bundle-format-v1.md",
-                "matrix": "failure-mode-matrix.md",
-                "harness": "harness-spec.md",
+            key: path.read_text(encoding="utf-8") if path.exists() else ""
+            for key, path in {
+                "method": base / "method-note.md",
+                "format": base / "bundle-format-v1.md",
+                "matrix": base / "failure-mode-matrix.md",
+                "harness": base / "harness-spec.md",
+                "changelog": root / "CHANGELOG.md",
+                "security": root / "SECURITY.md",
+                "contributing": root / "CONTRIBUTING.md",
+                "license": root / "LICENSE",
             }.items()
         }
 
@@ -169,7 +176,7 @@ def create_app(runs_dir: str | Path) -> FastAPI:
         except DiffError as e:
             raise HTTPException(status_code=400, detail=str(e)) from None
 
-    dist = Path(__file__).resolve().parent.parent / "web" / "out"
+    dist = root / "web" / "out"
     if dist.exists():
         app.mount("/", StaticFiles(directory=dist, html=True), name="ui")
     return app
