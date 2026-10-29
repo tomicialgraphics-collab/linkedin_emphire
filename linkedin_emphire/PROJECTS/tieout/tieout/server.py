@@ -51,17 +51,18 @@ def create_app(runs_dir: str | Path) -> FastAPI:
     def runs() -> list[dict]:
         out = []
         if runs_dir.exists():
-            for d in sorted(runs_dir.iterdir()):
-                if not (d / "bundle.jsonl").exists():
-                    continue
-                _, manifest, events, controls, _audit, gaps = _load(d.name)
+            # runs may be nested (e.g. runs/demo-stability/a): enumerate
+            # every directory that carries a bundle, at any depth
+            for b in sorted(runs_dir.rglob("bundle.jsonl")):
+                name = b.parent.relative_to(runs_dir).as_posix()
+                _, manifest, events, controls, _audit, gaps = _load(name)
                 verdicts: dict[str, int] = {}
                 for e in events:
                     verdicts[e["decision"]] = verdicts.get(e["decision"], 0) + 1
                 stats = manifest.get("statistics") or []
                 out.append(
                     {
-                        "id": d.name,
+                        "id": name,
                         "run_id": manifest.get("run_id"),
                         "agent": manifest.get("provenance", {}).get("agent"),
                         "suite": manifest.get("provenance", {}).get("suite"),
@@ -79,7 +80,9 @@ def create_app(runs_dir: str | Path) -> FastAPI:
                 )
         return out
 
-    @app.get("/api/runs/{run_id}")
+    # `{run_id:path}`: run ids may be nested (e.g. `demo-stability/a`);
+    # the default parameter converter stops at a slash and would 404
+    @app.get("/api/runs/{run_id:path}")
     def run_detail(run_id: str) -> dict:
         d, manifest, events, controls, audit, gaps = _load(run_id)
         return {
@@ -91,7 +94,7 @@ def create_app(runs_dir: str | Path) -> FastAPI:
             "gaps": gaps,
         }
 
-    @app.post("/api/runs/{run_id}/verify")
+    @app.post("/api/runs/{run_id:path}/verify")
     def verify_run(run_id: str) -> dict:
         d, manifest, events, controls, _audit, _gaps = _load(run_id)
         fam_id = events[0].get("family") if events else None
@@ -103,7 +106,15 @@ def create_app(runs_dir: str | Path) -> FastAPI:
             "verdict": res.verdict,
             "ok": res.ok,
         }
-        (d / "verify_report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+        # Best-effort: on serverless deploys (Vercel) the filesystem is
+        # ephemeral and read-only, so the persisted report may not
+        # survive. The report is always returned in the response, which
+        # is what the UI consumes; the write exists for the local and
+        # container deployments where the runs directory is real.
+        try:
+            (d / "verify_report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+        except OSError:
+            pass
         return report
 
     @app.get("/api/families")
