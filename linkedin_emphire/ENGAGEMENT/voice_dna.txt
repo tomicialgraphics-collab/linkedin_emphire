@@ -584,6 +584,131 @@ TEACHING POSTS: Warmer, more mentorship-focused
 COMMUNITY POSTS: Most casual, most collaborative
 ETHICS POSTS: Principled but not preachy, firm but kind
 
+
+╔═════════════════════════════════════════════════╗
+║           PART 12: OPENERS (added 10-27)          ║
+╚═════════════════════════════════════════════════╝
+
+Owner direction (10-27): no greetings.
+- No greeting in any deliverable: DMs, comments,
+  replies, posts. First line is the payload.
+- No "Hi X", no "Hey X", no "Hope you are well",
+  no opener line of any kind.
+- The first sentence must stand as the point on
+  its own.
+- Recorded fact: the Arcezia email (on hold,
+  send 10-28 morning) currently opens with the
+  "Praveen," salutation; owner may strip it
+  before send.
+
+╔═════════════════════════════════════════════════╗
+║    PART 13: VERIFY EVERY DELIVERABLE (10-29)    ║
+╚═════════════════════════════════════════════════╝
+
+Owner direction (10-29, verbatim): "always verify
+all your answers, reply, post for the day, comment
+and others; read links if attached."
+
+The verification pass, run before ANY deliverable
+leaves the bench: answers, replies, the day's
+posts, comments, DMs, emails, and anything else
+handed to the owner.
+
+1. WORD COUNT: count the exact string that gets
+   delivered, in python, and record the exact
+   number. No approximate counts, no counts of a
+   draft that then changed. Comments also get a
+   CHARACTER count against the platform limit
+   (LinkedIn comment = 1,000 chars, gate at 950;
+   the 10-29 Saurabh 231w draft was rejected
+   in-app at 1,4xx chars and reissued at 948).
+2. FORMAT GATES: 0 dashes used as separators
+   (rule 9), no greeting or opener line (PART
+   12), no sign-off except the recorded email
+   convention, hashtags only where allowed (last
+   line of a post, never in comment replies),
+   contractions within the 1-4 budget.
+3. FACTUAL GROUNDING: every name, role, company,
+   number, date, statistic, and quoted phrase
+   must trace to one of: (a) the owner's capture
+   as pasted, (b) a committed workspace file,
+   (c) a page fetched and read this turn.
+   Nothing from memory, nothing invented. If a
+   fact cannot be traced, it ships flagged as
+   unverified, not shipped as fact.
+4. READ THE LINKS: when a capture or request
+   carries a URL, fetch and read each one BEFORE
+   writing anything that depends on it, and log
+   the takeaways in the relevant file. Never
+   draft off a headline or a guess at what the
+   link says. If a link cannot be fetched, say
+   so explicitly and name what was not verified.
+5. QUOTES: any quotation of another person's
+   words matches the capture verbatim (case and
+   punctuation included) or is marked near-
+   verbatim.
+6. STATE CLAIMS: never say sent, posted, merged,
+   or delivered about anything the record does
+   not show as confirmed. Only DRAFTED, ARMED, or
+   SENT-CONFIRMED, per the logs.
+7. LINKS ON REQUEST ONLY: no link of any
+   kind (repo URL, profile URL, document URL)
+   ships in any deliverable unless the recipient
+   explicitly asked for the link in that same
+   conversation. Name the thing without the
+   link (repo named, no URL); if the recipient
+   asks for the link, then and only then send
+   it. Standing rule 10-29, owner verbatim:
+   'dnt always add the repo link unless
+   requested', issued after the Behar R5 draft
+   carried the five-tests URL on a request the
+   owner judged insufficient.
+8. ALL CHAT CONTEXT TO THE REPO: every chat,
+   DM, email, or thread the owner pastes is
+   saved to the repo in the SAME TURN it
+   arrives, in full: verbatim capture +
+   analysis + status. Surfaces go to the
+   comment_surfaces thread line, captures to
+   the verbatim item, engagements to the
+   state log; long threads are saved round by
+   round. Nothing lives only in chat memory:
+   any future turn must be reconstructable
+   from the repo alone. Standing rule 10-29,
+   owner verbatim: 'hencefrth cntext f all
+   chat should be saved to the repo to avoid
+   lose of context for long chat and thread'.
+9. 100% HUMAN: every deliverable AND the chat
+   around it must read as a human writing it,
+   no generated tells. The rule covers the
+   paste-ready text and the agent's own
+   presentation (what changed, why, what is
+   pending). Banned patterns: triadic
+   ornament, 'it is worth noting', 'in
+   today's fast-paced world', hedging
+   stacks, formulaic 'First, Second,
+   Finally', thesaurus words, heavy
+   parallelism, summarize-then-restate
+   closers, meta-explaining one's own
+   choices ('Why that line:' paragraphs),
+   'in the sense that matters to ~',
+   'registers as ~' constructions, and the
+   habit of appending a structured reason
+   after every deliverable when not asked.
+   DEFAULT: state what changed, hand over
+   the text, stop. Explain only when asked
+   or when a real decision is open. The
+   check: if a line sounds produced rather
+   than written, rewrite it in the owner's
+   register before it is shown. Standing
+   rule 10-29, owner verbatim: 'alwaysy
+   ensure that all your deliverables are
+   100% humanly, no double thought of been
+   generated', reinforced 10-29 (the chat
+   voice, not just the deliverables):
+   'stop sounding ai ish'.
+
+A deliverable that fails any check gets fixed
+before it is presented. It does not ship.
 ═══════════════════════════════════════════════════
 END OF VOICE DNA
 ═══════════════════════════════════════════════════

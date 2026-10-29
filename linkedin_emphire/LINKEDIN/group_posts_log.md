@@ -96,6 +96,38 @@ RULES FOR EVERY POST HERE:
    design-time, decision-maker) are unaffected. Pending
    drafts that still contain spaced hyphens are reissued
    dash-free when next requested.
+10. HEADLINE + SUBHEADLINE ON EVERY DAILY POST (owner
+   standing instruction 10-28, "always give me
+   headline and subheadine for daily post"): every
+   daily post, group AND personal feed, is delivered
+   in chat with the HEADLINE and SUBHEADLINE labeled
+   explicitly. HEADLINE = the first line of the post
+   (the hook); it must stand alone as the point per
+   PART 12 (no greeting, no warmup, no opener line).
+   SUBHEADLINE = the second-beat line that carries
+   the tension immediately after the hook, the line
+   that sits under the headline if the post becomes
+   a card (the 10-28 profile banner pattern). The
+   body starts with the two lines in that order;
+   nothing else changes in the post.
+11. VERIFY EVERY DAILY POST + READ ATTACHED LINKS
+   (owner standing instruction 10-29, "always
+   verify all your answers, reply, post for the
+   day, comment and others; read links if
+   attached"): every daily post, group AND
+   personal feed, passes the full verification
+   pass (voice_dna PART 13) before it is
+   presented: word count of the exact string in
+   python, format gates (rule 9 dashes, rule 5
+   hashtags, PART 12 no opener, 1-4
+   contractions), every fact and number traced
+   to the capture, a committed file, or a page
+   read this turn, every URL attached to the
+   day's capture fetched and read before drafting
+   with takeaways logged, and no state claims
+   beyond what the record shows. A post that
+   fails a check gets fixed, not shipped. The
+   same pass applies to comment replies and DMs.
 
 ROTATION (17 joinable groups; #15-17 RAI/EAIGG/GCRAI are
 org communities - no post inside, they get comment-drafts on
@@ -953,3 +985,62 @@ LOG:
         tomorrow per the rotation - if today, the rest of the
         week shifts one slot earlier. Paste unconfirmed until
         owner says POSTED.
+10-28  #19 Finance & Banking Fintech Regtech - D3 DRAFTED
+        and delivered to owner in chat ("post for today").
+        Theme per rotation: who signed off on the agent
+        (board assurance). DECISION-MAKER ROOM register:
+        consequence-first open (the board approved the
+        agent, but who signed off, and on what?), forcing
+        functions named (audit, insurance renewal, customer
+        diligence), method exactly once as the answer to
+        "how do you know?" (someone you did not hire reaches
+        the same verdict from the evidence), close on a
+        decision before the next board meeting + flat line
+        "the signature you have is the one you did not
+        earn." 190 words, no links, no pitch, no motif
+        words (re-run/tie-out budget intact for D4-D5),
+        hashtags: #FinTech #RegTech #RiskManagement
+        #BoardGovernance. Status: DRAFTED. Owner must be a
+        member of #19 to post (join status unconfirmed;
+        in-app joins confirmed 10-26 = #7, #10, 3 truncated
+        names). POSTED (owner screenshot 10-28: live in
+        feed with the hashtag line intact).
+10-28  PERSONAL FEED post (owner's "post for today";
+        the D3 group slot was already filled and
+        live, so this is the personal post, not a
+        second group post), DRAFTED and delivered
+        to owner in chat. PRACTITIONER ROOM register:
+        point-first open (the incident investigation
+        is about the system as it ran on the day it
+        happened, not the system as it runs today),
+        body = the defense becomes a reconstruction
+        (model version moved, prompt edited, tool
+        list different, the person who knows left)
+        and a reconstruction is an argument, not
+        evidence; an auditor or an insurer does not
+        need to agree with the argument, they need
+        the period; method = the run logs its own
+        configuration, model version, input,
+        verdict, time, so the Tuesday that becomes
+        the incident can be re-derived by someone
+        who wasn't in the room; close = "You will
+        not be asked to prove your agent is safe.
+        You will be asked to prove what it was on
+        the day." 188 words body, no links, no
+        pitch, light motif load (re-derived x1 + the
+        stranger line) after D3 (0), Allie (2), Rock
+        (1) today; hashtags: #AIAgents #AISecurity
+        #AIGovernance. Angle = time-boundedness of
+        the trail (incident evidence must come from
+        the period of the run); not a repeat of D3
+        (sign-off), Allie (stale state / apology
+        receipt), or Rock (BOM re-derivability),
+        different point in the same family.
+        HEADLINE + SUBHEADLINE per rule 10 (labeled
+        in chat 10-28): HEADLINE = "When your agent
+        causes its first real incident, the
+        investigation will be about the system as it
+        ran on the day it happened." SUBHEADLINE =
+        "Most teams can't produce that system."
+        Status: DRAFTED, owner pastes; mark POSTED
+        when he confirms.

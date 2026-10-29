@@ -70,6 +70,53 @@ TRADEOFF FLAGGED: the rewrite gives up the explicit career-switcher
 line above). The MLS origin story still serves switchers implicitly:
 lab to AI security is itself the switch.
 
-HEADLINE: not pasted, not touched. If the headline under the name
-still reads generic, it needs the same pass; owner to paste it and
-it gets a draft in the same format.
+HEADLINE + SUBHEADLINE: DRAFTED 10-28 (owner request
+"headline and subjeadline"), pending owner paste.
+HEADLINE (field under the name, 220-char limit, 108 chars):
+"I red team AI agents before they get keys, and I build
+the check that tells you the green dashboard is real."
+SUBHEADLINE: REWRITTEN 10-28 (owner request "rewrite
+subheadline"). The first version reused the About line 1
+verbatim, which would have shown twice on the profile
+(card + About top); the rewrite carries the same MLS
+origin as stakes, not as a credential repeat, so the
+About line 1 still lands as the explicit reveal below.
+"In the lab, a wrong number ends up in the patient's
+record. Now I find the wrong numbers in AI."
+ALTERNATIVE subheadline (shorter, drier): "I was trained
+where a wrong number isn't a typo. Now I check AI the
+same way."
+SEQUENCE LOGIC (updated): headline = identity + method
+(red team before keys + the check/green dashboard),
+subheadline = origin + stakes (the lab standard, then
+the lane). No overlap: the subheadline has no
+red-team/check/dashboard words, the headline has no lab
+words; the card hints the origin, the About line 1
+states it. Strategic note honored: the MLS is the origin
+of the verification standard, not the unusual part.
+ALTERNATIVE headline (96 chars, fragment second beat):
+"I red team AI agents before they get keys. The check
+that tells you the green dashboard is real."
+GATES: same as the About (0 dashes, 0 curly quotes,
+straight text, no slop, no fabricated claims, no client
+names, no numbers, no follower counts); "keys" and
+"the check" and "green dashboard" are the owner's own
+established lines from the About draft; "I'm/you'll"
+contractions avoided in the headline (0 contractions).
+STATUS: DEPLOYED AS BANNER IMAGE 10-28 (owner
+screenshot): the headline (main block) and the
+rewritten subheadline (small block) are rendered in
+the profile banner with the name + "Software Engineer
+| AI Safety | AI Red Teaming" at the bottom left;
+both texts used verbatim. The LIVE HEADLINE FIELD
+still reads the older pipe list ("Software Engineer |
+AI Red Teaming | Breaking AI products before users do
+| We...") and is truncated mid-item at "We..." in the
+profile card. FLAG (10-28): the banner only shows on
+the profile itself; the field is what shows in search,
+suggestions, and next to every comment (the conversion
+surface per performance_tracker). Recommendation:
+paste the 108-char headline into the field, or at
+minimum finish the truncated "We..." item so the card
+does not end mid-word. Owner's call; the About text
+paste is still pending separately.

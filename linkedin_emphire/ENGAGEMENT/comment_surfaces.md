@@ -134,7 +134,22 @@ example, "verify that security fixes actually make it
 into production", video link. Tier 1, named-human
 security publication, in-lane. OUTSTANDING 119w
 drafted 10-24 evening, day at ceiling, tomorrow
-queue, proposed FIRST),
+queue, proposed FIRST; 10-28 late capture: (a)
+Shostack four-questions threat-modeling post (7h,
+egress example, "Would we know if that boundary was
+crossed?", twp.ai video CTA) = 129w HUMAN DRAFTED
+(verbatim item 12), the fourth-question-as-
+rerunnable-check line, the post to spend the surface
+on; (b) ESET sponsored report post (8h, 31% AI-
+malware concern vs actual incidents phishing 26% /
+unpatched 23% / no monitoring 22% / weak passwords
+20%, gated vendor link, "sponsored by ESET,
+comments are mine") = SKIP (sponsored vendor
+surface + stat class + gated CTA; the 10-27
+PHP2Shell skip already logged the repetition tax on
+this surface). The surface now holds three drafts
+(119w PHP2Shell carried, 129w threat-modeling new),
+owner picks which goes first; 60+ min spacing),
 Ruben Hassid (big AI creator; 10-24 skip = "19 things
 to delete from Claude" productivity promo, weak fit;
 10-25: Dessa/Block voice post, "no longer trust any
@@ -227,17 +242,487 @@ buyer); reach surface, placement already proven on this
 author. 96w HUMAN = POSTED (owner, 10-27, "posted"
 confirmed); today's posted count: 1 (within cap);
 reactions and impressions owed at next paste.
+Jerry Liu (Co-founder/CEO @ LlamaIndex; owner Following;
+already in the tier 1 name list; tier 1 reach,
+AI-engineering audience): 10-27, 5m at capture:
+Anthropic S-1 post (318 pages, filed 10-26 per his post,
+"biggest IPO in history") plus a LlamaParse-built
+highlights reader on Vercel, shoutout to Zhaoqi Li.
+Lane-adjacent via the synthesis line: an AI reader
+compressing a legal filing into highlights is the
+owner's tie-out/evidence territory applied to financial
+documents. 78w HUMAN drafted (10-27, in chat): the
+highlights-become-the-document failure mode, the
+traceable-to-page-and-line check with the tie-out shown
+on click, "synthesis is a compression, not a proof",
+flat close, compliment in position 2, no flattery in
+line one. No client flag (vendor CEO, product post);
+reach surface. DRAFTED, not posted; today's posted
+count 1 (Love Babbar); the Federico 88w is also still
+DRAFTED, if both go up today the owner spaces them 60+
+min and keeps the 2h window under 3.
+Daniel Miessler (PurpleLabs AI founder, Security
+Triad; owner Following; known high-value security
+author; 10-26 skips x2 explicitly "keep the surface
+hot for an in-lane post" (code-vs-intent hot take;
+PHP2Shell affected-products list dump)): 10-27, 1m at
+capture: Kusari partner live-demo promo (Thu 10-29,
+9am PT / 12pm ET, sign-up link; Andrew Martin of
+ControlPlane, Hacking Kubernetes, compromises a
+running app through a normally installed package;
+Kusari CEO Tim Miller traces it from source and opens
+the fix). Promo wrapper, but the in-lane core is his
+tracing paragraph: "we won't get a handle on supply
+chain security until we can see everything we've
+installed, everywhere ... Whatever they can't read
+basically shows up as clean, and that kind of scares
+me." FIRST in-lane Miessler surface this week = the
+surface-hot instruction is satisfied. 89w HUMAN
+drafted (10-27, in chat): concession on his fear
+line, the generalization ("any report you can't
+re-run is a clean you bought, not a clean you
+earned"), the unit = install-to-behavior trace a
+stranger can re-run, flat close on the two questions
+(how much of the stack did it actually read; can that
+answer be re-produced, not just asserted). No CTA to
+the event, no link, no hashtags, no greeting. No
+client flag (creator/partner promo, not an audit
+buyer); reach surface, biggest name on today's board.
+DRAFTED, not posted; today's posted count 1 (Love
+Babbar); board: Federico 88w + Jerry 78w + this 89w
+all DRAFTED; if several go up, 60+ min spacing, 2h
+window under 3; NOTE the re-run motif load (third
+same-motif comment today if all three post), owner
+chooses. Event time if the owner wants to watch:
+Thu 10-29, 17:00 Lagos.
+Allie K. Miller (Tier 1, 2M, #1 Most Followed Voice in AI
+Business, ex-Amazon/IBM, Following; added 10-28 morning) -
+10-28: $500/24h experiment, gave OpenAI's Dot (always-on
+personal agent) a budget and an afternoon to plan; her two
+roles = (1) data permissions (2) showing up. Pros: genuinely
+fun afternoon, no planning texts. Cons: bad at pivoting,
+repeatedly emailed one restaurant from her personal email
+(apologized), pinged friends she knew were sick or out of
+town, kept thinking she was gluten-free, forgot promised
+reminders, $500 budget mostly free activities, Dot can't
+purchase natively. Three learnings: (1) AI-to-AI email
+exchange, "proxy communication layers are about to pop up
+everywhere"; (2) some people reply to AI, many find it
+strange; (3) "Identity verification will be a shitshow" -
+Hannah subway'd 30 min not knowing she'd show up; how does
+an agent prove it works for a human, how does the recipient
+trust it enough to act? Close: "I sent more apologies for
+the AI than it would have taken to plan the afternoon
+myself." In-lane, dead center: her cons are all the same
+failure (state never re-checked before the act), role 1 =
+the keys line, point 3 = the decision-maker trust problem
+in consumer clothing. 129w HUMAN DRAFTED (verbatim item
+9): cons collapsed to one con (no re-check before the
+act), the missing control named (a second look per
+action, not one at the start), point 3 extended (Hannah
+on a ping she couldn't verify; the apology is the
+after-the-fact receipt; until the agent can hand the
+receiver something to check without a call, the human is
+the verification layer). Door metaphor borrowed from her
+wall/door line. No CTA, no link, no hashtags, no
+greeting. ALTERNATIVE 62w (pure point-3/identity angle,
+verbatim item 9) if he wants the shorter one.
+POSTED 10-28 (owner pasted; live ~13h at the 10-28
+late capture, post at 240 reactions / 72 comments)
+and Mercy Mukuria (2M creator) LIKED the comment =
+the first external signal on the day's flagship
+comment. BOARD FLAG (10-28 posted motif load,
+updated): D3 group post POSTED = 0 motif words; this
+129w POSTED carries 2 (re-checked, check); Rock 88w
+POSTED carries 1 (re-derived); 3 posted so far, the
+queue behind them (Tanya 129w, Tamkin 132w, Miessler
+89w, Hamel 88w, Jerry 131w + 78w, Federico 88w,
+Dario 64w) is heavy, 60+ min spacing between any
+two, owner picks the weight.
+STATUS: POSTED, comment live, an author reply would
+be the next signal.
+Rumman Chowdhury (IAEF founder, ex-HAI Berkeley;
+reach, tier 1, added 10-28): no comment target on
+foundation/PR surfaces (10-28 skip: 3w RoW story
+repost, org PR class, policy/donor audience,
+stale); the lane's institutional twin, prospective
+reference/partner; engage on her personal-voice
+in-lane post or a direct follow.
+Pascal BORNET (FOLLOWING the owner, not 1st; "#1 AI &
+Automation Thought Leader | Best-Selling Author |
+Keynote Speaker | Agentic AI Pioneer | Forbes Tech
+Council | 2M+ Followers"; irreplaceable.ai): 10-29,
+1m at paste: satire post "Google Maps has gone
+agentic" (the agent reasons, reflects, explores;
+"test-time compute while collecting valuable
+real-world feedback", "arriving is an outdated KPI
+from the pre-agentic era", "final route by Q3",
+family may churn), pivot: "autonomy without a
+clearly defined outcome is not intelligence. It is
+a very expensive scenic route." + four-item
+checklist for agents entering organizations (a
+destination it can actually recognize; boundaries
+it cannot quietly reinterpret; checkpoints where
+humans can intervene; a stop condition before the
+token bill reaches the mortgage) + closing
+question: "should we reward the sophistication of
+its reasoning or the boring old fact that it
+actually arrived?" Hashtags #AgenticAI
+#ArtificialIntelligence #Automation #FutureOfWork.
+LINK READ (rule 4): profile site irreplaceable.ai
+fetched = the IRREPLACEABLE book (humanity in the
+age of AI; endorsements Klaus Schwab, Arianna
+Huffington, Marshall Goldsmith, Thomas Davenport,
+Luc Julia of Siri), IRREPLACEABLE Academy, IRQ
+test; his lane = the human side of AI / future of
+work, not security. CALL: tier 1 big reach (2M+,
+leadership audience, comment rides into it); his
+closing question is a direct invite to answer;
+decision-maker room (consequence first, method in
+one sentence, no motif pile-up): the answer =
+arrival, but only arrival that can be checked,
+the driveway is the witness in the car (nobody
+asks the GPS to prove it), most agent stacks have
+no witness because the transcript is the only
+record and a transcript written by the intern
+texting "making great progress!" is the intern's
+word, not evidence; judge on arrival verified
+from outside the agent (the state change it was
+supposed to cause, recorded by the system that
+owns that state, not by the run's log); his four
+items credited, the first does most of the work
+(a destination recognizable enough to be checked
+is a small closed question, not a vibe); close:
+reward the boring fact, keep the reasoning trail
+for making the next run safer, not grading this
+one. DRAFTED (143w / 803c HUMAN, verbatim item 20).
+CLASS: tier 1 thought leader, Following only;
+author / keynote / Forbes Tech Council; audience
+= the buyer room; no client flag; not a technical
+collaborator, public-register extension, zero
+pitch. HISTORY: his 10-26 "would you pay for an
+AI assistant" post carries a 120w DRAFTED (10-26
+verbatim); second in-lane post of his on the
+board, 60+ min spacing if both go up. BOARD:
+biggest-reach surface today (2M+); day queue
+heavy (Saurabh r2 157w, Wolfe r3 69w, Alex 150w,
+Eduardo 158w, Steve DM 65w all pending) - owner
+picks the weight.
+
+Sam Illingworth (FOLLOWING the owner; Full
+Professor of Critical AI Literacy | Founder of
+Slow AI | Amazon #1 Bestselling Author | Speaker):
+10-29, 1m at paste: new Nature Human Behaviour
+paper, "Turing-like tests for language and vision
+demonstrate a narrowing gap between humans and AI"
+(Zhang et al., published online 26 Oct 2026,
+open access): 72,191 Turing-like tests, 636
+humans + 37 AI agents, 3 language tasks
+(captioning, word association, conversation) + 3
+vision tasks (colour estimation, object
+detection, attention prediction), 1,916 human
+judges (MTurk / Prolific / lab) + 10 AI judges;
+"even simple AI judges beat human judges at
+telling AI answers from human ones. Human judges
+were often the weaker detectors."; on object
+detection + attention prediction the AI judges
+"easily discriminated" and "vastly outperformed"
+human judges; colour was the exception (human
+judges beat the authors' simple task judge,
+GPT-4o still beat humans on all three vision
+tasks); the paper: current AIs are approaching
+the ability to convincingly impersonate humans in
+language and vision, imitation shows minimal
+correlation with conventional AI performance
+metrics = an independent evaluation criterion.
+His closing question: "If people are often the
+weaker judge on tasks like these, which part of
+your own process still rests on a hunch?"
+Hashtags #AIliteracy #HigherEducation
+#AcademicIntegrity #TuringTest #AIinEducation
+#AI #GenAI. LINK READ (rule 4): lnkd.in/eGt84JAw
+FETCH FAILED (proxy error, two attempts); facts
+grounded in the owner's capture (post text) + the
+attached screenshot of the paper's first page
+(abstract, dates, DOI 10.1038/s41562-026-02590-6,
+Zhang et al.); NOT VERIFIED: the paper's full
+text (method detail beyond the abstract). CALL:
+tier 1 big reach, and an ESTABLISHED two-way
+thread partner (10-21 "AI in academic peer
+review" post: owner comment item 41 "a review
+with no check behind it / who holds the
+judgement, a tool that writes the review is a
+judge", Sam replied, owner replied back item
+41b; also on the SIGNAL/NOISE corroboration
+board, surfaces ~line 885). The question is a
+direct invite to the owner's lane; answer = the
+paper is about the JUDGE, not the imitator: the
+quoted finding (AI mimics humans) vs the
+operational finding (the human hunch is a
+fallible detector with a measurable accuracy
+that, on most of these tasks, is the lower one);
+two scope notes (tasks are narrow, imitating
+humans is a per-task quantity; result is judge-
+dependent, simple judge lost to humans on
+colour, GPT-4o won all three vision tasks);
+answer to his question = the part of your
+process that grades; the fix is not AI judge vs
+human hunch but any judge ON THE RECORD: fixed
+procedure, labeled set, accuracy with sample
+size, human or model; close: a hunch has no
+accuracy number, a judge without one is the
+weaker detector. DRAFTED (151w / 817c HUMAN,
+verbatim item 21). CLASS: tier 1 thought leader
++ active thread partner (3 in-lane captures,
+two-way thread established); his lane = critical
+AI literacy / academic integrity / education =
+the buyer room for the "check behind the review"
+register; no client flag; public-register
+extension, zero pitch. BOARD: day queue is the
+heaviest of the week (Saurabh r2 157w, Wolfe r3
+69w, Alex 150w, Eduardo 158w, Pascal 143w, Steve
+DM 65w all pending) - owner picks the weight; 60+
+min spacing from whichever of his earlier posts
+gets the carried draft. 10-29 REPOST: owner requested a repost with thought of the same post; DRAFTED (183w / 1004c, headline + subheadline, 4 hashtags, paste-ready as a share-with-thought) = verbatim item 22; comment item 21 remains a separate DRAFTED.
+
+Neil Sahota (FOLLOWING the owner; AI
+Strategist | Board Director | Trusted Global
+Technology Voice | Global Keynote Speaker |
+Best Selling Author; neilsahota.com / Substack):
+10-29, 1m at paste: "Efficiency is table stakes
+now. Everybody's automating the same processes
+with the same tools, and the gains flatten out
+fast. Advantage comes from asking whether the
+process should exist at all. One makes the
+current model cheaper. The other makes a better
+model possible. Where's your organization
+spending most of its energy?" + blog link
+(neilsahota.com). Hashtags #Automation #AI
+#Innovation #DigitalTransformation
+#BusinessStrategy. LINK READ (rule 4):
+neilsahota.com FETCH FAILED (proxy error,
+10-29); the comment does not depend on the page
+(class context only). CALL: decision-maker
+room; his "should the process exist at all" is
+the elimination question, and the comment
+operationalizes it in the owner's register:
+the process's own numbers can't answer it
+(because the metrics were built to keep the
+process alive); the operational version is a
+check OUTSIDE the process, which step if
+removed changes no downstream record, run as a
+shadow removal and measure what actually
+breaks, the steps that break nothing are
+costs, not processes; agent twist: the agent
+will execute the unnecessary process faster
+and log it as done, the transcript proves
+execution, not necessity, so the elimination
+question stays a human one and needs evidence
+the process's logs cannot generate; close =
+his question answered: that is the energy most
+organizations are not spending. DRAFTED (137w /
+829c HUMAN, verbatim item 25). CLASS: tier 1
+strategy creator, Following the owner; 10-25
+history: "assumptions as assets/liabilities"
+post (22m) evaluated, NOT skipped on quality
+(argument test passed in-lens) but HELD (off
+security lane, author block unknown, 2h window
+tight, optional demo-of-lens only) = 10-25
+verbatim item 4B, 71w, still a pending
+OPTIONAL on a different post; today's post is
+a separate post, no spacing conflict; now
+Following confirmed, so the tier-1 surface is
+live and the 10-25 hold reasons (author block
+unknown, window tight) no longer apply.
+BOARD: day queue is the heaviest of the week
+(Saurabh r2 157w, Wolfe r3 69w, Alex 150w,
+Eduardo 158w, Pascal 143w, Sam comment 151w +
+repost 183w, Charlie 148w, Behar DM 96w all
+pending) - owner picks the weight.
+
+Filip Hric (FOLLOWING the owner; "I help
+developers make AI-written software
+reliable"): 10-29, 1m at paste: PROMO RELAY
+post (lightest class of the day): "How do
+you know you're ready to release when
+quality spans multiple teams, tools, and
+applications?" + Laveena Ramchandani's free
+upskilling course on ShiftSync, "Quality
+Governance at Enterprise Scale": 4 bullets
+(connecting requirements, tests, and
+release decisions with a clear evidence
+chain; prioritizing coverage by business
+risk and making gaps visible; keeping
+agentic QA workflows auditable; building a
+release confidence scorecard); six chapters,
+case studies, checklists; CTA link
+lnkd.in/eGMh_Me5 ("Take the course here
+👇"). He is the promoter, not the course
+author. LINK READ (rule 4): lnkd.in/eGMh_Me5
+FETCH FAILED (proxy error, 10-29); the
+comment does not depend on the course
+content, it extends the concept from the
+post body. CALL: practitioner register,
+compact; the comment ignores the promo
+entirely (no course praise, no CTA
+engagement) and answers his opening
+question: the evidence chain is where the
+scorecard stands or falls, the scorecard is
+a view, the chain is the substance;
+'are we ready to release' should be
+answerable from the record alone, weeks
+later, without asking the teams, and that
+only works if every hop is attributable
+(which requirement, which test, which tool
+version, which decision consumed the
+result, recorded by the system that owns
+that state); a green scorecard whose chain
+breaks at one hop is a dashboard, and a
+dashboard is a claim; the agentic QA line
+matters most because the agent writes the
+tests and the verdict, and the chain is
+what keeps the release re-justifiable
+after the run is gone. DRAFTED (129w / 753c
+HUMAN, verbatim item 28). CLASS: Following-
+the-owner in-lane-adjacent practitioner
+(AI-written software reliability = the
+quality-governance edge of the lane); promo
+relay surface, low pitch weight; SKIP is a
+legitimate owner call if he wants no
+association with course promotion; if
+posted, the comment stands on the concept
+alone and the post is free to keep its CTA.
+BOARD: day queue is the heaviest of the
+week (Saurabh r2 157w, Wolfe r3 69w, Alex
+150w, Eduardo 158w, Pascal 143w, Sam comment
+151w + repost 183w, Charlie 148w, Neil
+137w, Behar R4 337w, Evan 146w, Charmaine
+136w all pending) - owner picks the weight.
+
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
+
+Kyle Bartlett (PENDING CONNECTION REQUEST 10-29,
+owner to ACCEPT; AI Architect & Forward
+Deployed Engineer, builds production agent
+systems for enterprise ops, Former US AI Lead
+Anker, Ex-Apple, Agentic AI / RAG / LLM;
+mutuals: Brad Wolfe + 2): connection note
+(verbatim from owner screenshot): "Hi
+Olusanya, Your point that the agent's own API
+responses are a mirror, not a witness, really
+landed. I keep what the source said separate
+from what the model concluded in my own agent
+traces. I'd love to keep reading where you
+take red teaming on agent self-grading!"
+The note quotes the owner's 130w Wolfe
+comment line (item 14, 10-28: the 'someone
+else' record inside an agent stack is often a
+tool response the agent itself called, a
+mirror, not a witness) and says he is
+ALREADY OPERATIONALIZING it (source claim
+kept separate from model conclusion in his
+own agent traces). CALL: accept (strong
+signal: quotes the specific line, practices
+it, enterprise-ops production agent builder
+= the at-risk + can't-verify ICP shape,
+Brad Wolfe mutual = warm orbit); then reply
+DM (no greeting per PART 12, payload first,
+no link, no pitch): the separation is the
+proof the line is working; one step further
+= keep source claim and model conclusion as
+SEPARATE FIELDS so the divergence is a diff,
+not a judgment call; the divergence is the
+entire finding (self-grading fails exactly
+when the grader's input is the agent's own
+summary instead of the source); the red team
+doesn't need a new tool: sample conclusions
+each close, re-read against the source
+field, log every divergence; value hand-off
+= the five-tests repo (Teamthy/ai-redteam-
+five-tests) named, no link (Steve-DM
+pattern). DRAFTED (125w / 725c HUMAN, verbatim
+item 30). CLASS: in-lane practitioner,
+production agent systems for enterprise ops
+(ICP-adjacent: at risk + can't verify,
+buyer room), 1st-degree after accept, warm
+signal x3 (quotes the line, practices it,
+Wolfe mutual); reference/peer + warm
+prospect for the verification practice;
+future surface: he asked to keep reading on
+red teaming agent self-grading = an earned
+content/DM channel, not a pitch channel.
+BOARD: owner accepts the request first,
+reply after; day queue is the heaviest of
+the week (Saurabh r2 157w, Wolfe r3 69w +
+Wolfe refund 162w, Alex 150w, Eduardo 158w,
+Pascal 143w, Sam 151w + repost 183w, Charlie
+148w, Neil 137w, Behar R4 337w, Evan 146w,
+Charmaine 136w, Filip 129w all pending).
+
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
 Team), Clint Gibler (OpenAI), Ian W. (Promptfoo / OpenAI), Joseph
 Thacker, Rebecca Huteson, Alex Combessie (Giskard), Keren Katz
 (Zenity, OWASP Agentic Top 10), Hyrum Anderson (Abundant Security),
 Rock Lambros (Zenity; thread partner 10-24 "Huh?"
-thread, 59w reply queued; 10-25 [un]prompted II post =
-Stage 2 opener w/ Fred Wilmot, CxBOM release, 78w
-HUMAN drafted = 10-25 verbatim item 7), Tarique Smith
-(Zero Day Agent),
+thread, 59w reply queued, owner pending; 10-25
+[un]prompted II post = Stage 2 opener w/ Fred Wilmot,
+CxBOM release, 78w HUMAN drafted = 10-25 verbatim
+item 7, POSTED: 239 imp at 10-27, Fred Wilmot AND
+Rock both reacted to the comment = strongest thread
+signal of the week; 10-27 post-event CxBOM record
+post (2h, five open issues, trust-by-delivery,
+digest-match finalize gate, audit flag false while
+findings open, cxbom.org + blog + paper live):
+follow-up play per 10-25 item 7 = run their validator
+against their fixtures, next-week content item;
+88w HUMAN alternative: POSTED 10-28 (owner pasted;
+live on the 12h CxBOM post, 16 reactions / 4
+comments) and Rock LIKED the comment (10-28 capture)
+= Wolfe-class author signal on the Zenity thread,
+the third-Rock-action-in-3-days flag resolved in the
+owner's favor; the 59w "Huh?" reply stays queued as
+optional (the like already moved the thread, the
+reply no longer needs to carry it), owner's call), 10-29 late (42m paste): "Dual-Failure
+Multiplier" theory post (CxBOM; untested,
+no trials, no pre-registration; confound
+named; H1 Phi-3.5-mini-instruct attention
+share >10% rel drop vs neutral text
+within 1%; H4 association not causation;
+quality half undesigned; board question
+= % of production context window that is
+untrusted content). ALL 3 LINKS READ IN
+FULL 10-29 (cxbom.org spec 0.3.0 +
+reference ledger operator 0.10% of
+46,205; blog 27 Oct rings + the 45-token
+line; Zenodo v1 26 Oct: 14/23 refused,
+1 partial, 8 open, 1,691/1,692, 75 ms,
+DFM "not yet measured"). COMMENT 155w /
+915c HUMAN DRAFTED (verbatim item 32,
+/tmp/rock_cxbom_comment.txt): the board
+question already has a first number in
+their own reference session (operator
+0.10%); the emitter is the meter for the
+budget, every inference answers it on
+the path; the Dual-Failure design needs
+a binding not a meter (H1/H4/quality
+against the same run's CxBOM record, the
+only common denominator that survives re-
+derivation; same-length control + digest
+let a stranger re-derive which share
+produced which failure); the 8 open
+attacks in v0.3.0 = the accumulating
+unverified examples the multiplier
+claims about; close = the experiment
+tells the board whether the share is the
+right number to budget, the emitter
+tells them what the number is. GATES:
+0 dashes, 0 hashtags, 0 URLs, 1
+contraction, human gate PASS (new PART
+13 item 9). BOARD: 4th Rock action this
+week (each a different surface; the
+10-28 comment was LIKED, thread hot). STATUS: COMMENT POSTED 10-29 late (owner paste: live, 1 reaction / 11 likes / 19 impressions); Dan Sorensen (2nd; Fractional vCISO & AI governance advisor, SMBs / aerospace / critical infra; CxBOM co-author, Nexus Security Advisors) replied 16m: 'great read of it... you nailed the split... a lil humbling, but true. Appreciate you digging into the record!' = co-author endorsement + governance buyer in the comment tree; REPLY v2 DRAFTED 41w/246c (/tmp/sorensen_reply.txt, per owner directive "receive the compliment": "That's kind, the credit goes to the record, it made itself legible." + the 8 open keep the work honest + the reference session is one window, production spreads around it + looking forward to the pre-registration); no DM owed, surface hot.,
+Tarique Smith (Zero Day Agent),
 Brad Wolfe (AI/Operational CFO - COFO | 15 yrs | 80+
 M&A | 5 exits | 3 NASDAQ CFO seats | JD/MBA ExPWC |
 wolfepacks.com; 2nd, NOT connected, added 10-26
@@ -315,10 +800,962 @@ ICP A/B; HUMAN 77w drafted 10-24 night (verbatim
 item 22), held to top of 10-25 queue, day at
 ceiling; client angle can move today via a
 non-capped 1st-degree DM)
+Federico M. (/in/phretor/, 2nd, "Security Engineering
+(AI Hyperscale Platforms)"; named security practitioner,
+in-lane, audience = security engineering = hiring
+surface): 10-27, 2h at capture, edited: "AI is scaling
+vulnerability discovery, but where are we with
+vulnerability response & remediation?", thesis lines
+"We need to scale context, not repeatedly reconstruct
+it" + "Structured, reproducible, traceable
+vulnerability evidence should become a first-class
+artifact" (link to a co-authored piece; thanks to named
+security figures). His "first-class artifact" line is
+the owner's receipt/re-perform thesis stated from the
+vulnerability-response side, an independent
+formulation in front of the security engineering
+audience. 88w HUMAN drafted (10-27, in chat):
+re-performability as the property that makes the
+artifact work ("a trace nobody can re-run from the
+trail is decoration, a polished one"), the artifact
+stops scaling when it becomes a report and starts
+scaling when it becomes a test, flat close "the repro
+is the interface", no flattery in line one, no
+question, no CTA. No client flag (hyperscaler employee,
+not an audit buyer); home-turf hiring surface.
+DRAFTED, not posted; today's posted count 1 (Love
+Babbar), this is #2, 60+ min spacing likely met, owner
+times it.
+Clint Gibler (Cyber @ OpenAI, tl;dr sec newsletter;
+owner Following; already in the tier 2 name list):
+10-27, 6m at capture, edited: PHP2Shell webinar promo
+with CrowdStrike, Wed 2026-10-28 10:00-10:45 AM PT
+(= 18:00-18:45 Lagos), register link, CC Adam Meyers +
+Anthony Roman; agenda: exposure, fixes, investigating
+suspicious activity + frontier AI changing vuln
+discovery. SKIP for a comment, three documented
+reasons: (1) PHP2Shell is the owner's own material this
+week (NSA advisory, ~1.5M unpatched, not on KEV) and
+the audience's feed already carries 4+ owner presence
+points this week, a comment here is a 5th+ =
+repetition tax (rule set by the 10-25 skip log), (2)
+promo/CTA surface, no substantive line to land on, (3)
+cap: this would be comment #3 today inside the 2h
+window, and the Federico comment 2h ago already carries
+the discovery-vs-response theme. MOVE: register +
+attend Wed 18:00 Lagos; the owner is in the room where
+his own incident is discussed by OpenAI + CrowdStrike;
+one Q&A question prepared (event chat, not a public
+comment, drafted in chat): "When a vulnerability is
+found by a model, the abuse is likely too. What should
+the response side standardize on, so that assessment,
+fixing, and investigation can consume that evidence
+without re-deriving it?" Post-event: if a recording or
+summary post ships, that is a fresh surface, only if
+the PHP2Shell repetition budget allows at that point.
+Fallback comment (55w) drafted in chat in case the
+owner wants a public touch today anyway; flagged as
+presence #5.
+
+Alex Tamkin (Anthropic researcher; on the audience
+list since 10-24; tier 2 home turf via the
+agent-trust/oversight lane): 10-27, 15h at paste:
+randomized trial, 50 professional data analysts,
+agent's lean randomly assigned, analysts went with
+the agent's option 86% of the time; asked why, 77%
+repeated the agent's argument in at least one answer
+(sometimes word for word), only 15% credited the
+agent, about half called the final recommendation
+more their own; not low-effort (one analyst 40+
+min); agent users finished faster with far fewer
+serious errors than the 11 who worked alone; authors
+strengthened the lean on purpose, single model,
+1h task; close: 'human in the loop' might provide
+less assurance than people expect. 133w HUMAN
+DRAFTED (10-27 verbatim item 6): the 77%
+verbatim-repetition line (loop parroting, not
+checking), "assurance was never the human's, it was
+the agent's confidence signed by the human",
+control = the loop re-runnable without the agent,
+close on the 15%. Fresh thread, fresh object (human
+judgment delegation, not the model/benchmark/patch
+the owner has run all week), decision-maker bridge
+(HITL is the assurance claim boards and customers
+buy). No client flag (researcher, not an audit
+buyer); practitioner/research audience. DRAFTED, not
+posted.
+OWASP GenAI Security Project (named org, 33K
+followers, on the audience list since 10-24; tier 2
+home turf, this audience hires): 10-27, 17h at
+paste: LLM Exploit Generation Phase 2 report
+(Agentic vs Classic Offensive Approaches), 15-month
+Threat Intelligence Initiative, human-guided
+chatbots + autonomous agent frameworks against live
+HTB machines post-training-cutoff, real-actor
+constraints (cost, guardrails, rate limits, no
+scoreboard); key lines: where LLMs accelerate
+attacks vs where human expertise stays essential,
+the harness mattered more than the model,
+guardrails should not be relied on, "cyber
+benchmark scores shouldn't be read as threat
+intelligence", what the July 2026 frontier-lab
+incidents do and don't tell us. THIRD CANDIDATE of
+this capture (after Tamkin item 6 and the Rock item
+7 alternative); in-lane, named org, specific
+report, but the benchmark-vs-threat-intel line
+would be a fifth same-motif comment today if
+posted; DRAFT ON REQUEST, not drafted this pass.
+Alex Combessie (Giskard co-founder; Security for
+AI, Agent Evaluation; FOLLOWING the owner, not
+1st): 10-29, 1m at paste (edited): "October has
+been a horror month for the security of software
+🎃 Is Giskard compromised with the PHP2Shell,
+Node2Shell, and a backdoored LiteLLM release?
+Short answer is No - we're safe, and no customers
+were affected." + R&D article link. LINK READ
+(PART 13 item 4): giskard.ai/knowledge/php2shell-
+node2shell-and-litellm-supply-chain-exploit
+(10-28, Pierre Le Jeune + Blanca Rivera Campos,
+4 min): (1) PHP2Shell = two critical RCEs in the
+PHP runtime (CVE-2026-109618/109619), details
+leaked 10-20 before disclosure, watchTowr
+reproduced it, active exploitation reported,
+fixes 10-21 (8.5.12/8.4.27/8.3.36/8.2.35);
+Giskard: no PHP, not exposed. (2) Node.js Brotli
+decoder OOB write (CVE-2026-111497), RCE via
+decompressing attacker-controlled data, embedded
+in the official Node binary; patches 22.23.4 /
+24.22.1 / 26.12.1, Node 20 EOL no fix; PoC
+crash-only as of 10-22, no in-the-wild
+exploitation; Giskard: older infra affected
+(dropped with Hub 3.0) but a few last customers
+still ran it, hotfix + security notifications;
+pinned Node 24 image ships affected-range Brotli
+and fetch() auto-negotiates (client-side: a
+malicious server can attack them with a crafted
+Brotli response), checked all places, no
+meaningful exposure. (3) LiteLLM 1.107.0
+backdoored on PyPI + official Docker: credential
+stealer via a .pth file executed at every
+interpreter start (any Python process on the
+host), went after cloud credentials, CI/CD
+secrets, SSH keys, AI coding tool tokens,
+provider keys; pulled within ~2 hours (still
+long enough for CI + fresh installs); Wiz
+reported stolen credentials being tested from
+two IPs, AWS identity checks + Bedrock model
+listing = LLMjacking pattern; "treat the host as
+compromised and rotate every credential it could
+reach"; 1.106.2 is the last clean version;
+Giskard: already dropped LiteLLM, replaced with
+their own open-source giskard-llm ("the right
+call, LiteLLM has now been compromised twice this
+year: March 1.82.7/1.82.8, last week 1.107.0"),
+giskard-oss pins a clean optional dependency,
+all Giskard OSS packages exclude the compromised
+version (transitive-pull class removed).
+Takeaways: supply chain attacks increasing, AI
+cuts both ways (PHP2Shell found by AI-assisted
+researchers, AI helped validate the patch). Five
+controls: pin everything (deps + CI actions,
+version/hash, Renovate), dependency cooldown
+(few days; compromised versions usually spotted
+within hours), avoid long-lived publishing
+tokens (trusted publishing), least-privilege CI
+(per-step secrets, pipeline as attack surface),
+scan workflows (Semgrep on code + CI, zizmor
+being added for GitHub Actions). CALL: NOT the
+7th PHP2Shell news skip of the week, different
+class: a vendor self-verification post by a
+security co-founder who follows the owner, tier 2
+home turf (his audience = the owner's exact
+readers). Comment EXTENDS, does not audit: the
+agent-specific consequence of the LiteLLM
+incident (compromised call path, LLMjacking in
+practice) + the one gap design-time controls
+structurally cannot cover (what the stack did
+while the bad release was live; rotation =
+future, trail = past). 150w / 855 chars HUMAN
+DRAFTED (verbatim item 18). FACT NOTE: the
+article says pulled within ~2 hours (the PyPI
+window), so the draft says "while 1.107.0 was
+live", not "the two hours" (rule 11 item 3).
+BOARD: heavy day (Saurabh r2 157w + Wolfe r3
+69w + Steve DM 65w all pending); this one
+carries the trail / verdict / model-version
+motif family, 60+ min spacing from whatever
+else posts today. CLASS: Giskard = AI security /
+agent evaluation vendor, competitor-adjacent,
+in-lane; peer extension in the Wolfe / Saurabh
+register, zero competitive framing; he follows
+the owner, visibility works both ways.
+Lauren Toulson (1st, AI Researcher in
+Alignment and Moral decision making @
+Aithos Research Foundation | Formerly at
+UK AI Security Institute; 10-29 42m
+paste, HIRING post, applications close 31
+October): Aithos = independent AI research
+foundation, Amsterdam, founded 2025, two-
+person team, VALUES/ALIGNANCE mission
+(steerability at the individual level;
+value conflict; multi-agent coordination),
+output model = benchmark + open tooling +
+reproducible methodology; role = Research
+Engineer (software stack, the runs,
+research tooling; "numbers in a paper, a
+press release or a regulator briefing
+trace back to a specific commit and
+dataset"; security as part of the
+engineering). JD READ IN FULL 10-29
+(aithos.org/vacancies/research-engineer/
+via the lnkd.in resolution). CONSTRAINT:
+on-site Amsterdam at least 2 days a week,
+final interview prefers in person, EUR
+65k-85k + 8%, apply CV + brief motivation
+letter to hiring@aithos.org by 31
+October. CALL: lane comment (NOT a
+job-seek framing; no link, no hashtags,
+no opener): the hardest adjective =
+reproducible in the strong sense, the
+eval is the small part, the evidence is
+the part that breaks, the evidence layer
+(verdict + provenance + hash chain +
+negative control + offline re-derivation)
+makes "true to the experiment design"
+verifiable. 160w / 870 chars HUMAN
+DRAFTED (verbatim item 31,
+/tmp/aithos_comment.txt). OWNER DECISION
+INPUT: the Amsterdam on-site requirement
+vs the owner's Lagos base; if the owner
+wants to apply anyway, the motivation
+letter is drafted from the tieout /
+five-tests record. BOARD: first this week
+from the hiring side of the tier; spacing
+1h+ from the day's other pending
+drafts.
+
+Amanda Minnich (Following the owner;
+Principal Research Manager, Microsoft AI
+Red Team Research Team (AIRT); 10-29
+15m paste, HIRING post, AIRT, two senior
+research roles fully remote US ONLY):
+(1) post-training large models for
+cybersecurity tasks ->
+apply.careers.microsoft.com job
+1970393557040982 (page fetched,
+substantive read not completed, the
+post's description stands); (2) swarm
+behavior / agentic security -> job
+1970393557041155, READ 10-29 ("Member
+of Technical Staff (Senior AI Security
+Researcher)", 0 days/wk in-office,
+posted 29 Oct 2026, job number
+200062059; "research adversarial AI-
+agent systems, with an emphasis on
+coordinated and swarm-like behavior...
+build instrumented environments to
+characterize campaigns, identify
+behavioral signatures, trace
+provenance, and evaluate methods for
+interrupting and containing coordinated
+offensive agent swarms... how
+coordination, adaptation, and evasion
+emerge across changing agent
+populations, tools, and operating
+conditions"). CALL: TIER 2 home turf,
+the canonical AI red team org; the JD's
+own language = the owner's evidence
+lane; US-only remote = PRACTITIONER
+presence, not job-seek (Aithos
+precedent); the comment = the swarm
+evidence wall (probe easy, evidence
+not; per-agent per-turn attribution as
+the re-derivation unit; traces that
+hold a signature and none of the
+provenance). 137w / 793c HUMAN DRAFTED
+(verbatim item 34, /tmp/amanda_airt_-
+comment.txt). BOARD: highest-signal
+Tier 2 post of the day; spacing 1h+.
+
+Tarique Smith (1st; Co-Founder & Chief
+Scientist, Cogensec | Adversarial AI
+Security Researcher | AI Safety & AI
+Red-Teaming Leader | "Securing
+autonomous systems from the inside
+out"; 10-29 6m paste, EndoStack LAUNCH
+post, security-first workflows for
+coding agents, MIT open source): /
+tarique-mode = 23 playbooks + five
+gates (Plan: read before changing;
+Threat-model: trust boundaries + abuse
+paths before logic; Build: failing
+tests first, smallest fix; Review:
+security review of the final diff,
+every finding needs file:line + exploit
+path; Verify: re-run the real
+reproduction and attach the evidence);
+37 skills + 25 principles (arena,
+swarm, interrogate, blast-radius);
+issue text/logs/tool output = untrusted
+data never instructions; read-only
+subagents for read/review; 15 agent
+CLIs (Claude Code, Cursor, Codex,
+Gemini CLI, Copilot, Goose, Amp, Kiro,
+Cline, Roo Code, OpenCode, Aider, Zed,
+Junie, Devin Desktop); /try-endostack
+= 5-min file server with a bug whose
+obvious one-line fix leaks secrets.
+BOOKING LINK (intro.co/TariqueSmith)
+FETCH FAILED 403, no dependency. CALL:
+TIER 2 home turf, vendor/builder,
+extend not audit; the comment = the
+evidence-durability extension (gates
+make the agent PRODUCE evidence; the
+open question = what the evidence is
+good for after the session; finding
+with file:line + exploit path = claim
+about a run, fact when a stranger re-
+runs the reproduction clean; pin model
+version + environment + reproduction;
+coding agents' structural advantage =
+every input is a file, evidence can be
+closed; close: gates make the agent
+produce it, the pipeline's job is to
+make it re-derive without the
+session). 146w / 859c HUMAN DRAFTED v2 (owner
+directive 10-29: add substantial
+compliment = the untrusted-data
+default named as the stand-out design
+decision, why it is right, the common
+alternative; the extension unchanged;
+verbatim item 35, /tmp/tarique_-
+endostack_comment.txt). LANE
+CONVERGENCE NOTE: his Verify gate is
+convergent design with the owner's
+re-derivation thesis on the coding-
+agent surface; watch for the M5
+note's related-work positioning (no
+public reference in the comment).
+BOARD: spacing 1h+. STATUS: DRAFTED,
+owner to paste.
 
 ## Tier 3 — builder / adjacent layer + active thread partners
+
+Adnan Masood, PhD (UST Chief AI
+Architect; Microsoft Regional Director;
+Microsoft MVP (AI) alumnus; InfoWorld
+contributor; 10-29 15m paste, share of
+his InfoWorld article "AI ROI beyond
+pilots: Measuring outcomes in
+production" 28 Sep 2026): article READ
+IN FULL 10-29 (both chunks; bit.ly
+resolution): ROI = measurement problem
+with clear boundaries, workflow = unit
+of value, baseline before GenAI ("A
+baseline creates credibility when
+results look good and when results look
+flat"), 4-layer metrics stack (activity
+/ quality under policy / workflow /
+business), instrument where work is
+done (timestamps, status changes, final
+dispositions), cohort comparison,
+failure modes incl. "self-reported time
+savings and no baseline" + "value
+claims based on usage alone", 90-day
+plan + 7-item checklist. CALL:
+on-lane-adjacent enterprise governance
+voice (his stated focus = model
+evaluation and monitoring); decision-
+maker register; the owner's evidence
+lane connects at his quality layer
+(correctness under policy needs the run
+record sufficient to re-derive the
+verdict: prompt, model version,
+retrieved content, policy check; the
+twin failure = self-reported quality
+with no re-run; ROI stands when a
+stranger re-derives the quality number
+from the record, not the survey). 119w
+/ 705c HUMAN DRAFTED (verbatim item 33,
+/tmp/masood_roi_comment.txt). BOARD:
+spacing 1h+.
+
+
+Charmaine Threat (1st, Architect of
+Supervisory Authority Systems; AI Governance
+-> Execution -> Evidence Infrastructure;
+GISGA Holdings LLC, Supervisory Authority
+Architecture (SAA), trademarked): 10-29, 5m
+at paste: "Enterprise AI Governance Needs a
+Third Commercialization Model: Beyond Build
+vs. Buy" - the binary (build internally /
+buy from a vendor) is insufficient as AI
+systems become autonomous; large financial
+institutions, healthcare organizations,
+insurers, critical infrastructure operators
+should not have to replace their stacks or
+recreate every supervisory control per
+agent; the third pathway = Institutional
+Infrastructure Integration: enterprise
+retains its stack, engineering, operational
+ownership; a specialized institutional
+infrastructure provider supplies reusable
+supervisory capabilities; qualified
+implementation partners integrate them under
+defined technical, security, accountability,
+and assurance requirements; "increasingly
+autonomous systems require more than access
+controls, policy documentation, and
+retrospective audits. They require
+operational infrastructure capable of
+governing the transition from digital intent
+to authorized, evidence-supported, admissible
+execution"; value for three groups
+(enterprises, engineering/implementation
+partners, institutional infrastructure
+providers); "not simply another governance
+application... a potential institutional
+infrastructure integration ecosystem".
+Closing question: "Where do you see the
+strongest case for this third model?" No
+links in capture. CALL: vendor
+commercialization-model pitch (GISGA /
+SAA); the thesis overlaps the lane heavily
+(evidence-supported, admissible execution =
+the durable-state register; more than
+retrospective audits = enforceable vs
+recorded); the comment takes the evidence
+line as the one that makes the model real
+and contains its hardest unit of reuse:
+every consequential action class carries a
+contract (which transition, which state,
+which policy version, which verdict); what
+is common is the SHAPE of the evidence, not
+the instance, because admissibility is
+defined by the consequence, which differs
+per system; a capability shipping one fixed
+evidence contract is a governance
+application with a new GTM, the one
+shipping the schema with the contract left
+to the implementation partner per action
+class is infrastructure; the strongest
+case = where retrospective audit already
+fails (irreversible cross-system actions:
+payments, claims, records, from her own
+audience list); close: there the evidence
+contract is the product, not the compliance
+document, and the ecosystem needs the
+implementation partner, not despite them.
+DRAFTED (136w / 950c HUMAN, verbatim item 27).
+CLASS: in-lane-adjacent vendor (her product
+= the supervisory infrastructure itself),
+1st-degree architect class; commercial-
+model pitch, not a product launch; the
+comment answers his closing question with
+the failure-mode test, no praise of SAA, no
+pitch, no link. BOARD: day queue is the
+heaviest of the week (Saurabh r2 157w, Wolfe
+r3 69w, Alex 150w, Eduardo 158w, Pascal
+143w, Sam comment 151w + repost 183w,
+Charlie 148w, Neil 137w, Behar R4 337w, Evan
+146w all pending) - owner picks the weight.
+
+
+Evan Franz, MBA (2nd, PROMOTED post;
+Collaboration Insights Consultant @ Worklytics;
+helping People Analytics, AI & IT leaders
+measure AI adoption, tool usage,
+collaboration patterns, work
+effectiveness): 10-29 paste, promoted post:
+research on AI adoption spreading through
+people, not rollouts, 216% higher odds of
+trying AI when more than 25% of an engineer's
+broader peer group had recently used Copilot
+CLI, manager who used it = 82% higher odds;
+Worklytics piece on finding hidden AI power
+users (lnkd.in/er94N9_D); "The employee
+driving AI adoption may not be the person
+leadership nominated"; LayerX research: half
+of employees had 12 or fewer AI conversations,
+top 5% had 144 or more, nearly 47% of
+enterprise AI conversations happened through
+personal accounts; "high usage alone isn't
+the goal. Someone generating 30 drafts isn't
+necessarily creating more value than someone
+using AI to make 1 better decision"; four
+priorities: look beyond team averages,
+measure outcomes not just activity, make
+successful workflows visible, give champions
+time and support then measure whether
+adoption and outcomes improve over the next
+12 weeks; his own caution: "the research
+shows a strong association between peer
+usage and adoption, not proof that appointing
+champions causes the same effect". LINK READ
+(rule 4): lnkd.in/er94N9_D + worklytics.co
+FETCH FAILED (proxy error, 10-29); every
+figure in the comment is from the post body
+itself, no dependency on the piece or the
+site. CALL: promoted 2nd-degree vendor post,
+his product is the activity dashboard; agree
+with his conceded line ("measure outcomes,
+not just activity"), then show the dashboard
+can't deliver it: adoption is measurable
+(216% peer effect, 12-versus-144 gap, 47%
+personal accounts, all activity with a
+number attached), the outcome side is a
+different class, "30 drafts vs 1 better
+decision" only counts if the decision was
+defined before it was made as a small closed
+question with a recorded verdict, the 12-
+week measurement inherits the same problem
+(self-reported, or reported by the tool
+being used more, the 12 weeks show adoption
+up and the report calls it outcomes); the
+fifth priority: for each champion workflow,
+name the one outcome it should move, in a
+check it can't write its own grade for,
+before the 12 weeks start. DRAFTED (146w /
+828c HUMAN, verbatim item 26). CLASS:
+in-lane-adjacent vendor (Worklytics =
+adoption/usage measurement dashboard), 2nd-
+degree, PROMOTED (paid amplification, low
+relationship weight); the comment takes his
+conceded line and extends it one step, no
+praise of the product, no pitch, no
+engagement with the research piece beyond
+the figures he cited. BOARD: day queue is
+the heaviest of the week (Saurabh r2 157w,
+Wolfe r3 69w, Alex 150w, Eduardo 158w, Pascal
+143w, Sam comment 151w + repost 183w, Charlie
+148w, Neil 137w, Behar R2 202w all pending)
+- owner picks the weight.
+
+
+Behar Dalipi (NEW CONNECTION 10-29, owner
+connected after his profile view, he accepted;
+Skopje, North Macedonia; Independent Researcher
+| AI Governance, Ethics & Frontier Model Policy
+| Restricted-Access Systems | Human-Centered AI
+| Inventor USPTO; 500+ connections, 523
+followers; background applied sciences, public
+health, philosophy, USPTO patent portfolio):
+current work = a policy brief on governance
+frameworks for restricted-access frontier
+models (submitted for review) + a working paper
+on risk architectures, access control, and
+alignment strategies; four core dimensions:
+structural risk analysis, governance and
+access-control frameworks, human-centered
+integration, applied system design and
+responsible innovation; open to collaboration
+with research institutions, policy
+organisations, AI governance teams,
+interdisciplinary groups. POSTS READ from
+capture (10-29, profile paste): 4mo "The
+Missing Category" (18pp working paper ->
+SSRN): frontier models withheld from the
+market but distributed to chosen partners
+under private contract are operationally
+active but institutionally unmarked; the gap
+is bidirectional (private labs exercise
+state-like power without public oversight;
+June 2026 a deployed frontier model was
+withdrawn from an entire class of users by
+executive directive with no process and no
+appeal); 5mo "technical enforcement vs
+governed execution": five questions (who
+holds authority, lawful basis, admissible
+scope, evidence chain, continuity/custody/
+receipt/replay obligations) + "governance
+cannot remain a dashboard, a wrapper, or a
+policy memo sitting outside runtime";
+5mo governance constrains AI, accountability
+must be operational (human ownership,
+auditable systems, proportional oversight,
+legal clarity, public legitimacy); 6mo UN
+Global Dialogue on AI Governance input
+(enforceable institutional design); 6mo
+"Ethical Governance of AGI and ASI" (9pp).
+CALL: DM (owner request: "i need to send him
+aa dm"), warm greeting first line per owner
+request 10-29 (overrides PART 12 for this DM
+only), then the payload, one concrete
+question, no pitch/link. Angle = his 5mo governed-execution
+post: the five questions are the right list,
+replay is the one that separates governance
+from a dashboard; in practice the replay
+breaks where the state at decision time (model
+version, credential, prompt config) and the
+gate's decision on the blocked action are not
+recorded, so the evidence chain holds for the
+happy path and collapses at incident review;
+question: which of the five can a deployed
+agent system actually produce after the fact
+today. DRAFTED (96w / 567c HUMAN, verbatim
+item 24). CLASS: in-lane policy/research
+register (governance, restricted-access
+systems, systemic risk), 1st-degree new
+connection, warm signal (viewed the owner's
+profile first); prospective peer/reference/
+future collaborator (he is open to
+collaboration), NOT an ICP buyer (researcher,
+not at-risk+can't-verify); the DM plants the
+practice-to-policy bridge without pitching;
+if he engages, the next step is the Missing
+Category paper + his framework. THREAD 10-29: opener SENT 10:33 AM (owner paste); Behar replied 10:48 AM (engaged in 15 minutes; distinguished partial observability from demonstrable governance compliance; named blocked actions, changed conditions, expired authority, failed control checks; asked for a concrete sanitized example of where an agent's decision history becomes unreconstructable during incident review); R2 DRAFTED (202w / 1203c = the blocked-action anatomy + the expired-authority case + the none-of-the-five-fully-producible-unless close + offer to map the five to the records) = verbatim item 24 R2; R2 SENT 10:54 AM; Behar replied 11:02 AM (precise technical question: in the blocked-action example, was the guard's decision never emitted as an observable event, or emitted but not preserved in the audit record? different failure modes, different architectural implications); R3 DRAFTED (235w / 1302c = both modes: mode 1 default, inline policy check, verdict never emitted, block path and no-try path identical in the log; mode 2 worse, verdict emitted but lands where the success path does not, rotation/debug/persistence downstream of the guard, observable at decision time, not producible at review time; fix = write-once verdict event keyed to the proposed action; close = the external test, pull the verdict by ID weeks later, the indistinguishability IS the governance gap) = verbatim item 24 R3; thread is live through round 3, practitioner-to-policy deepening, five-to-records mapping still the standing next artifact; R3 SENT 11:11 AM; Behar replied 11:42 AM (round 4: what happens when the guard decides but the evidence persistence layer fails, fail closed?, how is the decision preserved or recovered for independent verification, + request for a sanitized failure-test trace); R4 DRAFTED (337w / 1989c = the correct default, verdict commits before the effect, atomic, the only honest fail closed, costs availability, reversible actions may proceed-and-reconcile only with mandatory local copy + named gap; the common mistake, reverse coupling, action with no record; WAL + replay makes the failure a gap not a loss; action IDs pre-assigned so the record can name the absence, named gap vs silence; T0-T6 sanitized trace with the recovered verdict carrying its T1 timestamp + the negative control without pre-assigned IDs where the review cannot tell whether the guard ran at all) = verbatim item 24 R4; reference-grade practitioner-to-policy conversation, round 4, both standing next artifacts open (full failure-test trace, five-to-records mapping). R4 SENT (owner paste; confirmed by Behar's reply referencing the T0-T6 trace). BEHAR REPLIED 12:33 PM (ROUND 5: thanks for the detailed trace; the WAL boundary - a locally durable write-ahead log does not necessarily guarantee independent survivability, if the host fails irrecoverably between T2 and T5 the central audit system may never receive the verdict; for high-consequence systems, questions about the required persistence guarantees, failure assumptions, and independently verifiable binding between the proposed action, policy version, guard decision, and resulting effect; PROPOSAL: 'a concise, jointly attributed technical note or failure-mode matrix covering decision-time evidence, persistence failures, recovery guarantees, and independent verification, supported by a reproducible test case' - 'Would you be interested in exploring that possibility?'). R5 DRAFTED (521w / 3219c HUMAN, DM = no 1000-char gate, 0 dashes, 0 t-contractions): accepts his boundary exactly (the WAL buys persistence-layer survivability only, not independent survivability; the verdict exists in exactly one place between local commit and ingestion; 'host-lifetime evidence loss'); two tiers per action class (high-consequence: independent durability is a precondition of the effect, verdict written to the audit system or an independent availability domain, effect proceeds only after confirmation, same cost now on the decision path; reversible: local commit + immediate replay + the gap now named precisely, bounded by replay frequency, closed by mandatory reconciliation; guarantee + failure assumption + binding are all per action class, why a single global guarantee is the wrong answer); the four-part binding in a single verdict event (pre-assigned action ID, hash of the policy version in force, signed decision, effect reference the pre-assigned ID makes nameable before the effect), verifiable by a third party without trusting the host, a stranger re-derives the binding; YES to the note: the matrix this thread generated is the skeleton, rows = the four failure modes on the table (not emitted / emitted not preserved / host dies between local commit and independent ingestion / preserved but not independently verifiable), columns = detectability (decision time, review time, or never), what must survive what, recovery mechanism, residual gap, test case; the T0-T6 trace + negative control become the reproducible harness for the first two rows and his T2-T5 host kill becomes the third test (kill mid-replay, assert the audit system records a named gap rather than silence); the five-tests repo named, NO URL (owner directive 10-29: no repo link unless requested, PART 13 item 7; name-only per the Kyle/Steve pattern); close: owner sends the matrix skeleton + harness spec first, he takes the guarantee and failure-assumption columns, jointly authored both names, 'the test case is the part that makes it a contribution rather than a summary'. R5 SENT (owner paste 12:53 PM). BEHAR REPLIED 1:06 PM: COLLABORATION CONFIRMED (agrees in principle to the jointly authored note + reproducible failure-mode tests; takes the failure assumptions, persistence guarantees, independent verification, and evidence-to-effect binding lanes; asks for the matrix skeleton, the test-harness spec, and the direct repository link; NEW SHARP POINT: a locally assigned action ID may not let the audit system independently establish that a missing action existed before the host was lost; lists scope/authorship/venue/licensing for post-review agreement; 'keep the claims rigorous and the tests independently reproducible'). DOCS BUILT: docs/failure-mode-matrix.md + docs/harness-spec.md (first committed to the five-tests clone 4353bc9, PUSH DENIED 403 - integration token has no write access to that repo - re-homed into the tieout tree, local main 73f008c, zip regenerated 39 files, per the owner's 'i will build in another repo'). R6 DRAFTED (605w / 3698c HUMAN): answers the ID point first (he is right; the name of the gap dies with the host that named it; the named gap requires the name witnessed out of band; option 1 issuer-issued ID range vs option 2 published hash commitment, default = option 1 for high-consequence classes; his host failure becomes the C / C' test pair, C' asserting the silence as the expected result), delivers both docs by path + the four rows one line each, gives the requested link (PART 13 item 7 exception, he asked for it): github.com/Teamthy/tieout, states the five-tests naming move explicitly (F1 = the port at d95a57e), licensing up front (MIT code declared, CC BY 4.0 note proposed), venue-agnostic by design, next step = the agreed split (his columns first, then the test-case column + harness as a commit). SEND ORDER: owner creates + pushes the tieout repo (zip tieout-m1.zip), THEN sends R6 so the link resolves. ROUND 6b 10-29 late (owner directive
+verbatim: 'do not refernce the project ,
+its not yet fully built'): R6 v1
+SUPERSEDED (it presented the materials
+as in-repo and linked the not-yet-
+public tieout repository; link 404
+verified at check). R6 v2 DRAFTED (935w
+/ 5580c, /tmp/behar_r6v2.txt, 0 dashes,
+0 contractions, exactly 1 URL): the ID
+answer unchanged (the core); the matrix
+skeleton + harness spec delivered IN
+FULL INLINE (he asked for both;
+reconstructed from the thread's own
+record, no clone needed); the requested
+repository link = the existing public
+implementation ai-redteam-five-tests at
+d95a57e (fetched + verified live 10-29;
+his explicit ask = PART 13 item 7
+exception); note: that repo carries no
+LICENSE file, so the licensing line is
+a PROPOSAL (MIT harness code + CC BY
+4.0 note), nothing claimed as shipped;
+the runnable harness lands there as a
+commit once the first version is
+complete (consistent with R5's
+'somewhere to live'); venue-agnostic;
+agreed split unchanged, his columns
+first. SANDBOX WIPES 10-29 late:
+/home/user/tieout (73f008c) +
+tieout-m1.zip + five-tests-run clone
+gone from the workspace (only the
+campaign repo persists); M1 build lost
+from disk, rebuild on record + public
+five-tests source; the DM unaffected
+(v2 references only the public repo).
+OWNER TO SEND v2 (no repo gate now). ROUND 6c 10-29 late (owner verbatim:
+'i said do not refernceany repo'): R6 v2
+SUPERSEDED (it named + linked the
+five-tests repo). R6 v3 DRAFTED (920w /
+5449c, /tmp/behar_r6v3.txt, 0 dashes, 0
+contractions, 0 URLs, gate-asserted
+zero repo terms: no http/github/tieout/
+five-tests/clone/repo/link/d95a57e):
+the ID answer unchanged (the core);
+matrix + spec inline unchanged; the
+implementation paragraph replaced with
+'ships with the harness: the first
+runnable version I send carries the
+code and the tests together, and you
+run both, so the examination is the
+run'; 'cold clone' rephrased as a fresh
+machine with nothing beyond the shipped
+code; licensing stays a proposal (MIT
+harness code + CC BY 4.0 note), now
+repo-independent; split unchanged, his
+columns first. THREAD RULE (owner
+directive, this thread only): no repo
+reference of any kind while the build
+is incomplete, not even naming the
+existing five checks; PART 13 item 7
+still governs other deliverables.
+OWNER TO SEND v3. ROUND 7 10-29 late: R6 v3 SENT (owner
+paste); BEHAR REPLIED (confirms
+receipt: 'workable foundation for a
+genuinely useful technical
+contribution'; agrees the four failure
+modes + division of responsibilities):
+(1) DISTINCTION 1 (correct): an
+independently issued action ID alone
+does not prove the corresponding
+action was proposed; requires an
+independently preserved commitment to
+the proposal itself; (2) DISTINCTION
+2 (correct): signature + policy hash
+establish record integrity +
+provenance but NOT correct policy
+enforcement, institutional
+authorization, or effect execution;
+both belong in guarantees AND
+limitations; (3) distinguishes tests
+of persistence/recovery from tests of
+actual cryptographic verification
+(given the key-free harness); (4)
+comfortable proceeding; GOVERNANCE
+GATE before substantial development:
+author order, contribution records,
+repository arrangements, publication
+permissions; (5) asks the direct
+repository link 'when available'.
+R7 DRAFTED (740w / 4604c, /tmp/
+behar_r7.txt, 0 dashes, 0
+contractions, gate-asserted zero repo
+references): accepts both
+distinctions as the two places the
+guarantee analysis would otherwise
+overclaim; ID refinement (issuance vs
+commitment = two witnesses; complete
+pair = high-consequence default;
+modified action = new proposal; C
+family splits C/C'/C'', spec's C'
+becomes C''; named-gap strength =
+reported dimension); binding limit
+(one-sentence guarantee scope: the
+record is what it claims to be, from
+who it claims, under which policy
+version; the three excluded properties
+each get a limitation entry + inside-
+mechanism: independent re-evaluation /
+key-management record / system-of-
+record receipt as second binding
+chain, out of scope); two test classes
+P (A, A', B, C, C', C'; no crypto
+claim) / V (D + binding check;
+deterministic in-process key pair,
+fixed seed; does not prove the keys
+are institutional); governance
+answers: day-one contribution record
+per file + per claim, author order
+follows the record ('a fact, not a
+negotiation' - owner may override),
+repository arrangement in principle
+(one shared repository, both
+maintainers, MIT code, CC BY 4.0
+note; the link arrives with the first
+runnable version; this thread is the
+full surface until then), publication
+permissions (venue-agnostic; both
+approve text + venue; no third-party
+content without permission); next
+step = his columns with the two
+distinctions built in + the owner's
+updated harness spec (two classes,
+C family), first harness version +
+first note draft from the same
+document. OWNER TO SEND R7.
+
+
+Charlie Rosier (1st, Co-founder @Rubi, helping
+teams work with AI, non-technical founder turned
+certified Lovable Expert): 10-29, 2m at paste:
+Proton (Swiss, Proton Mail) is running
+"consequential" AI re-interviews of staff, the
+internal email says the evaluations "may lead to
+changes in roles, responsibilities, and continued
+employment"; cross-team evaluators from outside
+the reporting line with strong AI skills, direct
+managers out of the room; mandatory, over a
+number of days; the memo demands an "AI-first"
+workplace with "curiosity, judgment, and
+urgency"; significant online backlash. His read:
+in a large organisation usage metrics are
+HUGELY misleading, tokens and spend alone do
+not equal value, not evidence of a mindset
+shift, not that work is done differently; the
+only way to find out is to talk to the team,
+which is why Rubi runs voice AI interviews
+across the whole team (how they do work + how
+they feel about AI), everyone in the same 30-min
+slot "because she's AI and infinite". Closing
+bait: "Keen to know if other companies are
+running these kind of interviews? Let me know!
+⬇️". Hashtags #podcast #AI #leaders #employee
+#team #work. LINK (rule 4): linkedin.com/company/
+ask-rubi FETCH FAILED (proxy error, 10-29); the
+comment does not depend on the page, the post
+body fully describes Rubi (class context only).
+CALL: vendor self-pitch inside a genuinely
+in-lane post; agree with his correct premise
+(usage metrics are not evidence of change),
+then flip the fix: an AI interviewer that
+scores 'curiosity, judgment, and urgency' into
+an employment decision is a decision system,
+not a survey tool, and a decision system has
+to be on the record (what it scored, on what
+evidence, with what agreement against a judge
+whose ground truth does not come from the same
+model); 'how do they feel about AI' is the
+least verifiable construct in the post and it
+is now gating jobs; the buyer's question: the
+interviewer's measured agreement rate with a
+human panel on the same transcripts, and when
+they disagree, whose number does the decision
+use; close: a 30-minute slot that reaches
+everyone scales the interview, not the
+measurement. DRAFTED (148w / 857c HUMAN, verbatim
+item 23). CLASS: in-lane-adjacent vendor (his
+product IS the AI interviewer he is pitching),
+1st-degree, builder; the comment asks the
+question his buyers should ask, extend do not
+audit, no praise of the product, no pitch, no
+answer to the lead-gen bait beyond substance.
+BOARD: day queue is the heaviest of the week
+(Saurabh r2 157w, Wolfe r3 69w, Alex 150w,
+Eduardo 158w, Pascal 143w, Sam comment 151w +
+repost 183w, Steve DM 65w all pending) - owner
+picks the weight.
+
+Eduardo Vedes (1st; Software Engineer & AI Consultant | Software
+Architecture, AI Integration & Team Training; founder of Atomize,
+atomize.ink; added 10-29 from 1m paste): agent-architecture post:
+giving an AI agent the responsibility of enforcing the business process
+is the mistake he sees every day; LLM decisions are not reliably
+deterministic, a prompt saying "always do A first" is not a process
+guarantee, dependencies enforced in code; the workflow owns the rules
+for moving between steps; sagas for cross-service state changes +
+compensating actions; the state machine made explicit (states,
+transitions, guards); responsibilities: agent = result/proposal, state
+machine = transition allowed + prerequisites, saga = coordination +
+recovery, durable state = what actually completed; gates before
+irreversible actions; retries / duplicate events / timeouts / failed
+compensation handled; close: "Give agents room to reason within the
+process. Keep the process rules enforceable." LINK READ (rule 4): the
+only URL in the capture is the profile site atomize.ink (not a post
+link; the comment does not depend on it) - fetched: Atomize = "turn
+your expertise into a steady publishing habit" for independent founders
+& consultants, capture -> per-network versions -> schedule, waitlist +
+founding cohort (5 writers, 4 weeks, free), founder "Edo"; nothing that
+changes the triage. CALL: in-lane-adjacent practitioner surface, 1st,
+the architecture version of the action-layer register (the rules live
+in code, outside the model, same family as the Saurabh constraint-set
+line); extend, do not restate: his durable-state line is the hook
+(recording what completed = the outcome everyone already has), the
+record that survives an incident = the guard's decision (which
+transition proposed, what allowed/blocked, on which state, at what
+time); the incident question is never "did it complete?" but "was the
+transition that shouldn't have happened checked, and by what?"; record
+without the guard decision = reconstruction = an argument, not
+evidence; the gate's verdict belongs in the record too ("the gate would
+have blocked it" = a claim from the system under review); close:
+enforceable = safe while it runs, recorded = defensible after. DRAFTED (158w / 944c HUMAN, verbatim item 19) CLASS: in-lane-
+adjacent practitioner / builder (AI consultant + architect, 1st,
+Atomize founder, publishing-workflow product in founding-cohort
+phase); peer / reference candidate; no client flag; not an ICP buyer on
+this surface (consultant, not a compliance-exposed decision-maker); no
+competitive frame. BOARD: heavy day (Saurabh r2 157w, Wolfe r3 69w,
+Alex 150w, Steve DM 65w all pending); record / evidence / verdict motif
+family, 60+ min spacing.
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
 Ife Abimbola-Olulesi (Proof), Shehbaz Pathan (RAG / agent memory),
+Saurabh Dhuliya (1st; Founder @SelfuneAI | Assumption
+Verification Layer | Eval systems; added 10-28 late
+capture): 10-28, 3m at paste: self-driving
+verification-layer concept post (detect uncertainty /
+conflicting sensor evidence, identify assumptions
+behind the proposed driving action, independently
+check safety-constraint violations, trigger a
+validated fallback, "challenge its decisions before
+they become dangerous actions"; two questions: where
+should the layer intervene first, perception /
+prediction / planned action, and what existing
+safety mechanism must it outperform to prove its
+value; explicit invite for "technically grounded
+criticism, not just agreement"). 197w HUMAN DRAFTED
+(verbatim item 13): Q1 answered = the action layer
+(the only layer whose check re-runs; perception
+can't re-run, prediction duplicates the planner's
+assumptions; the action check is a small closed
+question, log state + action + constraint set and a
+stranger re-derives the verdict = the trail is an
+audit, not a claim); Q2 answered = beat the
+existing rule-based guardrails on missed hazards
+per distance driven at the same fallback time
+(catch more but stop more = a more expensive
+failure, not a safety win); the critique he asked
+for = the step-2 assumption-identification is a
+re-implementation of the planner, use a constraint
+set owned outside the driving stack, keep the
+fallback outside the AI (a deterministic
+minimum-risk stop is checkable by enumeration = the
+recursion of who verifies the verifier ends there).
+No greeting, no CTA, no link, no hashtags.
+BOARD: 3 posted today (D3 group, Allie 129w, Rock
+88w); this one carries 6 motif-family words (re-run
+x2, re-derive, check x3), placement is a choice if
+it posts, 60+ min spacing. CLASS: in-lane founder
+peer, 1st degree (the closest in-lane builder
+captured to date, the owner's verification register
+as a product in AV); prospective collab / reference,
+later a prospect (a verification layer is itself
+an AI system that needs the owner's re-runnability
+treatment); no client flag at this stage
+(concept post, not an audit buyer), follow-back
+already met (1st).
+10-29 UPDATE: ROUND 1 POSTED (owner paste: 26m at
+capture, 11 impressions, 1 reaction). SAURABH
+REPLIED (4m): accepts the re-runnability argument
+("the argument I hadn't weighed"), accepts the
+step-2 correction (constraint set owned outside
+the stack, deterministic minimum-risk stop),
+sharpens the benchmark (false stops counted as
+failures), and asks two follow-ups: how would you
+decide whether the constraint set covers a
+scenario it was never designed for, and who owns
+keeping it current as new edge cases appear.
+ROUND 2 DRAFTED (231w HUMAN, verbatim item 15; reissued 10-29 as 948-char / 157w paste-ready v2 after the 231w exceeded LinkedIn's 1,000-char comment limit):
+completeness is unprovable by construction (the
+set only encodes what was already recognized as
+unsafe), so the question becomes detection: a
+judge whose notion of safety is not derived from
+the set (a checker built from the constraints
+shares their blind spots = grading your own work
+again) and the false-safe rate on a growing
+labeled corpus, rate + sample size = coverage-gap
+estimate; his false-stops addition accepted as
+the other side of the tuning (tune on both or the
+set drifts to safe-but-useless); ownership = the
+safety-risk owner who answers for the incident
+(not the planner team), event-driven not
+periodic, the disagreement log is the set's
+upgrade pipeline, every compliant-but-unsafe
+catch a candidate, added or recorded as a risk
+accepted, an unconstrained risk is a change-log
+entry not an absence; close: the set is never
+proven complete, kept honest by the judge it
+cannot be derived from and the log that records
+every risk chosen not to constrain. No greeting,
+no praise, no CTA, 0 dashes, 1 contraction, no
+hashtags (comment). BOARD: if it posts, 60+ min
+from the 197w above and from any other post of
+the day; a second round on this thread is the
+owner's strongest reference candidate in the
+network, keep it substantive, do not extend it
+past two rounds without a new question from him.
+Steve Higgins (1st; NEW CONNECTION 10-29; AI
+Engineer, Guernsey, University of Sussex,
+Independent, 429 followers, verified): profile
+capture 10-29: About = designing / building /
+deploying AI projects, RAG on a quantised vector
+store that runs on a Macbook and deploys to AWS,
+AI chatbot digital twin on AWS (Lambda,
+Cloudfront, CDK) with real-time streaming and
+automatic LLM provider failover (cut off at
+"more"). Inbound: LIKED an owner post a few
+minutes BEFORE the connect request (owner knows
+which post, not logged in the capture); owner
+accepted with note "Hi Steve, it's great to
+connect with you. Looking forward to staying in
+touch." 65w HUMAN DRAFTED (verbatim item 17) =
+new-connection DM, practitioner room: the
+failover is the interesting part (every provider
+switch changes the system that answers under the
+same prompt, the model version in the logs stops
+being a single fact), one question an engineer
+can answer concretely (do you log which provider
+answered each turn), no greeting (the note already
+did the hello), no pitch, no link, no hashtags.
+CLASS: in-lane-adjacent builder (RAG = lane 2 of
+the five-failure surface; provider failover =
+model movement under a running system);
+prospective practitioner peer / reference / later
+collab; not an ICP buyer at this stage
+(independent engineer, no company or compliance
+exposure in the capture).
 Oleksandr Shuliak (1st; Business Process & Systems
 Analyst | Requirements | AI & Automation Analysis |
 Responsible AI; exploring "Responsible AI Business
@@ -683,6 +2120,416 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   question + follow CTA; a comment from the owner's lane
   would be a bolted-on lecture. Student, no commercial
   signal, no client flag, no action.
+
+## Skip log (10-27)
+- Aiswarya Venkitesh (34m, "12 AI system design concepts
+  every LLM engineer should know", twelve one-line
+  concepts + newsletter CTA + audience question; 2nd;
+  Microsoft Principal Cloud Solution AI Architect, big
+  creator audience): SKIP. (1) Off-lane surface:
+  educational listicle, same class as Hitesh 10-25
+  (OFF-LANE, programming education); every item is a
+  single boilerplate sentence, nothing to point at under
+  the specific-point rule. (2) Thread saturation: both
+  in-lane angles already sit in the visible thread
+  (Poornachandra: evals underrated; Naman Pandey: evals
+  early; Prashant Rathi: guardrails against edge cases,
+  author reply "adversarial testing is important"), the
+  owner's comment would be a third occurrence of the same
+  point inside the thread. (3) The author's close ("the
+  difference between an LLM demo and a reliable AI
+  product") is the owner's demo/trust line, already run
+  today on Love Babbar = motif repetition within the
+  day. (4) Comment section shows an engagement-pod
+  fingerprint (dozens of near-identical "1 reaction /
+  11" premium 3rd+ entries), low placement value.
+  Listicle precedent (10-24): decays slowly, no
+  freshness loss from waiting. INTERACTIVE fallback (36w,
+  answers her question) only if the owner wants the
+  reach play: "Guardrails. It's the only concept on the
+  list whose failure arrives as an incident instead of a
+  metric, and the only one that should be tested
+  adversarially before the first user, not after the
+  first complaint."
+- Clint Gibler (6m, PHP2Shell webinar promo): SKIP for a
+  comment, see his tier 2 entry (three documented
+  reasons, repetition tax first); MOVE = register and
+  attend Wed 18:00 Lagos with the prepared Q&A question.
+
+- Hemlock (YC F26) company page (launch post, 10-27 at
+  paste: egocentric cameras + EMG bracelet capturing
+  force signal for physical-AI training data; adding
+  the data improved Pi0.5 success by 10x and Gemini 4
+  Argon by 2.7x on force-sensitive manipulation tasks;
+  founder Julian Olschwang, CMU ECE/robotics, UCLA
+  Biomechatronics Lab, 4 wearable-tech patents;
+  lnkd.in launch link + "Congrats on the launch,
+  Julian!" celebration close): SKIP. (1) Off-lane
+  surface: robotics / physical-AI training-data
+  infrastructure, no security, agent, or red-teaming
+  claim, nothing for the owner's evidence / re-run
+  register to point at without a bolted-on lecture.
+  (2) Launch/CTA promo surface: company page, link,
+  celebration tone, low-value comment surface for
+  personal brand; audience = physical-AI researchers +
+  YC/VC, not the owner's practitioner room or
+  decision-maker room. (3) The only checkable claim
+  (the 10x / 2.7x benchmark) would force the
+  denominator / re-run line, already spent today
+  (Love Babbar posted, Federico 88w DRAFTED, Miessler
+  89w DRAFTED) = motif repetition tax within the day.
+  (4) No client persona match: YC startup founder
+  building data infrastructure, not an at-risk
+  compliance-exposed non-expert, no audit buyer.
+  No fallback drafted (the line is spent today and
+  company-page placement value is low); if the owner
+  wants in anyway, draft on request. MOVE: none owed;
+  physical-AI-adjacent note for the carried physical-
+  AI thread (Dario Melo, Juan Carlos) if it resumes.
+
+- Tanya Janca (13h, PHP2Shell assume-breach post,
+  Dream Research 25 compromised systems, webshells +
+  persistence, two questions: patched? investigated
+  for prior exploitation?): SKIP, repetition tax
+  first: sixth PHP2Shell presence this week (owner's
+  own material; advisory, 1.5M unpatched, NSA,
+  vulnzero post, the advisory-inventory comment at
+  239 imp, Clint webinar), and the "investigate
+  whether it was exploited before you patched" half
+  is the same verification line the owner's 239-imp
+  comment already ran. Keep the surface hot (tier 1,
+  named human security publication).
+- Hamel Husain (1m, Evals for AI Engineers book
+  launch + Nov 12 Bay Area meetup, free signed
+  copy, "some fundamentals of evals won't change as
+  models improve"): SKIP, launch/event CTA surface
+  (celebration + sign-up link), low placement value
+  for a comment; the "fundamentals won't change"
+  line sits next to the owner's burned evals/re-run
+  motif for the week. Keep the surface hot (tier 1,
+  now at OpenAI; the book is a resource for the
+  evals thread). OVERRIDDEN 10-27 (owner re-pasted the post at 14m):
+  88w HUMAN DRAFTED (10-27 verbatim item 8), the
+  re-runnability fundamental (the property that
+  survives model improvement), book-specific
+  compliment in position 2, flat close "stops being
+  a tribal skill". BOARD FLAG: sixth re-run-adjacent
+  item today if posted; owner picks the weight and
+  the spacing.
+- Daniel Miessler x3 (1h each): code-vs-intent
+  REPOST (weak repost surface + same off-lane hot
+  take as the 10-26 skip), "1,500% jump in forward
+  deployed AI engineers in China" (stat, off-lane),
+  "Microsoft has offered to buy out an entire
+  quarter of their workforce" (hot take, off-lane):
+  SKIP x3, stat/hot-take class, and the surface is
+  already hot on the Kusari 89w DRAFTED (today).
+- Love Babbar (13h, Microsoft 60,000 voluntary exit
+  offer): SKIP, corporate workforce news, off-lane
+  for this author's PROVEN in-lane usage (the 96w
+  evals comment is POSTED today; keep the surface
+  hot for the next in-lane post).
+- Jerry Liu (15h, GPT 6.1 Terra ParseBench table
+  parsing post): SKIP, OCR/document-parsing vendor
+  post, off-lane (same class as the 10-26 OCRia-1
+  skip); his S-1 reader post (23h) is already
+  engaged (78w DRAFTED).
+- Ads Dawson (2h, [un]prompted day-1 highlights, AI
+  SOC evals, botsbench/louie, 70% -> 96% Splunk
+  Boss of the SOC, "harnesses are eating prompts,
+  models are eating harnesses"): SKIP, conference
+  self-promo surface (talk highlights, slides in
+  comments, DM CTA) and the [un]prompted/CxBOM
+  thread is already hot for the day (owner comment
+  live at 239 imp with reactions from both
+  presenters). Keep Ads Dawson warm (botsbench + AI
+  timelining = future content hooks).
+- Bulk off-lane, no action (10-27 late paste): Brad
+  Wolfe x7 finance posts (his lane, owner's
+  collaborator, no comment action; DM v3 out since
+  10-26), Alex Hormozi x2, Tiago Forte x2 (book),
+  Ruben Hassid x2 (usage tutorials), Haoma
+  Worgwu/ChatGPT GDPR steps (privacy tutorial),
+  Bolaji x4 + Blossom x3 + Ugwoke (creator/platitude
+  class, carried follow-back), Enzi Prize reposts
+  x2 (owner already engaged, celebrated),
+  Iyinoluwa Aboyeji reposts (Talent Nation pre-seed,
+  Enzi talent panel, Future Caribbean; off-lane),
+  Lenny Rachitsky (jobs), Neil Sahota (AI business
+  strategy), Egor Pushkin (OCI agent webinar, vendor
+  CTA), Weaviate x2 + Decagon + adaption (vendor
+  posts), Chinasa Okolo x2 (advisory board,
+  fellowship), Kieran Drew x2 (writing), Allie
+  Miller (goals), Elena Bobkova, Jesse Zhang, Amjad
+  Masad (story), Patrick Bet-David, Guido Penta
+  (Italian event), Endrit 4h AI-graphics post (off-
+  lane; his 16h IPO post already engaged at 263
+  imp), job ads, LinkedIn UI cards.
+- Dr. Rumman Chowdhury / IAEF (3w at paste, her
+  repost of the IAEF company page: Rest of World
+  story on the RoW event, "I don't think any of us
+  think we live in a world in which AI models are
+  adequately secure" + "Don't wait for the U.S. or
+  big tech companies to fix AI safety. Take it into
+  your own hands." + IAEF building infrastructure to
+  lower the cost of third-party AI evaluation and
+  training evaluators in their own industries, RoW
+  link): SKIP. (1) Stale: 3 weeks old, thread cold,
+  no placement value for a comment (freshness
+  guardrail). (2) Org PR / media surface: company
+  page + founder repost + "Read the full story"
+  link, the same class as the Hemlock launch and
+  Ads Dawson conference skips. (3) Audience =
+  sovereign-AI policy / donors / foundation, not the
+  practitioner room or the decision-maker room; no
+  buyer in the thread. (4) The only in-lane line
+  (the cost barrier is evidence a stranger can
+  re-derive, not evaluator headcount) is the burned
+  re-run motif for the week = repetition tax. Two
+  bridges considered and rejected: (a) "take it
+  into your own hands" -> the hands need a receipt,
+  the artifact side is the missing half of IAEF's
+  evaluator side; (b) the "adequately secure" quote
+  -> secure is a property of the trail, not of the
+  model. Both rejected on placement: unprompted
+  critique on the founder's own foundation press
+  post, 3 weeks cold. WATCH: Rumman Chowdhury
+  added tier 1 (reach; IAEF is the institutional
+  twin of the owner's independent-evaluation lane,
+  prospective reference / partner, not a comment
+  target on PR surfaces); engage on her
+  personal-voice in-lane post or a direct follow,
+  not on the foundation's press thread.
+- Jerry Liu (22m at paste, LlamaIndex, "Introducing
+  the Document Parsing Protocol (DPP)": hundreds of
+  OCR models parse differently, many errors
+  ambiguous e.g. split tables sharing a header,
+  "it's an issue that plagues most parse benchmarks
+  too, because they inherently reward a certain
+  style even if other styles might be semantically
+  correct", 140 curated rules covering tables /
+  forms / charts, "use DPP as an evaluation rubric
+  for LLMs", "not a full evaluation benchmark
+  (yet), but an initial evaluation guide", lnkd.in
+  protocol + blog links): SKIP. (1) Documented
+  class: this author's OCR / document-parsing
+  vendor posts, same class as the 10-27 GPT 6.1
+  Terra ParseBench skip (itself logged as same
+  class as the 10-26 OCRia-1 skip); freshness is
+  not the reason (22m, fresh), the class is.
+  (2) Launch / CTA surface: product announcement,
+  two links, "Check it out", the Hemlock / Ads
+  Dawson class. (3) One bridge considered and
+  rejected: the self-declared rubric line, the 140
+  rules make "correct" a defined format, so the
+  part that decides whether DPP is a rubric or a
+  benchmark is the labels behind them: who decided
+  the correct representation, and can a reviewer
+  who wasn't in the curation re-derive that
+  decision without the LlamaIndex team; a rubric
+  whose ground truth is trust is a style guide, a
+  rubric whose ground truth is re-derivable is a
+  check. Rejected on placement (critique landing
+  on the author's own protocol launch, two links,
+  vendor thread) and on the criterion / re-derive
+  motif already burned this week (Love Babbar 96w
+  POSTED, Jerry 78w DRAFTED, Tamkin 132w, Allie
+  129w DRAFTED, Andrey thread). (4) The Jerry
+  surface is already hot with a queued in-lane
+  draft (78w page/line tie-out for his S-1 reader
+  post); do not spend the author on a vendor post
+  while the in-lane one waits. Keep the surface
+  hot (tier 1, Following, LlamaIndex = RAG / agent
+  data layer). MOVE: none; content note if the
+  document-parsing / RAG thread ever resumes (DPP =
+  140-rule parsing rubric, ground-truth curation is
+  its open question); if the owner wants in
+  anyway, the label-re-derivability line above is
+  the drafted direction, say so. OVERRIDDEN 10-28
+  (owner "YES"): 131w HUMAN DRAFTED (verbatim item
+  11) in the exact direction the skip logged, the
+  style-vs-semantics extension plus the
+  label-re-derivability line as the rubric-to-
+  benchmark step; frame = his stated roadmap (he
+  wrote "not a full evaluation benchmark yet"),
+  never a critique of the curation; board flag:
+  2 motif words (re-derive, re-derivable) joins
+  the heavy 10-28 queue (Love Babbar POSTED, Allie
+  129w, Jerry 78w S-1, Tamkin 132w DRAFTED), 60+
+  min spacing if several post, owner picks weight.
+  STATUS: DRAFTED, owner pastes when he chooses.
+- Bulk off-lane / class skips (10-28 late capture,
+  deduped against the morning triage): Brad Wolfe
+  x12 finance posts (1m-8h: THE AGENT CANNOT
+  GRADE ITS OWN WORK (1m, the strongest register-
+  collision post of the day: dashboard metrics are
+  the agent's own account, silent failure is the
+  case where the account is wrong, finance already
+  solved it, reconcile to a record somebody else
+  created, the one number to watch = the break
+  rate, "an agent that reports its own success is a
+  preparer reviewing his own work", credit Vijay
+  Reddy): OVERRIDDEN 10-28 (owner "give comment"):
+  130w HUMAN DRAFTED (verbatim item 14) as a peer
+  extension, not a summary, two gaps the post does
+  not cover (1) the 'someone else' record inside an
+  agent stack is often a tool response the agent
+  itself called = a mirror, not a witness, a break
+  rate against its own API responses measures
+  consistency not correctness; (2) for most agent
+  work no one else's record exists, the tie-out
+  ends and the trail begins, the run logs its input
+  / config / verdict and a stranger re-derives;
+  close loops back to his own words (the
+  reconciliation for when the other side exists,
+  the trail for when it doesn't, or the dashboard
+  is still self-reported). Tone = the 10-26
+  three-round thread dynamic (extend, do not
+  compete); board: 2 motif words (tie-out,
+  re-derives) joins the heavy 10-28 queue, 60+ min
+  spacing, owner picks the weight.
+  10-29 UPDATE: the 130w comment POSTED (owner
+  paste: 17m at capture, 4 impressions, 1
+  reaction). WOLFE REPLIED (9m): "both points
+  land", the bank-file point restated in his own
+  words (the bank file has to come from the bank,
+  not from the agent's call to the bank), and he
+  EXTENDED the trail point with a cadence:
+  someone outside the team re-derives a sample
+  each close (the trail as a routine close
+  control). ROUND 3 DRAFTED (69w / 404 chars,
+  verbatim item 16): accept the cadence (the trail
+  gets a heartbeat, re-derivation becomes a
+  routine, not a heroic act), one correction on
+  the sample: re-derive EVERY break (breaks are
+  what the audit is for) plus a random control
+  sample of clean items to measure false alarms
+  (the check's own false-stop cost, his own
+  benchmark in a new dress); a random-only sample
+  audits the easy part. Closing flat line, no
+  open question, the thread can end here; short
+  and closing, do not extend unless he extends
+  again. NEW POST 10-29 late (1m at paste): 'THE AGENT WILL LEARN TO REFUND MORE' (credit Alistair Greenwood): three agent types on a customer refund (checks + drafts / issues without waiting / the reflective agent that reviews whether its past refund decisions worked and adjusts); 'an agent that learns from its own results learns whatever it is graded on', grade on satisfaction and it finds refunds raise the score; 'Every sales comp plan has taught the same lesson. Pay on bookings and you get bookings, including the ones that never collect.' Finance writes the scorecard before the agent starts learning: (1) refund rate by customer and by product, (2) chargebacks and repeat refunds, (3) margin on the account after the refund; one person in finance approves any change in how the agent decides. Test: 'For each agent you run, who defined worked? If the answer is the vendor or the team that built it, the agent is grading its own homework.' wolfepacks.com FETCH FAILED (proxy error, 10-29; no dependency). FIFTH grading-own-work post of the week; owner-pasted for a comment (collaborator rule overridden per owner paste, 10-28 precedent). DRAFTED (162w / 950c HUMAN, verbatim item 29): the scorecard shape is right, the approver line is what makes it real; two adds: (1) the static scorecard is the next Goodhart target (a reflective agent learns whatever it is graded on; margin after refund is the fragile metric, it teaches the smallest refund that keeps the customer buying, not the refund that is right; the scorecard degrades the way satisfaction did, slower); (2) the approval has to be a recorded state transition (before/after rule, scorecard, reason, approver, time) in the same record as the refunds, then the investigation flips from 'why did the agent change' to 'is there an approved change for this behavior', and behavior that moved without a recorded approval is the incident, not the refund; close: his 'who defined worked' test is the right question for the agent, ask it of the scorecard too, who checks the checker. Register: peer extension, NEW ground (no repeat of the 130w mirror/witness or grading-own-homework lines); r3 (item 16, 69w) still DRAFTED pending paste on the other thread, different surface, if both go up keep them an hour apart. KEANY
+  eliminate-before-automating (1h,
+  "stop producing it for one cycle and see who
+  notices", the $247-to-$202 roll-up example
+  repeated from the 8h post), ADD-BACK diligence,
+  GRAPH vs DEFINITIONS, CLEAN FOR THE USE / DEFINE
+  FOR THE COMPANY, REVIEWER STOPS REVIEWING /
+  measure the queue, SPEND IS NOT A RETURN, moat /
+  Jeff Srour business case, IT LOGS THE AGENT.
+  NOBODY LOGS THE DECISION., AGENT NEVER WENT
+  THROUGH ONBOARDING., AUTONOMY IS A PROMOTION.
+  NOT A SETTING., INTEGRATION PROBLEM inherited in
+  roll-ups) - collaborator rule unchanged (no
+  comment action on his finance posts; the
+  relationship runs the DM thread and the live
+  events today); four posts carry owner-register
+  lines kept as WEBINAR Q&A candidates for today's
+  18:00-18:45 Lagos session: IT LOGS THE AGENT
+  ("a control that cannot produce evidence from the
+  period it ran did not run"), AUTONOMY ("if you
+  cannot show the evidence for the promotion, the
+  agent was not promoted, it was assumed"),
+  ONBOARDING ("pull your last quarterly user access
+  review and count the agents on it"), KEANY
+  elimination ("stop producing it for one cycle and
+  see who notices" + the owner twist: the one-cycle
+  test finds the owner, not the value, a report
+  that survives the test still needs evidence that
+  it does anything), GRADE-ITS-OWN-WORK ("reconcile
+  to a record somebody else created" + the break
+  rate as the one number to watch; the Q&A version:
+  most agent dashboards are self-reported, what is
+  the one external record the agent's output is
+  reconciled to today, and what is its break
+  rate?). D4 CONTENT NOTE: the reconcile-to-an-
+  external-record / break-rate angle is the
+  leading alternative seed for tomorrow's D4 group
+  post (#3, "what happens after the agent's tool
+  call"; the planned Arcezia shape stays, owner
+  picks at D4 draft time). No public comment on any
+  of the 12: the lane collision is the reason to
+  keep the collaborator rule, the register is
+  shared, a comment reads as a teammate, and the
+  DM thread (v3 out, his reply pending) + today's
+  event are the channel. Hamel
+  Husain x3 (Ghulam Mustafa book testimonial 8m with
+  book link + 14 hashtags, Dan Olsen Nov 12 event
+  "selling out" CTA 6h, Alex S. Seattle lineage
+  post 6h off-lane): launch/event CTA + off-lane
+  class, the Hamel surface stays on the 88w
+  override draft. Bolaji Adebayo x2 (storytelling
+  content advice, 52m + 2h) and Blossom Affia x4
+  (job story + speaker milestone, 2h x2 + 3h x2):
+  creator/platitude class, carried follow-back.
+  Egor Pushkin (Oracle AI World 2026 wrap, 3h,
+  vendor CTA, same class as his 10-27 OCI webinar
+  skip). Ivan Lee (ODSC takeaways 6h, Datasaur "DM
+  me" CTA; the "build your own evals" line = content
+  hook for the evals thread; 10-26 client-signal
+  file unchanged, no comment target). Sara Hooker
+  reposting Wei-Yin K. (HPO follow CTA, 7h).
+  Daniel Miessler x2 (11h): (a) AI-generated-code
+  review post, 48% signed off unconfident / 36%
+  could trace the risk-introducing change, partner
+  Cytix benchmark CTA link = partner lead-gen
+  surface, the Miessler surface stays on the 89w
+  draft; (b) foreign-gadget / drone policy news
+  link, off-lane. Iyinoluwa Aboyeji x3 (Saul Klein
+  Nigeria talent 10h, Julian Duru Africa Deep Tech
+  11h, Mike Mompi Talent Nation co-lead 13h):
+  talent/investor news class, same as the 10-27
+  Iyinoluwa repost skips. Chandrika Maheshwari (YC
+  F26 PostHog takeaways 10h, startup-talk recap).
+  Tiago Forte (Annual Review Summit promo 12h,
+  event CTA). May Habib (Writer watermarking
+  enterprise post 12h, vendor product surface).
+  Haoma Worgwu reposting Foluke Michael (GENESIS
+  creative-economy YouTube premiere 12h, promo
+  class). DEDUPED, no new action: Rumman/IAEF
+  repost (triaged this morning, SKIP stands), Jerry
+  Liu DPP (12h, 131w override DRAFTED, owner's
+  paste pending, still inside the window), Allie
+  Dot post (13h, the 129w comment is POSTED and
+  Mercy Mukuria 2M LIKED it, see the tier 1
+  entry).
+- Hitesh Choudhary (22m at paste, Back to Building
+  with AI, Following, tier 1): NVIDIA Nemotron 3.5
+  Transcribe news post (free open-weight STT, 40
+  languages incl. Hinglish code-switching, 2.8%
+  WER tie for #1 open-weight, 10-minute self-test
+  protocol, "Count the mistakes yourself. That is
+  your real benchmark, not the leaderboard.", H100
+  note, OpenMDW-1.1 license note, "what is the
+  first tool you would build" closer): SKIP. (1)
+  Documented class: the same as his 10-25 skip
+  (model / programming-education news, off-lane for
+  the owner's agent-verification register; the 44w
+  INTERACTIVE draft stays in the queue as the
+  reach/follower play if the owner wants it).
+  (2) The one in-lane line considered and
+  rejected: "count the mistakes yourself" is the
+  leaderboard-as-claim / own-run-as-evidence line,
+  and the missing piece is a fixed error criterion
+  (decide before listening what counts as a
+  mistake, wrong word / missed / extra / wrong
+  speaker tag, and the count becomes a number the
+  next model release can be re-run against) but
+  that is the criterion motif already burned this
+  week (DPP 131w pending, Tanya 129w, Tamkin 132w),
+  and the post's frame (a try-it tutorial plus a
+  what-would-you-build closer) is the
+  hobbyist-builder frame, not the owner's two
+  rooms. (3) Board: 3 posted today, the queue
+  behind is heavier and more in-lane (Saurabh 197w
+  dead-center 1st-degree founder, Tanya 129w);
+  spending the tier 1 reach comment on a model-
+  news post now is the wrong weight. MOVE: none;
+  keep the surface hot (tier 1, Following, 1M+
+  channels); both options logged for a reach play,
+  the 44w INTERACTIVE and this skip's criterion
+  line, owner's call.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
