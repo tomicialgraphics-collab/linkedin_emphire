@@ -629,3 +629,68 @@ check docs or ask Praveen if it matters).
   weekend for owner review; both sign-offs before
   publication); phase-2 upsell note rides with the
   report. 26/300 used, 274 remaining.
+
+- 10-29 night (owner: "what message can i send to him now"
+  + "which of the free service do you recommend"):
+  RECOMMENDATION: the fix-verification KIT is the flagship
+  free service (it turns the agreed fix->verify loop into a
+  one-command check for him, it is the standard-practice
+  closeout instrument, it doubles as our own verification
+  tool, and it becomes the phase-2 baseline); the
+  default-state one-pager + pre-drafted public write-up
+  ride with the Monday report; the Live-Verify snippet bug
+  goes in TONIGHT's message as an immediate actionable
+  FYI; the malformed-approval signature anomaly goes in
+  the report. KIT BUILT + TESTED this turn (gitignored):
+  arcezia_kit_make_expected.py (reads the four result
+  JSONs, both formats, writes
+  arcezia_expected_default_state.json: case, verdict,
+  missing, violated per case) + arcezia_kit_compare.py
+  (fresh run vs baseline, PASS/CHANGED/ERROR per case,
+  relaxations reported never hidden, exit 0/1/2); tested
+  with fixtures: both formats parsed, error/skip cases
+  excluded, identical run = all PASS exit 0, changed run
+  = CHANGED with diff exit 1. .gitignore extended with
+  arcezia_kit_*.py + arcezia_expected_*.json. OWNER
+  STEPS: (1) save the two kit scripts in the arcezia-day1
+  folder; (2) run arcezia_kit_make_expected.py there to
+  generate the real 26-case baseline from tonight's
+  output; (3) send the message below. MESSAGE TO PRAVEEN
+  (verbatim, owner to send):
+  ---
+  Praveen,
+
+  Both test days are done. I pulled the day-2 cases into
+  tonight so nothing waits on the weekend: 26 decisions in
+  total, all captured with full signed records, and
+  reconciled one-to-one against the Verdicts feed.
+
+  One thing you can act on before Monday: the code sample
+  on the Live Verify page doesn't match the shipped SDK.
+  It calls verify() with task and session_id, but in 1.0.8
+  those belong on the Arcezia() constructor, not on
+  verify(). Worth a look at that page.
+
+  The report goes to you first thing Monday, private
+  first, as agreed: severity-ranked, every finding with a
+  reproducible case, plus a one-pager on what the default
+  state actually does, because that's where most of the
+  findings live. It also includes two things you can
+  keep: a one-command verification kit (the test scripts,
+  a baseline, and a compare runner, so a fix can be checked
+  against the baseline before I re-run anything), and a
+  draft of the public write-up for sign-off. And a second
+  small defect we found, in how the service handles a
+  malformed approval token, with the exact reproduction.
+
+  Nothing needed from you until then.
+
+  Timothy
+  ---
+  ANSWER TO "have i fulfilled my side of the scope":
+  YES for the test window - both days ran (26/300), no-
+  deploy line held (zero objects), every decision captured
+  with signed record + UTC, reconciled 1:1 with the feed,
+  under budget; remaining obligations are downstream and
+  not yet due: verifying his fixes and the co-signed
+  write-up after the report.
