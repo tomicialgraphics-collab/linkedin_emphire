@@ -643,6 +643,46 @@ in-lane; peer extension in the Wolfe / Saurabh
 register, zero competitive framing; he follows
 the owner, visibility works both ways.
 ## Tier 3 — builder / adjacent layer + active thread partners
+Eduardo Vedes (1st; Software Engineer & AI Consultant | Software
+Architecture, AI Integration & Team Training; founder of Atomize,
+atomize.ink; added 10-29 from 1m paste): agent-architecture post:
+giving an AI agent the responsibility of enforcing the business process
+is the mistake he sees every day; LLM decisions are not reliably
+deterministic, a prompt saying "always do A first" is not a process
+guarantee, dependencies enforced in code; the workflow owns the rules
+for moving between steps; sagas for cross-service state changes +
+compensating actions; the state machine made explicit (states,
+transitions, guards); responsibilities: agent = result/proposal, state
+machine = transition allowed + prerequisites, saga = coordination +
+recovery, durable state = what actually completed; gates before
+irreversible actions; retries / duplicate events / timeouts / failed
+compensation handled; close: "Give agents room to reason within the
+process. Keep the process rules enforceable." LINK READ (rule 4): the
+only URL in the capture is the profile site atomize.ink (not a post
+link; the comment does not depend on it) - fetched: Atomize = "turn
+your expertise into a steady publishing habit" for independent founders
+& consultants, capture -> per-network versions -> schedule, waitlist +
+founding cohort (5 writers, 4 weeks, free), founder "Edo"; nothing that
+changes the triage. CALL: in-lane-adjacent practitioner surface, 1st,
+the architecture version of the action-layer register (the rules live
+in code, outside the model, same family as the Saurabh constraint-set
+line); extend, do not restate: his durable-state line is the hook
+(recording what completed = the outcome everyone already has), the
+record that survives an incident = the guard's decision (which
+transition proposed, what allowed/blocked, on which state, at what
+time); the incident question is never "did it complete?" but "was the
+transition that shouldn't have happened checked, and by what?"; record
+without the guard decision = reconstruction = an argument, not
+evidence; the gate's verdict belongs in the record too ("the gate would
+have blocked it" = a claim from the system under review); close:
+enforceable = safe while it runs, recorded = defensible after. DRAFTED (158w / 944c HUMAN, verbatim item 19) CLASS: in-lane-
+adjacent practitioner / builder (AI consultant + architect, 1st,
+Atomize founder, publishing-workflow product in founding-cohort
+phase); peer / reference candidate; no client flag; not an ICP buyer on
+this surface (consultant, not a compliance-exposed decision-maker); no
+competitive frame. BOARD: heavy day (Saurabh r2 157w, Wolfe r3 69w,
+Alex 150w, Steve DM 65w all pending); record / evidence / verdict motif
+family, 60+ min spacing.
 Ado Kukic (Claude Code community), Jason Liu (OpenAI DevEx),
 Ife Abimbola-Olulesi (Proof), Shehbaz Pathan (RAG / agent memory),
 Saurabh Dhuliya (1st; Founder @SelfuneAI | Assumption
