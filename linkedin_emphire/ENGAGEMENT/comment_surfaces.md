@@ -835,6 +835,77 @@ register, zero competitive framing; he follows
 the owner, visibility works both ways.
 ## Tier 3 — builder / adjacent layer + active thread partners
 
+Evan Franz, MBA (2nd, PROMOTED post;
+Collaboration Insights Consultant @ Worklytics;
+helping People Analytics, AI & IT leaders
+measure AI adoption, tool usage,
+collaboration patterns, work
+effectiveness): 10-29 paste, promoted post:
+research on AI adoption spreading through
+people, not rollouts, 216% higher odds of
+trying AI when more than 25% of an engineer's
+broader peer group had recently used Copilot
+CLI, manager who used it = 82% higher odds;
+Worklytics piece on finding hidden AI power
+users (lnkd.in/er94N9_D); "The employee
+driving AI adoption may not be the person
+leadership nominated"; LayerX research: half
+of employees had 12 or fewer AI conversations,
+top 5% had 144 or more, nearly 47% of
+enterprise AI conversations happened through
+personal accounts; "high usage alone isn't
+the goal. Someone generating 30 drafts isn't
+necessarily creating more value than someone
+using AI to make 1 better decision"; four
+priorities: look beyond team averages,
+measure outcomes not just activity, make
+successful workflows visible, give champions
+time and support then measure whether
+adoption and outcomes improve over the next
+12 weeks; his own caution: "the research
+shows a strong association between peer
+usage and adoption, not proof that appointing
+champions causes the same effect". LINK READ
+(rule 4): lnkd.in/er94N9_D + worklytics.co
+FETCH FAILED (proxy error, 10-29); every
+figure in the comment is from the post body
+itself, no dependency on the piece or the
+site. CALL: promoted 2nd-degree vendor post,
+his product is the activity dashboard; agree
+with his conceded line ("measure outcomes,
+not just activity"), then show the dashboard
+can't deliver it: adoption is measurable
+(216% peer effect, 12-versus-144 gap, 47%
+personal accounts, all activity with a
+number attached), the outcome side is a
+different class, "30 drafts vs 1 better
+decision" only counts if the decision was
+defined before it was made as a small closed
+question with a recorded verdict, the 12-
+week measurement inherits the same problem
+(self-reported, or reported by the tool
+being used more, the 12 weeks show adoption
+up and the report calls it outcomes); the
+fifth priority: for each champion workflow,
+name the one outcome it should move, in a
+check it can't write its own grade for,
+before the 12 weeks start. DRAFTED (146w /
+828c HUMAN, verbatim item 26). CLASS:
+in-lane-adjacent vendor (Worklytics =
+adoption/usage measurement dashboard), 2nd-
+degree, PROMOTED (paid amplification, low
+relationship weight); the comment takes his
+conceded line and extends it one step, no
+praise of the product, no pitch, no
+engagement with the research piece beyond
+the figures he cited. BOARD: day queue is
+the heaviest of the week (Saurabh r2 157w,
+Wolfe r3 69w, Alex 150w, Eduardo 158w, Pascal
+143w, Sam comment 151w + repost 183w, Charlie
+148w, Neil 137w, Behar R2 202w all pending)
+- owner picks the weight.
+
+
 Behar Dalipi (NEW CONNECTION 10-29, owner
 connected after his profile view, he accepted;
 Skopje, North Macedonia; Independent Researcher
