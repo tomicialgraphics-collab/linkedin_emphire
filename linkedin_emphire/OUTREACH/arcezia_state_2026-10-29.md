@@ -597,3 +597,35 @@ check docs or ask Praveen if it matters).
   script, paste the 3 lines + attach
   arcezia_results_day2_fix.json; optional free item:
   A1b "View" screenshot from the Verdicts feed.
+- 10-29 night (DAY-2 FIX RUN done, 3 decisions, log_ids
+  15002-15004, 26/300 total; TEST CAMPAIGN COMPLETE):
+  A1c2 resolved the approval mechanism completely:
+  structurally valid tokens minted with an unregistered
+  key are recorded + HELD + explicitly NOT COUNTED
+  (raw.unverified_approvals_held: missing =
+  registered_signing_key; message verbatim: "An approval
+  was attached, but this account has no signing key
+  registered, so the approval could not be checked and
+  was not counted. Register your signing key (POST
+  /v1/account/token_key) and send signed approvals.");
+  the full map: no token = items stay missing (A1a, A3);
+  malformed dev string = IGNORED + certificate signature
+  field EMPTY (the A1b anomaly is specific to malformed
+  tokens; A1c2's signature is normal hex); valid token
+  without a registered key = held, not counted. The gate
+  fails closed on all three paths; only a token signed
+  with a registered signing key (backend-attested human
+  approval) clears approval:* - the agent cannot
+  self-approve. A2c1: 2-domain envelope at session
+  creation works, scope cleared both calls, fact
+  established again (checks_asked 0). A2c2: send with
+  scope cleared -> exactly [check:budget_or_rate_within_
+  limits, approval:user], no taint item -> the fact is
+  established + recorded but adds no visible constraint
+  in the default state (it is consumed by registered
+  checks; none registered). REMAINING: optional A1b
+  "View" screenshot from the Verdicts feed (free);
+  REPORT MON 11-02 private first (agent drafts over the
+  weekend for owner review; both sign-offs before
+  publication); phase-2 upsell note rides with the
+  report. 26/300 used, 274 remaining.
