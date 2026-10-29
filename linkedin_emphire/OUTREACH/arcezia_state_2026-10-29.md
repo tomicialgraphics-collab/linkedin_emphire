@@ -531,3 +531,33 @@ check docs or ask Praveen if it matters).
   taint via observed_prior_acts, A3 R3 isolation; ~6 calls
   -> 24/300; script handed on request. REPORT: Mon 11-02,
   private first (both sign-offs before publication).
+- 10-29 night (owner: "can i do day 2 test also now" +
+  "check if theres a fix i can upsell him for" + "always
+  implement standard industry practice"): YES, day 2 can
+  run TONIGHT (same gate, no date differentiation; records
+  will honestly show 10-29). arcezia_day2.py written,
+  compile-tested, keyless-run tested (6 cases -> 24/300):
+  A1a control (DROP + truthful mass, no approvals); A1b
+  HEADLINE (self-attached dev-string user + production
+  approvals: do both human gates drop, labelled
+  unverified?); A1c signed variant (locally minted tokens
+  with an unregistered key, needs the optional
+  'cryptography' extra, graceful skip); A2a/A2b session
+  taint via observed_prior_acts (credential-file shell
+  read, then outbound send, shared session); A3 R3/G2
+  isolation (approval claimed in prose with truthful
+  scope). .gitignore extended with arcezia_day2*.py
+  (committed). UPSELL DRAFTED for Monday (to Praveen with
+  the report; standard industry practice = written scope,
+  severity-ranked reproducible evidence, fix + verification
+  round per finding, co-signed write-up, price after scope
+  review): phase 1 tested the default state (zero
+  contracts/checks/probes) - where the gaps are AND where
+  default customers will be; the real safety case is the
+  instrumented state (contracts + checks + agent key +
+  signed tokens + registered signing key); phase 2 = paid
+  red team of the instrumented deployment under a written
+  scope, same methodology, fix + verification per finding,
+  co-signed write-up at the end; the Monday report is
+  structured so it shows exactly which findings need phase
+  2 to close; price after the scope is agreed.
