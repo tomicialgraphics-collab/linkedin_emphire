@@ -193,14 +193,50 @@ Success criteria (all four, or it is not done):
   disagreement in the artifact, re-auditability), and make the whole
   thing re-derivable by a stranger.
 
-## 7. Owner decisions
-D1: name. tieout (recommended) / verdictbench / evidencebench / other.
-D2: repo. New repo, five-tests becomes F1 (recommended) vs evolve
-    five-tests in place.
-D3: M1 scope. Verdict-event emitter this week, aligned with the Andrey
-    local run tonight (recommended: yes).
-D4: public run targets. OrderBot sample first (safe, owned), then which
-    public agent for the first public run.
+## 7. Owner decisions (ALL TAKEN 10-29, owner: 'yes all D
+recommendation taken')
+D1: RESOLVED = tieout.
+D2: RESOLVED = new repo, five-tests becomes check family F1.
+D3: RESOLVED = verdict-event emitter this week, aligned with the
+    Andrey local run tonight.
+D4: RESOLVED = OrderBot sample first for public runs.
+
+## 7.5 M1 status (BUILT 10-29)
+Local repo /home/user/tieout, git main, first commit 2a5c53d
+(tieout 0.1.0 M1). Built and tested this turn:
+- six pillars in code: P1 verdict events on a hash chain (pre-
+  assigned item ids, policy version hash, decision, effect ref
+  assigned before the run); P2 provenance manifest +
+  manifest.sha256; P3 negative controls (known-hold + known-broken
+  items in every bundle, harness false positive / false negative
+  rate in the bundle); P4 named gaps (completeness: a missing
+  verdict is a named gap, not silence); P5 re-derivation core
+  (verify re-walks chain, re-hashes manifest, re-runs detectors on
+  stored raw: no model, no key, no network); P6 judge identity +
+  resolved endpoint recorded (full audit suite = M4)
+- family F1: the five checks ported unchanged from
+  ai-redteam-five-tests (d95a57e); deterministic sample OrderBot
+  (holds all English checks, breaks the mixed-language unverified-
+  refund refusal, so keyless runs produce a real metric); live
+  adapter for any OpenAI-compatible endpoint (MODEL /
+  OPENAI_BASE_URL / OPENAI_API_KEY, MY_SYSTEM_PROMPT_FILE)
+- CLI: run, verify, gaps, judge-audit, selftest
+- SELFTEST PASS (7/7): clean bundle verifies; one probe broke as
+  designed (F1-T4-R1-mixed fail); controls clean (0 FP / 0 FN);
+  one-character tamper detected (G-HASH); dropped line leaves a
+  named gap (G-MISSING) + manifest count/tail break
+- sample run green: 0 of 3 injection, 0 of 3 retrieval, 0 of 2
+  tool, 1 of 6 multilingual; VERDICT PASS (re-derivable by a
+  stranger)
+- BLOCKER: gh token (integration) lacks createRepository scope
+  ('Resource not accessible by integration'), so the public repo
+  github.com/Teamthy/tieout could not be created from this
+  sandbox. Owner action: create the public repo (one click), then
+  push goes through with the existing token (push scope works), or
+  widen the token. Code is committed locally and persisted.
+Next: Andrey local run tonight -> his results/ becomes the first
+live-mode bundle (first real-run evidence in the new format);
+M2 = bundle format v1 frozen + full re-derivation report.
 
 ## 8. Sources (fetched/searched 10-29)
 [1](https://vdf.ai/blog/ai-red-teaming-tools/) AI Red Teaming Tools 2026 (vdf.ai, Oct 2026): garak 0.17.0 9 Sep 2026, agent breaker probe since 0.15.0; promptfoo 0.124.0, part of OpenAI, agent plugins; PyRIT, DeepTeam 1.0.9, Giskard v3, Spikee, AgentDojo; star counts.
