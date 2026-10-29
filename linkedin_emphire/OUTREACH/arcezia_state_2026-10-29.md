@@ -90,3 +90,44 @@ only in the reply); six markups accepted in writing; no-deploy
 line proposed; window 10-29 + 10-30, report 11-02. 500
 counter: 0/500 (the acceptance exchanges are not consent
 calls; counter semantics per the 10-27 note).
+- 10-29 evening (owner paste): the 1:01 PM Praveen message and
+  the 9:28 AM email RE-PASTED in full in the thread; text
+  byte-identical to the two records above (no diff). READ:
+  Praveen's "it's looks fine , we can start" + "Olusanya
+  shared you the mail for reference" = the mail is in the
+  thread and approved from his side; the thread recipient
+  question (third participant vs third-person
+  self-reference) stays OPEN per the 1:01 PM entry.
+  STATE CHANGE: acceptance email DRAFTED -> SENT/SHARED in
+  thread (inference from this paste + his "looks fine"; if it
+  went by email only and was never shared in the thread,
+  owner to correct the record). His "we can start" = GO for
+  the key steps TODAY.
+- 10-29 evening: KEY STEPS OF RECORD (owner executes, in
+  order): (1) sign in at app.arcezia.com with an email used
+  ONLY for this test; (2) Keys page: issue the key, shown
+  once, stays local, NEVER travels by email; (3) reply in the
+  thread with the sign-in email only (template below). After
+  the key: recon + test matrix + day-1 runs today (plan in
+  arcezia_test_prep_2026-10-27.md); day 2 Fri 10-30 same
+  action gate (no gate changes between runs); report Mon
+  11-02 private first; at close delete the account from the
+  Organization page (ends the key).
+- 10-29 evening: REPLY TEMPLATE (for step 3, owner fills the
+  bracket; gate: 0 dashes, 1 contraction, no hashtags, no
+  URLs, human PASS): "The key's self-issued on the Keys page
+  and stays with me; it never travels by email. Sign-in
+  email: [SIGN-IN EMAIL]. Day 1 starts today, per the agreed
+  sequence."
+
+STATUS AS OF 10-29 EVENING: RESUMED + GO CONFIRMED (Praveen
+1:01 PM "we can start"). Acceptance email SENT/SHARED (see
+evening entry). Key protocol live: owner self-issues at
+app.arcezia.com Keys page (test-only email), key never
+travels by email, reply = sign-in email only, account
+deletion at close ends the key. Six markups accepted in
+writing; no-deploy line (same action gate both days)
+proposed in the acceptance. Window: day 1 Thu 10-29, day 2
+Fri 10-30, report Mon 11-02 private-first. 500 counter
+0/500. Open: third-participant question; 10-28 v3 send
+confirmation; Babu/Dante name; what the 500 counts.
