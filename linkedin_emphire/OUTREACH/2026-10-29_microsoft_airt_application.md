@@ -100,8 +100,19 @@ populations, tools, and operating conditions."
 Amanda's post: "Please apply via the posting links, as I am very behind on my
 LinkedIn messages!" A short note AFTER submission (not before) is
 courteous and gives a human path: applied to the agentic role, one line on
-why the fit is real, location availability stated plainly. Draft on request.
-Keep it under 60 words. Her reply channel is slow, so set expectations.
+why the fit is real, location availability stated plainly.
+NOTE DRAFTED 10-29 (55w / 343c, /tmp/amanda_airt_note.txt; gate: 0 dashes,
+0 hashtags, 0 URLs, 1 contraction, no opener per PART 12):
+"Applied to the agentic role. I build red-team infrastructure for LLM and
+agentic systems, and everything I ship has to be re-derivable: an open-source
+harness with five reproducible failure checks, plus a public 21-part series on
+failures in shipped AI. I'm US-authorized, based in Lagos, happy to talk
+through what the role needs on location."
+DELIVERY: send only AFTER the owner submits the application. If the owner is
+1st-degree with Amanda, DM. If not, it travels as a reply under her post
+(he already has the 137w practitioner comment drafted there; the note comes
+after, as a separate reply, not folded into the comment). Her reply channel
+is slow, so set expectations.
 
 ## IF THE LOCATION GATE IS A HARD STOP
 Same package transfers to these (all read 10-29 as "similar jobs" on the JD
@@ -112,7 +123,56 @@ page; US-based, verify each JD's location clause before applying):
   (Redmond)
 - 1970393556952558 Security Researcher (Redmond)
 
+## FORM SCREENING ANSWERS (owner pasted the live questions 10-29, mid-form)
+- "Are you legally authorized to work in the country/region you are
+  applying for?" -> **YES** (US work auth confirmed; role is US-based)
+- "…will you now or in the future require the company's sponsorship for an
+  immigration-related employment benefit (work visa, work permit, etc.)?"
+  -> **NO** (already holds US work auth; not asking Microsoft to sponsor).
+  Caveat given: answer YES only if Microsoft must sponsor a visa to work in
+  the US; NO is correct when he already holds the authorization (citizenship,
+  permanent residency, or a status he keeps without company filing).
+- Note: the form's "Answering these questions will not in any way disqualify
+  you" line is EEO/anti-discrimination boilerplate; the answers still feed
+  eligibility screening. The live hard gate remains the work-LOCATION step
+  (US-only-remote + based in Nigeria), not the authorization questions.
+
+## SELF-ID + CANDIDATE + REQUIRED-QUALS ANSWERS (owner pasted the live form 10-29)
+Self-identification (all voluntary, skippable with no consequence):
+- Ethnicity/Race -> if disclosing: **African American or Black** (Nigerian
+  origin fits the "Black racial groups of Africa" definition)
+- Gender -> **Male** (if disclosing)
+- U.S. Armed Forces / Protected Veteran Status -> **No** (no US military service)
+Candidate questions:
+- Member of military / civilian employee or official of any government (any
+  level, any country) -> **No** (Teamart.inc + YKAY only; LandSecure is a
+  product, not a gov post)
+- Signed a non-compete/NDA that could be an obstacle to acceptance at
+  Microsoft -> **No**, unless a specific restrictive covenant with Teamart or
+  YKAY bars AI-security work (standard client NDAs don't block it; verify
+  before answering if unsure)
+- Ever worked with Microsoft (FT/PT, intern, vendor, agency temp, business
+  guest) -> **No**
+- Currently employed by a Microsoft subsidiary (LinkedIn, GitHub, Gaming,
+  Activision, Blizzard, King) -> **No**
+Job specific:
+- Required quals (degree + years OR equivalent experience) -> **YES, on the
+  "equivalent experience" clause.** Does not strictly meet "bachelor's + 4y"
+  (degree in progress to Apr 2028, ~2y formal). The Yes stands on released
+  research software + public reproducible-research series + agentic/provenance
+  depth = the same argument the cover letter makes, so it keeps the application
+  consistent. The following acknowledgment warns the app may not proceed if he
+  does not actually meet the requirements -> answer Yes only if comfortable
+  standing behind the equivalent-experience claim.
+Acknowledgment:
+- "I agree that I answered these questions accurately" -> **Yes**
+- Data Privacy Notice consent -> **Yes** (required to proceed)
+- Candidate code of conduct -> **Yes**
+
 ## STATUS
-DRAFTED (all three deliverables ready). Owner to submit via the apply link.
-Awaiting: confirmation of submission; whether the form allowed the location
-he needs; whether an Amanda follow-up note is wanted.
+IN PROGRESS (owner is mid-form on apply.careers.microsoft.com, reached the
+self-ID / candidate / required-quals / acknowledgment blocks). Deliverables
+ready; authorization (Yes) + sponsorship (No) + the block above answered.
+Remaining: location step (the real gate) + final submit. Awaiting:
+confirmation of submission; whether the location field accepted what he needs;
+whether the Amanda follow-up note gets sent.

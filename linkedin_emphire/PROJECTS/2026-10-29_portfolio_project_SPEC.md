@@ -263,3 +263,178 @@ push was 403 (token scope), the tieout tree is the home of record. UPDATE 10-29 
 [11](https://arxiv.org/html/2604.16790v1) (Apr 2026): Bias in the Loop; no standard test-retest quantification; prompt-induced judge bias large enough to change rankings.
 [12](https://arxiv.org/html/2606.26185v1) (Jun 2026): temperature control necessary not sufficient; 1-2 of 7 borderline items non-reproducible at forced greedy; transmission-layer risk, no record in artifact; disagreement rate + resolved endpoint belong in results.
 Workspace record: EU AI Act Annex III high-risk obligations 2027-12-02 (EMAIL/leads/2026-10-27_icp100.md); five-tests repo public, latest d95a57e, "ships the method, not pre-baked results".
+
+## 7.6 FULL BUILD status (BUILT 10-29, owner: "full not scaffold, full frontend UI")
+Repo name = tieout (D1 held; github.com/Teamthy/tieout confirmed
+free via API this turn). Built at linkedin_emphire/PROJECTS/tieout/
+(self-contained tree, owner hosts as a separate GitHub repo; gh
+token still lacks createRepository). v0.2.0, MIT, authors = both
+names (day-one contribution record).
+- Python package tieout/: P1 verdict events on a hash chain
+  (pre-assigned ids + effect refs before the run); P2 provenance
+  (harness/model/dataset hash/env/decoding/seed + judge + target
+  resolved endpoints); P3 negative controls (8 crafted known-hold /
+  known-broken, per-run FP/FN in manifest); P4 named gaps (G-MISSING /
+  G-HASH / G-VERDICT-MISMATCH / G-CONTROL / G-RECORD / G-TARGET /
+  G-PROVENANCE; a missing verdict is a named gap, never silence); P5
+  re-derivation (verify re-walks chain, re-hashes manifest +
+  manifest.sha256, re-runs detectors on stored raw: no model, no key,
+  no network); P6 judge audit (14 crafted/versioned anchors: agreement,
+  perturbation flips reformat/paraphrase/verbosity, disagreement vs
+  naive one-tell variant, self-preference probe)
+- F1 family: the five checks ported unchanged from five-tests
+  d95a57e (inputs + detectors identical); deterministic SampleOrderBot
+  (holds all 11 English items, breaks exactly F1-T4-R1-mixed);
+  LiveAdapter for any OpenAI-compatible endpoint (same env contract)
+- CLI: run / demo / verify / gaps / judge-audit / selftest / serve
+- bundle format v1 documented (docs/bundle-format-v1.md): manifest
+  line, chained event + control records, trailing judge_audit + gap
+  records, record_hash + prev_hash + tail + file sha256
+- UI (web/, Vite + React + TypeScript, strict): run list; run detail
+  with verdict timeline + hash chain, the metric, negative controls,
+  named gaps, judge audit, provenance, and a stranger-verify button
+  that POSTs to the API and renders the re-derivation report; dark
+  evidence aesthetic; built and served by tieout serve (one command)
+- tests: 13 pytest (verify/tamper/dropped-line/verdict-flip/metrics /
+  audit numbers / CLI flow / server endpoints) + SELFTEST 7/7
+  (same contract as M1: clean verify, sample behavior, 0/3 0/3 0/2
+  1/6, 0 FP 0 FN, one-char tamper G-HASH, dropped line G-MISSING +
+  manifest break, audit offline)
+- verified this turn: pytest 13 passed, ruff clean, tsc strict clean,
+  vite build clean, demo run VERDICT PASS (re-derivable by a
+  stranger), live server smoke (health/runs/verify/UI all green)
+- docs: README (M6 posture, gap-first), bundle-format-v1, harness-
+  spec (T0-T6 as implemented, tests A-D, binding field map, standing
+  gaps G-ASI-MAPPING / G-WAL / G-ISSUANCE), method-note, failure-
+  mode-matrix (co-authored, both names, day-one contribution record,
+  P/V test classes)
+- CI (.github/workflows/ci.yml): backend (ruff + pytest + selftest)
+  + frontend (npm ci + build); committed demo run at runs/demo
+  (reproducible public sample; verdicts stable, timestamps per run)
+Milestones covered: M1 + M2 (format v1 + verify + controls + gaps)
++ M4 (P6 in the bundle) + UI (new, per owner directive) + M6
+(README posture). M3 families F2-F6 and M5 completion (Behar's
+guarantee columns) remain; Behar thread rule holds: no repo
+reference in the DM while the build is incomplete; the link ships
+with the first runnable version, after both sign-offs.
+
+## 7.7 Next.js UI + PUBLIC PUSH (10-29, owner directives)
+Owner positioning directive (verbatim intent): the project must sit at
+the intersection of industry-standard portfolio work for AI red teaming
+x AI security x AI security research x AI evaluation, suitable for
+fellowship review, employer review, industry-leader review, and
+LinkedIn reference without skepticism. Execution: gap-first README +
+method note + cited research section (RAND arXiv:2603.05399,
+arXiv:2607.08535, arXiv:2604.16790, arXiv:2606.26185, OWASP Agentic
+Top 10 2026, tool landscape) + co-authored benchmark with named second
+author + one-command stranger verify in the README + reproducible
+committed demo run + honest named gaps. The spec itself (with ICP and
+thread-distribution sections) stays OUT of the public tree.
+OWNER DIRECTIVE 2: frontend stack = Next.js, minimalist black and
+white. DONE: web/ rebuilt on Next.js 14 (App Router, output: export,
+TypeScript strict, builds clean with typecheck); monochrome design
+system (#000 bg, #fff text, gray levels, monochrome verdict badges:
+pass = outlined, fail = inverted, undetermined = dim); run list, run
+detail (verdict timeline + chain, metric, controls, gaps, judge audit,
+provenance, in-page stranger verify); Vite tree removed; FastAPI now
+serves web/out (one command still: tieout serve).
+OWNER DIRECTIVE 3: push to https://github.com/Teamthy/Tie-out- (repo
+exists, created by owner, was empty). Clean tree pushed to main
+(excluding .venv/node_modules/.next/out/caches). pyproject Homepage
+updated to the real repo URL. REPO IS PUBLIC: publication gate for the
+co-authored matrix = both sign-offs (Behar's guarantee columns are
+still his move); the owner can keep citing the repo privately now and
+flip the public story (content cross-posts, Behar link) after his
+sign-off.
+Verified this turn: ruff clean, pytest 13/13, SELFTEST 7/7, next build
+clean (4 static pages), server smoke: Next UI title + /api/runs green.
+
+## 7.8 PERSONAL PORTFOLIO REFRAME (10-29, owner directive verbatim)
+"THIS PROJECT IS SPECIFICALLY FOR ME, MY PERSONAL PORTFOLIO NOT
+PAIRED. BUILD IT TO INDustry STANDARD NOT SCAFFOLD, BUILD AND DESIGN
+ALL PAGES, WELL DOCUMENTED."
+Execution this turn:
+- PAIRING STRIPPED from the public tree (single author = Timothy
+  Olusanya): pyproject authors, LICENSE, README (failure-mode
+  benchmark section + license line), docs/failure-mode-matrix.md
+  (header = single-author note developed through public practitioner
+  discussion; guarantee-limits heading; status paragraph),
+  docs/harness-spec.md (2 co-author references). Grep-verified: zero
+  Behar/Dalipi/co-authored/joint references remain in the public tree.
+  (The private record of the Behar M5 co-authorship track stands as
+  written; the public artifact is the owner's own.)
+- ALL PAGES BUILT (Next.js, monochrome): #/ landing (hero, the gap,
+  six-pillars grid, verify-it-yourself, the artifact), #/runs,
+  #/run/<id>, #/method, #/format, #/matrix, #/harness, #/families
+  (items table + ASI crosswalk + proposed mapping). Top nav with
+  active state. Docs render in-page via /api/docs + a small markdown
+  renderer (the repo's docs ARE the site content).
+- INDUSTRY STANDARD / WELL DOCUMENTED: Makefile (install/lint/test/
+  selftest/demo/verify/ui/serve/clean), SECURITY.md (verify-don't-
+  trust cold-clone procedure, reporting path, safe use, heuristic
+  disclaimer), CONTRIBUTING.md (the evidence doctrine, how to add a
+  family or a page, style), CHANGELOG.md (keep-a-changelog, 0.1.0/
+  0.2.0), README (positioning line: public artifact of an independent
+  AI security research practice, built to be verified not trusted and
+  reviewed cold; page table; layout updated).
+- Server: /api/docs (4 docs) + /api/families items_detail. Tests:
+  14/14 (docs endpoint + families detail added). ruff clean, next
+  build clean (typechecked), SELFTEST 7/7, server smoke green (docs,
+  families detail, landing hero all served).
+- Push package refreshed: tieout-push-ready.zip (forced add, *.zip
+  ignored repo-wide) = clean git repo, single commit, origin pre-set
+  to Teamthy/Tie-out-. The 403 on the agent push stands (per-repo
+  token scope); owner push path unchanged.
+
+## 7.9 SENIOR ENGINEER UPGRADE (10-29, owner directive verbatim)
+"UPGRADE IT TO A SENIOR ENGINEER PROJECT WITH STANDOUT FEATURES"
+Executed same turn as 0.3.0:
+- STANDOUT 1, stability diff: tieout diff RUN_A RUN_B + /api/diff +
+  #/compare page. Aligns two bundles by pre-assigned id (P1 invariant),
+  separates verdict drift from transcript drift, reports each run's
+  rate + exact CI. Committed evidence: runs/demo-stability/{a,b}
+  (F1 sample, seeds 0/7) + diff_report.json (14/14 stable, 10 drift).
+  CI gates it: every push re-verifies the 4 committed runs and asserts
+  "stability 1.000".
+- STANDOUT 2, exact statistics: tieout/stats.py Clopper-Pearson by
+  bisection on the binomial CDF (math.comb only; no scipy, no normal
+  approximation; documented reference value 0/10 -> [0, 0.3085];
+  symmetry + containment tests). Stored in manifest.statistics before
+  the bundle closes. Undetermined counts against the pass rate by
+  doctrine (documented in method note).
+- STANDOUT 3, F2 family = the matrix executable: checks E/P/R/V (one
+  matrix row each), 8 items (designed break + documented hold per
+  check on the sample fixture; repeated probes live), 8 controls,
+  own extra anchors + NAIVE variant (audit generalized: P6 inputs are
+  now family-declared, audit.py no longer F1-specific). Committed
+  runs/demo-f2: 4 fail / 4 pass, 0 FP / 0 FN, verify PASS, audit
+  agreement 1.0, disagreement 0.4167, self-preference clean.
+- STANDOUT 4, environment-locked provenance: packages + packages_hash
+  in the manifest (v1.1, additive).
+- FORMAT v1.1: additive (statistics, packages); v1.0 bundles must keep
+  verifying, enforced by test against the committed 0.2.0 demo on every
+  commit. Canonicalization invariant: one record = one physical line
+  always; canonical() now escapes U+2028/U+2029 (legal unescaped in
+  JSON, but line-based readers split on them; hostile-input test
+  proves byte-exact round-trip of forged-record/emoji/homoglyph raws).
+- Sample agent: --seed surface drift (deterministic filler, no
+  detector tells) so stability is demonstrable keyless; selftest now
+  8-point (point 8 = zero verdict flips across seeds 0/7).
+- Web: #/compare (nav), run detail CI + packages + format, landing
+  capabilities section, families F2 + F2 ASI mapping (P->ASI06
+  proposed; E/R/V no direct row = named gap, not silent drop).
+- Tests 14 -> 40 (stats, diff, F2, v1.1 backward-compat + hostile
+  inputs, server diff endpoint, CLI f2/diff). ruff clean, next build
+  clean, SELFTEST 8/8, all 4 committed runs verify, server smoke
+  green (families 2, diff API, asi f2, compare page in build).
+- Docs: format v1.1 addendum + canonicalization invariant; method note
+  (stability + statistical rigor); harness spec (families table, F2
+  check table, stability diff semantics); matrix status (F2
+  operationalization); README (how it is built: data flow + 6
+  invariants; proving stability section; page table; layout);
+  SECURITY (verify block extended, record hardening section);
+  CONTRIBUTING (F2 as the add-family recipe, two invariants that catch
+  people); CHANGELOG 0.3.0; pyproject/__init__ 0.3.0; CI (verify 4
+  runs + stability gate); .gitignore (demo-f2, demo-stability).
+- Push package refreshed (same owner-side path: 403 on agent write to
+  Tie-out- stands; per-repo token scope).

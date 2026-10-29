@@ -1139,6 +1139,94 @@ public reference in the comment).
 BOARD: spacing 1h+. STATUS: DRAFTED,
 owner to paste.
 
+
+Michael Bargury (1st; Breaking Agents |
+Co-founder & CTO, Zenity | BlackHat RB;
+10-29 4h paste, Zenity joining ServiceNow
+as founding member of the Control Tower
+Alliance, enterprise trusted-AI-at-scale
+ecosystem): post READ + announcement link
+resolved (lnkd.in/eGe6kjxD -> zenity.io
+/blog/zenity-joins-servicenow-control-
+tower-alliance-founding-member, Harrison
+Johnson 28 Oct 2026, READ IN FULL):
+alliance members span AI, cloud infra,
+security, governance, value measurement,
+token metering; ServiceNow Super
+Intelligence Control Tower = central hub
+to discover, secure, govern, observe,
+measure AI across systems/agents/assets;
+partnership from March 2026 (Zenity
+ServiceNow Build Partner, AISPM +
+vulnerability assessment in SecOps);
+Zenity's five questions (which agents
+exist / what they can access / what
+permissions / behavior with tools, other
+agents, untrusted content / what security
+can do when it goes wrong); "A finding
+needs an owner, a risky configuration
+needs a remediation process, and
+unexpected behavior needs a response";
+Zenity also integrating Microsoft Agent
+365 (related post). CALL: TIER 2 home
+turf, vendor partnership announcement,
+extend not audit; comment = the
+finding-ownership extension (the 'a
+finding needs an owner' line does the
+real work; discovery/access/behavior =
+the part most enterprises still miss;
+findings degrade in transit through
+enterprise workflows, what drops in the
+handoff is the evidence: severity +
+asset travel, model version +
+environment + re-run check do not;
+accountability only works when the
+finding is re-derivable by someone who
+was not in the detection session; routed
+vs owned; close: the part I'd watch as
+the alliance scales). 124w / 706c HUMAN
+DRAFTED (verbatim item 36, /tmp/
+bargury_control_tower_comment.txt).
+BOARD: 1st-degree vendor CTO in the exact
+lane; spacing 1h+. STATUS: DRAFTED,
+owner to paste.
+
+
+Gregory Goldshteyn (Following; Quality
+Assurance Leader & AI Coach; 10-29 2m
+paste, Promptfoo AI-testing breakdown,
+"3 Bugs Your Tests Miss" video): LINK
+READ (lnkd.in/gxQkYKfM -> youtube
+sKRhsVtFo0M, DevHacks 360, unlisted
+21:41, 27 Oct: multi-agent Payflow app,
+guard + orchestrator + Jira/Confluence/
+Figma specialists + keyword retrieval,
+asserts on route/guardrail/specialist/
+citations; three text-blind bugs: wrong
+routing & retrieval, anonymous user sees
+internal tickets, poisoned document the
+guard never reads; lines: "how did the
+app get there", "perfectly obedient
+answer is still wrong"; Break Into AI
+Testing cohort promo, engenious
+university). CALL: Tier 2 in-lane QA-to-
+AI voice, practitioner room; comment
+ANSWERS his direct question (biggest
+challenge testing AI products) = the
+run does not outlive the session;
+caught bug vs evidence you can defend
+six months later at postmortem (specialist
+chosen, document retrieved, raw
+response, assertion fired must be in the
+record); close: the routing assertion
+that failed while the text passed proves
+the record matters more than the
+answer; no flattery, no cohort/vendor
+mention. 121w / 679c HUMAN DRAFTED
+(verbatim item 37, /tmp/goldshteyn_-
+promptfoo_comment.txt). BOARD: spacing
+1h+. STATUS: DRAFTED, owner to paste.
+
 ## Tier 3 — builder / adjacent layer + active thread partners
 
 Adnan Masood, PhD (UST Chief AI
