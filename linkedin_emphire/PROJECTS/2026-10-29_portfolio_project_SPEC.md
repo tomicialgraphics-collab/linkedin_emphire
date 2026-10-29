@@ -317,3 +317,34 @@ Milestones covered: M1 + M2 (format v1 + verify + controls + gaps)
 guarantee columns) remain; Behar thread rule holds: no repo
 reference in the DM while the build is incomplete; the link ships
 with the first runnable version, after both sign-offs.
+
+## 7.7 Next.js UI + PUBLIC PUSH (10-29, owner directives)
+Owner positioning directive (verbatim intent): the project must sit at
+the intersection of industry-standard portfolio work for AI red teaming
+x AI security x AI security research x AI evaluation, suitable for
+fellowship review, employer review, industry-leader review, and
+LinkedIn reference without skepticism. Execution: gap-first README +
+method note + cited research section (RAND arXiv:2603.05399,
+arXiv:2607.08535, arXiv:2604.16790, arXiv:2606.26185, OWASP Agentic
+Top 10 2026, tool landscape) + co-authored benchmark with named second
+author + one-command stranger verify in the README + reproducible
+committed demo run + honest named gaps. The spec itself (with ICP and
+thread-distribution sections) stays OUT of the public tree.
+OWNER DIRECTIVE 2: frontend stack = Next.js, minimalist black and
+white. DONE: web/ rebuilt on Next.js 14 (App Router, output: export,
+TypeScript strict, builds clean with typecheck); monochrome design
+system (#000 bg, #fff text, gray levels, monochrome verdict badges:
+pass = outlined, fail = inverted, undetermined = dim); run list, run
+detail (verdict timeline + chain, metric, controls, gaps, judge audit,
+provenance, in-page stranger verify); Vite tree removed; FastAPI now
+serves web/out (one command still: tieout serve).
+OWNER DIRECTIVE 3: push to https://github.com/Teamthy/Tie-out- (repo
+exists, created by owner, was empty). Clean tree pushed to main
+(excluding .venv/node_modules/.next/out/caches). pyproject Homepage
+updated to the real repo URL. REPO IS PUBLIC: publication gate for the
+co-authored matrix = both sign-offs (Behar's guarantee columns are
+still his move); the owner can keep citing the repo privately now and
+flip the public story (content cross-posts, Behar link) after his
+sign-off.
+Verified this turn: ruff clean, pytest 13/13, SELFTEST 7/7, next build
+clean (4 static pages), server smoke: Next UI title + /api/runs green.

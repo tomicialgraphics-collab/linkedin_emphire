@@ -36,7 +36,7 @@ dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.4"]
 tieout = "tieout.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/Teamthy/tieout"
+Homepage = "https://github.com/Teamthy/Tie-out-"
 
 [tool.setuptools.packages.find]
 include = ["tieout*"]

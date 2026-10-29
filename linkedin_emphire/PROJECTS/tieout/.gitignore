@@ -8,7 +8,8 @@ __pycache__/
 
 # node
 web/node_modules/
-web/dist/
+web/.next/
+web/out/
 
 # generated runs (the committed demo run is the reproducible public sample)
 runs/*

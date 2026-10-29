@@ -3,9 +3,9 @@
 Co-authored technical note: Timothy Olusanya and Behar Dalipi.
 
 Jointly attributed. Contribution record, day one: the trace and the first
-two test cases derive from the Olusanya thread record (T0-T6, negative
+two test cases derive from the Olusanya record (T0-T6, negative
 control); the host-kill test and the independent-survivability boundary
-are Dalipi's, from the round-5 exchange; the guarantee and failure-
+are Dalipi's, from the joint exchange; the guarantee and failure-
 assumption columns are assigned to Dalipi per the agreed split.
 
 ## Scope
@@ -66,7 +66,7 @@ A third party verifies without trusting the host: which guard (judge
 identity), which version (policy hash), which action (id chain). A
 stranger re-derives the binding from the bundle alone.
 
-## Guarantee limits (round-6/round-7 distinctions, recorded)
+## Guarantee limits (distinctions from the joint exchange, recorded)
 
 - Signature plus policy hash prove integrity and provenance, not correct
   enforcement, not institutional authorization, not effect execution.

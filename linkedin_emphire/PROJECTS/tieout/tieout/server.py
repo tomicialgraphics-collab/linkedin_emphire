@@ -120,7 +120,7 @@ def create_app(runs_dir: str | Path) -> FastAPI:
     def asi() -> dict:
         return {"crosswalk": ASI_CROSSWALK, "f1_proposed": F1_PROPOSED_MAPPING}
 
-    dist = Path(__file__).resolve().parent.parent / "web" / "dist"
+    dist = Path(__file__).resolve().parent.parent / "web" / "out"
     if dist.exists():
         app.mount("/", StaticFiles(directory=dist, html=True), name="ui")
     return app

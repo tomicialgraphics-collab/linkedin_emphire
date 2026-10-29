@@ -40,7 +40,7 @@ stranger. That is this project.
 ## Quickstart
 
 ```bash
-pip install -e .          # or: pip install tieout
+pip install -e .          # python 3.10+
 tieout selftest           # the 7-point harness selftest
 tieout demo               # keyless run: F1 against the deterministic sample agent
 tieout verify runs/demo   # stranger verify, one command
@@ -102,11 +102,12 @@ cd web && npm install && npm run build && cd ..
 tieout serve --port 8000 --runs-dir runs
 ```
 
-One command serves the API and the built UI. The UI is a viewer for
-tieout's own evidence bundles, not an LLM observability dashboard: run
-list, per-run verdict timeline with the hash chain, the metric, the
-negative controls, the named gaps, the judge audit, and a stranger
-verify you can trigger from the page.
+One command serves the API and the built UI. The UI (Next.js, static
+export, black and white on purpose) is a viewer for tieout's own
+evidence bundles, not an LLM observability dashboard: run list,
+per-run verdict timeline with the hash chain, the metric, the negative
+controls, the named gaps, the judge audit, and a stranger verify you
+can trigger from the page.
 
 ## Check families
 
@@ -151,11 +152,36 @@ tieout/            the package
   calibration/     judge audit (P6)
   mappings/        ASI crosswalk
   server.py        FastAPI: bundle browser + verify
-web/               the UI (Vite + React + TypeScript)
+web/               the UI (Next.js, static export, black and white)
 docs/              format spec, harness spec, method note, matrix
 runs/              reproducible runs (runs/demo is the committed sample)
 tests/             pytest: verify/tamper/selftest/CLI/server
 ```
+
+## Cited research
+
+The gap statement above is not opinion; it is the 2026 research
+converging on one point: the judge lives inside the tool, and the
+artifact does not survive the stranger.
+
+- RAND, "Judge Reliability Harness" (2026), arXiv:2603.05399 — "no
+  judge that we evaluated is uniformly reliable across benchmarks";
+  verdicts flip on reformatting, paraphrasing, verbosity.
+- "When the Judge Changes, So Does the Measurement" (2026),
+  arXiv:2607.08535 — judge upgrades are not interchangeable; where raw
+  outputs were not shipped, the debate numbers cannot be re-audited.
+- "Bias in the Loop" (2026), arXiv:2604.16790 — no standard
+  quantification of consistency for the judgments.
+- "Necessary but Not Sufficient" (2026), arXiv:2606.26185 — even at
+  temperature 0 borderline items stay non-reproducible; the grader
+  disagreement rate and the resolved endpoint belong in the results
+  artifact.
+- OWASP Top 10 for Agentic Applications (2026 edition, published
+  2025-12-09) — the taxonomy the F-families map onto; MITRE ATLAS and
+  NIST AI RMF as adjacent vocabularies.
+- Tool landscape (2026): garak, PyRIT, promptfoo (OpenAI), DeepTeam,
+  Giskard, AgentDojo on the attack side; OpenAI Evals, DeepEval,
+  Inspect AI, LangSmith, Braintrust, Phoenix on the scoring side.
 
 ## License
 
