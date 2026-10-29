@@ -174,16 +174,18 @@ evidence bundles, not an LLM observability dashboard. Pages:
 Two standard paths, both from the repository as-is:
 
 **Vercel (serverless, one project).** Connect the repository; the
-`vercel.json` at the root declares the two builds: the Next static
-export (`web/`) and the FastAPI app as a Python function (`main.py`,
-ASGI). `/api/*` routes to the function; everything else serves from
-the static export. No environment variables. The committed runs
+`vercel.json` at the root declares two services: `web` (the Next
+static export in `web/`) and `api` (the FastAPI app at the repo root,
+entrypoint `main:app`). Rewrites send `/api/*` to the function and
+everything else to the static site, so the UI stays same-origin. No
+environment variables, no framework overrides. The committed runs
 (`runs/demo`, `runs/demo-f2`, `runs/demo-stability`) ship in the
 function bundle, so the site shows real evidence out of the box. One
 serverless property, handled explicitly: the filesystem is ephemeral,
 so the verify button returns its report in the response but does not
 persist `verify_report.json` to disk (local and container deploys do
-persist it).
+persist it). Expect one short cold start on the first API call after
+~15 minutes idle; static pages are unaffected.
 
 **Anywhere Python runs (container, full behavior).** Render, Railway,
 Fly.io, or a VPS:

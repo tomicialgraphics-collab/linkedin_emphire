@@ -9,8 +9,9 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Added
 
 - Vercel deploy adapter: root ASGI entry (`main.py`), `vercel.json`
-  (Next static export + FastAPI as a Python function, `/api/*` routed
-  to the function), `requirements.txt`, `.python-version` (3.11).
+  (Services model: Next static export + FastAPI as a second service,
+  `/api/*` rewritten to the function), `requirements.txt`,
+  `.python-version` (3.11).
 - The verify endpoint's `verify_report.json` write is now best-effort:
   on ephemeral / read-only serverless filesystems the report is still
   returned complete in the HTTP response.
