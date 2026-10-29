@@ -600,6 +600,65 @@ week (Saurabh r2 157w, Wolfe r3 69w, Alex
 136w all pending) - owner picks the weight.
 
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
+
+Kyle Bartlett (PENDING CONNECTION REQUEST 10-29,
+owner to ACCEPT; AI Architect & Forward
+Deployed Engineer, builds production agent
+systems for enterprise ops, Former US AI Lead
+Anker, Ex-Apple, Agentic AI / RAG / LLM;
+mutuals: Brad Wolfe + 2): connection note
+(verbatim from owner screenshot): "Hi
+Olusanya, Your point that the agent's own API
+responses are a mirror, not a witness, really
+landed. I keep what the source said separate
+from what the model concluded in my own agent
+traces. I'd love to keep reading where you
+take red teaming on agent self-grading!"
+The note quotes the owner's 130w Wolfe
+comment line (item 14, 10-28: the 'someone
+else' record inside an agent stack is often a
+tool response the agent itself called, a
+mirror, not a witness) and says he is
+ALREADY OPERATIONALIZING it (source claim
+kept separate from model conclusion in his
+own agent traces). CALL: accept (strong
+signal: quotes the specific line, practices
+it, enterprise-ops production agent builder
+= the at-risk + can't-verify ICP shape,
+Brad Wolfe mutual = warm orbit); then reply
+DM (no greeting per PART 12, payload first,
+no link, no pitch): the separation is the
+proof the line is working; one step further
+= keep source claim and model conclusion as
+SEPARATE FIELDS so the divergence is a diff,
+not a judgment call; the divergence is the
+entire finding (self-grading fails exactly
+when the grader's input is the agent's own
+summary instead of the source); the red team
+doesn't need a new tool: sample conclusions
+each close, re-read against the source
+field, log every divergence; value hand-off
+= the five-tests repo (Teamthy/ai-redteam-
+five-tests) named, no link (Steve-DM
+pattern). DRAFTED (125w / 725c HUMAN, verbatim
+item 30). CLASS: in-lane practitioner,
+production agent systems for enterprise ops
+(ICP-adjacent: at risk + can't verify,
+buyer room), 1st-degree after accept, warm
+signal x3 (quotes the line, practices it,
+Wolfe mutual); reference/peer + warm
+prospect for the verification practice;
+future surface: he asked to keep reading on
+red teaming agent self-grading = an earned
+content/DM channel, not a pitch channel.
+BOARD: owner accepts the request first,
+reply after; day queue is the heaviest of
+the week (Saurabh r2 157w, Wolfe r3 69w +
+Wolfe refund 162w, Alex 150w, Eduardo 158w,
+Pascal 143w, Sam 151w + repost 183w, Charlie
+148w, Neil 137w, Behar R4 337w, Evan 146w,
+Charmaine 136w, Filip 129w all pending).
+
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
 Team), Clint Gibler (OpenAI), Ian W. (Promptfoo / OpenAI), Joseph
