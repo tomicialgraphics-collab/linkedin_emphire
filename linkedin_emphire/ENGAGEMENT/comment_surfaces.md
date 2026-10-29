@@ -1269,6 +1269,42 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   Dot post (13h, the 129w comment is POSTED and
   Mercy Mukuria 2M LIKED it, see the tier 1
   entry).
+- Hitesh Choudhary (22m at paste, Back to Building
+  with AI, Following, tier 1): NVIDIA Nemotron 3.5
+  Transcribe news post (free open-weight STT, 40
+  languages incl. Hinglish code-switching, 2.8%
+  WER tie for #1 open-weight, 10-minute self-test
+  protocol, "Count the mistakes yourself. That is
+  your real benchmark, not the leaderboard.", H100
+  note, OpenMDW-1.1 license note, "what is the
+  first tool you would build" closer): SKIP. (1)
+  Documented class: the same as his 10-25 skip
+  (model / programming-education news, off-lane for
+  the owner's agent-verification register; the 44w
+  INTERACTIVE draft stays in the queue as the
+  reach/follower play if the owner wants it).
+  (2) The one in-lane line considered and
+  rejected: "count the mistakes yourself" is the
+  leaderboard-as-claim / own-run-as-evidence line,
+  and the missing piece is a fixed error criterion
+  (decide before listening what counts as a
+  mistake, wrong word / missed / extra / wrong
+  speaker tag, and the count becomes a number the
+  next model release can be re-run against) but
+  that is the criterion motif already burned this
+  week (DPP 131w pending, Tanya 129w, Tamkin 132w),
+  and the post's frame (a try-it tutorial plus a
+  what-would-you-build closer) is the
+  hobbyist-builder frame, not the owner's two
+  rooms. (3) Board: 3 posted today, the queue
+  behind is heavier and more in-lane (Saurabh 197w
+  dead-center 1st-degree founder, Tanya 129w);
+  spending the tier 1 reach comment on a model-
+  news post now is the wrong weight. MOVE: none;
+  keep the surface hot (tier 1, Following, 1M+
+  channels); both options logged for a reach play,
+  the 44w INTERACTIVE and this skip's criterion
+  line, owner's call.
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
