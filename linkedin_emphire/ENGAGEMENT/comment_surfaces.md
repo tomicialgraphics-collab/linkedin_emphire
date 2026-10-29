@@ -1286,7 +1286,7 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   EXTENDED the trail point with a cadence:
   someone outside the team re-derives a sample
   each close (the trail as a routine close
-  control). ROUND 3 DRAFTED (70w / 402 chars,
+  control). ROUND 3 DRAFTED (69w / 404 chars,
   verbatim item 16): accept the cadence (the trail
   gets a heartbeat, re-derivation becomes a
   routine, not a heroic act), one correction on
