@@ -779,6 +779,67 @@ in-lane; peer extension in the Wolfe / Saurabh
 register, zero competitive framing; he follows
 the owner, visibility works both ways.
 ## Tier 3 — builder / adjacent layer + active thread partners
+
+Charlie Rosier (1st, Co-founder @Rubi, helping
+teams work with AI, non-technical founder turned
+certified Lovable Expert): 10-29, 2m at paste:
+Proton (Swiss, Proton Mail) is running
+"consequential" AI re-interviews of staff, the
+internal email says the evaluations "may lead to
+changes in roles, responsibilities, and continued
+employment"; cross-team evaluators from outside
+the reporting line with strong AI skills, direct
+managers out of the room; mandatory, over a
+number of days; the memo demands an "AI-first"
+workplace with "curiosity, judgment, and
+urgency"; significant online backlash. His read:
+in a large organisation usage metrics are
+HUGELY misleading, tokens and spend alone do
+not equal value, not evidence of a mindset
+shift, not that work is done differently; the
+only way to find out is to talk to the team,
+which is why Rubi runs voice AI interviews
+across the whole team (how they do work + how
+they feel about AI), everyone in the same 30-min
+slot "because she's AI and infinite". Closing
+bait: "Keen to know if other companies are
+running these kind of interviews? Let me know!
+⬇️". Hashtags #podcast #AI #leaders #employee
+#team #work. LINK (rule 4): linkedin.com/company/
+ask-rubi FETCH FAILED (proxy error, 10-29); the
+comment does not depend on the page, the post
+body fully describes Rubi (class context only).
+CALL: vendor self-pitch inside a genuinely
+in-lane post; agree with his correct premise
+(usage metrics are not evidence of change),
+then flip the fix: an AI interviewer that
+scores 'curiosity, judgment, and urgency' into
+an employment decision is a decision system,
+not a survey tool, and a decision system has
+to be on the record (what it scored, on what
+evidence, with what agreement against a judge
+whose ground truth does not come from the same
+model); 'how do they feel about AI' is the
+least verifiable construct in the post and it
+is now gating jobs; the buyer's question: the
+interviewer's measured agreement rate with a
+human panel on the same transcripts, and when
+they disagree, whose number does the decision
+use; close: a 30-minute slot that reaches
+everyone scales the interview, not the
+measurement. DRAFTED (148w / 857c HUMAN, verbatim
+item 23). CLASS: in-lane-adjacent vendor (his
+product IS the AI interviewer he is pitching),
+1st-degree, builder; the comment asks the
+question his buyers should ask, extend do not
+audit, no praise of the product, no pitch, no
+answer to the lead-gen bait beyond substance.
+BOARD: day queue is the heaviest of the week
+(Saurabh r2 157w, Wolfe r3 69w, Alex 150w,
+Eduardo 158w, Pascal 143w, Sam comment 151w +
+repost 183w, Steve DM 65w all pending) - owner
+picks the weight.
+
 Eduardo Vedes (1st; Software Engineer & AI Consultant | Software
 Architecture, AI Integration & Team Training; founder of Atomize,
 atomize.ink; added 10-29 from 1m paste): agent-architecture post:
