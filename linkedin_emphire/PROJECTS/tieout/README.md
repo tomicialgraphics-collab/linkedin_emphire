@@ -169,7 +169,32 @@ evidence bundles, not an LLM observability dashboard. Pages:
 | `#/harness` | the harness spec |
 | `#/families` | check families + the OWASP Agentic crosswalk |
 
-## Check families
+## Hosting
+
+Two standard paths, both from the repository as-is:
+
+**Vercel (serverless, one project).** Connect the repository; the
+`vercel.json` at the root declares the two builds: the Next static
+export (`web/`) and the FastAPI app as a Python function (`main.py`,
+ASGI). `/api/*` routes to the function; everything else serves from
+the static export. No environment variables. The committed runs
+(`runs/demo`, `runs/demo-f2`, `runs/demo-stability`) ship in the
+function bundle, so the site shows real evidence out of the box. One
+serverless property, handled explicitly: the filesystem is ephemeral,
+so the verify button returns its report in the response but does not
+persist `verify_report.json` to disk (local and container deploys do
+persist it).
+
+**Anywhere Python runs (container, full behavior).** Render, Railway,
+Fly.io, or a VPS:
+
+```bash
+pip install -e .
+tieout serve --port 8000 --runs-dir runs
+```
+
+Same app, real filesystem, `verify_report.json` written next to the
+bundle.
 
 - **F1, the five failure checks** (policy v1): ported unchanged from the
   public five-tests method (ai-redteam-five-tests, d95a57e), the legacy

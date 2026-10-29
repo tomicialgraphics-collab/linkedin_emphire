@@ -4,6 +4,32 @@ All notable changes to this project are documented here. The format is
 based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- Vercel deploy adapter: root ASGI entry (`main.py`), `vercel.json`
+  (Next static export + FastAPI as a Python function, `/api/*` routed
+  to the function), `requirements.txt`, `.python-version` (3.11).
+- The verify endpoint's `verify_report.json` write is now best-effort:
+  on ephemeral / read-only serverless filesystems the report is still
+  returned complete in the HTTP response.
+- Tests: the deployed entry serves health, runs, docs and families
+  from the repo tree; nested run ids are routable on detail, verify
+  and diff; the report persists when writable; verify stays correct
+  on a simulated read-only filesystem.
+- README: the Hosting section (Vercel + container paths).
+
+### Fixed
+
+- `/api/runs` now lists nested runs (`runs/demo-stability/a`), which
+  the top-level scan silently hid from the run list and the compare
+  page dropdowns.
+- Nested run ids 404'd on the detail and verify routes: Starlette's
+  default path parameter stops at a slash. Both routes now use the
+  `path` converter, so `demo-stability/a` is addressable exactly like
+  `demo` (the UI already sent percent-encoded ids).
+
 ## [0.3.0] - 2026-10-29
 
 ### Added
