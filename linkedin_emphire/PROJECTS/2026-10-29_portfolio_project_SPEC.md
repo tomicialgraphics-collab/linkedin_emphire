@@ -240,6 +240,14 @@ Local repo /home/user/tieout, git main, first commit 2a5c53d
 Next: Andrey local run tonight -> his results/ becomes the first
 live-mode bundle (first real-run evidence in the new format);
 M2 = bundle format v1 frozen + full re-derivation report.
+NOTE 10-29 (Behar round 6): the M5 artifact advanced ahead of the
+milestone plan on the strength of the Behar thread (collaboration
+confirmed 1:06 PM). docs/failure-mode-matrix.md +
+docs/harness-spec.md are now in the tieout tree (local main
+73f008c) and ride with the zip; the Behar note is the first
+co-authored artifact of the project (M5 is no longer 'to build',
+it is 'to complete with a second named author'); the five-tests
+push was 403 (token scope), the tieout tree is the home of record.
 
 ## 8. Sources (fetched/searched 10-29)
 [1](https://vdf.ai/blog/ai-red-teaming-tools/) AI Red Teaming Tools 2026 (vdf.ai, Oct 2026): garak 0.17.0 9 Sep 2026, agent breaker probe since 0.15.0; promptfoo 0.124.0, part of OpenAI, agent plugins; PyRIT, DeepTeam 1.0.9, Giskard v3, Spikee, AgentDojo; star counts.
