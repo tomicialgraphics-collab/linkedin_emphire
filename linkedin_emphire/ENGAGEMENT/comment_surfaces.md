@@ -1403,7 +1403,80 @@ reference of any kind while the build
 is incomplete, not even naming the
 existing five checks; PART 13 item 7
 still governs other deliverables.
-OWNER TO SEND v3.
+OWNER TO SEND v3. ROUND 7 10-29 late: R6 v3 SENT (owner
+paste); BEHAR REPLIED (confirms
+receipt: 'workable foundation for a
+genuinely useful technical
+contribution'; agrees the four failure
+modes + division of responsibilities):
+(1) DISTINCTION 1 (correct): an
+independently issued action ID alone
+does not prove the corresponding
+action was proposed; requires an
+independently preserved commitment to
+the proposal itself; (2) DISTINCTION
+2 (correct): signature + policy hash
+establish record integrity +
+provenance but NOT correct policy
+enforcement, institutional
+authorization, or effect execution;
+both belong in guarantees AND
+limitations; (3) distinguishes tests
+of persistence/recovery from tests of
+actual cryptographic verification
+(given the key-free harness); (4)
+comfortable proceeding; GOVERNANCE
+GATE before substantial development:
+author order, contribution records,
+repository arrangements, publication
+permissions; (5) asks the direct
+repository link 'when available'.
+R7 DRAFTED (740w / 4604c, /tmp/
+behar_r7.txt, 0 dashes, 0
+contractions, gate-asserted zero repo
+references): accepts both
+distinctions as the two places the
+guarantee analysis would otherwise
+overclaim; ID refinement (issuance vs
+commitment = two witnesses; complete
+pair = high-consequence default;
+modified action = new proposal; C
+family splits C/C'/C'', spec's C'
+becomes C''; named-gap strength =
+reported dimension); binding limit
+(one-sentence guarantee scope: the
+record is what it claims to be, from
+who it claims, under which policy
+version; the three excluded properties
+each get a limitation entry + inside-
+mechanism: independent re-evaluation /
+key-management record / system-of-
+record receipt as second binding
+chain, out of scope); two test classes
+P (A, A', B, C, C', C'; no crypto
+claim) / V (D + binding check;
+deterministic in-process key pair,
+fixed seed; does not prove the keys
+are institutional); governance
+answers: day-one contribution record
+per file + per claim, author order
+follows the record ('a fact, not a
+negotiation' - owner may override),
+repository arrangement in principle
+(one shared repository, both
+maintainers, MIT code, CC BY 4.0
+note; the link arrives with the first
+runnable version; this thread is the
+full surface until then), publication
+permissions (venue-agnostic; both
+approve text + venue; no third-party
+content without permission); next
+step = his columns with the two
+distinctions built in + the owner's
+updated harness spec (two classes,
+C family), first harness version +
+first note draft from the same
+document. OWNER TO SEND R7.
 
 
 Charlie Rosier (1st, Co-founder @Rubi, helping
