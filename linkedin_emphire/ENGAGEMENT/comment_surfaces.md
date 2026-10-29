@@ -485,6 +485,61 @@ DM 65w all pending) - owner picks the weight; 60+
 min spacing from whichever of his earlier posts
 gets the carried draft. 10-29 REPOST: owner requested a repost with thought of the same post; DRAFTED (183w / 1004c, headline + subheadline, 4 hashtags, paste-ready as a share-with-thought) = verbatim item 22; comment item 21 remains a separate DRAFTED.
 
+Neil Sahota (FOLLOWING the owner; AI
+Strategist | Board Director | Trusted Global
+Technology Voice | Global Keynote Speaker |
+Best Selling Author; neilsahota.com / Substack):
+10-29, 1m at paste: "Efficiency is table stakes
+now. Everybody's automating the same processes
+with the same tools, and the gains flatten out
+fast. Advantage comes from asking whether the
+process should exist at all. One makes the
+current model cheaper. The other makes a better
+model possible. Where's your organization
+spending most of its energy?" + blog link
+(neilsahota.com). Hashtags #Automation #AI
+#Innovation #DigitalTransformation
+#BusinessStrategy. LINK READ (rule 4):
+neilsahota.com FETCH FAILED (proxy error,
+10-29); the comment does not depend on the page
+(class context only). CALL: decision-maker
+room; his "should the process exist at all" is
+the elimination question, and the comment
+operationalizes it in the owner's register:
+the process's own numbers can't answer it
+(because the metrics were built to keep the
+process alive); the operational version is a
+check OUTSIDE the process, which step if
+removed changes no downstream record, run as a
+shadow removal and measure what actually
+breaks, the steps that break nothing are
+costs, not processes; agent twist: the agent
+will execute the unnecessary process faster
+and log it as done, the transcript proves
+execution, not necessity, so the elimination
+question stays a human one and needs evidence
+the process's logs cannot generate; close =
+his question answered: that is the energy most
+organizations are not spending. DRAFTED (137w /
+829c HUMAN, verbatim item 25). CLASS: tier 1
+strategy creator, Following the owner; 10-25
+history: "assumptions as assets/liabilities"
+post (22m) evaluated, NOT skipped on quality
+(argument test passed in-lens) but HELD (off
+security lane, author block unknown, 2h window
+tight, optional demo-of-lens only) = 10-25
+verbatim item 4B, 71w, still a pending
+OPTIONAL on a different post; today's post is
+a separate post, no spacing conflict; now
+Following confirmed, so the tier-1 surface is
+live and the 10-25 hold reasons (author block
+unknown, window tight) no longer apply.
+BOARD: day queue is the heaviest of the week
+(Saurabh r2 157w, Wolfe r3 69w, Alex 150w,
+Eduardo 158w, Pascal 143w, Sam comment 151w +
+repost 183w, Charlie 148w, Behar DM 96w all
+pending) - owner picks the weight.
+
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
