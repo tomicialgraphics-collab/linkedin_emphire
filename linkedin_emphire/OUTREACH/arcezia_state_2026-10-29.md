@@ -714,3 +714,16 @@ check docs or ask Praveen if it matters).
   A1c + "Wrote ... with 26 cases."), then python
   arcezia_kit_compare.py arcezia_results_day2_fix.json
   (expect 3 PASS + "All cases match").
+
+- 10-29 night (KIT VERIFIED ON REAL DATA): owner ran the
+  corrected builder -> "skip (no verdict): A1c" + "Wrote
+  arcezia_expected_default_state.json with 26 cases." and
+  the compare -> A1c2/A2c1/A2c2 all PASS + "All cases
+  match the default-state baseline." (exit 0). The kit is
+  now a complete, shippable package: 4 test scripts +
+  2 kit scripts + the real 26-case baseline generated from
+  tonight's records. REMAINING OWNER STEP: send the
+  Praveen message (drafted, verbatim in this file above).
+  Weekend = I draft the report + one-pager + write-up
+  draft from the committed record; Monday = package goes
+  to Praveen private first.
