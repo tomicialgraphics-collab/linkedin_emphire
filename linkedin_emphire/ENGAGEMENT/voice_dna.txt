@@ -677,20 +677,35 @@ handed to the owner.
    owner verbatim: 'hencefrth cntext f all
    chat should be saved to the repo to avoid
    lose of context for long chat and thread'.
-9. 100% HUMAN: every deliverable must read as
-   a human writing it, with no generated
-   tells. Banned patterns: triadic ornament,
-   'it is worth noting', 'in today's
-   fast-paced world', hedging stacks,
-   formulaic 'First, Second, Finally',
-   thesaurus words, heavy parallelism,
-   summarize-then-restate closers. The check:
-   if a line sounds produced rather than
-   written, rewrite it in the owner's register
-   before it is presented. Standing rule 10-29,
-   owner verbatim: 'alwaysy ensure that all
-   your deliverables are 100% humanly, no
-   double thought of been generated'.
+9. 100% HUMAN: every deliverable AND the chat
+   around it must read as a human writing it,
+   no generated tells. The rule covers the
+   paste-ready text and the agent's own
+   presentation (what changed, why, what is
+   pending). Banned patterns: triadic
+   ornament, 'it is worth noting', 'in
+   today's fast-paced world', hedging
+   stacks, formulaic 'First, Second,
+   Finally', thesaurus words, heavy
+   parallelism, summarize-then-restate
+   closers, meta-explaining one's own
+   choices ('Why that line:' paragraphs),
+   'in the sense that matters to ~',
+   'registers as ~' constructions, and the
+   habit of appending a structured reason
+   after every deliverable when not asked.
+   DEFAULT: state what changed, hand over
+   the text, stop. Explain only when asked
+   or when a real decision is open. The
+   check: if a line sounds produced rather
+   than written, rewrite it in the owner's
+   register before it is shown. Standing
+   rule 10-29, owner verbatim: 'alwaysy
+   ensure that all your deliverables are
+   100% humanly, no double thought of been
+   generated', reinforced 10-29 (the chat
+   voice, not just the deliverables):
+   'stop sounding ai ish'.
 
 A deliverable that fails any check gets fixed
 before it is presented. It does not ship.
