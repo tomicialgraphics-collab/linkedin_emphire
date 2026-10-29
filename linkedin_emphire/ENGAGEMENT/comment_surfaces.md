@@ -906,7 +906,7 @@ collaboration), NOT an ICP buyer (researcher,
 not at-risk+can't-verify); the DM plants the
 practice-to-policy bridge without pitching;
 if he engages, the next step is the Missing
-Category paper + his framework.
+Category paper + his framework. THREAD 10-29: opener SENT 10:33 AM (owner paste); Behar replied 10:48 AM (engaged in 15 minutes; distinguished partial observability from demonstrable governance compliance; named blocked actions, changed conditions, expired authority, failed control checks; asked for a concrete sanitized example of where an agent's decision history becomes unreconstructable during incident review); R2 DRAFTED (202w / 1203c = the blocked-action anatomy + the expired-authority case + the none-of-the-five-fully-producible-unless close + offer to map the five to the records) = verbatim item 24 R2.
 
 
 Charlie Rosier (1st, Co-founder @Rubi, helping
