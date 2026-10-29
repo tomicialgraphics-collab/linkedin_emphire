@@ -134,7 +134,22 @@ example, "verify that security fixes actually make it
 into production", video link. Tier 1, named-human
 security publication, in-lane. OUTSTANDING 119w
 drafted 10-24 evening, day at ceiling, tomorrow
-queue, proposed FIRST),
+queue, proposed FIRST; 10-28 late capture: (a)
+Shostack four-questions threat-modeling post (7h,
+egress example, "Would we know if that boundary was
+crossed?", twp.ai video CTA) = 129w HUMAN DRAFTED
+(verbatim item 12), the fourth-question-as-
+rerunnable-check line, the post to spend the surface
+on; (b) ESET sponsored report post (8h, 31% AI-
+malware concern vs actual incidents phishing 26% /
+unpatched 23% / no monitoring 22% / weak passwords
+20%, gated vendor link, "sponsored by ESET,
+comments are mine") = SKIP (sponsored vendor
+surface + stat class + gated CTA; the 10-27
+PHP2Shell skip already logged the repetition tax on
+this surface). The surface now holds three drafts
+(119w PHP2Shell carried, 129w threat-modeling new),
+owner picks which goes first; 60+ min spacing),
 Ruben Hassid (big AI creator; 10-24 skip = "19 things
 to delete from Claude" productivity promo, weak fit;
 10-25: Dessa/Block voice post, "no longer trust any
@@ -312,12 +327,20 @@ the verification layer). Door metaphor borrowed from her
 wall/door line. No CTA, no link, no hashtags, no
 greeting. ALTERNATIVE 62w (pure point-3/identity angle,
 verbatim item 9) if he wants the shorter one.
-BOARD FLAG (10-28 posted/queued motif load): D3 group
-post POSTED today = 0 motif words; this draft carries 2
-(re-checked, check) plus her own words (verification,
-proof). If Tamkin 132w also posts today the day reaches
-~5 motif items - 60+ min spacing if both go up.
-STATUS: DRAFTED, owner pastes when he chooses.
+POSTED 10-28 (owner pasted; live ~13h at the 10-28
+late capture, post at 240 reactions / 72 comments)
+and Mercy Mukuria (2M creator) LIKED the comment =
+the first external signal on the day's flagship
+comment. BOARD FLAG (10-28 posted motif load,
+updated): D3 group post POSTED = 0 motif words; this
+129w POSTED carries 2 (re-checked, check); Rock 88w
+POSTED carries 1 (re-derived); 3 posted so far, the
+queue behind them (Tanya 129w, Tamkin 132w, Miessler
+89w, Hamel 88w, Jerry 131w + 78w, Federico 88w,
+Dario 64w) is heavy, 60+ min spacing between any
+two, owner picks the weight.
+STATUS: POSTED, comment live, an author reply would
+be the next signal.
 Rumman Chowdhury (IAEF founder, ex-HAI Berkeley;
 reach, tier 1, added 10-28): no comment target on
 foundation/PR surfaces (10-28 skip: 3w RoW story
@@ -344,10 +367,15 @@ digest-match finalize gate, audit flag false while
 findings open, cxbom.org + blog + paper live):
 follow-up play per 10-25 item 7 = run their validator
 against their fixtures, next-week content item;
-88w HUMAN alternative DRAFTED (10-27 verbatim item 7)
-if the owner wants the public touch, flagged: third
-Rock action in 3 days, owner's call), Tarique Smith
-(Zero Day Agent),
+88w HUMAN alternative: POSTED 10-28 (owner pasted;
+live on the 12h CxBOM post, 16 reactions / 4
+comments) and Rock LIKED the comment (10-28 capture)
+= Wolfe-class author signal on the Zenity thread,
+the third-Rock-action-in-3-days flag resolved in the
+owner's favor; the 59w "Huh?" reply stays queued as
+optional (the like already moved the thread, the
+reply no longer needs to carry it), owner's call),
+Tarique Smith (Zero Day Agent),
 Brad Wolfe (AI/Operational CFO - COFO | 15 yrs | 80+
 M&A | 5 exits | 3 NASDAQ CFO seats | JD/MBA ExPWC |
 wolfepacks.com; 2nd, NOT connected, added 10-26
@@ -1135,6 +1163,68 @@ owner cleanup (delete w/ dialog screenshot, or keep) +
   129w, Jerry 78w S-1, Tamkin 132w DRAFTED), 60+
   min spacing if several post, owner picks weight.
   STATUS: DRAFTED, owner pastes when he chooses.
+- Bulk off-lane / class skips (10-28 late capture,
+  deduped against the morning triage): Brad Wolfe
+  x10 finance posts (2m-8h: ADD-BACK diligence,
+  GRAPH vs DEFINITIONS, CLEAN FOR THE USE / DEFINE
+  FOR THE COMPANY, REVIEWER STOPS REVIEWING /
+  measure the queue, SPEND IS NOT A RETURN, moat /
+  Jeff Srour business case, IT LOGS THE AGENT.
+  NOBODY LOGS THE DECISION., AGENT NEVER WENT
+  THROUGH ONBOARDING., AUTONOMY IS A PROMOTION.
+  NOT A SETTING., INTEGRATION PROBLEM inherited in
+  roll-ups) - collaborator rule unchanged (no
+  comment action on his finance posts; the
+  relationship runs the DM thread and the live
+  events today); three posts carry owner-register
+  lines kept as WEBINAR Q&A candidates for today's
+  18:00-18:45 Lagos session: IT LOGS THE AGENT
+  ("a control that cannot produce evidence from the
+  period it ran did not run"), AUTONOMY ("if you
+  cannot show the evidence for the promotion, the
+  agent was not promoted, it was assumed"),
+  ONBOARDING ("pull your last quarterly user access
+  review and count the agents on it"). Hamel
+  Husain x3 (Ghulam Mustafa book testimonial 8m with
+  book link + 14 hashtags, Dan Olsen Nov 12 event
+  "selling out" CTA 6h, Alex S. Seattle lineage
+  post 6h off-lane): launch/event CTA + off-lane
+  class, the Hamel surface stays on the 88w
+  override draft. Bolaji Adebayo x2 (storytelling
+  content advice, 52m + 2h) and Blossom Affia x4
+  (job story + speaker milestone, 2h x2 + 3h x2):
+  creator/platitude class, carried follow-back.
+  Egor Pushkin (Oracle AI World 2026 wrap, 3h,
+  vendor CTA, same class as his 10-27 OCI webinar
+  skip). Ivan Lee (ODSC takeaways 6h, Datasaur "DM
+  me" CTA; the "build your own evals" line = content
+  hook for the evals thread; 10-26 client-signal
+  file unchanged, no comment target). Sara Hooker
+  reposting Wei-Yin K. (HPO follow CTA, 7h).
+  Daniel Miessler x2 (11h): (a) AI-generated-code
+  review post, 48% signed off unconfident / 36%
+  could trace the risk-introducing change, partner
+  Cytix benchmark CTA link = partner lead-gen
+  surface, the Miessler surface stays on the 89w
+  draft; (b) foreign-gadget / drone policy news
+  link, off-lane. Iyinoluwa Aboyeji x3 (Saul Klein
+  Nigeria talent 10h, Julian Duru Africa Deep Tech
+  11h, Mike Mompi Talent Nation co-lead 13h):
+  talent/investor news class, same as the 10-27
+  Iyinoluwa repost skips. Chandrika Maheshwari (YC
+  F26 PostHog takeaways 10h, startup-talk recap).
+  Tiago Forte (Annual Review Summit promo 12h,
+  event CTA). May Habib (Writer watermarking
+  enterprise post 12h, vendor product surface).
+  Haoma Worgwu reposting Foluke Michael (GENESIS
+  creative-economy YouTube premiere 12h, promo
+  class). DEDUPED, no new action: Rumman/IAEF
+  repost (triaged this morning, SKIP stands), Jerry
+  Liu DPP (12h, 131w override DRAFTED, owner's
+  paste pending, still inside the window), Allie
+  Dot post (13h, the 129w comment is POSTED and
+  Mercy Mukuria 2M LIKED it, see the tier 1
+  entry).
 
 ## Refresh rules
 - On any network or feed paste: add new qualifying surfaces (reach,
