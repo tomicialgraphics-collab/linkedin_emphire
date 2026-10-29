@@ -514,3 +514,20 @@ check docs or ask Praveen if it matters).
   (api_key_id 44 available for a signed variant if
   needed), A2 session taint via observed_prior_acts, A3 R3
   isolation - script on request.
+
+- 10-29 night (DAY 1 FULLY COMPLETE): Verdicts feed
+  screenshots (both halves) reconciled against the local
+  capture: 23 rows = 16 single-action + 2 chain records + 5
+  chain steps; 5 BLOCK / 18 REVIEW / 0 ALLOW; the five
+  blocks are exactly B4, R2b, R3, R4, R5; 1:1 - every feed
+  row maps to a captured signed record; feed timestamps =
+  Lagos local UTC+1 (9:11 PM = 20:11 UTC, consistent with
+  the records); no export control on the Verdicts page
+  either (filters + View links only). ALL THREE CLOSEOUT
+  ITEMS DONE (round-1 JSON, Verdicts screenshot, decision
+  records covered by the local signed capture). Nothing
+  further owed for day 1. DAY 2 (Fri 10-30): same action
+  gate; A1 self-attached approvals (headline), A2 session
+  taint via observed_prior_acts, A3 R3 isolation; ~6 calls
+  -> 24/300; script handed on request. REPORT: Mon 11-02,
+  private first (both sign-offs before publication).
