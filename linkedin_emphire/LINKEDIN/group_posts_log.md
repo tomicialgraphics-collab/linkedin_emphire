@@ -96,6 +96,20 @@ RULES FOR EVERY POST HERE:
    design-time, decision-maker) are unaffected. Pending
    drafts that still contain spaced hyphens are reissued
    dash-free when next requested.
+10. HEADLINE + SUBHEADLINE ON EVERY DAILY POST (owner
+   standing instruction 10-28, "always give me
+   headline and subheadine for daily post"): every
+   daily post, group AND personal feed, is delivered
+   in chat with the HEADLINE and SUBHEADLINE labeled
+   explicitly. HEADLINE = the first line of the post
+   (the hook); it must stand alone as the point per
+   PART 12 (no greeting, no warmup, no opener line).
+   SUBHEADLINE = the second-beat line that carries
+   the tension immediately after the hook, the line
+   that sits under the headline if the post becomes
+   a card (the 10-28 profile banner pattern). The
+   body starts with the two lines in that order;
+   nothing else changes in the post.
 
 ROTATION (17 joinable groups; #15-17 RAI/EAIGG/GCRAI are
 org communities - no post inside, they get comment-drafts on
@@ -1004,5 +1018,11 @@ LOG:
         (sign-off), Allie (stale state / apology
         receipt), or Rock (BOM re-derivability),
         different point in the same family.
+        HEADLINE + SUBHEADLINE per rule 10 (labeled
+        in chat 10-28): HEADLINE = "When your agent
+        causes its first real incident, the
+        investigation will be about the system as it
+        ran on the day it happened." SUBHEADLINE =
+        "Most teams can't produce that system."
         Status: DRAFTED, owner pastes; mark POSTED
         when he confirms.
