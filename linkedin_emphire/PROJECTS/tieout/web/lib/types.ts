@@ -116,3 +116,35 @@ export interface VerifyResult {
   verdict: "PASS" | "FAIL";
   ok: boolean;
 }
+
+export interface FamilyDetail {
+  family_id: string;
+  name: string;
+  policy_label: string;
+  policy_version: string;
+  items: number;
+  controls: number;
+  item_ids: string[];
+  items_detail: { id: string; check: string; action: string }[];
+}
+
+export interface AsiCrosswalkRow {
+  asi: string;
+  title: string;
+  families: string[];
+  status: string;
+}
+
+export interface AsiF1Row {
+  check: string;
+  name: string;
+  proposed_asi: string;
+  status: string;
+}
+
+export interface AsiData {
+  crosswalk: AsiCrosswalkRow[];
+  f1_proposed: AsiF1Row[];
+}
+
+export type DocKey = "method" | "format" | "matrix" | "harness";

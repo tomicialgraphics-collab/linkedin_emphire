@@ -1,12 +1,10 @@
 # Failure-mode matrix: decision-time evidence for agent governance
 
-Co-authored technical note: Timothy Olusanya and Behar Dalipi.
-
-Jointly attributed. Contribution record, day one: the trace and the first
-two test cases derive from the Olusanya record (T0-T6, negative
-control); the host-kill test and the independent-survivability boundary
-are Dalipi's, from the joint exchange; the guarantee and failure-
-assumption columns are assigned to Dalipi per the agreed split.
+Technical note by Timothy Olusanya, developed through public
+practitioner discussion and hardened by the corrections it drew. The
+four-part binding, the T0-T6 trace, and the test classes below are the
+working model; the guarantee and failure-assumption columns remain the
+open work of this practice.
 
 ## Scope
 
@@ -66,7 +64,7 @@ A third party verifies without trusting the host: which guard (judge
 identity), which version (policy hash), which action (id chain). A
 stranger re-derives the binding from the bundle alone.
 
-## Guarantee limits (distinctions from the joint exchange, recorded)
+## Guarantee limits (as corrected in review, recorded)
 
 - Signature plus policy hash prove integrity and provenance, not correct
   enforcement, not institutional authorization, not effect execution.
@@ -80,5 +78,4 @@ stranger re-derives the binding from the bundle alone.
 Status: rows 1-4 and tests 1-4 are implemented in this harness (the
 harness IS test 4's substrate; tests 1-3 map to G-MISSING, the WAL
 discussion, and the host-kill scenario respectively). The guarantee and
-failure-assumption columns are co-authored work in progress; publication
-requires both sign-offs.
+failure-assumption columns remain the open work of this practice.

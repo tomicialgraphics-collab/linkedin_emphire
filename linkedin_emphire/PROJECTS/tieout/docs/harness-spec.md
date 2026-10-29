@@ -29,7 +29,7 @@ lifecycle:
 |------|---------|----------------|
 | A: verdict not emitted | row 1 | an item whose agent call errors produces an `undetermined` event plus a `G-TARGET` gap; a missing record produces `G-MISSING`. Both are covered by the tamper/verify suite and the `undetermined` path in `harness/runner.py`. |
 | B: emitted not preserved | row 2 | the tamper suite: one-character edit (G-HASH), dropped line (G-MISSING + chain/tail break). The WAL tier is doctrine, not yet a harness component (named gap, see matrix). |
-| C: host kill between commit and ingestion | row 3 | scenario: the bundle exists locally, ingestion never happened. The harness answer is that the local bundle is complete and self-verifying; independent durability (id issuance by the audit system) is the doctrine in the matrix, assigned to the co-author. |
+| C: host kill between commit and ingestion | row 3 | scenario: the bundle exists locally, ingestion never happened. The harness answer is that the local bundle is complete and self-verifying; independent durability (id issuance by the audit system) is the doctrine in the matrix, not yet a component. |
 | D: preserved but not independently verifiable | row 4 | `tieout verify` itself, plus the judge audit (P6) that measures the last trusted component (the detectors) every run. |
 
 ## The four-part binding, field map
@@ -57,7 +57,7 @@ flip; a case- or surface-sensitive judge shows up as a number.
 |-----|-------|-------|
 | G-ASI-MAPPING | `mappings/asi.py` | F1 sub-check ASI mapping is proposed; confirm against the full 2026 OWASP Agentic list at M3 |
 | G-WAL | harness (doctrine) | the write-ahead tier (row 2 recovery) is specified in the matrix, not yet implemented as a component |
-| G-ISSUANCE | harness (doctrine) | id issuance by an independent audit system (row 3 guarantee) is co-authored doctrine, not yet a component |
+| G-ISSUANCE | harness (doctrine) | id issuance by an independent audit system (row 3 guarantee) is specified doctrine, not yet a component |
 
 ## Non-goals
 

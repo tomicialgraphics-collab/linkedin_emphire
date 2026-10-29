@@ -348,3 +348,40 @@ flip the public story (content cross-posts, Behar link) after his
 sign-off.
 Verified this turn: ruff clean, pytest 13/13, SELFTEST 7/7, next build
 clean (4 static pages), server smoke: Next UI title + /api/runs green.
+
+## 7.8 PERSONAL PORTFOLIO REFRAME (10-29, owner directive verbatim)
+"THIS PROJECT IS SPECIFICALLY FOR ME, MY PERSONAL PORTFOLIO NOT
+PAIRED. BUILD IT TO INDustry STANDARD NOT SCAFFOLD, BUILD AND DESIGN
+ALL PAGES, WELL DOCUMENTED."
+Execution this turn:
+- PAIRING STRIPPED from the public tree (single author = Timothy
+  Olusanya): pyproject authors, LICENSE, README (failure-mode
+  benchmark section + license line), docs/failure-mode-matrix.md
+  (header = single-author note developed through public practitioner
+  discussion; guarantee-limits heading; status paragraph),
+  docs/harness-spec.md (2 co-author references). Grep-verified: zero
+  Behar/Dalipi/co-authored/joint references remain in the public tree.
+  (The private record of the Behar M5 co-authorship track stands as
+  written; the public artifact is the owner's own.)
+- ALL PAGES BUILT (Next.js, monochrome): #/ landing (hero, the gap,
+  six-pillars grid, verify-it-yourself, the artifact), #/runs,
+  #/run/<id>, #/method, #/format, #/matrix, #/harness, #/families
+  (items table + ASI crosswalk + proposed mapping). Top nav with
+  active state. Docs render in-page via /api/docs + a small markdown
+  renderer (the repo's docs ARE the site content).
+- INDUSTRY STANDARD / WELL DOCUMENTED: Makefile (install/lint/test/
+  selftest/demo/verify/ui/serve/clean), SECURITY.md (verify-don't-
+  trust cold-clone procedure, reporting path, safe use, heuristic
+  disclaimer), CONTRIBUTING.md (the evidence doctrine, how to add a
+  family or a page, style), CHANGELOG.md (keep-a-changelog, 0.1.0/
+  0.2.0), README (positioning line: public artifact of an independent
+  AI security research practice, built to be verified not trusted and
+  reviewed cold; page table; layout updated).
+- Server: /api/docs (4 docs) + /api/families items_detail. Tests:
+  14/14 (docs endpoint + families detail added). ruff clean, next
+  build clean (typechecked), SELFTEST 7/7, server smoke green (docs,
+  families detail, landing hero all served).
+- Push package refreshed: tieout-push-ready.zip (forced add, *.zip
+  ignored repo-wide) = clean git repo, single commit, origin pre-set
+  to Teamthy/Tie-out-. The 403 on the agent push stands (per-repo
+  token scope); owner push path unchanged.

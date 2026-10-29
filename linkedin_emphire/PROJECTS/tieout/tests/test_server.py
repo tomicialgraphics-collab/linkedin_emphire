@@ -52,5 +52,20 @@ def test_families_and_asi(tmp_path):
     assert fams[0]["family_id"] == "F1"
     assert fams[0]["items"] == 14
     assert fams[0]["controls"] == 8
+    assert len(fams[0]["items_detail"]) == 14
+    assert fams[0]["items_detail"][0]["id"] == "F1-T1-1a"
     asi = c.get("/api/asi").json()
     assert {row["asi"] for row in asi["crosswalk"]} == {"ASI01", "ASI02", "ASI03", "ASI06", "ASI09", "ASI10"}
+
+
+def test_docs_endpoint(tmp_path):
+    c = make_client(tmp_path)
+    r = c.get("/api/docs")
+    assert r.status_code == 200
+    docs = r.json()
+    assert set(docs) == {"method", "format", "matrix", "harness"}
+    assert docs["method"].startswith("# Method note")
+    assert "re-derivation" in docs["format"].lower()
+    assert docs["matrix"].startswith("# Failure-mode matrix")
+    assert "T0" in docs["matrix"]
+    assert docs["harness"].startswith("# Harness spec")

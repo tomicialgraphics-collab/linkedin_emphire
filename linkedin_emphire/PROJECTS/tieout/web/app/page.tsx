@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getRuns } from "../lib/api";
-import type { RunSummary } from "../lib/types";
-import { VerdictBadge } from "../components/Badge";
+import { Landing } from "../components/Landing";
+import { RunList } from "../components/RunList";
 import { RunDetail } from "../components/RunDetail";
+import { DocsPage } from "../components/DocsPage";
+import { FamiliesPage } from "../components/FamiliesPage";
+import type { DocKey } from "../lib/types";
 
 function useHashRoute(): string {
   const [hash, setHash] = useState("");
@@ -17,87 +19,32 @@ function useHashRoute(): string {
   return hash;
 }
 
-function RunList() {
-  const [runs, setRuns] = useState<RunSummary[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
+const NAV: { label: string; href: string; match: RegExp }[] = [
+  { label: "runs", href: "#/runs", match: /^#\/run/ },
+  { label: "method", href: "#/method", match: /^#\/method/ },
+  { label: "format", href: "#/format", match: /^#\/format/ },
+  { label: "matrix", href: "#/matrix", match: /^#\/matrix/ },
+  { label: "families", href: "#/families", match: /^#\/families/ },
+];
 
-  useEffect(() => {
-    getRuns().then(setRuns).catch((e) => setError(String(e)));
-  }, []);
-
-  if (error) return <div className="empty">could not load runs: {error}</div>;
-  if (!runs) return <div className="empty">loading runs…</div>;
-  if (runs.length === 0)
-    return (
-      <div className="empty">
-        no runs yet
-        <pre className="code">
-          {`tieout demo        # keyless, deterministic sample agent
-tieout verify runs/demo`}
-        </pre>
-      </div>
-    );
-
-  return (
-    <section>
-      <h1>Runs</h1>
-      <p className="sub">
-        each row is an evidence bundle: the verdicts, the controls, the named gaps, the judge's own
-        numbers
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>run</th>
-            <th>agent</th>
-            <th>started (utc)</th>
-            <th>verdicts</th>
-            <th>controls</th>
-            <th>gaps</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {runs.map((r) => (
-            <tr key={r.id}>
-              <td className="mono">
-                <a href={`#/run/${encodeURIComponent(r.id)}`}>{r.id}</a>
-              </td>
-              <td className="mono small">{r.agent}</td>
-              <td className="mono small">{r.started_at}</td>
-              <td>
-                <span className="verdict-group">
-                  {r.verdicts.pass != null && <VerdictBadge v="pass" />}
-                  {r.verdicts.fail != null && <VerdictBadge v="fail" />}
-                  {r.verdicts.undetermined != null && <VerdictBadge v="undetermined" />}
-                </span>
-              </td>
-              <td className="mono small">
-                {r.controls} / fp {r.controls_fp} / fn {r.controls_fn}
-              </td>
-              <td>
-                {r.gaps === 0 ? (
-                  <span className="ok-dot" title="no named gaps" />
-                ) : (
-                  <span className="gap-pill">{r.gaps}</span>
-                )}
-              </td>
-              <td>
-                <a className="btn" href={`#/run/${encodeURIComponent(r.id)}`}>
-                  open
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </section>
-  );
-}
+const DOC_KEYS: Record<string, DocKey> = {
+  "#/method": "method",
+  "#/format": "format",
+  "#/matrix": "matrix",
+  "#/harness": "harness",
+};
 
 export default function Home() {
   const hash = useHashRoute();
-  const match = hash.match(/^#\/run\/(.+)$/);
+  const runMatch = hash.match(/^#\/run\/(.+)$/);
+  const route = runMatch ? "#/run" : hash || "#/";
+
+  let view: React.ReactNode;
+  if (runMatch) view = <RunDetail id={decodeURIComponent(runMatch[1])} />;
+  else if (route.startsWith("#/runs")) view = <RunList />;
+  else if (DOC_KEYS[route]) view = <DocsPage docKey={DOC_KEYS[route]} />;
+  else if (route.startsWith("#/families")) view = <FamiliesPage />;
+  else view = <Landing />;
 
   return (
     <div className="app">
@@ -105,11 +52,20 @@ export default function Home() {
         <a className="brand" href="#/">
           tieout
         </a>
-        <span className="tagline">
-          the report is a claim. the bundle is a record a stranger can re-derive.
-        </span>
+        <nav className="nav">
+          {NAV.map((n) => (
+            <a
+              key={n.href}
+              className={n.match.test(hash) ? "nav-link nav-active" : "nav-link"}
+              href={n.href}
+            >
+              {n.label}
+            </a>
+          ))}
+        </nav>
+        <span className="tagline">the report is a claim. the bundle is a record.</span>
       </header>
-      <main>{match ? <RunDetail id={decodeURIComponent(match[1])} /> : <RunList />}</main>
+      <main>{view}</main>
       <footer className="footer">
         p1 verdict event · p2 provenance · p3 negative controls · p4 named gaps · p5 re-derivation ·
         p6 judge audit

@@ -22,3 +22,17 @@ export function verifyRun(id: string): Promise<VerifyResult> {
     }
   );
 }
+
+import type { AsiData, DocKey, FamilyDetail } from "./types";
+
+export function getDocs(): Promise<Record<DocKey, string>> {
+  return get<Record<DocKey, string>>("/api/docs");
+}
+
+export function getFamiliesDetail(): Promise<FamilyDetail[]> {
+  return get<FamilyDetail[]>("/api/families");
+}
+
+export function getAsi(): Promise<AsiData> {
+  return get<AsiData>("/api/asi");
+}

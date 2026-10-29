@@ -26,6 +26,11 @@ where raw outputs were not shipped, the numbers cannot be re-audited.
 Nobody in the landscape emits an artifact that survives contact with a
 stranger. That is this project.
 
+This repository is the public artifact of an independent AI security
+research practice, built to be verified, not trusted, and reviewed
+cold: if a claim here cannot be re-derived from a cold clone, it does
+not belong here.
+
 ## Six pillars, all in code
 
 | pillar | doctrine |
@@ -104,10 +109,18 @@ tieout serve --port 8000 --runs-dir runs
 
 One command serves the API and the built UI. The UI (Next.js, static
 export, black and white on purpose) is a viewer for tieout's own
-evidence bundles, not an LLM observability dashboard: run list,
-per-run verdict timeline with the hash chain, the metric, the negative
-controls, the named gaps, the judge audit, and a stranger verify you
-can trigger from the page.
+evidence bundles, not an LLM observability dashboard. Pages:
+
+| route | page |
+|-------|------|
+| `#/` | landing: the gap, the six pillars, verify-it-yourself, the artifact |
+| `#/runs` | the run list: verdicts, controls, gaps per bundle |
+| `#/run/<id>` | the full bundle: verdict timeline with the hash chain, the metric, controls, gaps, judge audit, provenance, and a stranger verify you can trigger from the page |
+| `#/method` | the method note |
+| `#/format` | the bundle format v1 spec |
+| `#/matrix` | the failure-mode matrix |
+| `#/harness` | the harness spec |
+| `#/families` | check families + the OWASP Agentic crosswalk |
 
 ## Check families
 
@@ -125,12 +138,11 @@ can trigger from the page.
 
 ## The failure-mode benchmark
 
-`docs/failure-mode-matrix.md` is the first co-authored artifact:
-Timothy Olusanya and Behar Dalipi, jointly attributed, with a day-one
-contribution record. Four failure modes (verdict not emitted; emitted
+`docs/failure-mode-matrix.md` is the research core of the project: four
+failure modes of decision-time evidence (verdict not emitted; emitted
 but not preserved; host dies between local commit and independent
 ingestion; preserved but not independently verifiable) across five
-columns, with two test classes: P (persistence/recovery) and V
+columns, with two test classes, P (persistence/recovery) and V
 (cryptographic verification, key-free). Test 4 is this harness: `verify`
 plus the tamper suite, key-free by construction.
 
@@ -156,6 +168,10 @@ web/               the UI (Next.js, static export, black and white)
 docs/              format spec, harness spec, method note, matrix
 runs/              reproducible runs (runs/demo is the committed sample)
 tests/             pytest: verify/tamper/selftest/CLI/server
+Makefile           install / lint / test / selftest / demo / verify / ui / serve
+SECURITY.md        how to verify the repo's claims, how to report
+CONTRIBUTING.md    the evidence doctrine, how to add families and pages
+CHANGELOG.md       keep-a-changelog
 ```
 
 ## Cited research
@@ -185,4 +201,4 @@ artifact does not survive the stranger.
 
 ## License
 
-MIT. Co-authored: Timothy Olusanya and Behar Dalipi.
+MIT. (c) 2026 Timothy Olusanya.

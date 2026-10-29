@@ -112,9 +112,27 @@ def create_app(runs_dir: str | Path) -> FastAPI:
                 "items": len(f.items),
                 "controls": len(f.controls),
                 "item_ids": f.item_ids(),
+                "items_detail": [
+                    {"id": i.item_id, "check": i.check, "action": i.action} for i in f.items
+                ],
             }
             for f in list_families()
         ]
+
+    @app.get("/api/docs")
+    def docs() -> dict:
+        base = Path(__file__).resolve().parent.parent / "docs"
+        return {
+            key: (base / fname).read_text(encoding="utf-8")
+            if (base / fname).exists()
+            else ""
+            for key, fname in {
+                "method": "method-note.md",
+                "format": "bundle-format-v1.md",
+                "matrix": "failure-mode-matrix.md",
+                "harness": "harness-spec.md",
+            }.items()
+        }
 
     @app.get("/api/asi")
     def asi() -> dict:
