@@ -540,6 +540,65 @@ Eduardo 158w, Pascal 143w, Sam comment 151w +
 repost 183w, Charlie 148w, Behar DM 96w all
 pending) - owner picks the weight.
 
+Filip Hric (FOLLOWING the owner; "I help
+developers make AI-written software
+reliable"): 10-29, 1m at paste: PROMO RELAY
+post (lightest class of the day): "How do
+you know you're ready to release when
+quality spans multiple teams, tools, and
+applications?" + Laveena Ramchandani's free
+upskilling course on ShiftSync, "Quality
+Governance at Enterprise Scale": 4 bullets
+(connecting requirements, tests, and
+release decisions with a clear evidence
+chain; prioritizing coverage by business
+risk and making gaps visible; keeping
+agentic QA workflows auditable; building a
+release confidence scorecard); six chapters,
+case studies, checklists; CTA link
+lnkd.in/eGMh_Me5 ("Take the course here
+👇"). He is the promoter, not the course
+author. LINK READ (rule 4): lnkd.in/eGMh_Me5
+FETCH FAILED (proxy error, 10-29); the
+comment does not depend on the course
+content, it extends the concept from the
+post body. CALL: practitioner register,
+compact; the comment ignores the promo
+entirely (no course praise, no CTA
+engagement) and answers his opening
+question: the evidence chain is where the
+scorecard stands or falls, the scorecard is
+a view, the chain is the substance;
+'are we ready to release' should be
+answerable from the record alone, weeks
+later, without asking the teams, and that
+only works if every hop is attributable
+(which requirement, which test, which tool
+version, which decision consumed the
+result, recorded by the system that owns
+that state); a green scorecard whose chain
+breaks at one hop is a dashboard, and a
+dashboard is a claim; the agentic QA line
+matters most because the agent writes the
+tests and the verdict, and the chain is
+what keeps the release re-justifiable
+after the run is gone. DRAFTED (129w / 753c
+HUMAN, verbatim item 28). CLASS: Following-
+the-owner in-lane-adjacent practitioner
+(AI-written software reliability = the
+quality-governance edge of the lane); promo
+relay surface, low pitch weight; SKIP is a
+legitimate owner call if he wants no
+association with course promotion; if
+posted, the comment stands on the concept
+alone and the post is free to keep its CTA.
+BOARD: day queue is the heaviest of the
+week (Saurabh r2 157w, Wolfe r3 69w, Alex
+150w, Eduardo 158w, Pascal 143w, Sam comment
+151w + repost 183w, Charlie 148w, Neil
+137w, Behar R4 337w, Evan 146w, Charmaine
+136w all pending) - owner picks the weight.
+
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 Kai Greshake, Leon Derczynski (garak, NVIDIA), Battista Biggio
 (Cagliari), Dustin Farley (Lakera), Pete Bryan (Microsoft AI Red
