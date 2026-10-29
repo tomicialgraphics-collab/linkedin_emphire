@@ -1123,8 +1123,13 @@ every input is a file, evidence can be
 closed; close: gates make the agent
 produce it, the pipeline's job is to
 make it re-derive without the
-session). 124w / 717c HUMAN DRAFTED
-(verbatim item 35, /tmp/tarique_-
+session). 146w / 859c HUMAN DRAFTED v2 (owner
+directive 10-29: add substantial
+compliment = the untrusted-data
+default named as the stand-out design
+decision, why it is right, the common
+alternative; the extension unchanged;
+verbatim item 35, /tmp/tarique_-
 endostack_comment.txt). LANE
 CONVERGENCE NOTE: his Verify gate is
 convergent design with the owner's
