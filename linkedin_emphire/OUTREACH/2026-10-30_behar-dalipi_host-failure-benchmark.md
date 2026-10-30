@@ -515,3 +515,40 @@ Prepared `PROJECTS/2026-10-30_behar-host-failure-benchmark/spec-v0.2-integrated-
 Behar,
 
 Thank you. I’ve integrated your guarantee and failure-assumption analysis into the updated specification. I kept your distinctions against the four rows and made the guarantees conditional on the assumptions and failure boundaries. I also separated carrying the original T1 timestamp through replay from independently verifying that timestamp. Please review the attached v0.2 and flag any changes, especially that timestamp distinction. Once we agree on it, I’ll move to the runnable harness.
+
+## Owner request: professional Word document (10-30)
+
+### INPUT (verbatim)
+
+give me the doc as a doc file well editted, industry standard
+
+### DISCUSS
+
+- Owner requested the integrated v0.2 harness specification as an
+  editable Word document, professionally edited and formatted.
+- Created a DOCX version of the full v0.2 specification with a cover,
+  document-control metadata, purpose and scope, contents, running
+  header/footer with page numbering, consistent heading hierarchy,
+  and structured tables for phases and the M1-M4 guarantee analyses.
+- Kept the technical content aligned with the Markdown v0.2 source,
+  including the unresolved distinction between carrying T1 through
+  replay and independently verifying a timestamp.
+
+### THOUGHT
+
+- Preserve the established draft status and technical scope. Do not
+  imply mutual approval, final publication, or production guarantees.
+- Edit the docx for readability while preserving conditional wording,
+  trust assumptions, failure boundaries, residual limitations, and
+  proposed acceptance criteria. Use neutral, print-ready formatting.
+- Validate that the DOCX opens through python-docx, all expected
+  sections and tables are present, the phase explanation is retained,
+  and no em/en dash separators appear in the generated document.
+
+### DELIVERABLE
+
+`PROJECTS/2026-10-30_behar-host-failure-benchmark/host-failure-benchmark_spec-v0.2.docx`
+
+Editable Word document, 45,822 bytes, 2,143 extracted words, 18
+heading entries including contents, 7 tables. Verified by reopening
+with python-docx. DRAFT, for technical review and mutual approval.

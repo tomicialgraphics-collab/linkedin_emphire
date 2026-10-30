@@ -183,13 +183,15 @@ corresponding action was proposed. Issuance proves that the host
 requested to propose an action; the independently preserved
 commitment to the proposal content is the second witness. For the
 high-consequence class the complete default is the pair. The
-commitment binds the descriptor as of proposal time, so a modified
-action is a new proposal that requires its own commitment.
+commitment binds the descriptor as of registration time, so a modified
+action requires its own commitment.
 
-Guarantee scope: an ID alone witnesses a request; only the pair
-witnesses a proposal.
+Guarantee scope: an ID alone witnesses a request; the pair witnesses
+that the specified proposal descriptor was independently registered.
+It does not prove that the guarded execution path was entered or that
+the guard evaluated it.
 Limitation: without the preserved commitment, the benchmark can name
-the gap but cannot state what was proposed.
+the gap but cannot state what proposal content was registered.
 
 ### 5.2 The binding is not the decision
 
