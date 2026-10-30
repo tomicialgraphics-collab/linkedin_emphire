@@ -134,7 +134,7 @@ Let's build together.
 - Lead with what the owner builds and who the work helps. Make the mission practical, not aspirational in the abstract.
 - Keep the lab-to-software transition as a real origin detail, but avoid inventing a specific project, result, or teaching outcome.
 - Preserve the current areas of work from the supplied copy. Do not assert a new job, audience size, or measurable impact.
-- Provide one concise banner line and one coherent About draft. The About section is 247 words / 1,474 characters, with one contraction, no dash separators, and no terms from the EMPIRE banned-word list.
+- Provide one concise banner line and one coherent About draft. The About section is 237 words / 1,412 characters, with four contractions, no dash separators, and no terms from the EMPIRE banned-word list.
 
 ## DELIVERABLE
 
@@ -144,15 +144,15 @@ Build useful software. Make AI understandable. Help more engineers learn by buil
 
 ### LinkedIn About
 
-I’m a Software Engineer who builds practical software across web, AI integration, computer vision, e-commerce, and business automation. I also teach engineers to learn by building.
+I am a Software Engineer who builds practical software across web, AI integration, computer vision, e-commerce, and business automation. I also teach engineers to learn by building.
 
-I started in Medical Laboratory Science before moving into software. I stopped waiting for the perfect course and began choosing projects, building them, seeing what broke, fixing it, and shipping. That process still shapes how I work and what I share.
+I started in Medical Laboratory Science, running blood tests before I moved into software. I stopped waiting for the perfect course and learned by choosing projects, building them, seeing what broke, fixing it, and shipping. That process still shapes how I work and what I share.
 
-I don't treat AI as a goal on its own. I look for where it helps solve a real problem, and build the software around it so people can use it well.
+I don't treat AI as a goal on its own. I look for the specific job it can do, then build software around it so people can use it well.
 
-Here, I share the work behind the result: the decisions, the code, the mistakes, and what I learned from fixing them. I teach from projects I have built, because engineers learn more when they can see how an idea behaves in a real product.
+Here, I share the work behind the result: the decisions, the code, what broke, and how I fixed it. I teach from projects I’ve built, showing how choices play out once code meets a real product.
 
-I’m based in Lagos, Nigeria. I want African engineers and the products they build to be visible in the global tech conversation, on their own merit.
+I am based in Lagos, Nigeria. I want African engineers and the products they build to be visible in the global tech conversation, on their own merit.
 
 What I share:
 • Software engineering lessons from real projects
@@ -162,4 +162,4 @@ What I share:
 
 My current focus is building AI-powered products, doing computer vision research, and teaching engineers who want to grow through practice.
 
-If you’re building a product, moving into tech, or teaching engineers, send me a message. Tell me what you’re working on and what you’re learning along the way.
+If you’re building a product, moving into tech, or teaching engineers, message me. Tell me what problem you’re trying to solve.
