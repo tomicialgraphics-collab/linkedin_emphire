@@ -599,6 +599,17 @@ week (Saurabh r2 157w, Wolfe r3 69w, Alex
 137w, Behar R4 337w, Evan 146w, Charmaine
 136w all pending) - owner picks the weight.
 
+Krish Naik (AI education, 14+ years in AI, Following,
+added 10-30; Anthropic Fellows announcement =
+tier 1 reach into an audience that is deciding
+whether to apply. SOURCE RULE met: shortened link
+resolved to the Greenhouse listing, figures checked,
+and two omissions found (the residency condition and
+25 to 50% full-time conversion in previous cohorts).
+OUTSTANDING 115w DRAFTED, verbatim item 26. No prior
+owner comment with him on record, so no thread to
+reply into first. Argument test: output over stipend.)
+
 ## Tier 2 — home turf (LLM security / red teaming; this audience hires)
 
 Kyle Bartlett (PENDING CONNECTION REQUEST 10-29,
@@ -769,6 +780,16 @@ adds the retention point), send now, direct (he follows).
 His 8 new posts today (26m-8h): NONE commented today (cap +
 just closed); TOMORROW queue = "THE ASSISTANT THAT SAYS NO"
 (26m, best) + "NAME THE LINE BEFORE YOU BUY THE TOOL" (5h).
+UPDATE 10-30 (new 12m post): fractional AI-governance
+owner and written authority. A 91w comment on whether
+an open stop survives removal is DRAFTED in verbatim
+entry 25, not posted. Brad is now first-degree and an
+active thread partner. His reply on the versioned
+access list (entry 23) has a response DRAFTED; whether
+sent is unknown, so respond there first if pending.
+The day action count is unknown; observe existing
+spacing and cap before a new comment. Homepage read;
+LinkedIn profile returned 403.
 Anthonette Ochieze Adanyin (Premium, 2nd, NOT followed;
 Lead Data Scientist | AI Engineer | AI Security |
 TechWomen100 Winner 2026 | Speaker; added 10-26 from the
@@ -2682,3 +2703,10 @@ comment modes + slop detector + source rule +
 profile read and method ladder, 10-24 humanization
 fine-tune; daily cap expanded 8 base / 12 max with
 anti-clustering guardrails + 10-30 review trigger)
+
+10-30 late addendum: Krish Naik added to tier 1
+(Anthropic Fellows post, OUTSTANDING 115w DRAFTED,
+verbatim item 26). LinkedIn profile and hashtag
+pages were not needed for this one; the Greenhouse
+listing was fetched and read, so the comment is
+source-verified rather than UNVERIFIED-SOURCE.

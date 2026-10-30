@@ -102,3 +102,13 @@ drafts (drafts live in conversation history and in response_templates convention
 - `2026-10-30_to_2026-10-30_verbatim.md`: added (24) Araiz Khan
   comment on the owner's live agent-permissions post; 53w reply
   DRAFTED, adds target and side-effect detail to approval prompts.
+
+- `2026-10-30_to_2026-10-30_verbatim.md`: added (25) Brad Wolfe's
+  fractional AI governance post; a comment on keeping an open stop
+  in force during replacement is DRAFTED, not posted. LinkedIn profile
+  and hashtag pages returned 403; wolfepacks.com homepage was read.
+
+- `2026-10-30_to_2026-10-30_verbatim.md`: added (26) Krish Naik's
+  Anthropic Fellows announcement; link resolved to the Greenhouse
+  listing and read in full, a 115w comment on the residency condition
+  and the 25 to 50% conversion figure is DRAFTED, not posted.
