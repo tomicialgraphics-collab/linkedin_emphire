@@ -122,8 +122,8 @@ Your app works in the demo. That does not prove it is ready to scale.
 ### SUBHEADLINE
 Reliability shows up when data grows, requests overlap, and dependencies slow down.
 
-### POST (paste-ready, 245 words / 1,466 characters, DRAFTED)
-Gates: 4 contractions; no em/en or separator dashes; 0 banned terms; 4 targeted hashtags on the final line; no links.
+### POST (paste-ready, DRAFTED)
+Counts: body 218 words / 1,310 characters; including headline and subheadline 245 words / 1,466 characters. Gates: 4 contractions; no em/en or separator dashes; 0 banned terms; 4 targeted hashtags on the final line; no links.
 
 An endpoint that returns every row feels fine with a small database. Add a much larger account and several requests at once, and one unbounded query can turn a quick page into a slow one.
 
