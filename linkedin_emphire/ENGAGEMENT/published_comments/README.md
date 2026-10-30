@@ -96,3 +96,6 @@ drafts (drafts live in conversation history and in response_templates convention
   reply to the owner's self-grading DM; 54w response DRAFTED, offers
   five random conclusions per close plus action-driving cases, with
   full-close review on any divergence.
+- `2026-10-30_to_2026-10-30_verbatim.md`: added (23) Brad Wolfe reply
+  on versioning the access list and board sign-off; 54w reply DRAFTED,
+  adds retention of the prior version and its approval record.
