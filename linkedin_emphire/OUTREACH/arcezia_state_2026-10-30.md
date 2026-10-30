@@ -81,7 +81,7 @@ Praveen
 
 ### DELIVERABLE
 
-DRAFTED, not sent. 19 words / 117 characters. 0 contractions; 0
+DRAFTED, not sent. 18 words / 120 characters. 0 contractions; 0
 en/em dashes; 0 banned terms.
 
 Praveen,
