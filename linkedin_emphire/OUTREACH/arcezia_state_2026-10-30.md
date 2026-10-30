@@ -54,3 +54,37 @@ marked which findings you accept and when each fix is due, I’ll rerun
 those cases against the recorded baseline.
 
 Have a good weekend too.
+
+## Praveen, 11:18 AM (received; owner paste, verbatim)
+
+**[PRAVEEN BABU](https://www.linkedin.com/in/ACoAACaQ1v4BPi3e89YTgJaFvsTN-0vLYTY52lE)** 11:18 AM
+
+Keeping the page mismatch apart from the service findings makes sense. Talk Monday.
+
+Praveen
+
+### DISCUSS
+
+- This confirms Praveen received and accepts the proposed separation
+  between the Live Verify documentation mismatch and service findings.
+  "Talk Monday" confirms the next exchange; the report remains due
+  privately first on Monday, 2026-11-02.
+- His response indicates the preceding owner reply was sent. The
+  earlier DRAFTED status is updated by this receipt. No findings are
+  accepted yet and no fix dates are set; those remain Monday items.
+
+### THOUGHT
+
+- A short acknowledgement is enough. Confirm the private-first report
+  and the separation he approved. Do not restate the full technical
+  issue or make claims about fixes or accepted findings.
+
+### DELIVERABLE
+
+DRAFTED, not sent. 19 words / 117 characters. 0 contractions; 0
+en/em dashes; 0 banned terms.
+
+Praveen,
+
+Talk Monday. I’ll send the report privately first, with the page
+mismatch separated from the service findings.
