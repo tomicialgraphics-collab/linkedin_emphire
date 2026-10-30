@@ -86,3 +86,6 @@ drafts (drafts live in conversation history and in response_templates convention
 - `2026-10-30_to_2026-10-30_verbatim.md`: added (19) Hitesh Choudhary
   reply to the owner's posted Mistral comment; 60w reply DRAFTED,
   acknowledges pinning across both API and open-weight models.
+- `2026-10-30_to_2026-10-30_verbatim.md`: added (20) Gita Gole reply to
+  the owner's voice-agent post; 74w reply DRAFTED, receives her
+  compliment and asks for the smallest running slice and trace.
