@@ -89,3 +89,6 @@ drafts (drafts live in conversation history and in response_templates convention
 - `2026-10-30_to_2026-10-30_verbatim.md`: added (20) Gita Gole reply to
   the owner's voice-agent post; 74w reply DRAFTED, receives her
   compliment and asks for the smallest running slice and trace.
+- `2026-10-30_to_2026-10-30_verbatim.md`: added (21) updated Sean
+  Myers post snapshot: 1 reaction, 22 comments, 1,250 impressions;
+  existing 90w reply remains DRAFTED, not posted.
