@@ -677,6 +677,30 @@ handed to the owner.
    owner verbatim: 'hencefrth cntext f all
    chat should be saved to the repo to avoid
    lose of context for long chat and thread'.
+   EXTENDED 10-30, owner verbatim (ALL CAPS):
+   'always save input, discuss, thought,
+   deliverablees context to repo to avoid
+   chain of thouht lose and data lose'.
+   Scope now covers the WHOLE turn, not just
+   the pasted input. Four sections, every
+   turn: (a) INPUT, the pasted content
+   verbatim; (b) DISCUSS, the thread state,
+   what each party said and agreed, what is
+   open; (c) THOUGHT, the reasoning behind
+   every decision made that turn: the call,
+   the options considered and the ones
+   rejected and why, the constraints applied
+   (thread-scoped rules, gates, voice rules),
+   and any state uncertainty; (d)
+   DELIVERABLE, every draft and final text
+   with its gate counts (words, chars,
+   contractions, dashes, banned words) and
+   its status (DRAFTED / ARMED /
+   SENT-CONFIRMED). The capture file for a
+   thread carries all four sections for each
+   round. A future turn must be able to
+   reconstruct the chain of thought, not
+   just the outputs.
 9. 100% HUMAN: every deliverable AND the chat
    around it must read as a human writing it,
    no generated tells. The rule covers the
