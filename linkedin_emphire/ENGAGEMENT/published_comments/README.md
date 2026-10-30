@@ -99,3 +99,6 @@ drafts (drafts live in conversation history and in response_templates convention
 - `2026-10-30_to_2026-10-30_verbatim.md`: added (23) Brad Wolfe reply
   on versioning the access list and board sign-off; 54w reply DRAFTED,
   adds retention of the prior version and its approval record.
+- `2026-10-30_to_2026-10-30_verbatim.md`: added (24) Araiz Khan
+  comment on the owner's live agent-permissions post; 53w reply
+  DRAFTED, adds target and side-effect detail to approval prompts.
