@@ -123,7 +123,7 @@ Your app works in the demo. That does not prove it is ready to scale.
 Reliability shows up when data grows, requests overlap, and dependencies slow down.
 
 ### POST (paste-ready, DRAFTED)
-Counts: body 218 words / 1,310 characters; including headline and subheadline 245 words / 1,466 characters. Gates: 4 contractions; no em/en or separator dashes; 0 banned terms; 4 targeted hashtags on the final line; no links.
+Counts: body 249 words / 1,504 characters; including headline and subheadline 276 words / 1,660 characters. Gates: 4 contractions; no em/en or separator dashes; 0 banned terms; 4 targeted hashtags on the final line; no links.
 
 An endpoint that returns every row feels fine with a small database. Add a much larger account and several requests at once, and one unbounded query can turn a quick page into a slow one.
 
@@ -139,6 +139,8 @@ Before calling a feature production-ready, ask:
 Then design for the bottleneck you measured. Index the queries your app actually runs. Paginate list endpoints. Move long operations out of the request path. Set timeouts and rate limits. Cache data only when it is frequently read and safe to serve stale.
 
 Scaling isn't just adding servers. It is limiting how far one slow or failing component can affect the rest of the product, and making that failure visible before it turns into a larger outage.
+
+The same pass matters in AI products. Measure service latency and model behavior separately. A healthy endpoint does not tell you whether outputs remain useful under the cases real users send.
 
 That’s what reliable scaling means to me: not preventing every failure, but keeping failure contained, visible, and recoverable.
 
