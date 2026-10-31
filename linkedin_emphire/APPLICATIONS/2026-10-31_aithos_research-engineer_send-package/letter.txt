@@ -1,0 +1,18 @@
+To the Aithos team,
+
+I am applying for the Research Engineer role because it is the closest match to what I actually build. I work on AI safety from the build-and-test side: I design and run evaluations that check whether an AI system does what it should under the conditions a real user or a regulator would test, and I build the code so those checks are reproducible, public, and rerunnable by anyone who wants to question them.
+
+The most direct proof is a five-test red-team harness I published (github.com/Teamthy/ai-redteam-five-tests). It runs prompt injection, retrieval poisoning, tool description poisoning, and multilingual refusal tests against any OpenAI-compatible model, resolves tool calls, records the raw responses, and reports each failure with its sample size and rate. It is written to the standard the role asks for: clean, tested, documented Python that others can build on, not a one-off script. Every result traces back to a specific prompt, model, and commit, which is the part I care about most. I would not report a number I could not reproduce.
+
+That reproducibility mindset is why Aithos stands out to me. Turning every piece of research into a benchmark, open tooling, or reproducible methodology, and making work that regulators and other teams can actually use, is the bar I already hold my own work to. It is also what your principles describe: the values a model encodes should stay open and contestable rather than converge on one ideal, and a result is only as strong as the method that produced it. So I publish the tests and not just the findings, which is the difference between a claim someone has to trust and one they can rerun.
+
+My public series, Breaking AI, applies the same discipline to the question I started from: shipping AI that survives real users. The failures I write about are the boring ones (the prompt is not a wall, retrieved documents are untrusted input, tool descriptions are trusted unread, test sets that only cover one language), and the controls I recommend are engineering controls, not slogans.
+
+A few things I want to be straight about. I am a self-taught practitioner, not a formal ML researcher, so I have no peer-reviewed papers. I have published a public, reproducible body of work instead, and I build with the discipline the role describes: safe sandboxes for code-running agents, careful handling of credentials, and a habit of checking AI coding output rather than trusting it. I have done tool-calling and agentic scaffolding but less formal multi-agent simulation, and I have not used Inspect yet; both are quick for me to pick up given the evaluation work I already do. I am based in Lagos (UTC+1), so my hours line up with Amsterdam, and I can work remotely; I am open to discussing the in-person days.
+
+I would welcome the screening call, and honestly the three-hour take-home on a real Aithos evaluation is the part I would most like to do.
+
+My resume is attached, and the harness repository is public if you want to read the code before we speak.
+
+Olusanya Timothy
+olusanyatimothy54@gmail.com · +234 812 786 8211 · linkedin.com/in/olusanya-timothy · github.com/Teamthy
