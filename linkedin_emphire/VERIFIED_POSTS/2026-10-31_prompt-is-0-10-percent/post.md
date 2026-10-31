@@ -8,9 +8,9 @@ They treat the system prompt as the control, so every failure looks like a wordi
 
 The reality is different.
 
-In that same session, three retrieved documents are 99.1 percent of what the model read, and they arrived from outside the boundary you drew, after you reviewed it. The ledger is CxBOM, published by Rock Lambros and the ATACE working group.
+In that same session, three retrieved documents are 99.1 percent of what the model read, and they arrived from outside the boundary you drew, after you reviewed it. That ledger is CxBOM, published by Rock Lambros and the ATACE working group.
 
-In red teaming I keep landing in the same place. The failures I find in a shipped assistant rarely start with the instruction. They start with a document that got pulled in, or a tool definition someone approved from a summary.
+In red teaming I keep landing in the same place. Failures I find in a shipped assistant rarely start with the instruction. They start with a document that got pulled in, or a tool definition someone approved from a summary.
 
 Here's what actually works:
 
@@ -22,7 +22,7 @@ Here's what actually works:
 
 The part nobody tells you:
 
-The component that record flags is not a document. It is the tool definition, 0.77 percent of the window, written outside the boundary and assembled where operator content sits. Small components carry the authority. Their own spec says the rest: one session, not a study, not yet evaluated in production.
+What gets flagged in that record is not a document. It is the tool definition, 0.77 percent of the window, written outside the boundary and assembled where operator content sits. Small components carry the authority. Their own spec says the rest: one session, not a study, not yet evaluated in production.
 
 You can't audit a prompt that is one line in a context you didn't assemble.
 
