@@ -173,7 +173,7 @@ surface" asks for, not a violation. All seven closings in this round are unique.
 
 | Surface | Age | Why it is held |
 |---|---|---|
-| **Rock Lambros**, 200-character approval / MCPTox | 1h | Highest-fit surface in the paste and he is your strongest thread partner (he liked the 10-28 comment). Held on one condition: the 155w Dual-Failure draft from 10-29 needs to be confirmed as posted or dropped first. Two live Rock drafts at once spends the thread. Also `.lnkd.in` and `cxbom.org` links cannot be fetched from this sandbox, so the source rule fails and any draft is **UNVERIFIED-SOURCE** until you read them. Draft below is ready if the 155w went out more than 24h ago. |
+| **~~Rock Lambros~~**, 200-character approval / MCPTox | 1h | **Promoted to 3A, source read, ready to send.** Was held on the DFM dedupe and the unfetchable links. `cxbom.org` and spec 0.3.1 both read now, so the draft cites their own ledger. |
 | **Sam Illingworth**, accuracy claims without denominators | 1d | Dead center on methodology and he is following you, but you commented on his Nature paper post 1d ago. Two consecutive Sam touches reads as a fan, not a peer. Send tomorrow. Draft below. |
 | **Amjad Masad**, Agent Habitat / broker adds the credential | 23h | Tier 1 and in lane (credential never enters context is the correct pattern). Held because this is the third Replit touch and the earlier partner-program post was already skipped as commercial. Tomorrow's first pick, not today's second. |
 | **Jerry Liu**, 61% perfect extraction on ExtractBench Pro | 18h | Tier 1, checkable number, and it pairs perfectly with the Sam draft. But two number-critique comments in one day is a single note played twice. Hold behind Sam. |
@@ -187,19 +187,50 @@ surface" asks for, not a violation. All seven closings in this round are unique.
 
 ## 4. Held drafts
 
-### Rock Lambros (send only if the 155w DFM draft is closed)
+### Rock Lambros, 200-character approval / MCPTox (1h)  -- SOURCE READ, ready to send
 
-**QUESTIONING, 107 words, UNVERIFIED-SOURCE**
+**Source status: VERIFIED** against `cxbom.org` and specification 0.3.1, both fetched and
+read in full. The `lnkd.in` links are redirects and will not resolve from here, and the
+MCPTox study was not read, so nothing below cites MCPTox. Every number in the draft comes
+from their published reference session ledger, not from the post body.
+
+**QUESTIONING, 120 words**
 
 ```
-The pin is the right control and most tools skip it, so credit for naming the gap in your product. But the 200 characters aren't the thing I'd fix first.
+The 200 characters are a rendering problem, not a detector
+problem. In your own reference session the fetch definition is
+357 tokens. Two hundred characters is about fifty tokens, so
+the summary covers a seventh of a definition under one percent
+of the context window. Nobody is being spared a long read.
 
-A pin proves a definition hasn't changed since somebody approved it. It doesn't prove anyone read it. A definition malicious on day one carries a valid pin, and your post says approval is the only defence.
+The proxy holds the full text and the record holds its digest,
+so show all of it, and on a re-listing, the diff. The delta is
+where the rug pull lives.
 
-The number you say you haven't measured is worth publishing. Seed known-bad definitions into the approval queue at a rate you know, then report how many a reviewer caught, with the sample size.
+Then measure the reviewer, which is the number you don't have.
+Seed known-bad definitions at a rate you know and report how
+many a human caught, sample size attached.
 
 An approval nobody has measured is a click.
 ```
+
+**The finding the post omits.** Their own reference session ledger publishes the numbers
+that answer the 200-character complaint. The `fetch` tool definition is **357 tokens**,
+which is **0.77%** of a **46,205** token context window and is flagged **TRUST INVERSION**.
+Two hundred characters is roughly fifty tokens, so the approval summary renders about a
+seventh of a definition that is itself under one percent of the window. If he is proposing
+to publish more of the review surface, the arithmetic says the whole thing costs a scroll.
+That is a stronger argument for his position than the flaw he is conceding.
+
+The draft also separates the two cases he runs together: a re-listing has a digest to diff
+against, and the delta is small; a definition malicious on day one has no delta, which is
+exactly why his sentence about approval being the only defence is right. That concession
+then earns the ask in the last paragraph.
+
+**Dedupe:** confirm the 155w Dual-Failure draft from 10-29 is posted or dropped before
+sending. If it went out, this is the second Rock action in two days, which the 10-28 like
+already bought room for. If it hasn't gone out, publish that one first or drop it, and do
+not run two live Rock drafts.
 
 ### Sam Illingworth (send tomorrow)
 
