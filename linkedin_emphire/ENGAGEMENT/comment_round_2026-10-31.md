@@ -343,3 +343,51 @@ It does not touch the book, does not feed the review link, and stands on its own
 one already made twice today in different words, which is the risk: three versions of "a human
 clicking is not a human checking" in one day is a drumbeat. If both Brad threads are live, skip
 this one and save the line.
+
+---
+
+## Surface served late: al neitsch, Just Eat AI food images (21m)
+
+**Profile read.** 1st degree. Founder TNGC, consultant, author, advisor in data and AI engineering
+and governance, with a services page. Commercial author. No prior surface history beyond a mention
+in the audience follow list.
+
+**Ladder verdict: COMMENT.** Fresh, in lane at the governance end, and it carries a real incident
+rather than a reflection. He sells governance advice, so the value here has to stand without
+feeding his practice, which it does: the comment is about a public claim a company made, not about
+his service.
+
+**Source rule satisfied.** The post names BBC News but carries no URL, so the paste alone was not
+enough. Searched and read the BBC piece (2026-10-21, bbc.co.uk/news/articles/crz981p0klvgo) plus
+the NDTV write-up. The finding below comes from that, not from the post body.
+
+**The finding the post omitted.** Just Eat said **every image had been manually checked** before it
+appeared on the platform. The post argues for "human oversight" as the missing piece. The
+oversight was not missing. It ran, and it passed a glass of cola with bacon and egg floating in it,
+and a "jacket potato" rendered as a puffy jacket covered in potatoes. This is a different argument
+from the rest of today's round: not that reviewers click through at volume, but that the reviewer
+was asked the wrong question. A competent-looking image passes "does this look like food" while
+failing "is this the dish".
+
+The four failures also share one cause, and it is the one that matters most to your positioning:
+soda bread, chip muffin, cheese roll, plain. Regional vocabulary, read literally. That failure class
+lands first in markets the model's training data under-represents, which is the Global South argument
+you already make, arriving in a UK case.
+
+**QUESTIONING, 118 words**
+
+```
+The line missing from most coverage is the one worth stopping on. Just Eat told the BBC that every image had been manually checked before it appeared.
+
+So the check existed, and it passed a glass of cola with bacon and egg floating in it. That isn't a missing control. It's a control that asked the wrong question. A reviewer looking at a competent-looking picture judges whether it resembles food, not whether it is that dish.
+
+And look at what tripped it: soda bread, chip muffin, cheese roll, plain. Every one is local vocabulary read literally.
+
+Ask whether the image contains the noun in the item name. All four fail that. All four pass "does this look plausible".
+```
+
+**Why this one is not the drumbeat.** Today already carries three versions of "a human clicking is
+not a human checking". This is the first that is about the criterion rather than the volume, it
+rests on a public claim the company made, and it is the only one with a cheap test attached that a
+reader can apply to their own pipeline. It also does not ask him to agree with you about governance,
+which keeps a commercial author out of defensive posture.
