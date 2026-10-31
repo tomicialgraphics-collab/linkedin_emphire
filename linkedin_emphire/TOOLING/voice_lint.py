@@ -332,6 +332,9 @@ def human_gate(text: str, profile: str = "linkedin") -> dict:
     # 6. A paragraph that never ends in punctuation is usually a paste error.
     for i, para in enumerate([p.strip() for p in body.split("\n\n") if p.strip()], 1):
         tail = para.rstrip()
+        # a bold-only label such as **INTERACTIVE, 56 words** is metadata, not a sentence
+        if re.fullmatch(r"\*\*.+\*\*", para):
+            continue
         # a list item, and any paragraph containing one, is fragments, not sentences
         if "\u00b7" in para:
             continue
