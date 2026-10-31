@@ -306,3 +306,40 @@ One caution on 90 days. A fixed window becomes a target, and anyone who knows th
 agree with it in one line. The window is a real hole in a fix he just proposed, and it generalises
 to every control built on a threshold: a rule with a number in it tells the attacker the number.
 It also keeps the thread on his ground, which is how a thread partner stays a thread partner.
+
+---
+
+## Surface served late: Ashwini Mathur, "keeping humans human" (18m, edited)
+
+**Profile read.** 1st degree. Executive Director, Onesto Consulting. Services page live, so a
+commercial author. No prior history in this file. Post is a 4/5 review of an AI thriller plus a
+humanist reflection, ending on "The real challenge may not be keeping humans in the loop. It may
+be keeping humans human."
+
+**Ladder verdict: SKIP for pipeline, optional for the relationship.** Rule 2 fails (not ICP:
+consulting ED, not security or evals). Rule 3 fails (not tier 1-2 for reach, and the post carries
+no checkable claim). What is left is a fresh 1st-degree humanist post with a book link, which
+under rule 6 is weak fit. Headroom is not a licence to fill, and this is exactly the surface type
+that eats minutes without moving a dollar or a referee.
+
+**Source rule fails.** The review link is `lnkd.in` and does not resolve from here. Any comment
+is UNVERIFIED-SOURCE and must come from the post body alone. Do not discuss the book.
+
+**Why a draft is still here.** The closing line is the one place this touches your lane, and a
+1st-degree relationship is worth one sentence. This is relationship maintenance, not pipeline.
+Send it only if you want the thread warm, and count it against the 8 as a low-value action.
+
+**HUMAN, 79 words**
+
+```
+Keeping humans human is the right worry, and there's a duller version of it that shows up as a control failing rather than a culture one.
+
+A person approving five hundred items a day stops reading and starts clicking. The loop still looks closed on the diagram, and everyone can point to the human in it.
+
+The human in the loop isn't the safeguard. A human with time to read the item, and the standing to say no, is.
+```
+
+It does not touch the book, does not feed the review link, and stands on its own. The point is the
+one already made twice today in different words, which is the risk: three versions of "a human
+clicking is not a human checking" in one day is a drumbeat. If both Brad threads are live, skip
+this one and save the line.
