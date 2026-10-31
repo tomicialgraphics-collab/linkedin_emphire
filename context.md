@@ -2,7 +2,7 @@
 
 > Read top to bottom before acting. This is the handoff for the next session.
 
-- **Updated:** 2026-10-13 (Lagos, UTC+1)
+- **Updated:** 2026-10-31 (Lagos, UTC+1)
 - **Session branch:** `arena/1422cb2a-linkedin-emphire` (branched from `main`)
 - **Repo:** `Teamthy/linkedin_emphire` (public)
 
@@ -10,7 +10,7 @@
 
 ## 1. The one-paragraph picture
 
-The owner is a self-taught **software engineer who builds and tests AI for safety** (evaluations, red-teaming, reproducible harnesses). Two parallel tracks: (a) building a public brand to become known in the AI safety / evaluation space, and (b) using that brand to get hired into a research / evaluation role. The public brand is a LinkedIn comment engine plus the "Breaking AI" article series plus an open-source five-test red-team harness. The single highest-priority live item is the **Aithos Research Engineer application** (email, due 31 Oct 2026).
+The owner is a self-taught **software engineer who builds and tests AI for safety** (evaluations, red-teaming, reproducible harnesses). Two parallel tracks: (a) building a public brand to become known in the AI safety / evaluation space, and (b) using that brand to get hired into a research / evaluation role. The public brand is a LinkedIn comment engine plus the "Breaking AI" article series plus an open-source five-test red-team harness. The **Aithos Research Engineer application** was submitted 31 Oct 2026 (see section 6); the live priority is now the follow-up cadence and the in-lane comment set in section 10.
 
 ---
 
@@ -45,7 +45,8 @@ The owner is a self-taught **software engineer who builds and tests AI for safet
 
 ## 5. Deadlines
 
-- **31 Oct 2026:** send the Aithos application email (resume PDF + motivation letter) to **hiring@aithos.org**. TOP priority.
+- ~~**31 Oct 2026:** send the Aithos application email (resume PDF + motivation letter) to **hiring@aithos.org**.~~ **DONE 31 Oct 2026.**
+- **Follow-up clock:** if there is no reply by **14 Nov 2026** (two weeks), send one short, warm follow-up to hiring@aithos.org referencing the original subject line. One bump only. Do not chase Lauren on LinkedIn (Premium still off below 1k followers).
 - **[un]prompted registration:** Oct 27-29, SF (owner to decide whether to register).
 - **Article 2 launch posts** (relative to the Oct 13 publish): a 10:00 WAT link post, a quote-card post, save / checklist posts.
 
@@ -54,6 +55,7 @@ The owner is a self-taught **software engineer who builds and tests AI for safet
 ## 6. State of things
 
 ### Done
+- **Aithos application SUBMITTED 31 Oct 2026** to hiring@aithos.org, before the deadline. Four copy edits applied to the letter first (repetition cut, attachment line added, Breaking AI given its own paragraph). Lint: 0 errors, 0 warnings, 0 em dashes.
 - Aithos resume (1-page PDF + DOCX, verified one page).
 - Aithos motivation letter (paste-ready; full text in Appendix A).
 - Article 2 published (Oct 13).
@@ -62,7 +64,7 @@ The owner is a self-taught **software engineer who builds and tests AI for safet
 - Paolo Perrone engaged the owner's post (affirmed "a manipulated agent looks healthy on every dashboard"); a punchy reply is ready (Appendix B).
 
 ### Pending (owner to send or do)
-- **Send the Aithos email** (resume PDF + motivation letter, Appendix A) to hiring@aithos.org. TOP.
+- ~~Send the Aithos email~~ **DONE 31 Oct 2026.** Package of record: `linkedin_emphire/APPLICATIONS/2026-10-31_aithos_research-engineer_send-package/` (final letter, `.eml` with resume attached, send log in `SENT.md`).
 - Post the Paolo reply (Appendix B).
 - Post the in-lane comment drafts (Appendix C): Catasta (strongest of the batch), Replit "AI native = code", Hamel, Zenity/SSRF, Lenny, Clint. Space them out.
 - Send Sudhir follow-up (Upwork $65 milestone + LinkedIn ping) after the consultation call (Appendix D).
@@ -121,7 +123,7 @@ Signature moves to reuse:
 
 ## 10. Immediate next steps, in order
 
-1. **Send the Aithos email** (resume PDF + motivation letter, Appendix A) to hiring@aithos.org before 31 Oct.
+1. ~~**Send the Aithos email**~~ Sent 31 Oct 2026. Next: log the reply (or the silence) in `2026-10-31_aithos_research-engineer_send-package/SENT.md` as it lands, and set the two-week follow-up for 14 Nov.
 2. Post the **Paolo reply** (Appendix B).
 3. Post the in-lane comment drafts (Appendix C), spaced out: Catasta first (strongest), then Replit "AI native = code", Hamel, Zenity/SSRF, Lenny, Clint. Watch for author replies.
 4. Send **Sudhir** the Upwork message + LinkedIn ping (Appendix D).
