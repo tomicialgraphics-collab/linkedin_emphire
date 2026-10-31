@@ -38,3 +38,35 @@ makes the number usable by someone who disagrees with you.
   no arrows, no CTA question. Note that `post_templates.txt` still contains closing questions,
   arrow bullets and hashtags, all of which the 2026-10-13 standing rules disallow. Written to
   the `aithos-answer-key` shape instead.
+
+## Build 2: TEMPLATE 1 (TECHNICAL DEEP-DIVE), owner instruction 2026-10-31
+
+Owner asked for the post to follow `DAILY CONTENT/post_templates.txt`. Template 1 is the
+only one of the 14 that fits sourced technical material, so `post.md` is now the template
+build (303 words, 1,783 chars). Slot mapping, so a later session can audit it:
+
+| Template slot | What fills it |
+|---|---|
+| [SPECIFIC TECHNICAL PROBLEM] | 46,205 tokens, operator prompt 45 tokens, 0.10 percent |
+| "Here's what most engineers get wrong" | Treating the system prompt as the control |
+| "The reality is different" | Three retrieved documents, 45,774 tokens, 99.1 percent, plus CxBOM attribution |
+| [YOUR ACTUAL EXPERIENCE] | Red teaming: failures start with a pulled document or a summarised tool definition |
+| "Here's what actually works" | 3 arrows: untrusted input at the boundary, hash and diff definitions, log the assembled window |
+| "The part nobody tells you" | The flagged component is the tool definition at 0.77 percent. Small components carry the authority. Plus their "one session, not a study" caveat |
+| [PRACTICAL TAKEAWAY] | "You can't audit a prompt that is one line in a context you didn't assemble." |
+| Closing question | Whether a bad answer was traced to the window or the instruction |
+| Hashtags | #AISecurity #AIEvaluation #RedTeaming |
+
+### Where this build now diverges from the 2026-10-13 standing rules
+
+Noted here so it is a decision and not an accident. Template 1 requires two things the
+standing rules forbid:
+
+1. **A closing question** ("What's your experience with [TOPIC]?"). The rules say end on a
+   statement, and a question only in INTERACTIVE replies.
+2. **Hashtags.** No post after 2026-10-13 uses them.
+
+Both are in `post.md` because the owner asked for the library. The flat-ending version is
+preserved as `post_alt_thesis-shape.md` (262 words, statement ending, no hashtags) if the
+call gets reversed. Everything else still holds in both builds: no em dashes, no banned
+phrases, no fabricated numbers, sourced claims only.

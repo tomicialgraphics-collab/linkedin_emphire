@@ -1,17 +1,29 @@
-A published agent session, 46,205 tokens of context.
+A published agent session, 46,205 tokens. The operator's own system prompt is 45 of them. 0.10 percent.
 
-The operator's own system prompt is 45 of them. 0.10 percent.
+Here's what most engineers get wrong about this:
 
-Three retrieved documents are 45,774. That is 99.1 percent of everything the model got to read.
+They treat the system prompt as the control, so every failure looks like a wording problem and the fix is a firmer instruction.
 
-The external tool definition is 357 tokens, 0.77 percent, and it is the one component that gets flagged. Not for what it says. Because it was authored outside the boundary and assembled where operator content sits.
+The reality is different.
 
-That ledger is CxBOM, from Rock Lambros and the ATACE working group at cxbom.org. One component per row, at true proportion, each with a hash, a token count and a trust ring. Nobody selling agent security publishes their own arithmetic like this.
+In that same session, three retrieved documents are 45,774 tokens. 99.1 percent of what the model read arrived from outside the boundary you drew, after you reviewed it. The ledger is CxBOM, published by Rock Lambros and the ATACE working group.
 
-The arithmetic is the argument. If 0.10 percent of the input is the part you wrote, then the prompt is not the control. It never was. The other 99 percent arrived from somewhere you do not administer, and no instruction you write into the small part changes what the large part can do.
+In red teaming I keep landing in the same place. The failures I find in a shipped assistant rarely start with the instruction. They start with a document that got pulled in, or a tool definition someone approved from a summary.
 
-The spec says it better than I can. A design contribution, not evaluated in production, its value in incident response not yet measured against a baseline. One session, not a study. That caveat is exactly why I would take the ledger seriously.
+Here's what actually works:
 
-Then the last thing worth sitting with. When a team reviews its agent, it reviews the instruction. That is the 0.10 percent. The 99 percent that actually decides what the model does arrives after the review, from documents nobody signed.
+→ Treat retrieved content and tool output as untrusted input, and check them where they enter, not in the prompt that politely asks.
 
-You are auditing the smallest part of the input and calling it a review.
+→ Hash every tool definition and diff it on change, so a re-listing can't move an instruction into a nested parameter nobody re-reads.
+
+→ Log what got assembled into the window, per session, with a token count and a source, so a reviewer can re-derive what the model actually saw.
+
+The part nobody tells you:
+
+The component that record flags is not a document. It is the tool definition, 0.77 percent of the window, written outside the boundary and assembled where operator content sits. Small components carry the authority. Their own spec says the rest: one session, not a study, not yet evaluated in production.
+
+You can't audit a prompt that is one line in a context you didn't assemble.
+
+Have you ever traced a bad answer back to what got pulled into the window instead of the instruction?
+
+#AISecurity #AIEvaluation #RedTeaming
