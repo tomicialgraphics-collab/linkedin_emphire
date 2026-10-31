@@ -23,3 +23,4 @@
 | 13b | 2026-10-21 | check-never-failed | AI Red Teaming | Standalone thesis, silent check (259w) | ✅ LIVE — 101 imp as of 10-23. Verbatim recovered from activity feed 10-23 |
 | 14 | 2026-10-23 | aithos-answer-key | AI Red Teaming | Research engagement / thesis (269w) | ✅ LIVE — 31 imp at ~21m. Aithos Research Foundation tagged, no affiliation claim. RedLens AI company account replied; owner reply LIVE 10-23 |
 | 15 | ≈2026-10-08 (est.) | group-log-own-product | AI Red Teaming | Group post (6773411) / proof-of-work story promoting article-1 public log (125w) | ✅ LIVE — 1,053 imp at 10-23, TOP performer 90-day window. Verbatim recovered from analytics export 10-23; date estimated (window 10-06 to 10-12), owner to confirm |
+| 16 | 2026-10-31 | prompt-is-0-10-percent | AI Red Teaming | Standalone thesis, sourced number (262w) | 🟡 DRAFTED — not posted, owner review. CxBOM reference ledger: operator prompt 0.10%, retrieved 99.1% |
