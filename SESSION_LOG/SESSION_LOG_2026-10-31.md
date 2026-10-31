@@ -184,3 +184,23 @@ This file, plus:
 | Post today, 5-6pm WAT | owner | 2026-10-31 |
 | Six comment actions, spaced, 2 per hour max | owner | 2026-10-31 |
 | Repo hygiene: 108 tracked-ignored files, 124.7 MB duplicates | agent | after the above |
+
+## 13. Later in the session: AEC proposal sent
+
+**User:** "sent"
+
+The $4,000 AEC MCP proposal, prepared 2026-10-12 and unsent for nineteen days, went out on
+2026-10-31. This was the top-ranked blocker in
+`STRATEGY/2026-10-31_icp-goals_push-plan.md` section 5.1 and 80 percent of the 70-day revenue
+goal by value.
+
+Recorded in `linkedin_emphire/PIPELINE.md`: stage now "SENT 2026-10-31, awaiting reply", next
+action a single nudge on 2026-11-07, and the money note rewritten to say in-play rather than
+identified, because nothing is collected until it clears.
+
+Two failure modes written into the pipeline row so they are not rediscovered later: a slow reply
+is not a no (procurement time in construction estimating), and the first call has to hold the
+PRD's scope or the $4,000 job absorbs three weeks of unbilled additions.
+
+The plan's next #1 is now the weekend harness run, which unblocks Andrey's evidence package, the
+Arcezia report due 11-02, the Aithos take-home prep, and the ICP-A sales proof at once.

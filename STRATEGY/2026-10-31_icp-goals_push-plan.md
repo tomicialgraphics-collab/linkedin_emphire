@@ -90,7 +90,7 @@ so 50 days remain.
 
 | Row | Value | State |
 |---|---|---|
-| AEC MCP gig (Mountain View, PRD verified) | $4,000 fixed | Proposal paste-ready since 10-12, **NOT SENT** |
+| AEC MCP gig (Mountain View, PRD verified) | $4,000 fixed | **SENT 2026-10-31**, awaiting reply. Nudge 11-07 if silent |
 | Sudhir | $65 | In dispute, relationship paused |
 | Upwork catalog ($200 / $800 / $2,000) | open | Listings live, no recognised jobs |
 | Identified total | **$4,065** | |
@@ -112,11 +112,16 @@ articles published of a 21-part series.
 
 ## 5. The three things blocking, ranked by what each one unblocks
 
-### 5.1 Send the AEC proposal. Today. ($4,000)
+### 5.1 ~~Send the AEC proposal~~ DONE 2026-10-31 ($4,000)
 
-One action, 80% of the revenue goal, and it has been available for nineteen days. Nothing else
-in this document matters more. If it is dead, close it in `PIPELINE.md` and say so, because a
-stale row that reads like pipeline is worse than no row.
+Sent, after nineteen days as a finished document in a folder. The row in `PIPELINE.md` now reads
+sent and carries a single nudge date of 11-07. Two things decide the outcome from here and
+neither is effort: whether the reply arrives inside procurement time, and whether the first call
+holds the PRD's scope. A $4,000 fixed job that absorbs "one more thing" three times is a
+three-week loss.
+
+**The next #1 is now 5.3.** With the proposal out, the weekend run is the only thing standing
+between four blocked deliverables and one afternoon's work.
 
 ### 5.2 Name the two referees. Today.
 
@@ -179,7 +184,7 @@ Three consequences:
 
 | Day | Action | Why |
 |---|---|---|
-| **Sat 10-31** | Send the AEC proposal. Reply to Andrey. Post at 5-6pm. Six comment actions, 2 per hour max. | Clears the top revenue row and the top social debt on the same day |
+| **Sat 10-31** | ~~Send the AEC proposal~~ **DONE.** Reply to Andrey. Post at 5-6pm. Six comment actions, 2 per hour max. | Revenue row cleared. Social debt and the post are the remainder |
 | **Sun 11-01** | Run the harness locally once. Raw results committed to `OUTREACH/` results folder. | Unblocks four things at once |
 | **Mon 11-02** | Arcezia private report out. Andrey's evidence package out. | Contractual and social deadline, same artifact |
 | **Tue 11-03** | Name the Teamart referee. Name the YKAY referee. | Anthropic cannot submit without them |
@@ -195,13 +200,11 @@ what they predict.
 
 ## 9. Honest read on the $5,000
 
-If the AEC proposal sends and lands, you are at $4,000 of $5,000 with 50 days left, and the
-remaining $1,000 is one Upwork Standard plus a Starter, or one small LinkedIn engagement. That
-is achievable.
+The proposal is out as of 2026-10-31. If it lands, you are at $4,000 of $5,000 with 50 days
+left, and the remaining $1,000 is one Upwork Standard plus a Starter, or one small LinkedIn
+engagement. That is achievable. If it goes quiet, the fallback is five Upwork Standard jobs in
+50 days from a catalog with no reviews, or one $3.5k engagement from a DM lane gated at 1k
+followers. Both are slower and both are still possible.
 
-If it does not send, you need five Upwork Standard jobs in 50 days from a catalog with no
-reviews, or one $3.5k LinkedIn engagement from a DM lane that is gated at 1k followers. Both
-are possible and both are slower.
-
-So the plan does not turn on strategy. It turns on one send, this weekend's run, and two
-referee emails. Everything else in this repo is already built.
+What has not changed: the plan does not turn on strategy. It turns on this weekend's run and
+two referee emails. The send is done. Everything else in this repo is already built.
