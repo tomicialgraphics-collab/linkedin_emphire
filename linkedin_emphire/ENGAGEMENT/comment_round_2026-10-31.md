@@ -275,3 +275,34 @@ as tooling jargon, but it is the precise term for your artifact and the recruite
 reading it know the word. Keep it in technical documents, avoid it in posts, and
 add a note to `banned_words.txt` so the next session does not re-litigate this.
 Every draft here avoids it, which is why none of them say the word.
+
+---
+
+## 2B RESULT: posted, and the author replied
+
+2B went live at ~4 impressions, 1 reaction. **Brad Wolfe replied 3 minutes into it**, which is
+the thread signal that matters and not the impression count. He extended it past what the draft
+argued:
+
+> "They rarely change both on the same day. The contact changes first, quietly, and the bank
+> request comes a few weeks later, when the callback reaches them. So beyond separate control on
+> each field, the sequence is worth watching. Any bank change within 90 days of a contact change
+> gets called on the number from before the contact change, and someone outside AP signs it off.
+> The pair is the signal, even when each change looks routine on its own."
+
+He moved the frame from "two fields, two controls" to "the pair is a signal over time", which is
+better than the draft. Protocol rule 6 applies: an author reply is a scheduled action the same
+day. The reply below concedes that and attacks the one thing his fix leaves open.
+
+**INTERACTIVE, 56 words**
+
+```
+Right. The pairing is what most systems can't see. Two logs, two readers, and nobody looks at the pair.
+
+One caution on 90 days. A fixed window becomes a target, and anyone who knows the rule just waits it out. Key the callback to the pre-change number with no expiry, and the waiting stops helping them.
+```
+
+**Why the window attack and not the visibility point.** The visibility point is true and he would
+agree with it in one line. The window is a real hole in a fix he just proposed, and it generalises
+to every control built on a threshold: a rule with a number in it tells the attacker the number.
+It also keeps the thread on his ground, which is how a thread partner stays a thread partner.
