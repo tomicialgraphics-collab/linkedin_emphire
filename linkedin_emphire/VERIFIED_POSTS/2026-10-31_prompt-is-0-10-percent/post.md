@@ -1,4 +1,6 @@
-A published agent session, 46,205 tokens. The operator's own system prompt is 45 of them. 0.10 percent.
+You are auditing 0.10 percent of the input.
+
+In a published agent context window, the operator's instruction is 45 tokens. The retrieved documents are 45,774.
 
 Here's what most engineers get wrong about this:
 
@@ -6,7 +8,7 @@ They treat the system prompt as the control, so every failure looks like a wordi
 
 The reality is different.
 
-In that same session, three retrieved documents are 45,774 tokens. 99.1 percent of what the model read arrived from outside the boundary you drew, after you reviewed it. The ledger is CxBOM, published by Rock Lambros and the ATACE working group.
+In that same session, three retrieved documents are 99.1 percent of what the model read, and they arrived from outside the boundary you drew, after you reviewed it. The ledger is CxBOM, published by Rock Lambros and the ATACE working group.
 
 In red teaming I keep landing in the same place. The failures I find in a shipped assistant rarely start with the instruction. They start with a document that got pulled in, or a tool definition someone approved from a summary.
 

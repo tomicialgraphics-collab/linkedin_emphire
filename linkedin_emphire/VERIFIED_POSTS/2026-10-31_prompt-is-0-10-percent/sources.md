@@ -70,3 +70,30 @@ Both are in `post.md` because the owner asked for the library. The flat-ending v
 preserved as `post_alt_thesis-shape.md` (262 words, statement ending, no hashtags) if the
 call gets reversed. Everything else still holds in both builds: no em dashes, no banned
 phrases, no fabricated numbers, sourced claims only.
+
+## Headline and subheadline (standing rule from 2026-10-31)
+
+Owner instruction, now recorded in `context.md` §7: every daily post ships with a headline
+and a subheadline, always, not on request.
+
+**Shipped pair**
+
+- Headline (43 chars): `You are auditing 0.10 percent of the input.`
+- Subheadline (113 chars): `In a published agent context window, the operator's instruction is 45 tokens. The retrieved documents are 45,774.`
+
+Together they take 158 characters including the break, so both lines sit above the "see
+more" fold, which truncates around 200. The headline is the memorable line and carries the
+thesis. The subheadline adds the evidence pair and deliberately does not restate the
+headline. The body then starts at Template 1's misconception slot and no longer repeats the
+45,774 figure, since the subheadline holds it.
+
+**Alternatives considered**
+
+1. Headline `The prompt is not the control. The arithmetic says so.` Subheadline `45 tokens
+   of operator instruction against 45,774 of retrieved documents, in a vendor's own
+   published ledger.` Stronger claim, softer evidence framing.
+2. Headline `Nobody signs the 99 percent.` Subheadline `A published agent window, split by
+   trust ring. The smallest component carries the most authority.` Best for a card or
+   carousel cover, where the line has to survive being read with no body under it.
+
+Total post: 311 words, 1,833 chars, inside the 3,000 char limit. Voice lint strict: clean.
