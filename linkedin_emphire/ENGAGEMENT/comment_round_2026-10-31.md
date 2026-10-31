@@ -4,7 +4,7 @@ Built against `comment_surfaces.md` (protocol 1-10), `voice_dna.txt` COMMENT MOD
 and the 10-26 ceiling/spacing guardrails. One thesis across the round: the record,
 not the intent. Every draft ends on a statement.
 
-**Ceiling math for today:** 4 replies owed + 1 new comment. Replies are exempt from
+**Ceiling math for today:** 4 replies owed + 2 new comments (2A Tanya, 2B Brad late capture) = 6 actions, inside the base 8. Only one is OUTSTANDING, so the 2-a-day cap holds. Replies are exempt from
 the 60-minute rule on active threads. That leaves headroom but I would not spend it,
 for the reason in the last section.
 
@@ -95,7 +95,7 @@ That's the version of a pin an API can honestly give you.
 
 ---
 
-## 2. New comment (one, tier 1, in lane)
+## 2. New comments (tier 1-2, in lane)
 
 ### 2A. Tanya Janca, "what is your agent ACTUALLY allowed to do" (16h)
 
@@ -129,6 +129,43 @@ whether it reaches.
 An agent's permissions are a threat model written once and
 never read again.
 ```
+
+### 2B. Brad Wolfe, "most payment fraud does not create a vendor, it changes one" (21m, late capture)
+
+Thread partner, 1st degree, 60-comment class author. His beat is finance and yours is
+evals, but this post is about who can change a control record, which is your ground.
+Commercial author (`wolfepacks.com`, daily cadence, tags collaborators), so the rule
+is value that stands on its own with no pitch.
+
+**QUESTIONING, 116 words**
+
+```
+The four controls are right, and the callback is the one that
+stops the money. It has one hole, one field over.
+
+Control 1 trusts a phone number already on file. That number
+lives in the vendor master beside the bank detail, and whoever
+can change the account can often change the contact too. Then
+you call the attacker back, they confirm the change, and the
+control works as designed.
+
+So the contact record needs its own change control, held
+separately from the billing record. Two fields, two controls.
+Right now only one of them is defended.
+
+Who can change the account isn't the question. It's who can
+change the number you'll call to confirm it.
+```
+
+Why this angle and not another: the approval-binding argument is already spent in the
+Mike Dabydeen reply (1B), and the hold-register argument is spent in 1A. Control 1 is
+the only one of his four that a second field change defeats, and nobody in his comment
+thread has said it. It also answers his closing question by replacing it, which is the
+strongest position on a post that ends on an open question.
+
+Protocol 5 check: same thesis as 1C (the control has to sit somewhere the actor cannot
+reach it), different surface, closing line distinct. That is what "one thesis, different
+surface" asks for, not a violation. All seven closings in this round are unique.
 
 ---
 
