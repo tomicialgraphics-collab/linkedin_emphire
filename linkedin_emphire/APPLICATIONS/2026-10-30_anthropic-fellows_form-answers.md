@@ -114,6 +114,12 @@ published would compound rather than restart.
 
 ## References: the part that decides this
 
+**SLOT 3 IS FILLED as of 2026-10-31:** Andrey Ekhmenin,
+`andrzej.ekhmenin@gmail.com`. Confirmed by DM, full record and paste-ready field values in
+`2026-10-31_anthropic-fellows_reference_andrey-ekhmenin.md`. Use Colleague / Collaborator,
+Yes on AI research, **knowledge 2**, and state the four days of exchange in the paragraph.
+Do not retype the address; it is Polish spelling and the name is not.
+
 Three are required, each with a background paragraph. They may be contacted without
 notice and asked to reply within a week. Nothing in the repo supplies three technical
 referees, so this section cannot be drafted for you.
