@@ -43,7 +43,7 @@ red team would score the withdrawn model as safer.
 ### 4. Delivered: comment on the Amodei post
 
 `ENGAGEMENT/comment_round_2026-11-01.md`, entry 1. QUESTIONING, 118 words, gate 100/100, clean.
-The post's summary was checked against podcast transcripts and holds. The comment accepts the
+Its summary was checked against podcast transcripts and holds. The comment accepts the
 reframe and points at what it omits: none of the tenfold training increase is earmarked for
 testing, so it stays cheaper to ship a model than to test one.
 
@@ -60,7 +60,7 @@ Deliberately no claim about Anthropic's real evaluation spend. No source exists 
 
 ## What I would do next
 
-The pluralism post is the strongest thing in the repo for the hiring goal (ICP-B), and the SOC 2
-post is the strongest for the buying goal (ICP-A). Running them three days apart gives the account
+Pluralism is the strongest thing in the repo for the hiring goal (ICP-B). Vendor review is the
+strongest for the buying goal (ICP-A). Running them three days apart gives the account
 two positions rather than one repeated thesis. The Amodei comment should go today, while the post
 is fresh.
