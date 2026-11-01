@@ -1300,3 +1300,65 @@ name rather than hers. Nothing is added by agreeing that agreement is good.
 **What to spend the slot on instead.** Goldshteyn's question about routing is still unanswered and
 is the strongest technical surface of the round, and the Mollick comment has not gone out. Both
 reach the audience that buys this work; this one reaches a connector's feed.
+
+
+---
+
+## Entry 23: Brad Wolfe, the shared services finance model in a roll-up
+
+**Surface.** First degree, eight minutes old. He is building a shared services finance model in the
+roll-up he is working in. Each acquired company kept its own finance team, systems, chart of accounts
+and close calendar, so every acquisition adds a department and corporate consolidates what arrives.
+The model he is building is the opposite: one chart of accounts, one close, one data model, one set
+of controls, with payables, payroll, billing, reporting and FP&A run once, and business unit finance
+leads reporting solid line to the CFO. Four benefits, leverage, flexibility, comparability, control.
+The objection at full strength: units lose a finance person who answers only to them, service dips in
+transition, local knowledge walks, and the savings take 12 to 18 months. His answer is written
+service levels, embedded partners and a phased plan. He closes by arguing the CFO has to own it,
+because a shared service serves many masters, and asks whether the reader's finance department is one
+machine or a confederation.
+
+**Profile read, verified 1 November.** First degree. CFO and COO, Wolfe Pack and CFO.ai, Austin,
+Kellogg, fifteen years in the seat, four public company CFO roles, roughly forty ERPs, thirty data
+warehouses, fifty acquisitions integrated, five years as an M&A attorney before that. Audit chair and
+AI committee chair at portfolio companies. Commercial author with a daily cadence and a site, so
+value only and no pitch.
+
+**History, and it is the strongest in the file.** Three substantive public rounds on 26 October, on
+a receipt being evidence only if the check can be re-performed: he extended the argument himself with
+two mechanisms, snapshot the inputs as they were at run time and re-perform the check rather than the
+model, then added retention for the whole audit window because the question arrives a year later. He
+liked both comments and followed. A fourth round on 31 October, on payment fraud, where the comment
+found the callback hole one field over, in the vendor contact record. He answers within minutes and he
+answers with mechanism. Ladder step 1, interactive, first class, and the only surface in this round
+where a reply is near certain.
+
+**What that history rules out.** Do not repeat re-performance, re-running the check rather than the
+model, snapshotting inputs, or retention. All four are his now, by his own extension of them. Do not
+re-explain controls to a man who has installed forty ERPs.
+
+**Draft A, recommended.**
+
+> The flexibility claim is the one that decides this. Absorbing an acquisition into the process
+> instead of hiring around it only works if absorption is a fixed template with a test at the end,
+> rather than a project. In practice the add-on runs its own close for two quarters, the machine gets
+> a bespoke mapping nobody reviews, and the confederation rebuilds itself in the gap between signing
+> and migrating. Worth writing before the next deal: the minimum an acquired company must show
+> before it joins the shared close, and who signs that it has shown it.
+
+**Draft B, for the control point instead.**
+
+> Point four is where the model meets someone who is not in the room. The auditor and the lender do
+> not read the ledger, they read who approved what and when. One chart of accounts gets you
+> comparability. One approval record is what gets you a single place they can test, because sampling
+> still walks into whichever unit kept its own trail.
+
+**Why A.** It engages the benefit he is most exposed on, flexibility, with the failure mode that
+happens in the gap between signing and migrating, and it ends on an artefact rather than an opinion.
+That is the same shape as the contributions he has answered before, the mechanism rather than the
+agreement, without reusing any of them.
+
+**Caution.** This post is deliberately about finance and not about AI. Do not drag AI in because his
+headline says so; he made that choice and it should be respected. Do not quote his own lines back at
+him. One comment, then a reply if he answers, and expect that he will. The DM stays closed unless he
+opens the door, since the public thread is where this relationship has been built and it is working.
