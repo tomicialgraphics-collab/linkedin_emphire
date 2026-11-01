@@ -1,6 +1,6 @@
-A SOC 2 says nothing about what the model will say.
+Your vendor passed the audit. It never answered the question.
 
-The AI vendor you approved last year was approved on a form that never asked it a model question.
+A SOC 2 attests that controls exist. It says nothing about what the model does when a user tells it to forget its instructions.
 
 A security questionnaire is a good instrument pointed at the wrong target. You can score a vendor highly and still have no idea what their model does when a user asks it to forget its instructions.
 

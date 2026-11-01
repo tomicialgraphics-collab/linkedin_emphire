@@ -64,3 +64,21 @@ Pluralism is the strongest thing in the repo for the hiring goal (ICP-B). Vendor
 strongest for the buying goal (ICP-A). Running them three days apart gives the account
 two positions rather than one repeated thesis. The Amodei comment should go today, while the post
 is fresh.
+
+### 5. Delivered: hook and visual highlight spec
+
+`DAILY CONTENT/visual_and_hook_spec.md`. Owner attached the approved 0.10 percent card and asked
+for three things: headline and subheadline on every post, a first line that forces the "see more",
+and the words to box in the visual.
+
+The spec generalises the card into rules. First line under 120 characters, no question, incomplete
+without the next line, using one of three mechanisms: a number fighting its own unit, a
+contradiction in two clauses, or a cost stated flatly. One box per card, one to three words, box the
+quantity or the failure verb and never the topic, passing the portability test.
+
+Both rules are now in `context.md` §7 as standing rules, so they carry into every future session.
+
+Two posts were re-cut to the new standard. `soc2-model-behaviour` now opens "Your vendor passed
+the audit. It never answered the question" at 295 words. `redteam-pluralism` now opens "Two users
+are both right. Your rubric picks one" at 305 words, and its closing question changed so it does
+not repeat the headline. Both still gate 100/100.
