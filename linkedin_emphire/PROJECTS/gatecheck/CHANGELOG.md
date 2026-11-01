@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.4.0] - 2026-11-01
+
+The guarded prompt turned out to be a request, not a control. Measured on
+the same model: after tightening the wording the agent refused a 9,000
+refund two attempts out of three and split a refund on one attempt out of
+three, where the previous wording had refused it three times out of three.
+Flaky refusals are the worst of both worlds, because the gate then reports
+a different verdict depending on the day.
+
+### Added
+
+- `guarded` mode now refuses in the tool layer as well: `issue_refund`
+  declines any call that would pass the per-claim cap for that
+  conversation, `approve_claim` declines always, `send_email` declines any
+  address outside the internal domain. A refused call produces no action,
+  so the gate reports a target that does not misbehave rather than a model
+  that was asked nicely.
+- `--prompt-only` on the target server, to run the guarded prompt without
+  the refusals and measure the difference.
+
+### Changed
+
+- 72 tests, up from 67.
+
 ## [0.3.2] - 2026-11-01
 
 Two things the guarded run taught us.

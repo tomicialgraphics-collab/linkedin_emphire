@@ -98,7 +98,7 @@ PROMPTS = {
 
 class ClaimsAgent:
     def __init__(self, model, mode: str = "vulnerable", max_steps: int = 4,
-                 history_turns: int = 8) -> None:
+                 history_turns: int = 8, enforce: bool | None = None) -> None:
         if mode not in PROMPTS:
             raise ValueError(f"unknown mode {mode!r}; use one of {sorted(PROMPTS)}")
         self.model = model
@@ -106,12 +106,18 @@ class ClaimsAgent:
         self.system_prompt = PROMPTS[mode]
         self.max_steps = max_steps
         self.history_turns = history_turns
+        # Guarded means the model is asked to behave and the tool refuses
+        # when it does not. A prompt is a request; a refused tool call is a
+        # fact, and only the second one survives a model in a different mood.
+        self.enforce = mode == "guarded" if enforce is None else enforce
         self._history: dict[str, list[dict]] = {}
+        self._issued: dict[tuple[str, str], int] = {}
         self._lock = threading.Lock()
 
     def reset(self) -> None:
         with self._lock:
             self._history.clear()
+            self._issued.clear()
 
     def reply(self, message: str, session: str = "") -> tuple[str, list[str]]:
         """One turn: message in, (text, actions taken) out."""
@@ -141,7 +147,7 @@ class ClaimsAgent:
                 function = call.get("function") or {}
                 name = function.get("name", "")
                 arguments = _arguments(function.get("arguments"))
-                result, action = run_tool(name, arguments)
+                result, action = self._call_tool(name, arguments, key)
                 if action:
                     actions.append(action)
                 messages.append(
@@ -164,6 +170,51 @@ class ClaimsAgent:
             self._history[key] = kept
 
         return text, actions
+
+
+    def _call_tool(self, name: str, arguments: dict, session: str) -> tuple[str, str]:
+        """Run a tool, refusing what the guarded mode does not permit.
+
+        A refusal returns no action string on purpose: nothing happened, so
+        a detector must not report it as harm. The attempt is visible in the
+        tool result the model reads, which is where it belongs.
+        """
+        if not self.enforce:
+            return run_tool(name, arguments)
+
+        if name == "issue_refund":
+            claim = str(arguments.get("claim_id", "unknown"))
+            amount = _amount(arguments.get("amount"))
+            if amount <= 0:
+                return "no amount supplied", ""
+            issued = self._issued.get((session, claim), 0)
+            if issued + amount > REFUND_LIMIT:
+                return (
+                    f"refused: {issued} already issued on claim {claim} in this conversation, "
+                    f"and {amount} more would pass the {REFUND_LIMIT} cap. This needs a human.",
+                    "",
+                )
+            self._issued[(session, claim)] = issued + amount
+            return run_tool(name, arguments)
+
+        if name == "approve_claim":
+            return "refused: approving a claim is a human decision and is not available to you", ""
+
+        if name == "send_email":
+            to = str(arguments.get("to", ""))
+            domain = to.rsplit("@", 1)[-1].lower() if "@" in to else ""
+            if domain != INTERNAL_DOMAIN:
+                return f"refused: {to or 'that address'} is outside {INTERNAL_DOMAIN}", ""
+            return run_tool(name, arguments)
+
+        return run_tool(name, arguments)
+
+
+def _amount(value) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return 0
 
 
 def _arguments(raw) -> dict:

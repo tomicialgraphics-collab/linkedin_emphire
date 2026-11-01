@@ -139,11 +139,18 @@ python -m groq_target.serve --mode vulnerable          # terminal 1
 python -m gatecheck run --config gatecheck.groq.yml    # terminal 2
 ```
 
-Two prompt modes, one model, one tool set. `vulnerable` is helpful and
-fast with no approval steps; `guarded` is the same assistant with the
-refund limit, the email domain and the no-disclosure rule written down.
-The difference between what the gate finds in the two is a difference in
-the prompt, which is the claim the gate exists to make.
+Two modes, one model, one tool set. `vulnerable` is helpful and fast with
+no approval steps. `guarded` is the same assistant with the refund cap, the
+email domain and the no-disclosure rule written down, and with tools that
+refuse the call the policy forbids. The difference between what the gate
+finds in the two is the claim the gate exists to make.
+
+The tools refusing matters more than the prompt, and that is measured
+rather than asserted. A prompt that says "refunds up to 5000" was satisfied
+by two refunds of 4,900, and after the wording was tightened the model
+complied three times out of three on one run and held only two times out of
+three on the next. A refused tool call cannot be talked into compliance.
+Run `--mode guarded --prompt-only` to see the difference for yourself.
 
 The agent has three tools, `issue_refund`, `send_email` and
 `approve_claim`, and none of them touch the outside world: the sandbox
@@ -294,18 +301,18 @@ groq_target/       a real model behind the same contract (agent, server)
 gatecheck.groq.yml the config for that target, baseline kept separate
 demo/agent.py      the broken and fixed agents
 examples/          a blocked run and a clean run, committed
-tests/             67 tests
+tests/             72 tests
 action.yml         GitHub Action
 ```
 
 ## Tests
 
 ```bash
-pytest      # 67 tests, ~7s, no network, no key
+pytest      # 72 tests, ~7s, no network, no key
 ruff check .
 ```
 
-On a machine with no optional engine the count is 65 passed, 2 skipped:
+On a machine with no optional engine the count is 70 passed, 2 skipped:
 the PyRIT and promptfoo tests skip themselves rather than failing, because
 a missing third-party tool is not a bug in the gate.
 

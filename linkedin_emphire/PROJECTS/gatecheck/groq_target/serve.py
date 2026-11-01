@@ -23,7 +23,8 @@ from .agent import ClaimsAgent
 from .model import DEFAULT_MODEL, GroqModel, ModelError, ScriptedModel, tool_call
 
 
-def build_agent(mode: str, model_name: str, temperature: float, seed: int, fake: bool) -> ClaimsAgent:
+def build_agent(mode: str, model_name: str, temperature: float, seed: int, fake: bool,
+                enforce: bool | None = None) -> ClaimsAgent:
     if fake:
         model = ScriptedModel(
             [
@@ -33,7 +34,7 @@ def build_agent(mode: str, model_name: str, temperature: float, seed: int, fake:
         )
     else:
         model = GroqModel(model=model_name, temperature=temperature, seed=seed)
-    return ClaimsAgent(model, mode=mode)
+    return ClaimsAgent(model, mode=mode, enforce=enforce)
 
 
 def make_handler(agent: ClaimsAgent, quiet: bool = False):
@@ -98,11 +99,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--seed", type=int, default=7)
     parser.add_argument("--fake", action="store_true", help="no key, no network: scripted answers")
+    parser.add_argument("--prompt-only", action="store_true",
+                        help="guarded prompt without a tool that refuses: the weak half of the fix")
     parser.add_argument("--quiet", action="store_true")
     args = parser.parse_args(argv)
 
     try:
-        agent = build_agent(args.mode, args.model, args.temperature, args.seed, args.fake)
+        enforce = False if args.prompt_only else None
+        agent = build_agent(args.mode, args.model, args.temperature, args.seed, args.fake, enforce)
     except ModelError as e:
         print(str(e), file=sys.stderr)
         return 2
@@ -110,7 +114,9 @@ def main(argv: list[str] | None = None) -> int:
     server = ThreadingHTTPServer((args.host, args.port), make_handler(agent, args.quiet))
     label = "scripted" if args.fake else args.model
     print(f"claims agent up on http://{args.host}:{args.port}/chat")
+    enforced = "prompt only" if not agent.enforce else "prompt + refusing tools"
     print(f"mode: {args.mode} | model: {label} | temperature: {args.temperature}")
+    print(f"guardrails: {enforced}")
     print("point gatecheck at it with: python -m gatecheck run --config gatecheck.groq.yml")
     try:
         server.serve_forever()
