@@ -573,6 +573,75 @@ message and an apology would make a small thing large. No explanation of how the
 internally. No second offer of work, and nothing from section 11. No question at the end, because
 the next move is his rerun.
 
+## 14. His message of 11:15 PM: attribution
+
+A reasonable and easy request, and one worth getting exactly right because it lands in a permanent
+record. He asks for three things: his full name in the reviewer attribution and in the relevant
+headings, "the reviewer" retained where it reads naturally, and his role described as a research
+collaborator conducting independent technical verification rather than an unrelated external
+reviewer. He explicitly does not ask for any change to the technical findings.
+
+What was done, in both documents:
+
+- An **Attribution** section at the top of each. Reviewer and author are named and separated. The
+  findings are his; the fixes, the verdicts and the reasoning behind a dispute are mine. His
+  contribution is stated as verification and adversarial testing and expressly not an endorsement
+  of the benchmark, which matters later, when someone reads the register as a review that passed.
+- Headings now name him: "Findings raised by Behar Dalipi, as F-numbered in his review", "the one
+  case the reviewer's test rig can no longer run", "threat-model notes, in the reviewer's terms".
+- Table columns that said "his case" and "his outcome" now read "the reviewer's case" and "the
+  reviewer's outcome", which keeps the columns readable and the name in the prose where it belongs.
+- The state of his rerun is recorded in both documents: in progress at the time of writing, and no
+  result from it reported. That sentence is there so the record cannot later be read as claiming a
+  clean independent pass.
+- Provenance of the section itself is noted, so a future reader knows why the attribution changed
+  between versions.
+
+**One edit outside attribution, disclosed rather than slipped in.** The N13 note said challenge.py
+"ends by fingerprinting the evidence directory and printing that it is unchanged". It does not end
+there, as the 11:08 message said after running it. The note now reads that it writes nothing into
+the directory and prints the unchanged line among its held assertions. That is a correction to a
+description of my own tool, not a change to a finding, and he should hear it from me rather than
+find it in a diff.
+
+**Nothing technical moved.** Every status is as it was, V04 remains disputed on the record, V23, V24
+and V28 to V33 are untouched, and the replacement N13 entry stays held until his rerun lands.
+
+**The reply. Send as is.**
+
+Hi Behar,
+
+Agreed on all three, and it is a better record for it.
+
+Both documents now carry an Attribution section: you as research collaborator conducting the
+independent technical verification, failure-model analysis and adversarial testing, and me as author
+of the implementation and the remediation, which includes every fix and every verdict recorded
+there. The headings that were carrying "his" now name you, the tables read "the reviewer's case" and
+"the reviewer's outcome", and "the reviewer" stays where it reads naturally. I also recorded that
+your contribution is verification and adversarial testing and is not an endorsement of the
+benchmark, because a register can be misread later as a review that passed, and I would rather the
+document say plainly that it is not that.
+
+Both documents also state that your independent rerun against 006d7ee was in progress and that no
+result from it is reported. That keeps the record honest about what is established and what is still
+being checked.
+
+One edit outside attribution, which I would rather flag than let you find in a diff. The N13 note
+described challenge.py as ending on the fingerprint line. It does not, as I said in my last message.
+The wording now matches what the tool actually prints. No finding changed.
+
+No status moved. V04 remains disputed on the record until you tell me the synthetic variant settles
+it, the eight remaining cases are untouched, and the replacement N13 entry is still held.
+
+If you would rather review the two files before they go into the shared register, say so and I will
+send them as they now stand.
+
+Best regards,
+Olusanya
+
+**Why disclose the N13 edit.** He is asking for precision in a permanent record. Correcting a
+sentence and not mentioning it is the one thing that would undermine the reason he asked.
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.
