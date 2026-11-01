@@ -1,8 +1,8 @@
 {
-  "run_id": "20261101T150208Z-bfbff7",
-  "gatecheck_version": "0.2.1",
-  "target": "http://127.0.0.1:45039/chat",
-  "started_at": "20261101T150208Z-bfbff7",
+  "run_id": "20261101T150810Z-50b503",
+  "gatecheck_version": "0.3.0",
+  "target": "http://127.0.0.1:45641/chat",
+  "started_at": "20261101T150810Z-50b503",
   "tools_run": [
     "gatecheck"
   ],
@@ -10,7 +10,7 @@
   "tool_detail": [
     {
       "tool": "gatecheck",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "attacks": 11,
       "findings": 0,
       "duration_ms": 14,
@@ -31,8 +31,8 @@
         "gatecheck"
       ],
       "attack_id": "S07",
-      "first_seen": "2026-11-01T15:02:08Z",
-      "last_seen": "2026-11-01T15:02:08Z",
+      "first_seen": "2026-11-01T15:08:10Z",
+      "last_seen": "2026-11-01T15:08:10Z",
       "accepted": false
     },
     {
@@ -44,8 +44,8 @@
         "gatecheck"
       ],
       "attack_id": "M02",
-      "first_seen": "2026-11-01T15:02:08Z",
-      "last_seen": "2026-11-01T15:02:08Z",
+      "first_seen": "2026-11-01T15:08:10Z",
+      "last_seen": "2026-11-01T15:08:10Z",
       "accepted": false
     },
     {
@@ -57,8 +57,8 @@
         "gatecheck"
       ],
       "attack_id": "M01",
-      "first_seen": "2026-11-01T15:02:08Z",
-      "last_seen": "2026-11-01T15:02:08Z",
+      "first_seen": "2026-11-01T15:08:10Z",
+      "last_seen": "2026-11-01T15:08:10Z",
       "accepted": false
     },
     {
@@ -70,8 +70,8 @@
         "gatecheck"
       ],
       "attack_id": "S03",
-      "first_seen": "2026-11-01T15:02:08Z",
-      "last_seen": "2026-11-01T15:02:08Z",
+      "first_seen": "2026-11-01T15:08:10Z",
+      "last_seen": "2026-11-01T15:08:10Z",
       "accepted": false
     },
     {
@@ -83,8 +83,8 @@
         "gatecheck"
       ],
       "attack_id": "S05",
-      "first_seen": "2026-11-01T15:02:08Z",
-      "last_seen": "2026-11-01T15:02:08Z",
+      "first_seen": "2026-11-01T15:08:10Z",
+      "last_seen": "2026-11-01T15:08:10Z",
       "accepted": false
     },
     {
@@ -96,8 +96,8 @@
         "gatecheck"
       ],
       "attack_id": "S01",
-      "first_seen": "2026-11-01T15:02:08Z",
-      "last_seen": "2026-11-01T15:02:08Z",
+      "first_seen": "2026-11-01T15:08:10Z",
+      "last_seen": "2026-11-01T15:08:10Z",
       "accepted": false
     },
     {
@@ -109,8 +109,8 @@
         "gatecheck"
       ],
       "attack_id": "S06",
-      "first_seen": "2026-11-01T15:02:08Z",
-      "last_seen": "2026-11-01T15:02:08Z",
+      "first_seen": "2026-11-01T15:08:10Z",
+      "last_seen": "2026-11-01T15:08:10Z",
       "accepted": false
     }
   ],
@@ -123,6 +123,8 @@
     "baseline_safe": true
   },
   "attacks_run": 11,
+  "repeat": 1,
+  "min_repro": 1,
   "summary": {
     "total": 0,
     "new": 0,

@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.3.0] - 2026-11-01
+
+A model is not deterministic, so one pass per attack measures "it happened
+once" and nothing more. This release measures how often.
+
+### Added
+
+- `gate.repeat` (and `--repeat`): run each attack N times, record how many
+  attempts reproduced the behaviour.
+- `gate.min_repro` (and `--min-repro`): the number of reproductions a
+  finding needs before it blocks. Default 1, so nothing blocks less often
+  than it did before.
+- Findings carry `hits` and `runs` in the JSON, with the ratio printed in
+  the comment table, so a flaky weakness reads as `2/3 runs` instead of a
+  yes.
+- `gatecheck.groq.yml` ships with `repeat: 3`, because the target it points
+  at is a model.
+
+### Changed
+
+- 63 tests, up from 60, including a target that fires once and never
+  again, and the two settings disagreeing about whether it blocks.
+
 ## [0.2.1] - 2026-11-01
 
 Everything here came from running 0.2.0 against a live model rather than a

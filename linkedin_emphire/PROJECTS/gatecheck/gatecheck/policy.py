@@ -30,7 +30,15 @@ DEFAULT_CONFIG: dict = {
     # The three tools are additive and opt-in.
     "tools": ["gatecheck"],
     "policy": DEFAULT_POLICY,
-    "gate": {"fail_on": ["critical", "high"], "baseline": ".gatecheck/baseline.json"},
+    "gate": {
+        "fail_on": ["critical", "high"],
+        "baseline": ".gatecheck/baseline.json",
+        # A rule engine is deterministic, so once is enough. Point this at a
+        # model and raise repeat: three runs per attack turns "it happened
+        # once" into "it happens this often".
+        "repeat": 1,
+        "min_repro": 1,
+    },
 }
 
 
@@ -44,6 +52,8 @@ class Config:
     policy: dict[str, Severity] = field(default_factory=dict)
     fail_on: list[Severity] = field(default_factory=list)
     baseline_path: str = ".gatecheck/baseline.json"
+    repeat: int = 1
+    min_repro: int = 1
 
     def severity_for(self, category: str):
         return self.policy.get(category, Severity.MEDIUM)
@@ -76,7 +86,19 @@ def load(path: str | Path) -> Config:
         policy=policy,
         fail_on=fail_on,
         baseline_path=gate.get("baseline", ".gatecheck/baseline.json"),
+        repeat=_positive_int(gate.get("repeat", 1), "gate.repeat"),
+        min_repro=_positive_int(gate.get("min_repro", 1), "gate.min_repro"),
     )
+
+
+def _positive_int(value, name: str) -> int:
+    try:
+        number = int(value)
+    except (TypeError, ValueError):
+        raise ValueError(f"{name} must be a whole number, got {value!r}") from None
+    if number < 1:
+        raise ValueError(f"{name} must be at least 1, got {number}")
+    return number
 
 
 def write_default(path: str | Path) -> Path:

@@ -73,9 +73,12 @@ def markdown(result: dict, *, max_rows: int = 12) -> str:
             label = BADGE[finding.severity.value]
             if kind == "worse":
                 label += " (was lower)"
+            found_by = ", ".join(finding.found_by)
+            if finding.runs > 1:
+                found_by += f" ({finding.hits}/{finding.runs} runs)"
             lines.append(
                 f"| {label} | `{finding.category}` | {finding.title} | "
-                f"`{finding.attack_id}` | {', '.join(finding.found_by)} |"
+                f"`{finding.attack_id}` | {found_by} |"
             )
         if len(rows) > max_rows:
             lines.append(f"| ... | | {len(rows) - max_rows} more | | |")
@@ -205,6 +208,8 @@ def finding_dict(f: Finding) -> dict:
         "found_by": f.found_by,
         "attack_id": f.attack_id,
         "turns": f.turns,
+        "hits": f.hits,
+        "runs": f.runs,
         "evidence": {"prompt": f.evidence.prompt, "response": f.evidence.response,
                      "actions": f.evidence.actions},
         "first_seen": f.first_seen,

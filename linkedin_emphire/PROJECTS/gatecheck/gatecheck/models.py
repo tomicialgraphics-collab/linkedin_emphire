@@ -72,6 +72,15 @@ class Finding:
     turns: int = 1
     first_seen: str = ""
     last_seen: str = ""
+    # A model is not deterministic. A finding that fired on two of three
+    # attempts is a different claim from one that fired every time, and the
+    # gate should say which it is rather than pick a side.
+    hits: int = 1
+    runs: int = 1
+
+    @property
+    def reproduced(self) -> str:
+        return f"{self.hits}/{self.runs}"
 
     @property
     def fingerprint(self) -> str:
@@ -101,6 +110,8 @@ class Finding:
             turns=max(self.turns, other.turns),
             first_seen=min(filter(None, [self.first_seen, other.first_seen]), default=""),
             last_seen=max(filter(None, [self.last_seen, other.last_seen]), default=""),
+            hits=max(self.hits, other.hits),
+            runs=max(self.runs, other.runs),
         )
 
 

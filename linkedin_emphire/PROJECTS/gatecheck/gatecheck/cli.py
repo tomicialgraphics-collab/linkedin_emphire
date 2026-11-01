@@ -62,6 +62,12 @@ def cmd_run(args) -> int:
         config.tools = [t.strip() for t in args.tools.split(",") if t.strip()]
     if args.fail_on:
         config.fail_on = [Severity.parse(s) for s in args.fail_on.split(",")]
+    if args.repeat:
+        config.repeat = max(1, args.repeat)
+    if args.min_repro:
+        config.min_repro = max(1, args.min_repro)
+    if config.min_repro > config.repeat:
+        config.min_repro = config.repeat
 
     target, ctx = _resolve_target(args, config)
     try:
@@ -105,6 +111,12 @@ def cmd_run(args) -> int:
                 print("  note: this run is BLOCKED. Those findings are now the accepted")
                 print("  state and will not fail the gate again unless they get worse.")
 
+    if config.repeat > 1:
+        print(
+            f"each attack ran {config.repeat} times; "
+            f"findings block at {config.min_repro} reproduction(s)",
+            file=sys.stderr,
+        )
     print(markdown(result))
     print()
     print(f"artifacts: {out_dir}")
@@ -124,16 +136,22 @@ def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict
         if not ok:
             results.append({"tool": name, "skipped": reason})
             continue
-        results.append(engine.run(target, engine.plan(), config.severity_for))
+        results.append(engine.run(target, engine.plan(), config.severity_for, repeat=config.repeat))
 
     all_findings = dedupe([f for r in results if hasattr(r, "findings") for f in r.findings])
     baseline = Baseline.load(config.baseline_path)
     delta = baseline.compare(all_findings)
 
     accepted = baseline.accepted_ids()
-    blocking = [f for f in delta["new"] if config.fails_gate(f.severity) and f.id not in accepted]
-    blocking += [w["finding"] for w in delta["worse"]
-                 if config.fails_gate(w["finding"].severity) and w["finding"].id not in accepted]
+    def _blocks(finding) -> bool:
+        return (
+            config.fails_gate(finding.severity)
+            and finding.id not in accepted
+            and finding.hits >= config.min_repro
+        )
+
+    blocking = [f for f in delta["new"] if _blocks(f)]
+    blocking += [w["finding"] for w in delta["worse"] if _blocks(w["finding"])]
 
     tools_skipped = {r["tool"]: r["skipped"] for r in results if isinstance(r, dict) and "skipped" in r}
     tools_run = [r.tool for r in results if hasattr(r, "findings")]
@@ -201,6 +219,8 @@ def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict
         "baseline_used": str(config.baseline_path) if baseline.findings else "",
         "verdict": {"ok": ok, "status": status, "reason": reason, "baseline_safe": baseline_safe},
         "attacks_run": attacks,
+        "repeat": config.repeat,
+        "min_repro": config.min_repro,
         "summary": {
             "total": len(all_findings),
             "new": len(delta["new"]),
@@ -274,6 +294,10 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--demo", choices=["vulnerable", "fixed"], default=None)
     r.add_argument("--tools", default=None, help="comma list: deepteam,pyrit,promptfoo")
     r.add_argument("--fail-on", default=None, help="comma list of severities")
+    r.add_argument("--repeat", type=int, default=None,
+                   help="run each attack N times and record how often it reproduced")
+    r.add_argument("--min-repro", type=int, default=None,
+                   help="only block when a finding reproduced at least this many times")
     r.add_argument("--out", default=None)
     r.add_argument("--update-baseline", action="store_true")
     r.add_argument("--force-baseline", action="store_true",

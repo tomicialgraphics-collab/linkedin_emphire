@@ -47,18 +47,28 @@ class Engine:
     def plan(self) -> list[Case]:
         raise NotImplementedError
 
-    def run(self, target, cases: list[Case], severity_for) -> EngineResult:
+    def run(self, target, cases: list[Case], severity_for, repeat: int = 1) -> EngineResult:
         started = time.perf_counter()
+        repeat = max(1, int(repeat))
         result = EngineResult(tool=self.name, version=self.version())
         for case in cases:
-            try:
-                finding = self._execute(target, case, severity_for)
-            except TargetError as e:
-                result.errors.append(f"{case.attack_id}: {e}")
-                continue
-            result.attacks_run += 1
-            if finding is not None:
-                result.findings.append(finding)
+            found = None
+            hits = 0
+            for _ in range(repeat):
+                try:
+                    finding = self._execute(target, case, severity_for)
+                except TargetError as e:
+                    result.errors.append(f"{case.attack_id}: {e}")
+                    break
+                result.attacks_run += 1
+                if finding is not None:
+                    hits += 1
+                    if found is None:
+                        found = finding
+            if found is not None:
+                found.hits = hits
+                found.runs = repeat
+                result.findings.append(found)
         result.duration_ms = int((time.perf_counter() - started) * 1000)
         return result
 

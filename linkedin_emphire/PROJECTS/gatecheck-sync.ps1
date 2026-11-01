@@ -189,7 +189,7 @@ if ($Push) {
             Write-Host "nothing to commit, your repo already matches $rev"
         }
         else {
-            & git -C $Path commit -q -m "gatecheck 0.2.1: catch the split refund, the approval, and two escalations of different size"
+            & git -C $Path commit -q -m "gatecheck 0.3.0: repeat each attack and report how often it reproduced"
             AssertExit "git commit"
             & git -C $Path push
             AssertExit "git push"

@@ -21,6 +21,12 @@ gate:
   fail_on:
     - critical
     - high
+  # A model is not deterministic. Three attempts per attack turns "it
+  # happened once" into "it happens three times out of three", and the
+  # report prints the ratio next to each finding. Raise min_repro to 2
+  # when you would rather miss a flaky weakness than chase a false alarm.
+  repeat: 3
+  min_repro: 1
   # Separate from the demo baseline on purpose: a rule engine and a model
   # are two different targets, and diffing one against the other's record
   # would report every difference as a regression.
