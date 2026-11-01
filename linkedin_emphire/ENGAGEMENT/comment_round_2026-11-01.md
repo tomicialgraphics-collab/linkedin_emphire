@@ -397,3 +397,54 @@ opinion, which is the only kind of comment worth leaving under a post this size.
 Do not repeat view counts for the animation, which I did not check. Do not use the benchmark as an
 example, and do not reply to both comments under one post in the same sitting. Draft A plus one
 reply, at most.
+
+## Entry 9: Paolo Perrone, on self-hosting being about ownership rather than cost
+
+**Surface:** personal post, roughly half an hour before the paste, newsletter account read by a
+large engineering audience. He argues self-hosting will not save money, lists the real reasons
+(privacy, no rate limits, offline, fine-tuning), gives rough math for three buyer sizes, names two
+hardware builds, and asks whether people self-host for cost, privacy or fun.
+
+**My read without a comment:** the list is right and it is missing the reason an evaluation team
+cares about, which is that a hosted model is a configuration you cannot get back. Dated snapshots
+pin weights, and they do not pin the service around the weights. That is the argument that survives
+next to his, and it is not the cost argument wearing a hat. The privacy line is also worth a
+sharper version, because "data never leaves your box" is true of the weights and false of the
+system, but that is a second comment and not the one to open with.
+
+**Verified and hedged before drafting:** providers publish dated model snapshots, so the weights
+for a named revision are meant to be fixed. The serving stack around them is not covered by that
+promise: quantisation, batching, routing, safety filters and defaults can change behind a stable
+model name, and several providers say in their own terms that outputs can change for a pinned
+model. Keep the verbs hedged in the comment. Do not assert a specific provider changed a specific
+quantisation, because I have not measured that and the audience for this post would know.
+
+**Draft A: THE MISSING REASON, 104 words, voice_lint clean**
+
+> The reason missing from the list is the one that decides it for an evaluation team: a hosted
+> model is a configuration you cannot get back. Dated snapshots pin the weights. They do not pin
+> the service around them, and quantisation, routing, filters and defaults all live there. So last
+> quarter's benchmark number and last month's incident postmortem were measuring a setup nobody can
+> reconstruct. Self-hosting buys a configuration you can pin end to end. The catch is the same one
+> you make elsewhere: pin it. Pull latest and you have paid for the box and kept the drift.
+
+**Draft B: THE PRIVACY CORRECTION, 82 words, voice_lint clean**
+
+> The privacy reason is true of the weights and not of the system. The box bounds the model, and
+> the data flow goes wherever your tracing, error reporting, eval callbacks and tool APIs point,
+> which by default is off the box. Self-hosting does not close that. It moves the exposure from
+> someone else's inference endpoint to your own observability stack, where you can actually see it
+> and fix it. Worth the move, and worth saying precisely, since that is the reason most buyers
+> repeat.
+
+**Why A.** The thread will fill with agreement on privacy and disagreement about the maths. The
+scarcity is a reason nobody has listed, addressed to the people who ship and have to explain a
+regression later. A also survives his own framing, since it is about ownership rather than cost,
+which is the ground he has already claimed.
+
+**The memorable line:** a hosted model is a configuration you cannot get back.
+
+**Caution.** Do not say snapshots are unstable, because the accurate claim is narrower and the
+audience knows the difference. Do not touch his hardware picks, which are fine and will be argued
+about by people who own both cards. Keep B for a different post unless the thread turns into a
+privacy pile-on, in which case B is the only comment worth adding.
