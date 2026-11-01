@@ -40,7 +40,7 @@ REPO_URL = "https://github.com/Teamthy/ai-redteam-five-tests.git"
 PACKAGE = Path(__file__).resolve().parent / "package.md"
 
 
-def preflight(model, base_url):
+def preflight(model, base_url, api_key="x"):
     """Fail with a readable message before doing any work."""
     try:
         import openai  # noqa: F401
@@ -55,12 +55,18 @@ def preflight(model, base_url):
     import urllib.request
 
     url = base_url.rstrip("/") + "/models"
-    req = urllib.request.Request(url, headers={"Authorization": "Bearer " + os.environ.get("OPENAI_API_KEY", "x")})
+    req = urllib.request.Request(url, headers={"Authorization": "Bearer " + (api_key or "x")})
     try:
         with urllib.request.urlopen(req, timeout=5) as resp:
             resp.read(64)
     except urllib.error.HTTPError as exc:
         # a 401/404 still proves something is listening, which is what this check is for
+        if exc.code in (401, 403):
+            raise SystemExit(
+                "the endpoint rejected the key (HTTP %d at %s).\n"
+                "  Check the key, and that --base-url matches the provider it came from."
+                % (exc.code, url)
+            )
         if exc.code >= 500:
             raise SystemExit("endpoint answered %s at %s. Is the model loaded?" % (exc.code, url))
     except Exception as exc:
@@ -259,7 +265,7 @@ def main():
     if not package.exists():
         raise SystemExit("no package at %s" % package)
 
-    preflight(args.model, args.base_url)
+    preflight(args.model, args.base_url, args.api_key)
     print("[plan] clone harness at %s, run 5 tests against %s, fill %s" % (PINNED_COMMIT[:7], args.model, package.name))
 
     workdir = tempfile.mkdtemp(prefix="fivetests-")

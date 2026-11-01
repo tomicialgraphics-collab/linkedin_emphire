@@ -1,0 +1,8 @@
+python      3.11.2
+interpreter /usr/bin/python3
+package     /tmp/pk.md
+    openai 3.42.0 present
+    endpoint http://127.0.0.1:8124/v1
+    models   llama-3.3-70b-versatile, whisper-large-v3
+    model    llama-3.3-70b-versatile
+    /usr/bin/python3 /home/user/linkedin_emphire/linkedin_emphire/OUTREACH/redteam-pack/build_package.py --model llama-3.3-70b-versatile --base-url http://127.0.0.1:8124/v1 --package /tmp/pk.md --api-key good-key

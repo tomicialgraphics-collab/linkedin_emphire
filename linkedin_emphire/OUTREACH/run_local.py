@@ -44,21 +44,23 @@ def step(n, total, text):
     say("[%d/%d] %s" % (n, total, text))
 
 
-def probe(base_url, timeout=4):
-    """Return the list of model ids if something is listening, else None."""
+def probe(base_url, key=None, timeout=6):
+    """Return (model ids, note). Ids is None when nothing answered at all."""
     url = base_url.rstrip("/") + "/models"
-    req = urllib.request.Request(url, headers={"Authorization": "Bearer local"})
+    req = urllib.request.Request(url, headers={"Authorization": "Bearer " + (key or "local")})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             data = json.loads(resp.read().decode("utf-8", "replace"))
             ids = [m.get("id") for m in data.get("data", []) if m.get("id")]
-            return ids
+            return ids, None
     except urllib.error.HTTPError as exc:
+        if exc.code in (401, 403):
+            return [], "HTTP %d, key rejected. Check the key, or that it is the right provider." % exc.code
         if exc.code < 500:
-            return []  # something is listening, it just wants a real key
-        return None
-    except Exception:
-        return None
+            return [], "HTTP %d from %s" % (exc.code, url)
+        return None, "HTTP %d from %s" % (exc.code, url)
+    except Exception as exc:
+        return None, exc.__class__.__name__
 
 
 def have_package():
@@ -126,7 +128,9 @@ def main():
     found = None
     tried = []
     if args.base_url:
-        ids = probe(args.base_url)
+        ids, note = probe(args.base_url, args.api_key)
+        if note:
+            say("    %s" % note)
         if ids is None:
             say("    nothing answered at %s" % (args.base_url.rstrip("/") + "/models"))
             return 1
@@ -134,7 +138,7 @@ def main():
     else:
         for url, name, how in CANDIDATES:
             tried.append("%s (%s)" % (url, name))
-            ids = probe(url)
+            ids, note = probe(url, args.api_key)
             if ids is not None:
                 say("    found %s at %s" % (name, url))
                 found = (url, ids)
