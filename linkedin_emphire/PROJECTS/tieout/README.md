@@ -42,6 +42,43 @@ not belong here.
 | P5 re-derivation | `verify` re-walks the hash chain, re-hashes the manifest, re-runs the detectors on stored raw: no model, no key, no network |
 | P6 judge audit | the judge's own numbers every run: anchor agreement, perturbation flips, disagreement rate, self-preference probe |
 
+## The tool layer: three red-team tools, one record
+
+PyRIT, promptfoo and DeepTeam all do something real, and all three grade
+their own work in their own vocabulary. Run all three and you have three
+answers you cannot compare, from three judges you cannot check without
+installing three tools.
+
+`tieout adapters` keeps the tools and replaces the grading. tieout owns
+the attack catalogue, the ids and the judge; the tools execute.
+
+```bash
+tieout adapters list                     # which of the three are installed
+tieout adapters run --out runs/adapters  # 48 records, offline, keyless, ~10s
+tieout adapters verify runs/adapters     # re-derive with none of the tools
+tieout adapters matrix runs/adapters     # who caught what
+```
+
+From the committed sample run (`runs/demo-adapters`):
+
+| tool | items | its own verdict | agreement with the harness |
+|------|-------|-----------------|----------------------------|
+| PyRIT 1.1.0 | 16 | 16 undetermined | no opinion to compare |
+| promptfoo 0.125.1 | 8 | 6 fail, 2 pass | 8 of 8 |
+| DeepTeam 1.0.10 | 24 | 24 undetermined | no opinion to compare |
+
+Forty of forty-eight tool verdicts are `undetermined`, and the harness
+still produced a verdict for every one of them, re-derivable by a
+stranger with none of the three installed. That is the point of the
+layer in one table.
+
+Two of its findings are worth reading in full: encoding variants break
+the same weaknesses as the raw text, and a 9,800 refund split into two
+4,900s is held by a per-action judge, which is why the run carries six
+`L-JUDGE-SCOPE` limitation records saying what the hold does not mean.
+
+[Full write-up: docs/adapters.md](docs/adapters.md)
+
 ## Quickstart
 
 ```bash
@@ -252,6 +289,10 @@ it is a family with items, controls, and a judge audit.
 - [harness spec](docs/harness-spec.md): the T0-T6 phases as implemented,
   the check families (F1, F2), the stability diff, tests A-D, the
   binding field map, the standing named gaps
+- [the tool layer](docs/adapters.md): PyRIT, promptfoo and DeepTeam
+  behind one catalogue and one judge, the divergence numbers, the
+  coverage matrix, the tool-free re-derivation, and what the layer does
+  not do
 - [method note](docs/method-note.md): the gap, the pillars as doctrine,
   how to read a bundle, reproducibility and stability stated precisely,
   the statistical rigor (exact Clopper-Pearson)

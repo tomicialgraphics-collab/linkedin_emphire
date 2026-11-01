@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: install lint test selftest demo verify ui serve clean
+.PHONY: install lint test selftest demo verify ui serve clean adapters adapters-verify
 
 install:
 	pip install -e ".[dev]"
@@ -19,6 +19,13 @@ demo:
 
 verify:
 	$(PY) -m tieout verify runs/demo
+
+adapters:
+	$(PY) -m tieout adapters run --out runs/adapters
+
+adapters-verify:
+	$(PY) -m tieout adapters verify runs/demo-adapters
+	$(PY) -m tieout adapters matrix runs/demo-adapters
 
 ui:
 	cd web && npm install && npm run build
