@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<title>P0 patch: what is in it, and the evidence it works</title>
+<html lang="en"><head><meta charset="utf-8"><title>P0 patch: what is in it, and the evidence it works</title>
 <style>
   body { font-family: Georgia, "Times New Roman", serif; max-width: 46em; margin: 3em auto;
          padding: 0 1.5em; color: #1a1a1a; line-height: 1.55; font-size: 15px; }
@@ -77,9 +76,14 @@ directory, applies one change and reports whether the checks caught it.</p>
 <td>caught by <code>B</code></td>
 </tr>
 <tr>
-<td>f2 WAL timestamp only</td>
+<td>f2a WAL timestamp changed before replay, re-signed</td>
+<td>caught by <code>B</code></td>
+<td>caught by <code>B</code>, with <code>B.wal</code> holding</td>
+</tr>
+<tr>
+<td>f2b WAL timestamp changed after replay</td>
 <td>caught by <code>B.wal</code></td>
-<td>caught by <code>B.wal</code></td>
+<td>caught by <code>B.wal</code>, and by <code>B</code> on the signature</td>
 </tr>
 <tr>
 <td>f3 unsigned verdict, reframed</td>
@@ -108,10 +112,15 @@ directory, applies one change and reports whether the checks caught it.</p>
 </tr>
 </tbody>
 </table>
-<p>f2 is the one the report reads differently from the code. Changing only the
-WAL timestamp already failed <code>B.wal</code> before the patch, so nothing needed
-fixing there, and the regression pins that behaviour so the report's version
-of it cannot come back in a later rewrite.</p>
+<p>f2 is the one the report reads differently from the code, and the review's
+answer to that is right: the two of us were changing the WAL at different
+moments. Before the store replays, the recovered record agrees with the altered
+log and the failure is the binding to the host journal, so <code>B</code> fails and
+<code>B.wal</code> holds. After replay, the two files disagree and <code>B.wal</code> fails. Both
+cases are now in the suite, each requiring its own check and, in f2a,
+requiring the other one to hold, so a later change cannot collapse two
+properties into one line. With the patch, the after-replay case also fails <code>B</code>,
+because the log record's signature no longer covers its bytes.</p>
 <h2>The rest of the suite still passes</h2>
 <p>Run from a clean clone of <code>25cd57f</code> with the patch applied:</p>
 <pre><code>python3 run.py                    # completes
@@ -133,7 +142,7 @@ than leaving the old one to look like a regression.</p>
 applied:</p>
 <pre><code>python verify.py example\run      -&gt; 16 of 16 checks hold (8 P, 2 V, 6 meta)
 python challenge.py example\run   -&gt; 9 of 9 mutations caught
-python audit\regressions.py       -&gt; 7 of 7 counterexamples caught
+python audit\regressions.py       -&gt; 8 of 8 counterexamples caught
 </code></pre>
 <p>Linux, Python 3.11.2, the machine the patch was built on: the same three,
 plus two consecutive runs compared file by file and byte-identical.</p>

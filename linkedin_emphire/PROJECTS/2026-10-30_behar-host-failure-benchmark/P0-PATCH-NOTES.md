@@ -32,17 +32,23 @@ Run against the tree as reviewed, and against the patched tree:
 | mode | at `25cd57f` | with the patch |
 | --- | --- | --- |
 | f1 WAL verdict flipped, stale signature | accepted, no check failed | caught by `B` |
-| f2 WAL timestamp only | caught by `B.wal` | caught by `B.wal` |
+| f2a WAL timestamp changed before replay, re-signed | caught by `B` | caught by `B`, with `B.wal` holding |
+| f2b WAL timestamp changed after replay | caught by `B.wal` | caught by `B.wal`, and by `B` on the signature |
 | f3 unsigned verdict, reframed | gap erased | gap stays named |
 | f5 seven host journals deleted | accepted, no check failed | caught by `artifacts-complete` |
 | f8 actor and policy rewritten, re-signed | accepted, no check failed | caught by `D` |
 | f13 host journal cut mid-line | traceback, no report | caught by `artifacts-parse`, report written |
 | f14 timestamp set to an epoch value, re-signed | accepted, no check failed | caught by `D` |
 
-f2 is the one the report reads differently from the code. Changing only the
-WAL timestamp already failed `B.wal` before the patch, so nothing needed
-fixing there, and the regression pins that behaviour so the report's version
-of it cannot come back in a later rewrite.
+f2 is the one the report reads differently from the code, and the review's
+answer to that is right: the two of us were changing the WAL at different
+moments. Before the store replays, the recovered record agrees with the altered
+log and the failure is the binding to the host journal, so `B` fails and
+`B.wal` holds. After replay, the two files disagree and `B.wal` fails. Both
+cases are now in the suite, each requiring its own check and, in f2a,
+requiring the other one to hold, so a later change cannot collapse two
+properties into one line. With the patch, the after-replay case also fails `B`,
+because the log record's signature no longer covers its bytes.
 
 ## The rest of the suite still passes
 
@@ -74,7 +80,7 @@ applied:
 ```
 python verify.py example\run      -> 16 of 16 checks hold (8 P, 2 V, 6 meta)
 python challenge.py example\run   -> 9 of 9 mutations caught
-python audit\regressions.py       -> 7 of 7 counterexamples caught
+python audit\regressions.py       -> 8 of 8 counterexamples caught
 ```
 
 Linux, Python 3.11.2, the machine the patch was built on: the same three,

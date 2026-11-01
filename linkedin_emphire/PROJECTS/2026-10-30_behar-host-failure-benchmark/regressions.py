@@ -27,35 +27,56 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_REPO = os.path.dirname(HERE)
 
-# mode -> (what it does, when it is applied, the checks that have to fail)
+# mode -> (what it does, when it is applied, checks that must fail, checks that must not fail)
+#
+# f2a and f2b are the two intervention points around replay, and they test different
+# properties. f2a alters the WAL before replay, so the replayed record and the WAL agree
+# and the timestamp binding is what fails: B fails, B.wal holds. f2b alters the WAL after
+# replay, so the two disagree: B.wal fails. After the P0 patch B fails as well in the
+# second case, because the WAL record's signature no longer covers its bytes, which is a
+# second and independent reason. Both cases were raised as T08.
 MODES = {
     "f1": ("WAL verdict flipped BLOCK to ALLOW and replayed with its stale signature",
-           "mid-run", {"B"}),
-    "f2": ("WAL decision_ts changed from 2 to 7, store untouched",
-           "after-run", {"B.wal"}),
+           "mid-run", {"B"}, set()),
+    "f2a": ("WAL decision_ts changed before replay and re-signed, so the record agrees with it",
+            "mid-run", {"B"}, {"B.wal"}),
+    "f2b": ("WAL decision_ts changed after replay, store untouched",
+            "after-run", {"B.wal"}, set()),
     "f3": ("unsigned verdict for C-3003 appended and reframed",
-           "after-run", {"gap:C-3003"}),
+           "after-run", {"gap:C-3003"}, set()),
     "f5": ("the seven host journals that prove scenarios ran deleted",
-           "after-run", {"artifacts-complete"}),
+           "after-run", {"artifacts-complete"}, set()),
     "f8": ("D-4004 actor and policy rewritten and re-signed with the fixture key",
-           "after-run", {"D"}),
+           "after-run", {"D"}, set()),
     "f13": ("host-B.jsonl cut mid-line, as a crash during an append leaves it",
-            "after-run", {"artifacts-parse"}),
+            "after-run", {"artifacts-parse"}, set()),
     "f14": ("D-4004 decision_ts replaced with a Unix epoch value, re-signed, reframed",
-            "after-run", {"D"}),
+            "after-run", {"D"}, set()),
 }
 
 TAMPER_HOOK = '''
 
 def _regression_tamper(rundir):
-    """Applied mid-run, at the one moment the mutation is meaningful."""
+    """Applied mid-run, at the one moment the mutation is meaningful.
+
+    Both cases here touch the WAL before it is replayed, which is what
+    distinguishes them from the after-run modes.
+    """
+    import sys as _sys
+    _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "bench"))
+    from common import record_payload, sign
+
     mode = os.environ.get("REGRESSION_MODE", "")
-    if mode != "f1":
+    if mode not in ("f1", "f2a"):
         return
     path = os.path.join(rundir, "wal-B.jsonl")
     with open(path, encoding="utf-8") as fh:
         record = json.loads(fh.read().splitlines()[0])
-    record["verdict"] = "ALLOW"          # the signature is deliberately left stale
+    if mode == "f1":
+        record["verdict"] = "ALLOW"        # the signature is deliberately left stale
+    else:
+        record["decision_ts"] = 7          # re-signed, so only the timestamp is wrong
+        record["signature"] = sign(record_payload(record))
     with open(path, "w", encoding="utf-8", newline="\\n") as fh:
         fh.write(json.dumps(record, sort_keys=True) + "\\n")
 '''
@@ -159,7 +180,7 @@ def append_unsigned_verdict(repo: str, rundir: str) -> None:
 def apply_after_run(repo: str, rundir: str, mode: str) -> None:
     common = bench_import(repo)
 
-    if mode == "f2":
+    if mode == "f2b":
         path = os.path.join(rundir, "wal-B.jsonl")
         with open(path, encoding="utf-8") as fh:
             record = json.loads(fh.read().splitlines()[0])
@@ -247,10 +268,12 @@ def run_mode(repo: str, mode: str) -> tuple[bool, str]:
             return kept, "C-3003 named as a gap: %s" % ("yes" if kept else "no")
 
         run_verify(tree, rundir)
-        wanted = MODES[mode][2]
+        wanted, forbidden = MODES[mode][2], MODES[mode][3]
         failed, note = failed_checks(rundir)
-        caught = wanted <= failed
+        caught = wanted <= failed and not (forbidden & failed)
         detail = note or ("failed: %s" % (", ".join(sorted(failed)) or "nothing"))
+        if forbidden & failed:
+            detail += " (expected %s to hold)" % ", ".join(sorted(forbidden & failed))
         return caught, detail
     finally:
         shutil.rmtree(work, ignore_errors=True)
