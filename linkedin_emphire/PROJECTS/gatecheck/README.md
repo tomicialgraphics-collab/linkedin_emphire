@@ -197,16 +197,20 @@ gatecheck/
   cli.py           init, run, accept, report
 demo/agent.py      the broken and fixed agents
 examples/          a blocked run and a clean run, committed
-tests/             42 tests
+tests/             43 tests
 action.yml         GitHub Action
 ```
 
 ## Tests
 
 ```bash
-pytest      # 42 tests, ~6s, no network, no key
+pytest      # 43 tests, ~6s, no network, no key
 ruff check .
 ```
+
+On a machine with no optional engine the count is 41 passed, 2 skipped:
+the PyRIT and promptfoo tests skip themselves rather than failing, because
+a missing third-party tool is not a bug in the gate.
 
 The tests cover the promises rather than the plumbing: fingerprint
 stability across cosmetic change, one weakness found by three tools

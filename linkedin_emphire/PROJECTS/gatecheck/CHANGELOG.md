@@ -32,7 +32,7 @@ findings the agent still had as fixed. Nothing below is cosmetic.
 
 ### Fixed
 
-- 42 tests, up from 36: the no-engine run, the partial-run baseline
+- 43 tests, up from 36: the no-engine run, the partial-run baseline
   refusal, and a complete blocked run recording known findings.
 
 ## [0.1.0] - 2026-11-01

@@ -19,9 +19,13 @@
 .PARAMETER Push
   After a successful verification, git add, commit and push in your repo.
 
+.NOTES
+  Run it as a file. Pasting it into an interactive prompt line by line
+  breaks on #Requires and on the try/finally blocks.
+
 .EXAMPLE
   cd C:\Users\Timothy\projects\gatecheck
-  .\gatecheck-sync.ps1
+  powershell -ExecutionPolicy Bypass -File .\gatecheck-sync.ps1
 
 .EXAMPLE
   .\gatecheck-sync.ps1 -Path C:\projects\gatecheck -Push
