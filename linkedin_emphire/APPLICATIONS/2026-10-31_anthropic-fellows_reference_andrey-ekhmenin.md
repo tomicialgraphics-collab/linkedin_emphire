@@ -74,8 +74,9 @@ true, so it costs nothing and buys credibility.
 
 ## What Andrey needs from the owner, and by when
 
-He said: "Looking forward to reviewing your evidence package separately." The reference is
-partly extended on the strength of that promise, which makes the package the critical path.
+He has now said it twice, in two different words: he will review the package separately from
+the reference. The reference is partly extended on the strength of that promise, which makes
+the package the critical path.
 
 - The package exists as `linkedin_emphire/OUTREACH/2026-10-29_andrey_evidence_package_TEMPLATE.md`,
   still a template. It needs a real local run of the five-tests suite with a real endpoint,
@@ -85,9 +86,9 @@ partly extended on the strength of that promise, which makes the package the cri
 - Do not submit the Anthropic form while a referee is waiting on a document he was promised.
   Send the package first, then submit.
 
-## Reply owed to Andrey
+## Reply to Andrey
 
-**Send now, 98 words**
+**SENT 2026-11-01, 5:24 PM. 98 words.**
 
 ```
 Andrey, thank you. The specificity of that means more than the offer does.
@@ -116,3 +117,54 @@ The form needs **three** referees. This fills one.
 
 Two of the three required referees are still people the repo cannot name. Andrey solves the
 slot that was hardest to solve honestly, not the two that were easiest to forget.
+
+## Andrey's reply, 5:37 PM on 2026-11-01
+
+> Thanks, Olusanya. Understood about the reference check and timing.
+>
+> Send the evidence package when it's ready. I'll review what can actually be established from it,
+> keeping the reference and technical assessment separate.
+>
+> Good luck with the final run.
+
+Three things in one short message. He accepted the reference-check terms without argument. He is
+still waiting for a document, and he said so plainly. And he named a boundary before anyone asked
+him to: the reference and the technical assessment are two different products and he will not blend
+them.
+
+**That third point is the best thing that has happened in this thread.** A referee who separates
+what he can attest to as a person from what he can establish from the artefacts is telling you he
+will not launder one into the other. It is also exactly the discipline the program is assessing, so
+the separation is worth reinforcing rather than smoothing over.
+
+## Reply, 88 words, gate 100/100
+
+```
+Separate is right, and it protects the reference as much as it protects you.
+
+You'll have the package by Monday. Raw outputs, the method that produced them, and one
+line per test on what it does not establish. If the run slips you'll hear that from me
+before Monday rather than after it.
+
+Where the technical assessment and the reference disagree, put the disagreement in
+writing. A clean vouch is worth less to Anthropic than a referee who can say precisely
+what he could and could not verify.
+```
+
+**The date is the point.** His "when it's ready" is an open-ended commitment, and open-ended
+commitments are what referees quietly write off. Monday 2026-11-02 is the same deadline as the
+private Arcezia report, so if that is not achievable, change the date in this draft before sending
+it. A deadline that arrives late is worse than one that was never given, and worse again because
+he will have told Anthropic he is waiting.
+
+**The slip clause is not decoration.** Committing to tell him before the date, rather than after,
+is the only part of the promise the owner fully controls.
+
+**Deliberately not included:** any softening of the separation he proposed. There is a version of
+this reply that thanks him for the boundary and then blurs it by asking for a warm character
+reference. That would cost exactly the thing he has offered.
+
+## Consequence for the application
+
+The form still needs three referees and this is one. Nothing here changes that. The package goes
+first, the form goes after, and the two remaining slots are still Teamart and YKAY.
