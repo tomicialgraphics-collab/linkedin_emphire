@@ -872,3 +872,53 @@ already flagged as unverified. Do not repeat the 40 percent figure a second time
 first if it has not gone out, because the survivor argument is the sharper of the two and it is the
 one a QA audience will carry. Hold this one until tomorrow, or until he replies to that one. Two
 comments on two posts from one person inside an hour reads as attendance rather than interest.
+
+
+---
+
+## Entry 17: governed context across models, author not supplied
+
+**Surface.** A paste with no author block: no name, no headline, no degree, no reaction count. The
+post describes structuring prompts and context as governed systems on four guardrails, provenance
+metadata on every piece of context, policy and privacy locks before context leaves a vault, a
+three-pass check of generated claims against source documents, and human sign-off that mints an
+audit trail. It closes by saying the author has packaged these architectures for teams that do not
+want to build the framework from scratch, invites people to reach out, and asks which is harder,
+keeping context consistent across models or auditing outputs before they go live.
+
+**Profile read. UNKNOWN, and the name is needed before this posts.** Every field rule 10 asks for is
+missing from the paste: relationship and degree, headline, posting history, commercial signals,
+prior exchanges, ICP fit. What the text itself says is that this is a commercial author selling a
+packaged framework, which is enough to fix the register, value only and never a pitch, and enough
+to know the closing question is a lead mechanism rather than an invitation to think. It is not
+enough to know whether the account is a builder, a reseller or a consultant, and those read very
+differently under a governance post. Send the name and the draft gets checked against the profile
+before it goes anywhere near the comment field, per rule 10.
+
+**Draft A, recommended. Works whatever the profile turns out to be.**
+
+> Provenance metadata is the right shape, and whether it holds depends on who writes the stamp. If
+> the same pipeline that generated the output also records why, how, when and where, the record is
+> a claim about itself, and the auditor is trusting the component under audit. The version that
+> survives has the stamp produced outside the model path, and a sign-off that is append-only and
+> checkable by somebody who was not in the room. To your question, neither is the hard one. Keeping
+> context consistent is engineering. The harder part is proving afterwards that the checks ran, on
+> the build that shipped.
+
+**Draft B, shorter, answers only the question put to the reader.**
+
+> The output audit is harder, and not because the checks are difficult to write. Context consistency
+> has a countable set of models and routes to hold together, while an output audit has to hold for
+> claims nobody has thought of yet, in a tail with no natural end. That is why the record of what
+> was checked matters more than the rule that was written.
+
+**Why A.** It engages the strongest of their four guardrails, provenance, with the one objection that
+matters and that a governance buyer will feel immediately, which is self-attestation. It answers the
+question they actually asked, in their own frame, and it makes a distinction the account can defend
+in a thread later.
+
+**Caution.** Do not use their four label names back at them. Do not mention the EU AI Act, HIPAA or
+SOC 2, because a compliance claim in a comment invites an argument this account cannot referee. Do
+not offer the benchmark, and do not offer services, since the author is selling and a second offer
+in the same thread reads as competition rather than contribution. One comment, one answer, no
+chase.
