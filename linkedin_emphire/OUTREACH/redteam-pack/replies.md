@@ -7,16 +7,31 @@ Send one. Whichever is true.
 ```
 Separate is right, and it protects the reference as much as it protects you.
 
-The package is attached. It carries the five tests, the inputs and the verdict criteria as they
-were fixed before the run, the raw responses, and a human verdict beside every flagged answer
-rather than a score alone. Section 5 has the re-run command, the pinned commit and the exact
-environment, so a stranger can repeat it without asking me anything.
+The package is attached, run included. Five tests, the inputs and the verdict criteria as they
+were fixed before the run, every flagged response verbatim with the verdict I reached on reading
+it, and the failure rate per input type with its sample size beside it.
+
+Section 5 has the re-run command, the pinned commit and the exact environment, so a stranger can
+repeat it without asking me anything. The suite is MIT licensed if you want the code as well as
+the result.
 
 A re-run on a later model build may reach different verdicts. That is a finding about the model,
 and section 2.6 says so before anyone runs it.
 
 Where the technical assessment and the reference disagree, put it in writing. A clean vouch is
 worth less to Anthropic than a referee who can say precisely what he could and couldn't verify.
+```
+
+Short form, if you would rather keep it to the artifact:
+
+```
+The package is attached, run included. Five tests, with the inputs and the verdict criteria fixed
+before the run, every flagged response verbatim with the verdict I reached on reading it, and the
+failure rate per input type with its sample size beside it.
+
+Section 5 has the re-run command, the pinned commit and the environment, so a stranger can repeat
+it without asking me anything. If a later model build reaches different verdicts, that's a finding
+about the model, and section 2.6 says so before anyone runs it.
 ```
 
 ## B. The run is not attached yet
