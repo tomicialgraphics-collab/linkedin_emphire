@@ -166,10 +166,10 @@ index 0000000..d4b2429
 +the reviewer's numbering is the one a reader will have to hand.
 diff --git a/audit/regressions.py b/audit/regressions.py
 new file mode 100644
-index 0000000..92036b4
+index 0000000..efbd231
 --- /dev/null
 +++ b/audit/regressions.py
-@@ -0,0 +1,284 @@
+@@ -0,0 +1,294 @@
 +#!/usr/bin/env python3
 +"""The counterexamples from the 1 November 2026 review, kept as tests.
 +
@@ -247,13 +247,23 @@ index 0000000..92036b4
 +
 +
 +def run_suite(repo: str, env: dict | None = None) -> str:
++    """Run the suite in a fresh copy and return the directory it wrote.
++
++    The directory is found by looking at what appeared under artifacts/, not by
++    parsing what run.py printed: the printed path uses the platform separator,
++    and a Windows run and a Linux run should not need different parsing.
++    """
++    before = set(os.listdir(os.path.join(repo, "artifacts"))) \
++        if os.path.isdir(os.path.join(repo, "artifacts")) else set()
 +    proc = subprocess.run([sys.executable, "run.py"], cwd=repo, capture_output=True,
 +                          text=True, env=env)
-+    match = re.search(r"artifacts/run-[\w.-]+", proc.stdout)
-+    if not match:
++    artifacts = os.path.join(repo, "artifacts")
++    after = set(os.listdir(artifacts)) if os.path.isdir(artifacts) else set()
++    new_dirs = sorted(name for name in after - before if name.startswith("run-"))
++    if not new_dirs:
 +        sys.stderr.write(proc.stdout[-1500:] + proc.stderr[-1500:])
 +        raise SystemExit("run.py produced no artifact directory")
-+    return os.path.join(repo, match.group(0))
++    return os.path.join(artifacts, new_dirs[-1])
 +
 +
 +def bench_import(repo: str):

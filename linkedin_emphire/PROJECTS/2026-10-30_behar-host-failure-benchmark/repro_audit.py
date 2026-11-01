@@ -218,13 +218,23 @@ def around(mode: str) -> str:
 
 
 def run_suite(work: str, env: dict | None = None) -> str:
-    proc = subprocess.run([sys.executable, "run.py"], cwd=work, capture_output=True, text=True,
-                          env=env)
-    match = re.search(r"artifacts/run-[\w.-]+", proc.stdout)
-    if not match:
-        sys.stderr.write(proc.stdout[-2000:] + proc.stderr[-2000:])
+    """Run the suite in the copy and return the directory it wrote.
+
+    Found by looking at what appeared under artifacts/, not by parsing what
+    run.py printed: the printed path uses the platform separator, and a
+    Windows run should not need different parsing from a Linux one.
+    """
+    before = set(os.listdir(os.path.join(work, "artifacts"))) \
+        if os.path.isdir(os.path.join(work, "artifacts")) else set()
+    proc = subprocess.run([sys.executable, "run.py"], cwd=work, capture_output=True,
+                          text=True, env=env)
+    artifacts = os.path.join(work, "artifacts")
+    after = set(os.listdir(artifacts)) if os.path.isdir(artifacts) else set()
+    new_dirs = sorted(name for name in after - before if name.startswith("run-"))
+    if not new_dirs:
+        sys.stderr.write(proc.stdout[-1500:] + proc.stderr[-1500:])
         raise SystemExit("run.py produced no artifact directory")
-    return os.path.join(work, match.group(0))
+    return os.path.join(artifacts, new_dirs[-1])
 
 
 def verify(work: str, rundir: str) -> tuple[int, str]:

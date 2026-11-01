@@ -86,6 +86,22 @@ These are the P1 and P2 items, and they are still open:
 - no CI matrix, so the cross-platform claim is now written as what it is: run
   on both, compared by hand, no published digest trail
 
+## Windows
+
+The first version of `audit/regressions.py` found the run directory by parsing
+what `run.py` printed, which uses a backslash on Windows, and it stopped with
+`run.py produced no artifact directory` there. It now finds the directory by
+listing `artifacts/` before and after the run, which needs no separator at all.
+Everything else was already portable: the patch applied to `25cd57f` on
+Windows, and `verify.py`, `challenge.py` and the nine built-in mutations all
+passed there before this fix.
+
+If you already applied the patch, take the fixed file only:
+
+```powershell
+Invoke-WebRequest -Uri "$base/2026-10-30_behar-host-failure-benchmark/regressions.py" -OutFile audit\regressions.py
+```
+
 ## Applying it
 
 ```
