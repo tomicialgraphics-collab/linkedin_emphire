@@ -174,9 +174,15 @@ digest trail.</p>
 what <code>run.py</code> printed, which uses a backslash on Windows, and it stopped with
 <code>run.py produced no artifact directory</code> there. It now finds the directory by
 listing <code>artifacts/</code> before and after the run, which needs no separator at all.
-Everything else was already portable: the patch applied to <code>25cd57f</code> on
+A second one showed up on the next run: the script treated the existence of an
+artifact directory as proof that the suite had run, and a store that missed its
+ten second announcement window on a freshly copied tree leaves the directory
+behind with nothing in it. Each attempt is now checked for the full artifact
+list and retried, with the run's own output reported if none of them
+completes.</p>
+<p>Everything else was already portable: the patch applied to <code>25cd57f</code> on
 Windows, and <code>verify.py</code>, <code>challenge.py</code> and the nine built-in mutations all
-passed there before this fix.</p>
+passed there.</p>
 <p>If you already applied the patch, take the fixed file only:</p>
 <pre><code class="language-powershell">Invoke-WebRequest -Uri &quot;$base/2026-10-30_behar-host-failure-benchmark/regressions.py&quot; -OutFile audit\regressions.py
 </code></pre>
