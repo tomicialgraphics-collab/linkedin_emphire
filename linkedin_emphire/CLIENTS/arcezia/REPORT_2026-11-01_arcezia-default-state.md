@@ -161,6 +161,18 @@ The verification kit delivered alongside this report is what makes that loop one
 
 One note on the baseline's strength: it records the verdict and the required items for each case, not the full response body. A fix that leaves the verdict unchanged but changes the reasoning would pass the compare and show up in my re-run. That is the intended split of work, not a limitation to fix.
 
+# Coverage against the agreed scope
+
+Stated plainly, because a report that implies coverage it did not have is worse than a short one.
+
+**Exercised.** Getting an action that should have been stopped to go through, across every action class reached in the test account: database, filesystem, credentials, email, approvals, declared scope, session facts, and two multi-step chains. Twenty-six decisions, all within the 300-call budget.
+
+**Not exercised: privilege launches.** The scope names an agent launching a higher-privileged agent as an in-scope class, and no case in this campaign did it. That class is untested, and nothing here should be read as evidence about it either way.
+
+**Also untested: content-level instruction attacks.** Nothing in the campaign placed instructions inside data the agent reads, such as a document, a ticket or a tool output. The session-fact work in F5 touches the mechanism that class would lean on, but it is not a test of it.
+
+**Accountability.** The account is still open so the records stay attachable. Deletion from the Organization page ends the key, and that is the last step at close.
+
 # Limitations
 
 - One account, one key, one gate, no instrumentation. The instrumented state, with contracts, checks, a registered signing key and chain plans, was not tested and is a different system.
