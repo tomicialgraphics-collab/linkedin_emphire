@@ -498,3 +498,40 @@ not the agent.
 I know none of it and this is a first-day post. Do not mention his audit tool. Keep the
 congratulation to one clause, since a long good wish under a job announcement reads as filler, and
 do not follow up if he does not answer.
+
+## Entry 11: Andrew Smythe, reply to my comment on Endrit's post
+
+**Surface:** live thread. I posted the Entry 8 reply about ethics and aesthetics. He answered that
+the technology is not the issue, and that the issue is the thousands of agencies using cloned
+voices and synthetic personas to pass as real humans, which he calls disingenuous.
+
+**My read:** he has moved the argument somewhere better and it deserves agreement rather than a
+second distinction. He is describing impersonation, and impersonation is the one part of this
+mess with a named victim and a claim a platform or a court can act on. The useful move is to name
+what is being faked, which is not the video but the person, and then point at the question that
+follows from it. Do not argue about slop, quality or tools. He is not wrong about any of it.
+
+**Draft A: NAME THE VICTIM, 86 words, voice_lint clean**
+
+> Agreed, and it is worth being precise about what gets faked. In those cases it is not the video,
+> it is the person: a named human whose face or voice is doing work they never agreed to. That is
+> an identity claim rather than a style question, and it has a victim with standing, which is why
+> it can be acted on at all. Nobody can adjudicate "looks generated". A court and a platform can
+> both act on impersonation, and that is where the pressure belongs.
+
+**Draft B: WHO IS ACCOUNTABLE, 64 words, voice_lint clean**
+
+> The technology is only the delivery. What those agencies are selling is a persona with nobody
+> behind it, a face that answers to no one. That is why the question worth asking is not whether
+> this was made with AI, but who is accountable for the claim the account is making. Take away the
+> answerable party and the rest is just a costume with better lighting.
+
+**Why A.** He gave a specific harm, so agree with the specifics and add the thing that makes it
+actionable: standing. B is wittier and lands the last line harder, but it argues rather than
+concedes, and under his own comment that reads as scoring.
+
+**The memorable line:** nobody can adjudicate "looks generated".
+
+**Caution.** Do not name an agency and do not guess at scale. Do not circle back to the benchmark.
+If he answers again, leave it there: two rounds is a conversation, three is a debate he did not ask
+for.
