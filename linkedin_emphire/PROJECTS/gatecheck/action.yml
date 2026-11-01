@@ -9,7 +9,7 @@ inputs:
     required: false
     default: gatecheck.yml
   tools:
-    description: Comma list of engines to run (deepteam,pyrit,promptfoo)
+    description: Comma list of engines to run (gatecheck,deepteam,pyrit,promptfoo)
     required: false
     default: ""
   fail-on:
@@ -17,7 +17,7 @@ inputs:
     required: false
     default: critical,high
   update-baseline:
-    description: Refresh the baseline after a passing run
+    description: Refresh the baseline after a complete run (refused when an engine was skipped or nothing ran)
     required: false
     default: "false"
   sarif-file:

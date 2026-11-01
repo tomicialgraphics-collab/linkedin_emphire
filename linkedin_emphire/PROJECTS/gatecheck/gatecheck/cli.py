@@ -77,14 +77,38 @@ def cmd_run(args) -> int:
     (out_dir / "results.sarif").write_text(json.dumps(sarif(result, tool_version=__version__), indent=2) + "\n", encoding="utf-8")
 
     if args.update_baseline:
-        baseline = Baseline.load(config.baseline_path)
-        baseline.save(result["all_findings"])
-        print(f"baseline updated: {config.baseline_path} ({len(result['all_findings'])} findings)")
+        if not result["verdict"]["baseline_safe"] and not args.force_baseline:
+            print("baseline NOT updated:")
+            if result["verdict"]["status"] == "error":
+                print("  no engine ran, so there is nothing to record.")
+            if result["tools_skipped"]:
+                print(
+                    "  these configured tools did not run: "
+                    + ", ".join(result["tools_skipped"])
+                )
+                print("  a missing engine looks exactly like a fixed finding.")
+            if result["attacks_run"] == 0:
+                print("  no attack ran, so there is nothing to record.")
+            print("  fix the environment, narrow `tools:` in gatecheck.yml to what is")
+            print("  installed, or pass --force-baseline if you mean it.")
+            if result["verdict"]["status"] == "blocked":
+                print("  (a blocked run is fine to record: known findings are accepted,")
+                print("   that is how you adopt the gate on a codebase that already fails)")
+        else:
+            baseline = Baseline.load(config.baseline_path)
+            baseline.save(result["all_findings"])
+            print(
+                f"baseline updated: {config.baseline_path} "
+                f"({len(result['all_findings'])} findings, {result['attacks_run']} attacks)"
+            )
+            if result["verdict"]["status"] == "blocked":
+                print("  note: this run is BLOCKED. Those findings are now the accepted")
+                print("  state and will not fail the gate again unless they get worse.")
 
     print(markdown(result))
     print()
     print(f"artifacts: {out_dir}")
-    return 0 if result["verdict"]["ok"] else 2
+    return {"pass": 0, "blocked": 2}.get(result["verdict"]["status"], 3)
 
 
 def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict:
@@ -111,21 +135,43 @@ def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict
     blocking += [w["finding"] for w in delta["worse"]
                  if config.fails_gate(w["finding"].severity) and w["finding"].id not in accepted]
 
-    if blocking:
+    tools_skipped = {r["tool"]: r["skipped"] for r in results if isinstance(r, dict) and "skipped" in r}
+    tools_run = [r.tool for r in results if hasattr(r, "findings")]
+
+    if not tools_run:
+        # No engine ran. Reporting PASS here would be the exact failure
+        # this project exists to name: a green tick for a test that never
+        # happened. The run is an error, not a pass.
+        status = "error"
+        ok = False
+        reason = "no engine ran, so there is no result: " + "; ".join(
+            f"{tool}: {why}" for tool, why in tools_skipped.items()
+        )
+    elif blocking:
+        status = "blocked"
+        ok = False
         worst = max(blocking, key=lambda f: f.severity.rank)
         reason = (
             f"{len(blocking)} new finding(s) at or above the gate threshold, "
             f"highest severity {worst.severity.value}"
         )
     else:
+        status = "pass"
+        ok = True
         reason = (
             f"no new finding at or above {', '.join(s.value for s in config.fail_on)}"
             if config.fail_on else "gate threshold empty"
         )
 
     errors = [f"{r.tool}: {e}" for r in results if hasattr(r, "errors") for e in r.errors]
-    tools_run = [r.tool for r in results if hasattr(r, "findings")]
-    tools_skipped = {r["tool"]: r["skipped"] for r in results if isinstance(r, dict) and "skipped" in r}
+
+    # A partial run cannot rewrite the baseline: a missing engine looks
+    # exactly like a fixed finding, and accepting it would launder
+    # unexercised coverage into a clean record. Recording known findings
+    # is allowed even when the gate blocks, because adopting the gate on
+    # a codebase that already has problems is the normal first day.
+    attacks = sum(getattr(r, "attacks_run", 0) for r in results if hasattr(r, "attacks_run"))
+    baseline_safe = not tools_skipped and status != "error" and attacks > 0
 
     return {
         "run_id": run_id,
@@ -153,7 +199,8 @@ def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict
         "fixed": delta["fixed"],
         "errors": errors,
         "baseline_used": str(config.baseline_path) if baseline.findings else "",
-        "verdict": {"ok": not blocking, "reason": reason},
+        "verdict": {"ok": ok, "status": status, "reason": reason, "baseline_safe": baseline_safe},
+        "attacks_run": attacks,
         "summary": {
             "total": len(all_findings),
             "new": len(delta["new"]),
@@ -229,6 +276,8 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--fail-on", default=None, help="comma list of severities")
     r.add_argument("--out", default=None)
     r.add_argument("--update-baseline", action="store_true")
+    r.add_argument("--force-baseline", action="store_true",
+                   help="update the baseline even if the run is incomplete")
     r.set_defaults(fn=cmd_run)
 
     a = sub.add_parser("accept", help="accept a finding, with a reason")

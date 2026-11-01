@@ -27,6 +27,28 @@ RULE_ID = {
 def markdown(result: dict, *, max_rows: int = 12) -> str:
     """A PR comment: verdict, then the delta, then the detail."""
     verdict = result["verdict"]
+    if verdict.get("status") == "error":
+        # A run that reached no engine says nothing about the target. It
+        # must not borrow the language of a pass or a fix.
+        lines = ["## gatecheck: ERROR", "", f"**{verdict['reason']}**", ""]
+        lines.append(
+            f"`{result['target']}` | tools: {', '.join(result['tools_run']) or 'none'}"
+            f" | {result['attacks_run']} attacks ran"
+        )
+        lines.append("")
+        lines.append(
+            "No attack was executed, so this run cannot say whether the agent is "
+            "better, worse or unchanged. It is not a pass."
+        )
+        lines.append("")
+        if result.get("tools_skipped"):
+            lines.append("Skipped:")
+            lines.append("")
+            for tool, why in result["tools_skipped"].items():
+                lines.append(f"- `{tool}`: {why}")
+            lines.append("")
+        return "\n".join(lines).rstrip() + "\n"
+
     head = "## gatecheck: PASS" if verdict["ok"] else "## gatecheck: BLOCKED"
     lines = [head, ""]
     if not verdict["ok"]:

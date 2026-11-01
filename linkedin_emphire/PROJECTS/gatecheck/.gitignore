@@ -4,6 +4,9 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 *.egg-info/
-# run artifacts are regenerated; the committed baseline is the state
+# run artifacts and the baseline belong to the project using the gate,
+# not to the gate itself: commit your baseline in your own repo, and
+# commit it deliberately, because it is the record of what you accepted
 .gatecheck/runs/
+.gatecheck/baseline.json
 .deepeval/

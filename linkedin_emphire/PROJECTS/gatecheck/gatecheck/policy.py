@@ -25,7 +25,10 @@ DEFAULT_POLICY: dict[str, str] = {
 DEFAULT_CONFIG: dict = {
     "target": {"url": "http://127.0.0.1:8000/chat", "message_key": "message",
                "reply_key": "reply", "actions_key": "actions"},
-    "tools": ["deepteam", "pyrit", "promptfoo"],
+    # The first-party engine is the default: a gate that needs three
+    # third-party tools to say anything reports "clean" on a bare machine.
+    # The three tools are additive and opt-in.
+    "tools": ["gatecheck"],
     "policy": DEFAULT_POLICY,
     "gate": {"fail_on": ["critical", "high"], "baseline": ".gatecheck/baseline.json"},
 }
@@ -37,7 +40,7 @@ class Config:
     message_key: str = "message"
     reply_key: str = "reply"
     actions_key: str = "actions"
-    tools: list[str] = field(default_factory=lambda: ["deepteam", "pyrit", "promptfoo"])
+    tools: list[str] = field(default_factory=lambda: ["gatecheck"])
     policy: dict[str, Severity] = field(default_factory=dict)
     fail_on: list[Severity] = field(default_factory=list)
     baseline_path: str = ".gatecheck/baseline.json"

@@ -22,6 +22,7 @@ from gatecheck.baseline import Baseline
 from gatecheck.corpus import SEQUENCES, SINGLE_TURN
 from gatecheck.detectors import detect
 from gatecheck.engines import DeepTeamEngine, PromptfooEngine, PyRITEngine
+from gatecheck.engines.base import Engine
 from gatecheck.models import Evidence, Finding, Severity, dedupe
 from gatecheck.policy import DEFAULT_CONFIG, load
 from gatecheck.targets import LocalTarget, ServedTarget
@@ -238,6 +239,7 @@ def test_hardened_agent_produces_no_findings():
 
 def test_multi_turn_escalation_needs_a_sequence():
     """The only engine that finds this is the one that keeps state."""
+    pytest.importorskip("pyrit", reason="PyRIT is an optional engine")
     engine = PyRITEngine()
     cases = [c for c in SEQUENCES if c.attack_id == "M01"]
     result = engine.run(LocalTarget(vulnerable, label="demo"), cases, lambda c: Severity.HIGH)
@@ -260,6 +262,127 @@ def test_promptfoo_engine_agrees_with_the_detector():
         result = engine.run(target, cases, lambda c: Severity.HIGH)
     assert result.attacks_run == 2
     assert {f.category for f in result.findings} == {"system-prompt-leak"}
+
+
+# ------------------------------------------------------- gate honesty
+
+class _Absent(Engine):
+    name = "absent"
+    label = "absent"
+
+    def available(self):
+        return False, "not installed on this machine"
+
+    def plan(self):
+        return []
+
+
+def test_core_engine_needs_no_third_party_tool():
+    """The gate must produce a real result on a machine with nothing installed."""
+    from gatecheck.engines import CoreEngine
+
+    engine = CoreEngine()
+    result = engine.run(LocalTarget(vulnerable, label="demo"), engine.plan(), lambda c: Severity.HIGH)
+    assert result.findings
+    assert engine.available()[0] is True
+
+
+def test_run_with_no_engine_is_an_error_not_a_pass(tmp_path, monkeypatch):
+    """A green tick for a run that never happened is the failure this
+    project exists to name."""
+    from gatecheck import cli
+    from gatecheck.engines import ENGINES
+
+    monkeypatch.setitem(ENGINES, "absent", _Absent)
+    config = load(tmp_path / "gatecheck.yml")
+    config.tools = ["absent"]
+    config.baseline_path = str(tmp_path / "b.json")
+
+    from gatecheck.targets import LocalTarget
+
+    result = cli._run_gate(config, LocalTarget(vulnerable, label="demo"), None, commands_used=["absent"])
+    assert result["verdict"]["ok"] is False
+    assert result["verdict"]["status"] == "error"
+    assert "no engine ran" in result["verdict"]["reason"]
+    assert result["verdict"]["baseline_safe"] is False
+
+
+def test_partial_run_is_not_baseline_safe(tmp_path, monkeypatch):
+    """A missing engine looks exactly like a fixed finding."""
+    from gatecheck import cli
+    from gatecheck.engines import ENGINES
+    from gatecheck.targets import LocalTarget
+
+    monkeypatch.setitem(ENGINES, "absent", _Absent)
+    config = load(tmp_path / "gatecheck.yml")
+    config.tools = ["gatecheck", "absent"]
+    config.baseline_path = str(tmp_path / "b.json")
+
+    result = cli._run_gate(config, LocalTarget(vulnerable, label="demo"), None, commands_used=config.tools)
+    assert result["verdict"]["status"] == "blocked"          # the core engine still found things
+    assert result["verdict"]["baseline_safe"] is False
+    assert "absent" in result["tools_skipped"]
+
+
+def test_blocked_but_complete_run_can_record_known_findings(tmp_path):
+    """Adopting the gate on a codebase that already fails is day one, not a bug."""
+    from gatecheck import cli
+    from gatecheck.targets import LocalTarget
+
+    config = load(tmp_path / "gatecheck.yml")
+    config.tools = ["gatecheck"]
+    config.baseline_path = str(tmp_path / "b.json")
+
+    result = cli._run_gate(config, LocalTarget(vulnerable, label="demo"), None, commands_used=["gatecheck"])
+    assert result["verdict"]["status"] == "blocked"
+    assert result["verdict"]["baseline_safe"] is True
+
+
+def test_error_status_is_never_baseline_safe(tmp_path):
+    from gatecheck import cli
+    from gatecheck.targets import LocalTarget
+
+    config = load(tmp_path / "gatecheck.yml")
+    config.tools = ["not-a-real-engine"]
+    config.baseline_path = str(tmp_path / "b.json")
+
+    result = cli._run_gate(config, LocalTarget(vulnerable, label="demo"), None, commands_used=config.tools)
+    assert result["verdict"]["status"] == "error"
+    assert result["verdict"]["baseline_safe"] is False
+    assert result["attacks_run"] == 0
+    assert "not-a-real-engine" in result["verdict"]["reason"]
+
+
+def test_error_run_does_not_claim_a_pass_or_a_fix(tmp_path):
+    from gatecheck import cli
+    from gatecheck.targets import LocalTarget
+
+    config = load(tmp_path / "gatecheck.yml")
+    config.tools = ["not-a-real-engine"]
+    config.baseline_path = str(tmp_path / "b.json")
+
+    result = cli._run_gate(config, LocalTarget(vulnerable, label="demo"), None, commands_used=config.tools)
+    text = report.markdown(result)
+    assert "gatecheck: ERROR" in text
+    assert "PASS" not in text
+    assert "fixed" not in text.lower().split("changed")[0]
+    assert "not-a-real-engine" in text
+
+
+def test_full_run_is_baseline_safe(tmp_path):
+    from gatecheck import cli
+    from gatecheck.targets import LocalTarget
+
+    config = load(tmp_path / "gatecheck.yml")
+    config.tools = ["gatecheck"]
+    config.baseline_path = str(tmp_path / "b.json")
+    config.policy = {c: Severity.LOW for c in config.policy}
+    config.fail_on = []
+
+    result = cli._run_gate(config, LocalTarget(vulnerable, label="demo"), None, commands_used=["gatecheck"])
+    assert result["verdict"]["status"] == "pass"
+    assert result["verdict"]["baseline_safe"] is True
+    assert result["attacks_run"] == len(SINGLE_TURN) + len(SEQUENCES)
 
 
 # ----------------------------------------------------------------- reports

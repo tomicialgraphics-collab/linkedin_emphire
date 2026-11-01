@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.1.1] - 2026-11-01
+
+Fixed the worst bug in 0.1.0, found by running the package on a machine
+with no red-team engines installed: the gate ran nothing, reported PASS,
+saved an empty baseline over the real one, and then reported the seven
+findings the agent still had as fixed. Nothing below is cosmetic.
+
+### Added
+
+- `gatecheck core` engine. It runs the full corpus, single-turn and
+  sequenced, with no third-party dependency, and it is in the default
+  `tools:` list. A fresh `pip install -e .` now produces a real result on
+  the first command instead of an empty one.
+- `--force-baseline`, for the case where you have read the warning and
+  still mean to record a partial run.
+
+### Changed
+
+- A run that reaches no engine now has status `error`, not `pass`, and
+  exits `3`. Exit codes are `0` pass, `2` blocked, `3` error.
+- `--update-baseline` is refused unless every configured tool actually ran
+  and at least one attack was executed. A blocked run is still allowed to
+  record its findings: adopting the gate on a codebase that already fails
+  is the normal first day, and the output says so.
+- `gatecheck.yml` defaults to `tools: [gatecheck]`, with deepteam, pyrit
+  and promptfoo listed as commented opt-ins. Listing an engine you have
+  not installed is not free.
+- Tests for optional engines skip when the engine is absent instead of
+  failing the suite.
+
+### Fixed
+
+- 42 tests, up from 36: the no-engine run, the partial-run baseline
+  refusal, and a complete blocked run recording known findings.
+
 ## [0.1.0] - 2026-11-01
 
 ### Added

@@ -1,12 +1,19 @@
+# Engines to run. `gatecheck` is built in and always available; the rest
+# are opt-in and are skipped, with a reason, when they are not installed.
+# Listing an engine you do not have is not free: a skipped engine looks
+# exactly like a fixed finding, so the gate refuses to save a baseline
+# from a partial run. Keep this list to what your CI actually installs.
+tools:
+  - gatecheck
+  # - deepteam   # breadth: base64 / leetspeak / rot13 renderings
+  # - pyrit      # sequences: campaigns that span turns
+  # - promptfoo  # assertions: the corpus as an HTTP suite
+
 target:
   url: http://127.0.0.1:8000/chat
   message_key: message
   reply_key: reply
   actions_key: actions
-tools:
-  - deepteam
-  - pyrit
-  - promptfoo
 policy:
   data-exfiltration: critical
   tool-misuse: critical
