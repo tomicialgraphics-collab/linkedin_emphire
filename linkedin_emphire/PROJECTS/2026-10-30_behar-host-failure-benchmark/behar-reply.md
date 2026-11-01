@@ -242,6 +242,46 @@ Author order and venue still wait for finalisation.
 
 ---
 
+## 8. Send this now, as a correction to the 9:45 message
+
+The 9:45 message said the report had not been read. It has been read and the cases have been
+run, so the follow-up has to say so plainly and carry the numbers. Paste this as a message,
+then send the two PDFs and the patch in a second message, because LinkedIn drops attachments
+from a message this long.
+
+---
+
+Behar, a correction to what I sent at 9:45. The package reached me through the Drive link and
+its hash matches the one in your review, so the report is read and the cases are run, not
+pending delivery.
+
+I ran `v2tests.py` and `v3fixes.py` unchanged against `df0cf5a` before touching anything. Your
+results file marks 23 of the 36 outcomes as defects and I reproduced the same 23, case for
+case. On the 13 input checks I got N06, N12 and N13, with N11 untestable here for the same
+reason it was untestable for you.
+
+The three defects I described at 9:05 are V05, V17 and V19 in your numbering. Your first, third
+and fourth areas.
+
+P2 sits on top of `df0cf5a`: a patch, a disposition covering all 49 cases, and the register. Run
+against P2, your package reports 9 defects and 22 outcomes behaving as documented, and the
+defects that remain are the ones you said would remain. My own run still gives 13 of 13 in
+class P and 2 of 2 in class V, two runs byte for byte, and every challenge mutation caught, so
+the patch did not quiet the suite into passing.
+
+V04 I dispute rather than patch around. In that run the replay step and the decision step are
+both 2, so your mutation writes the value `decision_ts` already held, and the re-signed record
+is byte identical to the WAL. With the clocks five steps apart it is caught by both B and
+B.wal. N13 needs a rewrite from you for a similar reason: the report it opens is one my fix
+deliberately stopped writing, and the property is now asserted inside the tool and printed on
+every run.
+
+I take your release decision as written. Nothing in P2 supports a general authenticated
+recovery claim, and I am not asking you to move on that. Author order and venue still wait for
+finalisation.
+
+---
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.
