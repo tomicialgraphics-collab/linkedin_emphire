@@ -1243,3 +1243,38 @@ thread reads as a conversation rather than one person restating himself at incre
 Do not raise the benchmark in a public thread under his name. Keep it to one reply, and if he
 answers again with another invitation, move to the private thread rather than continue in public,
 since two rounds is a conversation and three looks like a performance.
+
+
+### 18.3 His second DM, and the close
+
+11:13 PM. "Thank you", a nod to the hype and the bubble, then the substance: good practice is a
+business case or similar, five points or fifty pages, covering need, solution, returns, what stops
+delivery, budget and resources, and strategy alignment. Then "may you prosper and returns be
+realised".
+
+He did not take the write-up and he did not answer where it breaks first, which are the two things
+the previous message offered and asked. He answered adjacent to both, which is polite and is also a
+close. So this reply is three sentences, adds one thing, re-offers nothing, and asks nothing.
+
+**The increment.** His template has a row for what stops delivery. It has no row for what would
+prove the returns were wrong, and that absence is the whole of the argument this account makes.
+
+**The reply. Send as is.**
+
+Thank you, Keith, and the same to you.
+
+That template is right, and the row I would add costs nothing to write: what would prove the returns
+were not realised. Need, solution, returns and what stops delivery all arrive as forecasts, and few
+of them carry a sentence that could come back false. If that line is in the case at approval, the
+PMO has something to test at closure other than whether the spend came in on budget.
+
+Good to be connected.
+
+**Why it stops there.** He is closing a conversation, not opening one. Offering the write-up a
+second time after he declined to ask for it turns a warm contact into a follow-up problem, and a
+question at the end would hand him homework he did not ask for. The row he is missing is now in his
+mind with this account's name attached to it, which is the whole return from tonight.
+
+**Diary, not inbox.** Nothing from this account for a few weeks. When his next series post arrives,
+or when there is something finished worth showing, that is the moment for a message, and it should
+lead with the thing rather than with a reminder that a conversation happened.
