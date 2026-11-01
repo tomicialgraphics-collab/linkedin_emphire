@@ -1,0 +1,19 @@
+{
+  "post_number": 21,
+  "date": "2026-11-13",
+  "slug": "open-benchmark-open-defects",
+  "pillar": "Software Engineering",
+  "style": "TEMPLATE 1 technical, proof of work with the ledger open",
+  "word_count": 326,
+  "summary": "The host-failure benchmark with eight open defects named. Current counts, why the register is the honest part, and the reproduction rule.",
+  "hashtags": [
+    "#SoftwareEngineering",
+    "#DistributedSystems",
+    "#Testing"
+  ],
+  "slot": "9-10am WAT, Friday 13 November, final post before the 14 November follow-up",
+  "fact_verification": "All counts from the findings register. Re-run the suites before posting, the counts move when a defect closes.",
+  "link_placement": "first comment",
+  "run": "PROJECTS/2026-11-02_aithos-aligned-post-run/PLAN.md",
+  "status": "READY - part of the 2-13 November run"
+}

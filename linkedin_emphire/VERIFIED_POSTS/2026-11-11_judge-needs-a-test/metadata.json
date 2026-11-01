@@ -1,0 +1,19 @@
+{
+  "post_number": 20,
+  "date": "2026-11-11",
+  "slug": "judge-needs-a-test",
+  "pillar": "AI Evaluation",
+  "style": "TEMPLATE 1 technical, instrument calibration",
+  "word_count": 311,
+  "summary": "Model-judged scores are agreement between two models. Three tests anyone can run on the judge itself, plus the four fields every eval report should carry.",
+  "hashtags": [
+    "#AIEvaluation",
+    "#AIEngineering",
+    "#MachineLearning"
+  ],
+  "slot": "9-10am WAT, Wednesday 11 November, day 5 of the Aithos-shaped run",
+  "fact_verification": "No numbers asserted. Only external reference is MT-Bench position bias, cited in the first comment.",
+  "link_placement": "first comment",
+  "run": "PROJECTS/2026-11-02_aithos-aligned-post-run/PLAN.md",
+  "status": "READY - part of the 2-13 November run"
+}

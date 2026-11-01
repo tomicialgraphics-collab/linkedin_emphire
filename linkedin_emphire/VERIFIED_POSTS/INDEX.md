@@ -27,3 +27,5 @@
 | 17 | 2026-10-31 | soc2-model-behaviour | AI Vendor Risk | TEMPLATE 1 (291w, 100/100) | DRAFTED - the chosen post for 10-31. Replaces the cxbom and Just Eat options |
 | 18 | 2026-11-01 | redteam-pluralism | AI Evaluation / Alignment | TEMPLATE 1 (306w, 100/100) | DRAFTED - value pluralism meets red teaming. Sourced to Sorensen et al. 2024 and Anthropic CCAI |
 | 19 | 2026-11-02 | agent-pr-denominator | AI Evaluation | TEMPLATE 1 (370w, lint clean) | READY - post Monday 2 Nov, 9-10am WAT. Survivors and the missing denominator in the Octoverse agent-PR figures |
+| 20 | 2026-11-11 | judge-needs-a-test | AI Evaluation | TEMPLATE 1 (311w, lint clean) | READY - 11 Nov, 9-10am WAT. The judge is half the measurement; three tests to run on it, no numbers asserted |
+| 21 | 2026-11-13 | open-benchmark-open-defects | SE | TEMPLATE 1 (326w, lint clean) | READY - 13 Nov, 9-10am WAT. Nineteen modes, eight open defects named, repro rule. Re-run suites before posting |
