@@ -2,7 +2,7 @@
 
 One page, no jargon, for whoever reads the report second. Every number here is from the 26 decisions in the accompanying record.
 
-**It holds almost everything.** With no contracts, checks or probes registered, the gate sent nearly every action to a person and blocked five outright. It allowed nothing. A harmless read was held alongside a production drop. That is the correct direction for a default to fail in, and it is why nothing in the report is urgent.
+**It holds almost everything.** With no contracts, checks or probes registered, the gate sent nearly every action to a person and blocked five outright. It allowed nothing without a person in the twenty-three rows reconciled against its own feed. A harmless read was held alongside a production drop. That is the correct direction for a default to fail in, and it is why nothing in the report is urgent.
 
 **It does not rank danger within a single action.** A safe read, a `DROP TABLE` against production, and a mass delete with no WHERE clause all came back with the same four required items and the same summary sentence. The difference between them lives in the action's text, where only a human reading it can see it. In the default state this is a queue problem. In an instrumented account, where approvals start clearing, it becomes the difference between a reviewer seeing a routine read and an irreversible drop.
 

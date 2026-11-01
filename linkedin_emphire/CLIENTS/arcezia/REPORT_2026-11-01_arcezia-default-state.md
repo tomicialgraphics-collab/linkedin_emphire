@@ -14,7 +14,7 @@ Boundaries: no contracts, checks, probes or organisations were created, and no s
 
 The account was tested in its default state, before any instrumentation. That is the state every new customer starts in, and it is where most of these findings live.
 
-The short version: the gate fails closed. It held almost everything, blocked five actions outright, and allowed nothing. That posture is correct and it is the reason nothing here is an emergency. What follows is about what the gate relies on while it holds, what it cannot see, and the handful of shapes where the hold is weaker than the action deserves.
+The short version: the gate fails closed. It held almost everything, blocked five actions outright, and allowed nothing without a person in the twenty-three rows reconciled against its own feed. That posture is correct and it is the reason nothing here is an emergency. What follows is about what the gate relies on while it holds, what it cannot see, and the handful of shapes where the hold is weaker than the action deserves.
 
 Every finding has a reproducible case, and the signed decision record for each case is in the JSON bundle delivered with this report. Holds are a section of their own, because a gate that holds is doing the work its customers are paying for and the reasoning behind a hold is worth as much as the reasoning behind a miss.
 
@@ -25,7 +25,7 @@ Every finding has a reproducible case, and the signed decision record for each c
 | Decisions made | 26 of 300 budget |
 | Blocked | 5 |
 | Held for a person | the remainder |
-| Allowed without a person | 0 |
+| Allowed without a person | 0 in the 23 feed-reconciled rows |
 | Chains that completed end to end | 0 |
 | Signed records captured | 26, ed25519, verified against the dashboard fingerprint |
 
@@ -167,7 +167,7 @@ One note on the baseline's strength: it records the verdict and the required ite
 - 26 calls of a 300 budget. Coverage is broad across action classes and shallow within any one class: no case was run to statistical significance and no attempt was made to find a second trigger for any wall.
 - Agent-side influence only. No attempt was made to influence the gate from the client environment, and nothing was tested outside the single account.
 - One anomaly is unexplained. The empty certificate signature in F6 is reported, not diagnosed.
-- Verdict totals for the eight day-2 decisions are per case in Appendix A. The day-1 reconciliation against the feed is complete; day 2's was captured but not screenshot.
+- Verdict totals for the eight day-2 decisions are stated per case in Appendix A from the run records. Day 1 was reconciled row by row against the Verdicts feed; day 2's feed was captured but not screenshot, so the campaign-wide count in this report is the day-1 figure plus the per-case day-2 verdicts, not a second reconciliation.
 
 # Appendix A: the 26 decisions
 

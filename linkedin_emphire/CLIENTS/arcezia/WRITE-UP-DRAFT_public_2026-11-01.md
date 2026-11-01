@@ -8,7 +8,7 @@ Status: waiting on Praveen Babu to mark which findings he accepts, land the fixe
 
 I spent two days testing an AI action gate from the outside: one account, one key, no source, twenty-six attempts, a budget of three hundred. The gate decides whether an agent's proposed action may run. The question I brought was the boring one. Not "can I get past it", but "what does it do all day when nobody is attacking it".
 
-The answer is that it holds almost everything and blocks a little. It allowed nothing across twenty-six decisions, and blocked five. A read of a customer table was held as readily as a `DROP TABLE`. That is the right way for a default to fail, and it is why the interesting findings are not about what got through.
+The answer is that it holds almost everything and blocks a little. It blocked five outright, and released nothing without a person across the twenty-three rows I reconciled against its own feed. A read of a customer table was held as readily as a `DROP TABLE`. That is the right way for a default to fail, and it is why the interesting findings are not about what got through.
 
 They are about what the gate is leaning on while it holds.
 
