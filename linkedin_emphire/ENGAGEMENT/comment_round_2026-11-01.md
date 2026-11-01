@@ -977,3 +977,43 @@ correct the typos and do not remark on the hashtags. Do not pitch, because he se
 second offer in the same thread reads as competition. Expect no reply, since this is broadcast
 posting rather than conversation, so do not follow up in the thread if silence follows. A connection
 request after the comment is the better second move than a second comment.
+
+
+---
+
+## Entry 19: early talent group, values and AI. SKIP.
+
+**Surface.** A group post, two minutes old, in the Internship Group, Global Early Talent Platform,
+from an entity called Plataforma e desenvolvimento de produtos Turisticos, third degree. A long
+inspirational essay: what makes us human when machines can replicate knowledge, resilience and
+traditions handed down by families, five things technology cannot replace, four ticked questions,
+and a closing ask for the values, experiences or traditions from the reader's own journey. Ten
+hashtags, including a coined one, RootsIntelligence.
+
+**Profile read. No person, and no findable entity.** The poster is a company-style name rather than
+an individual, so there is no headline, degree, history or commercial signal to read. Searched it,
+in Portuguese and in English, and it returns nothing, which means either a new page or a name
+transliterated without its accents. Either way this is not a verifiable author and the post reads as
+a reach-farming essay, which is the pattern that asks a personal question and answers nothing.
+Ladder step 6: skip, and the reason is logged here rather than left implicit.
+
+**Why skipping is the right call, in order of weight.**
+
+1. The post asks for a personal story. Anything the account could answer honestly would be the
+   owner's life, not the brand's, and anything the brand could answer would have to be invented. The
+   no-fabrication rule decides this before reach is considered.
+2. No claim is being made, so there is nothing to test, which removes the only register this account
+   is better at than anyone else in the thread.
+3. The audience is students and early-career people in an internship group. That is not the buyer of
+   an audit, and a technical account appearing there reads as a person promoting himself to
+   graduates.
+4. The author cannot be verified, so rule 10 cannot be discharged at all.
+
+**If he wants to be present anyway, the only line I would defend.**
+
+> The version of this question that gets answered is narrower than it sounds: which decisions should
+> a team refuse to hand over, and who signs when one is handed over by accident. That is settled per
+> team, with the record written down, rather than per generation.
+
+Even that is a stretch. It answers an essay with a work instruction, and the thread it lands in will
+not know what to do with it. My recommendation is no comment, no reply, no connection.
