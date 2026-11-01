@@ -642,6 +642,81 @@ Olusanya
 **Why disclose the N13 edit.** He is asking for precision in a permanent record. Correcting a
 sentence and not mentioning it is the one thing that would undermine the reason he asked.
 
+## 15. His message of 11:18 PM: send the two replacement entries
+
+He accepts the synthetic skew as methodologically appropriate, because it separates timestamp
+consistency from independent attestation, accepts the revised N13 as addressing the property more
+directly, and asks for the two replacement entries so he can review the wording against the evidence
+before the shared register is synchronised. That is a delivery message, and the entries are the
+content. Two decisions inside it are mine to propose and his to settle.
+
+**The status word for V04.** Under this register's own rule a row is closed only when a mode in
+`audit/regressions.py` fails without the fix. There is no fix to fail without here: the binding
+already held, and what V04 identified was a defect in the test rather than in the code. So "closed"
+would be the wrong word, and "disputed" is now wrong too, since he has accepted the reasoning. The
+honest word is **scope**: nothing to patch, the claim is narrowed, and the narrowing is written in
+the row with the variant named. I propose that and offer the alternative, because it is his finding
+and he may prefer the row to read as settled in a stronger sense. If he does, the variant becomes a
+mode in the regression file and the row moves under the existing rule.
+
+**The N13 status stays as it is.** "Fixed, the reviewer's check needs updating" is accurate and
+becomes testable once his check is rewritten, so the entry's wording carries the instruction rather
+than the disposition changing.
+
+**The message. Send as is.**
+
+Hi Behar,
+
+Here are both entries, with the evidence each one cites so you can check the wording against the
+numbers rather than against my summary.
+
+V04, proposed for the disputed table:
+
+> V04 | Replay re-stamps decision_ts with its own clock step and re-signs (old T09). The mutation is
+> inert in the natural fixture: the replay step and the decision step are both 2, so the write puts
+> back the value the field already held and re-signing produces identical bytes
+> (evidence/2026-11-01/v04-inert-proof.log, record_identical_to_wal=True). The property is tested by
+> a synthetic variant with a genuine divergence, V04-SKEW in audit/v04_synthetic_skew.py. Five
+> replay steps are injected before the re-stamp: wal_ts 2, stored_ts 7, the stored record is not the
+> WAL record, and B and B.wal both fail with exit 1. The control run with no skew reproduces the
+> inert case, every check holds and verify exits 0, so the difference comes from the divergence and
+> not from a change in the checker (evidence/2026-11-01/v04-synthetic-skew.log). Scope: a record
+> whose timestamp changed between the decision and the ship must not be accepted. Independent
+> timestamp provenance is not claimed and this design does not provide it.
+
+N13, proposed for the input-check table:
+
+> N13 | The original check required challenge.py to leave a passing verify-report.json in the
+> directory it was pointed at. That behaviour was removed. challenge.py now copies what it needs,
+> verifies against the copies, writes nothing into the evidence directory, and prints among its held
+> assertions that the run it was pointed at is unchanged, no file added, removed or rewritten; its
+> closing line is the summary that every mutation was caught. The check therefore raises on the
+> absent file rather than testing the property. Under the current implementation the property is
+> asserted on every run: exit 0, eighteen files before and after, no verify-report.json, directory
+> fingerprint unchanged (evidence/2026-11-01/n13-preservation-check.log, reproduced by
+> audit/n13_preservation_check.py). A rewritten N13 should confirm the absence of new files and that
+> assertion line, not the presence of a report.
+
+One question on V04's status word, and it is yours to settle. Under the register's rule a row closes
+only when a mode fails without the fix. There is no fix here to fail without, because the binding
+already held and what V04 found was a defect in the test rather than in the code. So "closed" would
+overstate it and "disputed" now understates it. I have written "scope", meaning nothing to patch and
+the claim narrowed with the variant named. If you would rather the row read as settled, say so and I
+will add the variant as a mode in audit/regressions.py so it moves under the existing rule.
+
+N13's status I have left alone, because "fixed, the reviewer's check needs updating" is accurate
+until your check is rewritten.
+
+Nothing in the shared register has moved. These two entries go in together, with your agreement, in
+one commit, so your copy and the upstream copy stay identical.
+
+Best regards,
+Olusanya
+
+**What not to do.** Do not send the entries as an attachment, which turns a two minute read into a
+download. Do not pre-empt his choice on the status word by picking one and defending it. And do not
+add a fourth document describing the two entries, since the entries are the document.
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.

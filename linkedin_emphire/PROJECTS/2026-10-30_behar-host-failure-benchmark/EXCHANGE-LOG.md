@@ -316,3 +316,21 @@ disputed on the record and the eight remaining cases are untouched.
 
 The project copies of both documents were refreshed from the tree, so the reviewed copy and the
 tree do not drift.
+
+## 17. His message, 11:18 PM: the two entries, for review
+
+He accepted the synthetic skew as methodologically appropriate because it separates timestamp
+consistency from independent attestation, accepted the revised N13 as addressing the property more
+directly, and asked for both replacement entries so he can check the wording against the evidence
+before the shared register is synchronised.
+
+Sent as text, each entry citing its log and its script. One open question is his to settle: the
+status word for V04. Under this register's rule a row closes only when a mode in
+`audit/regressions.py` fails without the fix, and there is no fix to fail without here, because the
+binding already held and V04 identified a defect in the test rather than in the code. "Closed"
+would overstate it and "disputed" now understates it, so the entry is written as **scope**, with the
+variant named, and the alternative is offered: if he wants the row settled, the variant becomes a
+mode in the regression file and the row moves under the existing rule.
+
+N13's status is unchanged. Nothing upstream has moved, and the two entries go in together in one
+commit once he agrees, so his copy and the shared copy stay identical.
