@@ -109,6 +109,20 @@ def markdown(result: dict, *, max_rows: int = 12) -> str:
             lines.append(f"- `{entry['category']}` {entry.get('title', '')}")
         lines.append("")
 
+    # What is left, not only what changed. "1 finding, 5 fixed" tells a
+    # reader nothing about which one survived, and that is the question a
+    # security review asks first.
+    if result.get("unchanged"):
+        lines.append(f"### Still present ({len(result['unchanged'])})")
+        lines.append("")
+        for finding in sorted(result["unchanged"], key=lambda f: -f.severity.rank)[:10]:
+            rate = f" ({finding.hits}/{finding.runs} runs)" if finding.runs > 1 else ""
+            lines.append(
+                f"- {BADGE[finding.severity.value]} `{finding.category}` "
+                f"{finding.title} `{finding.attack_id}`{rate}"
+            )
+        lines.append("")
+
     if result["errors"]:
         lines.append("### Tool errors, recorded not hidden")
         lines.append("")

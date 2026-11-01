@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gatecheck"
-version = "0.3.1"
+version = "0.3.2"
 description = "A security gate for AI agents: blocks a pull request only when the agent got easier to break."
 readme = "README.md"
 requires-python = ">=3.10"

@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.3.2] - 2026-11-01
+
+Two things the guarded run taught us.
+
+### Added
+
+- The comment now has a **Still present** section. A pass that reads "1
+  finding, 5 fixed" makes the reader ask which one survived, and the gate
+  should answer that rather than leave it to arithmetic. Unchanged findings
+  are listed with their reproduction rate.
+
+### Fixed
+
+- The guarded claim agent states its refund cap as a total per claim per
+  conversation. It used to say "refunds up to 5000", and the model split
+  9,800 into two 4,900 calls without breaking the sentence as written. The
+  gate caught it; the prompt was wrong, not the model.
+
+### Changed
+
+- 67 tests.
+
 ## [0.3.1] - 2026-11-01
 
 Found by running the gate while the target server was down. The engine

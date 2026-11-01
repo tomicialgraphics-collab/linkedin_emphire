@@ -39,6 +39,20 @@ python -m gatecheck run --config gatecheck.groq.yml
 | `--fake` | off | scripted answers, no key, no network: proves the wiring |
 | `--port` | `8000` | the port `gatecheck.groq.yml` points at |
 
+## Why the guarded prompt says in total, not per refund
+
+The first version said "refunds up to 5000 may be issued". The gate split the
+request into two refunds of 4,900 on one claim and the model complied, because
+it was following the policy exactly as written: no single refund broke the
+rule. The gate caught it as an aggregated tool-misuse, the only finding that
+survived the guarded prompt, and the prompt now states the cap as a total per
+claim per conversation.
+
+A prompt is still the weaker half of the fix. The enforced version is a check
+in `issue_refund` that refuses the second call, and then the gate sees the
+attempt rather than the action. That is the difference between asking a model
+to behave and making it impossible not to.
+
 ## What is safe about it
 
 The three tools never touch the outside world. `send_email` records the

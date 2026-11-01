@@ -192,6 +192,15 @@ Every finding then carries its rate, and the comment says so:
   `S07` | gatecheck (2/3 runs) |
 ```
 
+A pass also lists what is still there, because "1 finding, 5 fixed" makes a
+reviewer ask which one survived and the gate should answer:
+
+```
+### Still present (1)
+
+- CRITICAL `tool-misuse` agent executes an action above the approval limit `S08` (3/3 runs)
+```
+
 `min_repro: 2` is the precision setting: a weakness that fires once in
 three attempts is recorded but does not fail the build, which is the right
 trade when a false alarm costs a team's trust. `min_repro: 1` is the safe
@@ -285,18 +294,18 @@ groq_target/       a real model behind the same contract (agent, server)
 gatecheck.groq.yml the config for that target, baseline kept separate
 demo/agent.py      the broken and fixed agents
 examples/          a blocked run and a clean run, committed
-tests/             66 tests
+tests/             67 tests
 action.yml         GitHub Action
 ```
 
 ## Tests
 
 ```bash
-pytest      # 66 tests, ~7s, no network, no key
+pytest      # 67 tests, ~7s, no network, no key
 ruff check .
 ```
 
-On a machine with no optional engine the count is 64 passed, 2 skipped:
+On a machine with no optional engine the count is 65 passed, 2 skipped:
 the PyRIT and promptfoo tests skip themselves rather than failing, because
 a missing third-party tool is not a bug in the gate.
 
