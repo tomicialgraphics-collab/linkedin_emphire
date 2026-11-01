@@ -4,9 +4,11 @@ Reviewer: Behar (independent). Package received 1 November 2026:
 `HFB_Teste_Diferenciale.zip`, 41,754 bytes, sha256 `b2a39986c4ad238446e9d2a4928e58a35cba2ff7ceed8fda3e357ac14db90ed4`.
 That is the hash declared in the review, measured on the file before anything was unpacked: match.
 
-Base commit: `df0cf5a`. Patch: `P2-DIFFERENTIAL-FIXES.patch.txt`, sha256
-`96d3e59aa016a534dcb694506ed954b624c1667ea783797b78d80a1169895e09`. The patched tree is also
-committed inside this repository at `host-failure-benchmark/`. All numbers below come
+Base commit `df0cf5a`, P2 applied as commit `006d7ee` on `main` of
+`Teamthy/host-failure-benchmark` (patch `P2-DIFFERENTIAL-FIXES.patch.txt`, sha256
+`96d3e59aa016a534dcb694506ed954b624c1667ea783797b78d80a1169895e09`). Every result below was
+reproduced on a Windows 11 machine from that commit, and the outputs are in
+`evidence/2026-11-01/`. All numbers below come
 from running the reviewer's own scripts, unchanged, with `HFB_REPO` pointed at the tree under
 test. The logs are in `evidence/2026-11-01/`.
 

@@ -1,8 +1,9 @@
 # Findings register
 
-Olusanya Timothy, 1 November 2026. Last updated against `Teamthy/host-failure-benchmark` `main`
-at `df0cf5a`, with patch P2 applied on top (see `P2-DIFFERENTIAL-FIXES.patch.txt`, sha256
-`1737a13c06d0b55af9f45405572c5ec2b9647d9b5e35524d2ef18f5a5ada646c`).
+Olusanya Timothy, 1 November 2026. Against `Teamthy/host-failure-benchmark`. The base was
+`df0cf5a`; P2 is commit `006d7ee` on `main`, applied from the patch whose sha256 is
+`96d3e59aa016a534dcb694506ed954b624c1667ea783797b78d80a1169895e09`. Every row can be checked
+out, not just reproduced from a patch.
 
 One row per finding. A row is **closed** only when a mode in `audit/regressions.py` fails
 without the fix. That rule has not changed since the first version of this register. Six rows now

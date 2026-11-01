@@ -302,10 +302,14 @@ where it belongs, in the repository the code is in:
 
 https://github.com/Teamthy/host-failure-benchmark/blob/main/audit/FINDINGS-REGISTER.md
 
-The same directory holds `DISPOSITION-2026-11-01.md`, which is the case by case table for all
-49 of your checks. Your run on your machine came out where mine did: 13 of 13 in class P, 3 of
-3 in class V, every mutation in the challenge caught, and all nineteen modes caught. That is
-the first time this suite has been run by someone else and agreed with itself.
+The same directory holds `DISPOSITION-2026-11-01.md`, the case by case table for all 49 of your
+checks. Both are against `006d7ee` on `main`, which is P2, so every row can be checked out
+rather than taken from a patch.
+
+Your run came out where mine did: 13 of 13 in class P, 3 of 3 in class V, all ten challenge
+mutations caught with the three input checks held, and all nineteen modes caught. Class V is
+three now because `D'.effect` is new: an effect committed on a record the store could not
+resolve used to pass, and that was one of yours.
 
 ---
 

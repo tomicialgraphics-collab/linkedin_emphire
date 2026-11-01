@@ -286,3 +286,20 @@ upstream or fork, 403 on both. So the delivery is the patch inside the workspace
 `host-failure-benchmark/` synced to the P2 tree, which was stale at the P0 version and is not any
 more. Applying the patch and pushing from his own machine is the step that turns this into a
 commit the reviewer can pull.
+
+## 17. His machine ran it, and agreed
+
+Windows 11, Python 3.14.5, from commit `006d7ee` on `main`, which is P2 as pushed by hand because
+this sandbox cannot write to that repository. `verify.py example/run` gave 13 of 13 in class P and
+3 of 3 in class V, `challenge.py` caught all ten mutations and held all three input checks, and
+`audit/regressions.py` caught all nineteen modes. Same numbers as the Linux runs here, on the
+other platform, by a different process. That is the cross-platform claim getting its second
+machine rather than a second assertion.
+
+Class V went from 2 of 2 to 3 of 3 with `D'.effect`, so the documents that still said 2 of 2 were
+corrected in this commit.
+
+Behar asked for a link to the findings register because LinkedIn turned the filename into a web
+address. The answer is not a link into `linkedin_emphire`, which is public and carries the CV and
+the pipeline. It is `audit/FINDINGS-REGISTER.md` in the benchmark repository, next to the modes
+the register cites.
