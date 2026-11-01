@@ -81,10 +81,8 @@ instead of on its own cause, which is the same mistake as the separator one one
 level up. It now requires every artifact the suite writes, retries, and prints the
 run's output when none completes.
 
-Run `python audit\regressions.py` in the branch. If it does not say eight caught,
-tell me and I will fix that before the P1 work starts.
-
-https://github.com/Teamthy/host-failure-benchmark/compare/main...p0-authenticated-recovery
+Run `python audit\regressions.py` on `p0-authenticated-recovery`. If it does not say
+eight caught, tell me and I will fix that before the P1 work starts.
 
 P1 list unchanged, and the two requests too: the 38 cases as audit/cases/, and
 the review citable as REVIEW-2026-11-01.md.
