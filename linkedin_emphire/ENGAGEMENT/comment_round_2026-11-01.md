@@ -1,6 +1,10 @@
 # Comment round: 2026-11-01
 
-Second live round. Round one is `comment_round_2026-10-31.md` and stays open for the Brad
+Second live round. Every entry opens with a **Profile read** before any draft, per rule 10 in
+`comment_surfaces.md`: relationship, positioning, commercial signals, history, ICP fit, then the
+ladder step chosen. Entries 8 to 12 were drafted first and given their profile reads afterwards,
+on instruction of 1 November; from Entry 13 the block comes first and no draft is written without
+it. A field the paste and the public profile do not settle is written as UNKNOWN, never guessed. Round one is `comment_round_2026-10-31.md` and stays open for the Brad
 Wolfe reply and the al neitsch comment.
 
 ## Entry 1: AI News World, Dario Amodei on per-model profitability
@@ -339,6 +343,16 @@ they did not know it was AI. Two comments are live: Andrew Smythe says people ju
 because many consider it unethical, and Stafford Crombie says AI is just another tool, as Photoshop
 was in the 1990s.
 
+**Profile read, verified 1 November.** Following, and the paste does not show a follow back
+(UNKNOWN). Positioning: creator account whose own headline sells brand and community growth at
+eight million followers; what he actually posts is high-volume consumer tech and futurism, one
+clip or image per post, drones and robots and flexible screens. Commercial signals: he sells brand
+scaling, so a comment adds value and never feeds the offer. History: first contact, no prior
+thread. ICP fit: weak on paper and strong by reach, since the audience here is the general public
+rather than engineers. Ladder step 5, so comment as HUMAN: one concept, one term of jargon at
+most, nothing that needs a second paragraph to explain. Checked against his public profile and
+posting history, not only the paste.
+
 **My read without a comment:** the post's closing question has an answer, and it is not about
 taste. "Is it good" and "was this made with AI" are two different questions. The second is a
 provenance claim, and it can only be settled by something the file carries. When the file carries
@@ -393,7 +407,9 @@ opinion, which is the only kind of comment worth leaving under a post this size.
 
 **The memorable line:** absence of a credential is not evidence of AI.
 
-**Caution.** Do not claim that LinkedIn strips credentials, because it is one of the exceptions.
+**Caution.** This audience is the general public, so one technical word is the ceiling and
+"manifest" is already at it. Do not claim that LinkedIn strips credentials, because it is one of
+the exceptions.
 Do not repeat view counts for the animation, which I did not check. Do not use the benchmark as an
 example, and do not reply to both comments under one post in the same sitting. Draft A plus one
 reply, at most.
@@ -404,6 +420,16 @@ reply, at most.
 large engineering audience. He argues self-hosting will not save money, lists the real reasons
 (privacy, no rate limits, offline, fine-tuning), gives rough math for three buyer sizes, names two
 hardware builds, and asks whether people self-host for cost, privacy or fun.
+
+**Profile read, verified 1 November.** Following. Positioning: he writes The AI Engineer, a
+Substack on agents, inference and GPU work with 32,000 plus subscribers and a tagline claiming a
+million readers; the writing is technical and specific, and the audience is people who ship.
+Commercial signals: paid newsletter tiers, so value only, no CTA feeding, no pitch. History: first
+contact. ICP fit: strong, this is the exact readership. One thing the profile changes: he has
+already published "What Breaks When You Self-Host an LLM", which covers the operational handoffs
+you inherit and the observability you have to bolt on. The comment therefore must not restate it,
+and the reproducibility argument is the part that piece does not make. Ladder step 3, comment,
+OUTSTANDING.
 
 **My read without a comment:** the list is right and it is missing the reason an evaluation team
 cares about, which is that a hosted model is a configuration you cannot get back. Dated snapshots
@@ -445,7 +471,9 @@ which is the ground he has already claimed.
 **The memorable line:** a hosted model is a configuration you cannot get back.
 
 **Caution.** Do not say snapshots are unstable, because the accurate claim is narrower and the
-audience knows the difference. Do not touch his hardware picks, which are fine and will be argued
+audience knows the difference. Do not restate his own self-hosting piece, which already covers the
+handoffs and the missing metrics. If a number is ever needed for this account, it is 32,000 plus
+subscribers, not the million-reader tagline on the masthead. Do not touch his hardware picks, which are fine and will be argued
 about by people who own both cards. Keep B for a different post unless the thread turns into a
 privacy pile-on, in which case B is the only comment worth adding.
 
@@ -455,6 +483,16 @@ privacy pile-on, in which case B is the only comment worth adding.
 Senior Manager, Applied AI, leading the operating model across their Product Innovation Centre and
 setting the standards for how AI is designed, built and governed. His own line is agentic
 engineering and a tool at aiaudit.run.
+
+**Profile read, verified 1 November.** Second degree. Positioning: Claude Community Ambassador
+for Adelaide, roughly a thousand followers, builds a tool at aiaudit.run, and posts about running
+agents at scale, including a session on the software factory loop, token waste, and adversarial
+review with validators to keep AI output honest. Commercial signals: his own audit product, so
+value only. History: first contact. ICP fit: strong. What this changes: he already sells
+adversarial review, so the draft that tells him to make standards runnable explains his own job
+back to him. The aviation argument is the one that is new to him. The Qantas role is minutes old
+and not yet on his public profile, so nothing about it beyond what his post says. Ladder step 5,
+comment, HUMAN.
 
 **My read without a comment:** the comment section will be congratulations from people who want to
 be remembered. The useful thing to send a man who has just been handed "set the standards" is the
@@ -486,7 +524,9 @@ specifics and no numbers, since I have neither.
 > something on a Tuesday. If a commitment cannot be written as a check with a named failure, it is
 > a document rather than a control.
 
-**Why A.** Everyone will send B in slower words, because "make it measurable" is the safe advice.
+**Why A.** He posts about adversarial review and validators himself, so B is his own thesis with a
+congratulation attached. Everyone else will send B in slower words, because "make it measurable"
+is the safe advice.
 A gives him something from the industry he is walking into, in its own vocabulary, and it carries
 the two design points that actually decide whether an agent record is worth anything. It also
 respects that he already builds audits, so it is not explaining his own job back to him.
@@ -504,6 +544,14 @@ do not follow up if he does not answer.
 **Surface:** live thread. I posted the Entry 8 reply about ethics and aesthetics. He answered that
 the technology is not the issue, and that the issue is the thousands of agencies using cloned
 voices and synthetic personas to pass as real humans, which he calls disingenuous.
+
+**Profile read, verified 1 November.** Third degree, and he has replied to my comment, so a reply
+is owed and outranks anything new (ladder step 1). Positioning: director and majority owner of
+Smythe Geanga LTD, a UK company incorporated in 2025, offering Philippine talent acquisition,
+digital audits and growth consulting; the headline matches the registry. What this changes: he
+sells audits, so the reply stays on standing and on who can be held to a claim, and does not
+lecture him about verification. History: one exchange, this is round two. ICP fit: adjacent, the
+buyer side of offshore teams rather than an engineering audience.
 
 **My read:** he has moved the argument somewhere better and it deserves agreement rather than a
 second distinction. He is describing impersonation, and impersonation is the one part of this
@@ -544,6 +592,16 @@ information, on partnerships and on building institutions that keep working afte
 built them have gone. Her closing lines are about not controlling what happens after you leave a
 position, and about making good projects outlive you.
 
+**Profile read, verified 1 November.** Following. Positioning: Deputy Minister of Digital
+Transformation of Ukraine from 2019 to 2025, co-architect of Diia, now an advisor to the Deputy
+Prime Minister on innovation and global partnerships, writes FORWARD on Substack and has a book,
+Government Freestyler. What she posts: public-sector innovation, partnerships, leadership.
+Commercial signals: book and newsletter, so value only and no services offered. History: first
+contact. ICP fit: weak technically, strong institutionally, and the audience is public-sector
+leadership rather than engineers. What this changes: address her as an advisor and a builder, not
+as a serving minister, and never explain digital transformation to the person who built Diia.
+Ladder step 5, comment, OUTSTANDING.
+
 **My read without a comment:** this is a public-sector audience that will answer with agreement
 about leadership, and the account has nothing useful to say about leadership. It does have
 something to say about the closing line, because "the institution outlives the person" has a
@@ -579,6 +637,7 @@ public sector AI that does not need a political opinion attached.
 
 **The memorable line:** what survives the team is the record, not the model.
 
-**Caution.** Do not mention the war, Diia or her ministry beyond the frame her post sets. Do not
-offer services. Do not use the phrase digital transformation back at her. One comment, no reply
+**Caution.** Address her as an advisor and a builder, which is the job she holds now. Do not
+mention the war, Diia or her ministry beyond the frame her post sets, and never explain digital
+transformation to the person who built Diia. Do not offer services. Do not use the phrase digital transformation back at her. One comment, no reply
 chase, and nothing about Nigeria or your own background in it.
