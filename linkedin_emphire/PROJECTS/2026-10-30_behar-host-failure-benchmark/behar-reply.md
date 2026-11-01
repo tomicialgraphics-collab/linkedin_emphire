@@ -478,25 +478,100 @@ Not applied. Send it to him only if he asks who writes the entries, and do not p
 until his results are in, since a register that moves under a reviewer is worse than one that is a
 week late.
 
-**V04, replacement for the current line.**
+**V04, replacement for the current line. Tested, not proposed.**
 
-> V04 | Replay re-stamps decision_ts with its own clock step and re-signs. The mutation is inert in
-> this run: the replay step and the decision step are both 2, so the write puts back the value the
-> field already held and re-signing produces identical bytes
-> (evidence/2026-11-01/v04-inert-proof.log, `record_identical_to_wal=True`). The same mutation with
-> the clocks five steps apart is caught by B and by B.wal, exit 1. The property needs a genuine
-> divergence to be tested, which this fixture does not contain; a synthetic variant is available on
-> request and is labelled as synthetic.
+> V04 | Replay re-stamps decision_ts with its own clock step and re-signs. In the natural fixture
+> the mutation is inert: the replay step and the decision step are both 2, so it writes back the
+> value the field already held and re-signing produces identical bytes
+> (evidence/2026-11-01/v04-inert-proof.log, `record_identical_to_wal=True`). The property is tested
+> by the synthetic variant V04-SKEW in `audit/v04_synthetic_skew.py`
+> (evidence/2026-11-01/v04-synthetic-skew.log). Five replay steps are injected before the re-stamp,
+> so the two timestamps differ (wal_ts 2, stored_ts 7), the record is not the WAL record, and both
+> B and B.wal fail with exit 1. The control run with no skew reproduces the inert case and every
+> check holds, which shows the difference comes from the divergence and not from a change in the
+> checker. The variant is labelled synthetic and tests the binding property only; it does not
+> attest independent timestamp provenance, which this design does not provide.
 
-**N13, replacement for the current line.**
+**N13, replacement for the current line. Verified, and the verification corrected my own wording.**
 
 > N13 | The earlier check required challenge.py to leave a passing report in the directory it was
 > pointed at. That behaviour was removed. challenge.py now copies what it needs, verifies against
-> the copies, writes nothing into the evidence directory, and ends by fingerprinting that directory
-> and printing that it is unchanged. The check therefore raises on the absent file rather than
-> testing the property. The property is asserted by the tool on every run; a check of the revised
-> mechanism should confirm the fingerprint line and the absence of new files, not the presence of a
-> report.
+> the copies and writes nothing into the evidence directory, and among its held assertions it
+> prints "the run you pointed me at is unchanged, no file added, removed or rewritten"
+> (column spacing normalised in this quote). Its
+> closing line is the summary that every mutation was caught, not the fingerprint line, which is
+> the detail I had wrong in my first draft of this entry. The check therefore raises on the absent
+> file rather than testing the property. Under the current implementation the property is asserted
+> by the tool on every run (evidence/2026-11-01/n13-preservation-check.log: exit 0, eighteen files
+> before and after, no verify-report.json, directory fingerprint unchanged). A rewritten N13 should
+> confirm the absence of new files and that assertion line, not the presence of a report.
+
+## 13. His message of 11:08 PM, and the answer that carries the work
+
+He accepted the synthetic skew, asked for preconditions, expected results and a reproducible
+assertion that the two values differ, asked to verify the N13 wording before it enters the shared
+register, fixed 006d7ee as the evaluation target, and thanked me for consolidating. That is a
+green light on the two things he asked for in the previous message, so this one is a delivery
+message rather than an argument.
+
+What was built, in the tree, so he can run it:
+
+- `audit/v04_synthetic_skew.py` applies his mutation to the replay path only, injects five
+  synthetic steps before the re-stamp, and runs the control and the variant in the same
+  invocation. Result: control wal_ts 2, stored_ts 2, every check holds, exit 0; variant wal_ts 2,
+  stored_ts 7, B and B.wal fail, exit 1. Every assertion is printed by the script.
+- `audit/n13_preservation_check.py` points challenge.py at a completed run and checks the
+  fingerprint before and after. Result: exit 0, eighteen files before and after, no
+  verify-report.json, fingerprint unchanged.
+- Logs: `evidence/2026-11-01/v04-synthetic-skew.log` and
+  `evidence/2026-11-01/n13-preservation-check.log`.
+
+What the verification changed: challenge.py does not close on the fingerprint line, as my first
+draft of the N13 wording claimed. It prints "the run you pointed me at is unchanged,
+no file added, removed or rewritten" among its held assertions and closes on the summary. Being corrected
+by my own tool before he reads it is better than being corrected by him afterwards, and the reply
+says so rather than quietly fixing it.
+
+**The reply. Send as is.**
+
+Hi Behar,
+
+Both are done, and both are reproducible on your side.
+
+V04. I built the variant as a separate, labelled test rather than bending the natural fixture.
+audit/v04_synthetic_skew.py applies your mutation to the replay path only, injects five synthetic
+steps before the re-stamp, and asserts three things: the two timestamps differ, the record is not
+the WAL record, and B and B.wal both fail with exit 1. The control run with no skew reproduces the
+inert case and every check holds, which shows the difference comes from the divergence and not
+from a change in the checker. Observed numbers are wal_ts 2 and stored_ts 7 in the variant, both 2
+in the control. The preconditions, the expected results and the assertions are printed by the
+script itself, so you are not relying on my summary, and the log is
+evidence/2026-11-01/v04-synthetic-skew.log. The variant is marked synthetic everywhere and claims
+the binding property only. It does not attest independent timestamp provenance, and I would rather
+say that plainly than let it read as though it does.
+
+N13. I verified the replacement wording against the current implementation before sending it, and
+the verification corrected one detail in my own draft. challenge.py does not close on the
+fingerprint line. It prints "the run you pointed me at is unchanged, no file added, removed
+or rewritten" among its held assertions, and closes on the summary that every mutation was caught.
+The check itself: exit 0, eighteen files before and after, no verify-report.json, directory
+fingerprint unchanged. audit/n13_preservation_check.py reproduces this and the log is
+evidence/2026-11-01/n13-preservation-check.log. A rewritten N13 should confirm the absence of new
+files and that assertion line, not the presence of a report.
+
+The shared register is untouched. Both replacement entries are ready, and I will send them once
+you have seen this, so your copy and the upstream copy move together.
+
+006d7ee stays fixed on my side until your rerun is in. If it turns anything up that disagrees with
+what I have written, tell me and I will correct it in the register rather than in a message.
+
+Best regards,
+Olusanya
+
+**What not to add.** No apology for the earlier N13 sentence, since the correction is in the
+message and an apology would make a small thing large. No explanation of how the script works
+internally. No second offer of work, and nothing from section 11. No question at the end, because
+the next move is his rerun.
 
 ## For you, not for him
 

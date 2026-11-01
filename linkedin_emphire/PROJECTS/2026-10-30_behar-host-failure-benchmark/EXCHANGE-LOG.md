@@ -265,3 +265,28 @@ State after this message: eight cases open (V23, V24, V28, V29, V30, V31, V32, V
 disputed with the test to be re-specified, N13 settled with the register entry to be rewritten. The
 reply is in behar-reply.md section 12. The register wording is drafted there and held, not pushed,
 until his rerun lands.
+
+## 15. His message, 11:08 PM, and what it asked for
+
+He accepted the synthetic skew, set the requirements for it (marked synthetic, explicit
+preconditions, expected results, a reproducible assertion that the two timestamps differ), asked
+for the N13 wording to be verified against the current implementation before it enters the shared
+register, fixed 006d7ee as the evaluation target, and endorsed the single reconciliation.
+
+Delivered in the tree, both reproducible from his side:
+
+- `audit/v04_synthetic_skew.py`, five synthetic replay steps injected before the re-stamp. Control:
+  wal_ts 2, stored_ts 2, record identical to the WAL, every check holds, exit 0. Variant: wal_ts 2,
+  stored_ts 7, record not the WAL record, B and B.wal fail, exit 1. Log at
+  `evidence/2026-11-01/v04-synthetic-skew.log`.
+- `audit/n13_preservation_check.py`, challenge.py pointed at a completed run. Exit 0, eighteen files
+  before and after, no verify-report.json written, directory fingerprint unchanged. Log at
+  `evidence/2026-11-01/n13-preservation-check.log`.
+
+One correction came out of running our own tool: challenge.py does not close on the fingerprint
+line. It prints "the run you pointed me at is unchanged, no file added, removed or rewritten" among
+its held assertions and closes on the summary. The N13 replacement wording was amended before he
+saw it, and the reply says so.
+
+The shared register is unchanged. Both replacement entries sit in behar-reply.md section 12.1 and
+move only after he has seen this message.
