@@ -58,8 +58,10 @@ times in the headline without being highlighted, and the number carries the whol
 they are wrong. "AI" fails it. "RISK" fails it. "0.10 PERCENT" passes, because it belongs to one
 measurement in one context.
 
-**Format.** One to three words. Sits inside a single line, never split across a line break. Never
-opens the first line of the headline. Accent fill, reversed or white text, no outline, no shadow.
+**Format.** One to three words, and four when the phrase is a single clause that dies if cut
+(see Card 1 in the value pluralism folder, where "NOT WRITTEN" loses who failed to write it).
+Sits inside a single line, never split across a line break. Never opens the first line of the
+headline. Accent fill, reversed or white text, no outline, no shadow.
 
 ---
 

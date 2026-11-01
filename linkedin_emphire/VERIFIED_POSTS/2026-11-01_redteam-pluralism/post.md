@@ -1,6 +1,6 @@
-Two users are both right. Your rubric picks one.
+Your red team has values. It just hasn't written them down.
 
-Anthropic built a constitution from 275 public statements. Both sides of one real conflict were dropped. The model withdrew more.
+Value pluralism says there is no single rubric to test against, so a red team that scores agreement is measuring itself.
 
 Red teaming inherited a QA habit. Someone writes the rubric, someone else scores against it. That holds when the criterion is factual. It stops holding when the criterion is a value.
 
@@ -24,6 +24,6 @@ The part nobody tells you:
 
 A consensus filter keeps what nobody objects to, which deletes exactly the questions you were hired to test. What survives is the easy half, and the report reads clean for a reason nobody wrote down.
 
-Who wrote your rubric, and did they tell you whose values are in it?
+What does your red team do when two users are both right?
 
 #AISecurity #AIEvaluation #AIGovernance

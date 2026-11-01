@@ -43,7 +43,7 @@ red team would score the withdrawn model as safer.
 ### 4. Delivered: comment on the Amodei post
 
 `ENGAGEMENT/comment_round_2026-11-01.md`, entry 1. QUESTIONING, 118 words, gate 100/100, clean.
-Its summary was checked against podcast transcripts and holds. The comment accepts the
+Its summary was checked against podcast transcripts and holds. It accepts the
 reframe and points at what it omits: none of the tenfold training increase is earmarked for
 testing, so it stays cheaper to ship a model than to test one.
 
@@ -62,7 +62,7 @@ Deliberately no claim about Anthropic's real evaluation spend. No source exists 
 
 Pluralism is the strongest thing in the repo for the hiring goal (ICP-B). Vendor review is the
 strongest for the buying goal (ICP-A). Running them three days apart gives the account
-two positions rather than one repeated thesis. The Amodei comment should go today, while the post
+two positions rather than one repeated thesis. Send the Amodei comment today, while the post
 is fresh.
 
 ### 5. Delivered: hook and visual highlight spec
@@ -71,7 +71,7 @@ is fresh.
 for three things: headline and subheadline on every post, a first line that forces the "see more",
 and the words to box in the visual.
 
-The spec generalises the card into rules. First line under 120 characters, no question, incomplete
+Spec rules are generalised from the card. First line under 120 characters, no question, incomplete
 without the next line, using one of three mechanisms: a number fighting its own unit, a
 contradiction in two clauses, or a cost stated flatly. One box per card, one to three words, box the
 quantity or the failure verb and never the topic, passing the portability test.
@@ -82,3 +82,14 @@ Two posts were re-cut to the new standard. `soc2-model-behaviour` now opens "You
 the audit. It never answered the question" at 295 words. `redteam-pluralism` now opens "Two users
 are both right. Your rubric picks one" at 305 words, and its closing question changed so it does
 not repeat the headline. Both still gate 100/100.
+
+### 6. Value pluralism post: reverted to the owner's text, and three cards
+
+Owner pasted the pre-edit version back, with "Your red team has values. It just hasn't written
+them down." That is now `post.md` again, 306 words, gate 100/100. The headline I had substituted
+was better as a hook and worse as the owner's own sentence, and he is the one who has to say it.
+
+`VISUAL_OPTIONS.md` holds three cards for that text, the box candidates table with the portability
+test applied, and the one line of surgery worth doing: the subheadline carries a definition and no
+evidence, so it should swap to the 275 figure. Spec box rule now allows four words when the
+phrase is a clause that dies if cut.
