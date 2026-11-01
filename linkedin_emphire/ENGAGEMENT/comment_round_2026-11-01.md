@@ -532,6 +532,6 @@ concedes, and under his own comment that reads as scoring.
 
 **The memorable line:** nobody can adjudicate "looks generated".
 
-**Caution.** Do not name an agency and do not guess at scale. Do not circle back to the benchmark.
+**Caution.** Do not name an agency and do not guess at scale. Do not bring the benchmark into it.
 If he answers again, leave it there: two rounds is a conversation, three is a debate he did not ask
 for.
