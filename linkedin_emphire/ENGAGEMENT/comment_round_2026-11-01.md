@@ -329,3 +329,71 @@ alerts still fire. It also credits the finding to the people who did the work ra
 **Caution.** Do not put a number in this comment. The 3 October and 6 October dates belong in the
 write-up if it becomes one, not in a comment under someone else's post, where a wrong date costs more
 than the detail is worth.
+
+## Entry 8: Endrit Restelica, on AI slop and whether people judge the work or the tool
+
+**Surface:** personal post, roughly half an hour before the paste, 8M-follower account. He argues
+that access to the same models does not produce equally good work, points at an animation by
+antrofrog_ with tens of millions of views, and closes by asking whether people would enjoy it if
+they did not know it was AI. Two comments are live: Andrew Smythe says people judge the technology
+because many consider it unethical, and Stafford Crombie says AI is just another tool, as Photoshop
+was in the 1990s.
+
+**My read without a comment:** the post's closing question has an answer, and it is not about
+taste. "Is it good" and "was this made with AI" are two different questions. The second is a
+provenance claim, and it can only be settled by something the file carries. When the file carries
+nothing, viewers use the poster as the evidence, which is exactly why the same clip reads as
+charming or as fraud depending on who shared it. That is a missing manifest, not a missing eye,
+and nobody else in that comment section will make that distinction.
+
+**Verified before drafting:** Content Credentials (C2PA) attach a signed, tamper-evident manifest
+recording origin and edits, and major generators ship them. They also die on the way: Instagram, X,
+Facebook, WhatsApp, Reddit and TikTok re-compress on upload and discard the metadata where the
+manifest lives, and a screenshot produces a new file with no link to the original. LinkedIn and
+TikTok have implemented C2PA display, which is the exception rather than the rule. Absence of a
+credential is therefore not evidence of AI, and the C2PA spec says so in its own security section.
+Soft bindings, meaning a watermark or a fingerprint that can be matched to a stored manifest,
+recover some of this and do not guarantee it.
+
+**Draft A: THE TWO QUESTIONS, 96 words, voice_lint clean**
+
+> The post asks whether people judge the work or the tool, and there is a cleaner split than that.
+> Whether the animation is good is a judgement of the work. Whether it was made with AI is a claim
+> about provenance, and you can only settle that from something the file carries, not from how the
+> file looks. When the file carries nothing, the poster becomes the evidence, which is why the same
+> clip reads as charming or as fraud depending on who shared it. That is not a taste problem. It is
+> a missing manifest.
+
+**Draft B: THE TASTE POINT, EXTENDED, 74 words, voice_lint clean**
+
+> Agreed on taste, and it goes one layer down. The work I see fail is rarely failing on taste. It
+> fails because someone took the first result and never checked whether it did what it claimed.
+> The gap between a good build and slop is usually one person asking that question before anything
+> ships. Taste decides whether it is worth doing. Checking decides whether the claim survives.
+
+**Reply to Stafford Crombie, 88 words, voice_lint clean**
+
+> Photoshop is the right comparison and it shows the missing piece. That argument was settled by
+> what the file carried: layers, edit history, an original somewhere. We have the equivalent now,
+> Content Credentials, signed and tamper-evident, and most feeds strip them on upload while a
+> screenshot removes them entirely. So the question lands on the poster rather than the file, and
+> absence of a credential gets read as proof of AI when it proves nothing either way. The tool was
+> never the hard part. Carrying the evidence is.
+
+**Reply to Andrew Smythe, 66 words, voice_lint clean**
+
+> A lot of the reaction is ethical rather than aesthetic, and they are two verdicts that get mixed
+> together. "Made without consent or credit" is a claim you can check. "Looks cheap" you cannot.
+> Once the two collapse, careful work gets dismissed for its tool, and careless work gets a pass
+> for its charm. Separate the questions before judging either one.
+
+**Why A over B on the main post.** B agrees with him and adds nothing he has not said. A takes his
+closing question seriously enough to answer it, and the answer is a distinction rather than an
+opinion, which is the only kind of comment worth leaving under a post this size.
+
+**The memorable line:** absence of a credential is not evidence of AI.
+
+**Caution.** Do not claim that LinkedIn strips credentials, because it is one of the exceptions.
+Do not repeat view counts for the animation, which I did not check. Do not use the benchmark as an
+example, and do not reply to both comments under one post in the same sitting. Draft A plus one
+reply, at most.
