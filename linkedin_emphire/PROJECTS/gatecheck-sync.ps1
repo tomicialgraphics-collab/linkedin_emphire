@@ -135,6 +135,84 @@ try {
     if (-not $SkipTests) {
         Step "pytest"
         & $python -m pytest -q
+        AssertExit "pytest (expected 41 passed, 2 skipped with no engines installed)"
+
+        # 6. Exit 2 on the vulnerable agent is the correct answer. Exit 0
+        #    would mean the gate had gone back to lying.
+        Step "demo 1 of 4: vulnerable agent, nothing recorded yet"
+        & $python -m gatecheck run --demo vulnerable --out .gatecheck/runs/sync-1
+        $vulnerable = $LASTEXITCODE
+        Write-Host "exit code $vulnerable (expect 2 = blocked, 7 findings)"
+        if ($vulnerable -ne 2) {
+            Write-Host "expected 2. Read the output above before trusting this copy." -ForegroundColor Yellow
+        }
+
+        # 7. Record today's state. Exit 2 again is correct: the run is
+        #    blocked, and those seven findings become what you accepted.
+        Step "demo 2 of 4: record those seven as the baseline"
+        & $python -m gatecheck run --demo vulnerable --out .gatecheck/runs/sync-2 --update-baseline
+        $recorded = $LASTEXITCODE
+        Write-Host "exit code $recorded (expect 2, and a line saying baseline updated)"
+        if (-not (Test-Path -LiteralPath (Join-Path $Path ".gatecheck/baseline.json"))) {
+            Write-Host "no baseline was written. The gate only refuses when a tool did not run." -ForegroundColor Yellow
+        }
+
+        # 8. Now a pass means something: the findings are gone, not unseen.
+        Step "demo 3 of 4: hardened agent against that baseline"
+        & $python -m gatecheck run --demo fixed --out .gatecheck/runs/sync-3
+        $fixed = $LASTEXITCODE
+        Write-Host "exit code $fixed (expect 0, and 7 fixed)"
+        if ($fixed -ne 0) {
+            Write-Host "expected 0." -ForegroundColor Yellow
+        }
+
+        # 9. The same broken agent, unchanged, must not be news any more.
+        Step "demo 4 of 4: vulnerable agent again, same baseline"
+        & $python -m gatecheck run --demo vulnerable --out .gatecheck/runs/sync-4
+        $again = $LASTEXITCODE
+        Write-Host "exit code $again (expect 0, 7 findings, 0 new)"
+        if ($again -ne 0) {
+            Write-Host "expected 0. Known findings should stop blocking." -ForegroundColor Yellow
+        }
+    }
+}
+finally {
+    if (Test-Path -LiteralPath $tmp) {
+        Remove-Item -LiteralPath $tmp -Recurse -Force -ErrorAction SilentlyContinue
+    }
+}
+
+# 4. The baseline your broken run wrote holds zero findings. Keeping it is
+#    what made seven real findings look fixed, so it goes.
+$baseline = Join-Path $Path ".gatecheck"
+if (Test-Path -LiteralPath $baseline) {
+    if ($KeepBaseline) {
+        Write-Host ""
+        Write-Host "kept $baseline as asked. If it was written by a run that found nothing, delete it." -ForegroundColor Yellow
+    }
+    else {
+        Remove-Item -LiteralPath $baseline -Recurse -Force
+        Write-Host ""
+        Write-Host "removed $baseline (old baseline and run artifacts)" -ForegroundColor Yellow
+    }
+}
+
+# 5. Use the venv the folder already has, if any.
+$python = Join-Path $Path ".venv/Scripts/python.exe"
+if (-not (Test-Path -LiteralPath $python)) {
+    $python = "python"
+}
+Write-Host "python: $python"
+
+Push-Location -LiteralPath $Path
+try {
+    Step "pip install -e .[dev]"
+    & $python -m pip install -q -e ".[dev]"
+    AssertExit "pip install"
+
+    if (-not $SkipTests) {
+        Step "pytest"
+        & $python -m pytest -q
         AssertExit "pytest (expected 42 passed, 1 skipped)"
 
         # 6. The demo. Exit 2 on the vulnerable agent is the correct answer,
