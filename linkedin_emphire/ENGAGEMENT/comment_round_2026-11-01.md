@@ -246,3 +246,40 @@ this comment that pivots to our subject and it would be worse. He asked about co
 the whole comment stays on cost per unit.
 
 **Numbers:** his, quoted back, not new ones. Nothing invented.
+
+## Entry 6: Ashwini Mathur, reply on my own human-in-the-loop post
+
+**Surface:** a reply to my post of the same day, on the line that the human in the loop is not
+the safeguard, a human with time to read and standing to say no is. Post shows 437 impressions,
+1 reaction.
+
+**Their line, verbatim:** "Yes, the mere logistics of staying human is pushing us away from
+staying human."
+
+**My read without a comment:** this is the reply you want on that post, because it takes the
+argument somewhere I did not. The post said the safeguard is time and standing. Ashwini says the
+administration of that safeguard is itself what pushes people out of it. That is a better
+sentence than mine and the reply should say so by building on it, not by complimenting it.
+
+**Draft A: AGREEMENT WITH A TURN, 67 words, voice_lint clean**
+
+> Agreed, and the logistics are the tell. When a review queue is the bottleneck, the cheap fix is
+> a wider queue rather than a shorter one: more items per hour, the same twenty seconds each. The
+> question I would put to any system like that is whether a reviewer can refuse something and have
+> the refusal stick. If not, the human is a name on a diagram.
+
+**Draft B: SHORTER, 48 words, voice_lint clean**
+
+> Which is why the queue gets widened before it gets shortened. More items per hour is cheaper to
+> buy than fewer items, so the count rises and the time per item does not. Staying human stops
+> being something you are and becomes something you are given time for.
+
+**Why A over B for this thread.** A ends on a test a reader can apply the next morning, which is
+what the post already does. B is better writing and worse as a reply, because it closes the
+thought instead of handing it back.
+
+**The memorable line:** the human is a name on a diagram.
+
+**Note on the thread.** His sentence deserves a like of its own. Do not stack a second comment
+after this one, and do not turn it into a post: the same idea on my own feed two days running
+reads as a theme rather than a reply.
