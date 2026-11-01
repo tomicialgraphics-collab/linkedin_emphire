@@ -269,9 +269,8 @@ defects that remain are the ones you said would remain. Each of the six findings
 a mode in `audit/regressions.py` that fires your counterexample and requires a named check to
 catch it, nineteen modes in all, every one caught. The mode for the false rejection tests both
 directions, since a check that fires on an ordinary restart would be as wrong as the one it
-replaced. My own run still gives 13 of 13 in
-class P and 2 of 2 in class V, two runs byte for byte, and every challenge mutation caught, so
-the patch did not quiet the suite into passing.
+replaced. My own run still gives 13 of 13 in class P and 2 of 2 in class V, two runs byte for
+byte, and every challenge mutation caught, so the patch did not quiet the suite into passing.
 
 V04 I dispute rather than patch around. In that run the replay step and the decision step are
 both 2, so your mutation writes the value `decision_ts` already held, and the re-signed record
