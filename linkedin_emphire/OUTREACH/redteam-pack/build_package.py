@@ -234,6 +234,14 @@ def empty_answer_report(data):
 
 def config_block(model, base_url, timestamp, results):
     """Section 2.3. Only what the run actually used."""
+    import platform
+
+    try:
+        import openai
+
+        sdk = getattr(openai, "__version__", "unknown")
+    except Exception:
+        sdk = "not importable"
     rows = [
         ("Model id", "`%s`" % model),
         ("Endpoint", "`%s`" % base_url),
@@ -241,6 +249,9 @@ def config_block(model, base_url, timestamp, results):
         ("Max tool steps", "4, harness default"),
         ("Run started", timestamp),
         ("Sample", "built-in OrderBot prompt"),
+        ("Python", "`%s`" % sys.version.split()[0]),
+        ("openai SDK", "`%s`" % sdk),
+        ("Platform", "`%s`" % platform.platform().replace("|", "/")),
     ]
     body = ["| Field | Value |", "|---|---|"]
     body += ["| %s | %s |" % (k, v) for k, v in rows]

@@ -36,7 +36,7 @@ The rest of this file is the same procedure by hand, for when something needs lo
 - Python 3.9 or newer
 - `openai`, one package
 - An endpoint: Ollama, LM Studio, or any hosted key
-- About 5 minutes on a hosted model, longer on a local one
+- About 5 minutes on a hosted model, longer on a local one.
 
 ---
 
@@ -47,7 +47,7 @@ python -m pip install openai
 ```
 
 Use whichever `python` you will run the script with. If you use a virtual environment, activate it
-first, because the script and the harness must see the same interpreter.
+first, because the script and the suite must see the same interpreter.
 
 Check it took:
 
@@ -103,8 +103,8 @@ What happens, in order:
 
 1. Checks `openai` is installed and the endpoint answers. Fails with a readable message if either is
    wrong, before doing any work.
-2. Clones the harness at the pinned commit `d95a57e`, or uses your existing clone if you pass
-   `--harness`.
+2. Clones the suite at the pinned commit `d95a57e`, or uses your existing clone if you pass
+   `--suite`.
 3. Runs all five tests. Fourteen model calls at minimum, more if the tool test loops.
 4. Writes the run into section 2.3 and section 4 of
    `OUTREACH/2026-11-01_andrey_evidence_package.md`.
@@ -143,11 +143,11 @@ says the run is not attached and why. Do not send reply A over an empty section.
 | `Nothing answered at http://.../v1/models` | Server not running, wrong port, or missing `/v1` | Start the server, check the port, keep `/v1` on the end |
 | `model not found` | Model id mismatch | Copy the exact id from `/v1/models` |
 | Long silence after `[run]` | Local models are slow | Wait. Fourteen calls on an 8B model takes minutes |
-| `KeyError: 'Test 1 - prompt injection'` | Known bug in the harness, see below | The script handles it and carries on |
+| `KeyError: 'Test 1 - prompt injection'` | Known bug in the suite, see below | The script handles it and carries on |
 
 ---
 
-## Known bug in the harness
+## Known bug in the suite
 
 At the pinned commit, `python redteam.py` finishes the run, writes `results.json`, then crashes while
 writing `results.md`. Traceback ends in `KeyError: 'Test 1 - prompt injection'`.
@@ -165,6 +165,6 @@ Fix, one word:
     for x in results[key]:
 ```
 
-Verified on 2026-11-01: with that change the harness exits 0 and writes both files. Build script
-already tolerates the crash, so the package does not depend on the fix. Fix it in the harness repo
+Verified on 2026-11-01: with that change the suite exits 0 and writes both files. Build script
+already tolerates the crash, so the package does not depend on the fix. Fix it in the suite repo
 when you have a minute, then re-pin both the package and the script to the new commit.

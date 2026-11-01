@@ -1,4 +1,4 @@
-# Exploratory evidence review: five-test red-team harness
+# Exploratory evidence review: five-test red-team suite
 
 **Prepared for:** Andrey Ekhmenin, ANDEKS
 **Prepared by:** Olusanya Timothy
@@ -119,13 +119,13 @@ Pending. Filled from the run environment at the moment of the run, not afterward
 
 ### 2.4 Tooling and environment
 
-Harness: `github.com/Teamthy/ai-redteam-five-tests`, pinned at
+Suite: `github.com/Teamthy/ai-redteam-five-tests`, pinned at
 `d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`. Single dependency: `openai>=1.0`. Entry point
 `redteam.py`, which writes `results/results.json` and `results/results.md`.
 
 ### 2.5 Procedure
 
-1. Clone the harness at the pinned commit.
+1. Clone the suite at the pinned commit.
 2. Set `MODEL`, `OPENAI_BASE_URL`, `OPENAI_API_KEY`. Any OpenAI-compatible endpoint works, including
    a local one; a local endpoint accepts a placeholder key.
 3. `python redteam.py` runs all five tests and writes `results/`.
@@ -163,9 +163,9 @@ unambiguous rather than a matter of interpretation.
 
 **Status: not yet attached.**
 
-A dry-run of the harness at the pinned commit ran on 2026-11-01 at 10:24:23. It executes every
+A dry-run of the suite at the pinned commit ran on 2026-11-01 at 10:24:23. It executes every
 code path except the model call and prints the exact test inventory, which confirms the inputs in
-section 2.1 are the ones the harness sends. No model behaviour happens, so there is no finding.
+section 2.1 are the ones the suite sends. No model behaviour happens, so there is no finding.
 
 A live run needs an endpoint and a key, and the environment this document was assembled in has
 neither. The run is being executed on the author's own endpoint, and its outputs will be attached to
@@ -176,12 +176,35 @@ when they are.
 
 ## 5. Re-run
 
-Commands, environment and the pinned commit are in sections 2.3 and 2.4. Results land in
-`results/results.md`, with the machine-readable form in `results/results.json`.
+Everything needed is below. A stranger needs the pinned commit, an endpoint that serves the model
+named in section 2.3, and a key for it. Nothing has to be reconstructed from the tester.
+
+```
+git clone https://github.com/Teamthy/ai-redteam-five-tests.git
+cd ai-redteam-five-tests
+git checkout d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6
+python -m pip install "openai>=1.0"
+
+set MODEL=openai/gpt-oss-120b
+set OPENAI_BASE_URL=https://api.groq.com/openai/v1
+set OPENAI_API_KEY=<a key for that endpoint>
+
+python redteam.py
+```
+
+On PowerShell the three assignments are `$env:MODEL = "..."` and so on. On macOS or Linux they
+are `export`.
+
+It writes `results/results.json` and then exits with an error while writing
+`results/results.md`, a defect in the pinned commit recorded in section 4. The run is complete
+once `results.json` exists. Judge that file against section 2.6, not against the exit code.
+
+A re-run on a later model build may reach different verdicts. That is a finding about the model,
+and section 2.6 says so in advance.
 
 ## 6. Provenance
 
-- Harness: `github.com/Teamthy/ai-redteam-five-tests` at
+- Suite: `github.com/Teamthy/ai-redteam-five-tests` at
   `d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`, commit verified 2026-11-01.
 - Inputs: verified against source on 2026-11-01, not carried over from an earlier capture.
 - Run timestamp, model and endpoint: section 4.

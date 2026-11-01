@@ -330,10 +330,23 @@ def human_gate(text: str, profile: str = "linkedin") -> dict:
         })
 
     # 6. A paragraph that never ends in punctuation is usually a paste error.
-    for i, para in enumerate([p.strip() for p in body.split("\n\n") if p.strip()], 1):
+    # A fenced block is code, and a code block with a blank line inside it used to arrive here as
+    # two paragraphs of prose. Swap each block for a neutral sentence before numbering paragraphs.
+    checked = re.sub(r"```.*?```", "Code block.", body, flags=re.S)
+    for i, para in enumerate([p.strip() for p in checked.split("\n\n") if p.strip()], 1):
         tail = para.rstrip()
         # a bold-only label such as **INTERACTIVE, 56 words** is metadata, not a sentence
         if re.fullmatch(r"\*\*.+\*\*", para):
+            continue
+        # a heading is a label, not a sentence
+        if re.fullmatch(r"#{1,6}\s.*", para):
+            continue
+        # a horizontal rule is a rule
+        if re.fullmatch(r"[-*_]{3,}", para):
+            continue
+        # a markdown table is a table, whatever the profile
+        rows = [line.strip() for line in para.split("\n") if line.strip()]
+        if rows and all(line.startswith("|") for line in rows):
             continue
         # an HTML comment is a build marker, not prose
         if re.fullmatch(r"(?:<!--.*?-->\s*)+", para, re.S):
