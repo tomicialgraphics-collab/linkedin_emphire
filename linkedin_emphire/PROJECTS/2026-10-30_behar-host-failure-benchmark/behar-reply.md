@@ -420,6 +420,84 @@ If he says no, the better ask is a referral: which two or three people in his ne
 kind of claim this benchmark tests. A reviewer who has just spent a week in your work knows
 exactly who needs it.
 
+## 12. His reply of 10:53 PM, and the answer to send
+
+He wrote at 10:53 PM. What his message actually settles, read carefully:
+
+- **V04 is conceded in principle.** "V04 needs a genuine timestamp divergence to test the intended
+  property" is his own phrasing of the defect in the check, not in the code. The disputed line in
+  the register is now his position as well as mine, and it needs a different test rather than a
+  different verdict.
+- **N13 is conceded.** "N13 should be updated to reflect the revised evidence-preservation
+  mechanism" moves the argument from whether the property holds to how the check should be written.
+- **Nothing else is settled.** He has not ruled on V23, V24 or V28 to V33, and he has not accepted
+  any disposition. He is going to read the register and rerun against 006d7ee first.
+- **He has not asked for anything.** No document, no call, no introduction. The temptation here is
+  to fill the silence. Do not.
+
+That leaves eight cases open by my count: V23, V24 and V28 through V33. V04 comes off the list as
+settled, with the test to be re-specified rather than the finding withdrawn.
+
+**The reply. Send as is.**
+
+Hi Behar,
+
+Thank you, and I agree with both of your rulings.
+
+On V04, the entry stands on the ground you name. The mutation writes the value the field already
+holds, so the property it is meant to test never gets exercised. If it is useful for the rerun, I
+can supply a variant with an injected clock skew and a real divergence between the two steps,
+marked as synthetic so nobody later mistakes it for a case that occurred naturally. Tell me if you
+want it and it goes in with the next push.
+
+On N13, the entry will be rewritten to test the evidence-preservation path as it is now
+implemented, rather than the file the earlier version left in the directory. I will send you the
+replacement wording before it goes into the register, so your copy and the upstream copy cannot
+drift apart.
+
+Until your rerun lands I am not changing anything. 006d7ee is the right target, the audit files are
+at 20e3ebf, and the cases still open are V23, V24 and V28 to V33. When your results arrive I will
+fold them into a single reconciliation against the register rather than answering case by case, so
+the record stays readable.
+
+Best regards,
+Olusanya
+
+Why this and not more. It accepts both rulings in one line each, offers him the one artefact that
+would make his V04 rerun meaningful without asking him to design it, and commits to a single
+consolidated response so he is not answering messages while he works. It also ends without a
+question, which leaves him free to go and do the rerun.
+
+**What not to send.** No mention of the stipend, the funded work or referrals, which stay in
+section 11 and stay held until after this review closes. No further defence of V04 beyond the
+sentence he has already accepted. No summary of the patch, which he has. No deadline.
+
+### 12.1 The register wording, held until his rerun confirms
+
+Not applied. Send it to him only if he asks who writes the entries, and do not push it upstream
+until his results are in, since a register that moves under a reviewer is worse than one that is a
+week late.
+
+**V04, replacement for the current line.**
+
+> V04 | Replay re-stamps decision_ts with its own clock step and re-signs. The mutation is inert in
+> this run: the replay step and the decision step are both 2, so the write puts back the value the
+> field already held and re-signing produces identical bytes
+> (evidence/2026-11-01/v04-inert-proof.log, `record_identical_to_wal=True`). The same mutation with
+> the clocks five steps apart is caught by B and by B.wal, exit 1. The property needs a genuine
+> divergence to be tested, which this fixture does not contain; a synthetic variant is available on
+> request and is labelled as synthetic.
+
+**N13, replacement for the current line.**
+
+> N13 | The earlier check required challenge.py to leave a passing report in the directory it was
+> pointed at. That behaviour was removed. challenge.py now copies what it needs, verifies against
+> the copies, writes nothing into the evidence directory, and ends by fingerprinting that directory
+> and printing that it is unchanged. The check therefore raises on the absent file rather than
+> testing the property. The property is asserted by the tool on every run; a check of the revised
+> mechanism should confirm the fingerprint line and the absence of new files, not the presence of a
+> report.
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.

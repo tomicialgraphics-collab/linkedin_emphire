@@ -251,3 +251,17 @@ hand.
 The release decision stands as he wrote it. Nothing in P2 supports authenticated recovery,
 host-loss survivability, or trusted timestamps, and the note says so next to the results rather
 than in a footnote.
+
+## 14. His answer, 1 November, 10:53 PM
+
+He replied to the full response and accepted both disputed points in his own words. V04 "needs a
+genuine timestamp divergence to test the intended property", which is the argument made in the
+disposition. N13 "should be updated to reflect the revised evidence-preservation mechanism", which
+concedes that the check is testing a file that no longer exists rather than the property. He will
+read the register and rerun the differential tests against 006d7ee before consolidating a position
+on the remaining cases. No asks, no attachments requested, no timeline.
+
+State after this message: eight cases open (V23, V24, V28, V29, V30, V31, V32, V33), V04 settled as
+disputed with the test to be re-specified, N13 settled with the register entry to be rewritten. The
+reply is in behar-reply.md section 12. The register wording is drafted there and held, not pushed,
+until his rerun lands.
