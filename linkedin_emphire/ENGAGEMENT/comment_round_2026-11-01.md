@@ -1311,7 +1311,7 @@ roll-up he is working in. Each acquired company kept its own finance team, syste
 and close calendar, so every acquisition adds a department and corporate consolidates what arrives.
 The model he is building is the opposite: one chart of accounts, one close, one data model, one set
 of controls, with payables, payroll, billing, reporting and FP&A run once, and business unit finance
-leads reporting solid line to the CFO. Four benefits, leverage, flexibility, comparability, control.
+leads reporting solid line to the CFO. Four benefits, economies of scale, flexibility, comparability, control.
 The objection at full strength: units lose a finance person who answers only to them, service dips in
 transition, local knowledge walks, and the savings take 12 to 18 months. His answer is written
 service levels, embedded partners and a phased plan. He closes by arguing the CFO has to own it,
