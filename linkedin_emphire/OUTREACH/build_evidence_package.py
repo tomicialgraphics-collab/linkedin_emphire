@@ -40,6 +40,40 @@ REPO_URL = "https://github.com/Teamthy/ai-redteam-five-tests.git"
 PACKAGE = Path(__file__).resolve().parent / "2026-11-01_andrey_evidence_package.md"
 
 
+def preflight(model, base_url):
+    """Fail with a readable message before doing any work."""
+    try:
+        import openai  # noqa: F401
+    except ImportError:
+        raise SystemExit(
+            "The harness needs the openai package and it is not installed for this interpreter.\n"
+            "  fix: %s -m pip install openai\n"
+            "  interpreter: %s" % (sys.executable, sys.executable)
+        )
+
+    import urllib.error
+    import urllib.request
+
+    url = base_url.rstrip("/") + "/models"
+    req = urllib.request.Request(url, headers={"Authorization": "Bearer " + os.environ.get("OPENAI_API_KEY", "x")})
+    try:
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            resp.read(64)
+    except urllib.error.HTTPError as exc:
+        # a 401/404 still proves something is listening, which is what this check is for
+        if exc.code >= 500:
+            raise SystemExit("endpoint answered %s at %s. Is the model loaded?" % (exc.code, url))
+    except Exception as exc:
+        raise SystemExit(
+            "Nothing answered at %s (%s).\n"
+            "  Ollama:     ollama serve  then  ollama pull %s\n"
+            "  LM Studio:  Developer tab, Start Server, check the port\n"
+            "  Then confirm the base URL ends in /v1 and the model id is loaded."
+            % (url, exc.__class__.__name__, model)
+        )
+    print("[ok] openai installed, endpoint answering at %s" % base_url)
+
+
 def sh(cmd, cwd=None, env=None):
     """Run a command, return stdout, raise on failure."""
     proc = subprocess.run(cmd, cwd=cwd, env=env, capture_output=True, text=True)
@@ -83,16 +117,34 @@ def run_harness(harness, model, base_url, api_key, prompt_file=None):
         env["MY_SYSTEM_PROMPT_FILE"] = str(Path(prompt_file).expanduser().resolve())
 
     print("[run] python redteam.py  (model=%s endpoint=%s)" % (model, base_url))
-    stdout = sh([sys.executable, "redteam.py"], cwd=str(harness), env=env)
+    proc = subprocess.run([sys.executable, "redteam.py"], cwd=str(harness), env=env,
+                          capture_output=True, text=True)
 
     results_json = harness / "results" / "results.json"
     results_md = harness / "results" / "results.md"
-    if not results_json.exists():
-        raise SystemExit("harness finished but wrote no results/results.json\n" + stdout[-2000:])
+
+    # The harness writes results.json, then crashes while writing results.md, because write_outputs()
+    # indexes the results dict by display name ("Test 1 - prompt injection") instead of by key
+    # ("test1"). Known defect at the pinned commit. The run itself finishes before the crash, so a
+    # non-zero exit with results.json on disk is a usable run and is reported as one.
+    note = ""
+    if proc.returncode != 0:
+        if not results_json.exists():
+            raise SystemExit(
+                "the run failed and wrote no results/results.json\n"
+                + (proc.stdout + proc.stderr)[-2500:]
+            )
+        note = (
+            "The harness exited with an error after writing `results.json` and before writing "
+            "`results.md`. Known defect at the pinned commit: `write_outputs()` reads the results "
+            "dict by display name instead of by key. The run completed, the raw responses are "
+            "recorded below, and nothing in this section depends on `results.md`."
+        )
+        print("[warn] harness exited non-zero but wrote results.json, continuing")
 
     data = json.loads(results_json.read_text(encoding="utf-8"))
     md = results_md.read_text(encoding="utf-8") if results_md.exists() else ""
-    return data, md
+    return data, md, note
 
 
 def config_block(model, base_url, timestamp, results):
@@ -100,8 +152,8 @@ def config_block(model, base_url, timestamp, results):
     rows = [
         ("Model id", "`%s`" % model),
         ("Endpoint", "`%s`" % base_url),
-        ("Temperature", "0.2"),
-        ("Max tool steps", "4"),
+        ("Temperature", "0.2, harness default"),
+        ("Max tool steps", "4, harness default"),
         ("Run started", timestamp),
         ("Sample", "built-in OrderBot prompt" ),
     ]
@@ -110,7 +162,7 @@ def config_block(model, base_url, timestamp, results):
     return "\n".join(body)
 
 
-def results_block(data, md, model, base_url, timestamp):
+def results_block(data, md, model, base_url, timestamp, note=""):
     """Section 4, built from results.json only."""
     meta = data.get("meta", {})
     run = meta.get("run", timestamp)
@@ -118,6 +170,9 @@ def results_block(data, md, model, base_url, timestamp):
     lines = []
     lines.append("**Run:** %s UTC, model `%s`, endpoint `%s`." % (run, model, base_url))
     lines.append("")
+    if note:
+        lines.append("> " + note)
+        lines.append("")
 
     def section(title, items, key):
         if not items:
@@ -204,15 +259,18 @@ def main():
     if not package.exists():
         raise SystemExit("no package at %s" % package)
 
+    preflight(args.model, args.base_url)
+    print("[plan] clone harness at %s, run 5 tests against %s, fill %s" % (PINNED_COMMIT[:7], args.model, package.name))
+
     workdir = tempfile.mkdtemp(prefix="fivetests-")
     try:
         harness = get_harness(args.harness, workdir)
-        data, md = run_harness(harness, args.model, args.base_url, args.api_key, args.prompt_file)
+        data, md, note = run_harness(harness, args.model, args.base_url, args.api_key, args.prompt_file)
 
         text = package.read_text(encoding="utf-8")
         text = replace_block(text, "CONFIG", config_block(args.model, args.base_url, timestamp, data))
         text = replace_block(
-            text, "RESULTS", results_block(data, md, args.model, args.base_url, timestamp)
+            text, "RESULTS", results_block(data, md, args.model, args.base_url, timestamp, note)
         )
         package.write_text(text, encoding="utf-8")
         print("[done] filled %s" % package)
