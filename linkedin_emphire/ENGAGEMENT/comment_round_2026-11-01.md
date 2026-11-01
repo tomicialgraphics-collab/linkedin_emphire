@@ -143,3 +143,55 @@ labels, and the argument is only about what that method covers. Still worth noti
 continues.
 
 **Not used:** his `lnkd.in` links are unreadable, so nothing in the comment depends on the article.
+
+## Entry 4: Brij Kishore Pandey, AWS MCP server for re:Invent
+
+**Surface:** Brij Kishore Pandey, 46 minutes old, sponsored by AWS. 738K on LinkedIn, 294K on
+Instagram, a newsletter with 250K AI builders. He is using the AWS MCP server for re:Invent to
+plan sessions, lists the constraints his agent has to hold, shows his prompt, and ends on a real
+question: what should an agent have to show you before it is allowed to cancel anything.
+
+**My read without a comment:** large reach, an AI-architecture audience, and a direct question
+about action-taking agents. This is the best-targeted surface of the four today, because the
+question is our subject and he asked it.
+
+**What not to do:** do not attack AWS on a sponsored post, and do not re-explain his own prompt
+back to him. He already has approval before action and readback after action, which is more than
+most production agents ship with.
+
+**Where the gap is:** approval is granted to a plan, and the plan changes as soon as the first
+reservation fails. His own observation about per-session success is the proof. Approval for an
+intent is not approval for the concrete call.
+
+**Second gap, larger:** session titles and descriptions are written by strangers and arrive in the
+same context that decides what to cancel. That is the only genuinely red-teamable surface in the
+post, and it is worth flagging to an AI architect without making it a criticism of AWS.
+
+### Draft: QUESTIONING, 110 words, gate 100/100
+
+> The readback after acting is the part most teams skip, so it's good you put it in the prompt.
+>
+> On cancelling: it should have to clear a higher bar than reserving did. The exact session, the
+> consequence, that the seat goes to someone else the moment the call lands, and what changed
+> since I approved. Approval covers the plan you showed me. If the plan moved after I'd said yes,
+> my yes expired.
+>
+> One more test for Vegas. Session titles and descriptions are written by strangers, and they land
+> in the same context that decides what to cancel. Write a description that reads like an
+> instruction and watch what happens.
+
+**The memorable line:** if the plan moved after I said yes, my yes expired. It answers his
+question with a principle rather than a checklist, and it is the sentence a builder will carry
+into their own agent.
+
+**Why the second point is worth the last paragraph.** It is the difference between a comment that
+agrees with him and a comment that shows what we do. It also costs him nothing to test before
+Vegas, and if he reports back, that is a conversation with a 738K audience.
+
+**Careful note:** he does not say the catalogue is adversarial, and I do not claim it is. The
+suggestion is a test, not an accusation, and it is framed that way on purpose because the post is
+sponsored.
+
+**Not used:** the drumbeat angle. I could have written a fifth version of "verification is weaker
+than it looks." The cancellation bar is a different argument, and the injection test is the one
+this audience will actually run.
