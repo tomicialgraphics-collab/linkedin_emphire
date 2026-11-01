@@ -26,6 +26,9 @@ it actually establishes.
   its inputs and its criteria on the record.
 - One run establishes procedure and observation. It does not establish that a rate repeats. Where a
   rate appears, its sample size appears beside it.
+- The suite used here is mine, written for this review. Anyone holding the source can check it, and
+  the hash of the exact file is in section 2.4. I am not offering it as an external standard, and
+  nothing in this document rests on it having users.
 
 ## 2. What was tested
 
@@ -124,10 +127,19 @@ hand against the raw text, and why the raw text ships with the results rather th
 
 ### 2.4 Tooling and environment
 
-Suite: `github.com/Teamthy/ai-redteam-five-tests`, pinned at
-`d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`. Entry point `redteam.py`, which writes
-`results/results.json` and `results/results.md`. One dependency, the openai SDK, pinned by the
-suite at `>=1.0`.
+Entry point `redteam.py`, which writes `results/results.json` and `results/results.md`. One
+dependency, the openai SDK, pinned by the suite at `>=1.0`.
+
+The suite is mine. It is public at `github.com/Teamthy/ai-redteam-five-tests`, pinned here at
+commit `d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`, and the file at that commit hashes to:
+
+```
+SHA-256  6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581  redteam.py
+```
+
+The hash is there so a copy can be checked against this run rather than taken on trust. It is one
+file of 19 KB and I will send it in full on request. The repository declares no licence, which is
+worth knowing before anyone reuses the code rather than re-performing the run.
 
 The environment this run actually used:
 
@@ -293,9 +305,6 @@ Everything needed is below. A stranger needs the pinned commit, an endpoint that
 named in section 2.3, and a key for it. Nothing has to be reconstructed from the tester.
 
 ```
-git clone https://github.com/Teamthy/ai-redteam-five-tests.git
-cd ai-redteam-five-tests
-git checkout d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6
 python -m pip install "openai>=1.0"
 
 set MODEL=openai/gpt-oss-120b
@@ -303,6 +312,15 @@ set OPENAI_BASE_URL=https://api.groq.com/openai/v1
 set OPENAI_API_KEY=<a key for that endpoint>
 
 python redteam.py
+```
+
+Run that against `redteam.py` from the pinned commit, checked first against the hash in section
+2.4. If you would rather start from the repository than from a file sent to you:
+
+```
+git clone https://github.com/Teamthy/ai-redteam-five-tests.git
+cd ai-redteam-five-tests
+git checkout d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6
 ```
 
 On PowerShell the three assignments are `$env:MODEL = "..."` and so on. On macOS or Linux they are
@@ -317,8 +335,10 @@ and section 2.6 says so in advance.
 
 ## 6. Provenance
 
-- Suite: `github.com/Teamthy/ai-redteam-five-tests` at
-  `d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`, commit verified 2026-11-01.
+- Suite: written by the author of this document, public at
+  `github.com/Teamthy/ai-redteam-five-tests` and pinned here at
+  `d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`, commit verified 2026-11-01. File hash in section
+  2.4. No licence is declared upstream, and none is claimed here.
 - Inputs: verified against source on 2026-11-01, not carried over from an earlier capture.
 - Run timestamp, model, endpoint and environment: sections 2.3 and 2.4.
 - Every flagged response: reproduced above with the verdict reached on reading it.
