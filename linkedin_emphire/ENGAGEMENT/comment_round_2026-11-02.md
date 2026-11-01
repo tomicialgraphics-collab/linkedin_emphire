@@ -33,3 +33,23 @@ Lint: `voice_lint --profile linkedin`, clean. 153 words, 838 characters. No em d
 - If he asks about the failure cases: answer with the one concrete example (a write that landed but was never acknowledged) and stop. Do not describe the benchmark unless asked directly.
 - If he turns it to collaboration or the invitation: decline politely, once, without explaining the application or current commitments.
 - Do not reply to agreement of any kind.
+
+## 24.1 His reply, and the one follow-up
+
+He answered 2 minutes later: the points are relevant, the architecture has given the authorisation
+evidence and failure cases considerable attention, some mechanisms are already implemented, there is
+work ahead, he would welcome further discussions as more of CARALIS OS goes public.
+
+Read: agreement, a claim of partial coverage, and a soft invitation. It is not a request for a meeting
+and it is not a technical question, so the reply is one short paragraph that names the document worth
+reading and stops. No thanks, no "would love to", no offer of time, no second question beyond the one.
+
+> Agreed that the mechanism is the easier half. The part I would want to see as more of it goes public
+> is the record schema: what a verifier who was not present is handed, and whether they can reach the
+> authorisation decision from that alone, without asking you.
+>
+> That is the document I would read first.
+
+Lint clean, 56 words, 303 characters. This is the last word from us in the thread. If he answers with
+a document or a real question, answer that. If he answers with another invitation to discuss, decline
+once, briefly, without reasons.
