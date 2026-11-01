@@ -137,3 +137,113 @@ Windows 3.14.5 and Linux.
 Still open with Behar: the timestamp reading, the author order, and the venue. The suite is public
 before he has answered any of the three, which is a decision, not an oversight. It is recorded as an
 open decision in `CONTRIBUTION.md` rather than left to be discovered later.
+
+---
+
+## §9 Behar's audit arrived, and gatecheck was parked
+
+The twelve-page review of the benchmark landed and the owner's instruction was one line: hold on
+gatecheck, attend to this. So gatecheck stopped at 0.5.1, released that morning, and has not moved
+since.
+
+The audit has sixteen findings in three gates and separates four kinds of them: reproduced by the
+reviewer locally (22 cases, 21 discrepancies, one control), reported by the package (38 cases, 37
+discrepancies), specification and claims wording, and harness hygiene. The distinction was kept in
+every reply. The owner's standing rule also held for the whole day: 37/38 is not a failure rate in
+either direction, and the audit's own section 2 says so.
+
+What reproduced is in `PROJECTS/2026-10-30_behar-host-failure-benchmark/` and in the exchange log
+next to it. Six of seven P0 counterexamples were accepted by the verifier at `25cd57f`. The two that
+mattered most: a WAL verdict flipped from BLOCK to ALLOW with its stale signature still verifying,
+and seven deleted host journals still totalling a pass. T14 was worse than reported, because it also
+cleared the gap in the verifier's own recomputation.
+
+Two claims of mine came out of the note rather than out of his report: the store was described as an
+independent issuer of identifiers when it accepts one from the caller, and the suite was said to run
+nine scenarios when it runs eight. Both withdrawn the same day.
+
+One finding went the other way. T08 as written did not behave as described, and I said so with the
+run behind it. He came back at 5:30 PM to say we had been changing the log at two different moments,
+both descriptions were correct, and asked for both to be distinguished. He was right, the distinction
+became `f2a` and `f2b`, and the reply conceded the point without conceding F2, which stands.
+
+## §10 P0, then P1, then P1.1
+
+P0 made the verifier reject what it had been accepting: signature checks on WAL records and recovered
+verdicts, an unverified record that stays visible and cannot resolve a gap, actor and policy compared
+against the constants, the decision timestamp bound to a counter step in the host journal, a versioned
+manifest with per-scenario event chains, and a verifier that reports an unreadable artifact instead of
+raising. Checks 14 to 16.
+
+P1 did the four items he listed next, in one batch because they are one class of work: journal before
+memory (F11), repair that keeps the bytes it removes (F7), a named conflict when two verdicts disagree
+(F9), and a host that treats a reply as consent only when it names the action it asked about (F10).
+Three probes carry those properties without corrupting the main record, and one of them needs a
+fixture, `bench/stub_store.py`, which answers every request correctly and confirms the wrong action.
+Checks 16 to 20, mutations 9 to 10, counterexamples 8 to 12.
+
+F6 was left alone on purpose. Minting identifiers in the store makes C'' and A' impossible for any
+action the host can name, and those two rows are the silence cases, which are the strongest thing in
+the table. That is a change to the scenario table, not a bug fix, so it went to him as a question.
+
+P1.1 exists because the first Windows run of P1 broke my own verifier twice. Pointed at a directory
+that does not exist it raised while writing its report, after the notes had promised it never raises.
+Given two directories that were both absent it reported determinism holds, which is absent compared
+with absent, and is the same defect as a missing artifact passing a completeness check. Both are fixed
+and both are tests now: `challenge.py` gained two input checks.
+
+The lesson worth keeping from all three patches: every Windows run found something the Linux run could
+not. The runner's path separator, an artifact directory treated as proof a run finished, and then the
+verifier's own input handling. The suite is not portable because it is written simply. It is portable
+because it has been run on the other platform.
+
+## §11 What the exchange cost, in things that go wrong quietly
+
+Four failures that were not about the benchmark at all:
+
+1. A patch file from the previous delivery was committed to the benchmark repository, because it was
+   sitting in the working tree during `git add -A`. Removed in P1.1, and `*.patch` is now ignored.
+2. Two documents claimed Windows numbers that had not been produced, "8 of 8 on Windows", written
+   before the Windows run crashed on the runner bug. Both were cut back to what had actually been run
+   before anything was sent. A claim like that is exactly what the review exists to find.
+3. PowerShell ran a placeholder in angle brackets as a URI and failed, twice, in different exchanges.
+   The command to hand over has to be complete or it is not a command.
+4. The determinism check compared two directories that were not there and called them identical. That
+   one was in the tool.
+
+## §12 Where it stands, end of day
+
+| thing | state |
+| --- | --- |
+| benchmark repository | `Teamthy/host-failure-benchmark`, public, `main` at `df0cf5a` |
+| verdict on Windows 11, Python 3.14.5 | 20 of 20 checks, 10 mutations, 2 input checks, 12 counterexamples |
+| verdict on Linux, Python 3.11.2 | the same, plus two runs byte-identical |
+| reviewer | will reproduce independently before the phase is called validated |
+| P1 remaining | F6 as a question, F15, the correlated oracle, no CI matrix |
+| gatecheck | 0.5.1 released, parked since the audit arrived |
+
+## §13 The workspace repository now has a pull request
+
+One hundred and one commits on `arena/6511b4f9-linkedin-emphire`, none on `main`, opened as pull
+request #1: `https://github.com/tomicialgraphics-collab/linkedin_emphire/pull/1`.
+
+The description is organised by stream rather than by commit, because a hundred commits is not
+readable as a list: the benchmark exchange and its patches, gatecheck 0.1.0 to 0.5.1, and the client,
+outreach and application material. It also states what is not finished, which is the part that makes
+the rest of it worth reading: no CI, no end-to-end pass for gatecheck against the hosted model, and
+four tracked duplicates at the repository root left in place rather than deleted inside a
+documentation pull request.
+
+The full exchange record lives at
+`linkedin_emphire/PROJECTS/2026-10-30_behar-host-failure-benchmark/EXCHANGE-LOG.md`: every message,
+every patch, every commit, what was checked where, and what is still open. This log carries the day;
+that file carries the review.
+
+## §14 Still owed, outside both
+
+- Arcezia: the PDFs and the LinkedIn message, owed longest, and the only item with someone waiting.
+- `arcezia_day3_privilege.py` folded into the kit, 26 to 30 exercises.
+- AEC: $4,000 in play, $0 collected, nudge 2026-11-07 and nothing before.
+- Andrey: package sent, next contact not before 2026-11-08.
+- Anthropic fellows form: submitted, confirmation never confirmed.
+- Test account deletion at close, and the repository exposure decision, both still unanswered.
