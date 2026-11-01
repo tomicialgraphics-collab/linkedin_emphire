@@ -137,32 +137,63 @@ what he can attest to as a person from what he can establish from the artefacts 
 will not launder one into the other. It is also exactly the discipline the program is assessing, so
 the separation is worth reinforcing rather than smoothing over.
 
-## Reply, 88 words, gate 100/100
+## Reply: today, not Monday. Two versions, pick by run status
+
+He is owed the package today. Which reply goes out depends on whether the run finished first, and
+nothing else.
+
+### A. The run is attached (87 words, gate 100/100)
 
 ```
 Separate is right, and it protects the reference as much as it protects you.
 
-You'll have the package by Monday. Raw outputs, the method that produced them, and one
-line per test on what it does not establish. If the run slips you'll hear that from me
-before Monday rather than after it.
+The package is with you today. It carries the five tests, the inputs and the verdict criteria
+as they were fixed before the run, the raw responses, and a human verdict beside every flagged
+answer rather than a score alone.
 
-Where the technical assessment and the reference disagree, put the disagreement in
-writing. A clean vouch is worth less to Anthropic than a referee who can say precisely
-what he could and could not verify.
+Where the technical assessment and the reference disagree, put it in writing. A clean vouch is
+worth less to Anthropic than a referee who can say precisely what he could and couldn't verify.
 ```
 
-**The date is the point.** His "when it's ready" is an open-ended commitment, and open-ended
-commitments are what referees quietly write off. Monday 2026-11-02 is the same deadline as the
-private Arcezia report, so if that is not achievable, change the date in this draft before sending
-it. A deadline that arrives late is worse than one that was never given, and worse again because
-he will have told Anthropic he is waiting.
+### B. The run is not attached yet (78 words, gate 100/100)
 
-**The slip clause is not decoration.** Committing to tell him before the date, rather than after,
-is the only part of the promise the owner fully controls.
+```
+Separate is right, and it protects the reference as much as it protects you.
 
-**Deliberately not included:** any softening of the separation he proposed. There is a version of
-this reply that thanks him for the boundary and then blurs it by asking for a warm character
-reference. That would cost exactly the thing he has offered.
+The package is with you today. Method, exact inputs and the verdict criteria are fixed and in
+it. The run follows as a revision to the same document, with the inputs unchanged, because the
+endpoint it needs is local to me and still finishing.
+
+That separation is the part I'd want in writing. Where the assessment and the reference
+disagree, put the disagreement down.
+```
+
+**Send A if it is true, B if it is not.** The one thing that cannot happen is a package that implies
+a run it does not contain. His entire practice is telling apart what was established from what was
+asserted, and he will find the seam in about thirty seconds.
+
+## Shipping the package today
+
+The document is `OUTREACH/2026-11-01_andrey_evidence_package.md`. It ships in either state, and the
+run is one command:
+
+1. `pip install openai` into whatever environment runs the harness. It is the only dependency.
+2. From the repo root, with the local endpoint up:
+   `python3 linkedin_emphire/OUTREACH/build_evidence_package.py --model <id> --base-url
+   http://localhost:11434/v1 --api-key ollama`
+   It clones the harness at the pinned commit, runs all five tests, and rewrites section 2.3 and
+   section 4 of the package from `results/results.json`. It does not invent anything, and it exits
+   without touching the file if the run fails.
+3. Read section 4. Every flagged response is printed verbatim and needs a human verdict written
+   beside it, confirmed or cleared. That step is the whole point of the exercise and it is not
+   automated on purpose.
+4. Send, with reply A or B above.
+
+**If there is no endpoint today,** send B with the package as it stands. Section 4 says plainly that
+the run is not attached and why, section 2.1 was re-verified against source at the pinned commit
+this morning rather than carried over, and the criteria were fixed before any run. That is a
+defensible artifact. A fabricated results table would end the relationship, and he is the one person
+in the network who would notice.
 
 ## Consequence for the application
 

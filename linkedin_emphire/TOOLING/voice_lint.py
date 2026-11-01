@@ -335,6 +335,9 @@ def human_gate(text: str, profile: str = "linkedin") -> dict:
         # a bold-only label such as **INTERACTIVE, 56 words** is metadata, not a sentence
         if re.fullmatch(r"\*\*.+\*\*", para):
             continue
+        # an HTML comment is a build marker, not prose
+        if re.fullmatch(r"(?:<!--.*?-->\s*)+", para, re.S):
+            continue
         # a list item, and any paragraph containing one, is fragments, not sentences
         if "\u00b7" in para:
             continue
