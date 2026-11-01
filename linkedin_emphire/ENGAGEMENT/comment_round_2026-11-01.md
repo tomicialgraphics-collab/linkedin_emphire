@@ -758,3 +758,53 @@ Do not congratulate and do not attack, since either reads as partisan with this 
 comment draws a political fight, leave it unanswered; one comment, no replies. My recommendation
 is to skip this surface and spend the slot on the Mollick thread, where the same argument has an
 audience that can use it.
+
+
+---
+
+## Entry 15: Gregory Goldshteyn, on measuring agent pull requests
+
+**Surface.** Gregory Goldshteyn, 54 minutes old and edited, no reaction count shown in the paste.
+Following. He takes GitHub's figure, more than 40 percent of pull requests starting with an agent's
+first draft in September against 17 percent in March, says the report measures adoption and not
+quality, notes the counts are of drafts GitHub can detect, reads the merge rates as a trend rather
+than a verdict, describes Copilot Fusion, and ends by asking what teams should track: bugs after
+merge, reverts and hotfixes, review time per pull request, cost per merged pull request. He closes
+with a direct question to the reader.
+
+**Profile read, verified 1 November.** Following. Positioning: quality assurance manager at Fox,
+streaming and video engineering, mabl ambassador, speaker at STARWEST, TestMu Conf and Innovate QA,
+MBA from Quantic, Los Angeles. He is not new to this. His conference session for 2026 is on testing
+non-deterministic agentic workflows, and it argues that agent-to-agent state synchronisation
+failure is a distributed systems bug that conventional automation cannot see. He uses the phrase
+agent reliability engineering in his own abstract. Commercial signals: ambassador role and
+speaking, so value only, no pitch. History: first contact. ICP fit: strong, a QA audience that
+buys verification work. Ladder step 3, comment, OUTSTANDING. Two consequences: do not explain
+merge-versus-correctness to him, because he opens by saying it; and do not explain non-determinism
+or evaluation to him, because he teaches it.
+
+**Draft A, recommended.**
+
+> The number that would make this measurable is the one nobody can see: how many agent attempts
+> never become a pull request. The 40 percent is a share of survivors, and a draft gets opened
+> because a person decided it was worth showing, so the comparison is a curated sample against an
+> uncurated one. Until the abandoned attempts are counted, the merge rate describes reviewers.
+> Within one repo, one team, before and after the tool arrived, is the closest thing to a clean
+> comparison available.
+
+**Draft B, for the metric list.**
+
+> Two of your four will move for reasons that have little to do with quality. Revert rate depends
+> on how much surface a change touches, and GitHub's own split says agent pull requests more often
+> change several files. Bugs found after merge depends on who is still hunting. I would add time to
+> detection, because the faster a change lands the longer the window before the defect surfaces,
+> and a defect found six weeks later is not the same event as one found six hours later.
+
+**Why A.** It answers the question he actually asked, in the place his own report-reading does not
+look, and the answer is a counting problem rather than an opinion. It also sits exactly where this
+account works: the invisible population is the whole difference between a rate and a measurement.
+
+**Caution.** Do not say that a merge is not a measure of correctness, because he says it himself in
+the third line. Do not offer the benchmark. Do not cite the eight times commit figure from the same
+report, which is the stat everyone else will paste. Keep it to one comment; he asks a question and
+deserves an answer, not a follow-up thread.
