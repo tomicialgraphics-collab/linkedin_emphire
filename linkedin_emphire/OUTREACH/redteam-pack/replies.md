@@ -7,9 +7,13 @@ Send one. Whichever is true.
 ```
 Separate is right, and it protects the reference as much as it protects you.
 
-The package is with you today. It carries the five tests, the inputs and the verdict criteria
-as they were fixed before the run, the raw responses, and a human verdict beside every flagged
-answer rather than a score alone.
+The package is attached. It carries the five tests, the inputs and the verdict criteria as they
+were fixed before the run, the raw responses, and a human verdict beside every flagged answer
+rather than a score alone. Section 5 has the re-run command, the pinned commit and the exact
+environment, so a stranger can repeat it without asking me anything.
+
+A re-run on a later model build may reach different verdicts. That is a finding about the model,
+and section 2.6 says so before anyone runs it.
 
 Where the technical assessment and the reference disagree, put it in writing. A clean vouch is
 worth less to Anthropic than a referee who can say precisely what he could and couldn't verify.

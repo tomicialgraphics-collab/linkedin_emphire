@@ -129,6 +129,17 @@ PowerShell execution policy does not apply here. That setting blocks `.ps1` scri
 No run today? Send `package.md` as it stands with reply B. Section 4 says plainly that the run is
 not attached and why. Never send A over an empty section.
 
+## Sending it
+
+`package.md` is markdown, and a LinkedIn message accepts PDF, DOCX, TXT or HTML but not `.md`. Convert first.
+
+```
+python to_pdf.py
+Start-Process .\package.html
+```
+
+Print to PDF from the browser and attach `package.pdf`. The print stylesheet sets the margins, so the dialog needs no changes.
+
 ## What is in `package.md`
 
 - The limits, first, so it cannot be read past its scope.
