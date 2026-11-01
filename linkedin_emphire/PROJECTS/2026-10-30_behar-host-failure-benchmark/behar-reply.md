@@ -717,6 +717,37 @@ Olusanya
 download. Do not pre-empt his choice on the status word by picking one and defending it. And do not
 add a fourth document describing the two entries, since the entries are the document.
 
+## 16. His message of 11:31 PM: attribution accepted, and the one thing still open
+
+A close. He accepts the attribution as the foundation of the shared record, accepts that verification
+is not endorsement, notes the N13 correction and the decision to leave dispositions unchanged, and
+says he looks forward to completing the P2 reconciliation on that basis. No question, no request,
+nothing to correct.
+
+Note what this message does not do. It does not acknowledge the two replacement entries he asked for
+at 11:18. Either they were sent after it and he has not read them yet, or they have not gone. Check
+before replying: if they have not been sent, section 15 is the message that is owed, and this close
+does not replace it.
+
+**If the entries have gone, send this and nothing more.**
+
+Thank you, Behar. The two replacement entries are ready for when you sit down with the reconciliation,
+and nothing in the register moves until you have read them. No hurry from my side.
+
+**Why so little.** He is closing a long evening's exchange. The relationship is now in the state it
+needs to be in, which is a reviewer who trusts the record and a record that has not moved under him.
+Anything longer reopens a conversation he has just finished, and anything with a question in it
+gives him work at midnight for no reason.
+
+**What is actually left, in order.**
+
+1. His independent rerun against `006d7ee`, which is his to do and cannot be hurried.
+2. His read of the two replacement entries, and his word on how V04 should be recorded: scope as
+   proposed, or a regression mode so the row closes.
+3. The register commit, both entries together, only after (1) and (2).
+4. Section 11 stays parked until the review closes. Nothing about work or money has been raised in
+   twenty minutes of warm exchange, which is the reason the review is still worth something.
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.

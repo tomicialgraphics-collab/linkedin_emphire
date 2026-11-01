@@ -334,3 +334,14 @@ mode in the regression file and the row moves under the existing rule.
 
 N13's status is unchanged. Nothing upstream has moved, and the two entries go in together in one
 commit once he agrees, so his copy and the shared copy stay identical.
+
+## 18. His message, 11:31 PM: attribution accepted
+
+He accepts the attribution section as the foundation of the shared record, accepts the distinction
+between verification and endorsement, notes the N13 correction and the unchanged dispositions, and
+says he looks forward to completing the P2 reconciliation on that basis. No question and no request.
+
+The message does not acknowledge the two replacement entries he asked for at 11:18, so whether they
+have been sent is an open question the owner can answer in one look at the message thread. Everything
+else is now his to do: the rerun against 006d7ee, then the two entries and the V04 status word, then
+one register commit. Section 11 remains parked.
