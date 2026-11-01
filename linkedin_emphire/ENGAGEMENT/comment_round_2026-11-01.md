@@ -641,3 +641,66 @@ public sector AI that does not need a political opinion attached.
 mention the war, Diia or her ministry beyond the frame her post sets, and never explain digital
 transformation to the person who built Diia. Do not offer services. Do not use the phrase digital transformation back at her. One comment, no reply
 chase, and nothing about Nigeria or your own background in it.
+
+
+---
+
+## Entry 13: Ethan Mollick, on dating the agentic era
+
+**Surface.** Ethan Mollick, 49 minutes old, 99 reactions and 17 comments. Following. He argues that
+studies using ChatGPT's release in 2022 as the starting point are dating the wrong era: GPT-4 could
+do about four minutes of human-equivalent independent work at a 50 percent success rate, current
+models can do weeks, and January 2026 is the reasonable cut-off because it is the first moment
+Claude Code on Opus 4.5 was available across an organisation, though adoption lagged. He adds that
+GPT-4 alone would still have produced a large impact, at 20 percent plus in his own research, and
+that it would have taken longer because the workflow changes it required were larger.
+
+**Profile read, verified 1 November.** Following, and the relationship goes back years in this file
+without a mutual follow shown. Positioning: associate professor at Wharton, faculty director of the
+Generative AI Lab, Ralph J. Roberts Distinguished Faculty Scholar, author of Co-Intelligence and of
+Co-Existence, published on 20 October 2026, eleven days before this post. He writes One Useful
+Thing, one of the most read AI newsletters anywhere, and he is the person most of this platform
+quotes on exactly this question. Commercial signals: a book in its launch window and a newsletter,
+so the comment engages the argument and does not mention the book. History: no prior exchange, and
+he does not need a stranger's summary of his own field. ICP fit: strong, a measurement audience
+that includes economists and engineers. Ladder step 3, comment, OUTSTANDING. Two consequences: he
+has already charted this progress in public, so a comment that only agrees with the curve adds
+nothing; and the thread has moved fast, so the obvious angles are taken.
+
+**What the rest of the thread already did, and why none of them is the move.** Eric Bye went to
+adoption and harnesses, which is the capability-versus-use distinction. Marco Caruso proposed a
+second clock at the team's adoption date, tracking completed work after review. Satnam S. made the
+strongest of the four, that the share of work finished net of review and correction, industry by
+industry, explains the spread better than adoption does. Sven Ver A called productivity a lagging
+indicator. Chantelle Demicoli went to the meaning of work. Anything about review cost, adoption
+curves or the future of human contribution is now a repeat, and the registered account does not
+need to be the fifth person saying it.
+
+**Draft A, recommended.**
+
+> Your dating argument holds, and there is a second reason to start the clock there. January 2026
+> is the first point where a productivity claim can be checked after the fact. Weeks of agent work
+> leave a record, tool calls, diffs, approvals, and a record is what turns "this team saved forty
+> percent" into something a third party can verify. Before that, most estimates rested on people
+> reporting their own time savings, which is the kind of evidence that tends not to survive contact
+> with a national accounts table.
+
+**Draft B, the sharper one, not recommended.**
+
+> The four-minute figure comes from a suite that cannot see much past a working day, so the move to
+> weeks is a projection rather than a measurement. That does not weaken the dating, but it does
+> mean the studies using 2022 as their zero are not only early. They are pointed at an instrument
+> calibrated for a different regime, and that is worth saying before someone builds a regression on
+> it.
+
+**Why A.** It agrees, then adds the one thing about measurement that the thread and his own charts
+have not covered, which is that the evidence base changed character in January 2026 and not only in
+scale. It is also the argument this account can make with standing, since a record that can be
+checked afterwards is the whole of the audit work.
+
+**Caution.** Do not repeat the four-minute number back at him as news, and do not call it METR's
+figure in the comment, because he knows where it comes from and the citation reads as a correction.
+Do not mention Co-Existence. Do not claim weeks-long work is unproven in Draft A; save that
+disagreement for a reply if he asks. If he does reply, the honest answer is that the published
+horizons are still measured in hours and that the suite itself says it cannot see past a working
+day, which is the whole of Draft B, held in reserve.
