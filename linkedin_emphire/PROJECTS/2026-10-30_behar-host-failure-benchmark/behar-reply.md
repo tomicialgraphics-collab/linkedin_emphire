@@ -50,7 +50,48 @@ Two requests. Put the 38-case package in as audit/, next to the regression scrip
 
 ---
 
-## 3. If he asks
+## 3. Now: the message that carries v1.1
+
+Attachment: `AUDIT-RESPONSE-v1.1.html`. Nothing else, since the patch is already
+on the branch and the notes travel with it.
+
+---
+
+Behar, both of your points are in the code and in the write-up now.
+
+On T08 you are right, and the distinction is the part worth keeping. Changing the
+WAL before the store replays makes the replayed record and the WAL carry the same
+altered value, so B.wal holds and B fails. Changing it only after replay completes
+makes B.wal fail. Those are two different properties and the suite now tests them
+separately: f2a and f2b, each one asserting what must fail and, just as important,
+what must not.
+
+Eight counterexamples, eight caught. At 25cd57f six of the eight were accepted
+or mishandled.
+
+F2 stands exactly as you put it. Agreement between two files is convenience, not
+attestation, and what the patch adds to the timestamp is a bound, not a witness.
+The updated response has the two-row table at the front rather than in a footnote.
+
+There is a second commit on the branch and it is mine to explain before you find
+it. The regression runner found its run directory by parsing a printed path, which
+breaks on Windows, and it then treated an existing artifact directory as proof the
+suite had finished. A run that stopped early therefore died on a missing journal
+instead of on its own cause, which is the same mistake as the separator one one
+level up. It now requires every artifact the suite writes, retries, and prints the
+run's output when none completes.
+
+Run `python audit\regressions.py` in the branch. If it does not say eight caught,
+tell me and I will fix that before the P1 work starts.
+
+https://github.com/Teamthy/host-failure-benchmark/compare/main...p0-authenticated-recovery
+
+P1 list unchanged, and the two requests too: the 38 cases as audit/cases/, and
+the review citable as REVIEW-2026-11-01.md.
+
+---
+
+## 4. If he asks
 
 **"Can you demonstrate genuine host loss?"**
 Not on one machine. C, C' and C'' exit with os._exit(9), so what the suite tests is a process that leaves deliberately, not a host that disappears. I will rename it everywhere, state the failure domain in the note, and list the two experiments that would cross it (an external kill at a barrier, destruction of the host-local filesystem). Both need a second failure domain: another machine, or a container with its own volume. I would rather declare that out of scope than simulate it and call it host loss.
