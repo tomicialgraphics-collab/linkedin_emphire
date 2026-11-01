@@ -10,8 +10,8 @@ Check a copy before trusting it:
 
     python -c "import hashlib;print(hashlib.sha256(open('redteam.py','rb').read()).hexdigest())"
 
-The repository declares no licence. It is the author's own work, as is this package, so the copy
-here carries no permission question that the original does not.
+MIT licensed, Copyright (c) 2026 OLUSANYA TIMOTHY. The licence text sits beside this notice, so
+reuse of the code is permitted on those terms and does not have to be negotiated.
 
 The pinned commit exits with an error after writing `results/results.json`, because
 `write_outputs()` reads the results dict by display name instead of by key. The run is complete

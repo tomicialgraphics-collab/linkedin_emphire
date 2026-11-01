@@ -138,8 +138,8 @@ SHA-256  6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581  redte
 ```
 
 The hash is there so a copy can be checked against this run rather than taken on trust. It is one
-file of 19 KB and I will send it in full on request. The repository declares no licence, which is
-worth knowing before anyone reuses the code rather than re-performing the run.
+file of 19 KB and I will send it in full on request. The repository is MIT licensed, so the code
+can be reused as well as re-run, and the copy travelling with this package carries the same terms.
 
 The environment this run actually used:
 
@@ -338,7 +338,7 @@ and section 2.6 says so in advance.
 - Suite: written by the author of this document, public at
   `github.com/Teamthy/ai-redteam-five-tests` and pinned here at
   `d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`, commit verified 2026-11-01. File hash in section
-  2.4. No licence is declared upstream, and none is claimed here.
+  2.4. MIT licensed, and the vendored copy carries the same licence.
 - Inputs: verified against source on 2026-11-01, not carried over from an earlier capture.
 - Run timestamp, model, endpoint and environment: sections 2.3 and 2.4.
 - Every flagged response: reproduced above with the verdict reached on reading it.
