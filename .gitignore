@@ -26,3 +26,6 @@ linkedin_emphire/OUTREACH/arcezia_results_*.json
 linkedin_emphire/OUTREACH/arcezia_day2*.py
 linkedin_emphire/OUTREACH/arcezia_kit_*.py
 linkedin_emphire/OUTREACH/arcezia_expected_*.json
+
+# harness run logs (machine-local, never committed)
+linkedin_emphire/OUTREACH/run_*.log

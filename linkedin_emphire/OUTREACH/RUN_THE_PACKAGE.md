@@ -8,6 +8,29 @@ known good. Your model is the only untested piece.
 
 ---
 
+## Fastest path: one command
+
+```
+python linkedin_emphire/OUTREACH/run_local.py
+```
+
+It finds the endpoint on the usual ports, lists the models, checks the one dependency and installs
+it if missing, runs the five tests, and fills the package. It asks before spending the run unless
+you add `--yes`.
+
+Override what it guesses:
+
+```
+python linkedin_emphire/OUTREACH/run_local.py --base-url http://localhost:1234/v1 --model qwen2.5-7b
+python linkedin_emphire/OUTREACH/run_local.py --base-url https://api.groq.com/openai/v1 --api-key <key>
+```
+
+Tested end to end on 2026-11-01 against a local endpoint, including the branch where nothing is
+running: it lists the ports it tried, tells you how to start a server, and exits without touching
+the package. A log lands in `OUTREACH/run_<timestamp>.log` and is git-ignored.
+
+The rest of this file is the same procedure by hand, for when something needs looking at.
+
 ## What it takes
 
 - Python 3.9 or newer
