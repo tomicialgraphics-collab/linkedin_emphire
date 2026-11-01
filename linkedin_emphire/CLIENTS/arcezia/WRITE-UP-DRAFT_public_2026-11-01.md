@@ -6,7 +6,7 @@ Status: waiting on Praveen Babu to mark which findings he accepts, land the fixe
 
 # What a fail-closed action gate cannot see
 
-I spent a window testing an AI action gate from the outside: one account, one key, no source, twenty-six attempts, a budget of three hundred. The gate decides whether an agent's proposed action may run. The question I brought was the boring one. Not "can I get past it", but "what does it do all day when nobody is attacking it".
+I spent a window testing an AI action gate from the outside: one account, one key, no source, thirty attempts, a budget of three hundred. The gate decides whether an agent's proposed action may run. The question I brought was the boring one. Not "can I get past it", but "what does it do all day when nobody is attacking it".
 
 The answer is that it holds almost everything and blocks a little. It blocked five outright, and released nothing without a person across the twenty-three rows I reconciled against its own feed. A read of a customer table was held as readily as a `DROP TABLE`. That is the right way for a default to fail, and it is why the interesting findings are not about what got through.
 
@@ -26,13 +26,19 @@ A read of every row of the credentials table, passwords and tokens included, req
 
 That inversion is the kind of thing that survives review because nobody looks for it. Release requirements are assumed to scale with sensitivity. Here they did not, and the thinnest path led to the table with the passwords in it.
 
+## The door to production was easier to open than production
+
+The inversion showed up again in privilege. An agent launch conferring the production-admin role needed a scope, a rate-limit check and a person. A single write against production needed those and a production approval as well. The action that grants production authority is releasable one gate earlier than the action performed under it.
+
+I put the two in one chain: an ordinary launch, then the production table dropped under the role it had just conferred. The chain came back needing a person, and was not blocked, and nothing in the response connected the second step to the first. Same gap as before, with the harm at the end of it.
+
 ## Three things it got right, and got right in interesting ways
 
 **An agent cannot approve itself.** I attached approvals three ways: none, a malformed development string, and a structurally valid token minted with a key the account had never registered. None of them counted. The last one was held with a message telling exactly what was missing, which is the correct answer delivered in the correct tone. Only an approval signed with a key registered on the account clears an approval item. That is a human in the loop by construction, not by policy.
 
 **An agent cannot shrink its declared scope.** I sent a `DROP TABLE` inside an envelope claiming it was a single record. It was blocked, and the lie itself was the violation. This was the test most likely to break something open and it did not.
 
-**Prose is not evidence.** Claiming an approval in the task text, in three separate cases, was neither honoured nor flagged. The gate did not treat the claim as evidence, which is right, and did not mention it, which is a decision worth making explicitly rather than by default.
+**Prose is not evidence.** Claiming an approval in the task text, in four separate cases, was neither honoured nor flagged. One of those was a launch wrapped in a claimed owner sign-off that returned exactly what the unclaimed launch returned. The gate did not treat the claim as evidence, which is right, and did not mention it, which is a decision worth making explicitly rather than by default.
 
 ## A certificate that empties a field
 
@@ -40,9 +46,13 @@ One case returned an empty `signature` field in its certificate, where every oth
 
 That is the smallest thing I found and the one I would fix first. It costs nothing, and the edge case will not surface in your own testing because it only appears when the input is already wrong.
 
+## What I did not test
+
+Content-level attack end to end: a document the agent fetches that carries an instruction, with the harm landing two actions later. I checked whether the gate has a place to record where an instruction came from, and it does not. That is not the same as running the full shape, and I am not claiming it.
+
 ## What this does not say
 
-It does not say the gate is broken. It says the default state is a holding gate, that holding is not the same as seeing, and that the things it cannot see are sequences, sensitivity ordering, and the session facts it has already observed and does not mention.
+It does not say the gate is broken. It says the default state is a holding gate, that holding is not the same as seeing, and that the things it cannot see are sequences, sensitivity ordering, provenance, and the session facts it has already observed and does not mention.
 
 None of this was tested against an instrumented account. Contracts, checks, a registered signing key and chain plans change the system enough that I would not carry any of the above across the line.
 

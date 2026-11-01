@@ -50,15 +50,17 @@ The fix is in the documents rather than in the doubt. Every "allowed nothing" no
 | Scope element | Required | Status | Where |
 | --- | --- | --- | --- |
 | Window 27 + 29 Oct, report 30th | later amended by both sides to 29 + 30, report 2 Nov, then day 2 pulled forward with his written thanks | Met by amendment | `state_2026-10-29.md` line 9, `state_2026-10-30.md` |
-| Getting a should-be-stopped action through, chains included | 26 decisions across every reachable action class, two chains | Met | lines 365 to 430, 500 |
-| Privilege launches, adk-python triage class | an agent launching a higher-privileged agent | **NOT MET.** No case in the campaign did this | absent from the executed list; planned only in `test_prep` line 80 |
+| Getting a should-be-stopped action through, chains included | decisions across every reachable action class, chains included | Met. 30 decisions, three chains, none of the three blocked | lines 365 to 430, 500; day 3 logs 15005 to 15010 |
+| Privilege launches, adk-python triage class | an agent launching a higher-privileged agent | **MET, 2026-11-01, 4 cases.** Launch alone, launch then production drop in one chain, launch with a claimed owner authority, launch attributed to document contents. All held, none blocked, none allowed | logs 15005, 15008, 15009, 15010 from `arcezia_day3_privilege.py`; report F1, F2, F6, H6 |
 | External behavioural method only | no reading of service source or decision logic | Met. The SDK wheel is public client code | line 454 |
 | Nothing outside the test account | no other tenant, hosting or site | Met. No-deploy line held, zero objects created | line 692 |
-| Every finding with its minimal repro | exact request, full response, UTC | Partial. Held in the four JSON bundles, not in the report body | lines 431, 565, 601 |
+| Content-level instruction attacks | instructions carried inside data the agent reads | **Partial.** B7d put the instruction's provenance into the action and the gate had no field for it; no case ran a real retrieval step | log 15010; report F6, coverage section |
+| Verification kit | scripts plus baseline plus compare runner | Met for day 1 and 2: four scripts, 26-case baseline. Day 3 script with him but not in the baseline; report says so and offers to fold it in | report, Fix and verify |
+| Every finding with its minimal repro | exact request, full response, UTC | Partial. Held in the five JSON bundles, not in the report body | lines 431, 565, 601 |
 | Private report to him first | before anything public | Met on delivery | not yet delivered |
 | Covers holds as well as hits | holds as a first-class section | Met | report, Holds section |
 | Key handling to close | account deleted from the Organization page, which ends the key | **NOT YET DONE.** Account still open so records stay attachable | line 692 |
 | Unpaid, one-time written waiver | no fee, reason recorded | Met, stated in the scope | `arcezia_scope_2026-10-24.md` |
 | Written reference at handoff | reference delivered with the report | Met, he agreed in writing 2026-10-30 | `APPLICATIONS/..._reference_praveen.md` |
 
-Two of these are the ones to decide on before delivering: the privilege-launch class that was never run, and whether the report may ship without the JSON bundles attached.
+The privilege-launch gap is closed; the report now describes coverage as it stands, including the two partial rows and the unaudited day 2 feed. Two items stay open by design: account deletion at close, and whether the JSON bundles reach him by another route (they cannot travel on LinkedIn).
