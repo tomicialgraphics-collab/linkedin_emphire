@@ -290,3 +290,29 @@ saw it, and the reply says so.
 
 The shared register is unchanged. Both replacement entries sit in behar-reply.md section 12.1 and
 move only after he has seen this message.
+
+## 16. His message, 11:15 PM: attribution in the permanent record
+
+He asked for his full name in the reviewer attribution and headings, "the reviewer" retained where
+it reads naturally, and his role described as a research collaborator conducting independent
+technical verification, so that his verification is not confused with my implementation and
+remediation. He asked for no change to the technical findings, and none was made.
+
+Applied to both documents:
+
+- An Attribution section in each, separating reviewer from author and naming both, stating that the
+  reviewer's contribution is verification and adversarial testing and is not an endorsement of the
+  benchmark, recording that his rerun against 006d7ee was in progress with no result reported, and
+  noting the provenance of the section itself.
+- Headings renamed: "Findings raised by Behar Dalipi, as F-numbered in his review", "the one case
+  the reviewer's test rig can no longer run", "threat-model notes, in the reviewer's terms".
+- Table columns renamed from "his case" and "his outcome" to "the reviewer's case" and "the
+  reviewer's outcome".
+
+One non-attribution edit, disclosed in the reply: the N13 note in the disposition described
+challenge.py as ending on the fingerprint line, which the 11:08 verification showed is wrong. The
+sentence now matches the tool's actual output. No finding, status or count moved; V04 remains
+disputed on the record and the eight remaining cases are untouched.
+
+The project copies of both documents were refreshed from the tree, so the reviewed copy and the
+tree do not drift.
