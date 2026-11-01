@@ -47,6 +47,17 @@ On any other system the same three commands with `artifacts/run-...` in place of
 
 Whole thing runs in seconds, well inside the thirty minutes the spec allowed.
 
+## A finished run is included
+
+`example/run/` is one complete run, exactly as the programs wrote it, with nothing edited out. You can check the checks without running anything:
+
+```powershell
+python verify.py example\run
+python challenge.py example\run
+```
+
+Both should pass. If they do not, the code you have is not the code that produced the folder.
+
 ## What a pass is not
 
 `run.py` finishing is not a pass. `verify.py` printing `VERDICT: every check holds` is a pass, and only for the artifacts it was given.
@@ -68,6 +79,7 @@ bench/host.py       the host process, one scenario per run, killable
 run.py              runs every scenario, asserts nothing
 verify.py           reads artifacts, decides, writes verify-report.json
 challenge.py        damages a run and confirms the damage is caught
+example/run/        one finished run, unedited
 ```
 
 ## Licence
