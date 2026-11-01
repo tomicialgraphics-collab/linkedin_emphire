@@ -92,3 +92,54 @@ with agreement and ending on a line rather than a warning keeps this from readin
 telling a dev educator his business.
 
 **Timing.** Forty minutes old. Comment now or not at all. His threads do not stay quiet.
+
+## Entry 3: Naveen Reddy, LLM observability at 5 billion spans a day
+
+**Surface:** Naveen Reddy, building roundz.ai, SDE3 at Amazon. Forty minutes old. Four real
+engineering lessons: metadata versus payload separation, never blocking the request path, treating
+LLM judges as systems, gating on confidence intervals. Ends on a question, and the links are
+`lnkd.in`, so the full breakdown is unreadable to us and we do not cite it.
+
+**My read without a comment:** he is not a buyer and he is not exactly ICP. He is building the
+observability and eval layer, which is the layer this account red-teams from the outside. That
+makes him a peer, a possible referral, and a possible channel, not a lead. Worth a comment anyway,
+because the post is genuinely good and the audience is practitioners who will judge us on whether
+we add something.
+
+**What not to do:** do not restate his points back at him, and do not correct him. He is right on
+all four. There is no error in this post to find.
+
+**Where the gap is:** every check he describes answers a question about correctness on collected
+traffic. None of it covers a user who is writing text to influence the grader. His judge lesson
+calibrates the judge against human labels, which is the right instinct, and it assumes both the
+judge and the human were looking at honest input.
+
+### Draft: QUESTIONING, 117 words, gate 100/100
+
+> Strong set, and the judge lesson is the one I would push hardest on.
+>
+> Kappa against human labels measures agreement on the traffic you collected. It says nothing
+> about a user who'd write their prompt to make the judge pass. Grade on user-supplied text and
+> the score is attacker-authored, then the gate approves it with a clean interval around a
+> corrupted label.
+>
+> Calibration is necessary and it isn't adversarial coverage. Two ways in: hold out a set of
+> judge-targeting inputs and measure how often the verdict flips, and require an exact check to
+> pass before any judge verdict can gate a release.
+>
+> Your judge is a product with its own failure modes. Give it a red team.
+
+**Why this angle.** It is the only thing in his four lessons that has a hole in it, and the hole
+is exactly our subject. It also lands as an addition rather than a correction, because the first
+line concedes that his instinct was right and the third line says calibration is necessary.
+
+**The memorable line:** the score is attacker-authored and the gate approves it with a clean
+interval around a corrupted label. Confidence intervals on corrupted labels is the sentence a
+practitioner will remember, because it is a failure they can picture in their own pipeline.
+
+**Risk accepted:** this is the third comment in two days built on an unverified assumption about
+how something is measured. Here it is narrower, since he names the method himself, kappa on human
+labels, and the argument is only about what that method covers. Still worth noting if the pattern
+continues.
+
+**Not used:** his `lnkd.in` links are unreadable, so nothing in the comment depends on the article.
