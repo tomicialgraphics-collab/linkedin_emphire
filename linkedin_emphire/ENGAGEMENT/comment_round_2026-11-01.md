@@ -52,3 +52,43 @@ paragraph, in writing, so the last line can land.
 
 **Timing:** the post is fresh. Anything after a few hours competes with the thread's own noise.
 No link, no tag, no pitch.
+
+## Entry 2: Hitesh Choudhary, Stageshow skill for coding agents
+
+**Surface:** Hitesh Choudhary, 40 minutes old at paste. 1M and 700k YouTube channels, dev
+audience, one of the largest engineering feeds on the platform. Post promotes Benji Taylor's
+open-sourced Stageshow skill, with the install command `npx skills add benjitaylor/skills
+--skill stageshow`, and asks whether an agent should be making landing page visuals.
+
+**My read without a comment:** he is not ICP. Nobody in this thread is buying a security review.
+The value here is reach and positioning only: a sharp comment in front of a dev audience that
+sizes in the tens of thousands, from an account that otherwise talks to CISOs.
+
+**Angle considered and dropped:** that a skill which fabricates convincing product UI makes
+screenshots worthless as evidence in a security review. True, and I have made that argument twice
+already this week. Three versions of "your evidence is weaker than you think" in five days is a
+drumbeat, and a dev feed will read the third one as a man with one point.
+
+**Angle kept:** the install command is the security surface. A skill is third-party instructions
+that your agent reads inside its own context before it does anything. That is a dependency, and
+the normal habit for dependencies is to read them before the first run.
+
+### Draft: INTERACTIVE, 58 words, gate 100/100
+
+> Agreed on instructions over bigger models. Good example of it here.
+>
+> The part I would add: a skill is a stranger's instructions sitting inside your agent's context,
+> so that install command is a dependency. Same review you would give a package, before the first
+> run rather than after.
+>
+> The mockup is the benefit. The review is the cost.
+
+**Why short.** Big feed, generalist audience, and the post already asks a question. Short travels
+further here than a 118-word version, and the last line is the only thing that needs to survive
+the scroll.
+
+**Tone check.** He opens with Hindi and a joke, and the post is genuinely enthusiastic. Opening
+with agreement and ending on a line rather than a warning keeps this from reading as a man
+telling a dev educator his business.
+
+**Timing.** Forty minutes old. Comment now or not at all. His threads do not stay quiet.
