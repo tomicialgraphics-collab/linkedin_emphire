@@ -31,6 +31,7 @@ Two failure modes to watch on this row:
 
 | Name (tier) | Stage | Value | Next action | Due |
 |---|---|---|---|---|
+| Andrey Ekhmenin (ANDEKS, reference) | **Evidence package SENT 2026-11-01**, run attached. Reference confirmed in writing to the same email | Long-term, ANDEKS review | Wait for his review of the package. Do not chase before 2026-11-08 | 2026-11-08 |
 | Julia Kingsley (Twinning Labs) | Email; she requested Mon-Wed ET availability | Retainer TBD | Confirm availability email sent (was due 2026-10-12) | 2026-10-12 |
 | Tanya Janca (Tier A) | DM 1 sent; DM 2 gated on Article 2 | Long-term | DM 2 only after confirmed publication | 2026-10-13 |
 | Nanna Inie (NVIDIA, definition-study co-author) | Comment sent + bare connect | Long-term ICP | Watch for reply; take her online slot if offered | this week |

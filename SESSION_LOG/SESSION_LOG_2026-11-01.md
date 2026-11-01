@@ -56,7 +56,7 @@ Deliberately no claim about Anthropic's real evaluation spend. No source exists 
 - First comment still owed on the two published-post candidates. Neither is drafted for the
   pluralism post.
 - Andrey reference reply still owes two names.
-- Local harness run still not done.
+- Local suite run still not done at that point. Closed later the same day, see section 7.
 
 ## What I would do next
 
@@ -93,3 +93,20 @@ was better as a hook and worse as the owner's own sentence, and he is the one wh
 test applied, and the one line of surgery worth doing: the subheadline carries a definition and no
 evidence, so it should swap to the 275 figure. Spec box rule now allows four words when the
 phrase is a clause that dies if cut.
+
+### 7. The evidence package was sent to Andrey
+
+Sent late 2026-11-01, run included. Five tests against `openai/gpt-oss-120b` at
+`https://api.groq.com/openai/v1` through the pinned suite commit, fourteen model calls, four flags,
+four written verdicts.
+
+What it took to get there, in order of what actually blocked it: a hardcoded placeholder key in my
+own endpoint probe, then `Read-Host` taking the key as its prompt text three times, then the key
+arriving at 112 characters because the paste landed twice, then a speech model being chosen as the
+first chat model in the list. None of those were the key.
+
+The document went out with the suite's SHA-256 recorded rather than its reputation, which is the
+honest version of provenance for a suite written two weeks earlier. MIT licence added by the owner
+before the send, so the copy is reusable and not just re-runnable.
+
+Owed next from him: nothing. Owed to him: the review, if he chooses to run it.
