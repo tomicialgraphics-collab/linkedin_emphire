@@ -448,3 +448,53 @@ which is the ground he has already claimed.
 audience knows the difference. Do not touch his hardware picks, which are fine and will be argued
 about by people who own both cards. Keep B for a different post unless the thread turns into a
 privacy pile-on, in which case B is the only comment worth adding.
+
+## Entry 10: Jack McNicol, on joining Qantas to set the AI operating model
+
+**Surface:** personal post, roughly half an hour before the paste. He announces a move to Qantas as
+Senior Manager, Applied AI, leading the operating model across their Product Innovation Centre and
+setting the standards for how AI is designed, built and governed. His own line is agentic
+engineering and a tool at aiaudit.run.
+
+**My read without a comment:** the comment section will be congratulations from people who want to
+be remembered. The useful thing to send a man who has just been handed "set the standards" is the
+one distinction that decides whether standards survive: a commitment you cannot run is a document.
+An airline is also the best possible place to borrow from, because aviation solved the evidence
+problem decades before anyone pointed a language model at a side effect.
+
+**Verified and hedged before drafting:** aviation safety rests on recorders that run independently
+of the crew (flight data and cockpit voice), on a reporting culture that treats a near miss as
+data rather than a confession, and on cross-checks that put a second person on the consequential
+step. All three are well documented and none of them needs a statistic in a comment. No Qantas
+specifics and no numbers, since I have neither.
+
+**Draft A: BORROW FROM AVIATION, 108 words, voice_lint clean**
+
+> Congratulations, and the industry you are joining is the best place to steal from. Aviation did
+> not get safe by writing that crews must be careful. It got there with a recorder that runs
+> independently of the crew, and a culture that treats a near miss as data rather than a
+> confession. An agent operating model needs the same two things: a record that lives where the
+> agent cannot edit it, and a decision checked by something that is not the agent's own account of
+> itself. Most governance documents I read assume both are already true, and neither is by default.
+
+**Draft B: THE STANDARD HAS TO BE RUNNABLE, 92 words, voice_lint clean**
+
+> Congratulations. One test I would apply to every standard you write this year: can someone run
+> it and watch it fail. A policy says an agent must not act without an approved decision. A check
+> says the effect did not happen when the approval was missing or could not be read back, and it
+> fails when it did. The first survives until the first incident review. The second tells you
+> something on a Tuesday. If a commitment cannot be written as a check with a named failure, it is
+> a document rather than a control.
+
+**Why A.** Everyone will send B in slower words, because "make it measurable" is the safe advice.
+A gives him something from the industry he is walking into, in its own vocabulary, and it carries
+the two design points that actually decide whether an agent record is worth anything. It also
+respects that he already builds audits, so it is not explaining his own job back to him.
+
+**The memorable line:** a record the agent cannot edit, and a decision checked by something that is
+not the agent.
+
+**Caution.** Do not mention Qantas specifics, safety records or anything about their fleet, because
+I know none of it and this is a first-day post. Do not mention his audit tool. Keep the
+congratulation to one clause, since a long good wish under a job announcement reads as filler, and
+do not follow up if he does not answer.
