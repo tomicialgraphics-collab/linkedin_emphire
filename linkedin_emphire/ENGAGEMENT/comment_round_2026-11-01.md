@@ -1125,3 +1125,36 @@ person repeating himself.
 **Caution.** Do not mention his Just Eat post or the earlier comment, and do not reference the
 comedian side of the headline. Do not correct the spelling of his name in the comment or anywhere
 public. Keep it to one comment, with no follow-up if he replies without a question.
+
+
+### 18.1 He came back, the same day
+
+Keith Sherringham sent a connection request with a note: "thank you for comments", "pleased to
+connect", with 15 mutual connections shown. So the comment was posted, it landed, and the door that
+Entry 18 was aiming at is now open. Logged here because the follow-up is part of the surface.
+
+**Do.** Accept, then reply once, in the message thread. One question about his own experience, one
+offer with no price and no attachment, and no pitch. He is an author and advisor with a PMO and
+programme board audience, which makes him a referrer rather than a client, and referrers are won by
+being useful once without asking for anything.
+
+**Do not.** Do not send the benchmark note or any PDF unprompted. Do not mention fees, availability
+or services. Do not open with a compliment about his books, which reads as research rather than
+interest. Do not ask for an introduction in the first exchange, since he has just met the account.
+
+**The reply.**
+
+Thank you for connecting, Keith, and for the note.
+
+The point I would keep pushing is the one about who defines done. In most AI programmes I have
+looked at, it gets specified by whoever is selling the system, and the PMO inherits the definition
+afterwards, which is why the reporting stays green while the claim stays untested.
+
+With your background across portfolios and PMOs, I would be interested in where you see it break
+first. If a short write-up on how those claims get tested rather than assumed would be useful, say
+so and I will send it.
+
+**If he answers.** He will most likely talk about governance maturity, benefits realisation or
+assurance, in which case the follow-up is one question about a programme where the assurance said
+fine and the outcome disagreed. That conversation is the one that produces the referral, and it does
+not need a calendar invite to happen in a message thread.
