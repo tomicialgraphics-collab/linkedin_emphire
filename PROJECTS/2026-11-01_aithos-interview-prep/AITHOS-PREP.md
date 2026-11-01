@@ -23,6 +23,28 @@ explain in any scheduling conversation, and that stays true until their clocks g
 Remote with monthly visits is an offer they have made in public, so relocation does not need to be
 settled before the first conversation, and should not be raised by you first.
 
+### The monthly visit, before it comes up
+
+The advertised shape is remote with monthly visits. You cannot commit to that cadence yet, and the
+reason is administrative rather than personal. A Nigerian passport needs a Schengen short-stay visa
+for the Netherlands, that needs an invitation letter from the employer, and the appointment calendar
+is the bottleneck rather than the paperwork. Add the cost of each trip against a first-year
+non-profit salary and monthly is not a promise you can keep in year one.
+
+What you can offer, in this order:
+
+1. Week one in Amsterdam, a week rather than a day, so onboarding happens in a room.
+2. Quarterly visits of four or five days, timed to a release, an external review, or a partner
+   session.
+3. Between visits, a standing call in their morning and a written weekly update.
+4. Relocation open to discussion on their timeline, once there is a reason for it.
+
+The rules. Do not raise it first. If they raise it, say the constraint once, in the middle of the
+answer, without apologising, and propose the cadence rather than asking permission. If they say
+monthly is fixed, ask what the visits are for, because the answer tells you whether it is a real
+requirement or a habit. The spoken version is in `AITHOS-SCRIPT.md` section 7.
+
+
 ## 2. The process, and what each stage is really testing
 
 As recorded in your file: a 30 minute screen, a take-home of roughly three hours on a real
@@ -164,8 +186,12 @@ Ask three, no more, and pick from these according to how the conversation goes.
 - **Do not critique LARA before crediting what it established.** The defensible sequence is: they built
   the first public instrument that puts agents inside European law and publishes every transcript,
   and here is the next increment.
-- **Do not raise salary, relocation or visa in the screen.** Amsterdam, remote with monthly visits,
-  and a non-profit budget are all reasons to let them raise it first.
+- **Do not raise salary, relocation or the visa in the screen**, and do not dodge them if they do.
+  Amsterdam, remote with monthly visits, and a non-profit budget are all reasons to let them raise it
+  first. If they ask, the answer is the cadence in section 1, said once, without an apology.
+- **Do not agree to a monthly cadence you cannot keep.** It is the cheapest sentence in the call and
+  the most expensive one to walk back, and it is the one thing in your file that a start date would
+  expose within a month.
 
 ## 10. The 14 November follow-up, if the silence holds
 

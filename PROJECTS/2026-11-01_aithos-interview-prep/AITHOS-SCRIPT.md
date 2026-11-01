@@ -185,8 +185,27 @@ review, two findings were disputed and both ended with a new test rather than an
 
 **Remote, or Amsterdam?**
 
-**SAY** Either works for me, and I understand the shape here is remote with a monthly visit. I would
-want the visits, because this kind of work is easier to do badly in isolation.
+**SAY** I would take the role on the terms you have advertised, and I want to be straight about one
+part of it. I am in Lagos, and I can hold the job from here: the same clock as Amsterdam for most of
+the year, and I already do serious work with people I have never sat next to. What I cannot honestly
+promise is a monthly trip in the first stretch. A Schengen visa needs an invitation letter and an
+appointment slot, and both run on a calendar I do not control, so a monthly rhythm would fail on
+logistics rather than on willingness.
+
+What I would propose instead. One longer visit at the start, a week rather than a day, so onboarding
+happens in a room. After that a visit every quarter, four or five days at a time, timed to the moments
+where being present actually changes the outcome: a release, an external review, a session with a
+regulator or a partner. Between visits, a standing call in your morning and a written update every
+week, so nobody has to ask what I am doing. If the role goes well and there is a case for it, I am
+open to talking about relocation on your timeline.
+
+**NOTE**
+
+This is the one answer allowed to run to ninety seconds. Say the constraint once, in the middle of the
+answer, and do not apologise for it. The first failure mode is the candidate who promises a cadence
+and asks for an exception in month two. The second is the candidate who raises this before they do,
+turning a hiring conversation into a negotiation. If they say monthly is fixed, ask what the visits are
+for. The answer tells you whether the constraint is real or a habit.
 
 **What are you weak at?**
 
@@ -301,3 +320,6 @@ wrong, because the version you have practised is worth more than the better sent
 "I know this is probably not what you are looking for, but." It makes them agree with you.
 
 "To be honest with you." It implies the rest was not.
+
+"Of course, I will be there every month." You cannot promise a visa calendar, and the walk-back in
+month two costs more than the honest answer in the first call.
