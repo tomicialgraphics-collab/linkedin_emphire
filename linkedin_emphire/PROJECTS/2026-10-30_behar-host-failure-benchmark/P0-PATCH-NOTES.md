@@ -66,6 +66,25 @@ with a required-artifacts list. The old example would fail the new checks,
 which is the correct outcome and the reason the patch ships a new one rather
 than leaving the old one to look like a regression.
 
+## Verified on both platforms
+
+Windows 11, Python 3.14.5, from a clean clone of `25cd57f` with the patch
+applied:
+
+```
+python verify.py example\run      -> 16 of 16 checks hold (8 P, 2 V, 6 meta)
+python challenge.py example\run   -> 9 of 9 mutations caught
+python audit\regressions.py       -> 7 of 7 counterexamples caught
+```
+
+Linux, Python 3.11.2, the machine the patch was built on: the same three,
+plus two consecutive runs compared file by file and byte-identical.
+
+This is the only evidence in this exchange that was produced on a second
+platform, and it speaks to H4 in the review: the cross-platform claim now has
+a run behind it on both systems, though still no CI matrix and no published
+digest trail.
+
 ## What this does not fix
 
 These are the P1 and P2 items, and they are still open:

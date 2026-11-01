@@ -1,13 +1,16 @@
 # Messages to send Behar
 
-Three drafts: the reply to send now, the follow-up for when the patch is
-delivered, and short answers for the questions he is likely to ask next.
+Three parts: the reply that has already gone (kept here as the record), the
+message that carries the P0 patch, and short answers for what follows.
 
-Nothing here claims the patch is finished. It is not.
+Attachments for LinkedIn: `P0-PATCH-NOTES.html` and
+`host-failure-benchmark-p0.patch.txt`. LinkedIn takes HTML and TXT and does
+not take `.patch` or `.zip`, so the patch travels as a text file with its real
+extension at the end. He renames it after saving.
 
 ---
 
-## 1. Send now
+## 1. Already sent: the response to the audit
 
 Behar, thank you. I read the audit twice and then reran the counterexamples myself rather than take them on trust.
 
@@ -23,17 +26,27 @@ Author order and venue stay where we left them until then.
 
 ---
 
-## 2. Send when the patch lands
+## 2. Send now, with the two attachments
 
-Behar, the P0 patch is ready.
+Behar, the P0 patch is attached, and it is built so you can check it rather than read my claim about it.
 
-Six changes, and each one is tested by the counterexample that beat the old code. A flipped WAL verdict now fails B instead of verifying clean. A deleted host journal now fails the completeness and scenario checks instead of passing. A rewritten actor, policy or timestamp now fails D. A torn host journal now produces a report with an explicit unreadable state instead of a traceback.
+Apply it to a clean clone at 25cd57f, then run three commands. Before the patch, six of the seven counterexamples pass verification. After it, all seven are caught by the check that claims to catch them:
 
-Two things are in the patch beyond the fixes. The verifier no longer imports the machinery it is checking, so a change in the encoder cannot pass itself. And the seven counterexamples ship as a regression script, so each fix keeps a test that can fail again.
+- a WAL verdict flipped to ALLOW with a stale signature now fails B
+- an unsigned verdict no longer erases the C-3003 gap
+- deleting the seven host journals now fails the completeness and scenario checks
+- a rewritten actor or policy, and an epoch timestamp, now fail D
+- a torn host journal now produces a report with an explicit unreadable state instead of a traceback
 
-Nothing here closes P1 yet: journal before memory, non-destructive repair, conflicts on duplicates, store-minted ids and the reply validation in the host are still to do.
+The patch also checks WAL and recovered verdicts against their signatures, compares the actor and the policy hash against the constants in common.py, and writes a versioned manifest with per-scenario event chains.
 
-Two requests, both about permanence. Put your 38-case package into the repository as audit/, so the counterexamples live next to the code rather than in a report about the code. And let me cite your review in the note once P1 lands.
+Two things will look like regressions and are not. The check count goes from 14 to 16, and example/run is regenerated, because verdict records now carry a state and the manifest is version 2. The old example fails the new checks, which is the correct outcome.
+
+I ran the whole thing on Windows 11 with Python 3.14.5 and on Linux: 16 of 16 checks, 9 of 9 built-in mutations, 7 of 7 counterexamples, and two runs byte-identical file by file. There is still no CI matrix, so H4 is answered by a run and not by a pipeline.
+
+What the patch does not fix is listed in the notes under the P1 and P2 headings: journal before memory, non-destructive repair, conflicts on duplicate verdicts, reply validation in the host, store-minted ids, the idle socket, and the verifier still importing the encoder it checks.
+
+Two requests. Put the 38-case package in as audit/, next to the regression script, so the two sets live together. And let me cite your review in the note once P1 lands.
 
 ---
 
@@ -42,8 +55,8 @@ Two requests, both about permanence. Put your 38-case package into the repositor
 **"Can you demonstrate genuine host loss?"**
 Not on one machine. C, C' and C'' exit with os._exit(9), so what the suite tests is a process that leaves deliberately, not a host that disappears. I will rename it everywhere, state the failure domain in the note, and list the two experiments that would cross it (an external kill at a barrier, destruction of the host-local filesystem). Both need a second failure domain: another machine, or a container with its own volume. I would rather declare that out of scope than simulate it and call it host loss.
 
-**"Why should a substituted timestamp fail rather than be marked unverified?"**
-Because a counter step is either in the host journal or it is not. If it is not, the record is claiming a decision the host has no evidence of, and unverified is too generous a word for it.
+**"Why does a substituted timestamp fail rather than being marked unverified?"**
+Because a counter step is either in the host journal or it is not. If it is not, the record claims a decision the host has no evidence of, and unverified is too generous a word for that.
 
 **"Is the suite still worth publishing?"**
 As a demonstration of the named-gap result, yes, and your Appendix B is close to the sentence I would use. Not as authenticated recovery or host-loss survival. Those stay blocked until P0 and P1 are done and the claims matrix shows a test behind every guarantee sentence.
@@ -55,6 +68,7 @@ Unchanged and settled the same way we agreed: at finalisation, against CONTRIBUT
 
 ## For you, not for him
 
-- Do not say the patch is delivered until the zip is in his hands.
+- The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.
 - If he pushes on severity, the line to hold is: the limitation was disclosed, the verdict line contradicted the disclosure. That is the defect, and it is fixable without a new external witness.
 - The audit's own section 2 says 37/38 is not a reliability percentage. Do not restate it as one either way.
+- Keep his review and your patch runs together. The exchange is now a review, a response and a patch, and that sequence is the thing worth showing anyone later.
