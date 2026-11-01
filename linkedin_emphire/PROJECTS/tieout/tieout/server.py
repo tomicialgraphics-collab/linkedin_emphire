@@ -92,6 +92,12 @@ def create_app(runs_dir: str | Path, root: str | Path | None = None) -> FastAPI:
     @app.get("/api/runs/{run_id:path}")
     def run_detail(run_id: str) -> dict:
         d, manifest, events, controls, audit, gaps = _load(run_id)
+        lines = [
+            json.loads(line)
+            for line in (d / "bundle.jsonl").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        rest = lines[1:]
         return {
             "id": d.name,
             "manifest": manifest,
@@ -99,6 +105,10 @@ def create_app(runs_dir: str | Path, root: str | Path | None = None) -> FastAPI:
             "controls": controls,
             "judge_audit": audit,
             "gaps": gaps,
+            # adapter runs add two record types the families do not emit:
+            # the tools' own numbers, and limitations of our judge
+            "tool_audit": next((ln for ln in rest if ln.get("type") == "tool_audit"), None),
+            "limitations": [ln for ln in rest if ln.get("type") == "limitation"],
         }
 
     @app.post("/api/runs/{run_id:path}/verify")

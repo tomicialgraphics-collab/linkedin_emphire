@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P0 patch: what is in it, and the evidence it works</title><style>
+body{max-width:820px;margin:40px auto;padding:0 22px;font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1b1f23;background:#fff}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px}h2{font-size:19px;margin:34px 0 10px;padding-bottom:5px;border-bottom:1px solid #e4e7eb}
+h3{font-size:16px;margin:22px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px}li{margin:4px 0}
+code{background:#f3f5f7;padding:1px 5px;border-radius:3px;font:13.5px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+pre{background:#f3f5f7;padding:12px 14px;border-radius:5px;overflow-x:auto;margin:0 0 15px}
+pre code{background:none;padding:0;font-size:13px}
+table{border-collapse:collapse;width:100%;margin:0 0 16px;font-size:14.5px}
+th,td{border:1px solid #dfe3e8;padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#f6f8fa}hr{border:0;border-top:1px solid #e4e7eb;margin:26px 0}
+blockquote{margin:0 0 14px;padding:2px 0 2px 14px;border-left:3px solid #d0d7de;color:#404750}
+</style></head><body>
+<h1>P0 patch: what is in it, and the evidence it works</h1>
+<p>Against <code>Teamthy/host-failure-benchmark</code> at commit <code>25cd57f</code>, the commit the
+audit reviewed. Two forms, same content:</p>
+<ul>
+<li><code>host-failure-benchmark-p0.patch</code>, a <code>git diff</code> that applies cleanly to
+  <code>25cd57f</code> with <code>git apply</code></li>
+<li><code>../host-failure-benchmark-p0.zip</code>, the same tree unpacked, if you would
+  rather replace the folder than patch it</li>
+</ul>
+<p>Nothing here is committed to the repository under review. It applies to a
+clean clone at <code>25cd57f</code> and to nothing else.</p>
+<h2>What changed</h2>
+<table>
+<thead>
+<tr>
+<th>change</th>
+<th>finding it closes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WAL records and recovered verdicts are signature-checked, at ingest in the store and in the verifier. An unverified record is stored and visible, and cannot resolve a gap, in <code>recompute_gaps</code> as well as in the store</td>
+<td>F1, F3, F9</td>
+</tr>
+<tr>
+<td>The actor and the policy hash are compared against the constants already in <code>bench/common.py</code>, and the decision timestamp has to match a counter step in the host journal</td>
+<td>F8, F14, F2</td>
+</tr>
+<tr>
+<td><code>run.py</code> writes a versioned manifest naming every required artifact, and the verifier checks each scenario's event chain. A missing journal is a failure, not a scenario with nothing to say</td>
+<td>F5</td>
+</tr>
+<tr>
+<td>The verifier never raises. An unreadable artifact produces a report with an explicit unreadable state, and a report is written either way</td>
+<td>F13</td>
+</tr>
+<tr>
+<td>Two claims in the note are corrected, and one phrase: the store registers identifiers rather than issuing them, the suite runs eight scenarios and not nine, and row M3 is a deliberate exit rather than a kill</td>
+<td>F6, F16, F4 (scope)</td>
+</tr>
+</tbody>
+</table>
+<h2>The evidence</h2>
+<p><code>audit/regressions.py</code> in the patch is the seven counterexamples, one mode
+each, named after the findings. Each mode copies the tree into a temporary
+directory, applies one change and reports whether the checks caught it.</p>
+<p>Run against the tree as reviewed, and against the patched tree:</p>
+<table>
+<thead>
+<tr>
+<th>mode</th>
+<th>at <code>25cd57f</code></th>
+<th>with the patch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f1 WAL verdict flipped, stale signature</td>
+<td>accepted, no check failed</td>
+<td>caught by <code>B</code></td>
+</tr>
+<tr>
+<td>f2a WAL timestamp changed before replay, re-signed</td>
+<td>caught by <code>B</code></td>
+<td>caught by <code>B</code>, with <code>B.wal</code> holding</td>
+</tr>
+<tr>
+<td>f2b WAL timestamp changed after replay</td>
+<td>caught by <code>B.wal</code></td>
+<td>caught by <code>B.wal</code>, and by <code>B</code> on the signature</td>
+</tr>
+<tr>
+<td>f3 unsigned verdict, reframed</td>
+<td>gap erased</td>
+<td>gap stays named</td>
+</tr>
+<tr>
+<td>f5 seven host journals deleted</td>
+<td>accepted, no check failed</td>
+<td>caught by <code>artifacts-complete</code></td>
+</tr>
+<tr>
+<td>f8 actor and policy rewritten, re-signed</td>
+<td>accepted, no check failed</td>
+<td>caught by <code>D</code></td>
+</tr>
+<tr>
+<td>f13 host journal cut mid-line</td>
+<td>traceback, no report</td>
+<td>caught by <code>artifacts-parse</code>, report written</td>
+</tr>
+<tr>
+<td>f14 timestamp set to an epoch value, re-signed</td>
+<td>accepted, no check failed</td>
+<td>caught by <code>D</code></td>
+</tr>
+</tbody>
+</table>
+<p>f2 is the one the report reads differently from the code, and the review's
+answer to that is right: the two of us were changing the WAL at different
+moments. Before the store replays, the recovered record agrees with the altered
+log and the failure is the binding to the host journal, so <code>B</code> fails and
+<code>B.wal</code> holds. After replay, the two files disagree and <code>B.wal</code> fails. Both
+cases are now in the suite, each requiring its own check and, in f2a,
+requiring the other one to hold, so a later change cannot collapse two
+properties into one line. With the patch, the after-replay case also fails <code>B</code>,
+because the log record's signature no longer covers its bytes.</p>
+<h2>The rest of the suite still passes</h2>
+<p>Run from a clean clone of <code>25cd57f</code> with the patch applied:</p>
+<pre><code>python3 run.py                    # completes
+python3 verify.py example/run     # VERDICT: every check holds
+python3 challenge.py example/run  # every one of the nine mutations caught
+python3 audit/regressions.py      # every counterexample caught
+</code></pre>
+<p>The check count went from 14 to 16. Class P is still 8 of 8 and Class V is
+still 2 of 2; the two new checks are <code>artifacts-complete</code> and <code>scenarios-ran</code>,
+and <code>artifacts-parse</code> appears only when something is unreadable. Two runs of
+the suite are still byte-identical, checked file by file.</p>
+<p><code>example/run</code> is regenerated, because the artifacts changed shape: verdict
+records now carry the state the store computed, and the manifest is version 2
+with a required-artifacts list. The old example would fail the new checks,
+which is the correct outcome and the reason the patch ships a new one rather
+than leaving the old one to look like a regression.</p>
+<h2>Verified on two platforms</h2>
+<p>The numbers below are the ones observed on each machine, not a projection.</p>
+<p>Windows 11, Python 3.14.5, clean clone of <code>25cd57f</code> with the patch applied:</p>
+<pre><code>python verify.py example\run      -&gt; 16 of 16 checks hold (8 P, 2 V, 6 meta)
+python challenge.py example\run   -&gt; 9 of 9 mutations caught
+</code></pre>
+<p>Linux, Python 3.11.2, the machine the patch was built on:</p>
+<pre><code>the same two, plus
+python audit/regressions.py       -&gt; 8 of 8 counterexamples caught
+two consecutive runs compared file by file -&gt; identical
+</code></pre>
+<p>The eight counterexamples are green on Linux. On Windows the runner needed two
+fixes before it would get that far; they are described under “Two runner bugs
+found on Windows” below. Neither fix is in a check, and both are in the
+branch's second commit.</p>
+<p>This is the only evidence in this exchange produced on a second platform, and
+it speaks to H4 in the review: the cross-platform claim now has a run behind it
+on both systems, though still no CI matrix and no published digest trail.</p>
+<h2>What this does not fix</h2>
+<p>These are the P1 and P2 items, and they are still open:</p>
+<ul>
+<li>the store updates memory before the journal append in one path, so an
+  acknowledged state can be lost on restart (F11)</li>
+<li>repair truncates the journal without keeping the bytes it discarded (F7)</li>
+<li>duplicate verdicts still resolve to whichever record a component reads first
+  (F9, the state half of it; the conflict state is not built)</li>
+<li>the host still does not validate the store's reply before logging an effect
+  (F10)</li>
+<li>identifiers are still chosen by the caller; this patch renames the claim, it
+  does not mint the id (F6)</li>
+<li>an idle socket can still block the store (F15)</li>
+<li>the verifier still imports the encoder it is checking (5.4 of the audit). It
+  is smaller now, since the state and the constants are checked independently,
+  but the correlated-oracle problem stays until there is a second encoder</li>
+<li>no CI matrix, so the cross-platform claim is now written as what it is: run
+  on both, compared by hand, no published digest trail</li>
+</ul>
+<h2>Two runner bugs found on Windows</h2>
+<p>The first version of <code>audit/regressions.py</code> found the run directory by parsing
+what <code>run.py</code> printed, which uses a backslash on Windows, and it stopped with
+<code>run.py produced no artifact directory</code> there. It now finds the directory by
+listing <code>artifacts/</code> before and after the run, which needs no separator at all.
+A second one showed up on the next run: the script treated the existence of an
+artifact directory as proof that the suite had run, and a store that missed its
+ten second announcement window on a freshly copied tree leaves the directory
+behind with nothing in it. Each attempt is now checked for the full artifact
+list and retried, with the run's own output reported if none of them
+completes.</p>
+<p>Everything else was already portable: the patch applied to <code>25cd57f</code> on
+Windows, and <code>verify.py</code>, <code>challenge.py</code> and the nine built-in mutations all
+passed there.</p>
+<p>If you already applied the patch, take the fixed file only:</p>
+<pre><code class="language-powershell">Invoke-WebRequest -Uri &quot;$base/2026-10-30_behar-host-failure-benchmark/regressions.py&quot; -OutFile audit\regressions.py
+</code></pre>
+<h2>Applying it</h2>
+<pre><code>git clone https://github.com/Teamthy/host-failure-benchmark
+cd host-failure-benchmark
+git checkout 25cd57f
+git apply /path/to/host-failure-benchmark-p0.patch
+python3 verify.py example/run
+python3 audit/regressions.py
+</code></pre>
+<p>If the patch does not apply, the tree has moved. Send me the commit and I will
+rebase it rather than have you resolve a conflict in a file you did not write.</p>
+</body></html>

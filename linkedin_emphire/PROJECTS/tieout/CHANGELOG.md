@@ -4,6 +4,48 @@ All notable changes to this project are documented here. The format is
 based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-11-01
+
+### Added
+
+- **The tool layer: PyRIT, promptfoo and DeepTeam behind one record.**
+  `tieout adapters run` plans an eight-attack catalog with pre-assigned
+  ids, executes it through whichever of the three tools are installed,
+  and grades every record with one deterministic judge. 48 records per
+  full run, offline, keyless, about ten seconds.
+  - PyRIT (Apache 2.0, 1.1.0) runs through its own `PromptTarget` and
+    `PromptSendingAttack`, with base64 rendering on a second variant.
+  - promptfoo (MIT, 0.125.1) runs a generated YAML suite with a Python
+    provider and per-weakness assertion files. Its non-zero exit code on
+    failing tests is treated as a result, not an error.
+  - DeepTeam (Apache 2.0, 1.0.10) contributes its deterministic attack
+    transforms; the generative half is offline-disabled and recorded as
+    the named gap `G-DEEPTEAM-SIMULATOR`.
+- **Tool verdicts recorded beside the harness verdict**, never instead of
+  it: 40 of 48 tool verdicts are `undetermined` in the sample run, which
+  is the argument for an external judge stated as a number.
+- **`tieout adapters matrix`**: cross-tool coverage, consensus and unique
+  catches, per weakness.
+- **`tieout adapters verify`**: re-derives a whole adapter bundle with
+  none of the three tools installed, re-scores every raw output,
+  re-hashes the sidecar and recounts the tools' own verdicts. A test
+  asserts the module imports no tool.
+- **`limitation` records** (`L-JUDGE-SCOPE`): a verdict that re-derives
+  correctly and is still the wrong answer, such as a 9,800 refund split
+  into two 4,900s that a per-action judge cannot see. Kept out of the
+  gap list, because the record is sound and the judge has a scope.
+- **Committed sample run** at `runs/demo-adapters`, verifiable by
+  `tieout verify runs/demo-adapters` and `tieout adapters verify`.
+- **24 tests** for the adapter layer: catalog stability, detector
+  behaviour, sandbox determinism, encoding weakness, pre-assigned ids,
+  chain integrity, tool-free re-derivation, tamper detection, the
+  missing-tool gap, the dropped-item gap, and the consensus matrix.
+
+### Changed
+
+- The server's run detail now returns `tool_audit` and `limitations`
+  when a bundle carries them.
+
 ## [Unreleased]
 
 ### Added

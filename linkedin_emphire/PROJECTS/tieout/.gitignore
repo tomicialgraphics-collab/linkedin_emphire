@@ -12,11 +12,13 @@ web/.next/
 web/out/
 
 # generated runs (the committed demo runs are the reproducible public
-# samples: F1 at 0.2.0, F2 and the F1 stability pair at 0.3.0)
+# samples: F1 at 0.2.0, F2 and the F1 stability pair at 0.3.0, the
+# three-tool adapter run at 0.4.0)
 runs/*
 !runs/demo/
 !runs/demo-f2/
 !runs/demo-stability/
+!runs/demo-adapters/
 
 # environment
 .env

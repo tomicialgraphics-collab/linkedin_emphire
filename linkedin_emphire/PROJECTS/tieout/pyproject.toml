@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tieout"
-version = "0.3.0"
+version = "0.4.0"
 description = "Evidence-grade agent evaluation harness: every verdict is a bound, re-derivable event. The report is a claim; the bundle is a record."
 readme = "README.md"
 requires-python = ">=3.10"

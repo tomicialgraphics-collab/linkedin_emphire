@@ -1,6 +1,6 @@
 # PIPELINE
 
-Single source of truth for money and relationships. Updated 2026-10-12.
+Single source of truth for money and relationships. Updated 2026-11-01.
 
 Rule: every dollar and every relationship has a row, a stage, a value, a next action, and a date. The $5,000 goal (PLANS/2026-10-11_empire-engine_book-synthesis_70-day-5k-plan.md) is what the money rows sum to. If the sum is under $5k, the gap gets a named source and a date, it does not get optimism.
 
@@ -8,17 +8,31 @@ Rule: every dollar and every relationship has a row, a stage, a value, a next ac
 
 | Deal | Stage | Value | Next action | Due |
 |---|---|---|---|---|
-| AEC MCP gig (Mountain View, PRD verified) | Proposal paste-ready, NOT sent | $4,000 fixed + contract-to-hire potential | Owner sends proposal (PROPOSALS/2026-10-12_aec-construction-estimating-mcp.md) | 2026-10-12 |
+| AEC MCP gig (Mountain View, PRD verified) | **SENT 2026-10-31** (owner confirmed). Awaiting reply | $4,000 fixed + contract-to-hire potential | If silent, one nudge on **2026-11-07**. No second nudge | 2026-11-07 |
 | Sudhir (NCD tutor) | His review of report pending; make-good offered (Tue before 1 PM ET or Wed/Thu) | $65 | Wednesday WAT nudge if silent; no action after that | 2026-10-14 |
 | Upwork catalog (Quick Scan $200 / Red Team Review $800 / Pre-Launch Hardening $2,000) | Listings live | Open | Triage by rule: no spec, no apply | ongoing |
 | SmartScale agency gig | SKIP logged (economics, no differentiator, voice overclaim) | 0 | none | done |
 
-Identified money total: $4,065. 70-day target: $5,000. Gap: at least $935, plus the plan's assumed catalog jobs or one $3.5k engagement, none of which are identified yet. The engine's job this week is to identify the next $1k+ from: AEC expansion column (the PRD lists later-expansion work), Julia's availability email, [un]prompted inbound (Oct 27-29), and comment-to-DM conversions.
+Identified money total: $4,065. **In play as of 2026-10-31: $4,000 of it, for the first time.** Collected: still $0.
+70-day target: $5,000. Day 20 of 70 as of 2026-10-31.
+
+The AEC proposal sat unsent for nineteen days and is now out. That one move turned the largest
+row in this table from a document into a live opportunity. It does not book revenue. Nothing
+counts until it clears. The remaining $1,000 is one Upwork Standard ($800) plus a Starter ($200),
+or one small LinkedIn-side engagement.
+
+Two failure modes to watch on this row:
+1. **A slow reply is not a no.** Construction-estimating buyers run on procurement time. One
+   nudge on 11-07, then let it sit.
+2. **Scope creep on the first call.** The PRD defines the work. Anything added in conversation
+   is a change order priced separately, or this becomes the $4,000 job that eats three weeks.
 
 ## Relationship rows (engine output, future money)
 
 | Name (tier) | Stage | Value | Next action | Due |
 |---|---|---|---|---|
+| Praveen Babu (Arcezia, founder, reference) | Engagement delivered unpaid (one-time waiver, in writing). Both test days done, 26 decisions reconciled to signed records. Report goes to him first, Monday | $0, waived. Buys the joint write-up and a written reference | Report private to him **2026-11-02**, then fix/verify loop | 2026-11-02 |
+| Andrey Ekhmenin (ANDEKS, reference) | **Evidence package SENT 2026-11-01**, run attached. Reference confirmed in writing to the same email | Long-term, ANDEKS review | Wait for his review of the package. Do not chase before 2026-11-08 | 2026-11-08 |
 | Julia Kingsley (Twinning Labs) | Email; she requested Mon-Wed ET availability | Retainer TBD | Confirm availability email sent (was due 2026-10-12) | 2026-10-12 |
 | Tanya Janca (Tier A) | DM 1 sent; DM 2 gated on Article 2 | Long-term | DM 2 only after confirmed publication | 2026-10-13 |
 | Nanna Inie (NVIDIA, definition-study co-author) | Comment sent + bare connect | Long-term ICP | Watch for reply; take her online slot if offered | this week |

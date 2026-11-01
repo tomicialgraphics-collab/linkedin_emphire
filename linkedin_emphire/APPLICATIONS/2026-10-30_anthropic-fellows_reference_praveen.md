@@ -2,7 +2,8 @@
 
 Date: 2026-10-30
 For: Anthropic AI Safety & Security Fellows, Constellation form, Reference slot
-Status: DRAFTED. Nothing sent. He has not been asked yet.
+Status: ASKED AND CONFIRMED 2026-10-30, 1:01 PM, in writing. Nothing further needed
+from him before the form goes in.
 
 ## Form fields
 
@@ -20,12 +21,21 @@ day window on a form that says they call.
 Why not 1: he has seen the actual method applied to his own system, across
 several exchanges, and he responded to specifics rather than generalities.
 
-## The name problem, resolve before submitting
+## The name problem, CLOSED
 
-LinkedIn shows Praveen Babu. His 10-29 email signs Praveen Dante. The repo
-flags this as unresolved. Ask him which name he wants on the form, because a
-reference whose name does not match their email signature is a small avoidable
-oddity on an application like this.
+Resolved by him directly on 2026-10-30: "Put Praveen Babu, founder of Arcezia."
+LinkedIn and the form now agree. The 10-29 email signed Praveen Dante; the
+form takes the name he gave for the form.
+
+## What he said he would speak to, verbatim
+
+"the scope agreed in writing before any key, a key that never travelled by
+email, findings to me first, and how you held the work open when I had to step
+away. The results I'll speak to once I've read them."
+
+That is the right scope for a reference at this stage and it is more precise
+than anything we could have coached. It also confirms the honest limit: the
+report had not reached him when he agreed, and he says so himself.
 
 ## Context paragraph (paste into the context box)
 

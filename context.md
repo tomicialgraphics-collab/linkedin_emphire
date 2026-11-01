@@ -2,7 +2,7 @@
 
 > Read top to bottom before acting. This is the handoff for the next session.
 
-- **Updated:** 2026-10-13 (Lagos, UTC+1)
+- **Updated:** 2026-10-31 (Lagos, UTC+1)
 - **Session branch:** `arena/1422cb2a-linkedin-emphire` (branched from `main`)
 - **Repo:** `Teamthy/linkedin_emphire` (public)
 
@@ -10,7 +10,7 @@
 
 ## 1. The one-paragraph picture
 
-The owner is a self-taught **software engineer who builds and tests AI for safety** (evaluations, red-teaming, reproducible harnesses). Two parallel tracks: (a) building a public brand to become known in the AI safety / evaluation space, and (b) using that brand to get hired into a research / evaluation role. The public brand is a LinkedIn comment engine plus the "Breaking AI" article series plus an open-source five-test red-team harness. The single highest-priority live item is the **Aithos Research Engineer application** (email, due 31 Oct 2026).
+The owner is a self-taught **software engineer who builds and tests AI for safety** (evaluations, red-teaming, reproducible harnesses). Two parallel tracks: (a) building a public brand to become known in the AI safety / evaluation space, and (b) using that brand to get hired into a research / evaluation role. The public brand is a LinkedIn comment engine plus the "Breaking AI" article series plus an open-source five-test red-team harness. The **Aithos Research Engineer application** was submitted 31 Oct 2026 (see section 6); the live priority is now the follow-up cadence and the in-lane comment set in section 10.
 
 ---
 
@@ -45,7 +45,8 @@ The owner is a self-taught **software engineer who builds and tests AI for safet
 
 ## 5. Deadlines
 
-- **31 Oct 2026:** send the Aithos application email (resume PDF + motivation letter) to **hiring@aithos.org**. TOP priority.
+- ~~**31 Oct 2026:** send the Aithos application email (resume PDF + motivation letter) to **hiring@aithos.org**.~~ **DONE 31 Oct 2026.**
+- **Follow-up clock:** if there is no reply by **14 Nov 2026** (two weeks), send one short, warm follow-up to hiring@aithos.org referencing the original subject line. One bump only. Do not chase Lauren on LinkedIn (Premium still off below 1k followers).
 - **[un]prompted registration:** Oct 27-29, SF (owner to decide whether to register).
 - **Article 2 launch posts** (relative to the Oct 13 publish): a 10:00 WAT link post, a quote-card post, save / checklist posts.
 
@@ -54,6 +55,7 @@ The owner is a self-taught **software engineer who builds and tests AI for safet
 ## 6. State of things
 
 ### Done
+- **Aithos application SUBMITTED 31 Oct 2026** to hiring@aithos.org, before the deadline. Four copy edits applied to the letter first (repetition cut, attachment line added, Breaking AI given its own paragraph). Lint: 0 errors, 0 warnings, 0 em dashes.
 - Aithos resume (1-page PDF + DOCX, verified one page).
 - Aithos motivation letter (paste-ready; full text in Appendix A).
 - Article 2 published (Oct 13).
@@ -62,7 +64,7 @@ The owner is a self-taught **software engineer who builds and tests AI for safet
 - Paolo Perrone engaged the owner's post (affirmed "a manipulated agent looks healthy on every dashboard"); a punchy reply is ready (Appendix B).
 
 ### Pending (owner to send or do)
-- **Send the Aithos email** (resume PDF + motivation letter, Appendix A) to hiring@aithos.org. TOP.
+- ~~Send the Aithos email~~ **DONE 31 Oct 2026.** Package of record: `linkedin_emphire/APPLICATIONS/2026-10-31_aithos_research-engineer_send-package/` (final letter, `.eml` with resume attached, send log in `SENT.md`).
 - Post the Paolo reply (Appendix B).
 - Post the in-lane comment drafts (Appendix C): Catasta (strongest of the batch), Replit "AI native = code", Hamel, Zenity/SSRF, Lenny, Clint. Space them out.
 - Send Sudhir follow-up (Upwork $65 milestone + LinkedIn ping) after the consultation call (Appendix D).
@@ -82,6 +84,11 @@ The owner is a self-taught **software engineer who builds and tests AI for safet
 - **No em dashes** in any owner-facing content (comments, articles, resume, emails). Use commas, periods, colons.
 - **No fabricated numbers or results.** Real runs only. If there is no model access, use the honest "the tell": ship the method, no invented counts or rates.
 - **PII:** never hand the owner's resume / contact a public link to a hiring manager (owner declined that). The repo itself is public and already holds an older resume, so anything committed here is public. Confirm with the owner before committing new PII to the public repo.
+- **Every daily post ships with a HEADLINE and a SUBHEADLINE** (owner instruction, 2026-10-31). Not optional, not only when asked. The headline is the memorable line and goes first. The subheadline carries the number or the stakes and must add something the headline does not say. Together they have to land inside the first ~200 characters, because that is what shows before "see more". They are the post's first two lines, and the same pair is reused as the card or article title and deck. Give one recommended pair plus two alternatives. No em dashes in either, no banned words, no clickbait, and no question in the headline.
+- **The first line must force the "see more"** (owner instruction, 2026-11-01). Under 120 characters, no question, no greeting, and incomplete without the next line. Use one of three mechanisms: a number that fights its own unit, a contradiction in two clauses, or a cost stated flatly. If the headline already hooks, it IS the first line and you do not add another. Full rules and the three approved cards are in `DAILY CONTENT/visual_and_hook_spec.md`.
+- **Every post names the words to box in its visual** (owner instruction, 2026-11-01). One boxed phrase per card, one to three words, never opening line one. Box the quantity or the failure verb, never the topic. It must pass the portability test: if the phrase could headline a different post by a different writer, it is wrong. Give a primary box and one alternative, and say which is stronger and why.
+- **Everything ships through the human gate** (owner instruction, 2026-10-31). Before any deliverable is called done, run `python3 linkedin_emphire/TOOLING/voice_lint.py --human <file>`. Target 90 or above with zero errors. The gate scores rhythm, not vocabulary: triads, repetitive sentence openings, sentence-length variance, hedges, missing contractions, and paragraphs with no terminal punctuation. Vocabulary and the em-dash rule are already covered by the base lint. Proper punctuation means every paragraph ends in a full stop, comma, colon or question mark, no doubled words, and a space after every comma.
+- **Every session writes its own log** (owner instruction, 2026-10-31). Append to or create `SESSION_LOG/SESSION_LOG_<date>.md` capturing each user instruction, each decision, each artifact with its path, the open loops, and anything a future session would otherwise have to re-derive from chat. Record the reasoning, not just the output. If an instruction in the chat is not in the repo, it will be lost, and losing it costs the owner work he has already paid for once.
 - **Comment style (current, as of 2026-10-13):** punchy, multi-paragraph, one idea per breath, short lines. Concede first (acknowledge the post's point). One memorable line. Plain connectives. End on a statement, not a question (a light offer is fine in a warm reply). Confident peer tone, never sycophantic. No links in cold comments (links are OK in a warm reply, or where one was already posted).
 - **No edits to live Upwork or LinkedIn** without owner approval.
 - **Sudhir $65** via a fixed-price milestone; no public Sudhir post.
@@ -121,7 +128,7 @@ Signature moves to reuse:
 
 ## 10. Immediate next steps, in order
 
-1. **Send the Aithos email** (resume PDF + motivation letter, Appendix A) to hiring@aithos.org before 31 Oct.
+1. ~~**Send the Aithos email**~~ Sent 31 Oct 2026. Next: log the reply (or the silence) in `2026-10-31_aithos_research-engineer_send-package/SENT.md` as it lands, and set the two-week follow-up for 14 Nov.
 2. Post the **Paolo reply** (Appendix B).
 3. Post the in-lane comment drafts (Appendix C), spaced out: Catasta first (strongest), then Replit "AI native = code", Hamel, Zenity/SSRF, Lenny, Clint. Watch for author replies.
 4. Send **Sudhir** the Upwork message + LinkedIn ping (Appendix D).

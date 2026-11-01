@@ -117,7 +117,21 @@ def cmd_verify(args) -> int:
         json.loads(ln) for ln in (run_dir / "bundle.jsonl").read_text(encoding="utf-8").splitlines() if ln.strip()
     ]
     fam_id = next((e.get("family") for e in lines[1:] if e.get("type") == "event"), None)
-    family = get_family(fam_id) if fam_id else None
+    if fam_id == "A0_ADAPTERS":
+        # Adapter bundles are graded by the catalog's detectors, so the
+        # family is rebuilt from the catalog rather than looked up in the
+        # family registry. Every tool/variant combination is planned, so
+        # the re-derivation covers whichever subset this run used.
+        from .adapters.base import build_family, plan_variants
+
+        family = build_family(
+            plan_variants("pyrit", {"raw": "", "b64": ""})
+            + plan_variants("promptfoo", {"raw": ""})
+            + plan_variants("deepteam", {"raw": "", "b64": "", "leet": ""}),
+            label="adapters",
+        )
+    else:
+        family = get_family(fam_id) if fam_id else None
     res = verify_bundle(run_dir, family=family)
     print(f"tieout verify: {run_dir}")
     for line in res.lines:
@@ -198,6 +212,71 @@ def cmd_serve(args) -> int:
     return 0
 
 
+
+def cmd_adapters_list(_args) -> int:
+    from .adapters import ADAPTERS
+
+    print("tieout adapters: the tool layer, one record per attack")
+    print()
+    for name, cls in ADAPTERS.items():
+        a = cls()
+        ok, reason = a.available()
+        state = "ready" if ok else "not available"
+        print(f"  {name:<10} {a.label:<10} {state:<14} {a.version() if ok else reason}")
+    return 0
+
+
+def cmd_adapters_run(args) -> int:
+    from .adapters import run_adapters
+    from .adapters.matrix import coverage, render_matrix
+
+    tools = None if args.tools in (None, "all") else [t.strip() for t in args.tools.split(",") if t.strip()]
+    result = run_adapters(tools, out_dir=args.out, seed=args.seed)
+    print()
+    print("=" * 62)
+    print("tieout adapters run: %s" % result.run_id)
+    print("tools : %s" % ", ".join(result.tools_run))
+    if result.tools_skipped:
+        for s in result.tools_skipped:
+            print("skipped: %s (%s)" % (s["tool"], s["reason"]))
+    print("=" * 62)
+    fails = sum(1 for e in result.events if e["decision"] == "fail")
+    print("events : %d (%d fail, %d pass)" % (len(result.events), fails, len(result.events) - fails))
+    print("controls: %d, %d false positive, %d false negative" % (
+        len(result.controls),
+        result.manifest.get("controls_fp", 0),
+        result.manifest.get("controls_fn", 0),
+    ))
+    print("gaps   : %d" % len(result.gaps))
+    for g in result.gaps:
+        print("  [%s] %s" % (g["code"], g["scope"]))
+    print()
+    print(render_matrix(coverage(result.out_dir)))
+    print()
+    print("bundle : %s/bundle.jsonl" % result.out_dir)
+    print("raw    : %s/raw/records.jsonl" % result.out_dir)
+    return 0
+
+
+def cmd_adapters_verify(args) -> int:
+    from .adapters import rederive_bundle
+
+    res = rederive_bundle(args.run_dir)
+    print("tieout adapters verify: %s" % args.run_dir)
+    for line in res.lines:
+        print("  " + line)
+    for g in res.gaps:
+        print("  gap: " + g)
+    return 0 if res.ok else 1
+
+
+def cmd_adapters_matrix(args) -> int:
+    from .adapters.matrix import coverage, render_matrix
+
+    print(render_matrix(coverage(args.run_dir)))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="tieout", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--version", action="version", version=f"tieout {__version__}")
@@ -252,6 +331,27 @@ def main(argv: list[str] | None = None) -> int:
     sv.add_argument("--host", default="0.0.0.0")
     sv.add_argument("--runs-dir", default="runs")
     sv.set_defaults(fn=cmd_serve)
+
+
+    ad = sub.add_parser("adapters", help="run PyRIT / promptfoo / DeepTeam, one record")
+    adsub = ad.add_subparsers(dest="adapters_cmd", required=True)
+
+    adl = adsub.add_parser("list", help="which tools are installed")
+    adl.set_defaults(fn=cmd_adapters_list)
+
+    adr = adsub.add_parser("run", help="run the catalog through the tools")
+    adr.add_argument("--tools", default="all", help="all | pyrit,promptfoo,deepteam")
+    adr.add_argument("--out", default="runs/adapters")
+    adr.add_argument("--seed", type=int, default=0)
+    adr.set_defaults(fn=cmd_adapters_run)
+
+    adv = adsub.add_parser("verify", help="re-derive an adapter bundle without the tools")
+    adv.add_argument("run_dir")
+    adv.set_defaults(fn=cmd_adapters_verify)
+
+    adm = adsub.add_parser("matrix", help="cross-tool coverage and consensus")
+    adm.add_argument("run_dir")
+    adm.set_defaults(fn=cmd_adapters_matrix)
 
     args = p.parse_args(argv)
     if args.cmd == "run" and args.out is None:
