@@ -55,7 +55,7 @@ suite.
 
 ```
 python verify.py example/run        -> 20 of 20 checks hold (12 P, 2 V, 6 meta)
-python challenge.py <run>           -> 10 of 10 mutations caught
+python challenge.py <run>           -> 10 of 10 mutations caught, 2 of 2 input checks held
 python audit/regressions.py         -> 12 of 12 counterexamples caught
 two consecutive runs compared       -> identical, file by file
 ```
@@ -133,13 +133,43 @@ python challenge.py example\run
 python audit\regressions.py
 ```
 
-## Platform note, stated plainly
+## Two defects found on Windows, and the platform note corrected
 
-Everything above was run on Linux, Python 3.11.2, from a fresh checkout with the
-patch applied and from the zip. Windows 11 with Python 3.14.5 has run the suite at
-P0: 16 of 16 checks and 9 of 9 mutations. This patch has not been run on Windows
-yet. The two additions that touch the platform are the probes, which use the same
-process announcement and the same newline handling as the rest of the suite, and
-nested artifact paths in the manifest, which are written with forward slashes so
-that a Windows run and a Linux run produce the same manifest bytes. Both are
-stated as expected, not as observed, until you run it.
+The first Windows run of P1 found two defects in `verify.py`, both by mistaking
+the shape of a path, and both are the verifier contradicting something this
+document claims about it.
+
+The first: `verify.py` pointed at a directory that does not exist printed a
+failed check and then raised `FileNotFoundError` while trying to write its own
+report. The P0 notes say the verifier never raises. It raised.
+
+The second is the worse one. `verify.py run-a run-b`, given two directories that
+are both absent, reported `determinism holds`. Absent compared to absent is a
+match in the only sense a byte comparison can see, and that sense is none. Two
+absent runs were being called identical, which is the same defect as a missing
+artifact passing a completeness check, in the tool that exists to catch exactly
+that.
+
+Both are fixed in a third commit, and both are now tests rather than fixes:
+`challenge.py` gained two input checks, so a path that is not a run has to be
+refused with exit 2 and no traceback, and a comparison has to fail when either
+directory is missing an artifact. The comparison also requires both directories
+to exist and every artifact to be present in both before it compares a byte.
+
+Neither defect affects any result in this document. Every number below was
+produced by a run that existed, and the eight counterexamples in P0 and the four
+in P1 were caught by checks that never went through either path.
+
+## What Windows showed
+
+Windows 11, Python 3.14.5, from the branch at `41013f0`:
+
+```
+python verify.py example\run      -> 20 of 20 checks hold (12 P, 2 V, 6 meta)
+python run.py                     -> every scenario and probe ran, hosts exiting 9 as designed
+python audit\regressions.py       -> 12 of 12 counterexamples caught
+```
+
+That closes the platform gap this document had when it was first written. The
+one thing the Linux machine has that Windows does not, in this exchange, is the
+two-run byte comparison; the Windows numbers above are single runs.

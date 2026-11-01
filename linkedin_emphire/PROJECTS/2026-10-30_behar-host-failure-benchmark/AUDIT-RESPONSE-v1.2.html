@@ -226,6 +226,14 @@ the host can name is one the store already knows. That row would have to be
 recast. I would rather ask you than ship a change to the scenario table inside a
 bug-fix patch, so it is the single remaining P1 item and it is written as a
 question in section 6.</p>
+<p>Two further defects were found by the first Windows run of this patch, both in
+<code>verify.py</code> rather than in the store: pointing it at a directory that is not a
+run raised <code>FileNotFoundError</code> while writing its report, and comparing two
+directories that were both absent reported <code>determinism holds</code>. The second is
+the same class of defect the review is about, committed by the tool that exists
+to catch it, and it is the reason it is now a test: <code>challenge.py</code> requires a
+path that is not a run to be refused, and requires a comparison to fail when an
+artifact is missing from either side. Both are fixed in the third commit.</p>
 <p>Unchanged and still open: an idle connection can hold the store (F15); the
 verifier still imports the encoder it checks, so the correlated-oracle problem
 stays until there is a second encoder; and there is no CI matrix, so the
