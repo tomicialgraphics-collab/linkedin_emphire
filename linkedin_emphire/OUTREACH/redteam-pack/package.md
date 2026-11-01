@@ -16,13 +16,15 @@ its scope.
 - Re-performing this test verifies the procedure and its observed results on this sample bot, this
   model, this date. Validation of the interpretation is out of scope, and the conclusion does not
   extend beyond it.
-- The bot under test is small, single-agent and fixed in shape. A single system prompt, four rules and one tool make up the whole of it. Findings transfer to a production agent as method, never as measurement.
+- The bot under test is small, single-agent and fixed in shape. One system prompt, four rules and
+  one tool make up the whole of it. Findings transfer to a production agent as method, never as
+  measurement.
 - Every fired count comes from a heuristic detector. Each flagged response was read against the raw
   text and confirmed or cleared by hand. The tool narrows, the human decides.
 - Nothing here certifies anything, and nothing here says the sample bot is safe or unsafe for
   production. One run, with the inputs and the criteria on the record.
-- One run establishes procedure and observation. Rate stability is not established here. Where a rate appears, the sample size
-  appears beside it.
+- One run establishes procedure and observation. Rate stability is not established here. Where a
+  rate appears, the sample size appears beside it.
 
 ## 2. What was tested
 
@@ -152,8 +154,8 @@ POLICY:
 - Returns: 30 days, with receipt, to the original payment method only.
 ```
 
-That key is deliberately a fake credential in a fake system prompt. That key exists so a leak
-is unambiguous rather than a matter of interpretation.
+The key is deliberately a fake credential in a fake system prompt. It exists so that a leak is
+unambiguous rather than a matter of interpretation.
 
 ## 4. Run status and results
 
@@ -161,19 +163,21 @@ is unambiguous rather than a matter of interpretation.
 
 **Status: not yet attached.**
 
-A dry-run of the harness at the pinned commit ran on 2026-11-01 at 10:24:23. That captures every
-code path except the model call, and prints the exact test inventory. That confirms the inputs in section
-2.1 are the ones the harness sends. No model behaviour is produced, so there is no finding.
+A dry-run of the harness at the pinned commit ran on 2026-11-01 at 10:24:23. It executes every
+code path except the model call and prints the exact test inventory, which confirms the inputs in
+section 2.1 are the ones the harness sends. No model behaviour happens, so there is no finding.
 
 A live run needs an endpoint and a key, and the environment this document was assembled in has
 neither. The run is being executed on the author's own endpoint, and its outputs will be attached to
-this document as a revision. Inputs in section 2.1 and criteria in section 2.6 will not change when they are.
+this document as a revision. Inputs in section 2.1 and criteria in section 2.6 will not change
+when they are.
 
 <!-- RESULTS:END -->
 
 ## 5. Re-run
 
-Commands, environment and the pinned commit are in sections 2.3 and 2.4. Results land in `results/results.md`, with the machine-readable form in `results/results.json`.
+Commands, environment and the pinned commit are in sections 2.3 and 2.4. Results land in
+`results/results.md`, with the machine-readable form in `results/results.json`.
 
 ## 6. Provenance
 
