@@ -808,3 +808,67 @@ account works: the invisible population is the whole difference between a rate a
 the third line. Do not offer the benchmark. Do not cite the eight times commit figure from the same
 report, which is the stat everyone else will paste. Keep it to one comment; he asks a question and
 deserves an answer, not a follow-up thread.
+
+
+---
+
+## Entry 16: Gregory Goldshteyn, AI Weekly, cache-aware routing
+
+**Surface.** Same author, one hour after Entry 15. His weekly roundup: Copilot Fusion with the note
+that cost and quality claims are marketing until independent evaluations land, Android Studio
+taking any ACP-compatible agent, a reported Mistral release with an unresolved checkpoint date, and
+then the part he actually cares about. Replicas hold KV cache, a prompt sent to the wrong pod
+recomputes its prefix, so the router needs to know what each cache holds. Three takeaways: route on
+cache state rather than queue depth, treat KV offload as its own tier with its own latency budget,
+keep multi-turn sessions on the warm replica. He ends with a direct question to anyone running
+multi-turn agents on Kubernetes.
+
+**Profile read, verified 1 November, same author as Entry 15.** QA and quality engineering at Fox,
+mabl ambassador, conference speaker, and by his own abstract a specialist in agent reliability
+rather than an inference engineer. Reading the framing: he is a good technical reader reporting a
+stack he has not yet run in production, which he signals himself with "reportedly" and "treat the
+claims as marketing". Commercial signals: ambassador and speaker, so value only. ICP fit: strong,
+this audience is SRE and platform engineers as much as QA. Ladder step 3, comment, OUTSTANDING.
+Consequence: he is precise about sources, so the comment must be precise about what the router can
+and cannot know, and must not overstate the error.
+
+**Checked, because the comment depends on it.** llm-d 1.0 shipped on 20 October 2026 on top of the
+Gateway API Inference Extension, with the router tracking prefix placement from vLLM and SGLang
+cache events and scoring locality together with load. Reported results: Gemini's platform doubling
+prefix hit rate from 35 to 70 percent through the GKE Inference Gateway, Snap at 75 to 80 percent
+on prefix hits. The important detail for the draft is that a router can hold a precise, event
+driven view of cache placement or an approximate one, and the approximate path goes stale after
+evictions and restarts. So the honest claim is about the fallback and about event lag, not about
+routers being blind.
+
+**Draft A, recommended.**
+
+> Worth adding to the list: once routing depends on cache state, the signals that told you the old
+> setup was healthy stop meaning much. Queue depth and GPU saturation can sit flat while a stale
+> cache map sends sessions to replicas that evicted their prefix, and nothing errors, the hit rate
+> just falls. Prefix hit rate per route and time to first token are the two numbers that say
+> whether the router is working. Failover is the other cost. The replica holding your session is
+> the one you cannot afford to lose, and a retry elsewhere pays for the whole prefix again.
+
+**Draft B, if he wants dialogue rather than an addition.**
+
+> Not running this on Kubernetes, so I will not pretend to have an answer to the routing question.
+> What I would want on the dashboard before trusting it is prefix hit rate per route and time to
+> first token split by turn number, because a stale cache map shows up as conversations that get
+> slower, never as errors. And a written answer to what happens when the warm replica is full,
+> since that fallback path is what decides your tail latency.
+
+**Why A.** It extends his own three takeaways with the thing they imply and do not say, which is
+that the router changes what your monitoring means. It also lands on the two failure modes that
+matter in an audit, silence and rework cost, without claiming operational experience this account
+does not have.
+
+**Caution.** Do not say the router cannot know where the cache is, because with event driven cache
+state it can, and he will know that. Keep the claim to stale maps, event lag and the fallback path.
+Do not touch the Mistral checkpoint story or the Copilot Fusion pricing, both of which he has
+already flagged as unverified. Do not repeat the 40 percent figure a second time in the same round.
+
+**Sequencing, since this is the second surface from the same author in an hour.** Post Entry 15
+first if it has not gone out, because the survivor argument is the sharper of the two and it is the
+one a QA audience will carry. Hold this one until tomorrow, or until he replies to that one. Two
+comments on two posts from one person inside an hour reads as attendance rather than interest.
