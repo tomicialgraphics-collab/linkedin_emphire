@@ -535,3 +535,50 @@ concedes, and under his own comment that reads as scoring.
 **Caution.** Do not name an agency and do not guess at scale. Do not bring the benchmark into it.
 If he answers again, leave it there: two rounds is a conversation, three is a debate he did not ask
 for.
+
+## Entry 12: Valeriya Ionan, on vision, uncertainty and what outlives the position
+
+**Surface:** personal post, a few minutes before the paste. She describes a lecture at the Kyiv
+School of Public Administration on vision as a practical tool, on deciding without full
+information, on partnerships and on building institutions that keep working after the people who
+built them have gone. Her closing lines are about not controlling what happens after you leave a
+position, and about making good projects outlive you.
+
+**My read without a comment:** this is a public-sector audience that will answer with agreement
+about leadership, and the account has nothing useful to say about leadership. It does have
+something to say about the closing line, because "the institution outlives the person" has a
+concrete technical meaning for anyone putting AI into public services, and almost nobody building
+those systems does the thing that makes it true.
+
+**Verified and hedged before drafting:** no claims about her record, Diia, the war or the school
+beyond what her own post says. No statistics, since none are needed and none are checked. Keep the
+comment about the systems rather than about policy.
+
+**Draft A: THE RECORD OUTLIVES THE TEAM, 98 words, voice_lint clean**
+
+> Your last line is the one I would underline for anyone putting AI into public services. What
+> survives the team that built a system is not the model, it is the record: who approved which
+> action, on what basis, and whether someone two years later can reconstruct it. Most deployments
+> cannot answer that, because the evidence sits in a vendor's dashboard and leaves when the
+> contract does. The institutions that outlive us will be the ones that kept their own account of
+> what their systems did, in a form that does not depend on the supplier still being there.
+
+**Draft B: UNCERTAINTY NEEDS REVERSIBILITY, 88 words, voice_lint clean**
+
+> You said vision helps you decide when you do not have all the information. The engineering
+> version of that is the undo. Under uncertainty the choice is not only which future to bet on but
+> which actions can be taken back, and AI systems usually arrive with that button missing. A pilot
+> that can be switched off, and a decision written down so the next person can reconstruct why,
+> is what lets a government move early without spending its credibility the first time something
+> goes wrong.
+
+**Why A.** B is advice she has probably given a hundred times in better words. A takes her own
+closing sentence seriously and gives it a meaning her audience will not have heard, in language
+that applies to procurement and to engineers at the same time. It also says something true about
+public sector AI that does not need a political opinion attached.
+
+**The memorable line:** what survives the team is the record, not the model.
+
+**Caution.** Do not mention the war, Diia or her ministry beyond the frame her post sets. Do not
+offer services. Do not use the phrase digital transformation back at her. One comment, no reply
+chase, and nothing about Nigeria or your own background in it.
