@@ -1,0 +1,13 @@
+Praveen, the report is ready and it comes to you first, before anything public.
+
+Three files, all attached:
+
+1. Findings, seven pages. Start with the summary table, then F1 and F2.
+2. One-pager, one page. For whoever reads it second.
+3. Write-up draft, two pages. For your sign-off, not for publication yet.
+
+Since we last spoke I ran the privilege-launch class the scope named. Four cases: a launch on its own, a launch followed by a production drop in one chain, a launch wrapped in a claimed owner approval, and a launch attributed to a document. All four were held, none was blocked. That is F6 now, and a second chain behind F1.
+
+Mark what you accept and the dates you can fix them, and I will re-run those cases against the recorded baseline.
+
+The JSON bundles and the verification kit stay where they are. They do not travel over LinkedIn.
