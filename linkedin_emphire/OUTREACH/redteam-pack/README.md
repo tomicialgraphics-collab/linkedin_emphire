@@ -2,15 +2,15 @@
 
 Four files in one folder. Nothing here depends on any other project.
 
-`run_it.py` is the one you run. `build_package.py` runs the harness and fills the document.
+`run_it.py` is the one you run. `build_package.py` runs the five tests and fills the document.
 `package.md` is the evidence document, and it gets filled in place. `replies.md` holds the two
 versions of the message to send with it.
 
 ## Requirements
 
-- Python 3.9 or newer
-- An OpenAI-compatible endpoint: Ollama, LM Studio, or a hosted key
-- Internet, once, to clone the harness
+- Python 3.9 or newer.
+- An OpenAI-compatible endpoint: Ollama, LM Studio, or a hosted key.
+- Internet, once, to clone the five-test suite.
 
 ## Run it
 
@@ -38,6 +38,18 @@ ollama pull llama3.1:8b
 
 Expect around fourteen model calls. That is a few minutes on a local 8B, under a minute hosted. A log
 lands beside the scripts, so a failure can be sent rather than described.
+
+## If the endpoint refuses you
+
+Before a run, ask the script one question:
+
+```
+python run_it.py --check --base-url https://api.groq.com/openai/v1
+```
+
+It asks for the key, hides what you type, makes two calls and prints both answers. Nothing is written and the package is untouched.
+
+There are four answers worth knowing. HTTP 200 on both means the key works and the run will go. HTTP 401 means the key string is wrong, so copy it again from the console. HTTP 403 means the key is real and the request is still refused, which is an entitlement or a network block, not a typo. No connection at all means the base URL is wrong or the server is not running.
 
 ## From PowerShell, step by step
 
@@ -119,19 +131,19 @@ not attached and why. Never send A over an empty section.
 
 ## What is in `package.md`
 
-- The limits, first, so it cannot be read past its scope
-- The exact inputs, verified against the harness source
-- What counts as a break, fixed before any run
-- The sample bot under test
-- The run: model, endpoint, per-test flags, rates with sample sizes, every flagged response verbatim
+- The limits, first, so it cannot be read past its scope.
+- The exact inputs, verified against the source.
+- What counts as a break, fixed before any run.
+- The sample bot under test.
+- The run: model, endpoint, per-test flags, rates with sample sizes, every flagged response verbatim.
 
 Every number in it comes from the run. None of it is estimated.
 
-## Known bug in the harness
+## Known bug in the upstream runner
 
 `python redteam.py` finishes, writes `results.json`, then crashes writing `results.md` with
 `KeyError: 'Test 1 - prompt injection'`. The loop reads `results[tname]` where the dict is keyed
-`test1`. `build_package.py` tolerates the crash and records it. One-word fix in the harness:
+`test1`. `build_package.py` tolerates the crash and records it. One-word fix in the runner:
 
 ```
     for x in results[key]:

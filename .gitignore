@@ -29,3 +29,6 @@ linkedin_emphire/OUTREACH/arcezia_expected_*.json
 
 # harness run logs (machine-local, never committed)
 linkedin_emphire/OUTREACH/run_*.log
+
+# run logs from the standalone pack
+run_*.log
