@@ -195,3 +195,54 @@ sponsored.
 **Not used:** the drumbeat angle. I could have written a fifth version of "verification is weaker
 than it looks." The cancellation bar is a different argument, and the injection test is the one
 this audience will actually run.
+
+## Entry 5: Brad Wolfe, measure the unit cost not the hours
+
+**Surface:** Brad Wolfe, 1st degree, seven hours old. AI strategy and capital allocation CFO, 80+
+M&A, three NASDAQ CFO seats, AI committee and audit committee chair. The post is a chain: hours
+saved, capacity released, a management decision, a financial outcome. He argues most business
+cases measure the first step and report the last, and gives a PE roll-up case where back-office
+cost per unit went from $247 to $202 over twelve months while the company grew 400%. He ends on
+"what unit would your back office be measured on?"
+
+**Relationship note:** this is the second time he has been in front of us. On 10-31 he replied to
+the 2B comment within three minutes, and the 56-word reply drafted for him then is STILL UNSENT.
+If that reply has not gone out, send it before commenting here. Answering a second post from a
+1st-degree contact while his earlier reply sits unanswered reads as scatter.
+
+**Why this one matters more than the reach numbers suggest:** he builds the business case that a
+buyer takes to a board. If our point about measurement lands with him, it lands upstream of a
+security budget, which is the hardest place to reach from a red-teamer's account.
+
+**His frame is right and there is one column missing.** He is careful, he refuses surveys and
+hours estimates, and he insists the decision be made before the tool goes in. All correct. What
+the table does not carry is how often the work came back.
+
+### Draft: OUTSTANDING, 116 words, gate 100/100
+
+> Agreed on the chain, and the decision in the middle is the step that gets skipped.
+>
+> One addition for a roll-up: put the return rate in the same table. Cost per unit says what the
+> work costs, not how often the work came back. When AI takes the first pass, exceptions don't
+> fail loudly, they queue for a person, and the rework lands in a different line item a quarter
+> later. In a document-heavy back office that can eat the savings quietly.
+>
+> Same standard you set for hours, no survey and no estimate. Count the items that had to be
+> redone.
+>
+> $247 to $202 is the number. The rework count is what tells you it holds.
+
+**Why it should land with him specifically.** The argument is in his own language, not ours. It is
+about the denominator, not about model behaviour, and it uses the standard he set himself: no
+survey, no estimate, count something. A red-teamer telling a CFO about rework rates is credible
+only if the rework is described as a cost line, which is what the draft does.
+
+**The memorable line:** cost per unit tells you what the work costs, not how often the work came
+back. It also does not contradict his post, which matters, because he is a 1st-degree contact who
+has been generous with his time.
+
+**Deliberately absent:** no mention of security, risk, or AI failure modes. There is a version of
+this comment that pivots to our subject and it would be worse. He asked about cost per unit, so
+the whole comment stays on cost per unit.
+
+**Numbers:** his, quoted back, not new ones. Nothing invented.
