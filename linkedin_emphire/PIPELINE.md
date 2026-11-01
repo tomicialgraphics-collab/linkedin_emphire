@@ -1,6 +1,6 @@
 # PIPELINE
 
-Single source of truth for money and relationships. Updated 2026-10-31.
+Single source of truth for money and relationships. Updated 2026-11-01.
 
 Rule: every dollar and every relationship has a row, a stage, a value, a next action, and a date. The $5,000 goal (PLANS/2026-10-11_empire-engine_book-synthesis_70-day-5k-plan.md) is what the money rows sum to. If the sum is under $5k, the gap gets a named source and a date, it does not get optimism.
 
@@ -31,6 +31,7 @@ Two failure modes to watch on this row:
 
 | Name (tier) | Stage | Value | Next action | Due |
 |---|---|---|---|---|
+| Praveen Babu (Arcezia, founder, reference) | Engagement delivered unpaid (one-time waiver, in writing). Both test days done, 26 decisions reconciled to signed records. Report goes to him first, Monday | $0, waived. Buys the joint write-up and a written reference | Report private to him **2026-11-02**, then fix/verify loop | 2026-11-02 |
 | Andrey Ekhmenin (ANDEKS, reference) | **Evidence package SENT 2026-11-01**, run attached. Reference confirmed in writing to the same email | Long-term, ANDEKS review | Wait for his review of the package. Do not chase before 2026-11-08 | 2026-11-08 |
 | Julia Kingsley (Twinning Labs) | Email; she requested Mon-Wed ET availability | Retainer TBD | Confirm availability email sent (was due 2026-10-12) | 2026-10-12 |
 | Tanya Janca (Tier A) | DM 1 sent; DM 2 gated on Article 2 | Long-term | DM 2 only after confirmed publication | 2026-10-13 |
