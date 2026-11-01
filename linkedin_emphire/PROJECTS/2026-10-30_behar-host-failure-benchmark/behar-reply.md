@@ -146,8 +146,7 @@ Attachment: `P1-PATCH-NOTES.html`. Nothing else.
 
 ---
 
-Behar, good, and here is what you need in order to reproduce it rather than take
-my numbers.
+Behar, good, and here is what you need to reproduce it rather than take my numbers.
 
 `main` at `df0cf5a`, three commits past your 25cd57f. From the root of the
 checkout: `python verify.py example\run` and `python audit\regressions.py`.
@@ -173,53 +172,73 @@ Windows now shows the same 20, 10 and 12 as Linux, at the commit above.
 
 ---
 
-## 7. The message for the 9:05 PM review
+## 7. The message that answers the review, v1.2
 
-Attachment: `FINDINGS-REGISTER.md` as a PDF or paste the table, since LinkedIn takes
-neither Markdown nor a folder. Ask for the report and the package to be readable here
-before any assessment of the eleven is written.
+Attachments: `DISPOSITION-2026-11-01.md` and `FINDINGS-REGISTER.md`, both as PDF, plus
+`P2-DIFFERENTIAL-FIXES.patch.txt`. He does not need the zip; he can apply the patch to
+`df0cf5a` and re-run his own package.
 
 ---
 
-Behar, this is the right next step and the register is the right instrument for it.
-I have started one rather than promising one: `FINDINGS-REGISTER.md`, one row per
-finding, with the status words defined so that "fixed" can only mean a reproduction
-that fails without the commit.
+Behar, I have your package. Your declared sha256 is
+`b2a39986c4ad238446e9d2a4928e58a35cba2ff7ceed8fda3e357ac14db90ed4` and the file that arrived
+measures the same, so we are looking at the same bytes.
 
-I have not yet read your report or opened the package. The attachment came through
-LinkedIn, which shows me the filename and not the file, and the Drive link is not
-reachable from where I work, so both need to reach me another way before I assess
-the eleven cases. Rather than wait, I went through the five areas in your message
-against `df0cf5a` and found three defects of my own in them.
+I ran `v2tests.py` and `v3fixes.py` unchanged, with `HFB_REPO` pointed at `df0cf5a`, before
+writing a line of the patch. Your results file marks 23 of the 36 outcomes as defects; mine
+came out the same 23, case for case, so the disagreement between us was never about what the
+code does. On the 13 input checks I got N06, N12 and N13, and N11 is untestable here for the
+same reason it was for you, `chattr +i` refused.
 
-One. Recovery authenticates by trust. On replay the store takes a record's `state`
-from the journal instead of recomputing it, so an unsigned verdict whose journal line
-says `verified` closes its gap after a restart. The verifier catches it, because it
-recomputes independently, but the component that reports gaps does not.
+The three I sent you on the 9:05 message are V05, V17 and V19 in your numbering. That is
+useful to know and it also means my reading of the code agreed with yours on the cases I
+managed to reach, which is the first honest thing I can say about this exchange.
 
-Two. An effect is committed on a qualified acknowledgement. The host reads `ok` and
-the action id and stops there, so the unsigned D' verdict, which the store replies to
-with `state: unverified`, still logs `effect_committed`. That is in the shipped
-example run now, which means one of my own rows was passing while contradicting
-itself.
+P2 is on top of `df0cf5a`. Against it, your package reports 9 defects and 22 outcomes behaving
+as documented, and the defects that remain are the ones you said would remain. My own run,
+`run.py` then `verify.py`, still reports 13 of 13 in class P and 2 of 2 in class V, two runs
+still compare byte for byte, and `challenge.py` still catches every mutation it names. A fix
+that quieted your cases by making the suite easier to pass would show up in those three, and
+it does not.
 
-Three. An I/O failure has no answer. If the journal cannot be written, the store
-raises inside the handler, prints a traceback, and closes the connection with no
-reply, instead of saying it could not persist. The effect is still withheld at the
-host, but by accident rather than by design.
+What changed, in your terms. F-01: replay recomputes state from the record's bytes and from
+the id the record is filed under, through one function that the store, the verifier and the
+host all import, so a journal row's opinion of itself is not evidence and a record signed for
+one action cannot resolve another. F-02: check D now refuses to report a verdict verified while
+the same journal lists its action as a gap, so the verifier cannot contradict itself. F-03: the
+host treats `ok: true` as permission to continue, not as acknowledgement, and requires
+`stored: true` and `state: "verified"`; `D'` now withholds the effect, which changed the shipped
+example run and the note says so. F-04: a failed append cuts the file back to its previous
+length and the store answers that it could not persist, and a damaged tail is quarantined
+before the next append rather than being written onto. F-05: B binds to the epoch the verdict
+landed in, not the last boot in the file. F-09: `verify.py run run` is refused, `challenge.py`
+writes nothing into the directory it was pointed at, and it ends by fingerprinting that
+directory and printing that it is unchanged.
 
-All three are in the register with the commands that reproduce them, as open. I have
-not fixed them yet: your report may describe the same three in a sharper form, and I
-would rather fix once.
+I dispute V04. In that run the replay step and the decision step are both 2, so your mutation
+writes the value `decision_ts` already held and the re-signed record is byte-identical to the
+WAL, signature included. I have printed that (`record_identical_to_wal=True`) and the same
+mutation with the clocks five steps apart, which is caught: B fails and B.wal fails. If you
+think the re-stamp is meant to move the value, the case needs a clock that does not collide,
+and then I would like to see it fail against P2 before I believe the check is weak.
 
-On the register's shape, this is what I would add to your proposal. Each row carries
-the reproduction as a runnable command, the commit that closes it, and the regression
-mode that fails without that commit, so the third column can be checked by running
-the second. Rows that test something outside the stated threat model go to
-`disputed` with the reasoning in the row, not deleted, so the disagreement stays
-visible.
+N13 is the one place my patch removes the thing your check reads. `challenge.py` no longer
+leaves a report in the evidence directory, because that report was written by verifying the
+run under test, and a failing report sitting in evidence is exactly the confusion the check was
+about. Your N13 now raises on a missing file. The replacement property, that the directory is
+byte-identical afterwards, is asserted in the tool and printed on every run. Rewrite it that
+way and I will take the result.
 
-Author order and venue still wait for finalisation, as we agreed.
+Still open, and not fixed in P2: F-06 and V24, where nothing authenticates that the host died
+and I have no independent kill receipt, so the survivability claim is narrowed rather than
+defended; F-07 and V28 to V33, where nothing signs the sequence and a deletion inside framed
+records still verifies; V22, where the failpoint still tests refusal and only your damage tests
+tearing; and V36, the idle connection.
+
+I take your release decision as written. Nothing in P2 supports a general authenticated
+recovery claim, and I am not asking you to move on that. What I would like from you is the
+re-run of your own package against P2, V04 either sharpened or withdrawn, and N13 rewritten.
+Author order and venue still wait for finalisation.
 
 ---
 

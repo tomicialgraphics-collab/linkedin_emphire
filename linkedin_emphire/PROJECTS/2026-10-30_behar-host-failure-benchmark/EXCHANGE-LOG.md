@@ -213,3 +213,35 @@ thing to send him is a commit, two commands and the expected numbers, not anothe
 argument. If he finds a third defect in the verifier's input handling, that is
 worth more than another green run, and it should arrive as a failing command
 rather than a description.
+
+## 12. The differential review, and what running it changed
+
+He sent the full review as text on 1 November, v1.2, and a Drive link to the package. The
+package arrived as `HFB_Teste_Diferenciale.zip`, 41,754 bytes, sha256
+`b2a39986c4ad238446e9d2a4928e58a35cba2ff7ceed8fda3e357ac14db90ed4`, which is the hash the
+review declares. So the file is the file.
+
+The package is 36 outcome tests and 13 input checks, not the "eleven counterexamples" his
+earlier message described. His results file marks 23 outcomes as defects; run unchanged against
+`df0cf5a` here, the same 23 came out, case for case. On the inputs I got N06, N12 and N13, with
+N11 untestable for the same reason it was untestable for him.
+
+The three defects I had found by reading the code were V05, V17 and V19 in his numbering. His
+first, third and fourth areas, and the same three cases. That is the useful part of the exchange
+so far: two people reading one repository separately found the same defects and neither found
+them all.
+
+P2 answers F-01 to F-05 and F-09, with the exceptions V22 and V35 and the dispute at V04. On the
+patched tree his package reports 9 defects and 22 documented outcomes. The nine are the ones he
+predicted would remain: V04, which I dispute, V23 and V24, which are host-side and out of the
+current claim, and V28 to V33, which need signed sequence numbers that do not exist yet.
+
+Two things I will not do in the reply. I will not restate his count of 25 deviations as if it
+were in his own results file, which shows 24 counting the static case; and I will not call
+anything closed. Every patched row in the register stays patched until `audit/regressions.py`
+has a mode that fails without the fix. His acceptance rule is the mode, not the run I did by
+hand.
+
+The release decision stands as he wrote it. Nothing in P2 supports authenticated recovery,
+host-loss survivability, or trusted timestamps, and the note says so next to the results rather
+than in a footnote.

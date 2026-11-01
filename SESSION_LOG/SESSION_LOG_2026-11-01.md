@@ -247,3 +247,26 @@ that file carries the review.
 - Andrey: package sent, next contact not before 2026-11-08.
 - Anthropic fellows form: submitted, confirmation never confirmed.
 - Test account deletion at close, and the repository exposure decision, both still unanswered.
+
+## 15. The differential review, read and answered
+
+Behar's package was fetched from Google Drive, not re-requested, and its sha256 matched the one
+his review declares. `v2tests.py` and `v3fixes.py` were run unchanged against `df0cf5a` first,
+to establish what the code did before I touched it: 23 defects of 36 outcomes, 3 of 13 inputs,
+one input untestable. My three earlier findings were V05, V17 and V19.
+
+P2 is the answer to F-01 to F-05 and F-09. On the patched tree his package reports 9 defects
+and 22 documented outcomes, my own run reports 13 of 13 and 2 of 2 with two runs byte-identical
+and every challenge mutation caught, and the shipped example run was regenerated because D' no
+longer commits the effect on a record the store quarantined.
+
+What remains open is written in `FINDINGS-REGISTER.md` with no softening: F-06 and V24 (nothing
+authenticates that the host died), F-07 and V28 to V33 (nothing signs the sequence), V22 (the
+failpoint tests refusal, not tearing), V36, F6, F15, V1, H1. V04 is disputed with a proof that
+its mutation writes the value the field already held, and that the same mutation with
+non-colliding clocks is caught. N13 is the one case where my fix removes what his check reads,
+and the reply asks him to rewrite it as a fingerprint assertion.
+
+Deliverables: `DISPOSITION-2026-11-01.md` (all 49 cases), `P2-DIFFERENTIAL-FIXES.patch.txt`,
+`host-failure-benchmark-p2.zip`, and `evidence/2026-11-01/` with both of his logs before and
+after, the V04 proof, and my own suite outputs.
