@@ -1074,3 +1074,54 @@ connect about roles, because this account is building a practice and a comment u
 reads as availability if it is even slightly ambiguous. Do not quote the ABS figure back, since his
 number is correct and repeating it looks like checking. Do not pitch. One comment, no chase, no
 follow-up if he replies with a question about your own background, which he may.
+
+
+---
+
+## Entry 21: al neitsch, on balancing risk and innovation
+
+**Surface.** First degree, two minutes old. Founder TNGC, consultant, author, advisor in data and AI
+engineering and governance, and by his own headline a comedian, journalist, dogdad and husband. The
+post: when developing AI plans, balance risk and innovation, run regular risk assessments, review
+data storage and access controls, check that the team follows the protocols, set up a dedicated team
+to oversee the new technology, document all changes for transparency, prioritise security, keep
+communication open. It attributes the thinking to Cybersecurity Dive, with no link, and ends with a
+question about the reader's own approach.
+
+**Profile read, verified 1 November.** First degree. Founder and managing director of TNGC, an
+advisory and placement firm founded in 2008, a few people, working with large clients and
+international organisations, site neitsch.us. Commercial signals: he sells governance and advisory,
+so value only, never a pitch, and no reference to his services. History: this file has one prior
+surface, his post on Just Eat's AI food images served on 31 October, where the comment argued that
+the manual check ran and asked the wrong question. That argument must not be repeated here.
+ICP fit: adjacent and useful, because he talks to the same buyers from the governance side. Ladder
+step 3, comment, HUMAN. Second surface in two days, so keep it shorter than the last one, which was
+a full paragraph of argument.
+
+**Source rule.** No link in the post, only a named publication, and the body is summary-grade advice
+with nothing specific to check. So the comment makes no claim about what that publication said, and
+none of the numbers from the previous thread are reused.
+
+**Draft A, recommended.**
+
+> The list is all activity and no artefact, which is the shape that passes its own review. A risk
+> assessment proves a meeting happened, and documenting changes proves somebody wrote something
+> down. What a customer or a regulator can test is a single claim with a date and a named owner,
+> plus a record the team cannot edit after the fact. My test for these plans is one question: show
+> me the sentence in it that would be false if security had failed.
+
+**Draft B, shorter, answers only the question he asked.**
+
+> To your question, the balance is set by what you would accept going wrong. Name the failure you
+> could survive, put the check where that failure would first show, and let the rest of the
+> innovation budget go wherever that check does not reach. Everything else in the plan will read as
+> true whether or not it works.
+
+**Why A.** It answers a governance list with the auditor's question, and the closing line is the one
+a buyer will remember, which is the whole point of commenting on a 1st degree contact with a
+practice like his. It is also not the Just Eat argument, so the two comments do not read as one
+person repeating himself.
+
+**Caution.** Do not mention his Just Eat post or the earlier comment, and do not reference the
+comedian side of the headline. Do not correct the spelling of his name in the comment or anywhere
+public. Keep it to one comment, with no follow-up if he replies without a question.
