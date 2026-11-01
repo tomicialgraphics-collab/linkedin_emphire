@@ -292,11 +292,20 @@ limitations state what each covers.
 
 ## 11. Open point and version line
 
-Open point for review: M2 preserves the original T1 decision timestamp
-through replay. Behar distinguishes that from an independently
-verified timestamp. The current specification makes no independent
-time-attestation claim. Confirm whether this captures his intended
-meaning before implementation.
+Point closed 2026-11-01, 1:27 PM, by Behar Dalipi: "Class P preserves
+the original T1 timestamp through replay without independently
+establishing its accuracy or authenticity as the actual decision time.
+The distinction between a source-asserted timestamp and an
+independently verified timestamp should remain explicit in the
+specification and benchmark results." Nothing on this point blocks
+implementation.
+
+Reading as confirmed: M2 preserves the original T1 decision timestamp
+through replay. That timestamp is source-asserted. The specification
+makes no independent time-attestation claim, and neither does the
+benchmark: the suite reports a decision-time field that the host wrote
+before the ship failed, and separately reports that no mechanism in the
+suite can establish that field as the true moment of decision.
 
 v0.2 (2026-10-30): integrates Behar's Working Note v0.1, received
 10:16 AM, into the owner’s harness specification v0.1. Adds conditional

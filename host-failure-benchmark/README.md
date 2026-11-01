@@ -16,6 +16,8 @@ Class P is persistence and recovery: whether the evidence outlives the process t
 
 Class V is verification: whether a record that survived is the record it says it is, from who it says, under the policy version it names. This claim rests on a key derived from a fixed seed written in the source, which shows the binding is internally consistent and is not evidence of production key security or of anyone's institutional trust. Two checks.
 
+One distinction runs through both classes and is reported by the suite rather than assumed: a decision time carried through replay is source-asserted, not independently verified. `verify.py` prints that in every result, and the JSON report carries it as its own field.
+
 ## The named gap
 
 Row M3 was the interesting one, and it splits three ways. The split is the result, not a footnote.
@@ -25,6 +27,8 @@ Row M3 was the interesting one, and it splits three ways. The split is the resul
 | C | the issued id and a commitment to the descriptor | a gap, with its content |
 | C' | the issued id only | a gap, with no content |
 | C'' | nothing | nothing at all |
+
+Strength of the named gap is reported. What the record knows is what was written down before the host died.
 
 The third case is silence, and silence is the strongest statement in the table: the benchmark itself cannot tell that an action happened. That is stated as a limit rather than hidden, because a suite that claims to detect C'' would be reporting its own cleverness.
 
