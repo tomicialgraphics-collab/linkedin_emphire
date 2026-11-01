@@ -1158,3 +1158,50 @@ so and I will send it.
 assurance, in which case the follow-up is one question about a programme where the assurance said
 fine and the outcome disagreed. That conversation is the one that produces the referral, and it does
 not need a calendar invite to happen in a message thread.
+
+
+---
+
+## Entry 22: Reena Strehle, sharing Jack AM Austin on polished profiles
+
+**Surface.** Second degree, six minutes old, Follow offered, services page linked in the headline.
+WellBeing workplace advocate, business connector, self-described LinkedIn Top 300 Global Excellence
+Leader. The post argues that polished profiles create awkward calls, because the person on the call
+talks faster, laughs more and has stronger opinions than the posts suggested, and that toning it
+down makes it worse. Show up as you are, the wrong people drift away early, and the right ones
+arrive already comfortable. It ends by telling readers to follow Jack AM Austin for more on winning
+clients by being exactly who you are.
+
+**Profile read, verified 1 November.** Second degree, not followed. Positioning: Perth, a connector
+and promoter rather than a practitioner of the thing she is posting about, with a services page and
+several self-applied titles. Her feed is high volume and mixed, from waterfalls and silk scarves to
+capital raising, and the engagement on it runs into hundreds of reactions per post. Commercial
+signals: services page, yes, so no pitch. History: none in this file. ICP fit: weak technically,
+broad commercially. Ladder step 5, comment, HUMAN, though this is the lowest priority surface of
+the round.
+
+**The credit matters.** This is Jack AM Austin's material, reposted with attribution and a
+follow-him call to action, and he is the one whose argument it is. He runs Authentic Navigators,
+coaching consultants on client acquisition, and his own writing makes a receipts argument almost
+identical to this account's: ask an advisor what they have built lately and watch the confidence
+change. That argues for two moves rather than one. Commenting here reaches her audience, which is
+broad and commercial. Commenting on his original posts would reach the person whose argument this
+is, and his standard is closer to yours than any other surface in this round.
+
+**Draft A, recommended if he posts at all.**
+
+> Jack's framing holds, and it applies with more force to claims than to manner. People arrive on
+> calls fluent in the vocabulary of the work and then cannot describe one thing that went wrong
+> inside it. The fix is the one he is arguing for, applied to the sentence rather than the
+> personality: put a specific result in the post, so the call starts where the post finished instead
+> of going back to the beginning.
+
+**Why A.** It credits the person whose argument it is, which almost nobody in the comments will do,
+and it adds a distinction rather than an agreement. It also does not feed the follow call to action,
+which would make the comment an advertisement for somebody else.
+
+**Caution.** Do not address her as the author of the idea and do not open with "great share". Do not
+pitch, do not mention the benchmark, and keep it under eighty words because this feed moves fast and
+rewards brevity. If the choice is between this and the Mollick or Goldshteyn surfaces, take one of
+those; if the choice is between this and following Jack AM Austin for a week and then commenting on
+his own posts, take that instead.
