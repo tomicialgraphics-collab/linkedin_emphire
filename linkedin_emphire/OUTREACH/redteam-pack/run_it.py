@@ -27,6 +27,8 @@ BUILDER = HERE / "build_package.py"
 PACKAGE = HERE / "package.md"
 
 # Ports that an OpenAI-compatible server commonly sits on, with how to start each one.
+UA = "OpenAI/Python 3.x (redteam-pack)"
+
 CANDIDATES = [
     ("http://localhost:11434/v1", "Ollama", "ollama serve"),
     ("http://localhost:1234/v1", "LM Studio", "Developer tab, then Start Server"),
@@ -52,15 +54,26 @@ def probe(base_url, key=None, timeout=6):
     endpoint with no models loaded.
     """
     url = base_url.rstrip("/") + "/models"
-    req = urllib.request.Request(url, headers={"Authorization": "Bearer " + (key or "local")})
+    req = urllib.request.Request(url, headers={
+        "Authorization": "Bearer " + (key or "local"),
+        "User-Agent": UA,
+        "Accept": "application/json",
+    })
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             data = json.loads(resp.read().decode("utf-8", "replace"))
             ids = [m.get("id") for m in data.get("data", []) if m.get("id")]
             return ids, None
     except urllib.error.HTTPError as exc:
-        if exc.code in (401, 403):
-            return [], "HTTP %d, key rejected. Check the key, or that it is the right provider." % exc.code
+        detail = ""
+        try:
+            detail = exc.read().decode("utf-8", "replace").strip().replace("\n", " ")[:180]
+        except Exception:
+            pass
+        if exc.code == 401:
+            return [], "HTTP 401, key not accepted. %s" % detail
+        if exc.code == 403:
+            return [], "HTTP 403, key accepted but the request is forbidden. %s" % detail
         if exc.code < 500:
             return [], "HTTP %d from %s" % (exc.code, url)
         return None, "HTTP %d from %s" % (exc.code, url)

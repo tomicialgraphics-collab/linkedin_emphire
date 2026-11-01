@@ -40,6 +40,46 @@ REPO_URL = "https://github.com/Teamthy/ai-redteam-five-tests.git"
 PACKAGE = Path(__file__).resolve().parent / "2026-11-01_andrey_evidence_package.md"
 
 
+def probe_completion(model, base_url, headers, body_of):
+    """One max_tokens=1 call. This is the only honest test of whether we may generate."""
+    import urllib.error
+    import urllib.request
+
+    url = base_url.rstrip("/") + "/chat/completions"
+    payload = json.dumps(
+        {"model": model, "messages": [{"role": "user", "content": "hi"}], "max_tokens": 1}
+    ).encode("utf-8")
+    send = dict(headers, **{"Content-Type": "application/json"})
+    req = urllib.request.Request(url, data=payload, headers=send, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            resp.read(64)
+    except urllib.error.HTTPError as exc:
+        msg = body_of(exc)
+        if exc.code == 403:
+            raise SystemExit(
+                "the endpoint accepted the key and then refused the request (HTTP 403).\n"
+                "  %s\n"
+                "  Two causes: this account is not entitled to %r, or requests from this network\n"
+                "  are blocked. Try another model id first, then another provider:\n"
+                "    --base-url https://generativelanguage.googleapis.com/v1beta/openai/ --model gemini-2.5-flash\n"
+                "    --base-url https://api.openai.com/v1 --model gpt-4o-mini" % (msg, model)
+            )
+        if exc.code == 404:
+            raise SystemExit(
+                "the endpoint has no model called %r (HTTP 404). %s\n"
+                "  List what it does have:\n"
+                '    curl.exe -sS %s/models -H "Authorization: Bearer <key>"' % (model, msg, base_url.rstrip("/"))
+            )
+        raise SystemExit("the endpoint refused a test completion (HTTP %d). %s" % (exc.code, msg))
+    except Exception as exc:
+        raise SystemExit(
+            "the test completion did not finish (%s). Check that the base URL ends in /v1 and "
+            "that the model id is one the endpoint serves." % exc.__class__.__name__
+        )
+    print("[ok] %s answers a real completion, so the run can proceed." % model)
+
+
 def preflight(model, base_url, api_key="x"):
     """Fail with a readable message before doing any work."""
     try:
@@ -55,20 +95,32 @@ def preflight(model, base_url, api_key="x"):
     import urllib.request
 
     url = base_url.rstrip("/") + "/models"
-    req = urllib.request.Request(url, headers={"Authorization": "Bearer " + (api_key or "x")})
+    headers = {
+        "Authorization": "Bearer " + (api_key or "x"),
+        "User-Agent": "OpenAI/Python 3.x (redteam-pack)",
+        "Accept": "application/json",
+    }
+
+    def body_of(exc):
+        try:
+            return exc.read().decode("utf-8", "replace").strip().replace("\n", " ")[:200]
+        except Exception:
+            return "(no body)"
+
     try:
-        with urllib.request.urlopen(req, timeout=5) as resp:
+        with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=10) as resp:
             resp.read(64)
     except urllib.error.HTTPError as exc:
-        # a 401/404 still proves something is listening, which is what this check is for
-        if exc.code in (401, 403):
+        if exc.code == 401:
             raise SystemExit(
-                "the endpoint rejected the key (HTTP %d at %s).\n"
-                "  Check the key, and that --base-url matches the provider it came from."
-                % (exc.code, url)
+                "the endpoint does not accept this key (HTTP 401 at %s).\n"
+                "  %s\n"
+                "  Check the key, and that --base-url belongs to the provider it came from."
+                % (url, body_of(exc))
             )
-        if exc.code >= 500:
-            raise SystemExit("endpoint answered %s at %s. Is the model loaded?" % (exc.code, url))
+        # A refused model list does not prove completions are refused. Ask the real question.
+        print("[..] the model list came back %d. Testing one real completion instead." % exc.code)
+        probe_completion(model, base_url, headers, body_of)
     except Exception as exc:
         raise SystemExit(
             "Nothing answered at %s (%s).\n"
