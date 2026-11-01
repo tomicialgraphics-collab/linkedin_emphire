@@ -71,9 +71,18 @@ tests rather than described.
 Four of these left verification reporting that every check held. Six were
 accepted at `25cd57f` in total; all eight are caught now.
 
-On Windows 11 with Python 3.14.5, from a clean clone: 16 of 16 checks hold, 9
-of 9 built-in mutations are caught, 8 of 8 counterexamples are caught. The same
-on Linux, plus two consecutive runs byte-identical file by file.
+On Windows 11 with Python 3.14.5, from a clean clone: 16 of 16 checks hold and
+9 of 9 built-in mutations are caught. On Linux: the same, plus 8 of 8
+counterexamples caught and two consecutive runs identical file by file.
+
+The regression script needed two fixes to run on Windows, both in the second
+commit and neither of them in a check: it located the run directory by parsing
+a path with the platform separator in it, and it took an artifact directory as
+proof that the suite had finished, so a run that stopped early failed later on
+a missing file rather than on its own cause. It now requires every artifact the
+suite writes and reports the run's output when one is missing. That is the kind
+of defect the review would have found in my code, so it belongs in the same
+message as the rest.
 
 Two things will look like regressions and are not. The check count went from 14
 to 16. And `example/run` is regenerated, because verdict records now carry a

@@ -72,24 +72,33 @@ with a required-artifacts list. The old example would fail the new checks,
 which is the correct outcome and the reason the patch ships a new one rather
 than leaving the old one to look like a regression.
 
-## Verified on both platforms
+## Verified on two platforms
 
-Windows 11, Python 3.14.5, from a clean clone of `25cd57f` with the patch
-applied:
+The numbers below are the ones observed on each machine, not a projection.
+
+Windows 11, Python 3.14.5, clean clone of `25cd57f` with the patch applied:
 
 ```
 python verify.py example\run      -> 16 of 16 checks hold (8 P, 2 V, 6 meta)
 python challenge.py example\run   -> 9 of 9 mutations caught
-python audit\regressions.py       -> 8 of 8 counterexamples caught
 ```
 
-Linux, Python 3.11.2, the machine the patch was built on: the same three,
-plus two consecutive runs compared file by file and byte-identical.
+Linux, Python 3.11.2, the machine the patch was built on:
 
-This is the only evidence in this exchange that was produced on a second
-platform, and it speaks to H4 in the review: the cross-platform claim now has
-a run behind it on both systems, though still no CI matrix and no published
-digest trail.
+```
+the same two, plus
+python audit/regressions.py       -> 8 of 8 counterexamples caught
+two consecutive runs compared file by file -> identical
+```
+
+The eight counterexamples are green on Linux. On Windows the runner needed two
+fixes before it would get that far; they are described under “Two runner bugs
+found on Windows” below. Neither fix is in a check, and both are in the
+branch's second commit.
+
+This is the only evidence in this exchange produced on a second platform, and
+it speaks to H4 in the review: the cross-platform claim now has a run behind it
+on both systems, though still no CI matrix and no published digest trail.
 
 ## What this does not fix
 
@@ -111,7 +120,7 @@ These are the P1 and P2 items, and they are still open:
 - no CI matrix, so the cross-platform claim is now written as what it is: run
   on both, compared by hand, no published digest trail
 
-## Windows
+## Two runner bugs found on Windows
 
 The first version of `audit/regressions.py` found the run directory by parsing
 what `run.py` printed, which uses a backslash on Windows, and it stopped with

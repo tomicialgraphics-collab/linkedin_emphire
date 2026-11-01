@@ -1,18 +1,17 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>P0 patch: what is in it, and the evidence it works</title>
-<style>
-  body { font-family: Georgia, "Times New Roman", serif; max-width: 46em; margin: 3em auto;
-         padding: 0 1.5em; color: #1a1a1a; line-height: 1.55; font-size: 15px; }
-  h1 { font-size: 1.7em; line-height: 1.25; margin-bottom: .2em; }
-  h2 { font-size: 1.15em; margin-top: 2.2em; border-bottom: 1px solid #ddd; padding-bottom: .25em; }
-  code, pre { font-family: Consolas, Menlo, monospace; font-size: 12.5px; }
-  pre { background: #f6f6f4; padding: .9em 1em; overflow-x: auto; border-left: 3px solid #ccc; }
-  code { background: #f2f2f0; padding: .1em .3em; }
-  pre code { background: none; padding: 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1.2em 0; font-size: 14px; }
-  th, td { border-bottom: 1px solid #ddd; padding: .45em .6em; text-align: left; vertical-align: top; }
-  th { background: #f6f6f4; font-weight: 600; }
-  li { margin: .35em 0; }
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P0 patch: what is in it, and the evidence it works</title><style>
+body{max-width:820px;margin:40px auto;padding:0 22px;font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#1b1f23;background:#fff}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px}h2{font-size:19px;margin:34px 0 10px;padding-bottom:5px;border-bottom:1px solid #e4e7eb}
+h3{font-size:16px;margin:22px 0 8px}p{margin:0 0 13px}ul,ol{margin:0 0 14px 22px}li{margin:4px 0}
+code{background:#f3f5f7;padding:1px 5px;border-radius:3px;font:13.5px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+pre{background:#f3f5f7;padding:12px 14px;border-radius:5px;overflow-x:auto;margin:0 0 15px}
+pre code{background:none;padding:0;font-size:13px}
+table{border-collapse:collapse;width:100%;margin:0 0 16px;font-size:14.5px}
+th,td{border:1px solid #dfe3e8;padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#f6f8fa}hr{border:0;border-top:1px solid #e4e7eb;margin:26px 0}
+blockquote{margin:0 0 14px;padding:2px 0 2px 14px;border-left:3px solid #d0d7de;color:#404750}
 </style></head><body>
 <h1>P0 patch: what is in it, and the evidence it works</h1>
 <p>Against <code>Teamthy/host-failure-benchmark</code> at commit <code>25cd57f</code>, the commit the
@@ -137,19 +136,24 @@ records now carry the state the store computed, and the manifest is version 2
 with a required-artifacts list. The old example would fail the new checks,
 which is the correct outcome and the reason the patch ships a new one rather
 than leaving the old one to look like a regression.</p>
-<h2>Verified on both platforms</h2>
-<p>Windows 11, Python 3.14.5, from a clean clone of <code>25cd57f</code> with the patch
-applied:</p>
+<h2>Verified on two platforms</h2>
+<p>The numbers below are the ones observed on each machine, not a projection.</p>
+<p>Windows 11, Python 3.14.5, clean clone of <code>25cd57f</code> with the patch applied:</p>
 <pre><code>python verify.py example\run      -&gt; 16 of 16 checks hold (8 P, 2 V, 6 meta)
 python challenge.py example\run   -&gt; 9 of 9 mutations caught
-python audit\regressions.py       -&gt; 8 of 8 counterexamples caught
 </code></pre>
-<p>Linux, Python 3.11.2, the machine the patch was built on: the same three,
-plus two consecutive runs compared file by file and byte-identical.</p>
-<p>This is the only evidence in this exchange that was produced on a second
-platform, and it speaks to H4 in the review: the cross-platform claim now has
-a run behind it on both systems, though still no CI matrix and no published
-digest trail.</p>
+<p>Linux, Python 3.11.2, the machine the patch was built on:</p>
+<pre><code>the same two, plus
+python audit/regressions.py       -&gt; 8 of 8 counterexamples caught
+two consecutive runs compared file by file -&gt; identical
+</code></pre>
+<p>The eight counterexamples are green on Linux. On Windows the runner needed two
+fixes before it would get that far; they are described under “Two runner bugs
+found on Windows” below. Neither fix is in a check, and both are in the
+branch's second commit.</p>
+<p>This is the only evidence in this exchange produced on a second platform, and
+it speaks to H4 in the review: the cross-platform claim now has a run behind it
+on both systems, though still no CI matrix and no published digest trail.</p>
 <h2>What this does not fix</h2>
 <p>These are the P1 and P2 items, and they are still open:</p>
 <ul>
@@ -169,7 +173,7 @@ digest trail.</p>
 <li>no CI matrix, so the cross-platform claim is now written as what it is: run
   on both, compared by hand, no published digest trail</li>
 </ul>
-<h2>Windows</h2>
+<h2>Two runner bugs found on Windows</h2>
 <p>The first version of <code>audit/regressions.py</code> found the run directory by parsing
 what <code>run.py</code> printed, which uses a backslash on Windows, and it stopped with
 <code>run.py produced no artifact directory</code> there. It now finds the directory by
