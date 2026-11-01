@@ -402,7 +402,7 @@ Draft, to hold until then:
 Behar, this is separate from the review, and I am not asking you to soften a line of it. The
 review stands on its own whatever your answer here.
 
-If your group has funded work where this kind of harness is useful, meaning durability of
+If your group has funded work where this kind of test rig is useful, meaning durability of
 records under process failure, evidence that a decision survived, verification of side effects
 against what was actually stored, I would like to be considered for it, as a contract or as a
 collaborator. I am not asking you to fund anything or to create a role. If the honest answer is
