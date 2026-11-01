@@ -574,7 +574,7 @@ comment about the systems rather than about policy.
 
 **Why A.** B is advice she has probably given a hundred times in better words. A takes her own
 closing sentence seriously and gives it a meaning her audience will not have heard, in language
-that applies to procurement and to engineers at the same time. It also says something true about
+that lands with procurement and with engineers. It also says something true about
 public sector AI that does not need a political opinion attached.
 
 **The memorable line:** what survives the team is the record, not the model.
