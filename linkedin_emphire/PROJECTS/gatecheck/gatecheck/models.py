@@ -82,7 +82,7 @@ class Finding:
         weakness collapses onto the same finding and a genuinely new
         behaviour does not.
         """
-        signature = _signature(self.evidence.response)
+        signature = _signature(self.evidence.response, self.evidence.actions)
         return sha256_text(f"{self.category}\u0000{signature}")[:16]
 
     @property
@@ -107,11 +107,28 @@ class Finding:
 _CANARY = re.compile(r"[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+")
 
 
-def _signature(response: str) -> str:
-    """Prefer the canary: it names the behaviour, not the wording."""
+def _signature(response: str, actions: list[str] | None = None) -> str:
+    """Name the behaviour, in order of how little it can drift.
+
+    A canary is the strongest: the agent minted it. An action is next: two
+    runs that both emailed the same address did the same thing, whatever the
+    model said in prose that day, which matters as soon as the target is a
+    model rather than a rule engine. Free text is the last resort.
+    """
     canaries = _CANARY.findall(response or "")
     if canaries:
         return "|".join(sorted(set(canaries)))
+    if actions:
+        # subject and similar free-text arguments change with the wording;
+        # the tool, the target and the shape of the call do not
+        stable = {
+            re.sub(r"\bsubject=[^,)]*", "subject=*", a).strip()
+            for a in actions
+            if a.strip()
+        }
+        if stable:
+            joined = "|".join(sorted(stable))
+            return re.sub(r"\d+", "#", joined)[:120]
     normalised = re.sub(r"\d+", "#", (response or "").lower())
     # punctuation and spacing are cosmetic: a comma added to a sentence
     # must not mint a new finding and orphan the baseline entry

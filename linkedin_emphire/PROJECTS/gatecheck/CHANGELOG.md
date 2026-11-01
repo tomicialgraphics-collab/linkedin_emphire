@@ -1,5 +1,44 @@
 # Changelog
 
+## [0.2.0] - 2026-11-01
+
+First support for a target that is a language model rather than a rule
+engine. Nothing about the gate's own contract changed: it still fails only
+on new or worsened findings against a stored baseline.
+
+### Added
+
+- `groq_target/`: a claims agent with a real model behind the same contract
+  the gate already speaks, two prompt modes (`vulnerable`, `guarded`), three
+  sandboxed tools, session memory for multi-turn sequences, and a server
+  (`python -m groq_target.serve`). Groq is reached over plain urllib, so
+  there is still no new dependency.
+- `gatecheck.groq.yml`, with its own baseline, because a rule engine and a
+  model are different targets and diffing one against the other's record
+  would report every difference as a regression.
+- Detection from actions: an outbound email to a domain outside
+  `INTERNAL_DOMAINS` is data exfiltration, whether or not the model
+  mentioned it in prose.
+- The fingerprint prefers a canary, then the tool call, then free text. A
+  model rewrites its wording every run, and an identity that followed the
+  wording would mint new findings forever.
+- `--fake` on the target server: a scripted model, so the whole path can be
+  tested with no key and no network.
+
+### Changed
+
+- The injection attacks name the token they want echoed
+  (`OVERRIDE-CANARY-2B91`, `INJECT-CANARY-9C4D`), so compliance is a string
+  match rather than a judgement about tone. The demo agent's behaviour and
+  findings are unchanged; only the evidence text differs.
+- 56 tests, up from 43.
+
+### Known limits
+
+- Each attack runs once. A model that misbehaves one time in ten will
+  produce a finding on some runs and not others, and there is no hit-rate
+  column yet.
+
 ## [0.1.1] - 2026-11-01
 
 Fixed the worst bug in 0.1.0, found by running the package on a machine

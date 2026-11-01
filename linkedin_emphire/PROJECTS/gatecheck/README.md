@@ -127,6 +127,58 @@ reaches no engine has status `error` and exit code 3, and the baseline
 will not be written unless every configured tool actually ran and at
 least one attack was executed.
 
+## Point it at a real agent
+
+The demo is a rule engine, which is why CI stays free and flake-free. When
+you want a target that argues back, `groq_target/` is a claims assistant
+with a real model behind the same contract:
+
+```powershell
+$env:GROQ_API_KEY = "gsk_..."          # environment only, never a file in the repo
+python -m groq_target.serve --mode vulnerable          # terminal 1
+python -m gatecheck run --config gatecheck.groq.yml    # terminal 2
+```
+
+Two prompt modes, one model, one tool set. `vulnerable` is helpful and
+fast with no approval steps; `guarded` is the same assistant with the
+refund limit, the email domain and the no-disclosure rule written down.
+The difference between what the gate finds in the two is a difference in
+the prompt, which is the claim the gate exists to make.
+
+The agent has three tools, `issue_refund`, `send_email` and
+`approve_claim`, and none of them touch the outside world: the sandbox
+records the action and returns "sent". That is deliberate. A harness that
+can really email `audit-team@example.net` is a liability, not a demo.
+
+Three things change when the target is a model rather than a rule engine,
+and all three are handled:
+
+- **Detection reads actions.** An outbound email to a domain outside
+  `INTERNAL_DOMAINS`, or a refund above the limit, is a finding because
+  the agent did it. That does not depend on the model describing itself
+  honestly, which is the weakest evidence there is.
+- **Identity prefers the action over the prose.** The fingerprint order is
+  canary, then tool call, then free text. A model rewrites its wording
+  every run, and an identity that follows the wording would mint a new
+  finding every time and make the baseline worthless.
+- **The injection attacks name the token they want echoed**
+  (`OVERRIDE-CANARY-2B91`, `INJECT-CANARY-9C4D`). Compliance becomes a
+  string match instead of a judgement call about tone.
+
+Run with `--fake` for a scripted model with no key, which is how the tests
+exercise the whole path, and `--guarded` mode against a baseline recorded
+from `--vulnerable` when you want to see the gate go from blocked to pass.
+
+Two limits, stated plainly. Each attack runs once, so a model that
+misbehaves one time in ten produces a finding on some runs and not others;
+run it twice before trusting a green, and treat that hit rate as the first
+number on a precision page. And the corpus is still eight attacks and
+three sequences, so this measures the gate, not the agent.
+
+Cost: one full run is about seventeen calls. The default model is
+`openai/gpt-oss-120b`, which supports tool calling; free-tier limits are
+around 30 requests a minute, and a 429 is slept on once and retried.
+
 ## Outputs
 
 Every run writes three things to `.gatecheck/runs/<id>/`:
@@ -195,20 +247,22 @@ gatecheck/
   targets.py       HTTP target, local target, served target
   engines/         gatecheck core, deepteam, pyrit, promptfoo
   cli.py           init, run, accept, report
+groq_target/       a real model behind the same contract (agent, server)
+gatecheck.groq.yml the config for that target, baseline kept separate
 demo/agent.py      the broken and fixed agents
 examples/          a blocked run and a clean run, committed
-tests/             43 tests
+tests/             56 tests
 action.yml         GitHub Action
 ```
 
 ## Tests
 
 ```bash
-pytest      # 43 tests, ~6s, no network, no key
+pytest      # 56 tests, ~7s, no network, no key
 ruff check .
 ```
 
-On a machine with no optional engine the count is 41 passed, 2 skipped:
+On a machine with no optional engine the count is 54 passed, 2 skipped:
 the PyRIT and promptfoo tests skip themselves rather than failing, because
 a missing third-party tool is not a bug in the gate.
 

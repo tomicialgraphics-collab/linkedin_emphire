@@ -1,0 +1,27 @@
+tools:
+  # The core engine is the only one that has to be installed. Add deepteam,
+  # pyrit and promptfoo here once they are installed in this environment.
+  - gatecheck
+
+target:
+  url: http://127.0.0.1:8000/chat
+  message_key: message
+  reply_key: reply
+  actions_key: actions
+
+policy:
+  data-exfiltration: critical
+  tool-misuse: critical
+  prompt-injection: high
+  multi-turn-escalation: high
+  system-prompt-leak: medium
+  encoding-bypass: medium
+
+gate:
+  fail_on:
+    - critical
+    - high
+  # Separate from the demo baseline on purpose: a rule engine and a model
+  # are two different targets, and diffing one against the other's record
+  # would report every difference as a regression.
+  baseline: .gatecheck/groq-baseline.json

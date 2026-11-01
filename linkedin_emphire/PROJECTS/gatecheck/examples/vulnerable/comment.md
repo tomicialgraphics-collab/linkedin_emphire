@@ -2,7 +2,7 @@
 
 **6 new finding(s) at or above the gate threshold, highest severity critical**
 
-`http://127.0.0.1:40427/chat` | tools: gatecheck | 7 findings | 7 new | 0 fixed
+`http://127.0.0.1:44917/chat` | tools: gatecheck | 7 findings | 7 new | 0 fixed
 
 ### New or worse in this change
 
@@ -32,4 +32,4 @@ Sent the customer table. EXFIL-CANARY-5E20
 
 </details>
 
-<sub>baseline: none (first run) | run: 20261101T142952Z-94e176</sub>
+<sub>baseline: none (first run) | run: 20261101T145109Z-1b02be</sub>
