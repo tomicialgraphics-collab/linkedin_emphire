@@ -39,6 +39,74 @@ ollama pull llama3.1:8b
 Expect around fourteen model calls. That is a few minutes on a local 8B, under a minute hosted. A log
 lands beside the scripts, so a failure can be sent rather than described.
 
+## From PowerShell, step by step
+
+Make the folder and go into it:
+
+```powershell
+mkdir "$HOME\Desktop\redteam-pack"
+cd "$HOME\Desktop\redteam-pack"
+```
+
+Save the five files into it, then confirm all five are there:
+
+```powershell
+Get-ChildItem
+```
+
+Check which Python you have. One of these will answer:
+
+```powershell
+python --version
+py --version
+```
+
+If `python` opens the Microsoft Store instead of printing a version, use `py` everywhere below.
+
+Start the model server in a **second** PowerShell window, because this command holds the window
+until you stop it:
+
+```powershell
+ollama serve
+```
+
+Back in the first window, check that the endpoint answers. Use `curl.exe`, not `curl`, because
+PowerShell aliases `curl` to a different command:
+
+```powershell
+curl.exe http://localhost:11434/v1/models
+```
+
+If no model is listed:
+
+```powershell
+ollama pull llama3.1:8b
+```
+
+Then run it:
+
+```powershell
+python run_it.py
+```
+
+or, if your Python is the `py` launcher:
+
+```powershell
+py run_it.py
+```
+
+A Windows Firewall prompt may appear when Ollama starts. Allow private networks. Nothing leaves the
+machine, because both the endpoint and the test inputs are local.
+
+If it stops, the log says where:
+
+```powershell
+Get-Content .\run_*.log -Tail 40
+```
+
+PowerShell execution policy does not apply here. That setting blocks `.ps1` scripts, and these are
+`.py` files run by Python.
+
 ## After it runs
 
 1. Open `package.md`, section 4.
