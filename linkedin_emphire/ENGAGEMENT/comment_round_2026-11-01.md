@@ -1278,3 +1278,25 @@ mind with this account's name attached to it, which is the whole return from ton
 **Diary, not inbox.** Nothing from this account for a few weeks. When his next series post arrives,
 or when there is something finished worth showing, that is the moment for a message, and it should
 lead with the thing rather than with a reminder that a conversation happened.
+
+
+### 22.1 Her reply, and why there is no third comment
+
+Three minutes later: "Absolutely! Real examples skip the fluff and make the first minute count."
+That is agreement with a warm tone and no new information, which is what a reply like that is for.
+The comment it answers has one reaction and four impressions, so the surface is not returning reach
+either.
+
+**Recommendation: do not reply.** A third comment on a borrowed-content post, answering "absolutely"
+with another sentence, is the pattern this account should be the opposite of. The conversation has
+done what it can do, which is to put a specific argument in front of her audience under the author's
+name rather than hers. Nothing is added by agreeing that agreement is good.
+
+**If he wants the warmth kept, the only line I would defend.**
+
+> Then the test is what the example costs to tell. The ones that hold up name a failure and what
+> changed afterwards. The rest stay on adjectives.
+
+**What to spend the slot on instead.** Goldshteyn's question about routing is still unanswered and
+is the strongest technical surface of the round, and the Mollick comment has not gone out. Both
+reach the audience that buys this work; this one reaches a connector's feed.
