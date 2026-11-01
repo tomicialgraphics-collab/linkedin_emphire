@@ -15,6 +15,13 @@ import json
 import os
 import sys
 import time
+
+# PydanticAI prints its banner and an observability advert on import. This
+# server's stderr is evidence: one line per request, pasted into a report.
+# The banner has to go before pydantic_ai is imported, which is why it is
+# set here and not in main().
+os.environ.setdefault("PYDANTIC_AI_NO_BANNER", "1")
+
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import TYPE_CHECKING
 
@@ -131,10 +138,13 @@ def main(argv: list[str] | None = None) -> int:
     server = ThreadingHTTPServer((args.host, args.port), make_handler(runner, args.quiet))
     label = "scripted" if args.fake else args.model
     enforced = "prompt only" if not runner.enforce else "prompt + refusing tools"
-    print(f"claims agent (pydantic-ai) up on http://{args.host}:{args.port}/chat")
-    print(f"mode: {args.mode} | model: {label} | temperature: {args.temperature}")
-    print(f"guardrails: {enforced}")
-    print("point gatecheck at it with: python -m gatecheck run --config gatecheck.pydantic.yml")
+    for line in (
+        f"claims agent (pydantic-ai) up on http://{args.host}:{args.port}/chat",
+        f"mode: {args.mode} | model: {label} | temperature: {args.temperature}",
+        f"guardrails: {enforced}",
+        "point gatecheck at it with: python -m gatecheck run --config gatecheck.pydantic.yml",
+    ):
+        print(line, flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

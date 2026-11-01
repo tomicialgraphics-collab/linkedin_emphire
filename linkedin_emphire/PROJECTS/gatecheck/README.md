@@ -233,6 +233,10 @@ someone who is going to discount them:
   pointing this at an agent nobody here wrote, which is the measurement
   that counts, plus the first step of it: `pydantic_target/`, the same agent
   with its loop owned by PydanticAI.
+- [`docs/RUNTIME_COMPARISON.md`](docs/RUNTIME_COMPARISON.md): the same agent
+  run on both loops. The two findings this project leans on reproduced 3/3
+  on both; one finding that was 3/3 on ours was absent on theirs, and the
+  page says what that does and does not mean.
 
 The short version: against an agent written for this project, the gate
 found six weaknesses in 33 attacks, five of them recorded as fixed by a
@@ -317,7 +321,7 @@ gatecheck/
   targets.py       HTTP target, local target, served target
   engines/         gatecheck core, deepteam, pyrit, promptfoo
   cli.py           init, run, accept, report
-docs/              the measured page, and the plan for an independent target
+docs/              the measured pages: precision, runtime comparison, third-party target
 groq_target/       a real model behind the same contract (agent, server)
 pydantic_target/   the same agent, loop owned by PydanticAI, scripted when keyless
 gatecheck.groq.yml the config for that target, baseline kept separate

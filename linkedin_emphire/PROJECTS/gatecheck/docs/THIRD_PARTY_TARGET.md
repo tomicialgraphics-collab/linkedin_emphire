@@ -80,6 +80,11 @@ It is worth doing as a warm-up and as a second data point next to A. It is not
 a substitute for A, and nothing measured on it should be described as a result
 against an agent we did not write.
 
+The first live run on it is recorded in
+[`RUNTIME_COMPARISON.md`](RUNTIME_COMPARISON.md): the same corpus on both
+loops, two findings that reproduced identically, one that did not reproduce
+at all, and the guarded modes on that runtime still unmeasured.
+
 ### C. A public sandbox built for testing
 
 Some vendors publish a demo endpoint with terms that allow testing.
