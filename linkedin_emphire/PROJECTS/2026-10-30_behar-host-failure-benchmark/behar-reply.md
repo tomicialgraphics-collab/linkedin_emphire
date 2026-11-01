@@ -374,6 +374,52 @@ withdrawn, and N13 rewritten. Author order and venue still wait for finalisation
 
 ---
 
+## 11. Asking him for work, and why not in this thread
+
+He is an independent reviewer with an open verdict on the work. The loop is not closed: he still
+owes a re-run against 006d7ee, a decision on V04 and a rewritten N13. A request for paid work
+inside that thread changes what his review looks like, whatever he answers, and it gives anyone
+reading it later a reason to discount the assessment that currently makes the whole artifact worth
+something.
+
+Two things to keep apart:
+
+- The review stays unpaid and unsponsored. If a commercial relationship ever starts, it goes in
+  the same sentence as any published assessment of this work, either way round.
+- The ask, when it comes, is about his organisation and his projects, not about whether he
+  personally has money for a stranger. "Do you have funded work where this is useful" and "can I
+  have a stipend" are the same request with very different framing, and only the first is
+  answerable by a working engineer.
+
+When to send it: after he has run the package against 006d7ee and the register has survived the
+re-run, and after V04 and N13 are settled. Then it is a separate message, short, and it opens by
+saying the review is not what it is about.
+
+Draft, to hold until then:
+
+---
+
+Behar, this is separate from the review, and I am not asking you to soften a line of it. The
+review stands on its own whatever your answer here.
+
+If your group has funded work where this kind of harness is useful, meaning durability of
+records under process failure, evidence that a decision survived, verification of side effects
+against what was actually stored, I would like to be considered for it, as a contract or as a
+collaborator. I am not asking you to fund anything or to create a role. If the honest answer is
+that there is nothing, that is useful to know and changes nothing about the review, and I will
+keep sending you the register either way.
+
+---
+
+If he says yes, three things get agreed in writing before any code changes hands: the scope and
+what counts as done, who owns the output, and how the commercial relationship is disclosed in
+anything either of us publishes about this benchmark. The last one is not a formality. It is the
+thing that keeps the earlier review credible.
+
+If he says no, the better ask is a referral: which two or three people in his network make the
+kind of claim this benchmark tests. A reviewer who has just spent a week in your work knows
+exactly who needs it.
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.
