@@ -66,6 +66,13 @@ def probe_completion(model, base_url, headers, body_of):
                 "    --base-url https://generativelanguage.googleapis.com/v1beta/openai/ --model gemini-2.5-flash\n"
                 "    --base-url https://api.openai.com/v1 --model gpt-4o-mini" % (msg, model)
             )
+        if exc.code == 400:
+            raise SystemExit(
+                "the endpoint rejected the request itself (HTTP 400). %s\n"
+                "  A message about terms acceptance is fixed in the provider's console, for that\n"
+                "  model, in one click. A message about context or tokens means the model id is not\n"
+                "  a chat model at all. Both are model choices, not key problems." % msg
+            )
         if exc.code == 404:
             raise SystemExit(
                 "the endpoint has no model called %r (HTTP 404). %s\n"
@@ -206,6 +213,25 @@ def run_harness(harness, model, base_url, api_key, prompt_file=None):
     return data, md, note
 
 
+
+def empty_answer_report(data):
+    """Count responses that came back with no words. An empty answer is not a refusal."""
+    empties, total = [], 0
+    for key, tests in data.items():
+        if not isinstance(tests, list):
+            continue
+        for entry in tests:
+            if not isinstance(entry, dict):
+                continue
+            text = entry.get("raw") or entry.get("response") or ""
+            if not isinstance(text, str):
+                continue
+            total += 1
+            if not text.strip():
+                empties.append(key)
+    return total, empties
+
+
 def config_block(model, base_url, timestamp, results):
     """Section 2.3. Only what the run actually used."""
     rows = [
@@ -325,6 +351,24 @@ def main():
     try:
         harness = get_harness(args.harness, workdir)
         data, md, note = run_harness(harness, args.model, args.base_url, args.api_key, args.prompt_file)
+
+        total, empties = empty_answer_report(data)
+        if total and len(empties) >= total:
+            raise SystemExit(
+                "every one of the %d responses came back empty. That is not a model refusing, "
+                "that is a model with no room to answer.\n"
+                "  Reasoning models spend a small token budget thinking and return nothing. "
+                "Raise the budget in the harness, or pick a model that answers directly.\n"
+                "  Nothing was written to the package." % total
+            )
+        if empties:
+            note = ((note + " ") if note else "") + (
+                "%d of %d responses came back empty. An empty answer is not a refusal, so those "
+                "attempts prove nothing either way and are reported as empty rather than as "
+                "resisted." % (len(empties), total)
+            )
+            print("[warn] %d of %d responses were empty. Read those rows before you sign this."
+                  % (len(empties), total))
 
         text = package.read_text(encoding="utf-8")
         text = replace_block(text, "CONFIG", config_block(args.model, args.base_url, timestamp, data))

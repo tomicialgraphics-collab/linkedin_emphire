@@ -15,6 +15,7 @@ If nothing answers, it says exactly what to start and stops without touching the
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 import urllib.error
@@ -132,8 +133,45 @@ def tidy_key(key, base_url=""):
     return key, notes
 
 
+CHAT_PREFERENCE = [
+    "llama-3.3-70b-versatile",
+    "llama-3.1-8b-instant",
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b",
+    "qwen/qwen3-32b",
+    "allam-2-7b",
+    "gpt-4o-mini",
+    "gemini-2.5-flash",
+    "llama3.1:8b",
+    "qwen2.5:7b",
+]
+
+# Models that answer a completion call but are not chat models: speech, audio, safety, embeddings.
+NOT_CHAT = (
+    "whisper", "tts", "speech", "audio", "orpheus", "voice",
+    "guard", "moderation", "embed", "rerank",
+)
+
+
+def chat_models(ids):
+    """Order the endpoint's models so the ones worth testing come first. Never drops everything."""
+    keep = [i for i in ids if not any(t in i.lower() for t in NOT_CHAT)]
+    keep = keep or list(ids)
+    preferred = [m for m in CHAT_PREFERENCE if m in keep]
+    return preferred + [i for i in keep if i not in preferred]
+
+
+def error_message(body):
+    """Pull the human sentence out of an error body, without pretending to parse every shape."""
+    m = re.search(r'"message"\s*:\s*"([^"]*)"', body or "")
+    if m:
+        return m.group(1)
+    return (body or "").strip().replace("\n", " ")[:140] or "(empty body)"
+
+
 def check(base_url, model, key):
-    """Make the two calls that matter and print exactly what came back. Changes nothing."""
+    """Make the calls that matter and print exactly what came back. Changes nothing."""
     import getpass
 
     if not base_url:
@@ -148,6 +186,7 @@ def check(base_url, model, key):
     key, notes = tidy_key(key, base_url)
     for n in notes:
         say("key note: %s" % n)
+
     base = base_url.rstrip("/")
     headers = {
         "Authorization": "Bearer " + key,
@@ -167,7 +206,7 @@ def check(base_url, model, key):
         return 1
 
     def call(url, payload=None, timeout=45):
-        """Return (status, body text). Status 0 means the connection itself failed."""
+        """Return (status, body). Status 0 means the connection itself failed."""
         data = None
         hdrs = dict(headers)
         if payload is not None:
@@ -189,7 +228,18 @@ def check(base_url, model, key):
     say("[1] GET %s/models" % base)
     status, body = call(base + "/models")
     say("    %s" % (("no connection, " + body) if status == 0 else "HTTP %d" % status))
-    say("    %s" % (body.strip().replace("\n", " ")[:300] or "(empty body)"))
+    if status != 200:
+        say("    %s" % error_message(body))
+    if status == 0:
+        say("")
+        say("READ: nothing answered, so the key was never seen.")
+        say("      The base URL must end in /v1. If it does, the network is the problem.")
+        return 1
+    if status == 401:
+        say("")
+        say("READ: the key string is not accepted. Copy it again from the console,")
+        say("      straight into the prompt, with no spaces before or after.")
+        return 1
 
     ids = []
     if status == 200:
@@ -197,51 +247,55 @@ def check(base_url, model, key):
             ids = [m.get("id") for m in json.loads(body).get("data", []) if m.get("id")]
         except Exception:
             pass
-    chat = [i for i in ids if not any(t in i.lower() for t in ("whisper", "tts", "guard", "embed"))]
-    if ids:
-        say("    %d models. chat models: %s" % (len(ids), ", ".join(chat[:6]) or "none obvious"))
 
-    pick = model or (chat[0] if chat else "llama-3.3-70b-versatile")
+    candidates = [model] if model else chat_models(ids)[:4]
+    if not candidates:
+        candidates = ["llama-3.3-70b-versatile"]
+    if ids:
+        say("    %d models. worth testing: %s" % (len(ids), ", ".join(chat_models(ids)[:4])))
+
     say("")
-    say("[2] POST %s/chat/completions  model=%s  max_tokens=1" % (base, pick))
-    status2, body2 = call(
-        base + "/chat/completions",
-        {"model": pick, "messages": [{"role": "user", "content": "hi"}], "max_tokens": 1},
-    )
-    say("    %s" % (("no connection, " + body2) if status2 == 0 else "HTTP %d" % status2))
-    say("    %s" % (body2.strip().replace("\n", " ")[:300] or "(empty body)"))
+    say("[2] POST %s/chat/completions  max_tokens=1" % base)
+    winner = None
+    last_status, last_body = 0, ""
+    for cand in candidates:
+        status2, body2 = call(
+            base + "/chat/completions",
+            {"model": cand, "messages": [{"role": "user", "content": "hi"}], "max_tokens": 1},
+        )
+        last_status, last_body = status2, body2
+        tail = "ok" if status2 == 200 else error_message(body2)
+        say("    %-34s %s  %s" % (cand, ("HTTP %d" % status2) if status2 else "no connection", tail))
+        if status2 == 200:
+            winner = cand
+            break
+        if status2 in (0, 401, 429):
+            break
 
     say("")
     say("-" * 62)
-    if status2 == 200:
-        say("READ: this key can generate with %s at this endpoint." % pick)
+    if winner:
+        say("READ: this key can generate with %s at this endpoint." % winner)
         say("")
         say("Next:")
-        say("  python run_it.py --base-url %s --model %s" % (base, pick))
+        say("  python run_it.py --base-url %s --model %s" % (base, winner))
         say("It will ask for the key once, without echoing it.")
         return 0
-    if status2 == 0:
-        say("READ: nothing answered at this endpoint, so the key was never even seen.")
-        say("      The base URL must end in /v1. If it does, the server, or the network, is down.")
+    if last_status == 0:
+        say("READ: nothing answered the completion call, so the key was never seen.")
+        say("      Check the base URL ends in /v1, and that the network allows it.")
         return 1
-    if status2 == 401:
-        say("READ: the key string is not accepted. Copy it again from the console,")
-        say("      straight into the prompt, with no spaces before or after.")
+    if last_status == 401:
+        say("READ: the key string is not accepted. Copy it again from the console.")
         return 1
-    if status2 == 403:
-        say("READ: the key is real and the request is still refused. That is not a typo.")
-        say("      Either the account is not entitled to %s, or this network is blocked." % pick)
-        say("      A different model id is worth one try. If that also gives 403, change provider:")
-        say("")
-        say("  python run_it.py --base-url https://generativelanguage.googleapis.com/v1beta/openai/ --model gemini-2.5-flash")
+    if last_status == 429:
+        say("READ: rate limited, which means the key works. Wait a minute and try again.")
         return 1
-    if status2 == 404:
-        say("READ: no model called %s at this endpoint. Use one of the chat models listed above." % pick)
-        return 1
-    if status2 == 429:
-        say("READ: rate limited. The key works. Wait a minute and run it again.")
-        return 1
-    say("READ: unexpected answer. Send the two lines above to whoever asked you to run this.")
+    say("READ: the key is being accepted, and none of the models above would answer.")
+    say("      Each line says why. Terms acceptance is fixed in the console, in one click.")
+    say("      A 403 on every model is an entitlement or network block, not a key problem:")
+    say("")
+    say("  python run_it.py --check --base-url https://generativelanguage.googleapis.com/v1beta/openai/ --model gemini-2.5-flash")
     return 1
 
 
@@ -360,9 +414,9 @@ def main():
             say("    the endpoint listed no models. Pass --model with a chat model id.")
             say("    common ones: llama-3.3-70b-versatile (Groq), gemini-2.5-flash (Google)")
             return 1
-        model = model_ids[0]
+        model = chat_models(model_ids)[0]
         if len(model_ids) > 1 and sys.stdin.isatty():
-            say("    available: " + ", ".join(model_ids))
+            say("    available: " + ", ".join(chat_models(model_ids)))
             pick = input("    model to test [%s]: " % model).strip()
             if pick:
                 model = pick

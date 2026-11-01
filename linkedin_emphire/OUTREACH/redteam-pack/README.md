@@ -49,7 +49,7 @@ python run_it.py --check --base-url https://api.groq.com/openai/v1
 
 It asks for the key, hides what you type, makes two calls and prints both answers. It also reports the key length, because a 56 character Groq key arriving as 112 means the paste landed twice. Nothing is written and the package is untouched.
 
-There are four answers worth knowing. HTTP 200 on both means the key works and the run will go. HTTP 401 means the key string is wrong, so copy it again from the console. HTTP 403 means the key is real and the request is still refused, which is an entitlement or a network block, not a typo. No connection at all means the base URL is wrong or the server is not running.
+If one model refuses, it tries the next one down the list, so a speech model or a model with unaccepted terms cannot stop the check. There are four answers worth knowing. HTTP 200 on both means the key works and the run will go. HTTP 401 means the key string is wrong, so copy it again from the console. HTTP 403 means the key is real and the request is still refused, which is an entitlement or a network block, not a typo. No connection at all means the base URL is wrong or the server is not running.
 
 ## From PowerShell, step by step
 
