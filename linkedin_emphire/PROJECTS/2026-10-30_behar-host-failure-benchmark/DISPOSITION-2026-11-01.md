@@ -35,7 +35,7 @@ test, no proof of death). V28 to V33 are the completeness group (nothing signs t
 Nothing here is described as fixed unless the reviewer's own case reports "as documented" on the
 patched tree, an `audit/regressions.py` mode fails without the fix, and the benign run still
 verifies: `run.py` then `verify.py` gives 13 of 13 Class P
-and 2 of 2 Class V, two runs are byte-identical, and `challenge.py` catches every mutation it
+and 3 of 3 Class V, two runs are byte-identical, and `challenge.py` catches every mutation it
 names. Those four outputs are in `evidence/2026-11-01/`.
 
 ## The one case I dispute

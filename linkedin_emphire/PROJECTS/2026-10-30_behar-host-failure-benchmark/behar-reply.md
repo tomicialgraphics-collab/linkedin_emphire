@@ -196,7 +196,7 @@ managed to reach, which is the first honest thing I can say about this exchange.
 
 P2 is on top of `df0cf5a`. Against it, your package reports 9 defects and 22 outcomes behaving
 as documented, and the defects that remain are the ones you said would remain. My own run,
-`run.py` then `verify.py`, still reports 13 of 13 in class P and 2 of 2 in class V, two runs
+`run.py` then `verify.py`, still reports 13 of 13 in class P and 3 of 3 in class V, two runs
 still compare byte for byte, and `challenge.py` still catches every mutation it names. A fix
 that quieted your cases by making the suite easier to pass would show up in those three, and
 it does not.
@@ -269,7 +269,7 @@ defects that remain are the ones you said would remain. Each of the six findings
 a mode in `audit/regressions.py` that fires your counterexample and requires a named check to
 catch it, nineteen modes in all, every one caught. The mode for the false rejection tests both
 directions, since a check that fires on an ordinary restart would be as wrong as the one it
-replaced. My own run still gives 13 of 13 in class P and 2 of 2 in class V, two runs byte for
+replaced. My own run still gives 13 of 13 in class P and 3 of 3 in class V, two runs byte for
 byte, and every challenge mutation caught, so the patch did not quiet the suite into passing.
 
 V04 I dispute rather than patch around. In that run the replay step and the decision step are
@@ -282,6 +282,30 @@ every run.
 I take your release decision as written. Nothing in P2 supports a general authenticated
 recovery claim, and I am not asking you to move on that. Author order and venue still wait for
 finalisation.
+
+---
+
+## 9. The link he asked for, and where it should live
+
+LinkedIn turned `FINDINGS-REGISTER.md` into a web address because the filename looks like a
+domain and the dot is what it keys on. Two things follow: send the URL on its own line with
+nothing after it, and put the file where a URL for it is short and stable.
+
+The right home is the benchmark repository, in `audit/`, next to the modes the register cites.
+Do not send him into `linkedin_emphire`: it is public, it carries the CV, the pipeline and the
+offer material, and a reviewer following a link into that would see all of it.
+
+---
+
+Behar, that is the filename being read as a domain rather than a file. Here is the register
+where it belongs, in the repository the code is in:
+
+https://github.com/Teamthy/host-failure-benchmark/blob/main/audit/FINDINGS-REGISTER.md
+
+The same directory holds `DISPOSITION-2026-11-01.md`, which is the case by case table for all
+49 of your checks. Your run on your machine came out where mine did: 13 of 13 in class P, 3 of
+3 in class V, every mutation in the challenge caught, and all nineteen modes caught. That is
+the first time this suite has been run by someone else and agreed with itself.
 
 ---
 

@@ -86,5 +86,5 @@ Seven modes in `audit/regressions.py`, nineteen in all, every one caught:
 
 His acceptance rule is both halves, so f20 tests both: the benign restart has to verify and the
 old binding has to fail on it. The other half is measured by the suite itself, which P2 leaves at
-13 of 13 Class P and 2 of 2 Class V, two runs byte-identical, and every mutation in
+13 of 13 Class P and 3 of 3 Class V, two runs byte-identical, and every mutation in
 `challenge.py` still caught.

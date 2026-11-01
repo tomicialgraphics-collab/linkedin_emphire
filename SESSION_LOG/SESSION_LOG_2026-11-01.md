@@ -256,7 +256,7 @@ to establish what the code did before I touched it: 23 defects of 36 outcomes, 3
 one input untestable. My three earlier findings were V05, V17 and V19.
 
 P2 is the answer to F-01 to F-05 and F-09. On the patched tree his package reports 9 defects
-and 22 documented outcomes, my own run reports 13 of 13 and 2 of 2 with two runs byte-identical
+and 22 documented outcomes, my own run reports 13 of 13 and 3 of 3 with two runs byte-identical
 and every challenge mutation caught, and the shipped example run was regenerated because D' no
 longer commits the effect on a record the store quarantined.
 
