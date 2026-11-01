@@ -1017,3 +1017,60 @@ Ladder step 6: skip, and the reason is logged here rather than left implicit.
 
 Even that is a stretch. It answers an essay with a work instruction, and the thread it lands in will
 not know what to do with it. My recommendation is no comment, no reply, no connection.
+
+
+---
+
+## Entry 20: Paolo Paparo, on agent experience and short stints
+
+**Surface.** Third degree, 14 minutes old, Follow offered. Associate Director, AI and Forward
+Deployed Engineering at The Talent Vault. The post: AI-native employers want nine to twelve months
+of hands-on agent experience and are cool on candidates who moved recently, which is a hard
+combination when agents have only been mainstream for a couple of years. The people with that
+experience usually got it by moving, to a startup, a consultancy or a team spun up last year. He
+gives both sides, one client's founders being strict about trajectory, and candidates whose moves
+made sense, including one who left a new role in June because it turned out to be stakeholder
+updates rather than building. His practice is now to add a line for every move on a CV: why they
+left and what they got out of it. He closes with ABS data, 7.2 percent of Australians changed jobs
+in the year to February against 9.6 percent in 2023, and asks whether a twelve-month stint at a
+unicorn counts as jumpy.
+
+**Profile read, verified 1 November.** Third degree, not followed. Positioning: he joined The Talent
+Vault as its first employee, building the AI and forward deployed engineering practice for a Sydney
+search firm that places C-suite, AI, cybersecurity and engineering leaders across Australia and
+APAC, and he posts steadily on FDE hiring, including a recent piece on senior engineers being
+filtered out by LeetCode rounds. So he is a specialist recruiter with a real read on this market
+rather than a generalist reposting an article. Commercial signals: his job is placing people, so a
+comment here is value only and, more important, must not read as a candidate looking for work.
+History: first contact. ICP fit: adjacent, he sells to the companies that buy assurance work and he
+talks to exactly the engineers this account wants reading it. Ladder step 5, comment, OUTSTANDING.
+
+**Checked, because a practitioner will notice if it is wrong.** His ABS figure is right: 7.2 percent
+in the year to February 2026, down from 7.7 percent a year earlier and 9.6 percent in 2023, from the
+Participation, Job Search and Mobility survey released in July. Do not "correct" him.
+
+**Draft A, recommended.**
+
+> Months of exposure is the easiest thing on a CV to inflate and the hardest thing to interview for,
+> so the question I would put to a nine-month candidate is not how long, but what broke. Anyone who
+> has run an agent in production has a story ready: the failure that never raised an error, the
+> retry that quietly doubled the cost, the check that passed because it was reading the wrong file.
+> A candidate who cannot name one has read about agents rather than run them, whatever the start
+> date on the CV says.
+
+**Draft B, for his CV line rather than the tenure argument.**
+
+> The line you now add for every move is the tenure problem solved one level up. Once the reason is
+> written down, a twelve-month stint stops being a flag and starts being evidence, and the
+> difference between a sideways shuffle and a deliberate bet becomes visible to the client instead
+> of being argued about. Most CVs have no line at all, which is why the flag wins by default.
+
+**Why A.** It turns his open question into a test that a client can apply in an interview, which is
+what a recruiter actually needs, and it is the audit argument in the register this audience will
+accept: the story of a failure is evidence, the number of months is a proxy.
+
+**Caution.** Do not appear to be job hunting. No "if you are ever hiring", no CV talk, no offer to
+connect about roles, because this account is building a practice and a comment under a recruiter
+reads as availability if it is even slightly ambiguous. Do not quote the ABS figure back, since his
+number is correct and repeating it looks like checking. Do not pitch. One comment, no chase, no
+follow-up if he replies with a question about your own background, which he may.
