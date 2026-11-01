@@ -8,7 +8,8 @@ review listed as P1, and it is a single commit on top of the P0 branch.
 
 Base: `9194c61` (`p0-authenticated-recovery`), which is `3b6b781` on `25cd57f`.
 The patch applies clean to a fresh checkout of `9194c61` and, as the cumulative
-variant, to `25cd57f` directly.
+variant, to `25cd57f` directly. Applied and tested on `main` at `df0cf5a`, which
+is the commit these notes describe.
 
 ## The four, one at a time
 
@@ -162,14 +163,17 @@ in P1 were caught by checks that never went through either path.
 
 ## What Windows showed
 
-Windows 11, Python 3.14.5, from the branch at `41013f0`:
+Windows 11, Python 3.14.5, on `main` at `df0cf5a`:
 
 ```
 python verify.py example\run      -> 20 of 20 checks hold (12 P, 2 V, 6 meta)
 python run.py                     -> every scenario and probe ran, hosts exiting 9 as designed
+python verify.py <that run>       -> 20 of 20 checks hold
+python challenge.py <that run>    -> 10 of 10 mutations caught, 2 of 2 input checks held
 python audit\regressions.py       -> 12 of 12 counterexamples caught
+python verify.py does-not-exist   -> exit 2, no traceback, nothing verified
 ```
 
 That closes the platform gap this document had when it was first written. The
 one thing the Linux machine has that Windows does not, in this exchange, is the
-two-run byte comparison; the Windows numbers above are single runs.
+two-run byte comparison; the Windows verdicts above are single runs.

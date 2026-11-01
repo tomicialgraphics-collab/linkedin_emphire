@@ -140,33 +140,36 @@ rather than in this message.
 
 ---
 
-## 6. The message for his reproduction
+## 6. The message for his reproduction (send this one)
+
+Attachment: `P1-PATCH-NOTES.html`. Nothing else.
 
 ---
 
-Behar, good, and here is what you need to reproduce it rather than take my
-numbers.
+Behar, good, and here is what you need in order to reproduce it rather than take
+my numbers.
 
-The branch is `main` at `41013f0`, three commits past your `25cd57f`. Two
-commands from the root: `python verify.py example\run` and
-`python audit\regressions.py`. Expected 20 of 20 and 12 of 12.
+`main` at `df0cf5a`, three commits past your 25cd57f. From the root of the
+checkout: `python verify.py example\run` and `python audit\regressions.py`.
+Expected 20 of 20 and 12 of 12. `python run.py` then `python challenge.py` on the
+directory it prints gives you 10 mutations caught and 2 input checks held.
 
 One thing you should find before you find it yourself. The first Windows run of
 this patch broke my own verifier twice. Pointed at a directory that does not
 exist, it printed a failed check and then raised FileNotFoundError while writing
-its report, after the P0 notes had promised it no longer raises. Worse, given two
+its report, after the P0 notes had promised it no longer raises. Worse: given two
 directories that were both absent, it reported determinism holds. Absent compared
 to absent is a match, so two runs that were not there were called identical,
 which is the same defect as a missing artifact passing a completeness check, in
 the program that exists to catch that.
 
-Both are fixed in a third commit and both are tests now: a path that is not a run
-is refused with exit 2 and no traceback, and a comparison fails when either side
-is missing an artifact. Neither changed any result in the response, since every
-number in it came from a run that existed, but you should have the version that
-refuses them rather than the version that quietly agreed with nothing.
+Both are fixed in the third commit and both are tests now. A path that is not a
+run is refused with exit 2 and no traceback, and a comparison fails when either
+side is missing an artifact. Neither changed a result in the response, because
+every number in it came from a run that existed. But you should have the version
+that refuses them rather than the version that quietly agreed with nothing.
 
-Windows now shows the same 20 and 12 as Linux.
+Windows now shows the same 20, 10 and 12 as Linux, at the commit above.
 
 ---
 

@@ -20,7 +20,8 @@ the counterexamples the review supplied. This one fixes the four items the
 review listed as P1, and it is a single commit on top of the P0 branch.</p>
 <p>Base: <code>9194c61</code> (<code>p0-authenticated-recovery</code>), which is <code>3b6b781</code> on <code>25cd57f</code>.
 The patch applies clean to a fresh checkout of <code>9194c61</code> and, as the cumulative
-variant, to <code>25cd57f</code> directly.</p>
+variant, to <code>25cd57f</code> directly. Applied and tested on <code>main</code> at <code>df0cf5a</code>, which
+is the commit these notes describe.</p>
 <h2>The four, one at a time</h2>
 <table>
 <thead>
@@ -193,12 +194,15 @@ to exist and every artifact to be present in both before it compares a byte.</p>
 produced by a run that existed, and the eight counterexamples in P0 and the four
 in P1 were caught by checks that never went through either path.</p>
 <h2>What Windows showed</h2>
-<p>Windows 11, Python 3.14.5, from the branch at <code>41013f0</code>:</p>
+<p>Windows 11, Python 3.14.5, on <code>main</code> at <code>df0cf5a</code>:</p>
 <pre><code>python verify.py example\run      -&gt; 20 of 20 checks hold (12 P, 2 V, 6 meta)
 python run.py                     -&gt; every scenario and probe ran, hosts exiting 9 as designed
+python verify.py &lt;that run&gt;       -&gt; 20 of 20 checks hold
+python challenge.py &lt;that run&gt;    -&gt; 10 of 10 mutations caught, 2 of 2 input checks held
 python audit\regressions.py       -&gt; 12 of 12 counterexamples caught
+python verify.py does-not-exist   -&gt; exit 2, no traceback, nothing verified
 </code></pre>
 <p>That closes the platform gap this document had when it was first written. The
 one thing the Linux machine has that Windows does not, in this exchange, is the
-two-run byte comparison; the Windows numbers above are single runs.</p>
+two-run byte comparison; the Windows verdicts above are single runs.</p>
 </body></html>
