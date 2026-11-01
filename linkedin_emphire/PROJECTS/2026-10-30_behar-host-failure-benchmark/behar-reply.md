@@ -313,6 +313,67 @@ resolve used to pass, and that was one of yours.
 
 ---
 
+## 10. The full reply to send now
+
+Nothing earlier has reached him except the 9:45 message, so this one carries the whole answer:
+the correction, the numbers, the six findings, the dispute and the link. Codes and commits are
+written without backticks, because LinkedIn does not render them and the dot in a filename is
+what turned the last one into an address. Both URLs go on their own line.
+
+---
+
+Behar, that one is on me twice. The filename became a link because of the dot, and the message
+that mentioned it said the report was unread when it had already arrived. Correcting both here,
+and nothing before this should be read as an assessment.
+
+Your package came through the Drive link. Its sha256 is b2a39986c4ad238446e9d2a4928e58a35cba2ff7ceed8fda3e357ac14db90ed4, the same as the one in your review, so the file is the file.
+
+I ran v2tests.py and v3fixes.py unchanged against df0cf5a before changing anything. Your
+results file marks 23 of the 36 outcomes as defects and I reproduced the same 23, case for case,
+so we were never arguing about what the code does. On the 13 input checks I got N06, N12 and
+N13. N11 is untestable here for the same reason it was for you.
+
+The three I described earlier are V05, V17 and V19 in your numbering.
+
+P2 is on df0cf5a and is now commit 006d7ee on main. Against it your package reports 9 defects
+and 22 outcomes behaving as documented. The nine are the ones you said would remain: V23 and
+V24 on host loss, V28 to V33 on completeness, V22 on the failpoint, and V04, which I dispute.
+My own run still gives 13 of 13 in class P and 3 of 3 in class V, two runs byte for byte, every
+challenge mutation caught, and nineteen regression modes each caught, on Windows as well as
+here.
+
+What that covers: replay recomputes a record's state from its bytes and from the action id it is
+filed under; check D refuses to report a verdict verified while the same journal lists it as a
+gap; the host requires stored and verified in the reply before it ships; a failed append rolls
+the file back and the store answers that it could not persist; B binds to the epoch the verdict
+landed in rather than the last boot in the file.
+
+V04 I would rather argue than patch around. In that run the replay step and the decision step
+are both 2, so your mutation writes the value decision_ts already held, and the re-signed record
+is byte identical to the WAL, signature included. With the clocks five steps apart it is caught
+by B and by B.wal. If the re-stamp was meant to move the value, the case needs a clock that does
+not collide, and I will take the result when it does.
+
+N13 is the one place my fix removes what your check reads: the report it opens is one
+challenge.py stopped writing into the evidence directory. The replacement property, that the
+directory is byte identical afterwards, is asserted inside the tool on every run.
+
+Nothing in P2 supports authenticated recovery, host-loss survivability or trusted timestamps,
+and I am not asking you to move on your release decision.
+
+The register:
+
+https://github.com/Teamthy/host-failure-benchmark/blob/main/audit/FINDINGS-REGISTER.md
+
+The case by case table for all 49 of your checks:
+
+https://github.com/Teamthy/host-failure-benchmark/blob/main/audit/DISPOSITION-2026-11-01.md
+
+What I would like from you is a re-run of your package against 006d7ee, V04 sharpened or
+withdrawn, and N13 rewritten. Author order and venue still wait for finalisation.
+
+---
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.
