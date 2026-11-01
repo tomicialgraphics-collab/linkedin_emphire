@@ -112,3 +112,26 @@ at the right edge, real photo cut out over the bars, three headline lines in hea
 one box, sub in small letterspaced caps, name and role bottom left.
 
 Olusanya Timothy, Software Engineer | AI Safety | AI Red Teaming.
+
+## Card 1, built and measured
+
+The owner built Card 1. Measured against the approved 0.10 percent card, pixel by pixel, it is
+faithful: same two blues (56,182,255 and 24,0,173), bar widths identical to a tenth of a
+percentage point of card width each, the same 3.7 percent black margin to the right of the navy
+bar, ratio 1.774 against the reference 1.761. The portrait proportion matches too.
+
+Two differences, one of them a fault.
+
+**Fault: a 2px violet stroke at (139,61,255) around the card, sitting inside a light margin.** The
+approved card has no such line. It is an editor selection or artboard border that came out in the
+export, and at feed size it reads as a picture frame around a black card. `card_export_clean.png`
+is the same design cropped to the black field, 1223 by 688, corners verified black.
+
+**Sizing: the subheadline is about 20 percent smaller relative to the card than the reference.**
+The reference sub occupies 18 percent of card height, this one 14.7. The 275 is the evidence and it
+needs to be readable at thumbnail size, so bring the sub up around 15 percent.
+
+**Leave the tight gutter alone.** The box is 69 percent of card width against 28 percent in the
+reference, which leaves a 4 percent gutter to the cyan bar where the reference had 41 percent. That
+is the copy's fault, not the layout's: four boxed words are long. It also creates real tension, and
+shortening the box to three words would put the negation outside it.
