@@ -189,7 +189,7 @@ if ($Push) {
             Write-Host "nothing to commit, your repo already matches $rev"
         }
         else {
-            & git -C $Path commit -q -m "gatecheck 0.4.0: the guarded agent refuses in the tool layer, not only in the prompt"
+            & git -C $Path commit -q -m "gatecheck 0.5.0: the same agent on a runtime somebody else wrote"
             AssertExit "git commit"
             & git -C $Path push
             AssertExit "git push"

@@ -221,6 +221,26 @@ Cost: one full run is about seventeen calls. The default model is
 `openai/gpt-oss-120b`, which supports tool calling; free-tier limits are
 around 30 requests a minute, and a 429 is slept on once and retried.
 
+## Evidence
+
+Two documents carry the measurement, and both are written to be read by
+someone who is going to discount them:
+
+- [`docs/PRECISION.md`](docs/PRECISION.md): what was run, what was found,
+  how often each finding reproduced, what was verified by hand, and what is
+  still blank because it has not been measured.
+- [`docs/THIRD_PARTY_TARGET.md`](docs/THIRD_PARTY_TARGET.md): the plan for
+  pointing this at an agent nobody here wrote, which is the measurement
+  that counts, plus the first step of it: `pydantic_target/`, the same agent
+  with its loop owned by PydanticAI.
+
+The short version: against an agent written for this project, the gate
+found six weaknesses in 33 attacks, five of them recorded as fixed by a
+hardening pass, and the sixth survived because the policy it broke was
+written per call and the gate sums per turn. Every finding carried the tool
+call that proved it. The target being ours is the first line of the page,
+not a footnote.
+
 ## Outputs
 
 Every run writes three things to `.gatecheck/runs/<id>/`:
@@ -297,24 +317,27 @@ gatecheck/
   targets.py       HTTP target, local target, served target
   engines/         gatecheck core, deepteam, pyrit, promptfoo
   cli.py           init, run, accept, report
+docs/              the measured page, and the plan for an independent target
 groq_target/       a real model behind the same contract (agent, server)
+pydantic_target/   the same agent, loop owned by PydanticAI, scripted when keyless
 gatecheck.groq.yml the config for that target, baseline kept separate
 demo/agent.py      the broken and fixed agents
 examples/          a blocked run and a clean run, committed
-tests/             72 tests
+tests/             81 tests
 action.yml         GitHub Action
 ```
 
 ## Tests
 
 ```bash
-pytest      # 72 tests, ~7s, no network, no key
+pytest      # 81 tests, ~8s, no network, no key
 ruff check .
 ```
 
-On a machine with no optional engine the count is 70 passed, 2 skipped:
-the PyRIT and promptfoo tests skip themselves rather than failing, because
-a missing third-party tool is not a bug in the gate.
+On a machine with no optional extras the count is 71 passed, 2 skipped: the
+PyRIT and promptfoo tests skip themselves rather than failing, and the nine
+PydanticAI tests skip as one module. A missing third-party tool is not a bug
+in the gate, so neither case is a failure.
 
 The tests cover the promises rather than the plumbing: fingerprint
 stability across cosmetic change, one weakness found by three tools

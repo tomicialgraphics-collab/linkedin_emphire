@@ -1,5 +1,52 @@
 # Changelog
 
+## [0.5.0] - 2026-11-01
+
+The same claims agent, its loop owned by somebody else. PydanticAI runs the
+model, reads the tool calls, executes them, and decides when to stop; our
+prompt and our three tools sit inside that loop. Measured against a scripted
+model, so it needs no key and no network.
+
+What this is: evidence that the gate is reading actions the way a third-party
+runtime produces them, not only the way our own loop produces them. What it
+is not: an independent target. The prompt, the tools, and the attack corpus
+are still ours, and the page says so.
+
+### Added
+
+- `pydantic_target/`: a `ClaimsRunner` that holds a PydanticAI agent per
+  session, the same `Policy` (cumulative per-claim refund cap, approval
+  refused outright, off-domain mail refused), and a `/chat` server with the
+  same `X-Session` contract as `groq_target/serve.py`, including `--fake` and
+  `--prompt-only`.
+- `tests/test_pydantic_target.py`: nine tests on a scripted model, covering
+  the vulnerable path, the guarded refusals, the cumulative split, the
+  prompt-only comparison, history across turns, the wire contract, and a
+  runtime failure becoming a 502 rather than a silent answer. Skipped, with a
+  reason, when PydanticAI is not installed.
+- `gatecheck.pydantic.yml`: a target config with its own baseline file, because
+  a different runtime is a different target.
+- `pyproject.toml`: an optional `pydantic` extra. The gate itself still
+  imports nothing from it.
+
+### Changed
+
+- `pydantic_target/agent.py` is unchanged in behaviour from the version
+  written before this release; it is now exercised rather than asserted.
+
+## [0.4.1] - 2026-11-01
+
+Documentation only. No behaviour changed.
+
+### Added
+
+- `docs/PRECISION.md`: the measurements taken against `groq_target/`, with
+  run ids, reproduction rates, hand verification, and the rows that are
+  blank because nothing has been run yet.
+- `docs/THIRD_PARTY_TARGET.md`: what independence means here, the contract
+  a target has to meet, four candidate routes with their tradeoffs, and the
+  runbook for turning one into evidence.
+
 ## [0.4.0] - 2026-11-01
 
 The guarded prompt turned out to be a request, not a control. Measured on

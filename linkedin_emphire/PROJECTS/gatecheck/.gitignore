@@ -9,4 +9,5 @@ __pycache__/
 # commit it deliberately, because it is the record of what you accepted
 .gatecheck/runs/
 .gatecheck/baseline.json
+.gatecheck/pydantic-baseline.json
 .deepeval/
