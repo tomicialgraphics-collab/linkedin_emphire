@@ -105,6 +105,41 @@ Unchanged and settled the same way we agreed: at finalisation, against CONTRIBUT
 
 ---
 
+## 5. The message that carries P1
+
+Attachment: `AUDIT-RESPONSE-v1.2.html` and `P1-PATCH-NOTES.html`. Nothing else.
+
+---
+
+Behar, the four P1 items are done, in two commits on top of the branch: the
+code, and the regenerated example.
+
+To your list, in your numbering. F11: the store journals before it indexes, and a
+journal that refuses a write answers that it could not persist instead of
+answering from memory. F7: a repair copies the bytes it removes into a
+quarantine file and records its length and digest in the repair record. F9: two
+verdicts that disagree become a named conflict carrying both sequence numbers,
+and the action stays unresolved. F10: a reply counts only if it names the action
+that was asked about, and a store that confirms the wrong one gets a rejection
+and no effect.
+
+Two of those are orderings inside a process, so their counterexamples restore the
+old code rather than damaging an artifact. f7 and f9 damage evidence, f10 and f11
+damage the program. Twelve counterexamples now, ten mutations, twenty checks,
+twelve of them class P.
+
+F6 I have not changed, and I want to ask rather than decide. If the store mints
+every id, then C'' and A' stop being possible for any action the host can name,
+because naming it is registering it. Those two rows are the silence cases, and
+they are the strongest thing in the table. Do you want strict minting with both
+recast, or registration kept and the claim kept as narrow as it is now?
+
+Everything above was run on Linux from a clean checkout. Windows has run P0 and
+this patch has not been on Windows yet; the notes say that where it belongs
+rather than in this message.
+
+---
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.
