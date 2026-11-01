@@ -102,6 +102,36 @@ def install_package():
 
 
 
+
+def tidy_key(key, base_url=""):
+    """Strip what a paste picks up, and undo a doubled paste. Return (key, notes)."""
+    notes = []
+    key = (key or "").strip()
+    if key.lower().startswith("bearer "):
+        key = key[7:].strip()
+        notes.append("removed the word Bearer from the front")
+    if len(key) >= 2 and key[0] == key[-1] and key[0] in "\"'":
+        key = key[1:-1].strip()
+        notes.append("removed the quote marks around it")
+    if any(c in key for c in " \t\r\n"):
+        notes.append("it still contains a space, which no key should")
+
+    expect = None
+    if "groq.com" in base_url:
+        expect = 56
+    elif "googleapis.com" in base_url:
+        expect = 39
+    if expect and len(key) == 2 * expect and key[:expect] == key[expect:]:
+        key = key[:expect]
+        notes.append("the same key arrived twice in a row, so only the first copy was kept")
+    elif expect and len(key) != expect:
+        notes.append(
+            "a key for this endpoint is %d characters and this is %d, so something extra or "
+            "something missing came with the paste" % (expect, len(key))
+        )
+    return key, notes
+
+
 def check(base_url, model, key):
     """Make the two calls that matter and print exactly what came back. Changes nothing."""
     import getpass
@@ -115,7 +145,9 @@ def check(base_url, model, key):
             key = getpass.getpass("key: ")
         except Exception:
             key = input("key: ")
-    key = (key or "").strip()
+    key, notes = tidy_key(key, base_url)
+    for n in notes:
+        say("key note: %s" % n)
     base = base_url.rstrip("/")
     headers = {
         "Authorization": "Bearer " + key,
@@ -277,7 +309,9 @@ def main():
             args.api_key = getpass.getpass("    key: ")
         except Exception:
             args.api_key = input("    key: ")
-        args.api_key = (args.api_key or "").strip()
+        args.api_key, notes = tidy_key(args.api_key, args.base_url)
+        for n in notes:
+            say("    key note: %s" % n)
         if not args.api_key:
             say("    no key reached the script. Stopping before the run.")
             return 1
