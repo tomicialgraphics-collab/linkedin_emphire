@@ -704,3 +704,57 @@ Do not mention Co-Existence. Do not claim weeks-long work is unproven in Draft A
 disagreement for a reply if he asks. If he does reply, the honest answer is that the published
 horizons are still measured in hours and that the suite itself says it cannot see past a working
 day, which is the whole of Draft B, held in reserve.
+
+
+---
+
+## Entry 14: Mark Carney, Canada-EU alliance
+
+**Surface.** Mark Carney, 55 minutes old, 146 reactions and 16 comments. Following. Four lines:
+the alliance with the EU gives citizens more choice, more opportunity and a more affordable future.
+No link, no document, no number. The comment field has filled with two things: a long numerical
+rebuttal from a commentator, and a stream of hostile one-liners about the EU collapsing and about
+whether the Prime Minister is Canadian.
+
+**Profile read, verified 1 November.** Following. Positioning: Prime Minister of Canada and leader
+of the Liberal Party, a head of government posting a summary of a two day summit rather than an
+argument. Commercial signals: none, and none possible. History: no prior exchange. ICP fit: weak.
+This is the weakest fit of the round and the only entry where the honest answer is skip. What the
+post is actually about, checked against the reporting: the Canada-EU summit in Montreal on 29 and
+30 October, the "Alliance for the Future", an associate membership idea that von der Leyen
+proposed and several member states including Germany have rejected, a joint statement that avoids
+the phrase and commits the two sides to define the concept by June 2027, a digital trade agreement
+announced alongside, and an agreement to explore opening financial services markets. In his own
+remarks he said the name does not matter and that what matters to Canadians is affordability and
+opportunity. Ladder step 6: out of lane, skip, and the reason is logged here.
+
+**If he wants to be in the thread anyway.** One comment, and only one. The account has no standing
+on Canadian trade policy, so the comment must not evaluate the deal. The one honest thing this
+account can say is about how a claim like affordability gets checked, which is the subject it does
+hold.
+
+**Draft A, the only version that sounds like this account.**
+
+> The commitment worth keeping from the summit is the one about looking at each other's economic
+> security measures and limiting the harm each does to the other. That is a promise two governments
+> make to each other, and it only means something if somebody publishes the comparison. Affordability
+> will never show up in a trade total. It shows up when a family can see which prices moved, by how
+> much, and against what baseline. Agreeing that baseline before the work starts would settle more
+> arguments than another summit will.
+
+**Draft B, if he wants something shorter and blander.**
+
+> The part I would hold you to is the timeline. Defining the relationship by June leaves seven
+> months in which the only measurable thing is the paperwork. A published baseline for what
+> affordability means, set now, would make the June meeting a test rather than an announcement.
+
+**Why A.** It does not take a side, it does not touch the numbers in the thread, and it says the one
+thing the account has standing to say, which is that a promise of affordability is only a promise
+until there is a baseline and a record somebody else can read.
+
+**Caution.** Do not repeat or dispute the figures in the top comment, because they are his and
+checking them is not this account's job in a public thread. Do not argue with the hostile replies.
+Do not congratulate and do not attack, since either reads as partisan with this profile. If the
+comment draws a political fight, leave it unanswered; one comment, no replies. My recommendation
+is to skip this surface and spend the slot on the Mollick thread, where the same argument has an
+audience that can use it.
