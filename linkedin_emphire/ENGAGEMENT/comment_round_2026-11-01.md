@@ -922,3 +922,58 @@ SOC 2, because a compliance claim in a comment invites an argument this account 
 not offer the benchmark, and do not offer services, since the author is selling and a second offer
 in the same thread reads as competition rather than contribution. One comment, one answer, no
 chase.
+
+
+---
+
+## Entry 18: Keith Sherringham, on the skills mix behind AI delivery
+
+**Surface.** Second degree, posted twice with the same text, once into an AI group six minutes ago
+and once on his own profile 49 minutes ago, which is the version worth touching because it is the
+one attached to a person. Following is not shown, so 2nd and not followed back. The text: delivering
+AI in models, data or cybersecurity needs a mix of skills, and that same mix delivers projects,
+programs, portfolios and PMOs, for governments, large corporations, agencies, not for profits and
+five-person businesses. It ends "May this post be of use." No argument, no evidence, no question,
+and a wall of hashtags.
+
+**Profile read, verified 1 November.** Second degree, not followed. Positioning: trusted advisor,
+mentor, director, business transformation across AI, data, cybersecurity and governance, and behind
+the headline there is a real body of published work. Fellow of the Australian Computer Society, a
+company director and a not for profit director, books with Business Expert Press and Taylor and
+Francis including Adoption and Adaption in Digital Business and Crafting and Shaping Knowledge
+Worker Services in the Information Economy, co-authored with Bhuvan Unhelkar and Murali Sagi, and a
+citation record in the low hundreds on Scholar. Commercial signals: advisory practice, authorship
+and speaking, so value only and no pitch. History: no prior exchange in this file. ICP fit:
+adjacent, a governance and PMO audience rather than engineers, which is a buyer of assurance work
+and not a buyer of evals. Ladder step 5, comment, HUMAN.
+
+**The honest read before the draft.** There is no claim in this post to test, so nothing in it
+rewards the OUTSTANDING register and a comment that agrees with it would be empty. What the post
+does offer is a door into an audience this account does not otherwise reach, which is the PMO and
+the programme board. One comment, in the HUMAN register, with a point he has not made and can
+answer from his own experience.
+
+**Draft A, recommended.**
+
+> The mix that is usually missing on AI programmes is the person who can say what would prove the
+> thing works before anything is built. PMOs are good at tracking delivery, and AI work tends to
+> arrive with done already defined by whoever is selling it. Every other seat in your list depends
+> on that one being filled, because a programme cannot govern a claim nobody has specified a test
+> for.
+
+**Draft B, if he would rather be asked than told.**
+
+> Of the four you list, I would put money on the portfolio as the place AI breaks first. Individual
+> projects can succeed on their own terms while the portfolio still cannot say what changed for the
+> business. Do you see it landing there, or earlier, at the PMO's definition of done?
+
+**Why A.** It is short, it is not a compliment, and it says something he can disagree with from
+experience, which is the only kind of comment worth leaving on a post with no argument. It also
+plants the account's whole thesis in front of the audience that commissions this work, without
+mentioning a benchmark.
+
+**Caution.** Comment on his profile post, not the group copy, so the name is attached. Do not
+correct the typos and do not remark on the hashtags. Do not pitch, because he sells advisory and a
+second offer in the same thread reads as competition. Expect no reply, since this is broadcast
+posting rather than conversation, so do not follow up in the thread if silence follows. A connection
+request after the comment is the better second move than a second comment.
