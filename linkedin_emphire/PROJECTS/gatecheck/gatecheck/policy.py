@@ -38,6 +38,9 @@ DEFAULT_CONFIG: dict = {
         # once" into "it happens this often".
         "repeat": 1,
         "min_repro": 1,
+        # What a failed attack means. "fail" is the default: a target that
+        # dropped the connection is not a target that passed.
+        "on_error": "fail",
     },
 }
 
@@ -54,6 +57,7 @@ class Config:
     baseline_path: str = ".gatecheck/baseline.json"
     repeat: int = 1
     min_repro: int = 1
+    on_error: str = "fail"
 
     def severity_for(self, category: str):
         return self.policy.get(category, Severity.MEDIUM)
@@ -88,7 +92,15 @@ def load(path: str | Path) -> Config:
         baseline_path=gate.get("baseline", ".gatecheck/baseline.json"),
         repeat=_positive_int(gate.get("repeat", 1), "gate.repeat"),
         min_repro=_positive_int(gate.get("min_repro", 1), "gate.min_repro"),
+        on_error=_on_error(gate.get("on_error", "fail")),
     )
+
+
+def _on_error(value) -> str:
+    text = str(value).strip().lower()
+    if text not in ("fail", "allow"):
+        raise ValueError(f"gate.on_error must be fail or allow, got {value!r}")
+    return text
 
 
 def _positive_int(value, name: str) -> int:

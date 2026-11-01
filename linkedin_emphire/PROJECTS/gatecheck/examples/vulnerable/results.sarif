@@ -7,7 +7,7 @@
         "driver": {
           "name": "gatecheck",
           "informationUri": "https://github.com/",
-          "version": "0.3.0",
+          "version": "0.3.1",
           "rules": [
             {
               "id": "GC004",

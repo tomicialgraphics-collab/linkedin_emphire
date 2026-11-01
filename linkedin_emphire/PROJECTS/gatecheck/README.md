@@ -215,9 +215,17 @@ Every run writes three things to `.gatecheck/runs/<id>/`:
   tab, get assigned, and can be closed
 - `findings.json` — the run, which is what the next run diffs against
 
-Exit codes: `0` pass, `2` blocked, `3` error (no engine ran, bad config,
-unreachable target). Three outcomes, so a workflow can tell "the agent got
-worse" apart from "the gate could not do its job".
+Exit codes: `0` pass, `2` blocked, `3` error. Three outcomes, so a
+workflow can tell "the agent got worse" apart from "the gate could not do
+its job".
+
+`3` covers the cases where the answer does not exist: no engine installed,
+no attack executed, a target that refused the connection, and a run where
+some attacks errored while the rest found nothing. That last one is
+deliberate. A target that drops half the connections has not been cleared,
+and `gate.on_error: allow` (or `--allow-errors`) is there for the team that
+would rather see a warning than a red build. Neither setting lets such a
+run rewrite the baseline.
 
 ## CI
 
@@ -277,18 +285,18 @@ groq_target/       a real model behind the same contract (agent, server)
 gatecheck.groq.yml the config for that target, baseline kept separate
 demo/agent.py      the broken and fixed agents
 examples/          a blocked run and a clean run, committed
-tests/             63 tests
+tests/             66 tests
 action.yml         GitHub Action
 ```
 
 ## Tests
 
 ```bash
-pytest      # 63 tests, ~7s, no network, no key
+pytest      # 66 tests, ~7s, no network, no key
 ruff check .
 ```
 
-On a machine with no optional engine the count is 61 passed, 2 skipped:
+On a machine with no optional engine the count is 64 passed, 2 skipped:
 the PyRIT and promptfoo tests skip themselves rather than failing, because
 a missing third-party tool is not a bug in the gate.
 

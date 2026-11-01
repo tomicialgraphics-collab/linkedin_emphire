@@ -85,7 +85,7 @@ def cmd_run(args) -> int:
     if args.update_baseline:
         if not result["verdict"]["baseline_safe"] and not args.force_baseline:
             print("baseline NOT updated:")
-            if result["verdict"]["status"] == "error":
+            if not result["tools_run"]:
                 print("  no engine ran, so there is nothing to record.")
             if result["tools_skipped"]:
                 print(
@@ -95,8 +95,15 @@ def cmd_run(args) -> int:
                 print("  a missing engine looks exactly like a fixed finding.")
             if result["attacks_run"] == 0:
                 print("  no attack ran, so there is nothing to record.")
-            print("  fix the environment, narrow `tools:` in gatecheck.yml to what is")
-            print("  installed, or pass --force-baseline if you mean it.")
+            if result.get("errors"):
+                print(f"  {result['errors'][0]}")
+            if result["tools_skipped"]:
+                print("  install them, narrow `tools:` in gatecheck.yml to what is installed,")
+                print("  or pass --force-baseline if you mean it.")
+            elif result.get("errors"):
+                print("  start the target and run again: a run with holes in it is not a record.")
+            else:
+                print("  pass --force-baseline if you mean to record this anyway.")
             if result["verdict"]["status"] == "blocked":
                 print("  (a blocked run is fine to record: known findings are accepted,")
                 print("   that is how you adopt the gate on a codebase that already fails)")
@@ -155,6 +162,9 @@ def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict
 
     tools_skipped = {r["tool"]: r["skipped"] for r in results if isinstance(r, dict) and "skipped" in r}
     tools_run = [r.tool for r in results if hasattr(r, "findings")]
+    errors = [f"{r.tool}: {e}" for r in results if hasattr(r, "errors") for e in r.errors]
+    attacks = sum(getattr(r, "attacks_run", 0) for r in results if hasattr(r, "attacks_run"))
+    allow_errors = bool(getattr(args, "allow_errors", False)) or config.on_error == "allow"
 
     if not tools_run:
         # No engine ran. Reporting PASS here would be the exact failure
@@ -165,6 +175,13 @@ def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict
         reason = "no engine ran, so there is no result: " + "; ".join(
             f"{tool}: {why}" for tool, why in tools_skipped.items()
         )
+    elif attacks == 0:
+        # The engine loaded and then every attack failed. Same lie as no
+        # engine at all, one layer down: a target that refuses connections
+        # is not a target that passed.
+        status = "error"
+        ok = False
+        reason = "no attack could run, so there is no result: " + (errors[0] if errors else "no attacks")
     elif blocking:
         status = "blocked"
         ok = False
@@ -173,6 +190,15 @@ def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict
             f"{len(blocking)} new finding(s) at or above the gate threshold, "
             f"highest severity {worst.severity.value}"
         )
+    elif errors and not allow_errors:
+        # Some attacks could not run. The ones that did found nothing, but
+        # the ones that did not are not evidence of safety.
+        status = "error"
+        ok = False
+        reason = (
+            f"{len(errors)} attack(s) could not run, so this run cannot clear the target: "
+            + errors[0]
+        )
     else:
         status = "pass"
         ok = True
@@ -180,16 +206,16 @@ def _run_gate(config: Config, target, args, *, commands_used: list[str]) -> dict
             f"no new finding at or above {', '.join(s.value for s in config.fail_on)}"
             if config.fail_on else "gate threshold empty"
         )
+        if errors:
+            reason += f" ({len(errors)} attack(s) errored and were allowed)"
 
-    errors = [f"{r.tool}: {e}" for r in results if hasattr(r, "errors") for e in r.errors]
-
-    # A partial run cannot rewrite the baseline: a missing engine looks
-    # exactly like a fixed finding, and accepting it would launder
-    # unexercised coverage into a clean record. Recording known findings
-    # is allowed even when the gate blocks, because adopting the gate on
-    # a codebase that already has problems is the normal first day.
-    attacks = sum(getattr(r, "attacks_run", 0) for r in results if hasattr(r, "attacks_run"))
-    baseline_safe = not tools_skipped and status != "error" and attacks > 0
+    # A partial run cannot rewrite the baseline: a missing engine or a
+    # target that dropped a connection looks exactly like a fixed finding,
+    # and accepting it would launder unexercised coverage into a clean
+    # record. Recording known findings is allowed even when the gate
+    # blocks, because adopting the gate on a codebase that already fails
+    # is the normal first day.
+    baseline_safe = not tools_skipped and not errors and status != "error" and attacks > 0
 
     return {
         "run_id": run_id,
@@ -296,6 +322,8 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--fail-on", default=None, help="comma list of severities")
     r.add_argument("--repeat", type=int, default=None,
                    help="run each attack N times and record how often it reproduced")
+    r.add_argument("--allow-errors", action="store_true",
+                   help="treat attack errors as a pass instead of an error; the baseline stays unwritable")
     r.add_argument("--min-repro", type=int, default=None,
                    help="only block when a finding reproduced at least this many times")
     r.add_argument("--out", default=None)

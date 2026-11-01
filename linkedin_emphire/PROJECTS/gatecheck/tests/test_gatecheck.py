@@ -369,6 +369,79 @@ def test_error_run_does_not_claim_a_pass_or_a_fix(tmp_path):
     assert "not-a-real-engine" in text
 
 
+def test_a_target_that_refuses_connections_is_an_error_not_a_pass():
+    """The 0.1.0 failure, one layer down: the engine loads, the target is
+    down, nothing runs, and the report must not say PASS."""
+    from gatecheck import cli
+    from gatecheck.targets import HttpTarget
+
+    config = load("/tmp/definitely-not-a-gatecheck.yml")
+    config.tools = ["gatecheck"]
+    dead = HttpTarget("http://127.0.0.1:9/chat", timeout=1.0)
+
+    result = cli._run_gate(config, dead, None, commands_used=["gatecheck"])
+
+    assert result["verdict"]["status"] == "error"
+    assert result["attacks_run"] == 0
+    assert result["errors"]
+    assert result["verdict"]["baseline_safe"] is False
+    text = report.markdown(result)
+    assert "gatecheck: ERROR" in text
+    assert "no attack could run" in text
+    assert "PASS" not in text
+
+
+def test_errors_can_be_allowed_but_never_bless_a_baseline(tmp_path):
+    from gatecheck import cli
+    from gatecheck.targets import HttpTarget
+
+    config = load(tmp_path / "gatecheck.yml")
+    config.tools = ["gatecheck"]
+    config.baseline_path = str(tmp_path / "b.json")
+    args = type("Args", (), {"allow_errors": True})()
+
+    result = cli._run_gate(
+        config, HttpTarget("http://127.0.0.1:9/chat", timeout=1.0), args, commands_used=["gatecheck"]
+    )
+    assert result["verdict"]["status"] == "error", "zero attacks stays an error even when errors are allowed"
+    assert result["verdict"]["baseline_safe"] is False
+
+
+def test_a_run_with_holes_cannot_pass_unless_you_say_so(tmp_path):
+    """Some attacks fail, the rest find nothing. That is not a clean bill."""
+    from gatecheck import cli
+    from gatecheck.targets import LocalTarget, TargetError
+
+    state = {"n": 0}
+
+    def drops_some(message: str, session: str = ""):
+        state["n"] += 1
+        if state["n"] % 2 == 1:
+            raise TargetError("connection reset")
+        return "I cannot help with that.", []
+
+    def config_for(name):
+        cfg = load(tmp_path / f"{name}.yml")
+        cfg.tools = ["gatecheck"]
+        cfg.baseline_path = str(tmp_path / f"{name}.json")
+        return cfg
+
+    strict = cli._run_gate(config_for("strict"), LocalTarget(drops_some, label="drops"), None,
+                           commands_used=["gatecheck"])
+    assert strict["verdict"]["status"] == "error"
+    assert strict["attacks_run"] > 0
+    assert strict["errors"]
+    assert strict["verdict"]["baseline_safe"] is False
+
+    state["n"] = 0
+    allowed_args = type("Args", (), {"allow_errors": True})()
+    allowed = cli._run_gate(config_for("allowed"), LocalTarget(drops_some, label="drops"),
+                            allowed_args, commands_used=["gatecheck"])
+    assert allowed["verdict"]["status"] == "pass"
+    assert "errored and were allowed" in allowed["verdict"]["reason"]
+    assert allowed["verdict"]["baseline_safe"] is False
+
+
 def test_full_run_is_baseline_safe(tmp_path):
     from gatecheck import cli
     from gatecheck.targets import LocalTarget

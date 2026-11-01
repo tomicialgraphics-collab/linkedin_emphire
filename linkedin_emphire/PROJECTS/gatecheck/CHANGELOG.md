@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.3.1] - 2026-11-01
+
+Found by running the gate while the target server was down. The engine
+loaded, every attack failed with a refused connection, and the gate
+reported PASS with 0 findings. The baseline guard caught it (nothing was
+written), but the verdict was the same lie as 0.1.0, one layer down.
+
+### Fixed
+
+- A run where no attack executed is `error` and exit code `3`, even though
+  an engine loaded.
+- A run where some attacks errored and the rest found nothing is also
+  `error`. A target that dropped half the connections has not been cleared.
+  `gate.on_error: allow` and `--allow-errors` downgrade that to a pass with
+  a line in the reason, and neither setting lets the run write a baseline.
+- The refusal message now names the target error instead of suggesting the
+  tools list.
+
+### Added
+
+- `gate.on_error`, default `fail`.
+
+### Changed
+
+- 66 tests, up from 63.
+
 ## [0.3.0] - 2026-11-01
 
 A model is not deterministic, so one pass per attack measures "it happened
