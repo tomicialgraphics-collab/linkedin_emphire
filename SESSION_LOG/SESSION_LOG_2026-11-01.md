@@ -110,3 +110,30 @@ honest version of provenance for a suite written two weeks earlier. MIT licence 
 before the send, so the copy is reusable and not just re-runnable.
 
 Owed next from him: nothing. Owed to him: the review, if he chooses to run it.
+
+---
+
+## §8 The host-failure suite is public
+
+`https://github.com/Teamthy/host-failure-benchmark`, first commit `5bb8a7c`, 2026-11-01. Twenty five
+files, MIT for code, CC BY 4.0 for the note, and one complete run shipped in `example/run` so a reader
+can check the checks without running anything.
+
+Built here, run on his machine, and it was the run on the machine that mattered. The suite passed
+twelve checks on Windows and would have passed thirteen on Linux while quietly writing CRLF into every
+artifact, which made the "two machines produce identical bytes" line false on the one platform most
+likely to run it. Fixed by forcing `newline="\n"` on all nine writers, adding a `line-endings` check,
+and adding a seventh mutation that rewrites the journal the way Windows would. That mutation now fails
+the check it targets, which is the only proof the check was ever doing anything.
+
+Then `core.autocrlf` would have handed a Windows clone CRLF in `example/run`, so the same bug would
+have come back for anyone who cloned rather than downloaded. `.gitattributes` with `* text=auto eol=lf`
+settles it, and the generated `verify-report.json` is ignored rather than tracked, because a report
+that sits inside the example it reports on is the stale assertion this project exists to distrust.
+
+Final state on his machine: thirteen checks hold, seven mutations caught, determinism holds between
+Windows 3.14.5 and Linux.
+
+Still open with Behar: the timestamp reading, the author order, and the venue. The suite is public
+before he has answered any of the three, which is a decision, not an oversight. It is recorded as an
+open decision in `CONTRIBUTION.md` rather than left to be discovered later.
