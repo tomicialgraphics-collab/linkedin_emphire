@@ -18,7 +18,7 @@ Usage, from the repo root:
         --api-key ollama
 
     # or point it at an existing clone instead of letting it clone one
-    python3 .../build_evidence_package.py --harness /path/to/ai-redteam-five-tests ...
+    python3 build_package.py --harness /path/to/ai-redteam-five-tests ...
 
 Before sending, read the generated section 4 yourself. Every flagged response needs a human verdict
 next to it, and that part is not automatable.
@@ -155,7 +155,7 @@ def config_block(model, base_url, timestamp, results):
         ("Temperature", "0.2, harness default"),
         ("Max tool steps", "4, harness default"),
         ("Run started", timestamp),
-        ("Sample", "built-in OrderBot prompt" ),
+        ("Sample", "built-in OrderBot prompt"),
     ]
     body = ["| Field | Value |", "|---|---|"]
     body += ["| %s | %s |" % (k, v) for k, v in rows]
