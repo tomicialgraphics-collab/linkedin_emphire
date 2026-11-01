@@ -117,9 +117,16 @@ The first version of `audit/regressions.py` found the run directory by parsing
 what `run.py` printed, which uses a backslash on Windows, and it stopped with
 `run.py produced no artifact directory` there. It now finds the directory by
 listing `artifacts/` before and after the run, which needs no separator at all.
+A second one showed up on the next run: the script treated the existence of an
+artifact directory as proof that the suite had run, and a store that missed its
+ten second announcement window on a freshly copied tree leaves the directory
+behind with nothing in it. Each attempt is now checked for the full artifact
+list and retried, with the run's own output reported if none of them
+completes.
+
 Everything else was already portable: the patch applied to `25cd57f` on
 Windows, and `verify.py`, `challenge.py` and the nine built-in mutations all
-passed there before this fix.
+passed there.
 
 If you already applied the patch, take the fixed file only:
 
