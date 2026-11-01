@@ -173,6 +173,56 @@ Windows now shows the same 20, 10 and 12 as Linux, at the commit above.
 
 ---
 
+## 7. The message for the 9:05 PM review
+
+Attachment: `FINDINGS-REGISTER.md` as a PDF or paste the table, since LinkedIn takes
+neither Markdown nor a folder. Ask for the report and the package to be readable here
+before any assessment of the eleven is written.
+
+---
+
+Behar, this is the right next step and the register is the right instrument for it.
+I have started one rather than promising one: `FINDINGS-REGISTER.md`, one row per
+finding, with the status words defined so that "fixed" can only mean a reproduction
+that fails without the commit.
+
+I have not yet read your report or opened the package. The attachment came through
+LinkedIn, which shows me the filename and not the file, and the Drive link is not
+reachable from where I work, so both need to reach me another way before I assess
+the eleven cases. Rather than wait, I went through the five areas in your message
+against `df0cf5a` and found three defects of my own in them.
+
+One. Recovery authenticates by trust. On replay the store takes a record's `state`
+from the journal instead of recomputing it, so an unsigned verdict whose journal line
+says `verified` closes its gap after a restart. The verifier catches it, because it
+recomputes independently, but the component that reports gaps does not.
+
+Two. An effect is committed on a qualified acknowledgement. The host reads `ok` and
+the action id and stops there, so the unsigned D' verdict, which the store replies to
+with `state: unverified`, still logs `effect_committed`. That is in the shipped
+example run now, which means one of my own rows was passing while contradicting
+itself.
+
+Three. An I/O failure has no answer. If the journal cannot be written, the store
+raises inside the handler, prints a traceback, and closes the connection with no
+reply, instead of saying it could not persist. The effect is still withheld at the
+host, but by accident rather than by design.
+
+All three are in the register with the commands that reproduce them, as open. I have
+not fixed them yet: your report may describe the same three in a sharper form, and I
+would rather fix once.
+
+On the register's shape, this is what I would add to your proposal. Each row carries
+the reproduction as a runnable command, the commit that closes it, and the regression
+mode that fails without that commit, so the third column can be checked by running
+the second. Rows that test something outside the stated threat model go to
+`disputed` with the reasoning in the row, not deleted, so the disagreement stays
+visible.
+
+Author order and venue still wait for finalisation, as we agreed.
+
+---
+
 ## For you, not for him
 
 - The patch is delivered as two text attachments. Do not paste a repository link that carries the workspace name.
