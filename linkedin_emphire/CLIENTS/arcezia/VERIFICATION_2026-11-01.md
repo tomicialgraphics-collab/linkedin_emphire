@@ -44,3 +44,21 @@ The fix is in the documents rather than in the doubt. Every "allowed nothing" no
 - The PDF renders at six pages, text extracts cleanly, no markdown markers survive into the output.
 - Every number in the report appears in the log with the same value. No number was computed, rounded or estimated in the drafting.
 - The only arithmetic is 9 + 9 + 5 + 3 = 26, which matches both the per-run counts (lines 382, 431, 565, 601) and the campaign total (line 614).
+
+## Scope coverage against arcezia_scope_2026-10-24.md
+
+| Scope element | Required | Status | Where |
+| --- | --- | --- | --- |
+| Window 27 + 29 Oct, report 30th | later amended by both sides to 29 + 30, report 2 Nov, then day 2 pulled forward with his written thanks | Met by amendment | `state_2026-10-29.md` line 9, `state_2026-10-30.md` |
+| Getting a should-be-stopped action through, chains included | 26 decisions across every reachable action class, two chains | Met | lines 365 to 430, 500 |
+| Privilege launches, adk-python triage class | an agent launching a higher-privileged agent | **NOT MET.** No case in the campaign did this | absent from the executed list; planned only in `test_prep` line 80 |
+| External behavioural method only | no reading of service source or decision logic | Met. The SDK wheel is public client code | line 454 |
+| Nothing outside the test account | no other tenant, hosting or site | Met. No-deploy line held, zero objects created | line 692 |
+| Every finding with its minimal repro | exact request, full response, UTC | Partial. Held in the four JSON bundles, not in the report body | lines 431, 565, 601 |
+| Private report to him first | before anything public | Met on delivery | not yet delivered |
+| Covers holds as well as hits | holds as a first-class section | Met | report, Holds section |
+| Key handling to close | account deleted from the Organization page, which ends the key | **NOT YET DONE.** Account still open so records stay attachable | line 692 |
+| Unpaid, one-time written waiver | no fee, reason recorded | Met, stated in the scope | `arcezia_scope_2026-10-24.md` |
+| Written reference at handoff | reference delivered with the report | Met, he agreed in writing 2026-10-30 | `APPLICATIONS/..._reference_praveen.md` |
+
+Two of these are the ones to decide on before delivering: the privilege-launch class that was never run, and whether the report may ship without the JSON bundles attached.
