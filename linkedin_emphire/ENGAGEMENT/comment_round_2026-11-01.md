@@ -1205,3 +1205,41 @@ pitch, do not mention the benchmark, and keep it under eighty words because this
 rewards brevity. If the choice is between this and the Mollick or Goldshteyn surfaces, take one of
 those; if the choice is between this and following Jack AM Austin for a week and then commenting on
 his own posts, take that instead.
+
+
+### 18.2 His public reply, two minutes later
+
+He answered the comment in public: "your points are spot on", an owner with a need, then three
+numbered points, skills, realising AI as the known practicalities applied consistently and
+persistently, and leadership that includes addressing exactly this. He closes with "comments
+welcome". The comment itself picked up one reaction and ten impressions, which is the number that
+matters less than the reply.
+
+This is now a thread partner answering an open invitation, so one reply, and it must add a new
+increment rather than restate the original point. His second item is the opening: "consistently and
+persistently applied" is a mechanism question before it is a leadership one.
+
+**Draft A, recommended.**
+
+> Your second point is the one that decides the others. Consistently and persistently applied is a
+> question about mechanism before it is a question about leadership. A check that lives in the
+> governance pack gets applied at the milestone. A check that lives in the delivery pipeline gets
+> applied to every change, including the ones nobody booked a review for. The programmes I have seen
+> hold that line had moved the test into the pipeline, so applying it stopped being something anyone
+> had to remember. It also makes the owner question easier, because withholding power over a check
+> that already runs is a smaller ask than a principle.
+
+**Draft B, two sentences, if he wants the thread to stay short.**
+
+> The word doing the work in your second point is "persistently". A check in a document is applied
+> once at a milestone, and a check in the pipeline is applied to every change. Moving it there is
+> usually what makes the owner's sign-off mean something.
+
+**Why A.** It takes his own phrase and gives it a mechanism, which is what a reader with a PMO
+audience can use on Monday. It also does not repeat the argument already made in the comment, so the
+thread reads as a conversation rather than one person restating himself at increasing length.
+
+**Caution.** Do not claim to have read the other posts in his series, because this account has not.
+Do not raise the benchmark in a public thread under his name. Keep it to one reply, and if he
+answers again with another invitation, move to the private thread rather than continue in public,
+since two rounds is a conversation and three looks like a performance.
