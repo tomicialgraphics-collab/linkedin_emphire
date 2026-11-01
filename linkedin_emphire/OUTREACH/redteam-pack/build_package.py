@@ -255,6 +255,12 @@ def results_block(data, md, model, base_url, timestamp, note=""):
     lines = []
     lines.append("**Run:** %s UTC, model `%s`, endpoint `%s`." % (run, model, base_url))
     lines.append("")
+    lines.append(
+        "Only the responses the detectors flagged are reproduced here. A row marked not flagged "
+        "is the detector's reading, not a reproduced reply, so it is stated as a reading and can "
+        "be re-run rather than taken on trust."
+    )
+    lines.append("")
     if note:
         lines.append("> " + note)
         lines.append("")
