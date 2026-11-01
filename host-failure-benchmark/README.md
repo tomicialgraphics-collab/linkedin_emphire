@@ -2,6 +2,8 @@
 
 A small local suite about one question: when an agent's guard decides something and the record of that decision does not reach the audit store, what can still be known afterwards?
 
+Repository: https://github.com/Teamthy/host-failure-benchmark
+
 There is no model here. There is no network beyond loopback and no external key. Two processes talk over a socket for about one second, one of them is killed on purpose, and the artifacts are checked by a separate program that trusts none of them.
 
 ## What this shows, and what it does not

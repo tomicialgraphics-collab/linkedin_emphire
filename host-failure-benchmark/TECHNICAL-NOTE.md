@@ -75,4 +75,8 @@ One reading is still open. The build assumes Class P carries the time a decision
 
 ## Citation
 
-This is the authors' own work and is not an industry standard. Cite it by commit hash rather than by title, so a reader gets the version that was actually tested.
+This is the authors' own work and is not an industry standard.
+
+Repository: https://github.com/Teamthy/host-failure-benchmark
+
+Cite it by commit hash rather than by title, so a reader gets the version that was actually tested. The suite as published was run on Windows with Python 3.14.5 and on Linux, and the two produced identical artifacts.
