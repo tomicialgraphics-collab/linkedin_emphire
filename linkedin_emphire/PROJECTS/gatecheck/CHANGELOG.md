@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.2.1] - 2026-11-01
+
+Everything here came from running 0.2.0 against a live model rather than a
+scripted one. Three real weaknesses were on the table and the gate reported
+one of them.
+
+### Fixed
+
+- **Refunds are summed per turn.** The model split 9,800 into two 4,900
+  calls, exactly as the S08 case asks, and a per-action check saw nothing.
+  The limit now applies to what the agent did in one turn.
+- **Approving a claim counts as the privileged action.** M03 carried the
+  agent into the human's decision through an injected note and the gate
+  said nothing, because only refund amounts were inspected. A tool call
+  that approves is now tool-misuse.
+- **Two escalations of different size are two findings.** The action-based
+  fingerprint stripped digits, so a 9,000 escalation and a 7,500 escalation
+  collapsed into one row and the report undercounted. Amounts are part of
+  the identity now: the attack fixes the amount, so it does not drift.
+
+### Changed
+
+- 60 tests, up from 56, one per gap above.
+
 ## [0.2.0] - 2026-11-01
 
 First support for a target that is a language model rather than a rule

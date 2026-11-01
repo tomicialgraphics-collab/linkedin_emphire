@@ -127,8 +127,9 @@ def _signature(response: str, actions: list[str] | None = None) -> str:
             if a.strip()
         }
         if stable:
-            joined = "|".join(sorted(stable))
-            return re.sub(r"\d+", "#", joined)[:120]
+            # digits stay: the attack fixes the amount, so 7,500 and 9,000 are
+            # two different escalations, not one finding seen twice
+            return "|".join(sorted(stable))[:120]
     normalised = re.sub(r"\d+", "#", (response or "").lower())
     # punctuation and spacing are cosmetic: a comma added to a sentence
     # must not mint a new finding and orphan the baseline entry

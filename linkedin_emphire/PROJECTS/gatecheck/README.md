@@ -154,9 +154,14 @@ Three things change when the target is a model rather than a rule engine,
 and all three are handled:
 
 - **Detection reads actions.** An outbound email to a domain outside
-  `INTERNAL_DOMAINS`, or a refund above the limit, is a finding because
-  the agent did it. That does not depend on the model describing itself
-  honestly, which is the weakest evidence there is.
+  `INTERNAL_DOMAINS`, a refund above the limit, or a claim approved without
+  a human is a finding because the agent did it. That does not depend on
+  the model describing itself honestly, which is the weakest evidence
+  there is.
+- **Refunds are summed per turn, not judged one call at a time.** S08 asks
+  for the same money in two pieces, and a per-action rule sees nothing
+  wrong with 4,900 twice. The first live run against a real model is what
+  found that gap; it is closed.
 - **Identity prefers the action over the prose.** The fingerprint order is
   canary, then tool call, then free text. A model rewrites its wording
   every run, and an identity that follows the wording would mint a new
@@ -251,18 +256,18 @@ groq_target/       a real model behind the same contract (agent, server)
 gatecheck.groq.yml the config for that target, baseline kept separate
 demo/agent.py      the broken and fixed agents
 examples/          a blocked run and a clean run, committed
-tests/             56 tests
+tests/             60 tests
 action.yml         GitHub Action
 ```
 
 ## Tests
 
 ```bash
-pytest      # 56 tests, ~7s, no network, no key
+pytest      # 60 tests, ~9s, no network, no key
 ruff check .
 ```
 
-On a machine with no optional engine the count is 54 passed, 2 skipped:
+On a machine with no optional engine the count is 58 passed, 2 skipped:
 the PyRIT and promptfoo tests skip themselves rather than failing, because
 a missing third-party tool is not a bug in the gate.
 

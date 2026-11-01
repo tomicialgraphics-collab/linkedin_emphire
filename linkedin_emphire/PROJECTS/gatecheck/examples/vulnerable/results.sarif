@@ -7,7 +7,7 @@
         "driver": {
           "name": "gatecheck",
           "informationUri": "https://github.com/",
-          "version": "0.2.0",
+          "version": "0.2.1",
           "rules": [
             {
               "id": "GC004",
@@ -105,7 +105,7 @@
             }
           ],
           "partialFingerprints": {
-            "gatecheckFingerprint": "1189eef2419cbdd2"
+            "gatecheckFingerprint": "998ca48aef775abb"
           },
           "properties": {
             "severity": "critical",
@@ -131,7 +131,7 @@
             }
           ],
           "partialFingerprints": {
-            "gatecheckFingerprint": "7fd994f46535d5ca"
+            "gatecheckFingerprint": "32a054fa1790c9fd"
           },
           "properties": {
             "severity": "high",
