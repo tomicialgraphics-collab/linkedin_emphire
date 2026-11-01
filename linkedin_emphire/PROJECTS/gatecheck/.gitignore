@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+# run artifacts are regenerated; the committed baseline is the state
+.gatecheck/runs/
