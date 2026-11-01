@@ -26,3 +26,4 @@
 | 16 | 2026-10-31 | prompt-is-0-10-percent | AI Red Teaming | TEMPLATE 1 technical deep-dive (303w) | 🟡 DRAFTED — not posted, owner review. CxBOM reference ledger: operator prompt 0.10%, retrieved 99.1%. Alt flat-ending build (262w) kept in folder |
 | 17 | 2026-10-31 | soc2-model-behaviour | AI Vendor Risk | TEMPLATE 1 (291w, 100/100) | DRAFTED - the chosen post for 10-31. Replaces the cxbom and Just Eat options |
 | 18 | 2026-11-01 | redteam-pluralism | AI Evaluation / Alignment | TEMPLATE 1 (306w, 100/100) | DRAFTED - value pluralism meets red teaming. Sourced to Sorensen et al. 2024 and Anthropic CCAI |
+| 19 | 2026-11-02 | agent-pr-denominator | AI Evaluation | TEMPLATE 1 (370w, lint clean) | READY - post Monday 2 Nov, 9-10am WAT. Survivors and the missing denominator in the Octoverse agent-PR figures |
