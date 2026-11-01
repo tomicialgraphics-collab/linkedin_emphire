@@ -5,7 +5,8 @@ Reviewer: Behar (independent). Package received 1 November 2026:
 That is the hash declared in the review, measured on the file before anything was unpacked: match.
 
 Base commit: `df0cf5a`. Patch: `P2-DIFFERENTIAL-FIXES.patch.txt`, sha256
-`1737a13c06d0b55af9f45405572c5ec2b9647d9b5e35524d2ef18f5a5ada646c`. All numbers below come
+`96d3e59aa016a534dcb694506ed954b624c1667ea783797b78d80a1169895e09`. The patched tree is also
+committed inside this repository at `host-failure-benchmark/`. All numbers below come
 from running the reviewer's own scripts, unchanged, with `HFB_REPO` pointed at the tree under
 test. The logs are in `evidence/2026-11-01/`.
 
@@ -32,7 +33,8 @@ tests refusal and the audit tests tearing. V23 and V24 are the host-side group (
 test, no proof of death). V28 to V33 are the completeness group (nothing signs the sequence).
 
 Nothing here is described as fixed unless the reviewer's own case reports "as documented" on the
-patched tree, and the benign run still verifies: `run.py` then `verify.py` gives 13 of 13 Class P
+patched tree, an `audit/regressions.py` mode fails without the fix, and the benign run still
+verifies: `run.py` then `verify.py` gives 13 of 13 Class P
 and 2 of 2 Class V, two runs are byte-identical, and `challenge.py` catches every mutation it
 names. Those four outputs are in `evidence/2026-11-01/`.
 
@@ -68,6 +70,14 @@ more strongly, by the tool; the check itself needs rewriting to assert the finge
   a guarantee.
 - V28-V33 need authenticated sequence numbers and checkpoints. Nothing in the current design
   provides them, and adding them changes the architecture rather than a check. Open.
+
+## Modes, so a fix can break loudly
+
+Seven modes were written for these six findings, nineteen in all, and every one is caught:
+`f16` and `f17` for F-01, `f18` for F-02, `f19` for F-03, `f21` for F-04, `f20` for F-05, `f22`
+for F-09. `f20` tests both directions, because a check that fires on an ordinary restart is not
+a check: the benign restart has to verify and the binding P2 replaced has to fail on it. The run
+is in `evidence/2026-11-01/regressions-19-modes.log`.
 
 ## Case by case
 

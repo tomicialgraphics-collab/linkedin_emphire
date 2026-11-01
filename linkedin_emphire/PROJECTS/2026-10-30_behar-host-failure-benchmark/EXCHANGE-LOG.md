@@ -236,6 +236,12 @@ patched tree his package reports 9 defects and 22 documented outcomes. The nine 
 predicted would remain: V04, which I dispute, V23 and V24, which are host-side and out of the
 current claim, and V28 to V33, which need signed sequence numbers that do not exist yet.
 
+The modes came after the disposition, because his rule is that a row closes on a mode and not on
+a run I did by hand. Seven modes, nineteen in all: f16 and f17 for the state trust and the
+binding, f18 for the conflicting verdicts, f19 for the acknowledgement, f21 for the journal I/O,
+f20 for the false rejection in both directions, f22 for the runner. Six register rows moved from
+patched to closed on the strength of them.
+
 Two things I will not do in the reply. I will not restate his count of 25 deviations as if it
 were in his own results file, which shows 24 counting the static case; and I will not call
 anything closed. Every patched row in the register stays patched until `audit/regressions.py`

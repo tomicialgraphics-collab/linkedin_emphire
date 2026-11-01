@@ -10,6 +10,7 @@ C'           P    holds  issuance alone names the gap with no content, so the re
 C''          P    holds  a locally minted id leaves silence: the store cannot name the action at all, and
 D            V    holds  a complete record verifies against the key it carries, and the descriptor digest
 D'           V    holds  a preserved record whose binding does not verify is quarantined and never counte
+D'.effect    V    holds  the effect did not proceed on a record the store could not resolve, so quarantin
 journal-first P    holds  a store that cannot journal a verdict does not report it as known, in memory or 
 repair-quarantine P    holds  a repair that shortens a journal keeps the bytes it removed, so what was in flig
 conflict     P    holds  two verdicts that disagree are recorded as a conflict with both sequence numbers
@@ -22,7 +23,7 @@ no-wall-clock meta holds  every timestamp in every artifact is a counter step, s
 determinism  meta holds  two runs of the suite produce identical artifacts, so a result can be reproduced
 
 Class P (persistence and recovery): 13 of 13 hold
-Class V (verification):            2 of 2 hold
+Class V (verification):            3 of 3 hold
 Named gap at M3: C = name with content, C' = name only, C'' = silence.
 Strength is reported, not scored. The three are not gradations of one result.
 Decision time: source-asserted. Carried through replay in M2, never independently attested by anything in this suite.

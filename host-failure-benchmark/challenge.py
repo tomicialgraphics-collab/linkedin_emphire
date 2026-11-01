@@ -2,14 +2,20 @@
 """Break the artifacts on purpose and confirm verification notices.
 
 A checker that cannot fail is a decoration. This script takes a finished run, damages the record
-in nine specific ways, and requires that the damage be caught by the check that claims to catch
+in ten specific ways, and requires that the damage be caught by the check that claims to catch
 it. If a mutation slips through, the check it targets is not measuring what it says it measures.
+
+It also does two things that are not mutations, because verification can fail in the other
+direction: it points the verifier at a directory that is not a run, and it compares a run against
+a copy that is missing artifacts. A verifier that raises on the first, or calls the second
+identical, has reported on nothing.
 
     python challenge.py artifacts/run-20261101T120000Z
 
 Exit code is 0 only if every mutation was caught by its expected check.
 """
 
+import hashlib
 import json
 import os
 import shutil
@@ -20,7 +26,7 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "bench"))
 
-from common import record_payload, sign  # noqa: E402
+from common import frame, record_payload, sign  # noqa: E402
 
 VERIFY = os.path.join(HERE, "verify.py")
 
@@ -36,9 +42,30 @@ def save_store(path, records):
             fh.write(json.dumps(rec, sort_keys=True) + "\n")
 
 
+def copy_run(rundir, work):
+    """Copy the whole run, probe directories included.
+
+    Copying only the top level of files left every mutation looking like a run with missing
+    probes, which made some checks fail for a reason that had nothing to do with the damage.
+    """
+    for root, dirs, files in os.walk(rundir):
+        rel = os.path.relpath(root, rundir)
+        target = work if rel == "." else os.path.join(work, rel)
+        os.makedirs(target, exist_ok=True)
+        for name in files:
+            shutil.copy2(os.path.join(root, name), os.path.join(target, name))
+
+
 def renumber(records):
+    """Resequence and reframe.
+
+    Editing a journal without recomputing its frames would make every mutation fail the frame
+    check, and a mutation that is caught for the wrong reason has not tested the check it names.
+    The one mutation that is supposed to leave a stale frame breaks it afterwards, on the file.
+    """
     for index, rec in enumerate(records, start=1):
         rec["store_seq"] = index
+        rec["digest"] = frame(rec)
     return records
 
 
@@ -109,13 +136,28 @@ def cut_tail(path):
         fh.write(data[: len(data) - 40])
 
 
+def drop_conflict(records):
+    """The store keeps both verdicts and drops the record saying they disagree."""
+    return ([r for r in records if r.get("kind") != "conflict"],
+            "the conflict record between the two verdicts for C-9009 is gone")
+
+
 def break_a_frame(records):
-    """A record is edited and its frame is left as it was, as a careless editor would leave it."""
-    for rec in records:
-        if rec.get("kind") == "expectation":
-            rec["policy_sha"] = "sha256:" + "f" * 64
-            break
+    """A record is edited and its frame is left as it was, as a careless editor would leave it.
+
+    The edit happens in `stale_frame`, after the journal has been reframed, so the only thing
+    damaged is the frame itself.
+    """
     return records, "an expectation was edited and its frame was not recomputed"
+
+
+def stale_frame(path):
+    rows = load_store(path)
+    for row in rows:
+        if row.get("kind") == "expectation":
+            row["policy_sha"] = "sha256:" + "f" * 64
+            break
+    save_store(path, rows)
 
 
 def to_crlf(path):
@@ -134,24 +176,35 @@ MUTATIONS = [
     ("dirty-the-signature", dirty_the_signature, {"D"}),
     ("crlf-the-journal", (crlf_the_journal, to_crlf), {"line-endings"}),
     ("torn-tail", (torn_tail, cut_tail), {"artifacts-readable"}),
-    ("break-a-frame", break_a_frame, {"store-records-framed"}),
+    ("break-a-frame", (break_a_frame, stale_frame), {"store-records-framed"}),
+    ("drop-conflict", drop_conflict, {"conflict"}),
 ]
 
 
+def copy_of(rundir):
+    work = tempfile.mkdtemp(prefix="challenge-copy-")
+    copy_run(rundir, work)
+    return work
+
+
 def baseline(rundir):
-    proc = subprocess.run([sys.executable, VERIFY, rundir], capture_output=True, text=True)
-    if proc.returncode != 0:
-        raise SystemExit("the run you pointed me at does not verify already:\n" + proc.stdout)
-    with open(os.path.join(rundir, "verify-report.json"), encoding="utf-8") as fh:
-        return {row["id"] for row in json.load(fh)["checks"] if row["result"] == "holds"}
+    """Verify a copy. The directory you point this script at is evidence, and evidence is not
+    where a report about it belongs: a failed report left in the run directory is a file that
+    looks like a verdict on a run nobody judged."""
+    work = copy_of(rundir)
+    try:
+        proc = subprocess.run([sys.executable, VERIFY, work], capture_output=True, text=True)
+        if proc.returncode != 0:
+            raise SystemExit("the run you pointed me at does not verify already:\n" + proc.stdout)
+        with open(os.path.join(work, "verify-report.json"), encoding="utf-8") as fh:
+            return {row["id"] for row in json.load(fh)["checks"] if row["result"] == "holds"}
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
 
 
 def run_mutation(rundir, name, mutate):
     work = tempfile.mkdtemp(prefix="challenge-%s-" % name)
-    for entry in os.listdir(rundir):
-        src = os.path.join(rundir, entry)
-        if os.path.isfile(src):
-            shutil.copy2(src, os.path.join(work, entry))
+    copy_run(rundir, work)
     store_path = os.path.join(work, "store.jsonl")
     post = None
     if isinstance(mutate, tuple):
@@ -170,11 +223,64 @@ def run_mutation(rundir, name, mutate):
     return note, failed, proc.returncode
 
 
+def input_checks(rundir):
+    """The two ways of asking the verifier about something that is not a run.
+
+    Both were defects found on 1 November by mistyping a path. Neither is a claim about the
+    benchmark; both are claims the documentation makes about the verifier, which is why they
+    are tested here rather than in the regression suite.
+    """
+    results = []
+
+    # A fixed path is not a missing path. The earlier version named one constant, so a directory
+    # with that name in the temp directory turned "a directory that is not there" into a
+    # directory that was, and the check stopped testing what it says it tests.
+    missing = os.path.join(tempfile.mkdtemp(prefix="hfb-absent-"), "not-a-run")
+    proc = subprocess.run([sys.executable, VERIFY, missing], capture_output=True, text=True)
+    said = (proc.stdout or proc.stderr).strip().splitlines()
+    results.append((
+        "verifier on a directory that is not there",
+        proc.returncode == 2 and "no run directory" in proc.stdout
+        and "Traceback" not in proc.stderr and "Traceback" not in proc.stdout,
+        "exit %d, %s" % (proc.returncode, said[-1] if said else "no output"),
+    ))
+
+    first, second = copy_of(rundir), copy_of(rundir)
+    for name in ("host-D.jsonl", "probe-reply/host-E.jsonl"):
+        path = os.path.join(second, name)
+        if os.path.exists(path):
+            os.remove(path)
+    subprocess.run([sys.executable, VERIFY, first, second], capture_output=True, text=True)
+    with open(os.path.join(first, "verify-report.json"), encoding="utf-8") as fh:
+        rows = {row["id"]: row["result"] for row in json.load(fh)["checks"]}
+    results.append((
+        "determinism against a run with artifacts missing",
+        rows.get("determinism") == "fails",
+        "determinism %s" % rows.get("determinism"),
+    ))
+    shutil.rmtree(first, ignore_errors=True)
+    shutil.rmtree(second, ignore_errors=True)
+    return results
+
+
+def fingerprint(rundir):
+    """Every file under the run directory, by relative path and content digest."""
+    out = {}
+    for root, _dirs, files in os.walk(rundir):
+        for name in files:
+            path = os.path.join(root, name)
+            rel = os.path.relpath(path, rundir)
+            with open(path, "rb") as fh:
+                out[rel] = hashlib.sha256(fh.read()).hexdigest()
+    return out
+
+
 def main(argv):
     if len(argv) < 2:
         print(__doc__)
         return 2
     rundir = argv[1]
+    before = fingerprint(rundir)
     holds_before = baseline(rundir)
     print("baseline: %d checks hold" % len(holds_before))
     print("")
@@ -190,11 +296,31 @@ def main(argv):
             missed.append((name, sorted(failed), code))
 
     print("")
+    input_missed = []
+    for name, held, detail in input_checks(rundir):
+        print("%-54s %-7s %s" % (name, "held" if held else "MISSED", detail))
+        if not held:
+            input_missed.append(name)
+
+    after = fingerprint(rundir)
+    touched = sorted(set(before) ^ set(after)) + sorted(
+        name for name in set(before) & set(after) if before[name] != after[name])
+    print("%-54s %-7s %s" % ("the run you pointed me at is unchanged",
+                             "held" if not touched else "MISSED",
+                             ", ".join(touched) or "no file added, removed or rewritten"))
+    if touched:
+        input_missed.append("evidence directory left changed: %s" % ", ".join(touched))
+
+    print("")
     if missed:
         for name, failed, code in missed:
             print("UNDETECTED: %s (verify exit %s, failed: %s)"
                   % (name, code, ", ".join(failed) or "nothing"))
         print("A mutation that verification does not catch is a claim it does not support.")
+        return 1
+    if input_missed:
+        print("NOT REFUSED: %s" % ", ".join(input_missed))
+        print("Something that is not a run was not refused as something that is not a run.")
         return 1
     print("Every mutation was caught by the check that claims to catch it.")
     return 0

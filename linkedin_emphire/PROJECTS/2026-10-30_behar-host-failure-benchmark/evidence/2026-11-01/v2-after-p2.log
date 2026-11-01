@@ -1,4 +1,4 @@
-baseline run /tmp/v2-run-jx9k0amx/hfb/artifacts/run-20261101T204243Z -> verify exit 0, VERDICT: every check holds
+baseline run /tmp/v2-run-8azqh4ng/hfb/artifacts/run-20261101T205532Z -> verify exit 0, VERDICT: every check holds
 
 [V01] AS-DOC  WAL verdict BLOCK->ALLOW with stale signature, before replay (0.6s)
    expected: B fails (stored verdict state unverified, WAL signature invalid)
@@ -108,7 +108,7 @@ OSError: [Errno 9] Bad file descriptor
    expected: the run is classified as host-local evidence loss, distinct from process termination; B-2001 is named somewhere
    observed: run.py rc=0; verify exit=1 failed=['B', 'B.decision', 'B.wal', 'artifacts-complete', 'no-wall-clock', 'scenarios-ran']; B-2001 in store gaps=False; any check naming evidence loss=False
 
-[V24] DEFECT  Host patched not to die in C/C'/C'' (returns instead of os._exit) (0.7s)
+[V24] DEFECT  Host patched not to die in C/C'/C'' (returns instead of os._exit) (0.6s)
    expected: M3 rows require evidence of termination (exit status)
    observed: host exits=['0', '0', '0']; verify exit=0 VERDICT: every check holds
 
@@ -130,7 +130,7 @@ OSError: [Errno 9] Bad file descriptor
 
 [V29] DEFECT  Store journal truncated at a record boundary (last record removed) (0.0s)
    expected: TECHNICAL-NOTE.md:74: a truncated history is announced
-   observed: restart stdout='store listening on 127.0.0.1:43215'; repair records=0
+   observed: restart stdout='store listening on 127.0.0.1:42343'; repair records=0
 
 [V30] DEFECT  Mid-file deletion of D-4004 issue+commitment, frames intact (0.0s)
    expected: store_seq gap detected

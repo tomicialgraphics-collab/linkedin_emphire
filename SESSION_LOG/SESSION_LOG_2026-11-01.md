@@ -270,3 +270,19 @@ and the reply asks him to rewrite it as a fingerprint assertion.
 Deliverables: `DISPOSITION-2026-11-01.md` (all 49 cases), `P2-DIFFERENTIAL-FIXES.patch.txt`,
 `host-failure-benchmark-p2.zip`, and `evidence/2026-11-01/` with both of his logs before and
 after, the V04 proof, and my own suite outputs.
+
+## 16. The six modes, and the push that could not be made
+
+`audit/regressions.py` went from twelve modes to nineteen, one per finding answered and two for
+F-01, since state trust and binding are separate defects. f16 and f17 damage the store journal
+and then ask a restarted store, which is how the reviewer posed both. f18 removes a conflict
+record and keeps both signed verdicts. f19 and f20 revert the code, because the acknowledgements
+and the boot-epoch binding are orderings and no artifact could carry them. f21 runs the store in
+process so an injected EIO can reach open() and fsync(). f22 tests the tools rather than a run.
+f20 asserts the benign direction too. All nineteen caught.
+
+The push is blocked: this sandbox can read Teamthy/host-failure-benchmark and cannot write to it,
+upstream or fork, 403 on both. So the delivery is the patch inside the workspace repository plus
+`host-failure-benchmark/` synced to the P2 tree, which was stale at the P0 version and is not any
+more. Applying the patch and pushing from his own machine is the step that turns this into a
+commit the reviewer can pull.

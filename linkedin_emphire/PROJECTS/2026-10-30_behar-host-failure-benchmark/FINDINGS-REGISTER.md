@@ -5,9 +5,9 @@ at `df0cf5a`, with patch P2 applied on top (see `P2-DIFFERENTIAL-FIXES.patch.txt
 `1737a13c06d0b55af9f45405572c5ec2b9647d9b5e35524d2ef18f5a5ada646c`).
 
 One row per finding. A row is **closed** only when a mode in `audit/regressions.py` fails
-without the fix. Until then the row stays in this file, whatever the patch does, and the status
-says exactly how far it has got. That rule has not changed since the first version of this
-register, and it is the reason no row below says closed.
+without the fix. That rule has not changed since the first version of this register. Six rows now
+meet it: F-01, F-02, F-03, F-04, F-05 and F-09, each with a mode named in the row. The rest stay
+open, including the ones a patch has touched.
 
 Status words mean one thing each:
 
@@ -19,7 +19,7 @@ Status words mean one thing each:
   `evidence/2026-11-01/`
 - **scope**: nothing to patch; the claim is narrowed and the narrowing is written in
   `TECHNICAL-NOTE.md`
-- **closed**: patched, and a mode fails without it
+- **closed**: patched, and a mode in `audit/regressions.py` fails without it
 
 ## Where the numbers come from
 
@@ -35,23 +35,23 @@ package: R1 is V05, R2 is V17, R3 is V19. Each now behaves as documented under P
 
 | id | finding | his case | fix | status |
 | --- | --- | --- | --- | --- |
-| R1 | Recovery authenticated by trust: replay took `state` from the journal row instead of recomputing it, so an unsigned record that says `verified` closed a gap after a restart | V05, V06 | store recomputes state from the record bytes and the id the row is filed under, through one `bound_state()` in `bench/common.py` that the store and the verifier both import | patched |
-| R2 | An effect committed on a qualified acknowledgement: the host read `ok: true` without reading `state`, so the unsigned D' verdict still logged `effect_committed` | V15, V16, V17, V18 | a verdict reply must say `stored: true` and `state: "verified"`; anything else, including a closed connection, withholds the effect and names the reason | patched |
-| R3 | I/O failure had no answer: a journal that could not be written raised inside the handler, printed a traceback and closed the connection with no reply | V19, V20, V21 | a failed append cuts the file back to its previous length and the store answers `ok: false, durable: false`; a damaged tail is quarantined before the next append; repair keeps the records that follow damage | patched |
+| R1 | Recovery authenticated by trust: replay took `state` from the journal row instead of recomputing it, so an unsigned record that says `verified` closed a gap after a restart | V05, V06 | store recomputes state from the record bytes and the id the row is filed under, through one `bound_state()` in `bench/common.py` that the store and the verifier both import | closed, `f16` and `f17` |
+| R2 | An effect committed on a qualified acknowledgement: the host read `ok: true` without reading `state`, so the unsigned D' verdict still logged `effect_committed` | V15, V16, V17, V18 | a verdict reply must say `stored: true` and `state: "verified"`; anything else, including a closed connection, withholds the effect and names the reason | closed, `f19` |
+| R3 | I/O failure had no answer: a journal that could not be written raised inside the handler, printed a traceback and closed the connection with no reply | V19, V20, V21 | a failed append cuts the file back to its previous length and the store answers `ok: false, durable: false`; a damaged tail is quarantined before the next append; repair keeps the records that follow damage | closed, `f21` |
 
 ## His findings, as F-numbered in the review
 
 | id | finding | cases | fix | status |
 | --- | --- | --- | --- | --- |
-| F-01 | journal state and action-ID binding | V05, V06 | as R1 | patched |
-| F-02 | conflicting verdicts and verifier self-consistency | V12, V13 | check `D` refuses to report a record verified while the same journal lists its action as an unresolved gap | patched |
-| F-03 | acknowledgement and effect admission | V15-V18 | as R2 | patched |
-| F-04 | durable journal I/O, torn writes | V19-V22 | as R3 for V19-V21; V22 stays open: the failpoint still refuses before any byte is written, so only damage tests tearing | patched, V22 open |
-| F-05 | false rejection after a routine restart | V26 | `B` binds the recovered verdict to the epoch it landed in, not to the last boot record in the file | patched |
+| F-01 | journal state and action-ID binding | V05, V06 | as R1 | closed, `f16` and `f17` |
+| F-02 | conflicting verdicts and verifier self-consistency | V12, V13 | check `D` refuses to report a record verified while the same journal lists its action as an unresolved gap | closed, `f18` |
+| F-03 | acknowledgement and effect admission | V15-V18 | as R2, plus `D'.effect`, which fails if an effect is committed for a record the store could not resolve | closed, `f19` |
+| F-04 | durable journal I/O, torn writes | V19-V22 | as R3 for V19-V21; V22 stays open: the failpoint still refuses before any byte is written, so only damage tests tearing | closed for V19-V21 (`f21`), V22 open |
+| F-05 | false rejection after a routine restart | V26 | `B` binds the recovered verdict to the epoch it landed in, not to the last boot record in the file | closed, `f20`, which also requires the benign restart to verify |
 | F-06 | host loss and proof of crash | V23, V24 | none. No independently recorded kill receipt, no named host-disk-loss test, and nothing in the suite authenticates that the host died | scope |
 | F-07 | completeness of earlier evidence | V28-V33 | none. Nothing signs the sequence or checkpoints the journal, so a deletion or a rewrite inside framed records still verifies | open |
 | F-08 | timestamp semantics and the shared fixture key | V02, V04 | `B.decision` compares the recovered verdict and rule with the guard decision the host logged; V04 is disputed: its mutation writes the value the field already holds, and the re-signed record is byte-identical to the WAL | patched, V04 disputed |
-| F-09 | runner trustworthiness | V35, N06, N11-N13 | `verify.py run run` is refused; `challenge.py` writes nothing into the evidence directory, derives its absent path, and fingerprints the directory to prove it is unchanged | patched; V35 not testable here, N13 needs his check rewritten |
+| F-09 | runner trustworthiness | V35, N06, N11-N13 | `verify.py run run` is refused; `challenge.py` writes nothing into the evidence directory, derives its absent path, and fingerprints the directory to prove it is unchanged | closed for N06, N12 and N13 (`f22`); V35 not testable here |
 | F-10 | idle connection blocks the store; client-selected ids | V36, F6 | none | open |
 
 ## Disputed, with the evidence beside it
@@ -70,12 +70,21 @@ package: R1 is V05, R2 is V17, R3 is V19. Each now behaves as documented under P
 | V1 | the verifier still imports the encoder it checks, so the correlated-oracle problem stays until there is a second encoder | open |
 | H1 | no CI matrix. The cross-platform claim is two machines compared by hand | open |
 
-## What closes the patched rows
+## How the six rows closed
 
-One `audit/regressions.py` mode each, in the same three kinds the file already uses: an
-after-run artifact mutation for F-02, a before-run code revert for F-01 and F-03, and a
-store-level case for F-04, which needs a journal that refuses a write rather than a run that
-contains one. The acceptance rule for each is his: the mode must reject the original
-counterexample and the benign run must still verify. The second half is already measured: P2
-leaves `run.py` plus `verify.py` at 13 of 13 Class P and 2 of 2 Class V, two runs byte-identical,
-and `challenge.py` catching every mutation it names.
+Seven modes in `audit/regressions.py`, nineteen in all, every one caught:
+
+| mode | the counterexample | what has to catch it |
+| --- | --- | --- |
+| f16 | a journal row asserting `state: verified` over an unsigned record, then a restart | the gap stays named |
+| f17 | a record signed for D-4004 filed under C-3003, then a restart | the gap stays named |
+| f18 | a second, differently signed D-4004 verdict with the conflict record removed | D |
+| f19 | the host's acknowledgement requirement disabled, as it was before P2 | `D'.effect` |
+| f20 | a routine restart after a valid run, against the binding P2 replaced | B holds with the fix, B fails without it |
+| f21 | open() and fsync() raising EIO during an append, in process | the store answers, and memory and disk agree |
+| f22 | one directory compared with itself, and a challenge over the evidence | the refusal, and the directory unchanged |
+
+His acceptance rule is both halves, so f20 tests both: the benign restart has to verify and the
+old binding has to fail on it. The other half is measured by the suite itself, which P2 leaves at
+13 of 13 Class P and 2 of 2 Class V, two runs byte-identical, and every mutation in
+`challenge.py` still caught.

@@ -1,4 +1,4 @@
-baseline: 21 checks hold
+baseline: 22 checks hold
 
 stamp-at-replay      caught  B-2001 now claims a decision time it never had
                              failed: B, B.wal
