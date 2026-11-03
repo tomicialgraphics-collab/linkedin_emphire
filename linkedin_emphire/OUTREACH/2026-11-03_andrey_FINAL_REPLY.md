@@ -3,8 +3,9 @@
 Every number below is verified from his own console output. Nothing is a placeholder.
 
 Attachments: `results.json`, `console.log`, `SHA256SUMS.txt`, `provenance.txt`,
-`provenance-after.txt`. Optional sixth: `check_results.py`, the twelve line script that counts the
-record, so he can run the completeness check himself.
+`provenance-after.txt`. `check_results.py` is in the published folder rather than attached.
+
+Published record: commit `d60579a`, path `review/2026-11-03_run2`.
 
 ---
 
@@ -26,6 +27,11 @@ the traceback and the non-zero exit from the `write_outputs()` defect documented
 order of events is in the record rather than in my account of it. `SHA256SUMS.txt` covers both files,
 the harness, the commit and the blob id. `provenance.txt` is the checkout record and the exit code, and
 `provenance-after.txt` is the working tree after the run, which is empty.
+
+The same record is published at `github.com/Teamthy/ai-redteam-five-tests/tree/main/review/2026-11-03_run2`,
+so the link outlives the attachments. The committed copy of `results.json` hashes to the same value as
+the one attached, which is checked rather than assumed: line ending conversion is disabled for that
+folder so the bytes match.
 
 Provenance. Clean checkout of `d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`. `git status --porcelain`
 returned nothing before the run and nothing after it, and the first line of `provenance.txt` is that

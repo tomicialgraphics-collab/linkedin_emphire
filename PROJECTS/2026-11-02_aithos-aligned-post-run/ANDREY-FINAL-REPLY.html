@@ -96,12 +96,14 @@ a{color:var(--accent)}
 <main>
 <h1>Final reply to Andrey</h1>
 <p>Every number below is verified from his own console output. Nothing is a placeholder.</p>
-<p>Attachments: <code>results.json</code>, <code>console.log</code>, <code>SHA256SUMS.txt</code>, <code>provenance.txt</code>, <code>provenance-after.txt</code>. Optional sixth: <code>check_results.py</code>, the twelve line script that counts the record, so he can run the completeness check himself.</p>
+<p>Attachments: <code>results.json</code>, <code>console.log</code>, <code>SHA256SUMS.txt</code>, <code>provenance.txt</code>, <code>provenance-after.txt</code>. <code>check_results.py</code> is in the published folder rather than attached.</p>
+<p>Published record: commit <code>d60579a</code>, path <code>review/2026-11-03_run2</code>.</p>
 <hr>
 <p>Andrey,</p>
 <p>Attached is the record you asked for: a second run at the same commit, complete, with the log and a manifest covering both.</p>
 <p>The result first, because it is the substantive part. Run 2 reached the same verdict as the 1 November run on all fourteen attempts. Prompt injection held in three of three. Retrieval poisoning broke in three of three. Tool description poisoning broke in one of one, with the tool-absent baseline clean. Multilingual refusals held in six of six. Two days apart, same pinned commit, same model id, and nothing moved at the verdict level.</p>
 <p>Files. <code>results.json</code> in full, including every response that was not flagged, which is the half the package reported as a detector reading rather than as a transcript. It holds sixty six strings across <code>meta</code> and the five tests, and none of them is empty. <code>console.log</code> is the run end to end, including the traceback and the non-zero exit from the <code>write_outputs()</code> defect documented in the package, so the order of events is in the record rather than in my account of it. <code>SHA256SUMS.txt</code> covers both files, the harness, the commit and the blob id. <code>provenance.txt</code> is the checkout record and the exit code, and <code>provenance-after.txt</code> is the working tree after the run, which is empty.</p>
+<p>The same record is published at <code>github.com/Teamthy/ai-redteam-five-tests/tree/main/review/2026-11-03_run2</code>, so the link outlives the attachments. The committed copy of <code>results.json</code> hashes to the same value as the one attached, which is checked rather than assumed: line ending conversion is disabled for that folder so the bytes match.</p>
 <p>Provenance. Clean checkout of <code>d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6</code>. <code>git status --porcelain</code> returned nothing before the run and nothing after it, and the first line of <code>provenance.txt</code> is that empty output.</p>
 <p>One digest needs explaining rather than hiding. The SHA-256 of <code>redteam.py</code> in the manifest is <code>540cf2abfa2643143d0c84b12c40d3e8f324a3bd6c84e5620124f8282049cff9</code>, and the value published in the package is <code>6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581</code>. Both are the same file. This checkout is on Windows, where the installer default converts LF to CRLF on checkout, and that changes the digest without changing a character of content. The platform independent identifier is the git blob id, <code>d39a4bedd4e00ba1c67be67b630cf8e28f664ec1</code>, from <code>git ls-tree HEAD redteam.py</code>. Hashing the raw blob with <code>git show HEAD:redteam.py</code> reproduces <code>6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581</code>, which is the published value, and that command is in the record so you can run it rather than take this paragraph on trust. A checkout with <code>core.autocrlf</code> set to false removes the difference entirely.</p>
 <p><code>results.json</code> hashes to <code>d9a9b0669262f9c7ab745c04c2af0f1fe63838c3d660752b0de99c390fe0e83f</code>, and the copy attached hashes to the same value. It was written on Windows, so it contains CRLF as well, which is why the manifest carries a date rather than presenting its digests as permanent.</p>
@@ -117,7 +119,7 @@ a{color:var(--accent)}
 <ol><li>Search <code>console.log</code> for the key prefix. It should not be there. If it is, redact and say so.</li><li>Do not re-run the harness after this. Any new run produces different digests, and the manifest is</li></ol>
 <p>final for run 2.</p>
 <ol><li>Attach files, not screenshots, and not the earlier PDF again.</li></ol>
-<footer>Run 2, five files, no placeholders</footer>
+<footer>Run 2, published record, five files</footer>
 </main>
 </body>
 </html>
