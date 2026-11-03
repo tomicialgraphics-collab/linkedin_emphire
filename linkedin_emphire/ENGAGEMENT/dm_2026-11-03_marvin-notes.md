@@ -80,3 +80,25 @@ exhibits are demonstration records built to be checked, not evidence of a deploy
 - Do not hand over the network. Not until something has been verified independently.
 - Do not spend more than an evening before he answers the completeness question. The answer reveals whether
   he has thought about the failure that matters to auditors.
+
+## Verification on Windows PowerShell 5.1
+
+The site's two commands are Unix. `curl` in PowerShell is an alias for Invoke-WebRequest, so `-sO` is
+rejected, and `shasum` does not exist. The byte-exact equivalent:
+
+```
+cd $HOME\Downloads
+(New-Object Net.WebClient).DownloadFile('https://foray.dunin7.com/proofs-material/record-a-body-v2.json', "$PWD\record-a-body-v2.json")
+(Get-FileHash .\record-a-body-v2.json -Algorithm SHA256).Hash.ToLower()
+(Get-Item .\record-a-body-v2.json).Length
+```
+
+Expected: 5b106984710c31538beadea650d4f3091b2629e59a34189751bdcda15b316630
+
+WebClient is used rather than Invoke-WebRequest -OutFile because the check is byte identity and WebClient
+writes the received bytes without interpretation. Do not open the file in Notepad, which adds a BOM on save.
+If the hash differs, try `curl.exe -sO <url>` from the same folder and compare lengths against the
+`record-a-body-v2.sha256` sidecar before concluding anything about the record.
+
+Step two, recomputing the commitment from body hash, salt and lane, needs Verifier Specification v0.4 section
+5.4, which has not been read yet. Do not guess the construction.
