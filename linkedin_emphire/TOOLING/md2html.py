@@ -97,12 +97,20 @@ a{color:var(--accent)}
   h1{font-size:1.55rem}
 }
 @media print{
-  body{background:#fff; font-size:11.2pt}
-  main{max-width:none; box-shadow:none; padding:0}
+  /* Margin 0 collapses the browser's own margin box, which is where Chrome and Edge
+     render the file:/// URL and the page counter. Padding on body restores the white
+     space, so the printed page carries the document and nothing else. */
+  @page{size:A4; margin:0}
+  body{background:#fff; font-size:11.2pt; padding:14mm 16mm}
+  main{max-width:none; box-shadow:none; padding:0; margin:0}
+  h1{break-after:avoid; page-break-after:avoid}
   h2{break-after:avoid; page-break-after:avoid}
-  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  table{break-inside:auto; page-break-inside:auto}
+  tr,td,th{break-inside:avoid; page-break-inside:avoid}
+  .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
   .say{background:#f3f7f5}
   footer{border-top:1px solid #ccc}
+  a[href]::after{content:""}
 }
 """
 

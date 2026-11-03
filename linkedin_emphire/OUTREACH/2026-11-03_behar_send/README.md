@@ -31,3 +31,13 @@ Add file, Upload files, is enough for one file.
 
 `00_MESSAGE.txt`, 459 words, lint clean. It is plain text on purpose, because it gets pasted into LinkedIn
 rather than opened.
+
+## Printing without a path or page number
+
+Both HTML files carry a print rule that sets the page margin to zero and puts the white space back as body
+padding. Chrome and Edge render their own header and footer inside the page margin box, which is where the
+`file:///C:/Users/...` line and the page counter come from, so a zero margin leaves them nowhere to draw.
+
+If a path still appears, the browser is adding it from the print dialog, not from the file. Untick
+**Headers and footers** in the print dialog, under More settings. Nothing in either file contains a local
+path: `grep -c 'file:///' *.html` returns zero on both.
