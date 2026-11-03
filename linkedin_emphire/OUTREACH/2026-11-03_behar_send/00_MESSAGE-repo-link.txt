@@ -1,0 +1,15 @@
+Behar,
+
+The repository, in case the earlier link did not come through:
+
+https://github.com/Teamthy/host-failure-benchmark
+
+Two places to look. The write-up is at review/2026-11-03_p2-verification/results-2026-11-03/RESULTS.md, with the six logs in the logs folder beside it. The hashes at the names the files arrived with are at review/2026-11-03_p2-verification/MANIFEST-delivered.sha256.
+
+If you would rather clone it:
+
+git clone https://github.com/Teamthy/host-failure-benchmark.git
+
+Everything is on main. Nothing to download, nothing attached.
+
+Olusanya
