@@ -1,0 +1,5 @@
+Everyone here is right that the brief sets the ceiling. The floor is set by what the executor leaves behind.
+
+Thirty items finished overnight is a claim until each one arrives with the artifact that proves it: the draft, the commit, the sent mail. A summary of what got done is the one thing you cannot check at 8am, because the same system that did the work wrote it.
+
+So the handoff needs a second field beside priorities: for each item, what evidence would prove it. Then the morning is triage instead of audit.
