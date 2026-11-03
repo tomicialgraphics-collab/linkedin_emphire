@@ -142,3 +142,27 @@ joke, and Martin's paragraph is where the substance sits. No mention of the benc
 Data Vault citation, because he holds three certifications in it and does not need one explained.
 
 Draft, 96 words, lint clean, gate 100: `2026-11-03_comments/07_martin_safranek.txt`.
+
+## Eighth comment: Kyle Bartlett, 3 November, late evening
+
+His `connect-ready` gate rejected one of his own drafts for repeating a closing line sent to someone else
+earlier that day. He runs twenty-odd agents on Claude Code. He ends by asking what other people's checks
+compare against.
+
+**Profile read.** Greater Houston, runs Bartlett Labs, Purdue, former US AI Lead at Anker, ex-Apple,
+first-degree connection. Headline is AI Architect and Forward Deployed Engineer, building production agent
+systems for enterprise ops, with evals and governance in the description. He is asking a real question,
+not performing one, so the comment answers it directly and hands back a failure he will recognise.
+
+**Angle.** The question assumes the comparison set is trustworthy. In the work here it usually is not: when
+the record of what already went out fails to write, the cross-piece check compares against nothing and
+returns clean. So the check that matters is not only whether the draft passes, but whether the log grew.
+That is his finding one layer down, and it is the honest limit of this side's tooling rather than a boast
+about it.
+
+**Deliberately absent.** No mention of the benchmark, the review, or the Aithos application. No pitch. He
+is first degree and worth a DM later, but the comment should be the whole contact for now. There is also a
+Udemy course with an almost identical title in the search results, whose instructor describes a JPMorgan
+and untapt history that does not match this profile, so nothing in the comment references a course.
+
+Draft, 104 words, lint clean, gate 100: `2026-11-03_comments/08_kyle_bartlett.txt`.
