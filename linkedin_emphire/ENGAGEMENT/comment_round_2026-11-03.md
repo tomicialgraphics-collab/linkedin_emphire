@@ -365,3 +365,35 @@ behavioural check per dependency with a recorded baseline to diff against.
 Star or the MVP, which are in his headline and would read as scraping.
 
 Draft, 121 words, lint clean, gate 100: `2026-11-03_comments/16_oren_melamed.txt`.
+
+## Replies on the Oren Melamed thread, 3 November
+
+Two replies, both to real people, both answering once and stopping.
+
+**Oren Melamed** pushed back gently: breakage is less critical than security, the ecosystem is early,
+there is no single registry so trust has to be built there rather than at the edges. His reply is friendly
+and half right, so the answer concedes the security point and then joins the two halves instead of defending
+the original framing. Tampering and drift are indistinguishable from outside, because both present as the
+same version string with different answers, and the artifact that separates them is the same recording.
+The registry line is the one that lands: a registry that holds results is worth more than one that holds
+signatures.
+
+**Sergio S.** came in from the security side with two concrete things: apm audit accepts findings from any
+SARIF scanner, and Waza is an evaluation harness worth looking at for behavioural drift on composed APM
+scenarios. Both links were read before replying.
+
+- `apm audit` folds in SARIF 2.1.0 output from any scanner, merges findings into one report and drives exit
+  codes. Installs can audit with warn or block, and an organisation policy acts as a floor, so
+  `apm install --audit block` cannot be relaxed by a weaker local flag.
+- The baseline flag that exists, `--baseline`, is a reviewed suppression file for scanner findings. It is a
+  list of things already looked at, not a record of what a version did.
+- Waza is a Go CLI for evaluating agent workflows, skills and custom agents: YAML scenarios, thirteen grader
+  types, fixture isolation per task, cross-model comparison, and GitHub Actions integration that runs
+  evaluations on pull requests.
+
+The reply's useful point is the join: Waza on the Dependabot pull request, compared against the previously
+recorded run rather than the head's own baseline, because a fresh baseline on the branch being tested
+compares today against today.
+
+Replies: `2026-11-03_comments/16a_reply_oren.txt` (91 words), `16b_reply_sergio.txt` (108 words). Both lint
+clean.
