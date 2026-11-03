@@ -292,3 +292,26 @@ the point is about verification rather than tooling. No mention of the benchmark
 reference to his comedy, which would read as flattery in a governance thread.
 
 Draft, 98 words, lint clean, gate 100: `2026-11-03_comments/13_al_neitsch.txt`.
+
+## Fourteenth comment: Paolo Perrone, 3 November, late night
+
+He summarises an Airbnb talk about a four-person team getting agentic coding to 64% of engineering in a
+year: CLI over IDE, MCP over fine-tuning, parallel sessions over flow state, a thin wrapper over lock-in. He
+ends by asking what stops teams from shipping this way.
+
+**Profile read.** Writes The AI Engineer on Substack, covering agents, inference and GPU economics for a very
+large engineering readership. His pieces explain mechanisms rather than announce products, and the inference
+course is the closest thing in his catalogue to the current post. He has technical readers, so a comment
+that argues about measurement will be understood at speed and judged by whether it is true.
+
+**Angle.** Answer the question with the step after adoption. The 64% figure is a headcount, and it moves the
+constraint to review. Five parallel sessions per power user turns the reviewer into the queue, and the honest
+metric stops being pull requests opened and becomes pull requests that survived review unrewritten. Teams
+can produce the first number on demand and cannot produce the second, because nothing records what happened
+to a change after it merged. Close on why the wrong number is the one that gets quoted.
+
+**Deliberately absent.** No link to the post on the merge rate, even though this is the same argument. In
+someone else's thread a link reads as traffic, and the idea carries without it. Also no comment on the
+Airbnb numbers themselves, which are his summary of a talk neither of us ran.
+
+Draft, 102 words, lint clean, gate 100: `2026-11-03_comments/14_paolo_perrone.txt`.
