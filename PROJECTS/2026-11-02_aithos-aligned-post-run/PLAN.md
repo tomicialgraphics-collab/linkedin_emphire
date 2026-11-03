@@ -65,3 +65,21 @@ The follow-up goes out once, on the 14th, per `AITHOS-PREP.md` §10. If they rep
 
 - Update `VERIFIED_POSTS/INDEX.md` rows 16, 17 and 18 to the dates they actually go out. Right now they read as drafted on 31 October and 1 November, which is when they were written, not when they ship.
 - For #21, re-run the suites before posting. The counts in that post move when a defect closes, and a stale number in a post about honesty is the worst possible error.
+
+## Revision, 3 November
+
+The Monday slot was missed. Post 19 goes out Tuesday 3 November instead, rebuilt so the headline and
+subheadline are the first two lines, as the hook spec requires.
+
+Revised grid, keeping every other day:
+
+| Date | Day | Post |
+| --- | --- | --- |
+| 3 Nov | Tue | #19 agent-pr-denominator |
+| 6 Nov | Fri | #18 redteam-pluralism |
+| 9 Nov | Mon | #17 soc2-model-behaviour |
+| 11 Nov | Wed | #20 judge-needs-a-test |
+| 13 Nov | Fri | #21 open-benchmark-open-defects |
+
+#16 prompt-is-0-10-percent drops out of the run. It is the one that adds texture rather than argument,
+and five posts in eleven days is already more than the audience reads.
