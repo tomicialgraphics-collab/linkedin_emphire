@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Sarah Bird, AI application scanning: comment</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  body{background:#fff; font-size:11.2pt}
+  main{max-width:none; box-shadow:none; padding:0}
+  h2{break-after:avoid; page-break-after:avoid}
+  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Sarah Bird, AI application scanning: comment</h1>
+<p>Posted three minutes before capture, so this is the early window where a comment gets seen by the author and by everyone who arrives afterwards.</p>
+<h2>What the post is</h2>
+<p>Sarah Bird, Chief Product Officer of Responsible AI at Microsoft since February 2019, previously led responsible AI for the new Bing and for GitHub Copilot, founding researcher in Microsoft FATE, co-founder of ONNX and Fairlearn, PhD at Berkeley. She is announcing code scanning for AI applications in GitHub Advanced Security, public preview as of 28 October.</p>
+<p>The substance, from the changelog rather than the post: scans run on pull requests alongside CodeQL, flag code paths where untrusted content can reach a model with access to tools, and cover indirect prompt injection, sensitive information disclosure and excessive agency. It needs an Advanced Security licence, it is on github.com only, not GitHub Enterprise Server. No general availability date and no false positive rate at scale have been published.</p>
+<h2>Comment, 115 words, lint clean</h2>
+<p>The gate is the right place for the architecture question: can untrusted content reach a model that holds tools. That is decidable from the code path, and it is worth blocking a merge over.</p>
+<p>What the code path cannot tell you is whether the model obeys the content once it arrives. That is a property of the run, so the pipeline finding and the runtime evidence have to point at the same span, or a closed alert and a fixed vulnerability look identical in the pull request.</p>
+<p>Which is also how to judge a suggested fix. Encoding the untrusted input closes the finding. It does not change whether the model can be steered by it.</p>
+<h2>Why this and not something else</h2>
+<p>The temptation on a launch post is to say the shift left is correct and stop, which is what every other comment will do. The distinction here is narrower and more useful: a static check resolves a question about structure, and the failure that matters resolves a question about behaviour. Those are different questions and they need different evidence.</p>
+<p>The last paragraph is the pointed one, and it is pointed without naming their screenshot. The changelog example shows a prompt injection finding in a travel agent with a suggested fix that base64-encodes the untrusted input. Encoding is not a mitigation for instruction following. A reviewer who accepts that fix gets a closed alert and the same vulnerability, which is the exact failure mode the whole argument is about. Saying it as a general test of any suggested fix keeps it a technical point rather than a review of their product, and it is harder to dismiss than a direct criticism would be.</p>
+<h2>One line that was cut</h2>
+<p>Tempting fourth paragraph:</p>
+<blockquote><p>Publishing the false positive rate at scale, even a rough one, would do more for adoption than the</p><p>three risk names do.</p></blockquote>
+<p>It is true and it is his own argument, but it turns a technical comment into a request, and the author is a product executive who will read a request as an agenda. Keep it for a later post, or for a comment on someone else&#x27;s analysis of the launch.</p>
+<h2>Order</h2>
+<p>Post the comment in the first hour while the post is still climbing. Do not mention the review, the twelve-day run, or breaklab in it. If she replies, the reply is the place to be concrete about the runtime half, not the first comment.</p>
+<footer></footer>
+</main>
+</body>
+</html>
