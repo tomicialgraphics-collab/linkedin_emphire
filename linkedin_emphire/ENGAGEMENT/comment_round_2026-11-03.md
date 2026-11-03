@@ -268,3 +268,27 @@ second contested fact, and no comment on whether the blackmail experiment was st
 benchmark, the review, or Aithos.
 
 Draft, 121 words, lint clean, gate 100: `2026-11-03_comments/12_stephen_klein.txt`.
+
+## Thirteenth comment: Al Neitsch, 3 November, late night
+
+A governance checklist post: name the custodian, write the access policy, define the request process,
+instrument for loss prevention, review the policies. It ends by asking how people prioritise governance in
+product development.
+
+**Profile read.** Founder and managing director of TNGC, a Delaware consulting firm running since 2008 with
+Fortune 100 and government clients. Headline is data and AI engineering plus governance, and he also writes
+and performs comedy and works as a journalist. First-degree connection. The list is the kind of advice an
+advisor gives at the top of an engagement, so the comment is worth more if it names where that advice
+decays than if it agrees with it.
+
+**Angle.** Answer his question honestly: in small teams governance gets prioritised after an incident, and
+the thing that changes that is making a policy into something the system can fail. An access rule becomes a
+query that attempts the reads it should refuse, retention becomes a job that reports what it deleted.
+Custodians matter, but a custodian without a test is a name on a page, and names get reassigned quietly when
+someone changes roles. Dated output over a recurring meeting.
+
+**Deliberately absent.** No mention of data loss prevention by name, because his list already covers it and
+the point is about verification rather than tooling. No mention of the benchmark, the review, or Aithos. No
+reference to his comedy, which would read as flattery in a governance thread.
+
+Draft, 98 words, lint clean, gate 100: `2026-11-03_comments/13_al_neitsch.txt`.
