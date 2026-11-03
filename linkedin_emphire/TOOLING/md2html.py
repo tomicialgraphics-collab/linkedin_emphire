@@ -98,7 +98,7 @@ a{color:var(--accent)}
 }
 @media print{
   /* Margin 0 collapses the browser's own margin box, which is where Chrome and Edge
-     render the file:/// URL and the page counter. Padding on body restores the white
+     render the local path and the page counter. Padding on body restores the white
      space, so the printed page carries the document and nothing else. */
   @page{size:A4; margin:0}
   body{background:#fff; font-size:11.2pt; padding:14mm 16mm}
