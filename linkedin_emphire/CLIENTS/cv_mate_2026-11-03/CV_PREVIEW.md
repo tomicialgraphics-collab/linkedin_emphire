@@ -1,6 +1,6 @@
 # CV preview, text only
 
-Rendered preview of `Mate_Oluwatunmise_CV.docx`. The docx is the deliverable. This file exists so the content can be read without Word.
+Text of `Mate_Oluwatunmise_CV.docx` (4,429 bytes). The docx is the deliverable; this file exists so the content can be read without Word.
 
 
 ## MATE OLUWATUNMISE OLAMILESI
