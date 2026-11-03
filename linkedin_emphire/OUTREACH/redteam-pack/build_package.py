@@ -251,7 +251,22 @@ def archive_run(harness, package, console):
     if redteam.exists():
         lines.append("%s  redteam.py" % digest(redteam))
     head = sh(["git", "rev-parse", "HEAD"], cwd=str(harness)).strip()
-    lines += ["", "commit  %s" % head, ""]
+    blob = ""
+    try:
+        blob = sh(["git", "rev-parse", "HEAD:redteam.py"], cwd=str(harness)).strip()
+    except SystemExit:
+        pass
+    lines += ["", "commit  %s" % head]
+    if blob:
+        lines.append("blob    %s  redteam.py" % blob)
+    lines += [
+        "",
+        "# Digests above are of the files as they exist in this working tree. A checkout on another",
+        "# platform may convert line endings, which changes the SHA-256 without changing the content.",
+        "# The blob id is the platform independent identifier for the same file, added 2026-11-03",
+        "# after a Windows checkout reported a different SHA-256 for the same commit.",
+        "",
+    ]
 
     manifest = out / "SHA256SUMS.txt"
     manifest.write_text("\n".join(lines), encoding="utf-8")

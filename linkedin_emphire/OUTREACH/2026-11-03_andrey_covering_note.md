@@ -111,10 +111,22 @@ including the traceback and the non-zero exit from the documented `write_outputs
 checkout record and the exit code, and `provenance-after.txt` is the working tree after the run.
 
 Provenance. Clean checkout of `d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6`. `git status --porcelain`
-returned nothing before the run, and the first line of `provenance.txt` is that empty output.
-`redteam.py` hashes to `6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581`.
+returned nothing before the run and nothing after it, and the first line of `provenance.txt` is that
+empty output.
+
+One digest needs explaining rather than hiding. The SHA-256 of `redteam.py` in the manifest is
+`540cf2abfa2643143d0c84b12c40d3e8f324a3bd6c84e5620124f8282049cff9`, and the value published in the
+package is `6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581`. Both are the same file.
+This checkout is on Windows, where the installer default converts LF to CRLF on checkout, and that
+changes the digest without changing a character of content. The platform independent identifier is the
+git blob id, `BLOB_ID_HERE`, from `git ls-tree HEAD redteam.py`. Hashing the raw blob with
+`git show HEAD:redteam.py` reproduces `6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581`,
+and that command is in the record so you can run it rather than take this paragraph on trust. A checkout
+with `core.autocrlf` set to false removes the difference entirely.
+
 `results.json` hashes to `d9a9b0669262f9c7ab745c04c2af0f1fe63838c3d660752b0de99c390fe0e83f`, and the copy
-attached hashes to the same value.
+attached hashes to the same value. It was written on Windows, so it contains CRLF as well, which is why
+the manifest is dated rather than presented as a permanent value.
 
 Environment. Windows, Python 3.14.5, openai SDK 3.29.0, model `openai/gpt-oss-120b` at
 `https://api.groq.com/openai/v1`, temperature 0.2 and max tool steps 4, all as recorded in the log.
@@ -138,3 +150,79 @@ Olusanya
   support.
 - If `provenance-after.txt` names `results/`, keep the sentence that says so. A reviewer who finds an
   unexplained path in a tree diff will trust everything else less.
+
+
+## The line endings catch, 3 November
+
+The manifest reported `540cf2abfa...` for `redteam.py` and the package says `6048b70aadfe...`. Both are
+correct. The published value is the SHA-256 of the file's canonical bytes with LF endings. The Windows
+checkout converts LF to CRLF, which adds 468 carriage returns and changes the digest.
+
+Verified here by converting the same file both ways:
+
+| Form | SHA-256 |
+| --- | --- |
+| LF, as the repository stores it | `6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581` |
+| CRLF, as a Windows checkout writes it | `540cf2abfa2643143d0c84b12c40d3e8f324a3bd6c84e5620124f8282049cff9` |
+
+This is the single most likely thing to be mistaken for tampering in a provenance review, so it is
+disclosed in the covering note rather than left to be discovered. If it had been sent silently, an
+honest reviewer would have been right to stop reading.
+
+### Commands to close it out
+
+The platform independent identifier:
+
+```
+git ls-tree HEAD redteam.py
+```
+
+Expected: `100644 blob <id>	redteam.py`. Put that id in place of `BLOB_ID_HERE` in the note.
+
+Append it to the provenance file:
+
+```
+git ls-tree HEAD redteam.py | Out-File -FilePath C:\review\evidence\provenance.txt -Append -Encoding utf8
+```
+
+Prove the two digests are the same content, on his own machine, in one line:
+
+```
+python -c "import subprocess,hashlib;d=subprocess.run(['git','show','HEAD:redteam.py'],capture_output=True).stdout;print(hashlib.sha256(d).hexdigest())"
+```
+
+Expected: `6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581`. That single command answers
+the whole objection, and it is worth pasting the output into the note under the paragraph.
+
+### Manifest, rebuilt with the blob id
+
+```
+@(
+"# SHA-256 manifest and identifiers, run 2, 3 November 2026",
+"",
+"$((Get-FileHash C:\review\evidence\results.json -Algorithm SHA256).Hash.ToLower())  results.json",
+"$((Get-FileHash C:\review\evidence\console.log -Algorithm SHA256).Hash.ToLower())  console.log",
+"$((Get-FileHash redteam.py -Algorithm SHA256).Hash.ToLower())  redteam.py (CRC)  [CRLF working tree]",
+"",
+"6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581  redteam.py (LF blob content)",
+"",
+"commit  $(git rev-parse HEAD)",
+"$(git ls-tree HEAD redteam.py)",
+"",
+"# SHA-256 values are of the files as they exist in this working tree. Windows checkout applies",
+"# CRLF conversion, which changes the digest without changing content. The blob id is canonical."
+) | Out-File -FilePath C:\review\evidence\SHA256SUMS.txt -Encoding utf8
+```
+
+Check it before sending:
+
+```
+Get-Content C:\review\evidence\SHA256SUMS.txt
+```
+
+The `results.json` line must read `d9a9b066...` and the LF blob line must read `6048b70a...`.
+
+### What changed in the builder because of this
+
+`build_package.py` now writes the git blob id into every manifest and prints the line endings caveat
+under it, so the next package cannot produce two digests for one file without saying why.
