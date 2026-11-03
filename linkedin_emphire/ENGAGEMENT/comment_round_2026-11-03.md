@@ -338,3 +338,30 @@ profile and his other posts. No mention of the benchmark, the review or Aithos. 
 link, which is in his own comments.
 
 Draft, 109 words, lint clean, gate 100: `2026-11-03_comments/15_alex_mashrabov.txt`.
+
+## Sixteenth comment: Oren Melamed, 3 November, night
+
+He notes that Dependabot now does version updates for APM, and reads it as the supply chain expanding to
+cover the things that define agent behaviour: skills, agents, MCPs. He lists versioning, dependency
+resolution, lockfiles, automated updates, provenance and CI enforcement.
+
+**Profile read.** First-degree connection. AI transformation at AT&T's Israel R&D centre, GitHub Star,
+Microsoft MVP, roughly seven thousand followers. He writes architecture analyses by reading the VS Code and
+Copilot SDK source, and published a piece on GitHub's agentic operating system in late October. He reads
+primary sources, so a comment that quotes the changelog's own limitation is worth more to him than a
+restatement of his post.
+
+**Changelog checked.** 3 November 2026: Dependabot opens pull requests for supported git dependencies in
+apm.yml and regenerates apm.lock.yaml when present. Explicitly version updates, not security updates. GA on
+github.com, GHES 3.24.
+
+**Angle.** The line that will matter later is the one about security updates. There is no advisory feed for a
+skill or an MCP server whose behaviour turns bad, so the pull request arrives and a human is the only check.
+A package that breaks its own API fails at the call site; a prompt or tool schema shifts and the build stays
+green. That makes the lockfile necessary and insufficient, and it points at the missing primitive: a
+behavioural check per dependency with a recorded baseline to diff against.
+
+**Deliberately absent.** No mention of the benchmark, the review or Aithos. No congratulations on the GitHub
+Star or the MVP, which are in his headline and would read as scraping.
+
+Draft, 121 words, lint clean, gate 100: `2026-11-03_comments/16_oren_melamed.txt`.
