@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Profile pass, 3 November, against the NVIDIA approach</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  body{background:#fff; font-size:11.2pt}
+  main{max-width:none; box-shadow:none; padding:0}
+  h2{break-after:avoid; page-break-after:avoid}
+  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Profile pass, 3 November, against the NVIDIA approach</h1>
+<p>Read from the owner&#x27;s own screenshot of the top card, 3 November. Nothing here has been applied to the live profile. Owner applies it.</p>
+<h2>What a stranger sees in the first twenty seconds</h2>
+<p>The banner says <strong>Software Engineer Building Solutions That Actually Work in Production, Web, AI, Computer Vision, Real Projects.</strong> That is a builder banner. It is the opposite of the lane the last thirty days of posts have built.</p>
+<p>The headline field still reads the old pipe list: Software Engineer | AI Red Teaming | Breaking AI products before users do | Web, AI Integration | Teaching engineers to ship things that don&#x27;t break. It leads with the most generic words in it and buries the only distinctive claim in the middle.</p>
+<p>So the two largest pieces of text on the profile agree with each other and disagree with everything the account has been publishing.</p>
+<p><strong>Record discrepancy worth knowing.</strong> <code>LINKEDIN/about_section_2026-10-24_draft.md</code> records that the banner carrying the drafted headline and subheadline was DEPLOYED on 10-28, with the owner&#x27;s screenshot as evidence. The banner live on 3 November is the generic one, not that. Either it was reverted or the record is describing a draft. Either way the file is wrong about the live state and has been for six days.</p>
+<h2>The three fixes that matter for this approach</h2>
+<h3>1. Headline field</h3>
+<p>The 108-character draft from 10-28 was never pasted. Two options, both under the 220 limit, both keeping the straight apostrophes and no em dashes.</p>
+<p><strong>Recommended, 106 characters</strong>, because it puts &quot;AI security&quot; and &quot;evals&quot; in the field that search and every comment use, and keeps the distinctive half:</p>
+<p>``<code> AI security and evals: I red team agents, then build the check that tells you the green dashboard is real. </code>``</p>
+<p><strong>The original 108-character draft</strong>, if he prefers the sharper opening:</p>
+<p>``<code> I red team AI agents before they get keys, and I build the check that tells you the green dashboard is real. </code>``</p>
+<p>The first is better for a research team that will read &quot;evals&quot; as their own word. The second is better in a comment thread, where &quot;before they get keys&quot; is the line people quote.</p>
+<h3>2. Banner</h3>
+<p><code>ASSETS/profile-2026-11-03/banner_1584x396.png</code>, rendered at the correct size, straight text, no curly quotes, no em dashes. The drafted headline in the main block, the lab subheadline under it, and a footer line with the handle, the GitHub and the city. Text sits right of centre so the profile photo does not cover it.</p>
+<p>Upload it only if he is happy with a plain typographic banner. The current one has a designer&#x27;s hand in it and this is flat by comparison. The flatness is the point: it matches the register of the posts.</p>
+<h3>3. Verify in 2 minutes</h3>
+<p>There is an unverified badge under the name and it takes two minutes. A hiring manager who has just been messaged will look at the card before anything else, and an orange action prompt on the name is the first thing he will see. Do it before the message, not after.</p>
+<h2>The rest, in order of payoff</h2>
+<ul><li><strong>Featured section.</strong> This is unverified from the screenshot and he should check it. Pin three things:</li></ul>
+<p><code>breaklab</code> (after the client-name rename from the earlier note, not before), <code>ai-redteam-five-tests</code>, and the benchmark review. A visitor who reads the headline then sees three artifacts has enough to decide.</p>
+<ul><li><strong>Skills, top three pinned.</strong> AI Security, LLM Evaluation, Red Teaming. These drive the search index</li></ul>
+<p>more than the headline does, and they are honest labels for work already public.</p>
+<ul><li><strong>About first line.</strong> <code>I trained as a Medical Laboratory Scientist. Now I break AI systems on purpose.</code></li></ul>
+<p>is drafted and I cannot tell from the screenshot whether it is live. If it is not, paste it. It is the one line on the profile that a reader will repeat back to someone else.</p>
+<ul><li><strong>The email address in the About block</strong> should not be the gmail if he is applying to a research team.</li></ul>
+<p>Optional, not urgent.</p>
+<h2>Reading the analytics honestly</h2>
+<p>1,556 impressions in seven days against 437 profile views is a healthy ratio and it is coming from the posts. Four search appearances in the same window is not healthy, it is near zero, and it means almost nobody finds the profile by searching. For this particular approach that matters less than it sounds, because Leon came through the feed and a direct message, not through search. It matters for the next fifty approaches.</p>
+<h2>Order, fifteen minutes</h2>
+<ol><li>Verify badge.</li><li>Paste the headline.</li><li>Upload the banner, if he wants it.</li><li>Pin the three Featured items, with the repo rename done first or breaklab left out.</li><li>Then the comment and the message from <code>ENGAGEMENT/2026-11-03_nvidia_derczynski.md</code>.</li></ol>
+<p>Nothing here touches the DM text. The message already answers the question a stranger would ask first, which is where he is.</p>
+<footer></footer>
+</main>
+</body>
+</html>
