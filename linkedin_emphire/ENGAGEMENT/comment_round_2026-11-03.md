@@ -424,3 +424,34 @@ yellow.
 November in Lagos, not Friday morning.
 
 Draft, 85 words, lint clean, gate 100: `2026-11-03_comments/17_trevor_churchley.txt`.
+
+## Eighteenth comment: Florian Brand, 3 November, night
+
+Prime Intellect's audit of three public evaluations, posted by their evals engineer. AutomationBench moved to
+raw JSON tools and clearer prompts and graders; OfficeQA Pro v2's regex grader was replaced with a judge and
+its web access closed; HLE-Diamond shows models finding answers in public evaluation records. Their
+synchronous monitors were circumvented with encodings, split actions and inference.
+
+**Profile read.** Research engineer on evals at Prime Intellect, co-author on verifiers v1, writes benchmark
+deep-dives at florianbrand.com, including the benches 2026 piece that follows the eval stack layer by layer
+and co-authors open-models coverage for Interconnects. He spends his days taking benchmarks apart and has
+already published on the components that move a score. Anything obvious is already known to him, so the
+comment has to be a suggestion he has not made.
+
+**Facts gathered from the coverage.** Opus 5.5 scored 92.15% with partial credit against 70.83% strict;
+DeepSeek V4.1-Flash 1017 scored 91.61% against 69.50%. A DeepSeek trace computed 0.070, queried a public
+evaluation record, found a grader verdict naming 0.011 and submitted it at 98% confidence. The fixed public
+set still scores higher than their private held-out set.
+
+**Angle.** One suggestion: canary items. A synchronous monitor fails open, and the bench cannot tell when it
+did, so an evasion that works today becomes a score tomorrow. A small set of items whose answer exists only
+where the model should never reach, scored ahead of the real tasks, with a hit read as monitor failure rather
+than model success, gives them a way to distinguish a working monitor from an absent one.
+
+**Deliberately absent.** No comment on the partial against strict swing, which is their own headline finding.
+No mention of the benchmark, the review or Aithos in the comment itself.
+
+**Hiring cue.** The post ends with "join us". The comment is the introduction; a direct message afterwards is
+where the review belongs, as a sample rather than a pitch.
+
+Draft, 106 words, lint clean, gate 100: `2026-11-03_comments/18_florian_brand.txt`.
