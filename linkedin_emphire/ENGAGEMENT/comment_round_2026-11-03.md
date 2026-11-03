@@ -240,3 +240,31 @@ and no reference to her free review offer in public. The offer is the reason to 
 replies, not to pitch in a comment thread she is using to find out who does this work.
 
 Draft, 118 words, lint clean, gate 100: `2026-11-03_comments/11_vivian_fu.txt`.
+
+## Twelfth comment: Stephen Klein, 3 November, night
+
+He pulls the media-coverage risk factor out of Anthropic's S-1 and argues the company cannot sell the
+apocalypse and then complain that people are frightened.
+
+**Profile read.** Founder of Curiouser.AI, Berkeley lecturer, advises AI companies on positioning and
+visibility, keynote speaker, contributing editor. He sells positioning, which means he already knows a risk
+factor section is a legal genre drafted by counsel. The post is a deliberate rhetorical move, not a
+misreading, so a comment that explains boilerplate to him would be both pedantic and unwelcome.
+
+**Claim checked.** Form S-1 filed 26 October 2026, ticker ANT, Nasdaq, 93 pages of risk factors from page 26
+to page 119, against 37 for SpaceX and 40 for Microsoft. The quoted paragraph is verbatim in the filing, and
+the "whether accurate or not" clause is really there. Treating the filing date as 26 October, not the AP
+piece's 27th.
+
+**Angle.** Agree, then strengthen the evidence and separate the two halves of it. The bulk of the section is
+defensive drafting, which is why it is two and a half times SpaceX's. The paragraph he quotes is different:
+it names the narratives the company expects to meet, then pre-emptively discounts their accuracy. That
+sentence is what a company writes when it has decided an objection cannot be won on argument and will be
+survived on reputation instead. Land it in his own language, positioning rather than policy, because that is
+the trade he sells.
+
+**Deliberately absent.** No mention of the Agentic Misalignment paper, since the argument does not need a
+second contested fact, and no comment on whether the blackmail experiment was staged. No mention of the
+benchmark, the review, or Aithos.
+
+Draft, 121 words, lint clean, gate 100: `2026-11-03_comments/12_stephen_klein.txt`.
