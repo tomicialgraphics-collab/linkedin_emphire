@@ -1,0 +1,10 @@
+Almost nothing in that list is a model problem. A wrong expected value, an unstated formatting
+requirement, a postprocessor worth more than the gaps between the models it ranks, a correct answer
+penalised for following the document.
+
+Those are defects in the benchmark, and they are invisible from the score, because the score is what
+the defect produces.
+
+The artifact I would ask any benchmark for is the one almost none of them publish: its own defect
+register, with the failing example and the date it was found. A published scorer plus a short list of
+known failures catches most of this before a leaderboard has to.

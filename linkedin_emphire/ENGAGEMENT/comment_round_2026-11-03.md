@@ -96,3 +96,23 @@ free, because it is the policy side of the same argument.
   afternoon is the signature of someone working a list.
 - Do not mention the benchmark, the review, or the Aithos application in any of them.
 - Do not reply to agreement. If Neil or Rock answers with thanks, the thread is finished.
+
+## Profiles checked before pasting
+
+- **Neil Sahota.** IBM Master Inventor, former World Wide Business Development Leader for the IBM
+  Watson Group, UN AI Advisor, co-founder of the UN AI for Good initiative, Chief Innovation Officer at
+  UC Irvine's Samueli School of Engineering, CEO of ACSILabs, author of *Own the A.I. Revolution*. He
+  writes for boards and executive committees, so the comment stays concrete and avoids method jargon.
+  Do not cite the OpenAI wiki story back at him. It is his account and the comment does not need it.
+- **Hamel Husain.** Independent consultant, founder of Parlance Labs, formerly staff ML engineer at
+  GitHub and Airbnb, CodeSearchNet before Copilot, co-author of *Evals for AI Engineers*, the person who
+  has taught several thousand engineers error analysis. The defect-register ask is in his own register,
+  and he is likely to answer it, so be ready to name a failure from the review if he asks for one.
+- **Rock Lambros.** Director of AI Standards and Governance at Zenity, OWASP Agentic Security Initiative
+  core team, co-lead of the OWASP Top 10 for LLMs and lead of the ACS project, Denver, roughly 24k
+  followers. He wrote the standard the comment is about, and his employer sells runtime monitoring for
+  agents, which is the independent observer the comment asks for. It reads as agreement with him, not as
+  a criticism of Zenity, but read it once more with that in mind before posting.
+
+Paste-ready copies, plain text, no quoting: `ENGAGEMENT/2026-11-03_comments/01_neil_sahota.txt`,
+`02_hamel_husain.txt`, `03_rock_lambros.txt`.
