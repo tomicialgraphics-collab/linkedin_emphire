@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Wording for the existing banner: same design, new words</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  body{background:#fff; font-size:11.2pt}
+  main{max-width:none; box-shadow:none; padding:0}
+  h2{break-after:avoid; page-break-after:avoid}
+  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Wording for the existing banner: same design, new words</h1>
+<p>Owner constraint: keep the layout, the concept, the photo, the speech bubble, the white bar, the colours. Keep &quot;Software Engineer&quot;. Change only the words, and only enough to make the biggest text on the profile say something specific.</p>
+<h2>The problem is one word</h2>
+<p>The banner reads &quot;Software Engineer Building <strong>Solutions</strong> That Actually Work in Production&quot;. Everything in it is fine except the biggest word on the page, which is &quot;Solutions&quot;, the most generic noun in the industry. It costs nothing to keep it and it earns nothing. Swap that one word and the whole banner moves without touching a single shape.</p>
+<p>Grammar constraint worth knowing: the bar says &quot;That Actually Work&quot;, which is plural, so the big word has to be plural or the bar has to change with it. Keep that in mind with any substitution.</p>
+<h2>Set A. Recommended.</h2>
+<table><thead><tr><th>Slot</th><th>Current</th><th>New</th><th>Chars</th></tr></thead><tbody><tr><td>Speech bubble</td><td>Let&#x27;s build together</td><td><code>Let&#x27;s break it first</code></td><td>20</td></tr><tr><td>Small line</td><td>Software Engineer Building</td><td><code>Software Engineer Building</code></td><td>unchanged</td></tr><tr><td>Big word</td><td>Solutions</td><td><code>Defenses</code></td><td>8 vs 9</td></tr><tr><td>White bar</td><td>That Actually Work in Production</td><td><code>That Actually Work in Production</code></td><td>unchanged</td></tr><tr><td>Footer</td><td>Web · AI · Computer Vision · Real Projects</td><td><code>AI Security · Red Teaming · Agents · Evals</code></td><td>42</td></tr></tbody></table>
+<p>&quot;Defenses&quot; is one character shorter than &quot;Solutions&quot; and much wider per character in most condensed faces, so the big line will sit at very close to its current width. Nothing else moves.</p>
+<p>Why it works: &quot;Defenses that actually work in production&quot; is a claim a buyer can test, and it is exactly what he does. The bubble stops being a sales line and becomes a stance.</p>
+<h2>Set B. The smallest possible change.</h2>
+<table><thead><tr><th>Slot</th><th>New</th><th>Chars</th></tr></thead><tbody><tr><td>Speech bubble</td><td><code>Let&#x27;s build together</code></td><td>keep</td></tr><tr><td>Small line</td><td><code>Software Engineer Building</code></td><td>keep</td></tr><tr><td>Big word</td><td><code>Agents</code></td><td>6 vs 9</td></tr><tr><td>White bar</td><td><code>That Actually Work in Production</code></td><td>keep</td></tr><tr><td>Footer</td><td><code>AI · Security · Evals · Real Projects</code></td><td>37</td></tr></tbody></table>
+<p>One word changes. &quot;Agents&quot; is short, so the big line will either leave a gap at the right or need eight to ten percent more point size. If the design breaks, use Set A.</p>
+<h2>Set C. Security-forward, two slots change.</h2>
+<table><thead><tr><th>Slot</th><th>New</th><th>Chars</th></tr></thead><tbody><tr><td>Speech bubble</td><td><code>Test it before launch</code></td><td>21</td></tr><tr><td>Small line</td><td><code>Software Engineer Building</code></td><td>keep</td></tr><tr><td>Big word</td><td><code>Checks</code></td><td>6 vs 9</td></tr><tr><td>White bar</td><td><code>That Hold Up Under Attack</code></td><td>25</td></tr><tr><td>Footer</td><td><code>Red Teaming · Agents · Evals · Tool Permissions</code></td><td>47</td></tr></tbody></table>
+<p>The bar gets shorter, so the white pill will be narrower and the line will sit differently. This is the only set that visibly moves a shape, so take it only if the designer can nudge the pill width.</p>
+<h2>Big word substitutions, by width</h2>
+<p>Keep the width of the block roughly where it is and the layout does not need to change.</p>
+<ul><li>9 to 10 characters, current width: <code>Guardrails</code>, <code>Pipelines</code></li><li>8 characters, near current width: <code>Defenses</code>, <code>Findings</code>, <code>Failures</code></li><li>6 to 7 characters, will leave a gap: <code>Agents</code>, <code>Checks</code>, <code>Systems</code>, <code>Evals</code></li><li>Singular words need a new bar as well: <code>Assurance That Holds When It Counts</code>, <code>Evidence That Holds Up</code></li></ul>
+<h2>Footer line options, at similar length to the current one</h2>
+<ul><li><code>AI Security · Red Teaming · Agents · Evals</code> (42, recommended)</li><li><code>AI · Security · Evals · Real Projects</code> (37, keeps the breadth)</li><li><code>Web · AI · Agents · Security</code> (27, keeps the original rhythm and adds the lane)</li><li><code>Red Teaming · Agents · Evals · Tool Permissions</code> (47, most specific, longest)</li></ul>
+<p>Drop &quot;Computer Vision&quot; unless he is still selling that work. Every word on a banner competes with the headline for the same three seconds.</p>
+<h2>Bubble options</h2>
+<ul><li><code>Let&#x27;s break it first</code> (19)</li><li><code>Test it before launch</code> (21)</li><li><code>Break it before launch</code> (22)</li><li>Keep <code>Let&#x27;s build together</code> if the design depends on the tail of the bubble text</li></ul>
+<h2>Rules for this banner</h2>
+<ul><li>Straight apostrophe in &quot;Let&#x27;s&quot;. The current banner uses a curly one, which is a small tell.</li><li>No em dashes anywhere.</li><li>Do not add a URL or an email. Both are already in Featured and About.</li><li>Do not add numbers. A banner cannot carry the evidence for them.</li><li>Do not put the phrase &quot;AI-powered&quot; in it.</li></ul>
+<footer></footer>
+</main>
+</body>
+</html>
