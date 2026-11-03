@@ -30,22 +30,42 @@ Confirm the copy is identical to what was hashed:
 Expected: `D9A9B0669262F9C7AB745C04C2AF0F1FE63838C3D660752B0DE99C390FE0E83F`.
 
 Confirm the record is complete, meaning every attempt carries a raw response and not only the flagged
-ones:
+ones. The first attempt at this check failed, because `results.json` is not a list of records: it is a
+mapping whose values are themselves mappings of input label to response text. So the check walks the
+structure instead of assuming a shape. Create it once:
 
 ```
-python -c "import json;d=json.load(open('results/results.json'));print({k:[bool(x.get('raw') or x.get('response')) for x in v] for k,v in d.items()})"
+@'
+import json, sys
+d = json.load(open(sys.argv[1], encoding="utf-8"))
+def walk(o):
+    if isinstance(o, str):
+        yield o
+    elif isinstance(o, dict):
+        for v in o.values():
+            yield from walk(v)
+    elif isinstance(o, list):
+        for v in o:
+            yield from walk(v)
+S = list(walk(d))
+print("top-level keys:", list(d))
+print("strings:", len(S), "non-empty:", sum(1 for s in S if s.strip()))
+for s in S[:3]:
+    print("-", s[:70].replace("\n", " "))
+'@ | Out-File -FilePath C:\review\evidence\check_results.py -Encoding utf8
 ```
 
-Expected: every value `True`. A `False` anywhere means the completeness claim is wrong and the note has
-to say so.
-
-Read the tree after the run, so the covering note states it before he asks:
+Then run it:
 
 ```
-Get-Content C:\review\evidence\provenance-after.txt
+python C:\review\evidence\check_results.py results\results.json
 ```
 
-Expected: one line naming `results/`, or nothing if the output directory is ignored. Say which it was.
+Expected: fourteen response strings or more, and none of them empty. A count below fourteen, or an empty
+string in the list, means the completeness claim is wrong and the note has to say so.
+
+`provenance-after.txt` was empty. The working tree was clean after the run, which means the repository
+ignores `results/`, so there is no unexplained path and nothing to disclose on that front.
 
 Build the manifest:
 

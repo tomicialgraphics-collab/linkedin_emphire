@@ -103,12 +103,12 @@ a{color:var(--accent)}
 <p>Confirm the copy is identical to what was hashed:</p>
 <p>``<code> (Get-FileHash C:\review\evidence\results.json -Algorithm SHA256).Hash </code>``</p>
 <p>Expected: <code>D9A9B0669262F9C7AB745C04C2AF0F1FE63838C3D660752B0DE99C390FE0E83F</code>.</p>
-<p>Confirm the record is complete, meaning every attempt carries a raw response and not only the flagged ones:</p>
-<p>``<code> python -c &quot;import json;d=json.load(open(&#x27;results/results.json&#x27;));print({k:[bool(x.get(&#x27;raw&#x27;) or x.get(&#x27;response&#x27;)) for x in v] for k,v in d.items()})&quot; </code>``</p>
-<p>Expected: every value <code>True</code>. A <code>False</code> anywhere means the completeness claim is wrong and the note has to say so.</p>
-<p>Read the tree after the run, so the covering note states it before he asks:</p>
-<p>``<code> Get-Content C:\review\evidence\provenance-after.txt </code>``</p>
-<p>Expected: one line naming <code>results/</code>, or nothing if the output directory is ignored. Say which it was.</p>
+<p>Confirm the record is complete, meaning every attempt carries a raw response and not only the flagged ones. The first attempt at this check failed, because <code>results.json</code> is not a list of records: it is a mapping whose values are themselves mappings of input label to response text. So the check walks the structure instead of assuming a shape. Create it once:</p>
+<p>``<code> @&#x27; import json, sys d = json.load(open(sys.argv[1], encoding=&quot;utf-8&quot;)) def walk(o): if isinstance(o, str): yield o elif isinstance(o, dict): for v in o.values(): yield from walk(v) elif isinstance(o, list): for v in o: yield from walk(v) S = list(walk(d)) print(&quot;top-level keys:&quot;, list(d)) print(&quot;strings:&quot;, len(S), &quot;non-empty:&quot;, sum(1 for s in S if s.strip())) for s in S[:3]: print(&quot;-&quot;, s[:70].replace(&quot;\n&quot;, &quot; &quot;)) &#x27;@ | Out-File -FilePath C:\review\evidence\check_results.py -Encoding utf8 </code>``</p>
+<p>Then run it:</p>
+<p>``<code> python C:\review\evidence\check_results.py results\results.json </code>``</p>
+<p>Expected: fourteen response strings or more, and none of them empty. A count below fourteen, or an empty string in the list, means the completeness claim is wrong and the note has to say so.</p>
+<p><code>provenance-after.txt</code> was empty. The working tree was clean after the run, which means the repository ignores <code>results/</code>, so there is no unexplained path and nothing to disclose on that front.</p>
 <p>Build the manifest:</p>
 <p>``<code> @( &quot;# SHA-256 manifest, run 2, 3 November 2026&quot;, &quot;&quot;, &quot;$((Get-FileHash C:\review\evidence\results.json -Algorithm SHA256).Hash.ToLower())  results.json&quot;, &quot;$((Get-FileHash C:\review\evidence\console.log -Algorithm SHA256).Hash.ToLower())  console.log&quot;, &quot;$((Get-FileHash redteam.py -Algorithm SHA256).Hash.ToLower())  redteam.py&quot;, &quot;&quot;, &quot;commit  $(git rev-parse HEAD)&quot; ) | Out-File -FilePath C:\review\evidence\SHA256SUMS.txt -Encoding utf8 </code>``</p>
 <p>Also capture, for the environment line in the note:</p>
