@@ -216,3 +216,27 @@ comment would be invisible in them. No mention of the benchmark, the review, or 
 is a vendor and enterprise audience on an acquisition day.
 
 Draft, 110 words, lint clean, gate 100: `2026-11-03_comments/10_jeff_cohen.txt`.
+
+## Eleventh comment: Vivian Fu, 3 November, night
+
+She names four AI governance gaps in Australia and ends by asking which ones people meet most often, and
+where the opportunities are. A direct question from someone who writes in this area weekly.
+
+**Profile read.** Sydney. AI governance and assurance, currently building an AI Assurance Evidence and
+Decision Chain model: an evidence chain for what was known and done, a decision chain for who decided and
+who owns the residual risk. Her repeated line is that governance tells you what should be true and assurance
+tells you whether it is true enough to proceed. Around five thousand followers. She has publicly offered
+three teams a free independent AI risk and safeguards review of one working product or pilot, and the
+questions she lists in that offer are control verification questions, not policy questions.
+
+**Angle.** Answer her question with the one failure this side knows best: control verification collapsing at
+the evidence step, where a check reports pass because it never ran and a dashboard cannot tell that apart
+from a clean result. The opportunity to rank first follows from her own model, quietly: a control emits a
+dated artifact at execution and something confirms the artifact exists before the pass counts. That is the
+difference between an evidence chain and a folder of documents, and it is cheaper than a mapping layer.
+
+**Deliberately absent.** No compliment on the framework, no mention of the benchmark, the review or Aithos,
+and no reference to her free review offer in public. The offer is the reason to send a direct message if she
+replies, not to pitch in a comment thread she is using to find out who does this work.
+
+Draft, 118 words, lint clean, gate 100: `2026-11-03_comments/11_vivian_fu.txt`.
