@@ -397,3 +397,30 @@ compares today against today.
 
 Replies: `2026-11-03_comments/16a_reply_oren.txt` (91 words), `16b_reply_sergio.txt` (108 words). Both lint
 clean.
+
+## Seventeenth comment: Trevor Churchley, 3 November, night
+
+He is promoting episode 74 of the Job Seeker Café, a Friday session with Sam Elderfield of ScaleUp
+Recruitment, framed around the question every engineer is asking: is AI making my skills less or more
+valuable. He asks people to bring questions.
+
+**Profile read.** Sydney. Thirty years inside IT recruitment, now running Talentology, which is explicit
+about not being an agency. Around fourteen thousand followers and a community of about two thousand, with
+weekday sessions and a claim of 94% back in work. His site says every session is live human coaching and
+no AI bots, which is a positioning statement as much as a promise. He is a host, not a commentator, so the
+comment is worth more as a question he can use than as an opinion he has to answer.
+
+**Angle.** Give him a question for Sam that a recruiter can actually answer from hiring conversations:
+when a client says they want people who work well with AI, what does the interview test. Then supply the
+reason it matters, from the evaluation side, that teams screen for speed and discover later that nobody
+asked whether the output was correct. Close on why the two are not equivalent.
+
+**Deliberately absent.** Nothing that reads as looking for sponsorship. He is an Australian job-search coach
+with an Australian audience, and a Lagos-based engineer asking about roles in his thread would be read as a
+visa enquiry. No mention of the benchmark, the review or Aithos. No comment on the charcoal and sunshine
+yellow.
+
+**Timing note for the owner.** The session is Friday 6 November at 9am AEDT, which is 11pm Thursday 5
+November in Lagos, not Friday morning.
+
+Draft, 85 words, lint clean, gate 100: `2026-11-03_comments/17_trevor_churchley.txt`.
