@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Verified state of Teamthy/host-failure-benchmark after the restructure</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+pre.code{background:#f6f7f9;border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem;margin:1rem 0;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.code code{background:none;border:0;padding:0;font-size:1em}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  /* Margin 0 collapses the browser's own margin box, which is where Chrome and Edge
+     render the local path and the page counter. Padding on body restores the white
+     space, so the printed page carries the document and nothing else. */
+  @page{size:A4; margin:0}
+  body{background:#fff; font-size:11.2pt; padding:14mm 16mm}
+  main{max-width:none; box-shadow:none; padding:0; margin:0}
+  h1{break-after:avoid; page-break-after:avoid}
+  h2{break-after:avoid; page-break-after:avoid}
+  table{break-inside:auto; page-break-inside:auto}
+  tr,td,th{break-inside:avoid; page-break-inside:avoid}
+  .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+  pre.code{font-size:8pt; border-color:#ccc}
+  a[href]::after{content:""}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Verified state of Teamthy/host-failure-benchmark after the restructure</h1>
+<p>Checked against GitHub by API at <code>main</code> = <code>126f1c0</code>, not from a local tree.</p>
+<h2>Results</h2>
+<table><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody><tr><td><code>MANIFEST.sha256</code>, 42 review files, paths under <code>review/2026-11-03_p2-verification/</code></td><td><strong>42 of 42 match</strong></td></tr><tr><td><code>SHA256SUMS-2026-11-03.txt</code>, the twelve published files</td><td><strong>12 of 12 match</strong></td></tr><tr><td>Files in <code>review/</code></td><td>52</td></tr><tr><td>Files in <code>audit/evidence/2026-11-01/</code></td><td>8, all present</td></tr><tr><td>Loose files at the repository root</td><td>none, the top level is the twelve source entries plus <code>review/</code></td></tr></tbody></table>
+<h2>The three commits this took</h2>
+<ol><li><code>17e257f</code> moved the 42 delivered files under <code>review/2026-11-03_p2-verification/</code>, added the README, both</li></ol>
+<p>manifests, the write-up and the six logs. It also deleted the eight published evidence logs, because a bare <code>*.log</code> pathspec in <code>git rm</code> matches at every depth.</p>
+<ol><li><code>5a2a0f5</code> restored those eight logs from <code>ec6e46f</code>, which put <code>SHA256SUMS-2026-11-03.txt</code> back to twelve</li></ol>
+<p>of twelve.</p>
+<ol><li><code>126f1c0</code> restored <code>p2-results-matrix.csv</code> byte for byte and pinned that path as <code>-text</code> in</li></ol>
+<p><code>.gitattributes</code>. The file was delivered with CRLF line endings and the repository rule <code>* text=auto eol=lf</code> rewrote it on commit, so it no longer matched its own manifest entry.</p>
+<h2>The lesson worth keeping</h2>
+<p>Both failures were mechanical, both were caught by a checksum, and neither was a content problem. A pathspec that looks like a shell glob, and a line ending rule that looks like a formatting preference, were enough to make a repository fail two manifests it had previously satisfied. That is the argument of the whole review, arriving in the tidy-up rather than in the code.</p>
+<h2>State for the reviewer</h2>
+<p>The repository now satisfies both manifests. The message to Behar describes this state accurately, including the path he can check and the container-digest position, which remains unverified and cannot be verified without the original zip.</p>
+<footer></footer>
+</main>
+</body>
+</html>
