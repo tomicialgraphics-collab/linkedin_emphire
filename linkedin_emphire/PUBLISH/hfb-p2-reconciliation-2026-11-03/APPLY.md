@@ -12,7 +12,7 @@ exists in a working tree; none of it is published. The review found that gap and
 | `audit/FINDINGS-REGISTER.md` | `audit/FINDINGS-REGISTER.md` |
 | `audit/DISPOSITION-2026-11-01.md` | `audit/DISPOSITION-2026-11-01.md` |
 | `audit/evidence/2026-11-01/*.log` | `audit/evidence/2026-11-01/`, new folder |
-| `SHA256SUMS.txt` | `audit/evidence/2026-11-01/SHA256SUMS.txt` |
+| `SHA256SUMS.txt` | `SHA256SUMS-2026-11-03.txt` at the repository root |
 
 ## What changes, in the reviewer's own categories
 
@@ -80,7 +80,7 @@ Select-String -Path audit\FINDINGS-REGISTER.md -Pattern "## Attribution"
 Get-ChildItem audit\evidence\2026-11-01
 ```
 
-Expect eight logs plus `SHA256SUMS.txt`, a match on "Three checks", and a match on "## Attribution".
+Expect eight logs, a match on "Three checks", and a match on "## Attribution".
 
 ```
 git add -A
