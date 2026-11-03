@@ -315,3 +315,26 @@ someone else's thread a link reads as traffic, and the idea carries without it. 
 Airbnb numbers themselves, which are his summary of a talk neither of us ran.
 
 Draft, 102 words, lint clean, gate 100: `2026-11-03_comments/14_paolo_perrone.txt`.
+
+## Fifteenth comment: Alex Mashrabov, 3 November, late night
+
+A founder story. One book in the office when Higgsfield started in 2023, Ed Catmull's account of Pixar, ten
+of sixteen million seed dollars burned in eighteen months, and a podcast conversation that turned into an
+argument about AI video being judged by its jagged edges the way CG was in the 1970s.
+
+**Profile read.** CEO and co-founder of Higgsfield AI, founded October 2023. Previously co-founded AI
+Factory, acquired by Snap for 166 million in 2020, then head of generative AI at Snap until September 2023.
+Two ICPC world finals. He is telling a founder-formation story to an audience that already knows his numbers,
+so a comment that repeats them adds nothing and a comment that argues with the analogy would miss the point.
+
+**Angle.** Take the sentence he quotes from Catmull rather than the analogy around it: every critique became
+a list of things to fix. That is the mechanism behind the twenty years, and it is available to AI video teams
+today, except that almost nobody writes the defect down next to the prompt and seed that produced it. Without
+that record, each release gets judged on feel, and no one can say whether the thing that bothered them in
+January is fixed in June.
+
+**Deliberately absent.** No congratulations on the funding, the ARR or the valuation, all of which are in his
+profile and his other posts. No mention of the benchmark, the review or Aithos. No reference to the podcast
+link, which is in his own comments.
+
+Draft, 109 words, lint clean, gate 100: `2026-11-03_comments/15_alex_mashrabov.txt`.
