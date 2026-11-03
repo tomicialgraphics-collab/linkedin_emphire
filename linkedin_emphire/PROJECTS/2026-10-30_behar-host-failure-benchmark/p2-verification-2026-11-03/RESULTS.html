@@ -23,6 +23,8 @@ main{
   max-width:44rem; margin:0 auto; background:var(--paper);
   padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
 }
+pre.code{background:#f6f7f9;border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem;margin:1rem 0;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.code code{background:none;border:0;padding:0;font-size:1em}
 h1{
   font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
   font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
@@ -96,6 +98,7 @@ a{color:var(--accent)}
   .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
   .say{background:#f3f7f5}
   footer{border-top:1px solid #ccc}
+  pre.code{font-size:8pt; border-color:#ccc}
   a[href]::after{content:""}
 }
 </style>
@@ -115,7 +118,7 @@ a{color:var(--accent)}
 <h2>Environment</h2>
 <table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>OS</td><td>Debian GNU/Linux 12 (bookworm)</td></tr><tr><td>Kernel</td><td>Linux 6.1.158+</td></tr><tr><td>Python</td><td>3.11.2 (GCC 12.2.0)</td></tr><tr><td>Cores</td><td>2</td></tr><tr><td>Filesystem for the run</td><td>ext4, <code>/dev/root</code></td></tr><tr><td><code>bc</code></td><td>absent</td></tr><tr><td><code>chattr</code></td><td>present, <code>+i</code> refused with <code>Operation not permitted</code></td></tr><tr><td>Source tree</td><td>fresh <code>git archive</code> of <code>006d7ee</code>, separate from the working clone</td></tr><tr><td>Evidence tree</td><td>copy of the 42 uploaded files, never the same directory as the source</td></tr></tbody></table>
 <p>Source identity was checked before any probe ran, with the reviewer&#x27;s own assertion:</p>
-<p>``<code> python3 -c &#x27;import os; assert os.path.isfile(os.path.join(os.environ[&quot;HFB_REPO&quot;], &quot;bench&quot;, &quot;store.py&quot;))&#x27; </code>``</p>
+<pre class="code"><code>python3 -c &#x27;import os; assert os.path.isfile(os.path.join(os.environ[&quot;HFB_REPO&quot;], &quot;bench&quot;, &quot;store.py&quot;))&#x27;</code></pre>
 <h2>S1. Conflict record append failure</h2>
 <table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Command</td><td><code>python3 p2probes.py P08</code></td></tr><tr><td>Exit code</td><td>0</td></tr><tr><td>Expected</td><td>the reply describes what is on disk</td></tr><tr><td>Observed</td><td><code>{&quot;reply&quot;: {&quot;ok&quot;: false, &quot;durable&quot;: false, &quot;error&quot;: &quot;OSError: [Errno 28] No space left on device&quot;}, &quot;second_verdict_on_disk&quot;: true, &quot;live_state&quot;: &quot;conflicted&quot;, &quot;restart_state&quot;: &quot;conflicted&quot;, &quot;conflict_record&quot;: false}</code></td></tr><tr><td>Log</td><td><code>logs/s1-p08.log</code></td></tr><tr><td>Status</td><td><strong>Reproduced</strong></td></tr></tbody></table>
 <p>The reply reports <code>ok:false, durable:false</code> while a second verdict is already durable on disk, and both the live and restarted states are conflicted with no conflict row. That is the reviewer&#x27;s recorded observation exactly, including the error string.</p>

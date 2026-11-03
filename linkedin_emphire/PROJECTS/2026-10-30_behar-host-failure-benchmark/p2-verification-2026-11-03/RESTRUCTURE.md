@@ -57,6 +57,7 @@ Then the four new files, fetched from the copy kept in this repository:
 $B = "https://raw.githubusercontent.com/tomicialgraphics-collab/linkedin_emphire/arena/70379866-linkedin-emphire/linkedin_emphire/PROJECTS/2026-10-30_behar-host-failure-benchmark/p2-verification-2026-11-03"
 Invoke-WebRequest "$B/README.md" -OutFile "$R/README.md"
 Invoke-WebRequest "$B/MANIFEST.sha256" -OutFile "$R/MANIFEST.sha256"
+Invoke-WebRequest "$B/MANIFEST-delivered.sha256" -OutFile "$R/MANIFEST-delivered.sha256"
 Invoke-WebRequest "$B/RESULTS.md" -OutFile "$R/results-2026-11-03/RESULTS.md"
 foreach ($f in "s1-p08","s2-p07","s3-runner_checks","s3-runner_extra","s4-n11-run","s5-f20") { Invoke-WebRequest "$B/logs/$f.log" -OutFile "$R/results-2026-11-03/logs/$f.log" }
 Add-Content .gitignore "review/2026-11-03_p2-verification/scripts/p2probes.json"

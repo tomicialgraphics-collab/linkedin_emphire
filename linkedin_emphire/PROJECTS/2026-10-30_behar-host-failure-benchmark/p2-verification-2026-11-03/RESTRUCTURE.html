@@ -23,6 +23,8 @@ main{
   max-width:44rem; margin:0 auto; background:var(--paper);
   padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
 }
+pre.code{background:#f6f7f9;border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem;margin:1rem 0;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.code code{background:none;border:0;padding:0;font-size:1em}
 h1{
   font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
   font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
@@ -96,6 +98,7 @@ a{color:var(--accent)}
   .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
   .say{background:#f3f7f5}
   footer{border-top:1px solid #ccc}
+  pre.code{font-size:8pt; border-color:#ccc}
   a[href]::after{content:""}
 }
 </style>
@@ -106,17 +109,50 @@ a{color:var(--accent)}
 <p>The 42 files Behar supplied arrived flat at the repository root at <code>ec6e46f</code>, next to <code>verify.py</code>, <code>run.py</code> and <code>bench/</code>. That puts an independent reviewer&#x27;s fixtures inside the maintainer&#x27;s tree at the top level, and it overwrites a recorded artifact the moment anyone re-runs a probe.</p>
 <p>The target layout is built and tested here. Owner runs the commands, because the GitHub token in this sandbox has read-only access to <code>Teamthy/host-failure-benchmark</code>.</p>
 <h2>Target layout</h2>
-<p>``<code> review/2026-11-03_p2-verification/ README.md                  what this is, the digest gap, how to run it MANIFEST.sha256            hashes of all 42 delivered files scripts/                   p2probes.py, runner_checks.sh, runner_extra.sh, extra_checks.py, v2lib.py, v2tests.py, v3fixes.py, build_matrix.py recorded/                  the review&#x27;s own outputs, byte for byte, including p2probes.delivered.json results-2026-11-03/        RESULTS.md and the six logs from tonight&#x27;s run </code>``</p>
+<pre class="code"><code>review/2026-11-03_p2-verification/
+  README.md                  what this is, the digest gap, how to run it
+  MANIFEST.sha256            hashes of all 42 delivered files
+  scripts/                   p2probes.py, runner_checks.sh, runner_extra.sh, extra_checks.py,
+                             v2lib.py, v2tests.py, v3fixes.py, build_matrix.py
+  recorded/                  the review&#x27;s own outputs, byte for byte, including
+                             p2probes.delivered.json
+  results-2026-11-03/        RESULTS.md and the six logs from tonight&#x27;s run</code></pre>
 <h2>What was verified here</h2>
 <ul><li>All 42 files moved with <code>git mv</code>, so history follows them.</li><li><code>p2probes.py</code> still finds its library and still writes <code>p2probes.json</code> next to itself, now inside</li></ul>
 <p><code>scripts/</code>, which is gitignored so a re-run cannot overwrite the delivered capture.</p>
 <ul><li>S1 and S2 re-ran from <code>scripts/</code> and produced the same observations as before the move.</li><li><code>MANIFEST.sha256</code> has 42 rows and was generated from the delivered bytes, which a move does not change.</li></ul>
 <h2>The sequence, PowerShell 5.1</h2>
-<p>``<code> cd C:\path\to\host-failure-benchmark git pull $R = &quot;review/2026-11-03_p2-verification&quot; New-Item -ItemType Directory -Force &quot;$R\scripts&quot;, &quot;$R\recorded&quot;, &quot;$R\results-2026-11-03\logs&quot; | Out-Null git mv p2probes.py &quot;$R/scripts/&quot; git mv v2lib.py &quot;$R/scripts/&quot; git mv v2tests.py &quot;$R/scripts/&quot; git mv v3fixes.py &quot;$R/scripts/&quot; git mv build_matrix.py &quot;$R/scripts/&quot; git mv extra_checks.py &quot;$R/scripts/&quot; git mv runner_checks.sh &quot;$R/scripts/&quot; git mv runner_extra.sh &quot;$R/scripts/&quot; git mv p2probes.json &quot;$R/recorded/p2probes.delivered.json&quot; git mv p2-results-matrix.json &quot;$R/recorded/&quot; git mv p2-results-matrix.csv &quot;$R/recorded/&quot; git mv v2results.json &quot;$R/recorded/&quot; Get-ChildItem -Filter <em>.out | ForEach-Object { git mv $_.Name &quot;$R/recorded/&quot; } Get-ChildItem -Filter </em>.log | ForEach-Object { git mv $_.Name &quot;$R/recorded/&quot; } </code>``</p>
+<pre class="code"><code>cd C:\path\to\host-failure-benchmark
+git pull
+$R = &quot;review/2026-11-03_p2-verification&quot;
+New-Item -ItemType Directory -Force &quot;$R\scripts&quot;, &quot;$R\recorded&quot;, &quot;$R\results-2026-11-03\logs&quot; | Out-Null
+git mv p2probes.py &quot;$R/scripts/&quot;
+git mv v2lib.py &quot;$R/scripts/&quot;
+git mv v2tests.py &quot;$R/scripts/&quot;
+git mv v3fixes.py &quot;$R/scripts/&quot;
+git mv build_matrix.py &quot;$R/scripts/&quot;
+git mv extra_checks.py &quot;$R/scripts/&quot;
+git mv runner_checks.sh &quot;$R/scripts/&quot;
+git mv runner_extra.sh &quot;$R/scripts/&quot;
+git mv p2probes.json &quot;$R/recorded/p2probes.delivered.json&quot;
+git mv p2-results-matrix.json &quot;$R/recorded/&quot;
+git mv p2-results-matrix.csv &quot;$R/recorded/&quot;
+git mv v2results.json &quot;$R/recorded/&quot;
+Get-ChildItem -Filter *.out | ForEach-Object { git mv $_.Name &quot;$R/recorded/&quot; }
+Get-ChildItem -Filter *.log | ForEach-Object { git mv $_.Name &quot;$R/recorded/&quot; }</code></pre>
 <p>Then the four new files, fetched from the copy kept in this repository:</p>
-<p>``<code> $B = &quot;https://raw.githubusercontent.com/tomicialgraphics-collab/linkedin_emphire/arena/70379866-linkedin-emphire/linkedin_emphire/PROJECTS/2026-10-30_behar-host-failure-benchmark/p2-verification-2026-11-03&quot; Invoke-WebRequest &quot;$B/README.md&quot; -OutFile &quot;$R/README.md&quot; Invoke-WebRequest &quot;$B/MANIFEST.sha256&quot; -OutFile &quot;$R/MANIFEST.sha256&quot; Invoke-WebRequest &quot;$B/RESULTS.md&quot; -OutFile &quot;$R/results-2026-11-03/RESULTS.md&quot; foreach ($f in &quot;s1-p08&quot;,&quot;s2-p07&quot;,&quot;s3-runner_checks&quot;,&quot;s3-runner_extra&quot;,&quot;s4-n11-run&quot;,&quot;s5-f20&quot;) { Invoke-WebRequest &quot;$B/logs/$f.log&quot; -OutFile &quot;$R/results-2026-11-03/logs/$f.log&quot; } Add-Content .gitignore &quot;review/2026-11-03_p2-verification/scripts/p2probes.json&quot; git add -A git commit -m &quot;review: restructure the P2 verification kit and add the S1-S5 reproduction results&quot; git push </code>``</p>
+<pre class="code"><code>$B = &quot;https://raw.githubusercontent.com/tomicialgraphics-collab/linkedin_emphire/arena/70379866-linkedin-emphire/linkedin_emphire/PROJECTS/2026-10-30_behar-host-failure-benchmark/p2-verification-2026-11-03&quot;
+Invoke-WebRequest &quot;$B/README.md&quot; -OutFile &quot;$R/README.md&quot;
+Invoke-WebRequest &quot;$B/MANIFEST.sha256&quot; -OutFile &quot;$R/MANIFEST.sha256&quot;
+Invoke-WebRequest &quot;$B/MANIFEST-delivered.sha256&quot; -OutFile &quot;$R/MANIFEST-delivered.sha256&quot;
+Invoke-WebRequest &quot;$B/RESULTS.md&quot; -OutFile &quot;$R/results-2026-11-03/RESULTS.md&quot;
+foreach ($f in &quot;s1-p08&quot;,&quot;s2-p07&quot;,&quot;s3-runner_checks&quot;,&quot;s3-runner_extra&quot;,&quot;s4-n11-run&quot;,&quot;s5-f20&quot;) { Invoke-WebRequest &quot;$B/logs/$f.log&quot; -OutFile &quot;$R/results-2026-11-03/logs/$f.log&quot; }
+Add-Content .gitignore &quot;review/2026-11-03_p2-verification/scripts/p2probes.json&quot;
+git add -A
+git commit -m &quot;review: restructure the P2 verification kit and add the S1-S5 reproduction results&quot;
+git push</code></pre>
 <h2>Check the manifest before committing</h2>
-<p>``<code> Get-Content &quot;$R/MANIFEST.sha256&quot; | ForEach-Object { $h,$p = $_ -split &#x27;\s+&#x27;,2; $c = (Get-FileHash &quot;$R/$p&quot; -Algorithm SHA256).Hash.ToLower(); if ($c -ne $h) { &quot;MISMATCH $p&quot; } } </code>``</p>
+<pre class="code"><code>Get-Content &quot;$R/MANIFEST.sha256&quot; | ForEach-Object { $h,$p = $_ -split &#x27;\s+&#x27;,2; $c = (Get-FileHash &quot;$R/$p&quot; -Algorithm SHA256).Hash.ToLower(); if ($c -ne $h) { &quot;MISMATCH $p&quot; } }</code></pre>
 <p>No output means all 42 hashes match. Anything printed is a file that did not survive the move intact.</p>
 <h2>Why this matters beyond tidiness</h2>
 <p>A reviewer&#x27;s fixtures sitting at the maintainer&#x27;s root is the kind of contamination that makes a later reproduction ambiguous, because &quot;the checkout&quot; now contains the audit kit as well as the subject. Under <code>review/</code>, the source tree at <code>006d7ee</code> stays exactly what it claims to be, and the kit is a thing you point at rather than a thing that is inside.</p>
