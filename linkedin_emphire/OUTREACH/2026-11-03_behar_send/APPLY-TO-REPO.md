@@ -19,7 +19,7 @@ git pull
 Invoke-WebRequest "https://github.com/tomicialgraphics-collab/linkedin_emphire/raw/arena/70379866-linkedin-emphire/linkedin_emphire/OUTREACH/2026-11-03_behar_send/hfb-p2-review-structure.zip" -OutFile hfb-p2-review-structure.zip
 Expand-Archive hfb-p2-review-structure.zip -DestinationPath . -Force
 Remove-Item hfb-p2-review-structure.zip
-git rm -q "*.out" "*.log"
+git rm -q ":(glob)*.out" ":(glob)*.log"
 git rm -q p2probes.py v2lib.py v2tests.py v3fixes.py build_matrix.py extra_checks.py runner_checks.sh runner_extra.sh p2probes.json p2-results-matrix.json p2-results-matrix.csv v2results.json
 Add-Content .gitignore "review/2026-11-03_p2-verification/scripts/p2probes.json"
 git add -A
@@ -35,6 +35,21 @@ git ls-tree -r --name-only HEAD review | Measure-Object -Line
 
 Expect 52. Then open `review/2026-11-03_p2-verification/README.md` on GitHub and confirm it renders, and
 `results-2026-11-03/RESULTS.md` beside it.
+
+## If the plain glob was used instead
+
+`git rm -q "*.out" "*.log"` without the glob magic matches at every depth, so it also deletes the eight
+published evidence logs in `audit/evidence/2026-11-01/`, which are listed in `SHA256SUMS-2026-11-03.txt`.
+Restore them from the commit before the restructure and re-verify:
+
+```
+git checkout ec6e46f -- audit/evidence/2026-11-01
+git add audit/evidence/2026-11-01
+git commit -m "audit: restore the eight published evidence logs removed by the restructure"
+git push
+```
+
+Then `sha256sum -c SHA256SUMS-2026-11-03.txt` must print twelve OK lines and nothing else.
 
 ## Why a copy rather than a move
 

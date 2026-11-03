@@ -116,7 +116,7 @@ git pull
 Invoke-WebRequest &quot;https://github.com/tomicialgraphics-collab/linkedin_emphire/raw/arena/70379866-linkedin-emphire/linkedin_emphire/OUTREACH/2026-11-03_behar_send/hfb-p2-review-structure.zip&quot; -OutFile hfb-p2-review-structure.zip
 Expand-Archive hfb-p2-review-structure.zip -DestinationPath . -Force
 Remove-Item hfb-p2-review-structure.zip
-git rm -q &quot;*.out&quot; &quot;*.log&quot;
+git rm -q &quot;:(glob)*.out&quot; &quot;:(glob)*.log&quot;
 git rm -q p2probes.py v2lib.py v2tests.py v3fixes.py build_matrix.py extra_checks.py runner_checks.sh runner_extra.sh p2probes.json p2-results-matrix.json p2-results-matrix.csv v2results.json
 Add-Content .gitignore &quot;review/2026-11-03_p2-verification/scripts/p2probes.json&quot;
 git add -A
@@ -125,6 +125,13 @@ git push</code></pre>
 <h2>3. Check it landed</h2>
 <pre class="code"><code>git ls-tree -r --name-only HEAD review | Measure-Object -Line</code></pre>
 <p>Expect 52. Then open <code>review/2026-11-03_p2-verification/README.md</code> on GitHub and confirm it renders, and <code>results-2026-11-03/RESULTS.md</code> beside it.</p>
+<h2>If the plain glob was used instead</h2>
+<p><code>git rm -q &quot;<em>.out&quot; &quot;</em>.log&quot;</code> without the glob magic matches at every depth, so it also deletes the eight published evidence logs in <code>audit/evidence/2026-11-01/</code>, which are listed in <code>SHA256SUMS-2026-11-03.txt</code>. Restore them from the commit before the restructure and re-verify:</p>
+<pre class="code"><code>git checkout ec6e46f -- audit/evidence/2026-11-01
+git add audit/evidence/2026-11-01
+git commit -m &quot;audit: restore the eight published evidence logs removed by the restructure&quot;
+git push</code></pre>
+<p>Then <code>sha256sum -c SHA256SUMS-2026-11-03.txt</code> must print twelve OK lines and nothing else.</p>
 <h2>Why a copy rather than a move</h2>
 <p><code>git rm</code> plus <code>git add</code> looks like a delete and an add, but git detects the renames on commit, so history follows each file. The bytes are identical: <code>MANIFEST.sha256</code> inside the folder was generated from the delivered copies and verifies 42 of 42 from inside that directory.</p>
 <h2>The one thing not to do</h2>
