@@ -119,7 +119,7 @@ One digest needs explaining rather than hiding. The SHA-256 of `redteam.py` in t
 package is `6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581`. Both are the same file.
 This checkout is on Windows, where the installer default converts LF to CRLF on checkout, and that
 changes the digest without changing a character of content. The platform independent identifier is the
-git blob id, `BLOB_ID_HERE`, from `git ls-tree HEAD redteam.py`. Hashing the raw blob with
+git blob id, `d39a4bedd4e00ba1c67be67b630cf8e28f664ec1`, from `git ls-tree HEAD redteam.py`. Hashing the raw blob with
 `git show HEAD:redteam.py` reproduces `6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581`,
 and that command is in the record so you can run it rather than take this paragraph on trust. A checkout
 with `core.autocrlf` set to false removes the difference entirely.
@@ -177,7 +177,7 @@ The platform independent identifier:
 git ls-tree HEAD redteam.py
 ```
 
-Expected: `100644 blob <id>	redteam.py`. Put that id in place of `BLOB_ID_HERE` in the note.
+Expected: `100644 blob <id>	redteam.py`. Put that id in place of `d39a4bedd4e00ba1c67be67b630cf8e28f664ec1` in the note.
 
 Append it to the provenance file:
 
