@@ -149,7 +149,40 @@ a{color:var(--accent)}
 <p>match the attachment is worse than no hash at all.</p>
 <ul><li>Attach four things: <code>results.json</code>, <code>console.log</code>, <code>SHA256SUMS.txt</code>, <code>provenance.txt</code>. Not the PDF</li></ul>
 <p>again, and not a screenshot of a terminal.</p>
-<footer>Reply, commands, and the fix to the builder</footer>
+<h2>Field notes from the first attempt, 2 November</h2>
+<p>The first attempt on his machine printed this and stopped:</p>
+<p>``<code> No OPENAI_API_KEY set. For local models (Ollama/LM Studio) set any value, e.g. OPENAI_API_KEY=ollama, and set OPENAI_BASE_URL. Or run with --dry-run to see the tests. </code>``</p>
+<p>Three things follow, and the third is a defect in my instructions rather than in his machine.</p>
+<ol><li><strong>Environment variables are session scoped.</strong> A new PowerShell window has none of them. The three</li></ol>
+<p>assignments and the run have to happen in the same window, in that order.</p>
+<ol><li><strong>The harness fails closed.</strong> No key means no model call and no <code>results/</code> directory, so the failed</li></ol>
+<p>attempt cannot be mistaken for a partial run. Worth one clause in the covering note, not a paragraph.</p>
+<ol><li><strong>The capture files were written inside the repository.</strong> <code>provenance.txt</code> and <code>console.log</code> now sit</li></ol>
+<p>in the working tree, which means <code>git status --porcelain</code> is no longer empty and the clean-tree evidence is muddied by my own instruction. Move both out, re-capture, and keep every captured file under <code>C:\review\evidence\</code> from here on. The repository should stay exactly as cloned.</p>
+<p>The sequence below supersedes the one above it.</p>
+<h3>Corrected sequence</h3>
+<p>``<code> mkdir C:\review\evidence </code>``</p>
+<p>``<code> cd C:\review\ai-redteam-five-tests </code>``</p>
+<p>``<code> Remove-Item provenance.txt -ErrorAction SilentlyContinue </code>``</p>
+<p>``<code> Remove-Item console.log -ErrorAction SilentlyContinue </code>``</p>
+<p>``<code> git status --porcelain | Out-File -FilePath C:\review\evidence\provenance.txt -Encoding utf8 </code>``</p>
+<p>Expected: nothing printed, and <code>provenance.txt</code> is empty. An empty file is the evidence.</p>
+<p>``<code> git rev-parse HEAD | Out-File -FilePath C:\review\evidence\provenance.txt -Append -Encoding utf8 </code>``</p>
+<p>``<code> (Get-FileHash redteam.py -Algorithm SHA256).Hash | Out-File -FilePath C:\review\evidence\provenance.txt -Append -Encoding utf8 </code>``</p>
+<p>``<code> $env:MODEL = &quot;openai/gpt-oss-120b&quot; </code>``</p>
+<p>``<code> $env:OPENAI_BASE_URL = &quot;https://api.groq.com/openai/v1&quot; </code>``</p>
+<p>``<code> $env:OPENAI_API_KEY = &quot;the key, in this window only, never in a message&quot; </code>``</p>
+<p>``<code> python redteam.py 2&gt;&amp;1 | Tee-Object -FilePath C:\review\evidence\console.log </code>``</p>
+<p>``<code> &quot;exit code: $LASTEXITCODE&quot; | Out-File -FilePath C:\review\evidence\provenance.txt -Append -Encoding utf8 </code>``</p>
+<p>``<code> git status --porcelain | Out-File -FilePath C:\review\evidence\provenance-after.txt -Encoding utf8 </code>``</p>
+<p>Expected after the run: <code>results/</code> appears, and if the output directory is not ignored by the repository, the only line in <code>provenance-after.txt</code> names it. Say that in the covering note rather than let him ask: the run&#x27;s own output is the one new path, and it is the artifact being handed over.</p>
+<p>``<code> (Get-FileHash results\results.json -Algorithm SHA256).Hash </code>``</p>
+<p>``<code> Copy-Item results\results.json C:\review\evidence\results.json </code>``</p>
+<p>Then hash the copy in place and write the manifest by hand, four lines, commit plus three digests. Do not rebuild the file after hashing it.</p>
+<h3>What to say about attempt one, in one sentence</h3>
+<blockquote><p>The first attempt exited before any model call because the key was not in that shell session, and its</p><p>log is attached as <code>console-attempt1.log</code>; no <code>results/</code> directory was created, which is the harness</p><p>failing closed rather than a partial run.</p></blockquote>
+<p>Nothing more is needed. Leaving it out would be the mistake, because a reviewer comparing timestamps will find two runs and one of them unexplained.</p>
+<footer>Reply, commands, field notes from attempt one</footer>
 </main>
 </body>
 </html>

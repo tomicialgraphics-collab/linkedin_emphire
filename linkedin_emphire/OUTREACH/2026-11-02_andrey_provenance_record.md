@@ -188,3 +188,105 @@ python -m pip show openai | Select-String "Version"
   match the attachment is worse than no hash at all.
 - Attach four things: `results.json`, `console.log`, `SHA256SUMS.txt`, `provenance.txt`. Not the PDF
   again, and not a screenshot of a terminal.
+
+## Field notes from the first attempt, 2 November
+
+The first attempt on his machine printed this and stopped:
+
+```
+No OPENAI_API_KEY set. For local models (Ollama/LM Studio) set any value, e.g.
+OPENAI_API_KEY=ollama, and set OPENAI_BASE_URL. Or run with --dry-run to see the tests.
+```
+
+Three things follow, and the third is a defect in my instructions rather than in his machine.
+
+1. **Environment variables are session scoped.** A new PowerShell window has none of them. The three
+   assignments and the run have to happen in the same window, in that order.
+2. **The harness fails closed.** No key means no model call and no `results/` directory, so the failed
+   attempt cannot be mistaken for a partial run. Worth one clause in the covering note, not a paragraph.
+3. **The capture files were written inside the repository.** `provenance.txt` and `console.log` now sit
+   in the working tree, which means `git status --porcelain` is no longer empty and the clean-tree
+   evidence is muddied by my own instruction. Move both out, re-capture, and keep every captured file
+   under `C:\review\evidence\` from here on. The repository should stay exactly as cloned.
+
+The sequence below supersedes the one above it.
+
+### Corrected sequence
+
+```
+mkdir C:\review\evidence
+```
+
+```
+cd C:\review\ai-redteam-five-tests
+```
+
+```
+Remove-Item provenance.txt -ErrorAction SilentlyContinue
+```
+
+```
+Remove-Item console.log -ErrorAction SilentlyContinue
+```
+
+```
+git status --porcelain | Out-File -FilePath C:\review\evidence\provenance.txt -Encoding utf8
+```
+
+Expected: nothing printed, and `provenance.txt` is empty. An empty file is the evidence.
+
+```
+git rev-parse HEAD | Out-File -FilePath C:\review\evidence\provenance.txt -Append -Encoding utf8
+```
+
+```
+(Get-FileHash redteam.py -Algorithm SHA256).Hash | Out-File -FilePath C:\review\evidence\provenance.txt -Append -Encoding utf8
+```
+
+```
+$env:MODEL = "openai/gpt-oss-120b"
+```
+
+```
+$env:OPENAI_BASE_URL = "https://api.groq.com/openai/v1"
+```
+
+```
+$env:OPENAI_API_KEY = "the key, in this window only, never in a message"
+```
+
+```
+python redteam.py 2>&1 | Tee-Object -FilePath C:\review\evidence\console.log
+```
+
+```
+"exit code: $LASTEXITCODE" | Out-File -FilePath C:\review\evidence\provenance.txt -Append -Encoding utf8
+```
+
+```
+git status --porcelain | Out-File -FilePath C:\review\evidence\provenance-after.txt -Encoding utf8
+```
+
+Expected after the run: `results/` appears, and if the output directory is not ignored by the
+repository, the only line in `provenance-after.txt` names it. Say that in the covering note rather than
+let him ask: the run's own output is the one new path, and it is the artifact being handed over.
+
+```
+(Get-FileHash results\results.json -Algorithm SHA256).Hash
+```
+
+```
+Copy-Item results\results.json C:\review\evidence\results.json
+```
+
+Then hash the copy in place and write the manifest by hand, four lines, commit plus three digests. Do not
+rebuild the file after hashing it.
+
+### What to say about attempt one, in one sentence
+
+> The first attempt exited before any model call because the key was not in that shell session, and its
+> log is attached as `console-attempt1.log`; no `results/` directory was created, which is the harness
+> failing closed rather than a partial run.
+
+Nothing more is needed. Leaving it out would be the mistake, because a reviewer comparing timestamps
+will find two runs and one of them unexplained.
