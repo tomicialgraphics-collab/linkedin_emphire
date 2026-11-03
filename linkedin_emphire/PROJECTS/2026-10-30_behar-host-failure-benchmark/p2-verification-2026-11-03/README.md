@@ -6,7 +6,7 @@ against the pinned baseline the same evening.
 **Evaluation target:** `006d7ee71aa6599521d6675c32f496c5427a846b`
 **Documentation commit, not a code baseline:** `759834945147152bcf2259477ec48425cce5d9f1`
 
-## The archive digest is recorded, not verified
+## The digest covers the container, the manifest covers the content
 
 The review states `hfb-p2-verification.zip` hashes to:
 
@@ -14,20 +14,38 @@ The review states `hfb-p2-verification.zip` hashes to:
 e34c35c8a9269dddfd0ec9452b5a3b3e5894246362ce031c36be3d5b26b33f98
 ```
 
-The archive itself was not delivered. The material arrived as 42 loose files committed at `ec6e46f`, so
-there are no bytes to hash and the digest cannot be checked against anything. The 42 files are pinned by
-`MANIFEST.sha256` in this directory from the moment they land, which is the best that can be done after the
-fact, but a per-file manifest is not the same as an archive digest and should not be described as one.
+The 42 files delivered here are the archive's contents, so nothing is missing from the working set. What is
+missing is the container. A SHA-256 of a zip covers the compression stream, the local and central directory
+headers, the modification timestamps, the extra fields and the file order. None of that survives extraction,
+so the digest cannot be recomputed from the files, and it cannot be checked against them either.
 
-To close the gap: publish the zip, or publish a per-file manifest alongside it. Then the digest and the
-tree can be compared, and the chain from claim to file is complete.
+It also means a fresh re-zip will not match. Re-zipping the same folder produces a different digest because
+the timestamps and ordering differ. Only the original file can satisfy that number.
+
+Two ways to close it:
+
+1. **Fast path.** Run `MANIFEST-delivered.sha256` against the extracted copy on the sender's side. Forty-two
+   matching hashes prove the content sets are equal, which is what the reproduction results actually depend
+   on, and lets both sides state the position precisely: content verified equal, container digest
+   unverified.
+2. **Record path.** Put the original zip in a release asset. Then the bytes anyone fetches are the bytes the
+   digest describes.
+
+`MANIFEST.sha256` pins the files at their paths in this repository, after the move and the rename.
+`MANIFEST-delivered.sha256` pins them at the names they arrived with, so it can be checked against an
+extracted copy directly:
+
+```
+sha256sum -c MANIFEST-delivered.sha256
+```
 
 ## Layout
 
 ```
 review/2026-11-03_p2-verification/
   README.md                  this file
-  MANIFEST.sha256            hashes of all 42 delivered files, at their paths below
+  MANIFEST.sha256            hashes of all 42 files, at their paths below
+  MANIFEST-delivered.sha256  the same 42 hashes at the names they arrived with
   scripts/                   the runners and fixtures
     p2probes.py               S1 (P08) and S2 (P07)
     runner_checks.sh          S3, checks R1 to R5

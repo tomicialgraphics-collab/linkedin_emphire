@@ -19,16 +19,23 @@ unreconciled until the immutable-file condition can be established on a filesyst
 reproduced but its scope note stands: it was observed as a temporary-directory listing, not as a
 cryptographically anchored cross-environment result.
 
-## The one integrity gap, stated plainly
+## The integrity position, stated plainly
 
 The archive digest `e34c35c8a9269dddfd0ec9452b5a3b3e5894246362ce031c36be3d5b26b33f98` could not be
-checked, because `hfb-p2-verification.zip` was not delivered. The material arrived as 42 loose files
-committed to the repository at `ec6e46f`, with no archive and no per-file manifest.
+checked, and the reason is structural rather than an omission by either side.
 
-So: the files that were tested are all of the files that arrived, but nothing ties them to that digest. The
-digest is recorded and unverified. This is the same objection the review raised about a cloud link, raised
-now against a loose upload, and the fix is one of two things: send the zip, or publish a manifest so the
-loose files can be tied to the digest.
+The 42 files that arrived at `ec6e46f` are the archive's contents, so the working set is complete. A zip's
+SHA-256 hashes the container, not the contents: the compression stream, the headers, the timestamps and the
+file order. Extraction discards all of that, so the digest cannot be recomputed from the files and it
+cannot be verified against them. A fresh re-zip would not match either, because the timestamps differ.
+
+So the position is: **content complete and pinned by manifest, container digest unverified.** The
+reproduction below ran against those 42 files and against `006d7ee` extracted from git, so the results do
+not depend on the container being the one that was hashed.
+
+To convert that into the stronger claim, one of two things is needed. Either the manifest is checked on the
+sender's extracted copy, forty-two hashes matching, which proves the content sets are equal. Or the original
+zip is published as a release asset, which is the only way to satisfy the digest itself.
 
 ## Environment
 
