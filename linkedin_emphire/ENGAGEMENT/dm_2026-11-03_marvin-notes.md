@@ -48,3 +48,35 @@ The site invites the test: give it to an AI and ask whether the claims hold. A 2
 experiment done properly, meaning re-serialise a valid record with different key order and whitespace and see
 whether verification still passes, would show whether the serialisation law is enforced or merely described.
 Reporting that result back is evidence, and evidence is the currency in this conversation.
+
+## What is actually there, checked on the proofs page
+
+Two demonstration records, both anchored to Kaspa mainnet on 24 July 2026, with the Kaspa transaction id
+published for each, the leaf salt published by design, the lane named, and a stated body hash. Record A is a
+fabricated accounts-payable settlement carrying a realistic source-system mapping, TranID through PmtTerms,
+across the F catalog. There is a custody sheet, a body sidecar, a verifier specification at v0.4 with a
+class A section for commitment recomputation, and an offline conformance suite with an ANCHOR family.
+
+So the implementation is real and checkable. What is absent is any named customer, pilot or auditor. The
+exhibits are demonstration records built to be checked, not evidence of a deployment.
+
+## Where the value sits for this side
+
+1. Independent verification, done and reported. Two commands reproduce the body hash; the salt and lane
+   reproduce the commitment against the on-chain payload. That takes minutes and it is the one thing a
+   protocol with no third party needs most.
+2. An adversarial review of the specification: completeness, replay across lanes and windows, salt custody,
+   the migration chain's edge cases. Bounded scope, written output, his name on nothing until he approves.
+3. The agent column. His own site puts multi-agent safety next, with Stele for identity and GRANTHA for
+   containment. A threat model for evidence emitted by an agent, covering omission, replay and
+   mis-attribution of a commitment, is the contribution this side is actually equipped to make.
+4. Content afterwards. A post describing a protocol that held under checking is unusual, and it fits the
+   existing voice far better than an opinion about protocols in general.
+
+## What not to do
+
+- Do not take an advisory title or equity before there is a paying customer. One inventor, a pending
+  application and two demo anchors is a pre-adoption protocol.
+- Do not hand over the network. Not until something has been verified independently.
+- Do not spend more than an evening before he answers the completeness question. The answer reveals whether
+  he has thought about the failure that matters to auditors.
