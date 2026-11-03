@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Final reply to Andrey</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  body{background:#fff; font-size:11.2pt}
+  main{max-width:none; box-shadow:none; padding:0}
+  h2{break-after:avoid; page-break-after:avoid}
+  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Final reply to Andrey</h1>
+<p>Every number below is verified from his own console output. Nothing is a placeholder.</p>
+<p>Attachments: <code>results.json</code>, <code>console.log</code>, <code>SHA256SUMS.txt</code>, <code>provenance.txt</code>, <code>provenance-after.txt</code>. <code>check_results.py</code> is in the published folder rather than attached.</p>
+<p>Published record: commit <code>d60579a</code>, path <code>review/2026-11-03_run2</code>.</p>
+<hr>
+<p>Andrey,</p>
+<p>Attached is the record you asked for: a second run at the same commit, complete, with the log and a manifest covering both.</p>
+<p>The result first, because it is the substantive part. Run 2 reached the same verdict as the 1 November run on all fourteen attempts. Prompt injection held in three of three. Retrieval poisoning broke in three of three. Tool description poisoning broke in one of one, with the tool-absent baseline clean. Multilingual refusals held in six of six. Two days apart, same pinned commit, same model id, and nothing moved at the verdict level.</p>
+<p>Files. <code>results.json</code> in full, including every response that was not flagged, which is the half the package reported as a detector reading rather than as a transcript. It holds sixty six strings across <code>meta</code> and the five tests, and none of them is empty. <code>console.log</code> is the run end to end, including the traceback and the non-zero exit from the <code>write_outputs()</code> defect documented in the package, so the order of events is in the record rather than in my account of it. <code>SHA256SUMS.txt</code> covers both files, the harness, the commit and the blob id. <code>provenance.txt</code> is the checkout record and the exit code, and <code>provenance-after.txt</code> is the working tree after the run, which is empty.</p>
+<p>The same record is published at <code>github.com/Teamthy/ai-redteam-five-tests/tree/main/review/2026-11-03_run2</code>, so the link outlives the attachments. The committed copy of <code>results.json</code> hashes to the same value as the one attached, which is checked rather than assumed: line ending conversion is disabled for that folder so the bytes match.</p>
+<p>Provenance. Clean checkout of <code>d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6</code>. <code>git status --porcelain</code> returned nothing before the run and nothing after it, and the first line of <code>provenance.txt</code> is that empty output.</p>
+<p>One digest needs explaining rather than hiding. The SHA-256 of <code>redteam.py</code> in the manifest is <code>540cf2abfa2643143d0c84b12c40d3e8f324a3bd6c84e5620124f8282049cff9</code>, and the value published in the package is <code>6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581</code>. Both are the same file. This checkout is on Windows, where the installer default converts LF to CRLF on checkout, and that changes the digest without changing a character of content. The platform independent identifier is the git blob id, <code>d39a4bedd4e00ba1c67be67b630cf8e28f664ec1</code>, from <code>git ls-tree HEAD redteam.py</code>. Hashing the raw blob with <code>git show HEAD:redteam.py</code> reproduces <code>6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581</code>, which is the published value, and that command is in the record so you can run it rather than take this paragraph on trust. A checkout with <code>core.autocrlf</code> set to false removes the difference entirely.</p>
+<p><code>results.json</code> hashes to <code>d9a9b0669262f9c7ab745c04c2af0f1fe63838c3d660752b0de99c390fe0e83f</code>, and the copy attached hashes to the same value. It was written on Windows, so it contains CRLF as well, which is why the manifest carries a date rather than presenting its digests as permanent.</p>
+<p>Environment. Windows, Python 3.14.5, openai SDK 3.29.0, model <code>openai/gpt-oss-120b</code> at <code>https://api.groq.com/openai/v1</code>, temperature 0.2 and max tool steps 4, all as recorded in the log.</p>
+<p>Two things stated rather than left for you to find. An earlier invocation in the same checkout exited before any model call because the key was not in that shell session. It created no <code>results</code> directory and produced no artifact, so it is not part of this record. And the original <code>results.json</code> from 1 November still does not exist. This is a second run, not the first one recovered.</p>
+<p>The retention gap is the useful finding here, and it has been fixed at the source: <code>build_package.py</code> now archives <code>results.json</code>, the console log and a manifest beside every package it produces, so the next package cannot travel without its record. That change came out of your request.</p>
+<p>On the reference, one line. Unchanged. Two runs agreeing is a small, real thing and it is not a substitute for your review.</p>
+<p>Olusanya</p>
+<hr>
+<h2>Pre-send checks</h2>
+<ol><li><code>Get-Content C:\review\evidence\SHA256SUMS.txt</code> reads back with <code>d9a9b066</code> on the results.json line,</li></ol>
+<p><code>6048b70a</code> on the LF line and the blob id under the commit.</p>
+<ol><li>Search <code>console.log</code> for the key prefix. It should not be there. If it is, redact and say so.</li><li>Do not re-run the harness after this. Any new run produces different digests, and the manifest is</li></ol>
+<p>final for run 2.</p>
+<ol><li>Attach files, not screenshots, and not the earlier PDF again.</li></ol>
+<footer>Run 2, published record, five files</footer>
+</main>
+</body>
+</html>

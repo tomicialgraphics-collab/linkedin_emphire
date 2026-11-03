@@ -85,7 +85,11 @@ posts across tiers per day.
    - ICP fit: security, research, evals, red team, big tech,
      journalism
    Use only what the paste shows. Any field missing from the
-   paste is UNKNOWN, not a guess.
+   paste is UNKNOWN, not a guess. The block is then checked
+   against the public profile and recent posting history before
+   the draft is written, and the check is logged in the entry
+   with the date (11-01, owner correction: "always verify the
+   profile of who we are responding to before responding").
    METHOD LADDER (first match wins):
    1. Thread partner, or a reply is owed → INTERACTIVE reply,
       same day, first-class

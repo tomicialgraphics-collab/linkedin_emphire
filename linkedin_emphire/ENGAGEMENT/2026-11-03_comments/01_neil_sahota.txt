@@ -1,0 +1,6 @@
+The threshold is right, and the hard part is that consequential capability is invisible by default.
+Nothing broke, so nothing generated an incident record, and the only artifact is whatever the system
+around the model happened to log before anyone thought to ask.
+That is the argument for recording what the model read, not only what it did. A capability nobody knew
+it had is precisely the thing that cannot be reconstructed after the fact, because nobody knew to look.
+Governing by capability means building the record before there is a question to answer with it.

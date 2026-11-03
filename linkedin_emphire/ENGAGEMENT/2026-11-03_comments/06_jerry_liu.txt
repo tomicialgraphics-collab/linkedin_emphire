@@ -1,0 +1,3 @@
+The 10x changes the evaluation, not only the cost. At 2800 tokens per second you can afford invariance tests that used to be too expensive to run: the same page recompressed, rotated a degree, re-rendered at another DPI, parsed twice. Identical output every time is a real claim about the parser reading the document instead of the artifact.
+
+A single score against a fixed transcript cannot see that class of failure. Cheap inference is what makes the test that can affordable.

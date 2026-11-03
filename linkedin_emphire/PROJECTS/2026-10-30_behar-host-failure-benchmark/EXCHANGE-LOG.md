@@ -213,3 +213,135 @@ thing to send him is a commit, two commands and the expected numbers, not anothe
 argument. If he finds a third defect in the verifier's input handling, that is
 worth more than another green run, and it should arrive as a failing command
 rather than a description.
+
+## 12. The differential review, and what running it changed
+
+He sent the full review as text on 1 November, v1.2, and a Drive link to the package. The
+package arrived as `HFB_Teste_Diferenciale.zip`, 41,754 bytes, sha256
+`b2a39986c4ad238446e9d2a4928e58a35cba2ff7ceed8fda3e357ac14db90ed4`, which is the hash the
+review declares. So the file is the file.
+
+The package is 36 outcome tests and 13 input checks, not the "eleven counterexamples" his
+earlier message described. His results file marks 23 outcomes as defects; run unchanged against
+`df0cf5a` here, the same 23 came out, case for case. On the inputs I got N06, N12 and N13, with
+N11 untestable for the same reason it was untestable for him.
+
+The three defects I had found by reading the code were V05, V17 and V19 in his numbering. His
+first, third and fourth areas, and the same three cases. That is the useful part of the exchange
+so far: two people reading one repository separately found the same defects and neither found
+them all.
+
+P2 answers F-01 to F-05 and F-09, with the exceptions V22 and V35 and the dispute at V04. On the
+patched tree his package reports 9 defects and 22 documented outcomes. The nine are the ones he
+predicted would remain: V04, which I dispute, V23 and V24, which are host-side and out of the
+current claim, and V28 to V33, which need signed sequence numbers that do not exist yet.
+
+The modes came after the disposition, because his rule is that a row closes on a mode and not on
+a run I did by hand. Seven modes, nineteen in all: f16 and f17 for the state trust and the
+binding, f18 for the conflicting verdicts, f19 for the acknowledgement, f21 for the journal I/O,
+f20 for the false rejection in both directions, f22 for the runner. Six register rows moved from
+patched to closed on the strength of them.
+
+Two things I will not do in the reply. I will not restate his count of 25 deviations as if it
+were in his own results file, which shows 24 counting the static case; and I will not call
+anything closed. Every patched row in the register stays patched until `audit/regressions.py`
+has a mode that fails without the fix. His acceptance rule is the mode, not the run I did by
+hand.
+
+The release decision stands as he wrote it. Nothing in P2 supports authenticated recovery,
+host-loss survivability, or trusted timestamps, and the note says so next to the results rather
+than in a footnote.
+
+## 14. His answer, 1 November, 10:53 PM
+
+He replied to the full response and accepted both disputed points in his own words. V04 "needs a
+genuine timestamp divergence to test the intended property", which is the argument made in the
+disposition. N13 "should be updated to reflect the revised evidence-preservation mechanism", which
+concedes that the check is testing a file that no longer exists rather than the property. He will
+read the register and rerun the differential tests against 006d7ee before consolidating a position
+on the remaining cases. No asks, no attachments requested, no timeline.
+
+State after this message: eight cases open (V23, V24, V28, V29, V30, V31, V32, V33), V04 settled as
+disputed with the test to be re-specified, N13 settled with the register entry to be rewritten. The
+reply is in behar-reply.md section 12. The register wording is drafted there and held, not pushed,
+until his rerun lands.
+
+## 15. His message, 11:08 PM, and what it asked for
+
+He accepted the synthetic skew, set the requirements for it (marked synthetic, explicit
+preconditions, expected results, a reproducible assertion that the two timestamps differ), asked
+for the N13 wording to be verified against the current implementation before it enters the shared
+register, fixed 006d7ee as the evaluation target, and endorsed the single reconciliation.
+
+Delivered in the tree, both reproducible from his side:
+
+- `audit/v04_synthetic_skew.py`, five synthetic replay steps injected before the re-stamp. Control:
+  wal_ts 2, stored_ts 2, record identical to the WAL, every check holds, exit 0. Variant: wal_ts 2,
+  stored_ts 7, record not the WAL record, B and B.wal fail, exit 1. Log at
+  `evidence/2026-11-01/v04-synthetic-skew.log`.
+- `audit/n13_preservation_check.py`, challenge.py pointed at a completed run. Exit 0, eighteen files
+  before and after, no verify-report.json written, directory fingerprint unchanged. Log at
+  `evidence/2026-11-01/n13-preservation-check.log`.
+
+One correction came out of running our own tool: challenge.py does not close on the fingerprint
+line. It prints "the run you pointed me at is unchanged, no file added, removed or rewritten" among
+its held assertions and closes on the summary. The N13 replacement wording was amended before he
+saw it, and the reply says so.
+
+The shared register is unchanged. Both replacement entries sit in behar-reply.md section 12.1 and
+move only after he has seen this message.
+
+## 16. His message, 11:15 PM: attribution in the permanent record
+
+He asked for his full name in the reviewer attribution and headings, "the reviewer" retained where
+it reads naturally, and his role described as a research collaborator conducting independent
+technical verification, so that his verification is not confused with my implementation and
+remediation. He asked for no change to the technical findings, and none was made.
+
+Applied to both documents:
+
+- An Attribution section in each, separating reviewer from author and naming both, stating that the
+  reviewer's contribution is verification and adversarial testing and is not an endorsement of the
+  benchmark, recording that his rerun against 006d7ee was in progress with no result reported, and
+  noting the provenance of the section itself.
+- Headings renamed: "Findings raised by Behar Dalipi, as F-numbered in his review", "the one case
+  the reviewer's test rig can no longer run", "threat-model notes, in the reviewer's terms".
+- Table columns renamed from "his case" and "his outcome" to "the reviewer's case" and "the
+  reviewer's outcome".
+
+One non-attribution edit, disclosed in the reply: the N13 note in the disposition described
+challenge.py as ending on the fingerprint line, which the 11:08 verification showed is wrong. The
+sentence now matches the tool's actual output. No finding, status or count moved; V04 remains
+disputed on the record and the eight remaining cases are untouched.
+
+The project copies of both documents were refreshed from the tree, so the reviewed copy and the
+tree do not drift.
+
+## 17. His message, 11:18 PM: the two entries, for review
+
+He accepted the synthetic skew as methodologically appropriate because it separates timestamp
+consistency from independent attestation, accepted the revised N13 as addressing the property more
+directly, and asked for both replacement entries so he can check the wording against the evidence
+before the shared register is synchronised.
+
+Sent as text, each entry citing its log and its script. One open question is his to settle: the
+status word for V04. Under this register's rule a row closes only when a mode in
+`audit/regressions.py` fails without the fix, and there is no fix to fail without here, because the
+binding already held and V04 identified a defect in the test rather than in the code. "Closed"
+would overstate it and "disputed" now understates it, so the entry is written as **scope**, with the
+variant named, and the alternative is offered: if he wants the row settled, the variant becomes a
+mode in the regression file and the row moves under the existing rule.
+
+N13's status is unchanged. Nothing upstream has moved, and the two entries go in together in one
+commit once he agrees, so his copy and the shared copy stay identical.
+
+## 18. His message, 11:31 PM: attribution accepted
+
+He accepts the attribution section as the foundation of the shared record, accepts the distinction
+between verification and endorsement, notes the N13 correction and the unchanged dispositions, and
+says he looks forward to completing the P2 reconciliation on that basis. No question and no request.
+
+The message does not acknowledge the two replacement entries he asked for at 11:18, so whether they
+have been sent is an open question the owner can answer in one look at the message thread. Everything
+else is now his to do: the rerun against 006d7ee, then the two entries and the V04 status word, then
+one register commit. Section 11 remains parked.

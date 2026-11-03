@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Jerry Liu, OCRia-1 10x: comment</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  body{background:#fff; font-size:11.2pt}
+  main{max-width:none; box-shadow:none; padding:0}
+  h2{break-after:avoid; page-break-after:avoid}
+  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Jerry Liu, OCRia-1 10x: comment</h1>
+<h2>Who he is</h2>
+<p>Co-founder and CEO of LlamaIndex, Princeton, previously Uber, Quora, Two Sigma, Apple. The detail that matters here: before LlamaIndex he was at Robust Intelligence, the AI risk company, where he led engineering for an AI firewall that vetted data before it entered a model. He is not a stranger to security and evaluation language, so a comment about test design is in his own register rather than adjacent to it.</p>
+<h2>What the post says, and one trap</h2>
+<p>OCRia-1 was released 22 October as a 4B document-parsing model, a fine-tune of Qwen3.5-4B, claiming 87.4 on ParseBench and 83.5 on olmOCR-bench with 92.9 on tables. This post is the serving optimisation: 285 to 2800 tokens per second on one B200, built from quantization, DFlash2 speculative decoding, kernel fusion, vLLM changes and seventeen other items.</p>
+<p><strong>The trap.</strong> The technical report measures single-stream decoding at about 4,700 tokens per second with time to first token excluded, and about 3,000 end to end at the median. The post&#x27;s 2800 and the report&#x27;s 4,700 are different measurement bases, not a contradiction. Do not quote either number back at him as if they disagree, because that is the fastest way to look like someone who did not read the report.</p>
+<h2>Comment, 81 words, lint clean</h2>
+<p>The 10x changes the evaluation, not only the cost. At 2800 tokens per second you can afford invariance tests that used to be too expensive to run: the same page recompressed, rotated a degree, re-rendered at another DPI, parsed twice. Identical output every time is a real claim about the parser reading the document instead of the artifact.</p>
+<p>A single score against a fixed transcript cannot see that class of failure. Cheap inference is what makes the test that can affordable.</p>
+<h2>Why this one is worth posting</h2>
+<p>It takes his number seriously and then puts it to a use he did not claim. An invariance test is a metamorphic test: the same document under transformations that should not change the interpretation. If the output moves, the parser is reading the artifact. That is a real and cheap failure class for document parsing, it is the same argument this account makes about checks everywhere, and the speed improvement is precisely what makes it affordable at scale. It is a compliment to the work that is not a compliment to the post.</p>
+<p>No criticism of ParseBench, even though a company publishing a benchmark it owns is the exact structure this account has spent a week criticising elsewhere. He built the firewall product at Robust Intelligence. He knows. Saying it here buys nothing and costs the thread.</p>
+<h2>Where this sits among today&#x27;s six drafts</h2>
+<p>Post two, hold the rest. In order of what actually serves the November goal:</p>
+<ol><li><strong>Sarah Bird.</strong> Time-sensitive and the closest to the lane. Her post was minutes old when captured.</li><li><strong>Jerry Liu.</strong> Technical, credible, and the audience is enterprise document AI, which is a buyer</li></ol>
+<p>audience rather than a follower audience.</p>
+<ol><li><strong>Hamel Husain.</strong> Warm, and the same subject as this one. Do not post both in the same hour.</li><li><strong>Neil Sahota.</strong> Good thread, governance audience, low commercial value.</li><li><strong>Rock Lambros.</strong> Warm repeat surface, keep for tomorrow.</li><li><strong>Allie Miller.</strong> Reach only, and the author has already mocked her comment section.</li></ol>
+<footer></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Aithos interview script</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  body{background:#fff; font-size:11.2pt}
+  main{max-width:none; box-shadow:none; padding:0}
+  h2{break-after:avoid; page-break-after:avoid}
+  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Aithos interview script</h1>
+<p>Read once a day, out loud, from 2 November to the day of the call. Twenty minutes a sitting. The point is not memorising. It is that the sentences come out of your mouth without you assembling them first, because fluency under mild pressure is the only thing an interview actually measures that you cannot fix later.</p>
+<p>How to use the page: anything under <strong>SAY</strong> is spoken, roughly as written. Anything under <strong>NOTE</strong> is for you and is never spoken. Numbers are the ones Aithos published, with their dates, because the figures moved during the year and the old ones are a small tell.</p>
+<hr>
+<h2>1. The ninety second introduction</h2>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>I&#x27;m Olusanya Timothy. I&#x27;m a software engineer working on the failure side of AI systems, which is the part where a model does something that looks reasonable and is wrong, and nobody notices for a month.</p><p>Most of that work is building instruments rather than writing opinions. I have a small rig that probes four things against any OpenAI-compatible model: prompt injection, retrieval poisoning, tool-description poisoning, and refusal behaviour across languages. I have a benchmark for what happens when the host process dies in the middle of a decision, which is a boring failure that turns out to be everywhere. And I publish the parts that did not work, because a tool nobody can check is a claim rather than a tool.</p><p>The reason I applied here is specific. Aithos is the only group I have found that treats evaluation as a public instrument rather than a private scoreboard. LARA puts an agent inside European law and publishes every transcript, and then publishes its own methodological corrections. That is the tradition I want to build tools in.</p></div>
+<div class="note"><span class="tag">Notes, not spoken</span><p>Ninety seconds, four ideas: who you are, what you build, what you publish, why here. Do not add a fifth. Do not say &quot;passionate&quot;. Do not say &quot;I&#x27;ve always been fascinated&quot;.</p></div>
+<hr>
+<h2>2. How you describe their work, in their own terms</h2>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>What I took from LARA is the shape of the instrument. You put the model in a simulated workplace with real tools, an auditor model steers it toward a provision of the AI Act or the GDPR, and three judge models score the transcript against the verbatim text of the law. Ten scenarios at release across four GDPR principles and six AI Act provisions, about three thousand runs across twelve models, and the best performer at the time still breaking the law in 46 percent of cases.</p><p>The part that stayed with me is what you did in August. You ran the instructed condition and found average compliance rising from 31 to 44 percent, which is a real improvement and nowhere near enough. You checked whether models at least obey their own providers&#x27; usage policies and found nine of sixteen doing so in the majority of runs. Then you changed the headline number to the instructed condition, in public, on the grounds that it is the harder result to argue with. Most groups would have kept the flattering baseline and mentioned the rest in a footnote.</p></div>
+<div class="note"><span class="tag">Notes, not spoken</span><p>This is the segment that proves you read the paper rather than the coverage. The three numbers to land are 31, 44 and nine of sixteen. If he or she asks which paper, it is &quot;No one is holding the line&quot;, August 2026, Daan Henselmans.</p></div>
+<hr>
+<h2>3. The line you hold when the conversation gets philosophical</h2>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>The way I think about it, alignment work splits into two questions that get confused. One is what the model should do. The other is who gets to decide, and how anyone outside the room finds out whether it did it. My work is almost entirely the second question. That is why the interest is in evaluation as an instrument rather than in training methods. A model that behaves well in a lab and cannot be checked in deployment has not been aligned, it has been reviewed.</p></div>
+<div class="note"><span class="tag">Notes, not spoken</span><p>This is your bridge to their third pillar without saying &quot;procedural legitimacy&quot; like a slogan. If they name it first, agree and move on. Never use the phrase before they do.</p></div>
+<hr>
+<h2>4. The take-home narration, if they ask how you approach a three hour task</h2>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>I would spend the first twenty minutes writing down what would make the answer wrong. Which judge, how many runs, which model version, whether the pressure the auditor applies is the same for every model I test. Then I would build the smallest thing that produces a real number, with the auditor prompt and the judge prompt both in the repository, versioned, and every transcript written out in full.</p><p>Then I would report the number with its n and an interval rather than as a bare percentage, and I would write half a page on what the result does not show. If someone can take what I hand back and re-run the scoring without me, it is evidence. If they cannot, it is a result, and those are different things.</p></div>
+<div class="note"><span class="tag">Notes, not spoken</span><p>If they give you a real eval instead of asking, do exactly this, and write the threats-to-validity section first if you run short on time. A short honest submission beats a complete confident one.</p></div>
+<hr>
+<h2>5. The one technical position, spoken respectfully</h2>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>The thing I would want to work on is judge reliability. Three judges from three labs is better than one, and the 96.7 percent agreement with human annotation is a real result. It is also a calibration on your own scenario distribution, which is the friendly version of the test. Models from different labs still share training data, a house style, and a tendency to be persuaded by confident prose.</p><p>Two things would make the next set of results harder to argue with. A blind slice, where two annotators judge transcripts without seeing the model name or the judge&#x27;s verdict, and the disagreements are published as a rate rather than quietly resolved. And a re-run button: freeze the transcripts, pin the judge version, and let someone recompute the leaderboard from the frozen record. Your leaderboard already toggles between AI and human-corrected scores, so most of the plumbing exists.</p></div>
+<div class="note"><span class="tag">Notes, not spoken</span><p>Offer, never accuse. The phrase to avoid is &quot;your judges are biased&quot;. The phrase to use is &quot;the agreement figure is measured on a friendly sample&quot;. If they push back, agree with the pushback and ask what they would need to see.</p></div>
+<hr>
+<h2>6. &quot;Tell me about something you built and what went wrong&quot;</h2>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>I built a benchmark for host failure modes, sixteen failure classes across a small decision system, and then I paid for an independent technical review of it, because a benchmark that grades itself is worth nothing.</p><p>The review came back with 36 outcome tests and 13 input checks. My version reproduced 23 of the 36 as defects before I fixed anything, and 9 after. Two of the findings I disputed. One said that on replay the system re-stamps the decision timestamp with its own clock and re-signs the record, which would be a serious defect if it happened. It did not happen in that fixture, and I could show why: the replay step and the decision step were the same number, so the mutation wrote back the value the field already held and the bytes came out identical. That is a defect in the test rather than in the code.</p><p>Arguing that would have been cheap. So I built the case the property actually needs. A synthetic variant that injects a real divergence between the two clocks, with a control run that reproduces the inert case, so the difference could only come from the divergence and not from me changing the checker. The timestamp then goes from 2 to 7, the record stops matching the log, and two independent checks fail. The reviewer accepted it, and the entry is now written in his language rather than mine.</p><p>The thing I took from that is that being right is not the same as being checkable. My first version was right and unhelpful. The variant made it checkable and it settled in one message.</p></div>
+<div class="note"><span class="tag">Notes, not spoken</span><p>This is your best story and you get to tell it once. The shape is: I was disagreed with, I did not defend, I built the better test, it settled. Do not add a moral. The last line is the moral.</p></div>
+<hr>
+<h2>7. The six questions you will probably get, with answers</h2>
+<p><strong>Why Aithos, and not a lab?</strong></p>
+<p><strong>SAY</strong> Because the interesting constraint here is legitimacy rather than capability. A lab can publish a safety result and nobody outside can check it. Here the output is a public instrument, and the test of whether I did the job is whether other people can use it.</p>
+<p><strong>You do not have publications. Does that matter?</strong></p>
+<p><strong>SAY</strong> For this seat I do not think so, and I would rather be direct about the record. Two long-form articles in a public series, an open-source test rig, and one benchmark with an external review and a published disposition of every finding. That is not a paper. It is work that other people can run, and I would rather show you the run than describe it.</p>
+<p><strong>What would you build in your first month?</strong></p>
+<p><strong>SAY</strong> Whatever makes the next LARA result harder to argue with. My instinct is the re-run path and a blind human slice, because those are the two things that turn a leaderboard into something a regulator or a journalist can quote without being wrong.</p>
+<p><strong>What do you do when a reviewer disagrees with you?</strong></p>
+<p><strong>SAY</strong> I separate the claim from the tone and test the claim. If the test is bad, I say so and build a better one. If the code is bad, I fix it and add a regression so it cannot come back. In the last review, two findings were disputed and both ended with a new test rather than an argument.</p>
+<p><strong>Remote, or Amsterdam?</strong></p>
+<p><strong>SAY</strong> I would take the role on the terms you have advertised, and I want to be straight about one part of it. I am in Lagos, and I can hold the job from here: the same clock as Amsterdam for most of the year, and I already do serious work with people I have never sat next to. What I cannot honestly promise is a monthly trip in the first stretch. A Schengen visa needs an invitation letter and an appointment slot, and both run on a calendar I do not control, so a monthly rhythm would fail on logistics rather than on willingness.</p>
+<p>What I would propose instead. One longer visit at the start, a week rather than a day, so onboarding happens in a room. After that a visit every quarter, four or five days at a time, timed to the moments where being present actually changes the outcome: a release, an external review, a session with a regulator or a partner. Between visits, a standing call in your morning and a written update every week, so nobody has to ask what I am doing. If the role goes well and there is a case for it, I am open to talking about relocation on your timeline.</p>
+<div class="note"><span class="tag">Notes, not spoken</span><p>This is the one answer allowed to run to ninety seconds. Say the constraint once, in the middle of the answer, and do not apologise for it. The first failure mode is the candidate who promises a cadence and asks for an exception in month two. The second is the candidate who raises this before they do, turning a hiring conversation into a negotiation. If they say monthly is fixed, ask what the visits are for. The answer tells you whether the constraint is real or a habit.</p><p><strong>What are you weak at?</strong></p><p><strong>SAY</strong> Formal methods and the theory side of alignment. I can read a paper and implement it, and I am not going to pretend that is the same as being able to derive it. What I am good at is turning a claim into a test and making the result survive someone else checking it.</p></div>
+<div class="note"><span class="tag">Notes, not spoken</span><p>All six are forty to sixty seconds. If an answer runs to ninety, you have started explaining rather than answering.</p></div>
+<hr>
+<h2>8. Your three questions</h2>
+<p>Ask three, and only when invited. Pick the ones that fit the conversation.</p>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>Of the two halves of the job, building the tools and writing the papers, which one does this seat own this year?</p></div>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>How do you decide that a scenario is a fair test of a provision, rather than a test of whether a model will fold to a confident user? The auditor&#x27;s pressure setting looks like the hardest design choice in the tool.</p></div>
+<div class="say"><span class="tag">SAY, read this out loud</span><p>What would make you say, at six months, that this hire worked?</p></div>
+<div class="note"><span class="tag">Notes, not spoken</span><p>Reserve, if the conversation is technical and long: what compute and model access the role gets, and who decides which models get benchmarked next. Do not ask about salary, relocation or visa in the screen.</p></div>
+<hr>
+<h2>9. The recoveries</h2>
+<p>When you do not know something, the sentence is: &quot;I don&#x27;t know that, and I would want to read it before I said anything about it.&quot; Then stop. No filler, no guessing.</p>
+<p>When someone challenges a number you quoted, the sentence is: &quot;That is the figure from the release note in May. If it has moved since, use yours, because you would know better than I do.&quot;</p>
+<p>When someone challenges your record, the sentence is: &quot;You are right that it is not a paper. What it is, is a tool you can run and a benchmark with a published review. Would it help if I sent both?&quot;</p>
+<p>When you have said something clumsy, the sentence is: &quot;Let me put that better.&quot; Then say it better. Nobody remembers the recovery. Everybody remembers the flannel that followed a bad sentence.</p>
+<hr>
+<h2>10. The follow-up message, for 14 November if the silence holds</h2>
+<p>One message, original subject line, three sentences, nothing attached.</p>
+<blockquote><p>Following up on my application for the Research Engineer role, in case it arrived at a busy moment.</p><p>Since applying I have finished a benchmark of host failure modes and put it through an independent</p><p>external review, with the findings register and the disposition published. If it is useful I can send</p><p>the two page summary, and either way I would welcome the chance to talk about the LARA work.</p></blockquote>
+<hr>
+<h2>11. The seven day readiness plan</h2>
+<p><strong>Day 1, 2 November.</strong> Read the homepage three times and write the three pillars from memory. Then read &quot;Introducing Aithos LARA&quot; and list every design choice you disagree with. Two hours.</p>
+<p><strong>Day 2.</strong> Read &quot;No one is holding the line&quot; twice. Write the numbers table from memory: 10 scenarios, 4 GDPR principles, 6 AI Act provisions, 3,000 runs, 12 models, 7 to 54 percent in May, 14 to 56 percent across 18 in August, 31 to 44 percent instructed, 9 of 16 on provider policy, 96.7 percent agreement. One hour.</p>
+<p><strong>Day 3.</strong> Run LARA on one scenario yourself. Read your own transcript end to end, then read a second one where the model refused. Note the difference in the tool calls, not the prose. Two hours.</p>
+<p><strong>Day 4.</strong> Rehearse the take-home on a scenario of your own, timed to three hours, following section 4 of this script exactly. The lesson is how little fits.</p>
+<p><strong>Day 5.</strong> Read your own benchmark disposition, then say the V04 and N13 outcomes out loud in two sentences each. Record yourself once and listen. Half an hour.</p>
+<p><strong>Day 6.</strong> Read this whole script aloud twice. Do not edit it on the second read, even where it sounds wrong, because the version you have practised is worth more than the better sentence you invent at 11pm.</p>
+<p><strong>Day 7.</strong> Read sections 1, 2, 6 and 9 aloud once. Then close the file.</p>
+<hr>
+<h2>12. Night before, five lines</h2>
+<ul><li>The nine numbers from Day 2, out loud, once.</li><li>The three pillars, in their words.</li><li>The names: Daan Henselmans, research director. Nadia Kadhim, executive director. Lauren Toulson,</li></ul>
+<p>AI researcher, the hiring contact.</p>
+<ul><li>The one sentence you want to leave them with: a model that behaves well in a lab and cannot be</li></ul>
+<p>checked in deployment has not been aligned, it has been reviewed.</p>
+<ul><li>Camera, microphone, a glass of water, and the script closed before the call starts.</li></ul>
+<hr>
+<h2>13. Three sentences never to say</h2>
+<p>&quot;AI is my passion.&quot; It says nothing and costs you a minute.</p>
+<p>&quot;I know this is probably not what you are looking for, but.&quot; It makes them agree with you.</p>
+<p>&quot;To be honest with you.&quot; It implies the rest was not.</p>
+<p>&quot;Of course, I will be there every month.&quot; You cannot promise a visa calendar, and the walk-back in month two costs more than the honest answer in the first call.</p>
+<footer>Read aloud, 2 to 14 November 2026</footer>
+</main>
+</body>
+</html>

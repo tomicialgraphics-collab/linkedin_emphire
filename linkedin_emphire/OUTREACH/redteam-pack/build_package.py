@@ -210,7 +210,71 @@ def run_harness(harness, model, base_url, api_key, prompt_file=None):
 
     data = json.loads(results_json.read_text(encoding="utf-8"))
     md = results_md.read_text(encoding="utf-8") if results_md.exists() else ""
-    return data, md, note
+    return data, md, note, (proc.stdout or "") + (proc.stderr or "")
+
+
+def archive_run(harness, package, console):
+    """Keep the raw record beside the package, with hashes.
+
+    Added 2026-11-02 after an independent reviewer asked for the original results.json from a run
+    whose package had already been built. The package reproduced every flagged response but the raw
+    JSON was not kept, which is a retention defect in the process rather than in the run. From here
+    on the package travels with its record: results.json, the console log, and a hash manifest
+    covering both plus the harness file that produced them.
+    """
+    import hashlib
+
+    out = Path(package).resolve().parent / "run_record"
+    out.mkdir(exist_ok=True)
+
+    results_json = Path(harness) / "results" / "results.json"
+    if not results_json.exists():
+        raise SystemExit("no results/results.json to archive at %s" % results_json)
+    shutil.copy2(results_json, out / "results.json")
+
+    if console.strip():
+        (out / "console.log").write_text(console, encoding="utf-8")
+
+    def digest(path):
+        h = hashlib.sha256()
+        with open(path, "rb") as fh:
+            for chunk in iter(lambda: fh.read(65536), b""):
+                h.update(chunk)
+        return h.hexdigest()
+
+    lines = ["# SHA-256 manifest, written by build_package.py", ""]
+    for name in ("results.json", "console.log"):
+        target = out / name
+        if target.exists():
+            lines.append("%s  %s" % (digest(target), name))
+    redteam = Path(harness) / "redteam.py"
+    if redteam.exists():
+        lines.append("%s  redteam.py" % digest(redteam))
+    head = sh(["git", "rev-parse", "HEAD"], cwd=str(harness)).strip()
+    blob = ""
+    try:
+        blob = sh(["git", "rev-parse", "HEAD:redteam.py"], cwd=str(harness)).strip()
+    except SystemExit:
+        pass
+    lines += ["", "commit  %s" % head]
+    if blob:
+        lines.append("blob    %s  redteam.py" % blob)
+    lines += [
+        "",
+        "# Digests above are of the files as they exist in this working tree. A checkout on another",
+        "# platform may convert line endings, which changes the SHA-256 without changing the content.",
+        "# The blob id is the platform independent identifier for the same file, added 2026-11-03",
+        "# after a Windows checkout reported a different SHA-256 for the same commit.",
+        "",
+    ]
+
+    manifest = out / "SHA256SUMS.txt"
+    manifest.write_text("\n".join(lines), encoding="utf-8")
+    print("[record] %s" % manifest)
+    for line in lines:
+        if line and not line.startswith("#"):
+            print("  " + line)
+    return out
 
 
 
@@ -367,7 +431,7 @@ def main():
     workdir = tempfile.mkdtemp(prefix="fivetests-")
     try:
         harness = get_harness(args.harness, workdir)
-        data, md, note = run_harness(harness, args.model, args.base_url, args.api_key, args.prompt_file)
+        data, md, note, console = run_harness(harness, args.model, args.base_url, args.api_key, args.prompt_file)
 
         total, empties = empty_answer_report(data)
         if total and len(empties) >= total:
@@ -394,6 +458,8 @@ def main():
         )
         package.write_text(text, encoding="utf-8")
         print("[done] filled %s" % package)
+        archive_run(harness, package, console)
+        print("[next] send the package and the run_record directory together, never the package alone.")
         print("[next] read section 4 and put a human verdict beside every flagged response.")
     finally:
         shutil.rmtree(workdir, ignore_errors=True)

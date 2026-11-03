@@ -1,0 +1,34 @@
+Package received from Behar (Google Drive, HFB_Teste_Diferenciale.zip, 41,754 bytes)
+  declared in his review : b2a39986c4ad238446e9d2a4928e58a35cba2ff7ceed8fda3e357ac14db90ed4
+  measured here          : b2a39986c4ad238446e9d2a4928e58a35cba2ff7ceed8fda3e357ac14db90ed4   MATCH
+
+Base commit tested: df0cf5a (Teamthy/host-failure-benchmark, main)
+  patch against it          : P2-DIFFERENTIAL-FIXES.patch.txt
+                              sha256 96d3e59aa016a534dcb694506ed954b624c1667ea783797b78d80a1169895e09
+  tree with the patch applied: host-failure-benchmark-p2.zip
+                              sha256 83f6eef9aa312ffa5afa6ac1ed773c346cc84bb0a712fe6c291e5d17c4170682
+  the same tree inside this repository: host-failure-benchmark/ at the commit that carries
+                              this file, so a raw link serves the patched code and not a P0 copy
+
+Files changed by the patch (sha256 of the patched file under /tmp/hfb at time of run):
+  verify.py        15556a75da20fe710d89cc497405ae7dc1fb6f0b623d4ba58f70b96465b57d4a
+  audit/regressions.py 9e96f1df3b97e37bee3628c981e7d2c6122b3546b88280ca09ce70bc39c70313
+  bench/store.py   99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982
+  bench/host.py    97aa10fc8dca799db7f089d782376e782bde8e7c1fdb8fe4ff3568bd62f8b32f
+  bench/common.py  c4039b867b287388e7f90126ea78db2489836bf78a815c7805b64f1473cead45
+  challenge.py     1a616f36ec07a3f084cae5642a1617704f3fefe667e7a1351ca19d634940dcc7
+  example/run/host-Dp.jsonl  (regenerated: D' now withholds the effect)
+
+Evidence files in this directory
+  v2-before-df0cf5a.log   his v2tests.py, 36 outcomes, on unmodified df0cf5a  (9 as-documented, 23 defects, 1 static, 3 informational)
+  v2-after-p2.log         the same file against the patched tree               (22 as-documented, 9 defects, 1 static, 3 informational, 1 not testable)
+  v3-before-df0cf5a.log   his v3fixes.py, 13 input checks, on df0cf5a          (9 as-documented, 3 defects, 1 untestable)
+  v3-after-p2.log         the same file against the patched tree               (12 as-documented, N13 raises in his harness, see DISPOSITION.md)
+  v04-inert-proof.log     proof that V04's mutation is a no-op, and that a non-colliding re-stamp is caught
+  regressions-19-modes.log  audit/regressions.py, all nineteen modes, every one caught
+  suite-after-*.txt       run.py / verify.py / challenge.py on the patched tree (13 of 13 Class P, 2 of 2 Class V, determinism, all mutations caught)
+
+Push state
+  The clone used here can read Teamthy/host-failure-benchmark and cannot write to it: every push,
+  to the upstream and to the fork, returns 403 for the identity this sandbox holds. The patch and
+  the zip are the delivery, and host-failure-benchmark/ in this repository carries the same tree.

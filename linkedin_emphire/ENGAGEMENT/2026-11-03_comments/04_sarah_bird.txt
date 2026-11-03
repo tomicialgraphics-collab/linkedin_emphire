@@ -1,0 +1,5 @@
+The gate is the right place for the architecture question: can untrusted content reach a model that holds tools. That is decidable from the code path, and it is worth blocking a merge over.
+
+What the code path cannot tell you is whether the model obeys the content once it arrives. That is a property of the run, so the pipeline finding and the runtime evidence have to point at the same span, or a closed alert and a fixed vulnerability look identical in the pull request.
+
+Which is also how to judge a suggested fix. Encoding the untrusted input closes the finding. It does not change whether the model can be steered by it.

@@ -1,0 +1,25 @@
+{
+  "post_number": 19,
+  "date": "2026-11-02",
+  "slug": "agent-pr-denominator",
+  "pillar": "AI Evaluation",
+  "secondary_pillars": [
+    "Software Engineering",
+    "AI Engineering"
+  ],
+  "style": "TEMPLATE 1 technical deep-dive, counting problem (survivors and denominators)",
+  "word_count": 370,
+  "structure": "hook on the 40 percent, the survivor argument, merge figures read two ways, three prescriptions with arrows, the part nobody tells you, closing question",
+  "engagement_target": "AI engineering, QA and platform audience. The same argument went into Gregory Goldshteyn's thread on 1 November, so there is a live audience for it and a surface to point at if anyone asks for the longer version.",
+  "fact_verification": "every figure from the Octoverse post of 28 October 2026, listed in sources.md. No quality, revert or defect claims are made anywhere.",
+  "banned_words_check": "voice_lint --profile linkedin: see run log. No em dashes.",
+  "hashtags": [
+    "#AIEngineering",
+    "#SoftwareQuality",
+    "#AIEvaluation"
+  ],
+  "link_placement": "first comment, not the post body",
+  "status": "READY - post Monday 2 November, 9 to 10am WAT",
+  "note": "if entry 18 (redteam-pluralism) did not go out on 1 November, post that first and hold this to Tuesday",
+  "char_count": 2083
+}

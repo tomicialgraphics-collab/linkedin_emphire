@@ -247,3 +247,59 @@ that file carries the review.
 - Andrey: package sent, next contact not before 2026-11-08.
 - Anthropic fellows form: submitted, confirmation never confirmed.
 - Test account deletion at close, and the repository exposure decision, both still unanswered.
+
+## 15. The differential review, read and answered
+
+Behar's package was fetched from Google Drive, not re-requested, and its sha256 matched the one
+his review declares. `v2tests.py` and `v3fixes.py` were run unchanged against `df0cf5a` first,
+to establish what the code did before I touched it: 23 defects of 36 outcomes, 3 of 13 inputs,
+one input untestable. My three earlier findings were V05, V17 and V19.
+
+P2 is the answer to F-01 to F-05 and F-09. On the patched tree his package reports 9 defects
+and 22 documented outcomes, my own run reports 13 of 13 and 3 of 3 with two runs byte-identical
+and every challenge mutation caught, and the shipped example run was regenerated because D' no
+longer commits the effect on a record the store quarantined.
+
+What remains open is written in `FINDINGS-REGISTER.md` with no softening: F-06 and V24 (nothing
+authenticates that the host died), F-07 and V28 to V33 (nothing signs the sequence), V22 (the
+failpoint tests refusal, not tearing), V36, F6, F15, V1, H1. V04 is disputed with a proof that
+its mutation writes the value the field already held, and that the same mutation with
+non-colliding clocks is caught. N13 is the one case where my fix removes what his check reads,
+and the reply asks him to rewrite it as a fingerprint assertion.
+
+Deliverables: `DISPOSITION-2026-11-01.md` (all 49 cases), `P2-DIFFERENTIAL-FIXES.patch.txt`,
+`host-failure-benchmark-p2.zip`, and `evidence/2026-11-01/` with both of his logs before and
+after, the V04 proof, and my own suite outputs.
+
+## 16. The six modes, and the push that could not be made
+
+`audit/regressions.py` went from twelve modes to nineteen, one per finding answered and two for
+F-01, since state trust and binding are separate defects. f16 and f17 damage the store journal
+and then ask a restarted store, which is how the reviewer posed both. f18 removes a conflict
+record and keeps both signed verdicts. f19 and f20 revert the code, because the acknowledgements
+and the boot-epoch binding are orderings and no artifact could carry them. f21 runs the store in
+process so an injected EIO can reach open() and fsync(). f22 tests the tools rather than a run.
+f20 asserts the benign direction too. All nineteen caught.
+
+The push is blocked: this sandbox can read Teamthy/host-failure-benchmark and cannot write to it,
+upstream or fork, 403 on both. So the delivery is the patch inside the workspace repository plus
+`host-failure-benchmark/` synced to the P2 tree, which was stale at the P0 version and is not any
+more. Applying the patch and pushing from his own machine is the step that turns this into a
+commit the reviewer can pull.
+
+## 17. His machine ran it, and agreed
+
+Windows 11, Python 3.14.5, from commit `006d7ee` on `main`, which is P2 as pushed by hand because
+this sandbox cannot write to that repository. `verify.py example/run` gave 13 of 13 in class P and
+3 of 3 in class V, `challenge.py` caught all ten mutations and held all three input checks, and
+`audit/regressions.py` caught all nineteen modes. Same numbers as the Linux runs here, on the
+other platform, by a different process. That is the cross-platform claim getting its second
+machine rather than a second assertion.
+
+Class V went from 2 of 2 to 3 of 3 with `D'.effect`, so the documents that still said 2 of 2 were
+corrected in this commit.
+
+Behar asked for a link to the findings register because LinkedIn turned the filename into a web
+address. The answer is not a link into `linkedin_emphire`, which is public and carries the CV and
+the pipeline. It is `audit/FINDINGS-REGISTER.md` in the benchmark repository, next to the modes
+the register cites.

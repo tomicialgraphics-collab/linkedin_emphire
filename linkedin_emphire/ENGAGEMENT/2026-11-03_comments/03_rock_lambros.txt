@@ -1,0 +1,9 @@
+No one verifies a self-declared conformance claim is the sentence that decides whether ACS travels
+outside the room it was written in. A Guardian that logs an audit trail is necessary and not
+sufficient, because the log is produced by the thing being assessed.
+
+The version that settles it is the one a buyer can run without you: a reference implementation, a fixed
+test set, and a failure that produces a document rather than a support ticket.
+
+Publishing the Guardian limitations requirement by requirement is the part most standards skip, and it
+is the part a buyer will actually read.
