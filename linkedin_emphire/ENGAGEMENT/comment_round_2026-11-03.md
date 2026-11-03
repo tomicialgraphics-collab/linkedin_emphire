@@ -121,3 +121,24 @@ All six of the 3 November comments shipped the same afternoon. Verbatim record i
 
 Paste-ready copies, plain text, no quoting: `ENGAGEMENT/2026-11-03_comments/01_neil_sahota.txt`,
 `02_hamel_husain.txt`, `03_rock_lambros.txt`.
+
+## Seventh comment: Martin Šafránek, 3 November, evening
+
+A quote post of Zach Wilson's Snowflake and Databricks "souls" satire. Martin's own paragraph is the
+commentable part: the events feel different, migrations are a culture upgrade as much as a technical one,
+run several POCs with both platforms, listen to users and business representatives first.
+
+**Profile read.** Prague. Roughly twenty years of DWH and migration work. Head of DWH at Czech Airlines
+and J&T, delivery projects at Javlin (now CloverDX), and the last six years on Czech National Bank
+regulatory reporting, Anacredit and Resolution Reporting, plus migrations for acquired banks. SnowPro Core
+since August 2024, Data Vault 2.1 practitioner since March 2025, Datavault Builder certified since
+September 2025. At Ness Czech, contact address on the Sophia Solutions domain. Co-hosts Data Vault bez
+předsudků on the Data Talk podcast and runs AI prototyping for a public education nonprofit. Writes method
+and practice, not announcements, so the comment goes at the failure side of a POC and stays off his
+employer and off the podcast.
+
+**Deliberately absent.** Zach Wilson's satire is the parent post. Replying to it would be arguing with a
+joke, and Martin's paragraph is where the substance sits. No mention of the benchmark or the review. No
+Data Vault citation, because he holds three certifications in it and does not need one explained.
+
+Draft, 96 words, lint clean, gate 100: `2026-11-03_comments/07_martin_safranek.txt`.
