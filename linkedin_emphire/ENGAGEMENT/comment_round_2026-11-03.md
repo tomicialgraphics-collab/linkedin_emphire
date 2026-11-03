@@ -190,3 +190,29 @@ his observation and cannot be verified from here. No mention of the benchmark, t
 work. No compliment on the book.
 
 Draft, 98 words, lint clean, gate 100: `2026-11-03_comments/09_ethan_mollick.txt`.
+
+## Tenth comment: Jeff Cohen, 3 November, late night
+
+Fiddler AI's acquisition by CrowdStrike, announced the same day at Fal.Con Europe in Barcelona. Jeff's post
+is a career account that contains one sentence worth answering: manual evaluation of their own agents was
+one of the things that broke Leadoff operationally, and they never solved it.
+
+**Profile read.** Building trust into AI at Fiddler, previously a long run at UserTesting through its IPO,
+acquisition and merger with UserZoom, UCLA Anderson MBA, co-founded Leadoff and shut it down after about two
+and a half years. Sales operator turned founder, writing to a vendor and enterprise audience on the day of
+the announcement. He is not asking a question, so the comment answers the sentence rather than the news.
+
+**News checked.** CrowdStrike press release, 3 November 2026, definitive agreement, closing expected in
+FY27 Q4, Fiddler to be sold as Falcon Observe with GA planned in the same quarter. Reported at roughly 400
+million for Fiddler and 95 million for Dreadnode in the same announcement. None of that goes in the comment.
+
+**Angle.** Manual eval fails on artifacts, not speed: a spreadsheet verdict cannot tell you later whether
+the agent moved or the reviewer did, and a guardrail exporting pass and fail keeps that blindness while
+cutting the latency. The closing line answers George Kurtz's "the model did it is not an answer" without
+quoting it back at him, because "the reviewer said so" fails the same way.
+
+**Deliberately absent.** No congratulations paragraph. He has a hundred of those already today and the
+comment would be invisible in them. No mention of the benchmark, the review, or Aithos, since this thread
+is a vendor and enterprise audience on an acquisition day.
+
+Draft, 110 words, lint clean, gate 100: `2026-11-03_comments/10_jeff_cohen.txt`.
