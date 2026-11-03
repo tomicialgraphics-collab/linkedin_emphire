@@ -96,3 +96,17 @@ Olusanya
   backlog.
 - Do not let the register and the disposition drift apart again. Both get published in the same commit,
   and every evidence path in either one resolves at that sha.
+
+## After the push, 3 November
+
+Two commits landed: `1780208` carries the corrected counts, the attributed register and disposition, and
+the eight evidence logs; `7598349` drops the internal instruction sheet from the manifest, so the manifest
+lists exactly twelve files.
+
+Verified against GitHub at `7598349` rather than from the local tree: twelve manifest rows, twelve matches,
+no missing paths, no line ending drift. `README.md` has no remaining "Two checks". The register names the
+reviewer and the path it cites resolves.
+
+The reply at 12:30 PM went out with the placeholder `[sha]` still in the second message sent immediately
+after it. The correction message supplies `7598349`, names it as the second of the two commits, and stops.
+One correction, no third message, no explanation of how the placeholder got there.
