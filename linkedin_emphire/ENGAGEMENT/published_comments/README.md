@@ -112,3 +112,7 @@ drafts (drafts live in conversation history and in response_templates convention
   Anthropic Fellows announcement; link resolved to the Greenhouse
   listing and read in full, a 115w comment on the residency condition
   and the 25 to 50% conversion figure is DRAFTED, not posted.
+- `2026-11-03_verbatim.md`: 11-03, six comments posted in one afternoon: Neil Sahota
+  (consequential capability), Hamel Husain (benchmark defects), Rock Lambros (unverified conformance),
+  Sarah Bird (GitHub AI application scanning), Allie K. Miller (overnight agent handoff), Jerry Liu
+  (OCRia-1 speed as an evaluation budget). All six drafted and linted the same day.

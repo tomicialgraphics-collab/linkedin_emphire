@@ -97,6 +97,11 @@ free, because it is the policy side of the same argument.
 - Do not mention the benchmark, the review, or the Aithos application in any of them.
 - Do not reply to agreement. If Neil or Rock answers with thanks, the thread is finished.
 
+## Status: all three posted, plus three more
+
+All six of the 3 November comments shipped the same afternoon. Verbatim record in
+`ENGAGEMENT/published_comments/2026-11-03_verbatim.md`.
+
 ## Profiles checked before pasting
 
 - **Neil Sahota.** IBM Master Inventor, former World Wide Business Development Leader for the IBM
