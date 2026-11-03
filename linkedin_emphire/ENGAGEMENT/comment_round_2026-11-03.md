@@ -166,3 +166,27 @@ Udemy course with an almost identical title in the search results, whose instruc
 and untapt history that does not match this profile, so nothing in the comment references a course.
 
 Draft, 104 words, lint clean, gate 100: `2026-11-03_comments/08_kyle_bartlett.txt`.
+
+## Ninth comment: Ethan Mollick, 3 November, night
+
+He suggests proving to yourself that a current model gives substantive, intellectually interesting feedback
+on your own paper, and notes the improvement is that critiques now read like a good, slightly eccentric peer
+rather than a list of nitpicks.
+
+**Profile read.** Wharton associate professor of management, co-director of the Wharton Generative AI Labs
+with Lilach Mollick, author of *Co-Intelligence* (2024) and *Co-Existence: The Next Phase of AI*, published
+20 October 2026 by Penguin, writes One Useful Thing, TIME 100 in AI for 2024. He is a careful, evidence-led
+writer who has been publicly sceptical of both hype and dismissal. Nothing here needs telling to him, and
+nothing should sound like a correction of him.
+
+**Angle.** Take his "prove it to yourself" one step further without contradicting it: a substantive critique
+is persuasive before it is checked, and the eccentric-sounding ones are where that gets tested. Anchoring
+each objection to a line and a document version makes the claim checkable against the text rather than
+against memory. The parting observation, that the objections which fail to survive checking are usually the
+ones that sounded sharpest, is the honest version of the phenomenon he describes.
+
+**Deliberately absent.** No opinion on the specific models he names, because capabilities in that post are
+his observation and cannot be verified from here. No mention of the benchmark, the review or the manuscript
+work. No compliment on the book.
+
+Draft, 98 words, lint clean, gate 100: `2026-11-03_comments/09_ethan_mollick.txt`.
