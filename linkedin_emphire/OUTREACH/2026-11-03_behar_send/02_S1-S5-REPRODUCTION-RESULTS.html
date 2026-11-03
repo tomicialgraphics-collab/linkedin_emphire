@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>S1 to S5 reproduction, 3 November: results</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  body{background:#fff; font-size:11.2pt}
+  main{max-width:none; box-shadow:none; padding:0}
+  h2{break-after:avoid; page-break-after:avoid}
+  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>S1 to S5 reproduction, 3 November: results</h1>
+<p>Reviewer: Olusanya Timothy. Run date: 3 November 2026, evening. Evaluation target: <code>006d7ee71aa6599521d6675c32f496c5427a846b</code>. Documentation commit, not used as the code baseline: <code>759834945147152bcf2259477ec48425cce5d9f1</code>.</p>
+<h2>Summary</h2>
+<table><thead><tr><th>ID</th><th>Finding</th><th>Status</th></tr></thead><tbody><tr><td>S1</td><td>Conflict record append failure (NEW-2 / P08)</td><td><strong>Reproduced</strong></td></tr><tr><td>S2</td><td>Quarantine without repair provenance (NEW-1 / P07)</td><td><strong>Reproduced</strong></td></tr><tr><td>S3</td><td>Regression-runner robustness (U10 / NEW-3)</td><td><strong>Reproduced</strong>, one tooling limitation noted</td></tr><tr><td>S4</td><td>Stale positive report after write failure (N11)</td><td><strong>Environment-limited</strong>, not executed</td></tr><tr><td>S5</td><td>Leftover temporary fixtures (NEW-4)</td><td><strong>Reproduced</strong></td></tr></tbody></table>
+<p>Four reproduced, one environment-limited, none not-reproduced. Under the reviewer&#x27;s own rule, S4 stays unreconciled until the immutable-file condition can be established on a filesystem that permits it. S5 is reproduced but its scope note stands: it was observed as a temporary-directory listing, not as a cryptographically anchored cross-environment result.</p>
+<h2>The integrity position, stated plainly</h2>
+<p>The archive digest <code>e34c35c8a9269dddfd0ec9452b5a3b3e5894246362ce031c36be3d5b26b33f98</code> could not be checked, and the reason is structural rather than an omission by either side.</p>
+<p>The 42 files that arrived at <code>ec6e46f</code> are the archive&#x27;s contents, so the working set is complete. A zip&#x27;s SHA-256 hashes the container, not the contents: the compression stream, the headers, the timestamps and the file order. Extraction discards all of that, so the digest cannot be recomputed from the files and it cannot be verified against them. A fresh re-zip would not match either, because the timestamps differ.</p>
+<p>So the position is: <strong>content complete and pinned by manifest, container digest unverified.</strong> The reproduction below ran against those 42 files and against <code>006d7ee</code> extracted from git, so the results do not depend on the container being the one that was hashed.</p>
+<p>To convert that into the stronger claim, one of two things is needed. Either the manifest is checked on the sender&#x27;s extracted copy, forty-two hashes matching, which proves the content sets are equal. Or the original zip is published as a release asset, which is the only way to satisfy the digest itself.</p>
+<h2>Environment</h2>
+<table><thead><tr><th>Item</th><th>Value</th></tr></thead><tbody><tr><td>OS</td><td>Debian GNU/Linux 12 (bookworm)</td></tr><tr><td>Kernel</td><td>Linux 6.1.158+</td></tr><tr><td>Python</td><td>3.11.2 (GCC 12.2.0)</td></tr><tr><td>Cores</td><td>2</td></tr><tr><td>Filesystem for the run</td><td>ext4, <code>/dev/root</code></td></tr><tr><td><code>bc</code></td><td>absent</td></tr><tr><td><code>chattr</code></td><td>present, <code>+i</code> refused with <code>Operation not permitted</code></td></tr><tr><td>Source tree</td><td>fresh <code>git archive</code> of <code>006d7ee</code>, separate from the working clone</td></tr><tr><td>Evidence tree</td><td>copy of the 42 uploaded files, never the same directory as the source</td></tr></tbody></table>
+<p>Source identity was checked before any probe ran, with the reviewer&#x27;s own assertion:</p>
+<p>``<code> python3 -c &#x27;import os; assert os.path.isfile(os.path.join(os.environ[&quot;HFB_REPO&quot;], &quot;bench&quot;, &quot;store.py&quot;))&#x27; </code>``</p>
+<h2>S1. Conflict record append failure</h2>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Command</td><td><code>python3 p2probes.py P08</code></td></tr><tr><td>Exit code</td><td>0</td></tr><tr><td>Expected</td><td>the reply describes what is on disk</td></tr><tr><td>Observed</td><td><code>{&quot;reply&quot;: {&quot;ok&quot;: false, &quot;durable&quot;: false, &quot;error&quot;: &quot;OSError: [Errno 28] No space left on device&quot;}, &quot;second_verdict_on_disk&quot;: true, &quot;live_state&quot;: &quot;conflicted&quot;, &quot;restart_state&quot;: &quot;conflicted&quot;, &quot;conflict_record&quot;: false}</code></td></tr><tr><td>Log</td><td><code>logs/s1-p08.log</code></td></tr><tr><td>Status</td><td><strong>Reproduced</strong></td></tr></tbody></table>
+<p>The reply reports <code>ok:false, durable:false</code> while a second verdict is already durable on disk, and both the live and restarted states are conflicted with no conflict row. That is the reviewer&#x27;s recorded observation exactly, including the error string.</p>
+<p>The decision criterion stands and is not softened: a two-append operation needs transactional semantics or an explicit uncertainty response, because &quot;failed acknowledgement&quot; and &quot;no persisted bytes&quot; are different facts and the caller cannot tell them apart from this reply.</p>
+<h2>S2. Quarantine without repair provenance</h2>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Command</td><td><code>python3 p2probes.py P07</code></td></tr><tr><td>Exit code</td><td>0</td></tr><tr><td>Expected</td><td>a repair record names the quarantined bytes, as the start-up repair does</td></tr><tr><td>Observed</td><td><code>journal kinds=[&#x27;boot&#x27;, &#x27;issued&#x27;, &#x27;issued&#x27;, &#x27;boot&#x27;]; quarantine files=[&#x27;store.jsonl.quarantine-1.bin&#x27;]; issued after restart=[&#x27;T-1&#x27;, &#x27;T-3&#x27;]</code></td></tr><tr><td>Log</td><td><code>logs/s2-p07.log</code></td></tr><tr><td>Status</td><td><strong>Reproduced</strong></td></tr></tbody></table>
+<p>The quarantined bytes exist in a side file and the journal contains no repair row for the runtime cut. The second <code>boot</code> record shows the restart happened without announcing what was removed from the log.</p>
+<h2>S3. Regression-runner robustness</h2>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Commands</td><td><code>HFB_REPO=$HFB_REPO bash runner_checks.sh</code> then <code>HFB_REPO=$HFB_REPO bash runner_extra.sh</code></td></tr><tr><td>Exit codes</td><td>0 and 0 (the labelled conditions inside them are expected to fail)</td></tr><tr><td>Expected</td><td>the injected faults are reported as labelled outcomes, not as a runner that dies silently</td></tr><tr><td>Observed</td><td>see below</td></tr><tr><td>Logs</td><td><code>logs/s3-runner_checks.log</code>, <code>logs/s3-runner_extra.log</code></td></tr><tr><td>Status</td><td><strong>Reproduced</strong>, with <code>bc</code> absent</td></tr></tbody></table>
+<p>Observed, per label:</p>
+<ul><li><strong>R2</strong>, piped output: <code>exit=0 chunks(t, bytes)=[(15.63, 2784)]</code>. Nothing arrives before completion, so a</li></ul>
+<p>long campaign has no progress output.</p>
+<ul><li><strong>R3a</strong>, 11 second store start: <code>rc=1 after 15 s</code>, <code>store did not announce a port</code>, while f1, f10, f11,</li></ul>
+<p>f13 and f14 print &quot;caught&quot;.</p>
+<ul><li><strong>R3b</strong>, 3 second store start: <code>rc=0</code> for f1, f11 and f3.</li><li><strong>R4</strong>, full campaign on a disposable copy: <code>campaign rc=0</code>, <code>R4: identical</code>, so the checkout is unchanged.</li><li><strong>R5</strong>, child that never returns: <code>rc=124 after 45 s; output bytes: 0</code>.</li><li><strong>R6</strong>, <code>run.py</code> always exits 3: `rc=1; modes reported: 0; the suite did not complete for this mode: run.py</li></ul>
+<p>produced no artifact directory (exit 3)`.</p>
+<ul><li><strong>R7</strong>, <code>verify.py</code> raises on import: <code>rc=1</code>, with f1, f10, f11, f13, f14, f18, f19 and f20 reported</li></ul>
+<p>MISSED, and f16, f17 and f21 caught. That is the reviewer&#x27;s &quot;MISSED instead of a complete error or NOT-RUN classification&quot; reproduced.</p>
+<ul><li><strong>R9 and R9b</strong>, the recovery and unsigned-scenario contrasts: <code>regressions rc=1</code> in both, with f20 and f22</li></ul>
+<p>MISSED in both and f2a MISSED in R9 only.</p>
+<p><strong>The tooling limitation.</strong> <code>bc</code> is not installed in this environment, so the elapsed-time columns print <code>s: command not found</code> and the durations are blank. Every labelled classification was still produced, so the limitation affects the timing columns only and does not change any status. Anyone re-running on a host with <code>bc</code> present will get the durations filled in.</p>
+<h2>S4. Stale positive report after write failure</h2>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Command</td><td>`PYTHONUNBUFFERED=1 python3 v3fixes.py 2&gt;&amp;1 \</td><td>tee s4-n11-run.log`</td></tr><tr><td>Exit code</td><td>1, from the known obsolete tail, not from N11</td></tr><tr><td>Expected</td><td>report made immutable, then the verifier must refuse to present the old report as a fresh result</td></tr><tr><td>Observed</td><td><code>[AS-DOC] N11 stale unwritable report ... observed: not testable here: chattr +i refused (chattr: Operation not permitted while setting flags on /tmp/v2run-qnhszyg6/verify-report.json)</code></td></tr><tr><td>Log</td><td><code>logs/s4-n11-run.log</code></td></tr><tr><td>Status</td><td><strong>Environment-limited</strong>, not executed</td></tr></tbody></table>
+<p><code>chattr +i</code> was refused independently of the script, with a bare probe on an empty file in <code>/tmp</code>: <code>chattr: Operation not permitted while setting flags</code>. The kernel blocks the immutable flag for this container&#x27;s user namespace, so the condition N11 needs cannot be established here.</p>
+<p>The labelled N11 line is produced before the obsolete N13 tail, exactly as the reviewer warned. The <code>FileNotFoundError</code> on <code>verify-report.json</code> that follows it is that tail and is not evidence about N11.</p>
+<p>This finding stays unreconciled. It is not reproduced here, it is not disputed, and it should not be described as passing.</p>
+<h2>S5. Leftover temporary fixtures</h2>
+<table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Command</td><td><code>TMPDIR=$TMPROOT PYTHONDONTWRITEBYTECODE=1 python3 audit/regressions.py f20</code> on a disposable copy</td></tr><tr><td>Exit code</td><td>0</td></tr><tr><td>Expected</td><td>no disposable fixture directory remains unless it is retained and named as an artifact</td></tr><tr><td>Observed</td><td>two directories left behind: <code>hfb-f20-benign-xvqqvqc7</code> and <code>hfb-f20-old-n2ip13b4</code>, 58 files and 384 KiB each</td></tr><tr><td>Log</td><td><code>logs/s5-f20.log</code></td></tr><tr><td>Status</td><td><strong>Reproduced</strong></td></tr></tbody></table>
+<p>The run succeeded, the checkout was a copy, <code>TMPDIR</code> was a fresh parent, and two full copies of the tree were still on disk afterwards. The <code>f20</code> mode alone leaves two. The reviewer&#x27;s note that repeated campaigns also leave <code>hfb-f21<em></code> and <code>hfb-f22</em></code> was not re-run here, because the finding is already established by the two directories this single mode produced.</p>
+<h2>What this changes in the register</h2>
+<p>S1, S2, S3 and S5 move from unreconciled to reproduced. S4 stays unreconciled and is now recorded as environment-limited rather than untested.</p>
+<p>Reproduced is not the same as fixed, and none of these are agreed as fixed. The register keeps them as findings with a reproduction date until the maintainer either ships a correction or states the behaviour is intended, and neither has happened yet.</p>
+<footer></footer>
+</main>
+</body>
+</html>
