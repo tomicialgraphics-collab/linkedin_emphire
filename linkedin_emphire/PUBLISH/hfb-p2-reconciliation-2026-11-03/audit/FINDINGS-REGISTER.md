@@ -106,3 +106,57 @@ The reviewer's acceptance rule is both halves, so f20 tests both: the benign res
 old binding has to fail on it. The other half is measured by the suite itself, which P2 leaves at
 13 of 13 Class P and 3 of 3 Class V, two runs byte-identical, and every mutation in
 `challenge.py` still caught.
+
+---
+
+## S1 to S5, reproduced 3 November 2026
+
+Raised by the reviewer as S1 to S5, reproduced by the author the same evening against `006d7ee`. Full
+results, commands, exit codes and observations: `PROJECTS/2026-10-30_behar-host-failure-benchmark/p2-verification-2026-11-03/RESULTS.md`. Each row carries its own reproduction command and log so it can be
+re-run without reading this document.
+
+**Reproduced is not remediated.** No row below is agreed as fixed. Under the standing rule, a row closes
+only when a mode in `audit/regressions.py` fails without the fix, and no such mode is written for any of
+these five yet. Four rows are `open` with a reproduction date, one is `open` and environment-limited.
+
+| id | finding | review case | reproduced | status |
+| --- | --- | --- | --- | --- |
+| S1 | A conflict record appended after the first verdict is durable can fail while the reply reports `durable: false`, so a second verdict is on disk and the caller is told nothing was written | NEW-2, P08 | yes, `p2probes.py P08`, `logs/s1-p08.log` | open |
+| S2 | A runtime cut quarantines the damaged tail into a side file without writing a repair record, so the restart removes bytes from the log and does not say which | NEW-1, P07 | yes, `p2probes.py P07`, `logs/s2-p07.log` | open |
+| S3 | The regression runner reports a broken candidate as MISSED rather than NOT-RUN, buffers all output until completion, and has no bounded child timeout | U10, NEW-3 | yes, `runner_checks.sh`, `runner_extra.sh`, `logs/s3-*.log` | open, with `bc` absent |
+| S4 | A stale positive report can be presented after a write failure; the immutable-file condition could not be established in a container without `chattr +i` | N11 | no, environment-limited | open, unreconciled |
+| S5 | A regression mode leaves two full copies of the fixture tree in `TMPDIR` after a successful run | NEW-4 | yes, `TMPDIR=$TMPROOT python3 audit/regressions.py f20`, `logs/s5-f20.log` | open |
+
+### Corrective action and acceptance criterion, per row
+
+**S1.** Either make the two-append operation transactional, or give the reply an explicit uncertainty
+outcome that distinguishes "the acknowledgement failed" from "no bytes were persisted", because today the
+caller cannot tell those apart and the disk has bytes the reply denies.
+*Accepts as closed when* a regression mode produces a failed second append and the reply can only be read
+one way about what is durable; the mode fails on the current tree.
+
+**S2.** Write a repair record naming the quarantined file and the byte range on the runtime cut path, with
+the same provenance the start-up repair already writes.
+*Accepts as closed when* a mode that cuts the tail mid-run finds a repair row naming the quarantined bytes,
+and the mode fails without it.
+
+**S3.** Classify each mode before and after execution so an import failure is NOT-RUN and not MISSED, bound
+child execution with an explicit timeout classification, stream progress instead of buffering, and preflight
+optional tools so a missing `bc` is reported once rather than printed per row.
+*Accepts as closed when* an injected `verify.py` import failure reports NOT-RUN for the affected modes, and
+the mode fails against the current runner.
+
+**S4.** Blocked on the environment, not on the code. Needs a filesystem that permits the immutable flag, or
+another way to establish the same condition, recorded with the run.
+*Accepts as closed when* the immutable condition is established and the verifier refuses to present the old
+report as fresh; until then this row stays open and must not be described as passing.
+
+**S5.** Remove fixture trees on the way out, retaining them only when retention is asked for, and name what
+was retained in the output when it is.
+*Accepts as closed when* a mode run against a fresh `TMPDIR` leaves no `hfb-f2*` directory behind, and the
+mode fails when the fixture is leaked.
+
+### Priority agreed with the reviewer
+
+S1 and S2 first, because both are integrity claims and both are cheap to state precisely. Then S3, which is
+runner reliability rather than benchmark correctness. S5 is housekeeping. S4 waits for the environment.
