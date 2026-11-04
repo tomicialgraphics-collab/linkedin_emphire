@@ -92,7 +92,7 @@ them instead. A monologue with no replies underneath is worse than a short threa
   the numbers are already there.
 - **Do not restate the post.** The seed already quotes its own argument back once, at the top, and
   that is the limit.
-- **Sørensen and Anthropic get named, not defended.** If someone challenges the sourcing, the honest
+- **Sorensen and Anthropic get named, not defended.** If someone challenges the sourcing, the honest
   answer is that the 275 and the dropped statements are both in Anthropic's own write-up, and the
   roadmap is ICML 2024. Nothing in the post claims more than that.
 - **If a researcher turns up,** give them the room. This post is one of the two in the repo aimed at
