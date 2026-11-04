@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Findings register, pinned 4 November 2026</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+pre.code{background:#f6f7f9;border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem;margin:1rem 0;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.code code{background:none;border:0;padding:0;font-size:1em}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  /* Margin 0 collapses the browser's own margin box, which is where Chrome and Edge
+     render the local path and the page counter. Padding on body restores the white
+     space, so the printed page carries the document and nothing else. */
+  @page{size:A4; margin:0}
+  body{background:#fff; font-size:11.2pt; padding:14mm 16mm}
+  main{max-width:none; box-shadow:none; padding:0; margin:0}
+  h1{break-after:avoid; page-break-after:avoid}
+  h2{break-after:avoid; page-break-after:avoid}
+  table{break-inside:auto; page-break-inside:auto}
+  tr,td,th{break-inside:avoid; page-break-inside:avoid}
+  .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+  pre.code{font-size:8pt; border-color:#ccc}
+  a[href]::after{content:""}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Findings register, pinned 4 November 2026</h1>
+<p>Olusanya Timothy, 1 November 2026. Against <code>Teamthy/host-failure-benchmark</code>. The base was <code>df0cf5a</code>; P2 is commit <code>006d7ee</code> on <code>main</code>, applied from the patch whose sha256 is <code>96d3e59aa016a534dcb694506ed954b624c1667ea783797b78d80a1169895e09</code>. Every row can be checked out, not just reproduced from a patch.</p>
+<h2>Attribution</h2>
+<ul><li><strong>Reviewer.</strong> Behar Dalipi, research collaborator, conducted the independent technical</li></ul>
+<p>verification, the failure-model analysis and the adversarial testing recorded here. His 36 outcome tests and 13 input checks are the source of every case in this register.</p>
+<ul><li><strong>Author.</strong> Olusanya Timothy implemented the benchmark and the remediation, and wrote this</li></ul>
+<p>register and the disposition that accompanies it. The findings are the reviewer&#x27;s; the fixes, the verdicts and the reasoning against a finding are the author&#x27;s.</p>
+<ul><li><strong>What the reviewer&#x27;s contribution is and is not.</strong> It is verification and adversarial testing.</li></ul>
+<p>It is not an endorsement of the benchmark, and no row here should be read as one. Where a row is disputed, the reviewer&#x27;s position and the author&#x27;s are both recorded in the row.</p>
+<ul><li><strong>State at the time of writing.</strong> The reviewer&#x27;s independent rerun against <code>006d7ee</code> was in</li></ul>
+<p>progress. No result from that rerun is included in this document, and nothing here should be read as reporting one.</p>
+<ul><li><strong>Provenance of this section.</strong> Added on 1 November 2026 at the reviewer&#x27;s request, so that the</li></ul>
+<p>permanent record names him and keeps his verification separate from the author&#x27;s remediation.</p>
+<p>One row per finding. A row is <strong>closed</strong> only when a mode in <code>audit/regressions.py</code> fails without the fix. That rule has not changed since the first version of this register. Six rows now meet it: F-01, F-02, F-03, F-04, F-05 and F-09, each with a mode named in the row. The rest stay open, including the ones a patch has touched.</p>
+<p>Status words mean one thing each:</p>
+<ul><li><strong>open</strong>: reproduced or accepted, no fix in any tree I control</li><li><strong>patched</strong>: fix written and verified against the reviewer&#x27;s own case, which now behaves as</li></ul>
+<p>documented; the in-repo mode that would close the row is not written yet</p>
+<ul><li><strong>disputed</strong>: I believe the case does not test the property it names, or tests something</li></ul>
+<p>outside the stated threat model; the reasoning is in the row and the evidence is in <code>evidence/2026-11-01/</code></p>
+<ul><li><strong>scope</strong>: nothing to patch; the claim is narrowed and the narrowing is written in</li></ul>
+<p><code>TECHNICAL-NOTE.md</code></p>
+<ul><li><strong>closed</strong>: patched, and a mode in <code>audit/regressions.py</code> fails without it</li></ul>
+<h2>Where the numbers come from</h2>
+<p>The reviewer shipped 36 outcome tests and 13 input checks. Re-run unchanged against <code>df0cf5a</code>, the reviewer&#x27;s own results file marks 23 outcomes as defects and 9 as documented. Against P2 it marks 9 as defects and 22 as documented. The per-case table, with the disposition of every one of the 49 cases, is <code>DISPOSITION-2026-11-01.md</code>. Every count in this register comes from that table.</p>
+<h2>My own three, found before the package arrived</h2>
+<p>All three were reproduced on <code>df0cf5a</code> by hand, and all three turned out to be cases in his package: R1 is V05, R2 is V17, R3 is V19. Each now behaves as documented under P2.</p>
+<table><thead><tr><th>id</th><th>finding</th><th>the reviewer&#x27;s case</th><th>fix</th><th>status</th></tr></thead><tbody><tr><td>R1</td><td>Recovery authenticated by trust: replay took <code>state</code> from the journal row instead of recomputing it, so an unsigned record that says <code>verified</code> closed a gap after a restart</td><td>V05, V06</td><td>store recomputes state from the record bytes and the id the row is filed under, through one <code>bound_state()</code> in <code>bench/common.py</code> that the store and the verifier both import</td><td>closed, <code>f16</code> and <code>f17</code></td></tr><tr><td>R2</td><td>An effect committed on a qualified acknowledgement: the host read <code>ok: true</code> without reading <code>state</code>, so the unsigned D&#x27; verdict still logged <code>effect_committed</code></td><td>V15, V16, V17, V18</td><td>a verdict reply must say <code>stored: true</code> and <code>state: &quot;verified&quot;</code>; anything else, including a closed connection, withholds the effect and names the reason</td><td>closed, <code>f19</code></td></tr><tr><td>R3</td><td>I/O failure had no answer: a journal that could not be written raised inside the handler, printed a traceback and closed the connection with no reply</td><td>V19, V20, V21</td><td>a failed append cuts the file back to its previous length and the store answers <code>ok: false, durable: false</code>; a damaged tail is quarantined before the next append; repair keeps the records that follow damage</td><td>closed, <code>f21</code></td></tr></tbody></table>
+<h2>Findings raised by Behar Dalipi, as F-numbered in his review</h2>
+<table><thead><tr><th>id</th><th>finding</th><th>cases</th><th>fix</th><th>status</th></tr></thead><tbody><tr><td>F-01</td><td>journal state and action-ID binding</td><td>V05, V06</td><td>as R1</td><td>closed, <code>f16</code> and <code>f17</code></td></tr><tr><td>F-02</td><td>conflicting verdicts and verifier self-consistency</td><td>V12, V13</td><td>check <code>D</code> refuses to report a record verified while the same journal lists its action as an unresolved gap</td><td>closed, <code>f18</code></td></tr><tr><td>F-03</td><td>acknowledgement and effect admission</td><td>V15-V18</td><td>as R2, plus <code>D&#x27;.effect</code>, which fails if an effect is committed for a record the store could not resolve</td><td>closed, <code>f19</code></td></tr><tr><td>F-04</td><td>durable journal I/O, torn writes</td><td>V19-V22</td><td>as R3 for V19-V21; V22 stays open: the failpoint still refuses before any byte is written, so only damage tests tearing</td><td>closed for V19-V21 (<code>f21</code>), V22 open</td></tr><tr><td>F-05</td><td>false rejection after a routine restart</td><td>V26</td><td><code>B</code> binds the recovered verdict to the epoch it landed in, not to the last boot record in the file</td><td>closed, <code>f20</code>, which also requires the benign restart to verify</td></tr><tr><td>F-06</td><td>host loss and proof of crash</td><td>V23, V24</td><td>none. No independently recorded kill receipt, no named host-disk-loss test, and nothing in the suite authenticates that the host died</td><td>scope</td></tr><tr><td>F-07</td><td>completeness of earlier evidence</td><td>V28-V33</td><td>none. Nothing signs the sequence or checkpoints the journal, so a deletion or a rewrite inside framed records still verifies</td><td>open</td></tr><tr><td>F-08</td><td>timestamp semantics and the shared fixture key</td><td>V02, V04</td><td><code>B.decision</code> compares the recovered verdict and rule with the guard decision the host logged; V04 is disputed: its mutation writes the value the field already holds, and the re-signed record is byte-identical to the WAL</td><td>patched, V04 disputed</td></tr><tr><td>F-09</td><td>runner trustworthiness</td><td>V35, N06, N11-N13</td><td><code>verify.py run run</code> is refused; <code>challenge.py</code> writes nothing into the evidence directory, derives its absent path, and fingerprints the directory to prove it is unchanged</td><td>closed for N06, N12 and N13 (<code>f22</code>); V35 not testable here</td></tr><tr><td>F-10</td><td>idle connection blocks the store; client-selected ids</td><td>V36, F6</td><td>none</td><td>open</td></tr></tbody></table>
+<h2>Disputed, with the evidence beside it</h2>
+<table><thead><tr><th>case</th><th>why</th></tr></thead><tbody><tr><td>V04</td><td>Replay step and decision step are both 2 in this run, so <code>record[&quot;decision_ts&quot;] = self.clock.step + 1</code> rewrites the field with the value it already held, and re-signing produces identical bytes. <code>evidence/2026-11-01/v04-inert-proof.log</code> prints <code>record_identical_to_wal=True</code> for the reviewer&#x27;s exact mutation and <code>B=fails, B.wal=fails, exit=1</code> for the same mutation with the clocks five steps apart. <code>B.wal</code> compared the stored timestamp with the WAL before P2 as well.</td></tr><tr><td>N13</td><td>The reviewer&#x27;s check requires <code>challenge.py</code> to leave a passing report in the directory it was pointed at. I removed that behaviour, so the file it opens no longer exists and the check raises. The property is now asserted by the tool, every run, in its last line.</td></tr></tbody></table>
+<h2>Carried over, unchanged</h2>
+<table><thead><tr><th>id</th><th>finding</th><th>status</th></tr></thead><tbody><tr><td>F6</td><td>identifiers are chosen by the caller and registered, not minted. Minting changes the scenario table, so it is a question rather than a patch</td><td>open, asked 1 November</td></tr><tr><td>F15</td><td>an idle connection can hold the store</td><td>open</td></tr><tr><td>V1</td><td>the verifier still imports the encoder it checks, so the correlated-oracle problem stays until there is a second encoder</td><td>open</td></tr><tr><td>H1</td><td>no CI matrix. The cross-platform claim is two machines compared by hand</td><td>open</td></tr></tbody></table>
+<h2>How the six rows closed</h2>
+<p>Seven modes in <code>audit/regressions.py</code>, nineteen in all, every one caught:</p>
+<table><thead><tr><th>mode</th><th>the counterexample</th><th>what has to catch it</th></tr></thead><tbody><tr><td>f16</td><td>a journal row asserting <code>state: verified</code> over an unsigned record, then a restart</td><td>the gap stays named</td></tr><tr><td>f17</td><td>a record signed for D-4004 filed under C-3003, then a restart</td><td>the gap stays named</td></tr><tr><td>f18</td><td>a second, differently signed D-4004 verdict with the conflict record removed</td><td>D</td></tr><tr><td>f19</td><td>the host&#x27;s acknowledgement requirement disabled, as it was before P2</td><td><code>D&#x27;.effect</code></td></tr><tr><td>f20</td><td>a routine restart after a valid run, against the binding P2 replaced</td><td>B holds with the fix, B fails without it</td></tr><tr><td>f21</td><td>open() and fsync() raising EIO during an append, in process</td><td>the store answers, and memory and disk agree</td></tr><tr><td>f22</td><td>one directory compared with itself, and a challenge over the evidence</td><td>the refusal, and the directory unchanged</td></tr></tbody></table>
+<p>The reviewer&#x27;s acceptance rule is both halves, so f20 tests both: the benign restart has to verify and the old binding has to fail on it. The other half is measured by the suite itself, which P2 leaves at 13 of 13 Class P and 3 of 3 Class V, two runs byte-identical, and every mutation in <code>challenge.py</code> still caught.</p>
+<hr>
+<h2>S1 to S5, reproduced 3 November 2026</h2>
+<p>Raised by the reviewer as S1 to S5, reproduced by the author the same evening against <code>006d7ee</code>. Full results, commands, exit codes and observations: <code>PROJECTS/2026-10-30_behar-host-failure-benchmark/p2-verification-2026-11-03/RESULTS.md</code>. Each row carries its own reproduction command and log so it can be re-run without reading this document.</p>
+<p><strong>Reproduced is not remediated.</strong> No row below is agreed as fixed. Under the standing rule, a row closes only when a mode in <code>audit/regressions.py</code> fails without the fix, and no such mode is written for any of these five yet. Four rows are <code>open</code> with a reproduction date, one is <code>open</code> and environment-limited.</p>
+<table><thead><tr><th>id</th><th>finding</th><th>review case</th><th>reproduced</th><th>status</th></tr></thead><tbody><tr><td>S1</td><td>A conflict record appended after the first verdict is durable can fail while the reply reports <code>durable: false</code>, so a second verdict is on disk and the caller is told nothing was written</td><td>NEW-2, P08</td><td>yes, <code>p2probes.py P08</code>, <code>logs/s1-p08.log</code></td><td>open</td></tr><tr><td>S2</td><td>A runtime cut quarantines the damaged tail into a side file without writing a repair record, so the restart removes bytes from the log and does not say which</td><td>NEW-1, P07</td><td>yes, <code>p2probes.py P07</code>, <code>logs/s2-p07.log</code></td><td>open</td></tr><tr><td>S3</td><td>The regression runner reports a broken candidate as MISSED rather than NOT-RUN, buffers all output until completion, and has no bounded child timeout</td><td>U10, NEW-3</td><td>yes, <code>runner_checks.sh</code>, <code>runner_extra.sh</code>, <code>logs/s3-*.log</code></td><td>open, with <code>bc</code> absent</td></tr><tr><td>S4</td><td>A stale positive report can be presented after a write failure; the immutable-file condition could not be established in a container without <code>chattr +i</code></td><td>N11</td><td>no, environment-limited</td><td>open, unreconciled</td></tr><tr><td>S5</td><td>A regression mode leaves two full copies of the fixture tree in <code>TMPDIR</code> after a successful run</td><td>NEW-4</td><td>yes, <code>TMPDIR=$TMPROOT python3 audit/regressions.py f20</code>, <code>logs/s5-f20.log</code></td><td>open</td></tr></tbody></table>
+<h3>Corrective action and acceptance criterion, per row</h3>
+<p><strong>S1.</strong> Either make the two-append operation transactional, or give the reply an explicit uncertainty outcome that distinguishes &quot;the acknowledgement failed&quot; from &quot;no bytes were persisted&quot;, because today the caller cannot tell those apart and the disk has bytes the reply denies. <em>Accepts as closed when</em> a regression mode produces a failed second append and the reply can only be read one way about what is durable; the mode fails on the current tree.</p>
+<p><strong>S2.</strong> Write a repair record naming the quarantined file and the byte range on the runtime cut path, with the same provenance the start-up repair already writes. <em>Accepts as closed when</em> a mode that cuts the tail mid-run finds a repair row naming the quarantined bytes, and the mode fails without it.</p>
+<p><strong>S3.</strong> Classify each mode before and after execution so an import failure is NOT-RUN and not MISSED, bound child execution with an explicit timeout classification, stream progress instead of buffering, and preflight optional tools so a missing <code>bc</code> is reported once rather than printed per row. <em>Accepts as closed when</em> an injected <code>verify.py</code> import failure reports NOT-RUN for the affected modes, and the mode fails against the current runner.</p>
+<p><strong>S4.</strong> Blocked on the environment, not on the code. Needs a filesystem that permits the immutable flag, or another way to establish the same condition, recorded with the run. <em>Accepts as closed when</em> the immutable condition is established and the verifier refuses to present the old report as fresh; until then this row stays open and must not be described as passing.</p>
+<p><strong>S5.</strong> Remove fixture trees on the way out, retaining them only when retention is asked for, and name what was retained in the output when it is. <em>Accepts as closed when</em> a mode run against a fresh <code>TMPDIR</code> leaves no <code>hfb-f2*</code> directory behind, and the mode fails when the fixture is leaked.</p>
+<h3>Priority agreed with the reviewer</h3>
+<p>S1 and S2 first, because both are integrity claims and both are cheap to state precisely. Then S3, which is runner reliability rather than benchmark correctness. S5 is housekeeping. S4 waits for the environment.</p>
+<footer></footer>
+</main>
+</body>
+</html>
