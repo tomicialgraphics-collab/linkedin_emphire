@@ -76,3 +76,53 @@ and were not read before that deliverable was sent. Fixed the same day, and the 
 The post rules, the template library and the visual spec are read before a post is written, not after.
 Every post from now on ships with the headline pair, the alternatives, the box, the verified hashtags
 and the human-gate score in the same file, because that is what the owner asked for twice.
+
+## Afternoon: the repository became a pipeline
+
+Owner instruction: "you should probably expand and restructure this repo", "expand the linkedin
+emphire folder in the repo so that every session and context catches what we have there and all
+deliverables reads all rule before delivering", "make the whole emphire a pipeline".
+
+### What was built
+
+- `AGENTS.md` at the root. The contract any session reads first: what the repo is, the commands, the
+  ten rules that block, how to begin, how not to work here.
+- `README.md`, rewritten as the map for a human in a hurry.
+- `emphire` and `emphire.ps1`, one-line launchers for bash and PowerShell 5.1. No `&&` in the PS1,
+  one command per line.
+- `PIPELINE/` with `00-START.md`, `10-STAGES.md` (S0 to S8), `20-RULES.md` (30 rules, generated),
+  `30-TEMPLATES.md` (the fourteen, generated), `40-HASHTAGS.md` (verified tags only, generated),
+  `50-CONTRACT.md` (front matter and file shape), `60-ROLES.md` (six roles, six folders).
+- `PIPELINE/registry/` with `rules.json`, `templates.json`, `hashtags.json`, `areas.json`. The registry
+  is the only place a rule is defined. The readable docs are rendered from it, so they cannot drift.
+- `TOOLING/gate.py`, 23 blocking checks and 5 manual rules, reading front matter, exiting non-zero on
+  a file that would fail one.
+- `TOOLING/pipeline.py` with `start`, `status`, `new post`, `check`, `log`, `adopt`, `audit`,
+  `render`, `map`, `loops`.
+- `STATE/OPEN-LOOPS.md` (16 items, seeded from this session's state), `STATE/DELIVERY-LOG.md`,
+  `STATE/GATE-REPORT.md` (generated).
+- `.github/workflows/gate.yml`, so the pipeline enforces itself: registries must render clean, live
+  deliverables must pass, and a known-bad file must still fail.
+- `VERIFIED_POSTS/LEGACY.md`, the rule for the 25 posts that predate the contract.
+
+### What was restructured
+
+222 file actions: 185 byte-identical duplicates deleted, 27 only-copies moved, 5 root copies replaced
+shorter `DAILY CONTENT` ones, 15 differing copies parked in `_variants/`. The full record is
+`ARCHIVE/RESTRUCTURE-2026-11-06.md`.
+
+The root is now boot files and launchers. Three `banned_words.txt` became one, the 84-entry list, and
+the tools resolve it in code rather than assuming a path.
+
+### Proof it works
+
+The 6 November post was brought under the contract: front matter, gate body markers, headline pair,
+two alternatives (the stated character counts were also corrected to the measured 55, 103 and 158).
+`pipeline.py check` returns PASS, 0 blocking, 0 warnings. A deliberately broken file was written and
+the gate returned 15 blocking rows covering R01, R02, R03, R05, R07, R08, R09, R10, R12, R13, R14,
+R18, R22, R23 and R28.
+
+### Open loops opened by this work
+
+- L15: the 11 and 13 November posts need a card and an index row before their slot.
+- L16: legacy posts come under contract one at a time, when they are touched.

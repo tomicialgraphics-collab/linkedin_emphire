@@ -1,8 +1,29 @@
+---
+deliverable: post
+id: 2026-11-06_absence-of-a-record
+date: 2026-11-06
+audience: public
+status: ready
+approved: no
+template: T1
+headline: The log is silent, so the review says nothing happened.
+subheadline: A blocked action, a refused request and a timeout are all events. Almost none of them get written down.
+headline_alt: A missing record is not proof that nothing happened.
+subheadline_alt: Blocks, refusals and timeouts are events. If nothing writes them down, the question an auditor asks cannot be answered.
+headline_alt2: It is cheaper to log a refusal than to explain a silence.
+subheadline_alt2: The negative is the thing every incident review needs and almost no system keeps.
+box: NOTHING HAPPENED
+box_alt: NOBODY WROTE IT
+hashtags: [#AISecurity, #AIRedTeam, #AIEvaluation, #AIGovernance]
+slot: 13:30 WAT, Friday 6 November 2026
+first_comment: inline, see below
+---
+
 # Post for 6 November 2026: the log is silent
 
-Status: READY. Slot **13:30 WAT, Friday 6 November 2026**. Standalone, no links in the body.
-Thesis from Option C of `VERIFIED_POSTS/2026-11-04_alternatives/options.md`, rebuilt to the
-headline, hook, box and hashtag rules in `context.md` §7 and `DAILY CONTENT/visual_and_hook_spec.md`.
+Slot **13:30 WAT, Friday 6 November 2026**. Standalone, no links in the body. Thesis from Option C
+of `VERIFIED_POSTS/2026-11-04_alternatives/options.md`, built on TEMPLATE 1 and gated against
+`PIPELINE/20-RULES.md`. Front matter is the contract the gate reads.
 
 ## Rules this was built against
 
@@ -19,7 +40,7 @@ headline, hook, box and hashtag rules in `context.md` §7 and `DAILY CONTENT/vis
 
 **SUBHEADLINE:** A blocked action, a refused request and a timeout are all events. Almost none of them get written down.
 
-57 characters and 105 characters, 162 together. First line is a contradiction in two clauses: each
+55 characters and 103 characters, 158 together. First line is a contradiction in two clauses: each
 half is ordinary and the pair is not.
 
 ## Alternative headline pairs
@@ -56,6 +77,7 @@ Real photograph, locked bars, black field on the left 70 to 75 percent. Nothing 
 
 ## Post, paste-ready
 
+<!-- gate:body:start -->
 The log is silent, so the review says nothing happened.
 A blocked action, a refused request and a timeout are all events. Almost none of them get written down.
 
@@ -76,6 +98,8 @@ A refusal written as free text is a story. A refusal written as a row is evidenc
 If nothing records the negative, you don't have a clean system. You have an unexamined one.
 
 #AISecurity #AIRedTeam #AIEvaluation #AIGovernance
+
+<!-- gate:body:end -->
 
 ## Hashtags, and how each was checked
 

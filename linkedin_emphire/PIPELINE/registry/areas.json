@@ -1,0 +1,330 @@
+{
+  "version": 1,
+  "updated": "2026-11-06",
+  "note": "Every top-level area of the emphire declares what it is for, which role owns it, and which pipeline stage writes into it. pipeline.py map reports anything in the tree that is not declared here, so nothing can hide and nothing new can be added without a stated purpose.",
+  "stages": {
+    "S0": "boot: read the rules before writing anything",
+    "S1": "intake: an opportunity, brief or thread arrives",
+    "S2": "read: the person, the context, the constraints",
+    "S3": "draft: the deliverable is written",
+    "S4": "gate: the automatable rules are enforced",
+    "S5": "verify: facts, hashes, runs, claims checked",
+    "S6": "deliver: the owner sends, the delivery is journalled",
+    "S7": "log: session log and index updated",
+    "S8": "review: weekly, against the money and relationship rows"
+  },
+  "roles": {
+    "strategist": "THE STRATEGIST, positioning, ICP, calendar",
+    "content": "THE CONTENT CREATOR, posts and articles",
+    "engagement": "THE ENGAGEMENT SPECIALIST, comments and replies",
+    "opportunities": "THE OPPORTUNITIES MANAGER, jobs, gigs, leads",
+    "empire": "THE EMPIRE BUILDER, clients, reviews, money",
+    "visual": "THE VISUAL DESIGNER, cards, covers, briefs"
+  },
+  "areas": [
+    {
+      "area": "PIPELINE",
+      "purpose": "the rules registry, the stages and the contracts. Read first, change rarely",
+      "role": "strategist",
+      "stage": "S0"
+    },
+    {
+      "area": "TOOLING",
+      "purpose": "the gate, the linter, the renderer. Code only, no prose",
+      "role": "strategist",
+      "stage": "S0,S4"
+    },
+    {
+      "area": "STATE",
+      "purpose": "open loops, delivery log, gate report. The truth about what happened",
+      "role": "strategist",
+      "stage": "S6,S7"
+    },
+    {
+      "area": "SESSION_LOG",
+      "purpose": "one log per working day, instructions and decisions",
+      "role": "strategist",
+      "stage": "S7"
+    },
+    {
+      "area": "DAILY CONTENT",
+      "purpose": "the editorial canon: templates, hook and visual spec, banned words, voice DNA, drafts",
+      "role": "content",
+      "stage": "S1,S3"
+    },
+    {
+      "area": "VERIFIED_POSTS",
+      "purpose": "every post that passed the gate, one folder each, plus the index",
+      "role": "content",
+      "stage": "S3,S7"
+    },
+    {
+      "area": "CONTENT",
+      "purpose": "content working files that are not yet a post",
+      "role": "content",
+      "stage": "S3"
+    },
+    {
+      "area": "CONTENT_CALENDARS",
+      "purpose": "the posting calendar",
+      "role": "content",
+      "stage": "S1"
+    },
+    {
+      "area": "ARTICLES",
+      "purpose": "the Breaking AI series, one package per article",
+      "role": "content",
+      "stage": "S3"
+    },
+    {
+      "area": "PUBLISH",
+      "purpose": "publish-ready exports and the queue",
+      "role": "content",
+      "stage": "S6"
+    },
+    {
+      "area": "LINKEDIN",
+      "purpose": "profile copy, headline variants, about section",
+      "role": "content",
+      "stage": "S3"
+    },
+    {
+      "area": "ENGAGEMENT",
+      "purpose": "comment and DM drafts, feed sweeps, replies",
+      "role": "engagement",
+      "stage": "S1,S3"
+    },
+    {
+      "area": "NETWORKING",
+      "purpose": "contacts, connect notes, follow-ups",
+      "role": "engagement",
+      "stage": "S2"
+    },
+    {
+      "area": "OPPURTUNITIES",
+      "purpose": "job and gig leads, the tracker",
+      "role": "opportunities",
+      "stage": "S1"
+    },
+    {
+      "area": "UPWORK",
+      "purpose": "catalog, proposals, gig delivery",
+      "role": "opportunities",
+      "stage": "S1,S6"
+    },
+    {
+      "area": "APPLICATIONS",
+      "purpose": "one folder per application, with the send package of record",
+      "role": "opportunities",
+      "stage": "S3,S6"
+    },
+    {
+      "area": "LEADS",
+      "purpose": "raw inbound leads",
+      "role": "opportunities",
+      "stage": "S1"
+    },
+    {
+      "area": "EMAIL",
+      "purpose": "email drafts and send logs",
+      "role": "opportunities",
+      "stage": "S3,S6"
+    },
+    {
+      "area": "OUTREACH",
+      "purpose": "client-facing outreach and confidential working files",
+      "role": "empire",
+      "stage": "S3,S6"
+    },
+    {
+      "area": "CLIENTS",
+      "purpose": "one folder per client, per engagement, dated. Findings first, private to them",
+      "role": "empire",
+      "stage": "S3,S5,S6"
+    },
+    {
+      "area": "PROJECTS",
+      "purpose": "named multi-session work with an owner and a due date",
+      "role": "empire",
+      "stage": "S3,S5"
+    },
+    {
+      "area": "EMPIRE",
+      "purpose": "the operating layer: pipeline, prompts, money rows",
+      "role": "empire",
+      "stage": "S8"
+    },
+    {
+      "area": "STRATEGY",
+      "purpose": "ICP, positioning, weekly plans",
+      "role": "strategist",
+      "stage": "S1,S8"
+    },
+    {
+      "area": "PLANS",
+      "purpose": "dated plans with a target and a number",
+      "role": "strategist",
+      "stage": "S1,S8"
+    },
+    {
+      "area": "RESUME",
+      "purpose": "resumes and generators. PII, never linked publicly",
+      "role": "opportunities",
+      "stage": "S3"
+    },
+    {
+      "area": "DESIGN",
+      "purpose": "render scripts, fonts, locked geometry",
+      "role": "visual",
+      "stage": "S3"
+    },
+    {
+      "area": "VISUAL",
+      "purpose": "brand guidelines and approved card references",
+      "role": "visual",
+      "stage": "S3"
+    },
+    {
+      "area": "ASSETS",
+      "purpose": "photos, logos, fonts and anything a card is built from",
+      "role": "visual",
+      "stage": "S3"
+    },
+    {
+      "area": "BREAKLAB",
+      "purpose": "the public harness work",
+      "role": "content",
+      "stage": "S3"
+    },
+    {
+      "area": "RESOURCES",
+      "purpose": "reference material that is not authored here",
+      "role": "strategist",
+      "stage": "S2"
+    },
+    {
+      "area": "analytics",
+      "purpose": "post performance, follower counts, weekly numbers",
+      "role": "strategist",
+      "stage": "S8"
+    },
+    {
+      "area": "ARCHIVE",
+      "purpose": "superseded files and the record of every restructure",
+      "role": "strategist",
+      "stage": "S8"
+    },
+    {
+      "area": "CURRICULUM",
+      "purpose": "the red-team and research study plan",
+      "role": "strategist",
+      "stage": "S2"
+    },
+    {
+      "area": "TOLU TEMPLATE",
+      "purpose": "document templates inherited from a bundle",
+      "role": "strategist",
+      "stage": "S3"
+    },
+    {
+      "area": "THE STRATEGIST",
+      "purpose": "role prompt for strategy",
+      "role": "strategist",
+      "stage": "S0"
+    },
+    {
+      "area": "THE CONTENT CREATOR",
+      "purpose": "role prompt for content",
+      "role": "content",
+      "stage": "S0"
+    },
+    {
+      "area": "THE ENGAGEMENT SPECIALIST",
+      "purpose": "role prompt for engagement",
+      "role": "engagement",
+      "stage": "S0"
+    },
+    {
+      "area": "THE OPPORTUNITIES MANAGER",
+      "purpose": "role prompt for opportunities",
+      "role": "opportunities",
+      "stage": "S0"
+    },
+    {
+      "area": "THE EMPIRE BUILDER",
+      "purpose": "role prompt for the empire",
+      "role": "empire",
+      "stage": "S0"
+    },
+    {
+      "area": "THE VISUAL DESIGNER",
+      "purpose": "role prompt for visuals",
+      "role": "visual",
+      "stage": "S0"
+    }
+  ],
+  "root_files": [
+    {
+      "file": "PIPELINE.md",
+      "purpose": "money and relationship rows, the weekly truth"
+    },
+    {
+      "file": "PIPELINE COMMAND VOCABULARY.txt",
+      "purpose": "what each command word means and what it must produce"
+    },
+    {
+      "file": "COMpletechaiinflow.md",
+      "purpose": "the operating manual inherited from the bundle"
+    },
+    {
+      "file": "banned_words.txt",
+      "purpose": "the words the owner never uses, read by voice_lint"
+    },
+    {
+      "file": "voice_dna.txt",
+      "purpose": "the voice corpus, read by nothing, obeyed by everything"
+    },
+    {
+      "file": "voice_dna 2.txt",
+      "purpose": "second voice corpus"
+    },
+    {
+      "file": "master_prompt.txt",
+      "purpose": "the long-form operating prompt"
+    },
+    {
+      "file": "content_bank.txt",
+      "purpose": "idea bank"
+    },
+    {
+      "file": "content_strategy.txt",
+      "purpose": "pillars and cadence"
+    },
+    {
+      "file": "inspiration_library.txt",
+      "purpose": "reference posts worth studying"
+    }
+  ],
+  "root_dirs": [
+    {
+      "dir": "books",
+      "purpose": "reference library, inputs only, never a deliverable"
+    },
+    {
+      "dir": "manual",
+      "purpose": "the inherited operating manual bundle, including the PDF build pipeline"
+    },
+    {
+      "dir": "host-failure-benchmark",
+      "purpose": "the Behar benchmark suites as received, plus the zipped releases"
+    },
+    {
+      "dir": "google_drive",
+      "purpose": "local mirror of what was uploaded to Drive, hashes checked against it"
+    },
+    {
+      "dir": "uploads",
+      "purpose": "personal face assets, gitignored, never committed"
+    }
+  ]
+}

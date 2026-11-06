@@ -33,3 +33,6 @@ linkedin_emphire/OUTREACH/run_*.log
 
 # run logs from the standalone pack
 run_*.log
+
+# local mirror of what was uploaded to Drive, re-fetchable, hashes live in STATE/DELIVERY-LOG.md
+google_drive/

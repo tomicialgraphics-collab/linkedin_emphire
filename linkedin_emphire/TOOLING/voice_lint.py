@@ -40,8 +40,28 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+EMPIRE = os.path.abspath(os.path.join(HERE, ".."))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
-BANNED_FILE = os.path.join(REPO, "banned_words.txt")
+
+
+def _banned_file() -> str:
+    """The canonical banned list, wherever it lives.
+
+    It moved into DAILY CONTENT during the 2026-11-06 restructure, so the tool
+    looks in the canon first and keeps the two older locations as fallbacks for
+    anyone running an out-of-date checkout.
+    """
+    for candidate in (
+        os.path.join(EMPIRE, "DAILY CONTENT", "banned_words.txt"),
+        os.path.join(EMPIRE, "banned_words.txt"),
+        os.path.join(REPO, "banned_words.txt"),
+    ):
+        if os.path.exists(candidate):
+            return candidate
+    return os.path.join(REPO, "banned_words.txt")
+
+
+BANNED_FILE = _banned_file()
 
 # Words that exist in banned_words.txt because they are AI slop on LinkedIn, but
 # which are the correct technical term inside a resume or an email to a research
@@ -103,6 +123,21 @@ def load_banned(path: str = BANNED_FILE) -> list[tuple[str, str]]:
                 pattern = r"\b" + escaped + r"\b"
             out.append((pattern, phrase.strip()))
     return out
+
+
+FENCED_BLOCK = re.compile(r"```.*?```", re.S)
+TABLE_ROW = re.compile(r"^\s*\|.*$", re.M)
+
+
+def strip_code_blocks(text: str) -> str:
+    """Drop fenced code and table rows before judging rhythm or spacing.
+
+    An aligned tree or a table is not prose, and a linter that reads column
+    alignment as "double space mid-sentence" buries the real findings. Banned
+    words are still checked against the whole file, because a banned word in a
+    table is still a banned word.
+    """
+    return TABLE_ROW.sub(" ", FENCED_BLOCK.sub(" ", text))
 
 
 def lint_text(text: str, profile: str, banned: list[tuple[str, str]]) -> list[dict]:
@@ -170,7 +205,8 @@ def lint_text(text: str, profile: str, banned: list[tuple[str, str]]) -> list[di
 
     # double space mid-sentence, a small copy-editing tell
     gap = r"[^\S\n]"  # spaces and tabs, never a newline
-    for m in re.finditer(rf"[a-z,;]{gap}{{2,}}[a-zA-Z]", text):
+    prose = strip_code_blocks(text)
+    for m in re.finditer(rf"[a-z,;]{gap}{{2,}}[a-zA-Z]", prose):
         findings.append(
             {
                 "kind": "spacing",
@@ -211,6 +247,18 @@ HEDGES = re.compile(
 NO_TERMINAL = re.compile(r"[a-zA-Z0-9)\"']\s*$")
 MISSING_SPACE_AFTER_COMMA = re.compile(r",[A-Za-z]")
 DUP_WORD = re.compile(r"\b(\w+)\s+\1\b", re.IGNORECASE)
+
+
+FRONT_MATTER = re.compile(r"\A---\s*\n.*?\n---\s*\n", re.S)
+
+
+def strip_front_matter(text: str) -> str:
+    """Drop the deliverable contract block before linting the prose.
+
+    Front matter is metadata for gate.py, not sentences, so a linter that reads
+    it as paragraph one reports a false punctuation error on every gated file.
+    """
+    return FRONT_MATTER.sub("", text, count=1)
 
 
 def strip_markdown(text: str) -> str:
@@ -271,7 +319,8 @@ def human_gate(text: str, profile: str = "linkedin") -> dict:
     wrote every rule in here and a human can break every one of them on purpose.
     """
     findings: list[dict] = []
-    body = strip_markdown(text) if profile in ("doc", "markdown", "email") else text.strip()
+    raw = strip_code_blocks(text)
+    body = strip_markdown(raw) if profile in ("doc", "markdown", "email") else raw.strip()
     words = re.findall(r"[A-Za-z']+", body)
     wc = max(len(words), 1)
     per100 = lambda n: round(n * 100.0 / wc, 2)  # noqa: E731
@@ -447,6 +496,7 @@ def main(argv: list[str] | None = None) -> int:
         except OSError as exc:
             print(f"voice_lint: cannot read {path}: {exc}", file=sys.stderr)
             return 2
+        text = strip_front_matter(text)
         findings = lint_text(text, args.profile, banned)
         gate = None
         if args.human:
