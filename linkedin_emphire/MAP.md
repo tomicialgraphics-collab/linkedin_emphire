@@ -41,7 +41,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `THE STRATEGIST` | 1 | 3 KB | role prompt for strategy | strategist | S0 |
 | `THE VISUAL DESIGNER` | 149 | 57342 KB | role prompt for visuals | visual | S0 |
 | `TOLU TEMPLATE` | 148 | 57339 KB | document templates inherited from a bundle | strategist | S3 |
-| `TOOLING` | 6 | 93 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
+| `TOOLING` | 6 | 94 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
 | `UPWORK` | 51 | 30449 KB | catalog, proposals, gig delivery | opportunities | S1,S6 |
 | `VERIFIED_POSTS` | 95 | 976 KB | every post that passed the gate, one folder each, plus the index | content | S3,S7 |
 | `VISUAL` | 11 | 631 KB | brand guidelines and approved card references | visual | S3 |
