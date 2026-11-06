@@ -32,3 +32,4 @@ Format is fixed so the tool can read it: `- [ ] L<n> text  (opened YYYY-MM-DD)`.
 - [ ] L14 The `[sha]` placeholder still sitting in an earlier deliverable needs the real digest or removal  (opened 2026-11-03)
 - [ ] L15 Posts for 11 Nov and 13 Nov are written and gated. Both need a card and an index row before their slot  (opened 2026-11-06)
 - [ ] L16 Legacy posts: 25 posts on file predate the front-matter contract. Bring one under contract each time it is touched, never in a bulk rewrite  (opened 2026-11-06)
+- [ ] L17 Decide the three two-lineage files in STATE/RECONCILIATION.md: merge the comment-length rules into THE ENGAGEMENT SPECIALIST persona, and choose between the two master_prompt edits  (opened 2026-11-06)

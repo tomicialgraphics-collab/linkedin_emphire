@@ -15,11 +15,11 @@ and this file is its index. If an area is undeclared, declare it in
 | `CONTENT` | 2 | 5 KB | content working files that are not yet a post | content | S3 |
 | `CONTENT_CALENDARS` | 2 | 47 KB | the posting calendar | content | S1 |
 | `CURRICULUM` | 1 | 27 KB | the red-team and research study plan | strategist | S2 |
-| `DAILY CONTENT` | 31 | 1165 KB | the editorial canon: templates, hook and visual spec, banned words, voice DNA, drafts | content | S1,S3 |
+| `DAILY CONTENT` | 32 | 1166 KB | the editorial canon: templates, hook and visual spec, banned words, voice DNA, drafts | content | S1,S3 |
 | `DESIGN` | 5 | 88 KB | render scripts, fonts, locked geometry | visual | S3 |
 | `EMAIL` | 10 | 142 KB | email drafts and send logs | opportunities | S3,S6 |
-| `EMPIRE` | 11 | 642 KB | the operating layer: pipeline, prompts, money rows | empire | S8 |
-| `ENGAGEMENT` | 65 | 1847 KB | comment and DM drafts, feed sweeps, replies | engagement | S1,S3 |
+| `EMPIRE` | 12 | 643 KB | the operating layer: pipeline, prompts, money rows | empire | S8 |
+| `ENGAGEMENT` | 71 | 1865 KB | comment and DM drafts, feed sweeps, replies | engagement | S1,S3 |
 | `LEADS` | 1 | 1 KB | raw inbound leads | opportunities | S1 |
 | `LINKEDIN` | 14 | 191 KB | profile copy, headline variants, about section | content | S3 |
 | `NETWORKING` | 6 | 55 KB | contacts, connect notes, follow-ups | engagement | S2 |
@@ -32,16 +32,16 @@ and this file is its index. If an area is undeclared, declare it in
 | `RESOURCES` | 1 | 2 KB | reference material that is not authored here | strategist | S2 |
 | `RESUME` | 16 | 327 KB | resumes and generators. PII, never linked publicly | opportunities | S3 |
 | `SESSION_LOG` | 3 | 35 KB | one log per working day, instructions and decisions | strategist | S7 |
-| `STATE` | 3 | 7 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
+| `STATE` | 4 | 13 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
 | `STRATEGY` | 17 | 225 KB | ICP, positioning, weekly plans | strategist | S1,S8 |
 | `THE CONTENT CREATOR` | 1 | 3 KB | role prompt for content | content | S0 |
 | `THE EMPIRE BUILDER` | 1 | 3 KB | role prompt for the empire | empire | S0 |
-| `THE ENGAGEMENT SPECIALIST` | 2 | 6 KB | role prompt for engagement | engagement | S0 |
+| `THE ENGAGEMENT SPECIALIST` | 3 | 7 KB | role prompt for engagement | engagement | S0 |
 | `THE OPPORTUNITIES MANAGER` | 1 | 2 KB | role prompt for opportunities | opportunities | S0 |
 | `THE STRATEGIST` | 1 | 3 KB | role prompt for strategy | strategist | S0 |
 | `THE VISUAL DESIGNER` | 149 | 57342 KB | role prompt for visuals | visual | S0 |
 | `TOLU TEMPLATE` | 148 | 57339 KB | document templates inherited from a bundle | strategist | S3 |
-| `TOOLING` | 6 | 94 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
+| `TOOLING` | 6 | 98 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
 | `UPWORK` | 51 | 30449 KB | catalog, proposals, gig delivery | opportunities | S1,S6 |
 | `VERIFIED_POSTS` | 95 | 976 KB | every post that passed the gate, one folder each, plus the index | content | S3,S7 |
 | `VISUAL` | 11 | 631 KB | brand guidelines and approved card references | visual | S3 |
