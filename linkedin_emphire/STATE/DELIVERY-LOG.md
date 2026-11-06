@@ -38,4 +38,8 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-06 | `OUTREACH/evelyne-claudia-2026-11-06/REPLY-03-to-Evelyne.txt` | 4,594 B | `5f0a1a2ee2b12a9b8a1b9b6c1d0e0f4a7c3b8d2e6f9a1c4b7d0e3f6a9c2b5d8e1` | PASS 0/0 (exported), voice 92/100 | Evelyne-Claudia (not confirmed sent) | round three: the benchmark pin at public commit 126f1c0 with blob identifiers verified against it, both clarifications conceded, the unmeasured failpoint stated |
 
+| 2026-11-06 | `CLIENTS/foray-dunin7/2026-11-06/FINDINGS-02-register-entries-v6.md` | 33,604 B | `c3888fbffc6f0a4ed4e6ede6e059a8b23175382d21834e44a328b008632d4614` | PASS 0/0 (exported) | Marvin (not confirmed sent) | the author's six edits, and the 29 of 29 test count withdrawn because it carried no command. Delivered as the patch below, not as a second full file |
+| 2026-11-06 | `CLIENTS/foray-dunin7/2026-11-06/foray-register-v5-to-v6.patch` | 10,263 B | `0877e1bfcbb07f3dcdc1716cade7748db95ab9deaecd38df0abd10512987031e` | n/a (diff) | Marvin (not confirmed sent) | applies to v5 `4616d2c8` and yields v6 `c3888fbf`, checked on a fresh copy. Drive `1wdgu3Wk2rI9g0ncp8CAPWXKfoYnXH-TP`, link-shared, re-downloaded and hashed identical |
+| 2026-11-06 | `CLIENTS/foray-dunin7/2026-11-06/REPLY-5-to-Marvin.txt` | 3,513 B | `60c77776eb982746f93f2d6135d562786b8f07316169e06ca654c716c9e1f552` | PASS 0/0 (exported), voice 92/100 | Marvin (not confirmed sent) | round five: the six edits, the withdrawn count, and the patch with its hashes |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.

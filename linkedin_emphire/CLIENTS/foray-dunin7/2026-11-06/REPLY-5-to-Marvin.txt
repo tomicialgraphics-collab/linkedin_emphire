@@ -1,0 +1,25 @@
+Marvin,
+
+Nothing to apologise for on the name. The draft you saw was addressed to you as Timothy, which is a mistake on my side of the table, and it is corrected in everything since.
+
+All six edits are in. Version 6, and the way it reaches you is a patch rather than another sixty kilobytes of text, because you already hold version 5 and the patch is checkable rather than another thing to trust.
+
+1. Registered, not ruled. The label now reads "Author's registration of 6 November", and the sentence says it is registered as W-04 and not ruled on yet. You are right that "ruling" could be read as settled, and it is the one word in the register most likely to be quoted back at you.
+
+2. The heading no longer claims W-04 blocks f. It now says it does not block f, which closed at 05267a36, and that it blocks the extent branch until the encoding is specified. That is the only thing it was ever actually blocking.
+
+3. Version labels agree. Rather than count revisions and get it wrong again, the date line now says version 5 and drops the ordinal entirely, and the supersession sentence says every earlier revision. Counting was the source of the mismatch.
+
+4. The reproduction output is labelled. It now says that the block below is patch v0.3 on b890d2c and not the 05267a36 run, and it names the one case where the two differ, with SYNTH-D reading VALID there and INVALID in your run. The lines themselves are untouched, because they are output and not prose.
+
+5. The test counts. This is the one I got wrong and I am not going to soften it. The 29 of 29 has stood in every revision of this document with no command and no file list attached, and I cannot re-derive it: the verifier is not in my working copy, so there is no run of mine behind that number that I can point at. Your command, npm test in the verifier folder at 05267a36 giving 36 tests across 3 files, is now the only count in the register with a tree and a command travelling beside it. The pass and fail pair I once reported in W-02 loses its numbers for the same reason. I have written that the likely explanation is tests added between the two commits, and that I have not checked it and will not record it as a finding until I have.
+
+6. Both commits are in "Code referred to", and the line now says which is which: b890d2c is the base the patch and the probe were measured on, 05267a36 is your merge commit where the probe ran against the applied fix. Naming one without the other was the quiet error behind half of the confusion here.
+
+On your note about stream history: recorded in W-02 as yours, with the entry closing when the spec revision lands rather than when anyone agrees with a reading. That is a better answer than the one the entry was asking for.
+
+The patch is 10,263 bytes, SHA-256 0877e1bfcbb07f3dcdc1716cade7748db95ab9deaecd38df0abd10512987031e, at https://drive.google.com/file/d/1wdgu3Wk2rI9g0ncp8CAPWXKfoYnXH-TP/view. Applied to version 5, which is 4616d2c8d575a57ff9fe724dfb2bae31990256912ff49737496716d8f362d047, it produces 33,604 bytes with SHA-256 c3888fbffc6f0a4ed4e6ede6e059a8b23175382d21834e44a328b008632d4614. I applied it to a fresh copy of v5 and hashed the result before writing this, and the Drive copy was downloaded and hashed after upload. If you would rather have the whole file than a patch, one word and it comes as bytes.
+
+W-04 stays yours, and I am not chasing it. When the spec revision lands, W-02 closes on it and the register gets a version that no longer carries a withdrawn number.
+
+Olusanya
