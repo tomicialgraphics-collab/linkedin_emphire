@@ -19,7 +19,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `DESIGN` | 5 | 88 KB | render scripts, fonts, locked geometry | visual | S3 |
 | `EMAIL` | 10 | 142 KB | email drafts and send logs | opportunities | S3,S6 |
 | `EMPIRE` | 12 | 643 KB | the operating layer: pipeline, prompts, money rows | empire | S8 |
-| `ENGAGEMENT` | 73 | 1872 KB | comment and DM drafts, feed sweeps, replies | engagement | S1,S3 |
+| `ENGAGEMENT` | 74 | 1883 KB | comment and DM drafts, feed sweeps, replies | engagement | S1,S3 |
 | `LEADS` | 1 | 1 KB | raw inbound leads | opportunities | S1 |
 | `LINKEDIN` | 14 | 191 KB | profile copy, headline variants, about section | content | S3 |
 | `NETWORKING` | 6 | 55 KB | contacts, connect notes, follow-ups | engagement | S2 |
@@ -45,7 +45,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `UPWORK` | 51 | 30449 KB | catalog, proposals, gig delivery | opportunities | S1,S6 |
 | `VERIFIED_POSTS` | 95 | 976 KB | every post that passed the gate, one folder each, plus the index | content | S3,S7 |
 | `VISUAL` | 11 | 631 KB | brand guidelines and approved card references | visual | S3 |
-| `analytics` | 2 | 5 KB | post performance, follower counts, weekly numbers | strategist | S8 |
+| `analytics` | 2 | 6 KB | post performance, follower counts, weekly numbers | strategist | S8 |
 
 ## Root files
 

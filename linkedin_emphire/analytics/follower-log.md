@@ -43,3 +43,12 @@ Append only, dated, one line each. This is where "unknown" gets resolved.
 
 - 2026-11-06: 522 net new in six days, from 485 on 31 October to 1,007. No record in the repo of which
   post or comment produced it. Resolve before the next post goes out.
+- 2026-11-06, engagement evidence. The Blue Cross comment is at 821 impressions with 6 reactions, on a
+  post carrying 343 reactions and 75 comments. The 6 November post is at 119 impressions and 4 in the
+  first day. So the comment surface is running at roughly seven times the post surface, which is the
+  first measured answer to the question the 31 October note left open: growth in that window most
+  likely came from comments on other people, not from own posts. It is an inference from two artifacts,
+  not attribution, and LinkedIn's own follower source breakdown is still the only thing that settles it.
+- 2026-11-06, the effect worth copying. The best performing comment was a provenance correction: it
+  took a number in someone else's post, said the two figures being compared were not the same measure,
+  and gave the stronger version inside the statute. Not agreement, not a counter-post, a check.
