@@ -109,3 +109,26 @@ If you only measure the end result, both failures arrive as the same number.
 ---
 
 150 words.
+
+## 6. Ritesh Rai, who checks the AI that checks your AI (1h)
+
+Post: an LLM-as-judge brief covering rubrics, position and verbosity bias, comparison against reviewed
+examples, inspecting disagreements and deterministic checks, closing with "what would convince you that
+your automated grader is measuring the right thing". The thread under it is almost entirely agreement,
+so the comment has to be a method rather than a nod.
+
+---
+
+Three things, and none of them is a higher agreement number.
+
+A judge that cannot fail has not been tested. Keep a set you know is bad and check it scores bad, plus a pair where the good answer and the bad answer are the same length and differ by one wrong fact. If the pair separates, you measured correctness rather than style.
+
+Then the controls, which take ten minutes. Swap the positions of the two answers and re-run. Pad the weaker one with detail and re-run. If the score moves, you measured presentation, and now you have the size of it rather than a warning from a paper.
+
+Then the number that gates a release: agreement with your reviewers measured above chance, kappa rather than percent, with the threshold written down before you look at the results.
+
+Rubric quality is where it starts. The control set is what would convince me.
+
+---
+
+148 words.
