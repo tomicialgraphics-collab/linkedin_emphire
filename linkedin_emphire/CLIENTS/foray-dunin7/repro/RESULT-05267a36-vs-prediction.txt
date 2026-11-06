@@ -1,0 +1,33 @@
+Comparison of the author's run at 05267a36 against the expectation written before it.
+
+before    = my run at b890d2c plus patch v0_3, RESULT-patched.txt
+predicted = what the f fix and the custody change were said to do, written on 6 November
+observed  = the 23 lines as sent, recorded verbatim in RUN-05267a36-as-sent.txt
+
+case                                               before               predicted            observed             result
+rotated-chain-seam: as shipped                     VALID                VALID                VALID                as predicted
+rotated-chain-seam: tail record removed            MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+rotated-chain-seam: head record removed            MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+rotated-chain-seam: history emptied                MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+rotated-chain-seam: declared prev_tx_hash falsified INVALID              INVALID              INVALID              as predicted
+N10: as shipped                                    INVALID              INVALID              INVALID              as predicted
+N10: tail record removed                           MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+N10: head record removed                           MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+N10: history emptied                               MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+N10: declared prev_tx_hash falsified               INVALID              INVALID              INVALID              as predicted
+SYNTH extent 0..412, history 0..412, head matches  INVALID              INVALID              INVALID              as predicted
+SYNTH extent 0..412, history 0..412, head falsified INVALID              INVALID              INVALID              as predicted
+SYNTH extent 0..412, history 0..400                INVALID              INVALID              INVALID              as predicted
+SYNTH extent 0..412, history 300..412              MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+SYNTH extent 0..412, history [412]                 MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+SYNTH extent 0..412, history []                    MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+SYNTH-C ids agree, history 0..412, head matches    VALID                VALID                VALID                as predicted
+SYNTH-C ids agree, history 0..412, head falsified  INVALID              INVALID              INVALID              as predicted
+SYNTH-C ids agree, history 0..400                  MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+SYNTH-C ids agree, history 0..1 only               MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+SYNTH-C ids agree, history 300..412                MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE MATERIAL_UNAVAILABLE as predicted
+SYNTH-D declared seq 500 outside segment 0..412    VALID                INVALID              INVALID              as predicted
+SYNTH-E segment id and stream_context id differ    VALID                VALID                VALID                as predicted
+
+lines 23, moved 1, differing from the prediction 0
+moved: ['SYNTH-D declared seq 500 outside segment 0..412']

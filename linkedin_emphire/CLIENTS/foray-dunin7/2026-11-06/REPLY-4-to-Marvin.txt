@@ -1,0 +1,15 @@
+Timothy,
+
+I compared your 23 lines against the expectation written before the run, case by case, mechanically. One outcome moved, none differed. SYNTH-D went VALID to INVALID and the other 22 held, including the twelve MATERIAL_UNAVAILABLE lines on outcome, check number and missing range, and the three SYNTH extent lines staying INVALID on my own construction.
+
+f is closed on that. The acceptance test I set was the outcome plus a reason naming both the stream and the declared position, and your line gives both, so there is nothing left for me to ask of it.
+
+One difference from my prediction, recorded rather than smoothed. I expected the custodian clause to change only where the context names a stream-history custodian, so on these vectors it would have stayed as it was. You append the parenthetical on every one and replace the name only when one is named. That is better than what I predicted, because the reason string is the only part a consumer can act on and advice that appears only when a field is populated is missing exactly when a consumer has nobody else to ask. One consequence: the clause is now a name followed by advice, so anything parsing "responsible custodian: X" gets a longer X. If a consumer ever needs it clean, the advice wants its own field.
+
+Something fell out of your SYNTH-D line that bears on W-04. The refusal names the stream as sixteen bytes of hex, because that is how the segments carry it, while stream_context names the same stream readably. So the f fix's own message is already bilingual, and whatever you rule will change that reason's text as well as the branch behind it. It is a small argument for an explicit mapping in the text rather than forcing both fields to one type.
+
+h stays unexercised and the Group C case stands as written. The register is at version five, 31,520 bytes, SHA-256 4616d2c8d575a57ff9fe724dfb2bae31990256912ff49737496716d8f362d047, at https://drive.google.com/file/d/10rlAL2Rs5Z3f7BDj-oCzS-ad2xVW3nnQ/view, with your run recorded verbatim and the comparison beside it at https://drive.google.com/file/d/1rQr429djr6PYtSXUrct7xeaBveUeJZtc/view, SHA-256 d5a16155d592689b93ef61c90d272e7b89849733d1194d7d49a4377ca7069421. Earlier hashes are void.
+
+Nothing needed from you but the register edits and the W-04 ruling.
+
+Olusanya
