@@ -32,7 +32,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `RESOURCES` | 1 | 2 KB | reference material that is not authored here | strategist | S2 |
 | `RESUME` | 16 | 327 KB | resumes and generators. PII, never linked publicly | opportunities | S3 |
 | `SESSION_LOG` | 3 | 35 KB | one log per working day, instructions and decisions | strategist | S7 |
-| `STATE` | 4 | 23 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
+| `STATE` | 4 | 24 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
 | `STRATEGY` | 18 | 234 KB | ICP, positioning, weekly plans | strategist | S1,S8 |
 | `THE CONTENT CREATOR` | 1 | 3 KB | role prompt for content | content | S0 |
 | `THE EMPIRE BUILDER` | 1 | 3 KB | role prompt for the empire | empire | S0 |
