@@ -1,0 +1,94 @@
+// foray-streams-fix-b890d2c v0_3 -- DRAFT. Base: ~/foray commit b890d2c, verifier/lib/streams.mjs. v0_3: new check runs last so INVALID findings (N11) win.
+--- a/lib/streams.mjs	2026-11-04 07:46:11.451638068 -0500
++++ b/lib/streams.mjs	2026-11-04 18:22:14.034336424 -0500
+@@ -40,6 +40,78 @@
+   return { classification: 'CONTINUOUS', at: null };
+ }
+ 
++
++// ---- v0_3 fix (register W-01 / W-02): bind the walk to what the bundle declares and
++// what the header anchors. Absent or short history -> MATERIAL_UNAVAILABLE (custodian named).
++// Contradiction between bundle, history and anchored extent -> INVALID.
++const MATERIAL_UNAVAILABLE = Outcome.MATERIAL_UNAVAILABLE ?? 'MATERIAL_UNAVAILABLE';
++
++// Proposed finding code A9 (stream history unavailable -> MATERIAL_UNAVAILABLE). Not yet in the spec.
++// `missing` says WHICH material is absent: 'history' | 'self' | 'predecessor' | 'extent'.
++// `seq_ranges` lists the absent sequence numbers as [first, last] pairs (null when the whole history is absent).
++function toRanges(nums) {
++  const out = [];
++  for (const n of [...nums].sort((a, b) => a - b)) {
++    const last = out[out.length - 1];
++    if (last && n === last[1] + 1) last[1] = n; else out.push([n, n]);
++  }
++  return out;
++}
++function unavailable(checkNumber, context, missing, seqNums, what) {
++  const custodian = context.custodian ?? 'custodian not named in context';
++  const seq_ranges = seqNums ? toRanges(seqNums) : null;
++  return new CheckFailure(MATERIAL_UNAVAILABLE, {
++    checkNumber,
++    reason: `stream history unavailable (${missing}) ${JSON.stringify(seq_ranges)}: ${what}; responsible custodian: ${custodian}`,
++    display: { finding: 'A9', continuity: 'UNVERIFIABLE', missing, seq_ranges, custodian },
++  });
++}
++function contradiction(checkNumber, what) {
++  return new CheckFailure(Outcome.INVALID, {
++    checkNumber,
++    reason: `stream history contradicts the bundle or the anchored header: ${what}`,
++    display: { continuity: 'CONTRADICTION', finding: 'A8' },
++  });
++}
++
++function bindToDeclaredPosition(bundle, context, checkNumber) {
++  const sc = bundle.stream_context;
++  const history = context.streamHistory ?? [];
++  const bySeq = new Map(history.map((e) => [Number(e.seqNo), e]));
++  const seq = Number(sc.seq_no);
++
++  if (history.length === 0) throw unavailable(checkNumber, context, 'history', null, 'no history supplied for a bundle that declares stream_context');
++
++  const self = bySeq.get(seq);
++  if (!self) throw unavailable(checkNumber, context, 'self', [seq], `record at seq_no ${seq} is not in the supplied history`);
++  const claimedTx = bundle.anchor?.chain_tx_id;
++  if (claimedTx !== undefined && self.txHash !== claimedTx) {
++    throw contradiction(checkNumber, `history record at seq_no ${seq} is not the anchored transaction`);
++  }
++  if (seq > 0) {
++    const pred = bySeq.get(seq - 1);
++    if (!pred) throw unavailable(checkNumber, context, 'predecessor', [seq - 1], `declared predecessor at seq_no ${seq - 1} is not in the supplied history`);
++    if (pred.txHash !== sc.prev_tx_hash) throw contradiction(checkNumber, `declared prev_tx_hash is not the record at seq_no ${seq - 1}`);
++    if (self.prevTxHash !== sc.prev_tx_hash) throw contradiction(checkNumber, `declared prev_tx_hash differs from the history's link at seq_no ${seq}`);
++  }
++
++  // Anchored extent: only when a covering segment exists in the anchored header.
++  const segments = bundle.header_echo?.stream_segments ?? [];
++  const cover = segments.find((g) => g.stream_id === sc.stream_id && Number(g.first_seq) <= seq && seq <= Number(g.last_seq));
++  if (cover) {
++    const first = Number(cover.first_seq);
++    const last = Number(cover.last_seq);
++    const absent = [];
++    for (let n = first; n <= last; n++) if (!bySeq.has(n)) absent.push(n);
++    if (absent.length) {
++      throw unavailable(checkNumber, context, 'extent', absent, `anchored extent ${first}..${last}; ${absent.length} sequence number(s) not supplied`);
++    }
++    if (bySeq.get(last).txHash !== cover.head_hash) {
++      throw contradiction(checkNumber, `record at anchored last_seq ${last} does not match the anchored head_hash`);
++    }
++  }
++}
++
+ // Returns { labels: Label[] } on success (may be empty), or throws
+ // CheckFailure with outcome INVALID (+ subVerdict INVALID_CHRONOLOGY where
+ // applicable) on failure.
+@@ -91,5 +163,11 @@
+     }
+   }
+ 
++  // Runs last on purpose: a definite contradiction found above (GAP, FORK, _ref chronology)
++  // is INVALID and must win over "material unavailable" (N11 relies on this).
++  if (streamContext) {
++    bindToDeclaredPosition(bundle, context, checkNumber);
++  }
++
+   return { labels };
+ }

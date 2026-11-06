@@ -164,6 +164,127 @@ for (const [vector, short] of [
   await record('SYNTH extent 0..412, history []', good.bundle, { ...good.ctx, streamHistory: [] });
 }
 
+// ---------------------------------------------------------------- group C
+// SYNTH with matching stream ids. The shipped vectors give stream_context a
+// readable name and give header_echo.stream_segments a bytes16 id, so a
+// segment can never be found for a shipped bundle. Here both sides carry the
+// same 16 byte id, which is what a producer would have to do.
+//
+// The first two history records are the vector's own, unmodified, so the
+// bundle's anchored transaction still appears in the history.
+
+{
+  const v = loadVector('positive', 'rotated-chain-seam');
+  const real = bySeq(v.context.streamHistory);
+  const realHead = h('probe|headC|412');
+  const scId = 'aa'.repeat(16);
+
+  const build = (segHeadHash) => {
+    const bundle = clone(v.bundle);
+    bundle.stream_context.stream_id = scId;
+    bundle.header_echo.stream_segments = [
+      { stream_id: scId, first_seq: '0', last_seq: '412', head_hash: segHeadHash },
+    ];
+    const anchored = Buffer.from(
+      abh.computeAnchoredValue(bundleIo.headerEchoToBatchHeader(bundle.header_echo))
+    ).toString('hex');
+    const ctx = clone(v.context);
+    for (const src of ctx.chainSources) {
+      for (const id of Object.keys(src.canned)) {
+        src.canned[id].anchoredValue = anchored;
+      }
+    }
+    return { bundle, ctx };
+  };
+
+  const extend = (upto, lastHash) => {
+    const out = [...real];
+    let prev = real[real.length - 1].txHash;
+    for (let seq = real[real.length - 1].seqNo + 1; seq <= upto; seq++) {
+      const txHash = seq === upto && lastHash ? lastHash : h(`c|${seq}`);
+      out.push({ seqNo: seq, txHash, prevTxHash: prev, anchoredAt: 1783941000, chainId: 'kaspa-mainnet' });
+      prev = txHash;
+    }
+    return out;
+  };
+
+  const good = build(realHead);
+  const badHead = build(h('probe|headC|wrong'));
+  const full = extend(412, realHead);
+  const short = extend(400);
+
+  await record('SYNTH-C ids agree, history 0..412, head matches', good.bundle, { ...good.ctx, streamHistory: full });
+  await record('SYNTH-C ids agree, history 0..412, head falsified', badHead.bundle, { ...badHead.ctx, streamHistory: full });
+  await record('SYNTH-C ids agree, history 0..400', good.bundle, { ...good.ctx, streamHistory: short });
+  await record('SYNTH-C ids agree, history 0..1 only', good.bundle, { ...good.ctx, streamHistory: [...real] });
+  await record('SYNTH-C ids agree, history 300..412', good.bundle, {
+    ...good.ctx,
+    streamHistory: full.filter((r) => r.seqNo >= 300),
+  });
+}
+
+// ---------------------------------------------------------------- group D
+// SYNTH-C shape, but the bundle's declared record sits outside the anchored
+// segment: stream_context.seq_no 500, the only segment covers 0..412, and the
+// supplied history runs 100..500. Nothing in the history is false and the
+// walk is continuous, so this measures whether a declared position outside
+// every anchored range is noticed.
+
+{
+  const v = loadVector('positive', 'rotated-chain-seam');
+  const scId = 'aa'.repeat(16);
+  const anchorTx = v.bundle.anchor.chain_tx_id;
+
+  const bundle = clone(v.bundle);
+  bundle.stream_context.stream_id = scId;
+  bundle.stream_context.seq_no = 500;
+  bundle.header_echo.stream_segments = [
+    { stream_id: scId, first_seq: '0', last_seq: '412', head_hash: h('probe|headD|412') },
+  ];
+  const anchored = Buffer.from(
+    abh.computeAnchoredValue(bundleIo.headerEchoToBatchHeader(bundle.header_echo))
+  ).toString('hex');
+  const ctx = clone(v.context);
+  for (const src of ctx.chainSources) {
+    for (const id of Object.keys(src.canned)) {
+      src.canned[id].anchoredValue = anchored;
+    }
+  }
+
+  const hist = chain(100, 500, 'D', { lastHash: anchorTx });
+  bundle.stream_context.prev_tx_hash = hist[hist.length - 2].txHash;
+
+  await record('SYNTH-D declared seq 500 outside segment 0..412', bundle, { ...ctx, streamHistory: hist });
+}
+
+// ---------------------------------------------------------------- group E
+// The same anchored extent, but the segment carries a 16 byte id while
+// stream_context carries the readable name the shipped vectors use. If the
+// walk matches the two by identity, no segment is ever found and the extent
+// goes unchecked.
+
+{
+  const v = loadVector('positive', 'rotated-chain-seam');
+  const bundle = clone(v.bundle);
+  bundle.header_echo.stream_segments = [
+    { stream_id: 'bb'.repeat(16), first_seq: '0', last_seq: '412', head_hash: h('probe|headE|412') },
+  ];
+  const anchored = Buffer.from(
+    abh.computeAnchoredValue(bundleIo.headerEchoToBatchHeader(bundle.header_echo))
+  ).toString('hex');
+  const ctx = clone(v.context);
+  for (const src of ctx.chainSources) {
+    for (const id of Object.keys(src.canned)) {
+      src.canned[id].anchoredValue = anchored;
+    }
+  }
+
+  await record('SYNTH-E segment id and stream_context id differ', bundle, {
+    ...ctx,
+    streamHistory: bySeq(v.context.streamHistory),
+  });
+}
+
 console.log('');
 console.log(`${results.length} cases run against ${abs}`);
 console.log('Group A cases hold the bundle valid and vary only the history.');
