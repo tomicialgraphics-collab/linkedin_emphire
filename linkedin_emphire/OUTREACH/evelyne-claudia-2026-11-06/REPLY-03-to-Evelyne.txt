@@ -10,7 +10,7 @@ bench/host.py is 15,652 bytes, SHA-256 97aa10fc8dca799db7f089d782376e782bde8e7c1
 
 bench/common.py is 3,223 bytes, SHA-256 c4039b867b287388e7f90126ea78db2489836bf78a815c7805b64f1473cead45, blob 59fb81f74be8134cba7d13b3d4dce4dfe00e9b8d.
 
-I checked those blob identifiers against that commit before writing this, and they match. So the bytes I ran are the bytes the public tree holds, and you can fetch them instead of taking a file from me.
+I checked those blob identifiers against that commit before writing this, and they match. So the bytes I ran are the bytes the public tree holds, and you can fetch them instead of taking a file from me. If a pin archive reached you earlier, these are the same bytes, and the addition is that they're checkable against the public tree rather than only against my message.
 
 One line changed, and only one. The benchmark's failpoint refuses records of kind verdict. This case needs it to refuse a conflict annotation, so the runner rewrites that single predicate and nothing else:
 
