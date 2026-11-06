@@ -1,8 +1,16 @@
 # To Marvin: round 3
 
-Two attachments, both hashed. Nothing in this one is a link, so you and I hold the same bytes.
+LinkedIn message, one block, no preamble. Two files in Drive, both hashed, both hashes re-checked by downloading the copies and hashing them again, so the bytes you pull are the bytes I measured.
 
-**1. `foray-probe.mjs`**, 11,827 bytes, SHA-256 `c91be299ff59076f0a49f43fd6a4f01e1f98fad7fe478e46b9b2225efecaa326`.
+---
+
+Marvin,
+
+Two files, both hashed, both checked after download.
+
+**1. `foray-probe.mjs`** 11,827 bytes
+https://drive.google.com/file/d/1gT0JO_EzB3cYaVn0SAEp4Hx6mIWGEDbK/view
+SHA-256 `c91be299ff59076f0a49f43fd6a4f01e1f98fad7fe478e46b9b2225efecaa326`
 
 That is the hash you already have, and it is the file you could not find: same build, unchanged. 292 lines, no dependencies, 23 cases. It takes one argument, the verifier folder (the one holding `lib/`, `vectors/`, `test/`, `foray-verifier.mjs`):
 
@@ -18,7 +26,9 @@ Three lines beginning `SYNTH extent 0..412` return INVALID with `history record 
 
 `SYNTH-D` and `SYNTH-E` name the cases for the two items below. Everything else is a shipped vector with only `context.streamHistory` changed.
 
-**2. `FINDINGS-02-register-entries-v4.md`**, 29,128 bytes, SHA-256 `84fdf1e878bc9b8582e0b1601b6444f4c4f6deb54c750a69d3b6a988c8f04d5b`.
+**2. `FINDINGS-02-register-entries-v4.md`** 29,128 bytes
+https://drive.google.com/file/d/1TLITvSrvktcO4nwEcQYK_NZqAe9Acroc/view
+SHA-256 `84fdf1e878bc9b8582e0b1601b6444f4c4f6deb54c750a69d3b6a988c8f04d5b`
 
 This is the revised register. It carries your corrections, and four changes from the copy you may have: W-01g is renumbered W-04 throughout and recorded as your identifier, not mine; f and h each carry your report against `05267a36a57edf31bae2c2b9390f85df9c899a43` and both are marked pending my run rather than closed; the custody wording point records your change and the 12 cases where it shows; and there is a status table at the head of the open items so the commit, the report and my position sit in one place. If you were sent an earlier draft of this file, its hash began `b0217774` and it is void.
 
