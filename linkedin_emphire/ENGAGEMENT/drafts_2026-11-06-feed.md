@@ -67,3 +67,24 @@ Otherwise the grade is a receipt for work the grader defined.
 ---
 
 136 words.
+
+## 4. Mohit Rathod, zero initialization and the loss that never moves (1h)
+
+Post: zero and constant init as the silent bug, symmetry in the forward pass, gradient collapse in the
+backward pass, Xavier against He, and a closing question asking which first signal people saw in
+production. He asks a question, so the comment answers it and then adds the part the slides cannot
+cover.
+
+---
+
+Both, and they turned out to be different bugs.
+
+Zero gradient variance across hidden units at the first backward pass is the signal I trust. If per-unit gradient norms come back identical at step one, the network is one unit wide, and you know that before the epoch ends. A loss plateau is the same fact arriving later and blurrier.
+
+The production warning is that an exactly constant loss has three causes and they look identical on the metric. Weights moving with a flat loss is usually a logging or cached-metric bug. Weights still and gradients identical is symmetry. Weights not moving at all is a frozen parameter or a detached graph.
+
+So before changing the initializer, print the weight delta between two steps. One line tells you which of the three you have, and only one of them is an initialization problem.
+
+---
+
+138 words.
