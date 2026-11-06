@@ -10,7 +10,7 @@ re-run reproduces `run/result.json` byte for byte, which is the cheapest test th
 evidence was edited after the fact.
 
 `F9b-package.zip` is not in Git. `.gitignore` excludes archives, and the package is a convenience: the
-five files inside it are all tracked here, each with its own hash. Rebuild it with
+five files inside it are all tracked here, each with its own hash. The rebuild command follows.
 
 ```
 python3 F9b-conflict-write.py --bench <path to host-failure-benchmark> --out ./run
