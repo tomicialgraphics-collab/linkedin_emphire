@@ -31,4 +31,9 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-06 | `ENGAGEMENT/2026-11-06_connection-triage_moskowitz-gotsiridze.md` | 3,464 B | `ed04bf1a09790039f3a34d5d18ac64c2fedb3f82c47bb1beae79230f8c36e799` | PASS 0/0 (exported) | Gotsiridze (owner reports sent 2026-11-06) | the 62-word connection note was pasted from this file on LinkedIn; the file itself was not attached. Moskowitz got no reply by design, recorded in the same file |
 
+| 2026-11-06 | `OUTREACH/evelyne-claudia-2026-11-06/F9b-CORRECTION-02.md` | 4,844 B | `51855d40d7a819e05d36c4d44863836f28a23b6e573c30b74a12ac75e8a7f8e7` | PASS 0/0 (exported) | Evelyne-Claudia (not confirmed sent) | correction 02: the indistinguishability sentence withdrawn, the wire and host records separated, the unmeasured cell named |
+| 2026-11-06 | `OUTREACH/evelyne-claudia-2026-11-06/F9b-CORRECTION-02.html` | 9,580 B | `b2e3dc421583fcdb86e2394189bc3aae4c81aba1f23c8119af34a46efefc8a48` | PASS 0/0 (exported) | Evelyne-Claudia (not confirmed sent) | the reading copy inside the archive, same words |
+| 2026-11-06 | `OUTREACH/evelyne-claudia-2026-11-06/F9b-benchmark-pin.zip` | 26,369 B | `865c118a4cbddc1351a4986478d806c95caf58b90087ddf9bfb0eb7cd3ebd7ba` | n/a (archive, all members gated) | Evelyne-Claudia (not confirmed sent) | the benchmark pin: store.py, host.py, common.py as shipped, store.patched.py as executed, MANIFEST.txt, both correction files. Attached to the message, not linked |
+| 2026-11-06 | `OUTREACH/evelyne-claudia-2026-11-06/REPLY-02-to-Evelyne.txt` | see commit | see commit | PASS 0/0 (exported), voice 92/100 | Evelyne-Claudia (not confirmed sent) | round two: both corrections accepted in her terms, the pin quoted by commit and hash, the one claim that was never measured stated as such |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.

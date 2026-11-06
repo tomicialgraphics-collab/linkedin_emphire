@@ -283,10 +283,21 @@ def convert(md: str) -> tuple[str, list[str]]:
     return (title or TITLE_FALLBACK), body
 
 
+def strip_front_matter(md: str) -> str:
+    """Drop a leading YAML block before converting.
+
+    The gate needs front matter on a document (`deliverable`, `profile_checked` and the rest),
+    and the reader does not. Without this the block is converted as prose and appears at the
+    top of the page as a paragraph beginning `deliverable:`, which is metadata leaking into a
+    deliverable and breaks the rule that every paragraph ends in terminal punctuation.
+    """
+    return re.sub(r"\A---\s*\n.*?\n---\s*\n", "", md, count=1, flags=re.S)
+
+
 def build(src: str, dest: str, title_override: str | None, subtitle: str | None) -> None:
     with open(src, encoding="utf-8") as fh:
         md = fh.read()
-    title, body = convert(md)
+    title, body = convert(strip_front_matter(md))
     if title_override:
         title = title_override
     stamp = subtitle or ""
