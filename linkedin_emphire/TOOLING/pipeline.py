@@ -491,9 +491,10 @@ def cmd_map(args) -> int:
     root_lines = ["", "## Repository root, outside the working tree", "",
                   "| Path | Purpose |", "|---|---|"]
     for entry in areas.get("root_dirs", []):
-        path = os.path.join(ROOT, entry["dir"])
-        count, size, newest = walk_area(path) if os.path.isdir(path) else (0, 0, "")
-        root_lines.append(f"| `{entry['dir']}/` | {entry['purpose']} ({count} files) |")
+        # No file counts here on purpose: some of these folders are gitignored, so
+        # a count would differ between a working copy and a clean checkout and the
+        # render check in CI would fail for no reason.
+        root_lines.append(f"| `{entry['dir']}/` | {entry['purpose']} |")
     root_lines += [
         "| `AGENTS.md` | the contract for any session |",
         "| `README.md` | the map for a human in a hurry |",

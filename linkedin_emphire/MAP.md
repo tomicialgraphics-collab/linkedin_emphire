@@ -65,11 +65,11 @@ and this file is its index. If an area is undeclared, declare it in
 
 | Path | Purpose |
 |---|---|
-| `books/` | reference library, inputs only, never a deliverable (5 files) |
-| `manual/` | the inherited operating manual bundle, including the PDF build pipeline (50 files) |
-| `host-failure-benchmark/` | the Behar benchmark suites as received, plus the zipped releases (38 files) |
-| `google_drive/` | local mirror of what was uploaded to Drive, hashes checked against it (10 files) |
-| `uploads/` | personal face assets, gitignored, never committed (20 files) |
+| `books/` | reference library, inputs only, never a deliverable |
+| `manual/` | the inherited operating manual bundle, including the PDF build pipeline |
+| `host-failure-benchmark/` | the Behar benchmark suites as received, plus the zipped releases |
+| `google_drive/` | local mirror of what was uploaded to Drive, hashes checked against it |
+| `uploads/` | personal face assets, gitignored, never committed |
 | `AGENTS.md` | the contract for any session |
 | `README.md` | the map for a human in a hurry |
 | `context.md` | the session handoff |
