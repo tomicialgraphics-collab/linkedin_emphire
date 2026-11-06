@@ -460,8 +460,8 @@ def cmd_map(args) -> int:
         "and this file is its index. If an area is undeclared, declare it in",
         "`PIPELINE/registry/areas.json` with a purpose, an owner role and a stage.",
         "",
-        f"| Area | Files | Size | Newest | Purpose | Role | Stage |",
-        "|---|---|---|---|---|---|---|",
+        f"| Area | Files | Size | Purpose | Role | Stage |",
+        "|---|---|---|---|---|---|",
     ]
     undeclared = []
     for d in present:
@@ -469,9 +469,9 @@ def cmd_map(args) -> int:
         meta = declared.get(d)
         if not meta:
             undeclared.append(d)
-            lines.append(f"| `{d}` | {count} | {size / 1024:.0f} KB | {newest} | **UNDECLARED** | | |")
+            lines.append(f"| `{d}` | {count} | {size / 1024:.0f} KB | **UNDECLARED** | | |")
         else:
-            lines.append(f"| `{d}` | {count} | {size / 1024:.0f} KB | {newest} | {meta['purpose']} | {meta['role']} | {meta['stage']} |")
+            lines.append(f"| `{d}` | {count} | {size / 1024:.0f} KB | {meta['purpose']} | {meta['role']} | {meta['stage']} |")
 
     lines += ["", "## Root files", "", "| File | Purpose |", "|---|---|"]
     for f in sorted(os.listdir(EMPIRE)):
