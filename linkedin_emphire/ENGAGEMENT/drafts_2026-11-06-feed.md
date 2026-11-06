@@ -48,3 +48,22 @@ Do you keep the intermediate parse as an artifact, or only the extracted text?
 ---
 
 131 words.
+
+## 3. Shubham Vora, make the AI grade itself before it writes (20m)
+
+Post: three prompts run in one chat, a rubric first, an assumption check, then a self-grade that quotes
+the failing line and rewrites only that line. 1st degree connection, GTM and growth audience.
+
+---
+
+The three steps are the right shape, and the third is the one that will quietly stop working.
+
+The rubric in step 1 is written by the same model that then has to pass it, so five out of five is evidence of consistency between two outputs from one source, not evidence the reader would reply. If the model does not know that a VP checks whether you read their last earnings call, that check will not be in the rubric, and the email passes a test that was never the real one.
+
+Two things fix it. Build the rubric from evidence the model did not produce, actual replies and actual deletes, or the buyer's own words. Then keep the score next to the outcome for every send, so after fifty you can see which of the five checks tracks replies and drop the others.
+
+Otherwise the grade is a receipt for work the grader defined.
+
+---
+
+136 words.
