@@ -382,7 +382,8 @@ def human_gate(text: str, profile: str = "linkedin") -> dict:
     # A fenced block is code, and a code block with a blank line inside it used to arrive here as
     # two paragraphs of prose. Swap each block for a neutral sentence before numbering paragraphs.
     checked = re.sub(r"```.*?```", "Code block.", body, flags=re.S)
-    for i, para in enumerate([p.strip() for p in checked.split("\n\n") if p.strip()], 1):
+    paragraphs = [p.strip() for p in checked.split("\n\n") if p.strip()]
+    for i, para in enumerate(paragraphs, 1):
         tail = para.rstrip()
         # a bold-only label such as **INTERACTIVE, 56 words** is metadata, not a sentence
         if re.fullmatch(r"\*\*.+\*\*", para):
@@ -409,6 +410,14 @@ def human_gate(text: str, profile: str = "linkedin") -> dict:
         # a salutation is a greeting, not a sentence: "Evelyne-Claudia," is correct
         if re.fullmatch(r"(?:hi|hey|hello|dear)?[\s,]*[\w' .-]{1,40},", para.strip(), re.I):
             continue
+        # a sign-off is a signature, not a sentence, and only the last paragraph can be one,
+        # which is what stops this from excusing a fragment in the middle of a document.
+        if para is paragraphs[-1]:
+            if re.fullmatch(r"[A-Z][\w'.-]*(?:\s+[A-Z][\w'.-]*){0,2}", para):
+                continue
+            if re.fullmatch(r"(?:with\s+)?(?:my\s+)?(?:best|warm|warmest|kind)\s+regards\s*,?\s*"
+                            r"[A-Z][\w'.-]*(?:\s+[A-Z][\w'.-]*){0,2}", para, re.I):
+                continue
         if tail and not re.search(r"[.!?:;)\"'#`]$", tail):
             findings.append({
                 "severity": "error",

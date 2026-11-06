@@ -502,6 +502,23 @@ def check_approval(rep: Report, meta: dict) -> None:
 # run
 # --------------------------------------------------------------------------
 
+
+def visible_text(markup: str) -> str:
+    """The words a reader sees in an HTML page, with markup and CSS removed.
+
+    An exported artefact is often sent as HTML, and linting the stylesheet is how a page
+    fails a check about commas. The rules are about the prose, so the prose is what is read.
+    """
+    import html as _html
+    # Headings are labels, not sentences, and a heading never carries terminal punctuation.
+    text = re.sub(r"(?is)<head\b.*?</head>", " ", markup)
+    text = re.sub(r"(?is)<(script|style|h[1-6])\b.*?</\1>", " ", text)
+    text = re.sub(r"(?s)<!--.*?-->", " ", text)
+    text = re.sub(r"(?s)<[^>]+>", " ", text)
+    text = _html.unescape(text)
+    return re.sub(r"[ \t]+", " ", text)
+
+
 def gate_file(path: str, forced_type: str | None = None) -> Report:
     rep = Report(path)
     try:
@@ -510,9 +527,13 @@ def gate_file(path: str, forced_type: str | None = None) -> Report:
         rep.add("R26", "FAIL", f"could not read: {exc}")
         return rep
 
-    meta, body = parse_front_matter(text)
-    pasted = post_body(body)
     exported = forced_type == "exported"
+    if exported and path.lower().endswith((".html", ".htm")):
+        # Read the page, not its stylesheet.
+        meta, body = {}, visible_text(text)
+    else:
+        meta, body = parse_front_matter(text)
+    pasted = post_body(body)
     dtype = "doc" if exported else (forced_type or infer_type(path, meta)).lower()
     audience = "client" if exported else infer_audience(path, meta)
     rel = os.path.relpath(os.path.abspath(path), EMPIRE)

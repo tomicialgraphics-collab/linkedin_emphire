@@ -24,7 +24,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `LINKEDIN` | 14 | 191 KB | profile copy, headline variants, about section | content | S3 |
 | `NETWORKING` | 6 | 55 KB | contacts, connect notes, follow-ups | engagement | S2 |
 | `OPPURTUNITIES` | 13 | 161 KB | job and gig leads, the tracker | opportunities | S1 |
-| `OUTREACH` | 103 | 713 KB | client-facing outreach and confidential working files | empire | S3,S6 |
+| `OUTREACH` | 110 | 800 KB | client-facing outreach and confidential working files | empire | S3,S6 |
 | `PIPELINE` | 11 | 57 KB | the rules registry, the stages and the contracts. Read first, change rarely | strategist | S0 |
 | `PLANS` | 15 | 300 KB | dated plans with a target and a number | strategist | S1,S8 |
 | `PROJECTS` | 276 | 3291 KB | named multi-session work with an owner and a due date | empire | S3,S5 |
@@ -32,7 +32,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `RESOURCES` | 1 | 2 KB | reference material that is not authored here | strategist | S2 |
 | `RESUME` | 16 | 327 KB | resumes and generators. PII, never linked publicly | opportunities | S3 |
 | `SESSION_LOG` | 3 | 35 KB | one log per working day, instructions and decisions | strategist | S7 |
-| `STATE` | 4 | 15 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
+| `STATE` | 4 | 16 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
 | `STRATEGY` | 18 | 234 KB | ICP, positioning, weekly plans | strategist | S1,S8 |
 | `THE CONTENT CREATOR` | 1 | 3 KB | role prompt for content | content | S0 |
 | `THE EMPIRE BUILDER` | 1 | 3 KB | role prompt for the empire | empire | S0 |
@@ -41,7 +41,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `THE STRATEGIST` | 1 | 3 KB | role prompt for strategy | strategist | S0 |
 | `THE VISUAL DESIGNER` | 149 | 57342 KB | role prompt for visuals | visual | S0 |
 | `TOLU TEMPLATE` | 148 | 57339 KB | document templates inherited from a bundle | strategist | S3 |
-| `TOOLING` | 6 | 99 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
+| `TOOLING` | 6 | 101 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
 | `UPWORK` | 51 | 30449 KB | catalog, proposals, gig delivery | opportunities | S1,S6 |
 | `VERIFIED_POSTS` | 95 | 976 KB | every post that passed the gate, one folder each, plus the index | content | S3,S7 |
 | `VISUAL` | 11 | 631 KB | brand guidelines and approved card references | visual | S3 |

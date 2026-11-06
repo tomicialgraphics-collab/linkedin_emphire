@@ -19,5 +19,8 @@ not have to re-derive them. Neither has been confirmed sent.
 | 2026-11-06 | `CLIENTS/foray-dunin7/2026-11-06/REPLY-3-to-Marvin.md` | 5,144 B | `dd1bf5b3498a04e34efb95d7a089770bc72c064fef5cc7be911e363726b8ae4a` | PASS 0/0 (exported) | Marvin (not confirmed sent) | round 3 message, both Drive links and hashes inline, plus the 23-case expectation |
 
 | 2026-11-06 | `CLIENTS/foray-dunin7/2026-11-06/REPLY-3-to-Marvin.plain.txt` | 4,766 B | `f707e85a626b9f7cf409b1eddd934ae78b5becc1b5fb637d009c72e59bc133be` | PASS 0/0 (exported), voice 100/100 | Marvin (not confirmed sent) | the block to paste: plain text, no markdown, both links and hashes inline |
+| 2026-11-06 | `OUTREACH/evelyne-claudia-2026-11-06/F9b-artifact.html` | 12,689 B | `dbe38e1c0976538e625b29af040c4d9fd1c03779a96b184a87428b75eceec68d` | PASS 0/0 (exported) | Evelyne-Claudia (not confirmed sent) | Drive `1mIgzlK6M4iR2nn4RqGtEkqldODR90Zbe`, link-shared reader, re-downloaded and hashed, identical |
+| 2026-11-06 | `OUTREACH/evelyne-claudia-2026-11-06/F9b-package.zip` | 18,178 B | `3b961f288e01f56ead9edc620192a773c7b2fb68ef09917fae85bcd8d3ca1ed1` | n/a (archive) | Evelyne-Claudia (not confirmed sent) | Drive `1LTqSEcHlw7XpfIp_tmMz-c-7ju068ZvW`, link-shared reader, re-downloaded and hashed, identical |
+| 2026-11-06 | `OUTREACH/evelyne-claudia-2026-11-06/COVER-MESSAGE.txt` | 2,055 B | `cffa2c5467b592e9299ff897ee2763e0396f9d785249a61c2e3c12255b3b310f` | PASS 0/0 (exported), voice 92/100 | Evelyne-Claudia (not confirmed sent) | the block to paste, both links and hashes inline |
 
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.

@@ -23,7 +23,7 @@ The tool parses this format, so keep it exact: `- [ ] L<n> text  (opened YYYY-MM
 - [ ] L8 6 Nov post: publish at 13:30 WAT with the card built to the headline and box in the file, first comment at T+20 to T+30  (opened 2026-11-06)
 - [ ] L9 Feed sweep 4 Nov: 26 comment drafts written, none posted  (opened 2026-11-04)
 - [ ] L10 Feed sweep 6 Nov: six comments written and gated, none posted  (opened 2026-11-06)
-- [ ] L11 Evelyne-Claudia DM: drafted and gated. Send the one-page artefact only if she asks for it  (opened 2026-11-06)
+- [ ] L11 Evelyne-Claudia, artefact asked for on 6 Nov and built. F9b measured: a refused conflict write is reported as a refused verdict write. Page `dbe38e1c`, package `3b961f28`, both in Drive and re-hashed after download. Cover message gated. Next: she reads it, and the open question is her PaySim causal attribution, which she has already put UNRESOLVED  (opened 2026-11-06)
 - [ ] L12 Video script: written, not filmed  (opened 2026-11-04)
 
 ## Open work in the repo
