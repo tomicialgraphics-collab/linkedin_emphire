@@ -27,12 +27,12 @@ and this file is its index. If an area is undeclared, declare it in
 | `OUTREACH` | 110 | 784 KB | client-facing outreach and confidential working files | empire | S3,S6 |
 | `PIPELINE` | 11 | 57 KB | the rules registry, the stages and the contracts. Read first, change rarely | strategist | S0 |
 | `PLANS` | 15 | 300 KB | dated plans with a target and a number | strategist | S1,S8 |
-| `PROJECTS` | 276 | 3291 KB | named multi-session work with an owner and a due date | empire | S3,S5 |
+| `PROJECTS` | 277 | 3293 KB | named multi-session work with an owner and a due date | empire | S3,S5 |
 | `PUBLISH` | 17 | 161 KB | publish-ready exports and the queue | content | S6 |
 | `RESOURCES` | 1 | 2 KB | reference material that is not authored here | strategist | S2 |
 | `RESUME` | 16 | 327 KB | resumes and generators. PII, never linked publicly | opportunities | S3 |
 | `SESSION_LOG` | 3 | 35 KB | one log per working day, instructions and decisions | strategist | S7 |
-| `STATE` | 4 | 16 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
+| `STATE` | 4 | 17 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
 | `STRATEGY` | 18 | 234 KB | ICP, positioning, weekly plans | strategist | S1,S8 |
 | `THE CONTENT CREATOR` | 1 | 3 KB | role prompt for content | content | S0 |
 | `THE EMPIRE BUILDER` | 1 | 3 KB | role prompt for the empire | empire | S0 |

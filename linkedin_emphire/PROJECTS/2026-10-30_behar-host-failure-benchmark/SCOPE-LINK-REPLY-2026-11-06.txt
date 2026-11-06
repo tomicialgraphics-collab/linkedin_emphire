@@ -1,0 +1,18 @@
+Behar,
+
+Direct download, no sign-in needed: https://drive.google.com/file/d/1fXJ3RVJIOgQm6ZEkxGMghitTXGQRNwbz/view is the document.
+
+It is the same file whose hash you hold, 0d40270a36e717a9dd7275a47fb756ffccf3741ab07d0ffecda5a5347d32da1c, 2,088 words, 12,669 bytes. I downloaded it again after uploading and hashed it a second time, so what the link serves is what the hash describes.
+
+If the preview mangles the tables, the formatted copy is here: https://drive.google.com/file/d/1_OeUArrU6PfBmnnGjcjOIbRJ2TeY-cMo/view, SHA-256 ae1b3e421574d9a66b5e14a3e09ad948f46b69245e2758f0227b8df9449a9781, same words, same section numbers.
+
+Section 9 is the four decisions, and they are the only things blocking implementation:
+
+1. S1: is a partial state carrying the sequence numbers of the records on disk the right shape, or should any partially durable request report indeterminate instead?
+2. S3: a distinct exit code for a run that cannot be classified, or folded into exit 1?
+3. S4: can you supply a host where chattr +i actually succeeds, or should the read-only mount be recorded as a narrower condition?
+4. S5: retention as a runner flag, or an environment variable a CI job can set once?
+
+No code moves until I have those four. The register is untouched at 4413420b45d9312630b1b0e394cb8a09481a5be665135ded1ec4c693156c5c03, and S4 stays unresolved on its own schedule rather than on the milestone's.
+
+Olusanya

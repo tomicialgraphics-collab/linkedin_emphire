@@ -10,7 +10,7 @@ The tool parses this format, so keep it exact: `- [ ] L<n> text  (opened YYYY-MM
 
 ## Waiting on someone else
 
-- [ ] L1 Behar: four rulings needed on the P2 remediation scope, S1 partial vs indeterminate, S3 a distinct exit code for could-not-classify, S4 narrow the condition or stay open, S5 flag vs environment variable. Nothing is implemented before the answers  (opened 2026-11-06)
+- [ ] L1 Behar: scope link sent, four rulings still needed on the P2 remediation scope. S1 partial vs indeterminate, S3 a distinct exit code for could-not-classify, S4 narrow the condition or stay open, S5 flag vs environment variable. Nothing is implemented before the answers, and S4 does not close on the milestone  (opened 2026-11-06)
 - [ ] L2 Marvin: round 3 sent-pending. `05267a36` reports f and h changed and re-registers W-01g as W-04. Reply `REPLY-3-to-Marvin.md` carries the probe `c91be299` and the register v4 `84fdf1e8`, plus the 23-case expectation (SYNTH-D VALID to INVALID, other 22 hold). Next: his archive or his 23 lines, then the run  (opened 2026-11-06)
 - [ ] L3 Andrey: reply to his last message, in lane, no new claims  (opened 2026-11-02)
 - [ ] L4 Praveen / Arcezia: the verdict on the report and whether the joint write-up proceeds  (opened 2026-11-01)
