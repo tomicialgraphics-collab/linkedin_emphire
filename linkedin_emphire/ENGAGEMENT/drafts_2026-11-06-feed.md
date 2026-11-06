@@ -88,3 +88,24 @@ So before changing the initializer, print the weight delta between two steps. On
 ---
 
 138 words.
+
+## 5. Akhila G, the answer in chunk 12 against a context window (1h)
+
+Post: an interview question about retrieving a top-5 that misses the answer, five steps from two-stage
+retrieval through cross-encoder reranking, hybrid search, compression and measurement, closing with an
+invitation to say how you would approach it. The five steps are sound, so the comment adds the two
+checks that come before and between them rather than restating them.
+
+---
+
+The order I would debug it in starts slightly before step one.
+
+First: does the answer exist as contiguous text in any chunk at all? If the fact is split across a table row and its header, or across a section boundary, no top-K and no reranker will assemble it, and you will tune retrieval for a week against a parsing problem. Cheap test: for each labelled question, search the raw text rather than the chunks, and see whether the answer is in there at all.
+
+Then two ceilings, measured separately. Recall@50 tells you whether retrieval can reach the passage. Recall@3 after the reranker tells you whether ranking keeps it. Those fail independently and they have different fixes, chunking, hybrid search or filters for the first, the reranker or the query for the second.
+
+If you only measure the end result, both failures arrive as the same number.
+
+---
+
+150 words.
