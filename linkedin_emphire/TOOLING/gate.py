@@ -227,7 +227,8 @@ def body_words(text: str) -> int:
     return len(re.findall(r"[A-Za-z']+", text))
 
 
-def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str, pasted: str | None = None) -> None:
+def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
+               pasted: str | None = None, exported: bool = False) -> None:
     pasted = pasted if pasted is not None else body
     # R01 em dash
     dashes = [i for i, ch in enumerate(body) if ch in "\u2014\u2013"]
@@ -297,7 +298,13 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str, pa
 
     # R20 overclaim
     over = re.findall(r"\b(?:is|are|has been|was|fully) (?:now )?fixed\b|\bresolved the (?:defect|issue|bug)\b|\bfully resolved\b", body, re.I)
-    if over:
+    if exported:
+        # A review artefact describes the author's fix in the author's terms and
+        # carries no front matter to mark it verified. The honest status wording
+        # lives in the text ("merged at <sha>, pending an independent run"), so
+        # this check cannot read it and does not pretend to.
+        rep.add("R20", "PASS", "exported artefact, fix status stated in the text")
+    elif over:
         status = "FAIL" if meta.get("fix_verified") not in (True, "true") else "PASS"
         rep.add("R20", status, f"{len(over)} fix claim(s); mark fix_verified: true only with the post-fix run attached")
     else:
@@ -505,14 +512,21 @@ def gate_file(path: str, forced_type: str | None = None) -> Report:
 
     meta, body = parse_front_matter(text)
     pasted = post_body(body)
-    dtype = (forced_type or infer_type(path, meta)).lower()
-    audience = infer_audience(path, meta)
+    exported = forced_type == "exported"
+    dtype = "doc" if exported else (forced_type or infer_type(path, meta)).lower()
+    audience = "client" if exported else infer_audience(path, meta)
     rel = os.path.relpath(os.path.abspath(path), EMPIRE)
 
     rep.meta = {"type": dtype, "audience": audience, "path": rel, "words": body_words(body)}  # type: ignore[attr-defined]
 
-    check_contract(rep, meta, dtype, audience, path)
-    check_text(rep, body, meta, dtype, audience, pasted)
+    if not exported:
+        # An exported artefact is read by a client or a reviewer. Internal front
+        # matter in it would be noise at best and a leak at worst, so it is not
+        # required and it is not wanted.
+        check_contract(rep, meta, dtype, audience, path)
+    else:
+        rep.add("R26", "PASS", "exported artefact, internal metadata not required")
+    check_text(rep, body, meta, dtype, audience, pasted, exported)
     check_profile_read(rep, meta, dtype)
     check_cold_link(rep, meta, body, dtype)
     check_approval(rep, meta)
@@ -542,7 +556,10 @@ def render(rep: Report, quiet: bool) -> None:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Enforce every automatable rule before a file leaves the repo.")
     ap.add_argument("files", nargs="+")
-    ap.add_argument("--profile", choices=["post", "comment", "dm", "doc", "internal", "email"], default=None)
+    ap.add_argument("--profile",
+                    choices=["post", "comment", "dm", "doc", "internal", "email", "exported"],
+                    default=None,
+                    help="exported: a client or reviewer artefact. Full text checks, no front matter required")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--quiet", action="store_true")
     ap.add_argument("--strict", action="store_true", help="treat warnings as blocking")

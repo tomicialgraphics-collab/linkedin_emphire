@@ -180,8 +180,10 @@ def cmd_loops(args) -> int:
 # --------------------------------------------------------------------------
 
 def cmd_check(args) -> int:
-    rc = G.main(args.paths + (["--quiet"] if args.quiet else []))
-    return rc
+    extra = ["--quiet"] if args.quiet else []
+    if getattr(args, "profile", None):
+        extra += ["--profile", args.profile]
+    return G.main(args.paths + extra)
 
 
 # --------------------------------------------------------------------------
@@ -691,6 +693,9 @@ def main(argv=None) -> int:
     p = sub.add_parser("check")
     p.add_argument("paths", nargs="+")
     p.add_argument("--quiet", action="store_true")
+    p.add_argument("--profile", default=None,
+                   choices=["post", "comment", "dm", "doc", "internal", "email", "exported"],
+                   help="exported: a client or reviewer artefact, no front matter required")
     p.set_defaults(fn=cmd_check)
 
     p = sub.add_parser("new")

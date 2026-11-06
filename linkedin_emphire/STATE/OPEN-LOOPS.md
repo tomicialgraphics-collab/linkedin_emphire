@@ -4,14 +4,14 @@ The only list of what is unfinished. `pipeline.py start` prints it, `pipeline.py
 a row, `pipeline.py loops add "..."` opens one. An item leaves this file only when it is done or the
 owner drops it, and a dropped item says so.
 
-Format is fixed so the tool can read it: `- [ ] L<n> text  (opened YYYY-MM-DD)`.
+The tool parses this format, so keep it exact: `- [ ] L<n> text  (opened YYYY-MM-DD)`.
 
 ---
 
 ## Waiting on someone else
 
 - [ ] L1 Behar: four rulings needed on the P2 remediation scope, S1 partial vs indeterminate, S3 a distinct exit code for could-not-classify, S4 narrow the condition or stay open, S5 flag vs environment variable. Nothing is implemented before the answers  (opened 2026-11-06)
-- [ ] L2 Marvin: ruling on W-01f, W-01g and W-01h, plus the two `stream_id` encodings that make the extent branch unreachable on his own vectors  (opened 2026-11-06)
+- [ ] L2 Marvin: round 3 sent-pending. `05267a36` reports f and h changed and re-registers W-01g as W-04. Reply `REPLY-3-to-Marvin.md` carries the probe `c91be299` and the register v4 `84fdf1e8`, plus the 23-case expectation (SYNTH-D VALID to INVALID, other 22 hold). Next: his archive or his 23 lines, then the run  (opened 2026-11-06)
 - [ ] L3 Andrey: reply to his last message, in lane, no new claims  (opened 2026-11-02)
 - [ ] L4 Praveen / Arcezia: the verdict on the report and whether the joint write-up proceeds  (opened 2026-11-01)
 - [ ] L5 Aithos: if silent by 14 Nov, one warm follow-up to hiring@aithos.org referencing the original subject. One bump only  (opened 2026-10-31)

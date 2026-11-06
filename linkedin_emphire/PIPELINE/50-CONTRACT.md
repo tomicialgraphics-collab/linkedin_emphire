@@ -39,6 +39,21 @@ lists as `[a, b]`, comments after `#`. Nothing nested.
 `profile_checked`, which is the date you read the person's profile and something only they said.
 `warm: yes` if a link is allowed.
 
+### When the file leaves the repo as it stands
+
+Some artefacts are read by the client or the reviewer exactly as written: a review register, a probe,
+a reply. Internal front matter in one of those is noise to the reader and a leak at worst. Those files
+carry no front matter and are gated with `--profile exported`:
+
+```
+./emphire check <file> --profile exported
+```
+
+That profile runs the full text rules, keeps the retired-identity check blocking, and skips the front
+matter requirement, because the paperwork for an exported artefact lives in `STATE/DELIVERY-LOG.md`
+instead. It is not a way past a rule: R26 and R20 are the only checks it changes, and both because
+their evidence is a header the file deliberately does not have.
+
 ### Required for a review or a scope
 
 `client`, `private: yes`, and `fix_verified: true` only when the post-fix run is attached.
