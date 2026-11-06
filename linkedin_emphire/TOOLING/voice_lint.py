@@ -406,6 +406,9 @@ def human_gate(text: str, profile: str = "linkedin") -> dict:
         # a hashtag or mention line is not a sentence and needs no full stop
         if re.fullmatch(r"[\s#@\w&,'-]+", para) and para.lstrip().startswith(("#", "@")):
             continue
+        # a salutation is a greeting, not a sentence: "Evelyne-Claudia," is correct
+        if re.fullmatch(r"(?:hi|hey|hello|dear)?[\s,]*[\w' .-]{1,40},", para.strip(), re.I):
+            continue
         if tail and not re.search(r"[.!?:;)\"'#`]$", tail):
             findings.append({
                 "severity": "error",
