@@ -63,7 +63,7 @@ What makes the gap stark is which way round it went. Labelling is the demand tha
 
 ---
 
-152 words. The method point is the one he will care about, because his own work is studies of how
+141 words. The method point is the one he will care about, because his own work is studies of how
 institutions document what they did. The table is a real ask rather than a wish, and it is the part he
 has not made yet.
 
@@ -109,7 +109,7 @@ Written in a note, both depend on you remembering to write them for the next pla
 
 ---
 
-130 words. She documents her own failures, so the comment does not need to point them out. It names the
+128 words. She documents her own failures, so the comment does not need to point them out. It names the
 category error instead, that a budget bounds spend and says nothing about medium or repetition, and
 turns her two rules into something that can live on an object.
 
@@ -133,7 +133,7 @@ The line worth keeping is yours. A clean report over a population that excludes 
 
 ---
 
-152 words. The addition is mechanical and checkable: an agent with no principal cannot appear in an
+141 words. The addition is mechanical and checkable: an agent with no principal cannot appear in an
 access review, so the control fails at the identity layer before the conflict layer. This is the third
 time I have commented on his work in two days, which is one too many after this one.
 
@@ -157,7 +157,7 @@ The employment line is the one I would test hardest. Whether it covers the whole
 
 ---
 
-151 words. Provenance rather than disagreement, which is what worked on the Blue Cross comment. It
+145 words. Provenance rather than disagreement, which is what worked on the Blue Cross comment. It
 stays inside what his own citations say, so nothing here is a claim about the FT that he cannot check.
 
 ## Order to post
