@@ -60,7 +60,7 @@ Ask for the baseline, not the story.
 ## Posting notes
 
 - Comment now. Six minutes old when this was written, and the early comments are the ones read.
-- "Thursday" rather than "yesterday", because a comment outlives the afternoon it was written in.
+- The draft says Thursday rather than a relative day, because a comment outlives the afternoon it was written in.
 - Do not cite the percentage moves back at him. He has them, and repeating his own numbers reads as
   agreement, which is the one thing this comment is not doing.
 - If he replies with a defence of the ROI framing, agree with the framing and keep the separation. The
