@@ -11,7 +11,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `ARTICLES` | 94 | 42773 KB | the Breaking AI series, one package per article | content | S3 |
 | `ASSETS` | 10 | 2742 KB | photos, logos, fonts and anything a card is built from | visual | S3 |
 | `BREAKLAB` | 5 | 44 KB | the public harness work | content | S3 |
-| `CLIENTS` | 37 | 388 KB | one folder per client, per engagement, dated. Findings first, private to them | empire | S3,S5,S6 |
+| `CLIENTS` | 38 | 393 KB | one folder per client, per engagement, dated. Findings first, private to them | empire | S3,S5,S6 |
 | `CONTENT` | 2 | 5 KB | content working files that are not yet a post | content | S3 |
 | `CONTENT_CALENDARS` | 2 | 47 KB | the posting calendar | content | S1 |
 | `CURRICULUM` | 1 | 27 KB | the red-team and research study plan | strategist | S2 |

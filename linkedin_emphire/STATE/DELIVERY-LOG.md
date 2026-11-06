@@ -18,4 +18,6 @@ not have to re-derive them. Neither has been confirmed sent.
 | 2026-11-06 | `CLIENTS/foray-dunin7/repro/foray-probe.mjs` | 11,827 B | `c91be299ff59076f0a49f43fd6a4f01e1f98fad7fe478e46b9b2225efecaa326` | n/a (code, not prose) | Marvin (not confirmed sent) | Drive `1gT0JO_EzB3cYaVn0SAEp4Hx6mIWGEDbK`, link-shared reader; re-downloaded and hashed, identical. Hash matches the build he was given |
 | 2026-11-06 | `CLIENTS/foray-dunin7/2026-11-06/REPLY-3-to-Marvin.md` | 5,144 B | `dd1bf5b3498a04e34efb95d7a089770bc72c064fef5cc7be911e363726b8ae4a` | PASS 0/0 (exported) | Marvin (not confirmed sent) | round 3 message, both Drive links and hashes inline, plus the 23-case expectation |
 
+| 2026-11-06 | `CLIENTS/foray-dunin7/2026-11-06/REPLY-3-to-Marvin.plain.txt` | 4,766 B | `f707e85a626b9f7cf409b1eddd934ae78b5becc1b5fb637d009c72e59bc133be` | PASS 0/0 (exported), voice 100/100 | Marvin (not confirmed sent) | the block to paste: plain text, no markdown, both links and hashes inline |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
