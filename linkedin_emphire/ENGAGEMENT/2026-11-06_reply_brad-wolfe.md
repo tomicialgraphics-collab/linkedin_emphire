@@ -42,6 +42,20 @@ investment case restates itself in the board pack with nothing on the page to sa
 
 Version the definition like a schema and the board pack gets its line for free.
 
+## Short version, 120 words, if the 205 reads long in the thread
+
+Agreed on the restatement note, and the side by side period is the part most teams skip.
+
+The gap is that a note depends on somebody remembering. Put the definition version on the fact row as
+a key and the note becomes a diff rather than a document. Run both versions over the same frozen
+window and the line item falls out of the comparison.
+
+Audit committees accept exceptions, not streams. Restatement works in accounting because changes are
+rare. AI product metrics get redefined every few sprints, and a note that has to be written by hand
+every time stops being evidence. Generate it or lose it.
+
+Version the definition like a schema and the board report gets its line for free.
+
 ## Why this shape
 
 - Concedes first, in six words, then adds. He has thirty years on this and does not need the agreement
