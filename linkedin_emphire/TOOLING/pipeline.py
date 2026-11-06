@@ -26,6 +26,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 
@@ -422,6 +423,98 @@ def cmd_adopt(args) -> int:
 
 
 # --------------------------------------------------------------------------
+# promote: settle a two-lineage file without deleting either side
+# --------------------------------------------------------------------------
+
+def cmd_promote(args) -> int:
+    variant = args.variant
+    canon = args.over
+    for path in (variant, canon):
+        if not os.path.exists(path):
+            print(f"missing: {path}")
+            return 2
+    if G.sha256(variant) == G.sha256(canon):
+        print("the two files are already identical, nothing to do")
+        return 0
+
+    stem, ext = os.path.splitext(os.path.basename(canon))
+    parked = os.path.join(os.path.dirname(canon), "_variants", f"{stem}.superseded{ext}")
+    n = 2
+    while os.path.exists(parked):
+        parked = os.path.join(os.path.dirname(canon), "_variants", f"{stem}.superseded-{n}{ext}")
+        n += 1
+    os.makedirs(os.path.dirname(parked), exist_ok=True)
+
+    old_digest = G.sha256(canon)[:16]
+    shutil.move(canon, parked)
+    shutil.copy2(variant, canon)
+    os.remove(variant)
+    print(f"promoted   {variant}")
+    print(f"     over  {canon} (old copy at {parked}, sha {old_digest})")
+    print("now: run  pipeline.py render  and check anything that reads this file")
+    return 0
+
+
+# --------------------------------------------------------------------------
+# verify-moves: prove a restructure deleted nothing unique
+# --------------------------------------------------------------------------
+
+def cmd_verify_moves(args) -> int:
+    """Every path deleted by a commit must still have a byte-identical file in HEAD.
+
+    This is the check that answers "where did that file go". A deletion whose
+    blob is still in the tree is a duplicate, by definition: same bytes. A
+    deletion whose blob is nowhere is either a real loss or a file that was
+    rewritten, and it gets reported so a human can say which.
+    """
+    since = args.since
+    # -z and a NUL split: paths with spaces in them are common here ("DAILY CONTENT"),
+    # and git quotes them otherwise, which turns one path into three fake ones.
+    deleted = [p for p in subprocess.run(
+        ["git", "-c", "core.quotepath=false", "diff", "--diff-filter=D", "--name-only", "-z",
+         f"{since}^", since],
+        capture_output=True, text=True, cwd=ROOT,
+    ).stdout.split("\0") if p]
+    if not deleted:
+        print(f"{since}: no deletions")
+        return 0
+
+    parents = {}
+    for path in deleted:
+        out = subprocess.run(["git", "-c", "core.quotepath=false", "rev-parse", f"{since}^:{path}"],
+                             capture_output=True, text=True, cwd=ROOT).stdout.strip()
+        if out:
+            parents[path] = out
+
+    live = {}
+    tree = subprocess.run(["git", "-c", "core.quotepath=false", "ls-tree", "-r", "-z", "HEAD"],
+                          capture_output=True, text=True, cwd=ROOT).stdout.split("\0")
+    for line in tree:
+        if not line:
+            continue
+        meta, path = line.split("\t", 1)
+        sha = meta.split()[2]
+        if path.startswith(".history/"):
+            continue
+        live.setdefault(sha, []).append(path)
+
+    found, lost = [], []
+    for path, blob in parents.items():
+        (found if blob in live else lost).append((path, live.get(blob, [""])[0]))
+
+    print(f"{since}: {len(deleted)} deletions")
+    print(f"  byte-identical survivor in the live tree: {len(found)}")
+    print(f"  no survivor, needs a human: {len(lost)}")
+    for path, where in found[: args.show]:
+        print(f"    {path}\n      == {where}")
+    if len(found) > args.show:
+        print(f"    ... {len(found) - args.show} more, same result")
+    for path, _ in lost:
+        print(f"    UNMATCHED  {path}")
+    return 1 if lost else 0
+
+
+# --------------------------------------------------------------------------
 # map + render
 # --------------------------------------------------------------------------
 
@@ -613,6 +706,16 @@ def main(argv=None) -> int:
     p.add_argument("--to", required=True)
     p.add_argument("--how", default="file plus hash")
     p.set_defaults(fn=cmd_log)
+
+    p = sub.add_parser("promote")
+    p.add_argument("variant", help="the parked file you want to become the canon")
+    p.add_argument("--over", required=True, dest="over", help="the current canon it replaces")
+    p.set_defaults(fn=cmd_promote)
+
+    p = sub.add_parser("verify-moves")
+    p.add_argument("--since", required=True, help="commit that performed the restructure")
+    p.add_argument("--show", type=int, default=5, help="how many matches to print")
+    p.set_defaults(fn=cmd_verify_moves)
 
     p = sub.add_parser("adopt")
     p.add_argument("path")
