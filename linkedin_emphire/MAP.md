@@ -24,7 +24,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `LINKEDIN` | 14 | 191 KB | profile copy, headline variants, about section | content | S3 |
 | `NETWORKING` | 6 | 55 KB | contacts, connect notes, follow-ups | engagement | S2 |
 | `OPPURTUNITIES` | 13 | 161 KB | job and gig leads, the tracker | opportunities | S1 |
-| `OUTREACH` | 121 | 834 KB | client-facing outreach and confidential working files | empire | S3,S6 |
+| `OUTREACH` | 122 | 844 KB | client-facing outreach and confidential working files | empire | S3,S6 |
 | `PIPELINE` | 11 | 57 KB | the rules registry, the stages and the contracts. Read first, change rarely | strategist | S0 |
 | `PLANS` | 15 | 300 KB | dated plans with a target and a number | strategist | S1,S8 |
 | `PROJECTS` | 277 | 3293 KB | named multi-session work with an owner and a due date | empire | S3,S5 |
