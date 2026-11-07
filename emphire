@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# emphire - the pipeline, for bash.
+#
+#   ./emphire start
+#   ./emphire check <file>
+#   ./emphire log <file> --to "Name" --how "Drive link"
+#   ./emphire status | audit | render | map | loops
+#
+# Everything forwards to linkedin_emphire/TOOLING/pipeline.py, so there is one
+# implementation and one set of exit codes.
+set -euo pipefail
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "$HERE/linkedin_emphire/TOOLING/pipeline.py" "$@"

@@ -1,0 +1,5 @@
+The pushback is that the test suite already covers this. Sometimes it does. The case that gets through is the one where the loader succeeded, zero fixtures loaded, and the assertion loop ran zero times without failing.
+
+That's a one-line fix worth doing today: before the loop, assert the collection isn't empty and the count matches what you expected. A test that can pass over zero cases reports on nothing.
+
+The question I'd ask in a review: what does your output look like when the input is missing? If it looks the same as a pass, the check is decorative.

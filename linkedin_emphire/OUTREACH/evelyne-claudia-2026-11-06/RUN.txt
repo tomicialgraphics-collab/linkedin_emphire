@@ -1,0 +1,28 @@
+F9b, a refused conflict write reported as a refused verdict write
+store.py patched, sha256 99f25cab23b3dea0 -> a57d8bf7df51538c
+
+ok   A1 control: second verdict accepted as a conflict
+ok   A1b control: the conflict record ties the two verdicts together
+ok   A2 injected: reply says nothing is durable
+ok   A2b injected: no conflict record reached the journal
+ok   A2c injected: both decisions are on disk, BLOCK then ALLOW
+ok   A2d injected: the durable records are intact, not partial
+ok   A3 injected after restart: state recomputed as conflicted
+ok   A3b injected after restart: no conflict entry to read
+ok   A3c control after restart: the conflict entry survives
+ok   A4 host effect withheld in both worlds
+ok   A4b the host's stated problem differs
+ok   A5 injected: the retry is refused in the same words
+ok   A5b injected: the retry leaves three verdict records and still no conflict record
+ok   A5c injected: the third verdict duplicates the second
+ok   A5d control: the same retry also appends, so idempotence is not this case
+
+control  reply to the second verdict: {"action_id": "F9-0001", "conflict": true, "conflict_seq": 6, "ok": true, "state": "conflicted", "store_seq": 5, "stored": true}
+injected reply to the second verdict: {"durable": false, "error": "injected: the journal refused a verdict write", "ok": false}
+retry    reply: {"durable": false, "error": "injected: the journal refused a verdict write", "ok": false}
+injected journal kinds: ['boot', 'issued', 'commitment', 'verdict', 'verdict', 'verdict', 'boot']
+host control  events: ['wal_commit', 'reply_rejected', 'effect_withheld']
+host injected events: ['wal_commit', 'reply_rejected', 'effect_withheld']
+
+0 check(s) differ from the expectation
+evidence: ./run/result.json

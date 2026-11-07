@@ -1,0 +1,50 @@
+Evelyne,
+
+Both points taken, and one of them needed code rather than agreement.
+
+The terminology is in. Where the two records differ in value, sequence 4 BLOCK against sequence 5 ALLOW, that is
+the wire pair and the disagreement is in the verdict value. Where both records carry BLOCK and the difference
+is in the descriptor and the decision time, that is the host pair and the disagreement is between two different
+signed verdict records. Correction 02 said the host cells were two different verdicts for one action id, which
+was accurate but flat, and the new note supersedes it wherever the two comparisons sit side by side.
+
+You were right that a matching patch line is not a file check, and I had been treating it as one. The runner now
+verifies the SHA-256 of store, host and common against the hashes this case names, applies the patch, verifies
+the patched store against the hash the first run printed, and refuses to measure anything if either check fails.
+A guard earns its place through a negative control, because one that has never refused proves nothing. A single
+comment line was appended to a copy of store.py, a change nobody would notice in review, and the runner stopped
+with the expected and actual hashes in the message and exit code 1. The first runner stays as it is, since its
+hash is already in your hands and editing it would break the artifact you hold rather than improve it.
+
+The verdict-write refusal is measured now, in one run, on one copy of the benchmark, beside the conflict refusal.
+Your five surfaces are in the order you gave them and the table is in the note. The short form: the refused reply
+is byte-identical in both cells, the count of durable records is two against zero, and the state a replay recomputes
+is conflicted in one and null in the other.
+
+There is one result I did not expect and it belongs in the message rather than a footnote. My written expectation
+predicted the host diagnostics would differ between the two refusals. They do not. The host records wal_commit,
+reply_rejected and effect_withheld in both, so the host's own account of what happened fails to separate them in
+exactly the way the reply does. The surfaces that do separate the two are the ones a reader has to go looking for:
+the durable records, the count of accepted writes, and the replayed state. Everything handed to a consumer at the
+moment of the refusal looks the same, and that is a stronger statement than the one I wrote down.
+
+The claim I will keep is the smaller one. A refused conflict write is reported in the words of a refused verdict
+write. I will not enlarge that into the two being indistinguishable, because they are distinguishable, just not by
+anything the system says while it is happening.
+
+The phrase you asked me to drop is gone. Validation is earned by the evidence, bounded by the tested claim, and
+open to correction, including your own reading of your own work. It was never mine to hand over.
+
+The package holds the correction note, the guarded runner, the expectation written before the run, both result
+transcripts and the machine readable result. The zip hashes to
+64997f4d959e62c74054f627758c7d5554eb8ef502778e23351f50ca64d31a98 at 10,337 bytes, and Drive reports an
+identical checksum for the copy it holds.
+
+The link is https://drive.google.com/file/d/16if2myUklJCCoPhN0oiEz_WhQCBcEpcP/view?usp=drivesdk and the
+hash above is the thing worth checking if the download and this letter ever disagree.
+
+Reproduction is still outstanding and it is not something I can supply on your behalf. What I can say is that the
+evidence is there to be checked, that the negative control is there to be broken, and that if the guard refuses a
+tree you consider identical, the guard is the thing that is wrong.
+
+Timothy

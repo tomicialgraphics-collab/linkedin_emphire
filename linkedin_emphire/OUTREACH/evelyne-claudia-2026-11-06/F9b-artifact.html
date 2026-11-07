@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>F9b. A refused conflict write is reported as a refused verdict write</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+pre.code{background:#f6f7f9;border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem;margin:1rem 0;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.code code{background:none;border:0;padding:0;font-size:1em}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  /* Margin 0 collapses the browser's own margin box, which is where Chrome and Edge
+     render the local path and the page counter. Padding on body restores the white
+     space, so the printed page carries the document and nothing else. */
+  @page{size:A4; margin:0}
+  body{background:#fff; font-size:11.2pt; padding:14mm 16mm}
+  main{max-width:none; box-shadow:none; padding:0; margin:0}
+  h1{break-after:avoid; page-break-after:avoid}
+  h2{break-after:avoid; page-break-after:avoid}
+  table{break-inside:auto; page-break-inside:auto}
+  tr,td,th{break-inside:avoid; page-break-inside:avoid}
+  .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+  pre.code{font-size:8pt; border-color:#ccc}
+  a[href]::after{content:""}
+}
+</style>
+<style>
+@media print{
+  body{font-size:9.1pt; padding:9mm 11mm; line-height:1.42}
+  h1{font-size:14pt; margin:0 0 .25rem}
+  h2{font-size:10.2pt; margin:.7rem 0 .2rem}
+  p,li{orphans:2; widows:2}
+  table{font-size:7.5pt; margin:.35rem 0}
+  th,td{padding:.12rem .3rem}
+  pre{font-size:7.4pt; padding:.3rem .45rem}
+  ul{margin:.2rem 0 .2rem 1rem}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>F9b. A refused conflict write is reported as a refused verdict write</h1>
+<p>One bounded case, one file. Each claim is measured by <code>F9b-conflict-write.py</code> in this folder, or labelled as read from the code. No verdict words of yours are used.</p>
+<p><strong>The case. One store command writes two records. The second is the annotation. If it is refused, the reply tells the host that the first, durable write did not happen.</strong></p>
+<h2>The mechanism</h2>
+<p><code>cmd_verdict</code> appends the verdict record, fsynced, then, when a different verdict already exists for that action id, appends a conflict record naming both sequence numbers and the rule. Both appends sit inside one <code>try</code> whose handler returns one reply for the whole command. So a refusal of the annotative write is reported as a refusal of the durable write before it, and the reply loses the action id it is about.</p>
+<h2>Injection</h2>
+<p>The benchmark ships a failpoint that refuses records of kind <code>verdict</code> before any bytes are written. I copied the benchmark, widened the selector in the copy to <code>verdict or conflict</code>, and ran four cells: control and injected, each through the wire so the reply is captured verbatim, and each with the real host process so the effect decision is the host&#x27;s own. The copy is patched. The source is not.</p>
+<table><thead><tr><th></th><th>control, write accepted</th><th>injected, annotation refused</th></tr></thead><tbody><tr><td>reply to the second verdict</td><td><code>ok: true, stored: true, state: &quot;conflicted&quot;, conflict: true, conflict_seq: 6</code></td><td><code>ok: false, durable: false</code></td></tr><tr><td>journal</td><td>seq 4 verdict BLOCK, seq 5 verdict ALLOW, seq 6 conflict (<code>first_seq 4, second_seq 5</code>, rule text)</td><td>seq 4 verdict BLOCK, seq 5 verdict ALLOW, no conflict record</td></tr><tr><td>after a restart</td><td><code>verdict_state: &quot;conflicted&quot;</code>, conflict entry present</td><td><code>verdict_state: &quot;conflicted&quot;</code>, <code>conflict: null</code></td></tr><tr><td>host events</td><td><code>wal_commit</code>, <code>reply_rejected</code>, <code>effect_withheld</code></td><td>the same three, the same reason</td></tr><tr><td>host&#x27;s stated problem</td><td><code>store did not resolve the verdict: state=&#x27;conflicted&#x27; (conflict=True)</code></td><td><code>store refused: ...</code>, <code>reply names None, the request was &#x27;F9-0004&#x27;</code>, <code>stored=None</code>, <code>state=None</code></td></tr></tbody></table>
+<p>Fifteen assertions, all met. Expected is the left column, observed is both.</p>
+<h2>Three findings, each bounded</h2>
+<p><strong>1. The reply is false about durability.</strong> Two verdict records, each fsynced before the refusal, sit on disk when the reply says nothing is durable. Both frame digests recompute.</p>
+<p><strong>2. The event class collapses.</strong> A governance condition, two signed verdicts that disagree, reaches the host as a storage failure. The remedies differ: one sends an operator to a disk, the other sends a human to two decisions.</p>
+<p><strong>3. The annotation is lost, the finding is not.</strong> The rule text and the two sequence links are gone. The state is not, because replay recomputes <code>conflicted</code> from the two differing verdicts alone.</p>
+<h2>Your two corrections, applied</h2>
+<p><strong>Governing effect was not contradicted.</strong> I wrote that earlier and withdraw it. The host emits the same three events with the same reason in both worlds. What is contradicted is the store&#x27;s account of its own disk, not the host&#x27;s conduct.</p>
+<p><strong>Indistinguishability has a scope.</strong> The two worlds are identical only to an observer holding the reply and the host journal. An observer holding the journal sees two verdict records. One holding the store&#x27;s memory before the failure already reads <code>conflicted</code>.</p>
+<p>That correction reaches further than the first. Because the state is recomputable, any reader with the journal distinguishes the worlds, so my stronger claim, that two worlds become identical and stay identical, does not hold. What survives is narrower: the reply states a falsehood about durability, and the reply is what the host must act on.</p>
+<h2>What the false statement invites</h2>
+<p>A client told its write did not land retries it. The same record sent again is refused in the same words and appends a third verdict, duplicate of the second, still with no conflict record. Measured. The control reply does not invite that, because it says <code>stored: true</code>.</p>
+<p>Honesty note: retrying the control reply also appends, so this path is not idempotent in either world. Non-idempotence is a separate property and this case does not establish it. What it establishes is that the reply invites the retry while denying the write.</p>
+<h2>Limits</h2>
+<ul><li>A failpoint, not a disk error. Same path, same exception, synthetic trigger. No real <code>ENOSPC</code>.</li><li>The annotation is refused before any bytes are written. A partial conflict write, and the repair</li></ul>
+<p>after a torn journal, are different cases and are not measured here.</p>
+<ul><li>One store, one action id, loopback, fixed keys, deterministic clock. No concurrency, no production</li></ul>
+<p>keys, no live traffic. Nothing here speaks to a deployed system.</p>
+<ul><li>The host is measured, not judged. It says nothing about a host that reads <code>ok</code> alone.</li><li>Read, not run: on a real write error the reply names no record kind. I did not force that path.</li><li>To close: a reply naming which write failed and what is already durable, and a check that a refused</li></ul>
+<p>annotation cannot change the class of the outcome.</p>
+<h2>Files, hashes, reproduction</h2>
+<table><thead><tr><th>file</th><th>size</th><th>SHA-256</th></tr></thead><tbody><tr><td><code>F9b-conflict-write.py</code></td><td>17,594 B</td><td><code>991e9eec09c291bf0179b6677577c5929b688df0b2b2c10fea2cc163d669e891</code></td></tr><tr><td><code>RUN.txt</code>, the run above verbatim</td><td>1,753 B</td><td><code>682a3aaa4f3fec788cf0247b19e245b873037b8958a37259081623139a1cff09</code></td></tr><tr><td><code>run/result.json</code>, every reply, journal and host event</td><td>31,435 B</td><td><code>e5216e9c3a651f10e3830a036cd56e6719c3582f5385a1b5f67c168e823a3d7b</code></td></tr><tr><td><code>bench/store.py</code> as shipped</td><td></td><td><code>99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982</code></td></tr><tr><td><code>bench/store.py</code> in the copied tree, patched</td><td></td><td><code>a57d8bf7df51538c46d502b3c25697f1b1eae5bb2c1ed8453875a25726dd1add</code></td></tr></tbody></table>
+<pre class="code"><code>python3 F9b-conflict-write.py --bench &lt;path to host-failure-benchmark&gt; --out ./run</code></pre>
+<p>Exits 0 when the fifteen assertions hold, 2 when the world differs from this page, and prints which one failed. The patch, applied to the copy only:</p>
+<pre class="code"><code>-        if self.failpoint == &quot;verdict&quot; and record.get(&quot;kind&quot;) == &quot;verdict&quot;:
++        if (self.failpoint in (&quot;verdict&quot;, &quot;conflict&quot;)
++                and self.failpoint == record.get(&quot;kind&quot;)):</code></pre>
+<footer>One bounded case, measured, with its limits stated</footer>
+</main>
+</body>
+</html>

@@ -12,6 +12,7 @@ inline code, bullet and numbered lists, blockquotes, pipe tables, rules, and the
 **SAY** / **NOTE** markers as block starts.
 """
 from __future__ import annotations
+from html import escape
 
 import argparse
 import html
@@ -37,6 +38,8 @@ main{
   max-width:44rem; margin:0 auto; background:var(--paper);
   padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
 }
+pre.code{background:#f6f7f9;border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem;margin:1rem 0;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.code code{background:none;border:0;padding:0;font-size:1em}
 h1{
   font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
   font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
@@ -97,12 +100,21 @@ a{color:var(--accent)}
   h1{font-size:1.55rem}
 }
 @media print{
-  body{background:#fff; font-size:11.2pt}
-  main{max-width:none; box-shadow:none; padding:0}
+  /* Margin 0 collapses the browser's own margin box, which is where Chrome and Edge
+     render the local path and the page counter. Padding on body restores the white
+     space, so the printed page carries the document and nothing else. */
+  @page{size:A4; margin:0}
+  body{background:#fff; font-size:11.2pt; padding:14mm 16mm}
+  main{max-width:none; box-shadow:none; padding:0; margin:0}
+  h1{break-after:avoid; page-break-after:avoid}
   h2{break-after:avoid; page-break-after:avoid}
-  .say,.note,blockquote,table,li{break-inside:avoid; page-break-inside:avoid}
+  table{break-inside:auto; page-break-inside:auto}
+  tr,td,th{break-inside:avoid; page-break-inside:avoid}
+  .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
   .say{background:#f3f7f5}
   footer{border-top:1px solid #ccc}
+  pre.code{font-size:8pt; border-color:#ccc}
+  a[href]::after{content:""}
 }
 """
 
@@ -166,6 +178,17 @@ def convert(md: str) -> tuple[str, list[str]]:
             else:
                 flush_para()
             i += 1
+            continue
+
+        if stripped.startswith("```"):
+            flush_block() if block else flush_para()
+            i += 1
+            chunk = []
+            while i < len(lines) and not lines[i].strip().startswith("```"):
+                chunk.append(lines[i])
+                i += 1
+            i += 1
+            body.append('<pre class="code"><code>%s</code></pre>' % escape("\n".join(chunk)))
             continue
 
         if stripped in ("**SAY**", "**NOTE**"):
@@ -260,10 +283,21 @@ def convert(md: str) -> tuple[str, list[str]]:
     return (title or TITLE_FALLBACK), body
 
 
+def strip_front_matter(md: str) -> str:
+    """Drop a leading YAML block before converting.
+
+    The gate needs front matter on a document (`deliverable`, `profile_checked` and the rest),
+    and the reader does not. Without this the block is converted as prose and appears at the
+    top of the page as a paragraph beginning `deliverable:`, which is metadata leaking into a
+    deliverable and breaks the rule that every paragraph ends in terminal punctuation.
+    """
+    return re.sub(r"\A---\s*\n.*?\n---\s*\n", "", md, count=1, flags=re.S)
+
+
 def build(src: str, dest: str, title_override: str | None, subtitle: str | None) -> None:
     with open(src, encoding="utf-8") as fh:
         md = fh.read()
-    title, body = convert(md)
+    title, body = convert(strip_front_matter(md))
     if title_override:
         title = title_override
     stamp = subtitle or ""

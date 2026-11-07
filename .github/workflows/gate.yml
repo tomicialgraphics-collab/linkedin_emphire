@@ -1,0 +1,85 @@
+name: gate
+
+# The pipeline enforces itself. Three jobs:
+#   1. the generated docs match the registries (nobody hand-edits 20-RULES.md)
+#   2. every deliverable under contract passes the gate
+#   3. the gate itself still works on a known-bad file, so a broken check is loud
+#
+# A failure here is not a failed build. It is a file that would have shipped
+# wrong.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  registries:
+    name: registries render cleanly
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: render from the registry
+        run: python3 linkedin_emphire/TOOLING/pipeline.py render
+      - name: generated docs must match the registry
+        run: |
+          if ! git diff --quiet -- linkedin_emphire/PIPELINE/ linkedin_emphire/MAP.md; then
+            echo "PIPELINE docs or MAP.md are out of date."
+            echo "Run: python3 linkedin_emphire/TOOLING/pipeline.py render"
+            git diff --stat -- linkedin_emphire/PIPELINE/ linkedin_emphire/MAP.md
+            exit 1
+          fi
+
+  gate:
+    name: deliverables pass the gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: audit every live deliverable
+        run: python3 linkedin_emphire/TOOLING/pipeline.py audit
+      - name: upload the scoreboard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gate-report
+          path: linkedin_emphire/STATE/GATE-REPORT.md
+
+  self-test:
+    name: the gate still bites
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: a known-bad file must fail the gate
+        run: |
+          cat > /tmp/bad.md <<'EOF'
+          ---
+          deliverable: post
+          id: 2026-01-01_bad
+          date: 2026-01-01
+          audience: public
+          status: draft
+          template: T99
+          headline: Have you ever wondered what happens when a vendor passes the audit?
+          subheadline: A very long subheadline that pushes this pair past the two hundred character limit which means nobody reads the end of it before the cut lands on the line.
+          box: SOC 2
+          hashtags: [#MadeUpTag]
+          ---
+          Have you ever wondered what happens when a vendor passes the audit?
+          We leverage a robust harness — at tomicialgraphics, see C:\Users\USER\Desktop.
+          #MadeUpTag
+          EOF
+          if python3 linkedin_emphire/TOOLING/gate.py /tmp/bad.md --quiet; then
+            echo "the gate passed a file it should have blocked"
+            exit 1
+          fi
+          echo "gate blocked the known-bad file, as it should"

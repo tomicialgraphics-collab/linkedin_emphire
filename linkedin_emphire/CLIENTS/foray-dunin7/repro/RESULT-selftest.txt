@@ -1,0 +1,21 @@
+rotated-chain-seam: as shipped                 VALID                check=-   
+rotated-chain-seam: tail record removed        VALID                check=-   
+rotated-chain-seam: head record removed        VALID                check=-   
+rotated-chain-seam: history emptied            MATERIAL_UNAVAILABLE check=10  stream_context present and no stream history supplied
+rotated-chain-seam: declared prev_tx_hash falsified INVALID              check=10  declared prev_tx_hash contradicts history record at seq_no 0
+N10: as shipped                                INVALID              check=10  stream continuity walk found FORK at seq_no 1
+N10: tail record removed                       VALID                check=-   
+N10: head record removed                       VALID                check=-   
+N10: history emptied                           MATERIAL_UNAVAILABLE check=10  stream_context present and no stream history supplied
+N10: declared prev_tx_hash falsified           INVALID              check=10  declared prev_tx_hash contradicts history record at seq_no 0
+SYNTH extent 0..412, history 0..412, head matches VALID                check=-   
+SYNTH extent 0..412, history 0..412, head falsified INVALID              check=10  history head contradicts anchored head_hash at seq_no 412
+SYNTH extent 0..412, history 0..400            MATERIAL_UNAVAILABLE check=10  history covers 0..400, anchored extent is 0..412
+SYNTH extent 0..412, history 300..412          MATERIAL_UNAVAILABLE check=10  history covers 300..412, anchored extent is 0..412
+SYNTH extent 0..412, history [412]             MATERIAL_UNAVAILABLE check=10  history covers 412..412, anchored extent is 0..412
+SYNTH extent 0..412, history []                MATERIAL_UNAVAILABLE check=10  no stream history supplied for anchored extent 0..412
+
+16 cases run against /tmp/foray/selftest
+Group A cases hold the bundle valid and vary only the history.
+Group B cases are synthetic: the vector pack ships no bundle with both a
+stream_context and a populated segment extent.

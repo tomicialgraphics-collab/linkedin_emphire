@@ -1,0 +1,49 @@
+Evelyne-Claudia,
+
+Four qualifications, and all four are right. Two of them changed code, and one changed a sentence of mine rather
+than a word.
+
+The first is the sharper one. Sorting keys and comparing parsed objects establishes equal JSON values, not the
+same bytes, and my sentence said byte-identical while the instrument measured something weaker. The runner now
+keeps the bytes: the imported runner's call reads them and throws them away, so a recorder performs the identical
+socket read and retains what was read, with the imported file's hash verified before it is imported. Both refused
+replies are 90 bytes and hash to the same value, and the retried replies match each other in the same way. So the
+stronger claim now rests on the socket. It was true before, and it was unsupported before, and those are different
+things.
+
+The second one went against me. Comparing complete host records rather than kinds, the first run reports them as
+different. Every field agrees except the action id I assigned to each cell and the problems string that quotes it.
+That is my fixture, not the system: I gave two cells different identities and compared their fingerprints. Re-run
+with both cells carrying the same action id, the records are identical in every field. So the sentence about the
+host failing to separate the two refusals was broader than any measurement I had, and it is now licensed only for
+two runs carrying the same action id. Both runs ship, and the one that fails is there for a reason.
+
+The count is renamed to acknowledged verdict requests and kept apart from the durable records: one against none
+acknowledged, two against none durable. The first is what the store told the caller it had accepted. The second is
+what survives a restart and can be put in front of an auditor.
+
+For reproduction, the earlier runner is named as bytes rather than as a description: F9b-conflict-write.py, 17,594
+bytes, SHA-256 991e9eec09c291bf0179b6677577c5929b688df0b2b2c10fea2cc163d669e891, and the new runner refuses to import
+it if the hash differs. The benchmark sources travel in the same archive, matching the three hashes. Unpacked and
+run as the instructions say, the archive reproduces its own result file with the same hash I am sending, which is a
+check you can make in one command without trusting my transcript.
+
+Wire, host, records and state are now separate sections, and each surface names the file, the function and the hash
+that produced it.
+
+On the guard, your framing is the correct one and I have adopted it. A comment-only change should fail a
+byte-identity check, and its refusal is the guard working rather than a false positive. The question worth keeping
+is whether a tree that is genuinely identical can be made to fail. If you find one, the guard is what is wrong.
+
+Both candidate principles are retained as candidate principles, and the second one names the mistake I made twice
+in this thread. Observational equivalence at one surface does not establish equivalence across consequential state.
+A refusal is not fully examined until its response, its durable effects and the subsequent state are considered
+separately.
+
+It is here: https://drive.google.com/file/d/1TT1vkxbZOwcLf9Nq7_DuKqxtgblgMcTV/view?usp=drivesdk and the
+archive is 35,857 bytes, SHA-256 29593fbc1f57a67325430de22d9578d7402d816178a94ff8437d02ec56dac706, with Drive
+reporting the same checksum for the copy it holds.
+
+Reproduction remains yours, and nothing here upgrades the evidentiary status of the result.
+
+Timothy

@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "updated": "2026-11-06",
+  "note": "The fourteen templates from DAILY CONTENT/post_templates.txt, as data. A post names one ID. PIPELINE/30-TEMPLATES.md is rendered from this file. Never use the same template two days running, and never invent a fifteenth.",
+  "source": "DAILY CONTENT/post_templates.txt",
+  "rotation_rules": [
+    "Never the same template two days in a row.",
+    "Mix technical with personal and wisdom in any week.",
+    "Every bracket gets a specific detail, never a placeholder.",
+    "Every post ends on a statement. The template's closing question is optional and usually cut."
+  ],
+  "templates": [
+    {
+      "id": "T1",
+      "name": "Technical deep-dive",
+      "family": "technical",
+      "shape": ["problem", "common misconception", "the reality", "what works (3 arrows)", "the part nobody tells you", "flat takeaway"],
+      "use_when": "There is a mechanism most readers get wrong and you can show the correct one.",
+      "lane_fit": "high",
+      "note": "The default template for this lane. Fixes the question and ends on a statement."
+    },
+    {
+      "id": "T2",
+      "name": "Personal story",
+      "family": "personal",
+      "shape": ["time reference", "what happened", "what it cost or taught", "the line that sticks"],
+      "use_when": "A real thing happened to you and the lesson is carried by the event, not a list.",
+      "lane_fit": "medium",
+      "note": "Only with a real event on a real date. No composite stories."
+    },
+    {
+      "id": "T3",
+      "name": "Life coaching",
+      "family": "wisdom",
+      "shape": ["the pattern", "why it persists", "the shift", "one instruction"],
+      "use_when": "Advice to the reader about how they work, not about the technology.",
+      "lane_fit": "low",
+      "note": "Off-lane. Use sparingly and never in a week with a client deliverable."
+    },
+    {
+      "id": "T4",
+      "name": "Leadership lesson",
+      "family": "wisdom",
+      "shape": ["a decision", "the pressure around it", "what was learned", "what to copy"],
+      "use_when": "A decision had a cost and the reasoning transfers.",
+      "lane_fit": "medium",
+      "note": "Works when the decision is technical and the lesson is organisational."
+    },
+    {
+      "id": "T5",
+      "name": "Faith-inspired wisdom",
+      "family": "wisdom",
+      "shape": ["a principle", "where it shows up in work", "the practice"],
+      "use_when": "Only if the owner asks for it. Not a default.",
+      "lane_fit": "off",
+      "note": "Never auto-selected for this lane."
+    },
+    {
+      "id": "T6",
+      "name": "Observational insight",
+      "family": "observation",
+      "shape": ["a thing you noticed", "why it is not trivial", "what it means for the reader"],
+      "use_when": "The post's value is noticing, not building.",
+      "lane_fit": "high",
+      "note": "Pairs well with a screenshot or a small real artefact."
+    },
+    {
+      "id": "T7",
+      "name": "Educational framework",
+      "family": "framework",
+      "shape": ["the mess", "the named framework", "one worked example", "where it breaks"],
+      "use_when": "You have three to five named steps worth remembering.",
+      "lane_fit": "high",
+      "note": "The framework must be yours, not a paraphrase of someone else's."
+    },
+    {
+      "id": "T8",
+      "name": "Book lesson",
+      "family": "reading",
+      "shape": ["the book and the line", "what it changed", "the application"],
+      "use_when": "A specific passage does work that your own words cannot.",
+      "lane_fit": "medium",
+      "note": "Quote short, attribute exactly, never at length."
+    },
+    {
+      "id": "T9",
+      "name": "Opinion piece",
+      "family": "argument",
+      "shape": ["the position", "the strongest counter-argument", "why it fails", "the consequence"],
+      "use_when": "There is a fight worth having and you can name the other side fairly.",
+      "lane_fit": "high",
+      "note": "Concede first. Never strawman."
+    },
+    {
+      "id": "T10",
+      "name": "Fictional parable",
+      "family": "narrative",
+      "shape": ["a short scene", "the turn", "the point"],
+      "use_when": "Almost never. Only when the point cannot be made truthfully any other way.",
+      "lane_fit": "low",
+      "note": "Must be labelled as a story, never passed off as a real event."
+    },
+    {
+      "id": "T11",
+      "name": "Behind the scenes",
+      "family": "process",
+      "shape": ["what you were doing", "the friction", "the fix", "what it cost"],
+      "use_when": "The work itself is the content and there is a real artefact to show.",
+      "lane_fit": "high",
+      "note": "Best with a run log, a diff, or a screenshot from the actual work."
+    },
+    {
+      "id": "T12",
+      "name": "Inspirational narrative",
+      "family": "narrative",
+      "shape": ["the low point", "the turn", "the climb", "the open door"],
+      "use_when": "Milestone posts only, and only with dates and real numbers.",
+      "lane_fit": "low",
+      "note": "Highest risk of hype. Gate on R06 before it ships."
+    },
+    {
+      "id": "T13",
+      "name": "Volunteering and community",
+      "family": "community",
+      "shape": ["the group", "the contribution", "what it taught"],
+      "use_when": "A real community contribution happened.",
+      "lane_fit": "low",
+      "note": "Off-lane unless it is a conference or an open-source contribution."
+    },
+    {
+      "id": "T14",
+      "name": "Conversation starter",
+      "family": "question",
+      "shape": ["the question", "your own answer first", "the re-ask"],
+      "use_when": "You want comments more than reach, and you answer first and honestly.",
+      "lane_fit": "medium",
+      "note": "Violates R15 if the post is a bare question with no statement in it. Answer first, then ask."
+    }
+  ]
+}

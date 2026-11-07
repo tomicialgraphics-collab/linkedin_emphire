@@ -1,0 +1,16 @@
+Evelyne-Claudia,
+
+The case is one page, and it is here: https://drive.google.com/file/d/1mIgzlK6M4iR2nn4RqGtEkqldODR90Zbe/view. It carries the mechanism, the table of expected and observed, the limits, and every hash that goes with them.
+
+To rerun it, the script, its output and the evidence file travel in one package: https://drive.google.com/file/d/1LTqSEcHlw7XpfIp_tmMz-c-7ju068ZvW/view. SHA-256 of the page is dbe38e1c0976538e625b29af040c4d9fd1c03779a96b184a87428b75eceec68d, and of the package 3b961f288e01f56ead9edc620192a773c7b2fb68ef09917fae85bcd8d3ca1ed1. Both were downloaded again and hashed after upload, so the bytes you pull are the bytes I measured.
+
+F9b, from the benchmark. One store command writes two records: the verdict, then the annotation recording that two different verdicts exist for one action id. I widened the benchmark's own failpoint so that the annotation is the write which gets refused, and ran four cells. Control and injected, each once through the wire so the reply is captured verbatim, and each with the real host process so the effect decision is the host's.
+
+Three things it shows. The reply says nothing is durable while both verdict records are on disk and fsynced. A governance condition reaches the host as a storage failure, and the two send an operator to different places. The annotation is lost, rule text and sequence links both, while the state is not, because replay recomputes it from the two differing verdicts.
+
+One thing it does not, and this is your correction rather than mine. The host emits the same three events with the same reason in both worlds. Governing effect was not contradicted. My earlier sentence was wrong and I have withdrawn it in the file, where the withdrawal can be read rather than taken on my word.
+
+The page states its limits, including the ones that make it smaller than it looks. The reproduction takes the benchmark folder and nothing but the standard library, and it exits 2 and names the assertion when the world differs from the page.
+
+With my best regards,
+Olusanya

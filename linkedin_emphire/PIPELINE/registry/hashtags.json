@@ -1,0 +1,98 @@
+{
+  "version": 2,
+  "updated": "2026-11-06",
+  "note": "Verified hashtag registry. A tag is only usable if it is in the verified list below with evidence. R12 blocks anything else. No follower counts, ever: LinkedIn serves hashtag pages only to signed-in sessions, so counts cannot be verified from here and an unverifiable number is a fabricated number under R06.",
+  "verification_method": "Search for live posts using the tag together with a second tag from this lane, and record who was posting. Tags seen in use by practitioners in AI evaluation, AI security and agent engineering count. A tag appearing only in a marketing campaign does not.",
+  "rules": [
+    "Three to five tags, on the final line of the post.",
+    "Never more than five. Never fewer than three.",
+    "Mixed register: at least one security tag and at least one evaluation tag where the post supports it.",
+    "A tag added here needs a date, a lane, and one line of evidence. No evidence, no entry."
+  ],
+  "verified": [
+    {
+      "tag": "#AISecurity",
+      "lane": "security",
+      "verified": "2026-11-06",
+      "evidence": "Used by security engineers and architects posting on prompt injection and agent tooling. Seen alongside #AIRedTeam in the same posts."
+    },
+    {
+      "tag": "#AIRedTeam",
+      "lane": "security",
+      "verified": "2026-11-06",
+      "evidence": "Used by a security engineer on a prompt-injection post and a security architect sharing a red-team tool. Small, precise tag, high relevance."
+    },
+    {
+      "tag": "#AIEvaluation",
+      "lane": "evaluation",
+      "verified": "2026-11-06",
+      "evidence": "Used in an evaluation-tooling launch and by a regional AI evals meetup post."
+    },
+    {
+      "tag": "#AIGovernance",
+      "lane": "governance",
+      "verified": "2026-11-06",
+      "evidence": "Seen in the same result set as #AISecurity, used by policy and governance writers."
+    },
+    {
+      "tag": "#AIAgents",
+      "lane": "agents",
+      "verified": "2026-11-06",
+      "evidence": "High volume. Seen on agent-evaluation posts from practitioners with 300 followers to 4K followers."
+    },
+    {
+      "tag": "#AIEngineering",
+      "lane": "engineering",
+      "verified": "2026-11-06",
+      "evidence": "Seen on agent-trace evaluation posts and on a production-agent verification thread, both by working engineers."
+    },
+    {
+      "tag": "#AgentEvaluation",
+      "lane": "evaluation",
+      "verified": "2026-11-06",
+      "evidence": "Used with #AIAgents and #AIEngineering by an enterprise-AI writer running a series on agent verification."
+    },
+    {
+      "tag": "#LLMEvaluation",
+      "lane": "evaluation",
+      "verified": "2026-11-06",
+      "evidence": "Seen with #AIEngineering #AIAgents on an agent-trajectory evaluation post."
+    },
+    {
+      "tag": "#AIEvals",
+      "lane": "evaluation",
+      "verified": "2026-11-06",
+      "evidence": "Seen on a post about shipping agents with no eval harness."
+    },
+    {
+      "tag": "#SoftwareEngineering",
+      "lane": "engineering",
+      "verified": "2026-11-06",
+      "evidence": "Highest-volume general tag in the repo's own past posts and still in daily use by engineers posting technical content."
+    },
+    {
+      "tag": "#MachineLearning",
+      "lane": "ml",
+      "verified": "2026-11-06",
+      "evidence": "General-purpose ML tag, in continuous use. Broad, low precision, acceptable as one of four."
+    }
+  ],
+  "blocked": [
+    {
+      "tag": "#AISafety",
+      "reason": "Used once in an older draft with no evidence recorded. Re-verify before use; the label also invites a safety-versus-security argument the lane does not need."
+    },
+    {
+      "tag": "#OpenToWork",
+      "reason": "Signals availability. The owner is employed and the positioning is practitioner, not candidate."
+    },
+    {
+      "tag": "#Hiring",
+      "reason": "Invites recruiter traffic that does not match the lane."
+    },
+    {
+      "tag": "#ArtificialIntelligence",
+      "reason": "Too broad to place the post, and it drags in engagement-farm traffic."
+    }
+  ]
+}

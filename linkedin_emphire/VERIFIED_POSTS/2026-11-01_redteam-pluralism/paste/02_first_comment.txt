@@ -1,0 +1,7 @@
+The objection this usually gets is that a red team without a single verdict is a red team that never blocks.
+
+It still blocks. Consensual harm is a bigger set than people assume, and it gates exactly as it did before. What changes is the contested half, which stops pretending the verdict came from nowhere.
+
+One practice that costs nothing: put the rubric's author on the rubric. A name, a date, and the position they held while scoring. Every contested pass then becomes a decision somebody made, and the next reader can disagree with a person instead of with a document.
+
+A rubric with no author is not neutral. It is unattributed.

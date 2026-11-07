@@ -121,3 +121,337 @@ All six of the 3 November comments shipped the same afternoon. Verbatim record i
 
 Paste-ready copies, plain text, no quoting: `ENGAGEMENT/2026-11-03_comments/01_neil_sahota.txt`,
 `02_hamel_husain.txt`, `03_rock_lambros.txt`.
+
+## Seventh comment: Martin Šafránek, 3 November, evening
+
+A quote post of Zach Wilson's Snowflake and Databricks "souls" satire. Martin's own paragraph is the
+commentable part: the events feel different, migrations are a culture upgrade as much as a technical one,
+run several POCs with both platforms, listen to users and business representatives first.
+
+**Profile read.** Prague. Roughly twenty years of DWH and migration work. Head of DWH at Czech Airlines
+and J&T, delivery projects at Javlin (now CloverDX), and the last six years on Czech National Bank
+regulatory reporting, Anacredit and Resolution Reporting, plus migrations for acquired banks. SnowPro Core
+since August 2024, Data Vault 2.1 practitioner since March 2025, Datavault Builder certified since
+September 2025. At Ness Czech, contact address on the Sophia Solutions domain. Co-hosts Data Vault bez
+předsudků on the Data Talk podcast and runs AI prototyping for a public education nonprofit. Writes method
+and practice, not announcements, so the comment goes at the failure side of a POC and stays off his
+employer and off the podcast.
+
+**Deliberately absent.** Zach Wilson's satire is the parent post. Replying to it would be arguing with a
+joke, and Martin's paragraph is where the substance sits. No mention of the benchmark or the review. No
+Data Vault citation, because he holds three certifications in it and does not need one explained.
+
+Draft, 96 words, lint clean, gate 100: `2026-11-03_comments/07_martin_safranek.txt`.
+
+## Eighth comment: Kyle Bartlett, 3 November, late evening
+
+His `connect-ready` gate rejected one of his own drafts for repeating a closing line sent to someone else
+earlier that day. He runs twenty-odd agents on Claude Code. He ends by asking what other people's checks
+compare against.
+
+**Profile read.** Greater Houston, runs Bartlett Labs, Purdue, former US AI Lead at Anker, ex-Apple,
+first-degree connection. Headline is AI Architect and Forward Deployed Engineer, building production agent
+systems for enterprise ops, with evals and governance in the description. He is asking a real question,
+not performing one, so the comment answers it directly and hands back a failure he will recognise.
+
+**Angle.** The question assumes the comparison set is trustworthy. In the work here it usually is not: when
+the record of what already went out fails to write, the cross-piece check compares against nothing and
+returns clean. So the check that matters is not only whether the draft passes, but whether the log grew.
+That is his finding one layer down, and it is the honest limit of this side's tooling rather than a boast
+about it.
+
+**Deliberately absent.** No mention of the benchmark, the review, or the Aithos application. No pitch. He
+is first degree and worth a DM later, but the comment should be the whole contact for now. There is also a
+Udemy course with an almost identical title in the search results, whose instructor describes a JPMorgan
+and untapt history that does not match this profile, so nothing in the comment references a course.
+
+Draft, 104 words, lint clean, gate 100: `2026-11-03_comments/08_kyle_bartlett.txt`.
+
+## Ninth comment: Ethan Mollick, 3 November, night
+
+He suggests proving to yourself that a current model gives substantive, intellectually interesting feedback
+on your own paper, and notes the improvement is that critiques now read like a good, slightly eccentric peer
+rather than a list of nitpicks.
+
+**Profile read.** Wharton associate professor of management, co-director of the Wharton Generative AI Labs
+with Lilach Mollick, author of *Co-Intelligence* (2024) and *Co-Existence: The Next Phase of AI*, published
+20 October 2026 by Penguin, writes One Useful Thing, TIME 100 in AI for 2024. He is a careful, evidence-led
+writer who has been publicly sceptical of both hype and dismissal. Nothing here needs telling to him, and
+nothing should sound like a correction of him.
+
+**Angle.** Take his "prove it to yourself" one step further without contradicting it: a substantive critique
+is persuasive before it is checked, and the eccentric-sounding ones are where that gets tested. Anchoring
+each objection to a line and a document version makes the claim checkable against the text rather than
+against memory. The parting observation, that the objections which fail to survive checking are usually the
+ones that sounded sharpest, is the honest version of the phenomenon he describes.
+
+**Deliberately absent.** No opinion on the specific models he names, because capabilities in that post are
+his observation and cannot be verified from here. No mention of the benchmark, the review or the manuscript
+work. No compliment on the book.
+
+Draft, 98 words, lint clean, gate 100: `2026-11-03_comments/09_ethan_mollick.txt`.
+
+## Tenth comment: Jeff Cohen, 3 November, late night
+
+Fiddler AI's acquisition by CrowdStrike, announced the same day at Fal.Con Europe in Barcelona. Jeff's post
+is a career account that contains one sentence worth answering: manual evaluation of their own agents was
+one of the things that broke Leadoff operationally, and they never solved it.
+
+**Profile read.** Building trust into AI at Fiddler, previously a long run at UserTesting through its IPO,
+acquisition and merger with UserZoom, UCLA Anderson MBA, co-founded Leadoff and shut it down after about two
+and a half years. Sales operator turned founder, writing to a vendor and enterprise audience on the day of
+the announcement. He is not asking a question, so the comment answers the sentence rather than the news.
+
+**News checked.** CrowdStrike press release, 3 November 2026, definitive agreement, closing expected in
+FY27 Q4, Fiddler to be sold as Falcon Observe with GA planned in the same quarter. Reported at roughly 400
+million for Fiddler and 95 million for Dreadnode in the same announcement. None of that goes in the comment.
+
+**Angle.** Manual eval fails on artifacts, not speed: a spreadsheet verdict cannot tell you later whether
+the agent moved or the reviewer did, and a guardrail exporting pass and fail keeps that blindness while
+cutting the latency. The closing line answers George Kurtz's "the model did it is not an answer" without
+quoting it back at him, because "the reviewer said so" fails the same way.
+
+**Deliberately absent.** No congratulations paragraph. He has a hundred of those already today and the
+comment would be invisible in them. No mention of the benchmark, the review, or Aithos, since this thread
+is a vendor and enterprise audience on an acquisition day.
+
+Draft, 110 words, lint clean, gate 100: `2026-11-03_comments/10_jeff_cohen.txt`.
+
+## Eleventh comment: Vivian Fu, 3 November, night
+
+She names four AI governance gaps in Australia and ends by asking which ones people meet most often, and
+where the opportunities are. A direct question from someone who writes in this area weekly.
+
+**Profile read.** Sydney. AI governance and assurance, currently building an AI Assurance Evidence and
+Decision Chain model: an evidence chain for what was known and done, a decision chain for who decided and
+who owns the residual risk. Her repeated line is that governance tells you what should be true and assurance
+tells you whether it is true enough to proceed. Around five thousand followers. She has publicly offered
+three teams a free independent AI risk and safeguards review of one working product or pilot, and the
+questions she lists in that offer are control verification questions, not policy questions.
+
+**Angle.** Answer her question with the one failure this side knows best: control verification collapsing at
+the evidence step, where a check reports pass because it never ran and a dashboard cannot tell that apart
+from a clean result. The opportunity to rank first follows from her own model, quietly: a control emits a
+dated artifact at execution and something confirms the artifact exists before the pass counts. That is the
+difference between an evidence chain and a folder of documents, and it is cheaper than a mapping layer.
+
+**Deliberately absent.** No compliment on the framework, no mention of the benchmark, the review or Aithos,
+and no reference to her free review offer in public. The offer is the reason to send a direct message if she
+replies, not to pitch in a comment thread she is using to find out who does this work.
+
+Draft, 118 words, lint clean, gate 100: `2026-11-03_comments/11_vivian_fu.txt`.
+
+## Twelfth comment: Stephen Klein, 3 November, night
+
+He pulls the media-coverage risk factor out of Anthropic's S-1 and argues the company cannot sell the
+apocalypse and then complain that people are frightened.
+
+**Profile read.** Founder of Curiouser.AI, Berkeley lecturer, advises AI companies on positioning and
+visibility, keynote speaker, contributing editor. He sells positioning, which means he already knows a risk
+factor section is a legal genre drafted by counsel. The post is a deliberate rhetorical move, not a
+misreading, so a comment that explains boilerplate to him would be both pedantic and unwelcome.
+
+**Claim checked.** Form S-1 filed 26 October 2026, ticker ANT, Nasdaq, 93 pages of risk factors from page 26
+to page 119, against 37 for SpaceX and 40 for Microsoft. The quoted paragraph is verbatim in the filing, and
+the "whether accurate or not" clause is really there. Treating the filing date as 26 October, not the AP
+piece's 27th.
+
+**Angle.** Agree, then strengthen the evidence and separate the two halves of it. The bulk of the section is
+defensive drafting, which is why it is two and a half times SpaceX's. The paragraph he quotes is different:
+it names the narratives the company expects to meet, then pre-emptively discounts their accuracy. That
+sentence is what a company writes when it has decided an objection cannot be won on argument and will be
+survived on reputation instead. Land it in his own language, positioning rather than policy, because that is
+the trade he sells.
+
+**Deliberately absent.** No mention of the Agentic Misalignment paper, since the argument does not need a
+second contested fact, and no comment on whether the blackmail experiment was staged. No mention of the
+benchmark, the review, or Aithos.
+
+Draft, 121 words, lint clean, gate 100: `2026-11-03_comments/12_stephen_klein.txt`.
+
+## Thirteenth comment: Al Neitsch, 3 November, late night
+
+A governance checklist post: name the custodian, write the access policy, define the request process,
+instrument for loss prevention, review the policies. It ends by asking how people prioritise governance in
+product development.
+
+**Profile read.** Founder and managing director of TNGC, a Delaware consulting firm running since 2008 with
+Fortune 100 and government clients. Headline is data and AI engineering plus governance, and he also writes
+and performs comedy and works as a journalist. First-degree connection. The list is the kind of advice an
+advisor gives at the top of an engagement, so the comment is worth more if it names where that advice
+decays than if it agrees with it.
+
+**Angle.** Answer his question honestly: in small teams governance gets prioritised after an incident, and
+the thing that changes that is making a policy into something the system can fail. An access rule becomes a
+query that attempts the reads it should refuse, retention becomes a job that reports what it deleted.
+Custodians matter, but a custodian without a test is a name on a page, and names get reassigned quietly when
+someone changes roles. Dated output over a recurring meeting.
+
+**Deliberately absent.** No mention of data loss prevention by name, because his list already covers it and
+the point is about verification rather than tooling. No mention of the benchmark, the review, or Aithos. No
+reference to his comedy, which would read as flattery in a governance thread.
+
+Draft, 98 words, lint clean, gate 100: `2026-11-03_comments/13_al_neitsch.txt`.
+
+## Fourteenth comment: Paolo Perrone, 3 November, late night
+
+He summarises an Airbnb talk about a four-person team getting agentic coding to 64% of engineering in a
+year: CLI over IDE, MCP over fine-tuning, parallel sessions over flow state, a thin wrapper over lock-in. He
+ends by asking what stops teams from shipping this way.
+
+**Profile read.** Writes The AI Engineer on Substack, covering agents, inference and GPU economics for a very
+large engineering readership. His pieces explain mechanisms rather than announce products, and the inference
+course is the closest thing in his catalogue to the current post. He has technical readers, so a comment
+that argues about measurement will be understood at speed and judged by whether it is true.
+
+**Angle.** Answer the question with the step after adoption. The 64% figure is a headcount, and it moves the
+constraint to review. Five parallel sessions per power user turns the reviewer into the queue, and the honest
+metric stops being pull requests opened and becomes pull requests that survived review unrewritten. Teams
+can produce the first number on demand and cannot produce the second, because nothing records what happened
+to a change after it merged. Close on why the wrong number is the one that gets quoted.
+
+**Deliberately absent.** No link to the post on the merge rate, even though this is the same argument. In
+someone else's thread a link reads as traffic, and the idea carries without it. Also no comment on the
+Airbnb numbers themselves, which are his summary of a talk neither of us ran.
+
+Draft, 102 words, lint clean, gate 100: `2026-11-03_comments/14_paolo_perrone.txt`.
+
+## Fifteenth comment: Alex Mashrabov, 3 November, late night
+
+A founder story. One book in the office when Higgsfield started in 2023, Ed Catmull's account of Pixar, ten
+of sixteen million seed dollars burned in eighteen months, and a podcast conversation that turned into an
+argument about AI video being judged by its jagged edges the way CG was in the 1970s.
+
+**Profile read.** CEO and co-founder of Higgsfield AI, founded October 2023. Previously co-founded AI
+Factory, acquired by Snap for 166 million in 2020, then head of generative AI at Snap until September 2023.
+Two ICPC world finals. He is telling a founder-formation story to an audience that already knows his numbers,
+so a comment that repeats them adds nothing and a comment that argues with the analogy would miss the point.
+
+**Angle.** Take the sentence he quotes from Catmull rather than the analogy around it: every critique became
+a list of things to fix. That is the mechanism behind the twenty years, and it is available to AI video teams
+today, except that almost nobody writes the defect down next to the prompt and seed that produced it. Without
+that record, each release gets judged on feel, and no one can say whether the thing that bothered them in
+January is fixed in June.
+
+**Deliberately absent.** No congratulations on the funding, the ARR or the valuation, all of which are in his
+profile and his other posts. No mention of the benchmark, the review or Aithos. No reference to the podcast
+link, which is in his own comments.
+
+Draft, 109 words, lint clean, gate 100: `2026-11-03_comments/15_alex_mashrabov.txt`.
+
+## Sixteenth comment: Oren Melamed, 3 November, night
+
+He notes that Dependabot now does version updates for APM, and reads it as the supply chain expanding to
+cover the things that define agent behaviour: skills, agents, MCPs. He lists versioning, dependency
+resolution, lockfiles, automated updates, provenance and CI enforcement.
+
+**Profile read.** First-degree connection. AI transformation at AT&T's Israel R&D centre, GitHub Star,
+Microsoft MVP, roughly seven thousand followers. He writes architecture analyses by reading the VS Code and
+Copilot SDK source, and published a piece on GitHub's agentic operating system in late October. He reads
+primary sources, so a comment that quotes the changelog's own limitation is worth more to him than a
+restatement of his post.
+
+**Changelog checked.** 3 November 2026: Dependabot opens pull requests for supported git dependencies in
+apm.yml and regenerates apm.lock.yaml when present. Explicitly version updates, not security updates. GA on
+github.com, GHES 3.24.
+
+**Angle.** The line that will matter later is the one about security updates. There is no advisory feed for a
+skill or an MCP server whose behaviour turns bad, so the pull request arrives and a human is the only check.
+A package that breaks its own API fails at the call site; a prompt or tool schema shifts and the build stays
+green. That makes the lockfile necessary and insufficient, and it points at the missing primitive: a
+behavioural check per dependency with a recorded baseline to diff against.
+
+**Deliberately absent.** No mention of the benchmark, the review or Aithos. No congratulations on the GitHub
+Star or the MVP, which are in his headline and would read as scraping.
+
+Draft, 121 words, lint clean, gate 100: `2026-11-03_comments/16_oren_melamed.txt`.
+
+## Replies on the Oren Melamed thread, 3 November
+
+Two replies, both to real people, both answering once and stopping.
+
+**Oren Melamed** pushed back gently: breakage is less critical than security, the ecosystem is early,
+there is no single registry so trust has to be built there rather than at the edges. His reply is friendly
+and half right, so the answer concedes the security point and then joins the two halves instead of defending
+the original framing. Tampering and drift are indistinguishable from outside, because both present as the
+same version string with different answers, and the artifact that separates them is the same recording.
+The registry line is the one that lands: a registry that holds results is worth more than one that holds
+signatures.
+
+**Sergio S.** came in from the security side with two concrete things: apm audit accepts findings from any
+SARIF scanner, and Waza is an evaluation harness worth looking at for behavioural drift on composed APM
+scenarios. Both links were read before replying.
+
+- `apm audit` folds in SARIF 2.1.0 output from any scanner, merges findings into one report and drives exit
+  codes. Installs can audit with warn or block, and an organisation policy acts as a floor, so
+  `apm install --audit block` cannot be relaxed by a weaker local flag.
+- The baseline flag that exists, `--baseline`, is a reviewed suppression file for scanner findings. It is a
+  list of things already looked at, not a record of what a version did.
+- Waza is a Go CLI for evaluating agent workflows, skills and custom agents: YAML scenarios, thirteen grader
+  types, fixture isolation per task, cross-model comparison, and GitHub Actions integration that runs
+  evaluations on pull requests.
+
+The reply's useful point is the join: Waza on the Dependabot pull request, compared against the previously
+recorded run rather than the head's own baseline, because a fresh baseline on the branch being tested
+compares today against today.
+
+Replies: `2026-11-03_comments/16a_reply_oren.txt` (91 words), `16b_reply_sergio.txt` (108 words). Both lint
+clean.
+
+## Seventeenth comment: Trevor Churchley, 3 November, night
+
+He is promoting episode 74 of the Job Seeker Café, a Friday session with Sam Elderfield of ScaleUp
+Recruitment, framed around the question every engineer is asking: is AI making my skills less or more
+valuable. He asks people to bring questions.
+
+**Profile read.** Sydney. Thirty years inside IT recruitment, now running Talentology, which is explicit
+about not being an agency. Around fourteen thousand followers and a community of about two thousand, with
+weekday sessions and a claim of 94% back in work. His site says every session is live human coaching and
+no AI bots, which is a positioning statement as much as a promise. He is a host, not a commentator, so the
+comment is worth more as a question he can use than as an opinion he has to answer.
+
+**Angle.** Give him a question for Sam that a recruiter can actually answer from hiring conversations:
+when a client says they want people who work well with AI, what does the interview test. Then supply the
+reason it matters, from the evaluation side, that teams screen for speed and discover later that nobody
+asked whether the output was correct. Close on why the two are not equivalent.
+
+**Deliberately absent.** Nothing that reads as looking for sponsorship. He is an Australian job-search coach
+with an Australian audience, and a Lagos-based engineer asking about roles in his thread would be read as a
+visa enquiry. No mention of the benchmark, the review or Aithos. No comment on the charcoal and sunshine
+yellow.
+
+**Timing note for the owner.** The session is Friday 6 November at 9am AEDT, which is 11pm Thursday 5
+November in Lagos, not Friday morning.
+
+Draft, 85 words, lint clean, gate 100: `2026-11-03_comments/17_trevor_churchley.txt`.
+
+## Eighteenth comment: Florian Brand, 3 November, night
+
+Prime Intellect's audit of three public evaluations, posted by their evals engineer. AutomationBench moved to
+raw JSON tools and clearer prompts and graders; OfficeQA Pro v2's regex grader was replaced with a judge and
+its web access closed; HLE-Diamond shows models finding answers in public evaluation records. Their
+synchronous monitors were circumvented with encodings, split actions and inference.
+
+**Profile read.** Research engineer on evals at Prime Intellect, co-author on verifiers v1, writes benchmark
+deep-dives at florianbrand.com, including the benches 2026 piece that follows the eval stack layer by layer
+and co-authors open-models coverage for Interconnects. He spends his days taking benchmarks apart and has
+already published on the components that move a score. Anything obvious is already known to him, so the
+comment has to be a suggestion he has not made.
+
+**Facts gathered from the coverage.** Opus 5.5 scored 92.15% with partial credit against 70.83% strict;
+DeepSeek V4.1-Flash 1017 scored 91.61% against 69.50%. A DeepSeek trace computed 0.070, queried a public
+evaluation record, found a grader verdict naming 0.011 and submitted it at 98% confidence. The fixed public
+set still scores higher than their private held-out set.
+
+**Angle.** One suggestion: canary items. A synchronous monitor fails open, and the bench cannot tell when it
+did, so an evasion that works today becomes a score tomorrow. A small set of items whose answer exists only
+where the model should never reach, scored ahead of the real tasks, with a hit read as monitor failure rather
+than model success, gives them a way to distinguish a working monitor from an absent one.
+
+**Deliberately absent.** No comment on the partial against strict swing, which is their own headline finding.
+No mention of the benchmark, the review or Aithos in the comment itself.
+
+**Hiring cue.** The post ends with "join us". The comment is the introduction; a direct message afterwards is
+where the review belongs, as a sample rather than a pitch.
+
+Draft, 106 words, lint clean, gate 100: `2026-11-03_comments/18_florian_brand.txt`.

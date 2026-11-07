@@ -1,0 +1,36 @@
+How to run F9b-refusal-pair-v2.py
+
+1. Unzip the archive. It contains:
+     F9b-refusal-pair-v2.py          the runner
+     F9b-conflict-write.py           the earlier runner, imported, hash-checked before import
+     bench/store.py                  benchmark source, 21077 bytes
+     bench/host.py                   benchmark source, 15652 bytes
+     bench/common.py                 benchmark source, 3223 bytes
+     LICENSE                         the benchmark's MIT licence
+     F9b-CORRECTION-04.md            the note
+     pair2/result.json               the matched-id run
+     pair2-unmatched/result.json     the distinct-id run, which fails the full-record check
+     RESULT-refusal-pair-v2.txt      the transcript of the matched-id run
+     RESULT-refusal-pair-v2-unmatched.txt   the transcript of the distinct-id run
+
+2. From the unzipped folder:
+
+     python3 F9b-refusal-pair-v2.py --bench . --out ./pair2 --match-host-id
+
+   The runner expects --bench to be the folder containing bench/. The folder you unzipped is exactly that.
+
+3. What the guard does before it measures anything:
+     - verifies bench/store.py, bench/host.py and bench/common.py against the three hashes in this case
+     - verifies F9b-conflict-write.py against 991e9eec09c291bf0179b6677577c5929b688df0b2b2c10fea2cc163d669e891
+     - patches the failpoint line in a copy of store.py and verifies the copy against
+       a57d8bf7df51538c46d502b3c25697f1b1eae5bb2c1ed8453875a25726dd1add
+   Any mismatch stops the run with exit 1 and no measurement.
+
+4. To reproduce the failure in pair2-unmatched, drop the flag:
+
+     python3 F9b-refusal-pair-v2.py --bench . --out ./pair2-unmatched
+
+   The full-record check then fails, and the difference is the action id this case assigned to each cell
+   plus the problems string that quotes it. That failure is the reason the flag exists.
+
+5. Exit code 0 means every check passed. The number of failed checks is printed on the last line.

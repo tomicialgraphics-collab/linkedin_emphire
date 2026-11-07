@@ -1,0 +1,28 @@
+rotated-chain-seam: as shipped                 VALID                check=-   
+rotated-chain-seam: tail record removed        VALID                check=-   
+rotated-chain-seam: head record removed        VALID                check=-   
+rotated-chain-seam: history emptied            VALID                check=-   
+rotated-chain-seam: declared prev_tx_hash falsified VALID                check=-   
+N10: as shipped                                INVALID              check=10  stream continuity walk found FORK at seq_no 1
+N10: tail record removed                       VALID                check=-   
+N10: head record removed                       VALID                check=-   
+N10: history emptied                           VALID                check=-   
+N10: declared prev_tx_hash falsified           INVALID              check=10  stream continuity walk found FORK at seq_no 1
+SYNTH extent 0..412, history 0..412, head matches VALID                check=-   
+SYNTH extent 0..412, history 0..412, head falsified VALID                check=-   
+SYNTH extent 0..412, history 0..400            VALID                check=-   
+SYNTH extent 0..412, history 300..412          VALID                check=-   
+SYNTH extent 0..412, history [412]             VALID                check=-   
+SYNTH extent 0..412, history []                VALID                check=-   
+SYNTH-C ids agree, history 0..412, head matches VALID                check=-   
+SYNTH-C ids agree, history 0..412, head falsified VALID                check=-   
+SYNTH-C ids agree, history 0..400              VALID                check=-   
+SYNTH-C ids agree, history 0..1 only           VALID                check=-   
+SYNTH-C ids agree, history 300..412            VALID                check=-   
+SYNTH-D declared seq 500 outside segment 0..412 VALID                check=-   
+SYNTH-E segment id and stream_context id differ VALID                check=-   
+
+23 cases run against /tmp/foray/unpatched
+Group A cases hold the bundle valid and vary only the history.
+Group B cases are synthetic: the vector pack ships no bundle with both a
+stream_context and a populated segment extent.

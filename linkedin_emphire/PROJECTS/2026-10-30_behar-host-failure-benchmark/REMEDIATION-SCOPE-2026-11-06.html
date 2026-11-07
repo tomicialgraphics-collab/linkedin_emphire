@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>P2 remediation scope, v0.1</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+pre.code{background:#f6f7f9;border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem;margin:1rem 0;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.code code{background:none;border:0;padding:0;font-size:1em}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  /* Margin 0 collapses the browser's own margin box, which is where Chrome and Edge
+     render the local path and the page counter. Padding on body restores the white
+     space, so the printed page carries the document and nothing else. */
+  @page{size:A4; margin:0}
+  body{background:#fff; font-size:11.2pt; padding:14mm 16mm}
+  main{max-width:none; box-shadow:none; padding:0; margin:0}
+  h1{break-after:avoid; page-break-after:avoid}
+  h2{break-after:avoid; page-break-after:avoid}
+  table{break-inside:auto; page-break-inside:auto}
+  tr,td,th{break-inside:avoid; page-break-inside:avoid}
+  .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+  pre.code{font-size:8pt; border-color:#ccc}
+  a[href]::after{content:""}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>P2 remediation scope, v0.1</h1>
+<p>A proposal for review, 6 November 2026. Nothing in this document is implemented. It sets out what I propose to change for each of S1 to S5, how each row will be shown to close, and what will be kept so that the closure can be checked without taking my word for it.</p>
+<p><strong>Prepared for:</strong> Behar Dalipi, whose review conditions of 5 November are incorporated below.</p>
+<p><strong>The register this responds to:</strong> <code>FINDINGS-REGISTER.md</code>, 13,294 bytes, SHA-256 <code>4413420b45d9312630b1b0e394cb8a09481a5be665135ded1ec4c693156c5c03</code>, at commit <code>fbef78e752f3c6edf3a3e8dffcc1f94ae0dc0e3a</code>, tag <code>p2-register-2026-11-04</code>. That file is not touched by this proposal. The rows move only in a later revision with its own hash.</p>
+<p><strong>Code baseline:</strong> <code>006d7ee</code> on <code>main</code> of the benchmark, applied from the patch whose SHA-256 is <code>96d3e59aa016a534dcb694506ed954b624c1667ea783797b78d80a1169895e09</code>.</p>
+<hr>
+<h2>1. The closure rule, restated with the evidence it now requires</h2>
+<p>Unchanged: a row is closed only when a mode in <code>audit/regressions.py</code> fails without the fix.</p>
+<p>Added, from your P2 closure discipline. Every closed row carries an evidence pack at <code>evidence/p2/&lt;row&gt;/</code> containing:</p>
+<table><thead><tr><th>file</th><th>what it holds</th></tr></thead><tbody><tr><td><code>baseline.log</code></td><td>the mode run against the baseline revision, failing, with exit code</td></tr><tr><td><code>postfix.log</code></td><td>the same mode run against the fix, passing, with exit code</td></tr><tr><td><code>classification.log</code></td><td>the full mode table before and after, so the change can be seen not to touch other rows</td></tr><tr><td><code>revision.txt</code></td><td>commit SHA of the fix, the patch SHA-256, and the baseline SHA</td></tr><tr><td><code>env.txt</code></td><td>Python version, OS, filesystem type of <code>TMPDIR</code>, and whether the run had the optional utilities</td></tr></tbody></table>
+<p>Two rules follow from that, and I would rather state them than assume them. <strong>A milestone finishing is not a row closing.</strong> M1 below finishing means S1 and S2 have modes written; the rows close only when those modes fail on the baseline and pass on the fix, and the evidence pack says so. <strong>S4 does not close on anyone&#x27;s schedule.</strong> It closes when its condition is established on a filesystem that permits it, and not before.</p>
+<h2>2. S1. Persistence and acknowledgement semantics</h2>
+<p><strong>What the code does now.</strong> <code>Store.cmd_verdict</code> in <code>bench/store.py</code> writes the verdict record, then, where the verdict conflicts with an earlier one, writes a second record for the conflict. If the second write raises, <code>Store.handle</code> returns <code>{&quot;ok&quot;: false, &quot;durable&quot;: false}</code>. By then the first record is on disk. The reply denies durability and is silent about which bytes are there.</p>
+<p><strong>What changes.</strong></p>
+<ol><li><strong>Atomicity first.</strong> The verdict and its conflict record are written as one append where the</li></ol>
+<p>conflict applies, so the window between them disappears. One append, one <code>fsync</code>, one outcome. If the framing cannot carry both without changing the record schema, the two stay separate and step 2 carries the whole burden, and I will say which of the two happened.</p>
+<ol><li><strong>Three states, named in the reply, never inferred.</strong> The reply replaces bare <code>durable: false</code></li></ol>
+<p>with a state that reports what was established, not what was hoped:</p>
+<table><thead><tr><th>state</th><th>established how</th><th>what the reply may say</th></tr></thead><tbody><tr><td><code>persisted</code></td><td>every record in the request passed <code>fsync</code> before the reply was sent</td><td><code>durable: true</code>, with <code>store_seq</code> for each record</td></tr><tr><td><code>nothing_written</code></td><td>the append raised, the rollback truncate returned, the length re-read equals the pre-attempt length, and the truncate&#x27;s <code>fsync</code> returned</td><td><code>durable: false</code>, <code>persistence: &quot;nothing_written&quot;</code></td></tr><tr><td><code>partial</code></td><td>some of the request&#x27;s records are on disk and at least one is not</td><td><code>durable: false</code>, <code>persistence: &quot;partial&quot;</code>, <code>records_written: [...]</code></td></tr><tr><td><code>indeterminate</code></td><td>the append raised and the rollback could not be confirmed, or the process died before it could be</td><td><code>durable: false</code>, <code>persistence: &quot;indeterminate&quot;</code></td></tr></tbody></table>
+<p><code>partial</code> is the state S1 in the register describes, and it is not a synonym for failure. It says which records are on disk, which is the only way a caller can act.</p>
+<p><strong>How it is shown to close.</strong> A new mode <code>s1</code>:</p>
+<ol><li>Fresh journal, one verified verdict written and <code>fsync</code>ed.</li><li>Injected failure on the conflict append, using the existing failpoint mechanism extended to</li></ol>
+<p><code>conflict</code>.</p>
+<ol><li>The reply must carry <code>durable: false</code>, <code>persistence: &quot;partial&quot;</code>, and a <code>records_written</code> entry</li></ol>
+<p>naming the first verdict&#x27;s <code>store_seq</code>.</p>
+<ol><li>The journal file is read immediately afterwards: exactly one verdict record for that action id,</li></ol>
+<p>no conflict record.</p>
+<ol><li>The store is restarted on that journal. The boot record&#x27;s <code>replayed_records</code> must equal the number</li></ol>
+<p>of records the reply named, <code>reconcile</code> must still name the gap, and no conflict may appear that the reply did not claim.</p>
+<p>Step 3 fails on the baseline, which is the closure evidence. Steps 4 and 5 are the restart half you asked for: immediacy and recovery are checked separately, because they can disagree.</p>
+<p><strong>Question for you.</strong> Is <code>partial</code> with a record list the shape you want, or would you rather any request that is not wholly durable report <code>indeterminate</code> regardless of what is known? I propose the former because it is more informative, and it is your call.</p>
+<h2>3. S2. Repair provenance</h2>
+<p><strong>What the code does now.</strong> <code>Journal._cut_damaged_tail</code> in <code>bench/store.py</code> copies an unterminated tail into <code>&lt;journal&gt;.quarantine-N.bin</code>, and records <code>file</code>, <code>bytes</code>, <code>sha256</code> and <code>ranges</code> in memory. It writes no journal record. The start-up path in <code>main()</code> does write a <code>repair</code> record, which is why the same cut is announced after a restart and silent during a run.</p>
+<p><strong>What changes.</strong> The runtime cut writes a <code>repair</code> record before the append that triggered it proceeds, carrying the fields the start-up path already writes (<code>discarded_bytes</code>, <code>replayed_records</code>, <code>quarantine</code>, <code>quarantine_bytes</code>, <code>quarantine_sha256</code>) plus the byte range from <code>ranges</code>, and a <code>source</code> field distinguishing <code>runtime_cut</code> from <code>startup_repair</code>. The record is <code>fsync</code>ed. If that append fails, the request that triggered the cut returns <code>persistence: &quot;indeterminate&quot;</code> with <code>repair_record: &quot;not_written&quot;</code>, and <code>state</code> reports the same until a later repair record exists. Silence is not permitted in either direction: not claiming a repair that did not happen, and not completing a cut without saying so.</p>
+<p><strong>How it is shown to close.</strong> A new mode <code>s2</code>:</p>
+<ol><li>Start the store, append a valid record, then leave an unterminated line in the journal while the</li></ol>
+<p>store is running.</p>
+<ol><li>Append a further valid record, which forces the cut.</li><li>The journal must contain a <code>repair</code> record naming the quarantine file, its byte count, its</li></ol>
+<p>sha256, the cut range <code>{start, end}</code>, and <code>source: &quot;runtime_cut&quot;</code>, ordered before the record that forced the cut.</p>
+<ol><li>Restart on that journal: the repair record is replayed, and <code>state</code> reports the quarantine without</li></ol>
+<p>a second repair record being invented.</p>
+<ol><li>Force the repair append itself to fail: the request must report <code>repair_record: &quot;not_written&quot;</code>,</li></ol>
+<p>and no reply may claim the cut was recorded.</p>
+<p>Steps 3 and 5 fail on the baseline, so the mode fails without the fix.</p>
+<h2>4. S3. Regression-runner reliability</h2>
+<p>The row names four behaviours, so there are four modes, each with its own assertion. All four are ports of the scenarios in <code>p2-verification-2026-11-03/</code> into the shipped runner, so you can re-run them from the repository rather than from my transcript.</p>
+<table><thead><tr><th>mode</th><th>what is injected</th><th>what must be reported</th></tr></thead><tbody><tr><td><code>s3-state</code></td><td><code>verify.py</code> raises on import in the copied tree</td><td>every affected mode reports NOT-RUN, not MISSED; the runner exits with a distinct code that means &quot;could not classify&quot;</td></tr><tr><td><code>s3-timeout</code></td><td>a child that never returns</td><td>the runner bounds it, reports TIMEOUT for that mode with the bound printed, and other modes are unaffected</td></tr><tr><td><code>s3-progress</code></td><td>a run long enough to observe</td><td>at least one line arrives before the run completes, and <code>--json</code> output is byte-identical to the buffered run</td></tr><tr><td><code>s3-preflight</code></td><td><code>bc</code> removed from <code>PATH</code> through a shim</td><td>one preflight line names the missing tool and the affected column, printed once, and every classification and exit code is identical to the run with the tool present</td></tr></tbody></table>
+<p><strong>The constraint you set is the acceptance test.</strong> These changes may not alter substantive pass or fail classifications. The mode <code>s3-classification</code> therefore compares the full table of <code>mode -&gt; caught or MISSED</code> and every mode&#x27;s <code>failed</code> check set, before and after, and fails on any difference other than the four behaviours above. That is a stronger assertion than &quot;the suite still passes&quot;, because it pins what each existing mode found.</p>
+<p><strong>Question for you.</strong> Is a distinct non-zero exit code for &quot;runner could not classify&quot; acceptable, or would you rather NOT-RUN stay inside exit 1 with the classification only in the output? I propose a distinct code so that a wrapper cannot mistake an unclassifiable run for a caught counterexample.</p>
+<h2>5. S4. Stale-report assurance</h2>
+<p>No code change is proposed, because none is justified until the condition is established. What is proposed is that the precondition is written down and tested rather than asserted.</p>
+<p>Two candidate environments. (i) A filesystem that permits <code>chattr +i</code>, on a host or VM rather than in this container. (ii) A read-only bind mount over the report file.</p>
+<p>The test of equivalence is not the flag, it is the failure condition: the verifier is asked to write or replace the report and cannot, and is then asked to present the report as current. If both environments reproduce that identically, they are equivalent for this row and the evidence says so. If only the mount is available and the refusal happens at a different point, the mount result is evidence for a narrower condition, recorded as such, and S4 stays open.</p>
+<p><strong>Question for you.</strong> Can you supply a host or runner where <code>chattr +i</code> succeeds, or would you rather I record the read-only mount as the narrower condition and leave the row open on that basis?</p>
+<h2>6. S5. Fixture cleanup</h2>
+<p><strong>What the code does now.</strong> <code>run_mode</code> cleans its own temporary directory in a <code>finally</code>. The custom modes do not: <code>fresh_copy</code> in <code>audit/regressions.py</code> calls <code>tempfile.mkdtemp</code>, returns the tree path, and drops the work directory. <code>custom_f20</code> calls it twice, which is the two copies in the row.</p>
+<p><strong>What changes.</strong> <code>fresh_copy</code> returns the work directory as well as the tree and registers it for removal; the custom modes remove theirs on the way out; a <code>--keep-fixtures</code> option keeps them and prints every retained path, one per line, with the reason. Retention is opt-in, never implicit, and always named.</p>
+<p><strong>How it is shown to close.</strong> A new mode <code>s5</code>:</p>
+<ol><li><code>TMPDIR</code> set to a fresh directory.</li><li><code>f20</code>, <code>f21</code>, <code>f22</code> and the full suite are run.</li><li>The directory contains no <code>hfb-*</code> entry afterwards.</li><li>With <code>--keep-fixtures</code>, the trees remain and each is printed.</li><li>The mode fails when a leak is deliberately reintroduced in a scratch copy of the runner, which</li></ol>
+<p>proves the assertion is capable of failing.</p>
+<h2>7. Order and milestones</h2>
+<table><thead><tr><th>milestone</th><th>rows</th><th>why this order</th></tr></thead><tbody><tr><td>M1</td><td>S1, S2</td><td>both are integrity claims, both are cheap to state precisely, and both are inside the store rather than the tooling</td></tr><tr><td>M2</td><td>S3</td><td>runner reliability, not benchmark correctness, and it depends on the classification vocabulary M1 introduces</td></tr><tr><td>M3</td><td>S5</td><td>housekeeping, no dependency on the other two</td></tr><tr><td>held</td><td>S4</td><td>environment first; no code until the condition is established</td></tr></tbody></table>
+<p>Each milestone ends with the evidence packs and a <code>classification.log</code> showing the full mode table unchanged except where the milestone intended it. The register rows move at the end of a milestone, in a new revision of <code>FINDINGS-REGISTER.md</code> with its own SHA-256, never as an edit to the pinned copy.</p>
+<h2>8. What this scope does not touch</h2>
+<ul><li>No change to benchmark scoring, scenario content, or the expected outcome of any existing mode.</li><li>No change to the closure rule, and no row closed on the strength of a patch alone.</li><li>No change to the assurance boundaries recorded in <code>TECHNICAL-NOTE.md</code>.</li><li>No claim that S4 can be closed from this environment.</li></ul>
+<h2>9. Open questions, collected</h2>
+<ol><li>S1: is <code>partial</code> with a record list the right shape, or should any partially durable request report</li></ol>
+<p><code>indeterminate</code>?</p>
+<ol><li>S3: distinct exit code for &quot;could not classify&quot;, or fold it into exit 1?</li><li>S4: a host with <code>chattr +i</code>, or record the read-only mount as a narrower condition?</li><li>S5: <code>--keep-fixtures</code> as a flag on the runner, or an environment variable so a CI job can set it</li></ol>
+<p>once?</p>
+<p>Four answers and I will implement in the order above.</p>
+<footer>Proposal for review, 6 November 2026</footer>
+</main>
+</body>
+</html>

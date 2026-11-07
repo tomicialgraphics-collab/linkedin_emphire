@@ -1,0 +1,48 @@
+--- a/FINDINGS-02-register-entries-v6.md
++++ b/FINDINGS-02-register-entries-v7.md
+@@ -4,7 +4,7 @@
+ 
+ **Reviewer:** Olusanya Timothy, independent. Private until the author agrees what enters the register.
+ 
+-**Date:** 6 November 2026, version 5. Supersedes the version of 4 November and every earlier revision of this document. Two additions: the patch results in the section after next, and a status column against the author's merge commit `05267a36a57edf31bae2c2b9390f85df9c899a43` at the head of the open items. The identifier W-04 below is the author's, assigned to what this document called W-01g.
++**Date:** 6 November 2026, version 7. Supersedes version 6, which the author holds at SHA-256 `c3888fbffc6f0a4ed4e6ede6e059a8b23175382d21834e44a328b008632d4614` and which stands unchanged, because the corrections recorded here could not be folded into it without altering a hash the author has already checked. Version 6 carried two defects of its own: a date line still reading version 5, and a withdrawn test count left standing in the patch results. The three corrections are applied in the order they were raised, the label, the stale count, and the explanation of the two counts. The identifier W-04 below is the author's, assigned to what this document called W-01g.
+ 
+ **Text referred to:** Verifier Specification v0.4 §3 and §8.5; amendment v0.25 §5.5.4, §7.3, §7.4, and the outcome taxonomy at §10.1.
+ 
+@@ -41,7 +41,7 @@
+ 
+ The patch applies to a clean copy of the archive with `git apply`: no fuzz, no rejected hunks, one file changed. `lib/streams.mjs` moves from `c834ea28ed66cc74fdd9610d6e31ef736b39fa020d24485d7847981a0d7b9237` to `f7512ee231f92ca93ab685598c55d9a5e5209af031a33470a1e7626e175c1690`.
+ 
+-**The suite does not move.** Same 29 tests before and after, 29 pass and 0 fail. N11 still returns INVALID with INVALID-CHRONOLOGY, because the new check runs after the existing body of check 10. The patch header says that ordering is deliberate, and the suite agrees with the header.
++**The patch changes one file and no test file.** `lib/streams.mjs` is the only file it touches, so the three test files `npm test` runs are byte-identical on both sides of it, and the counts the author reports for those files hold either side of the patch by construction rather than by a run of mine. The vector to watch is `negative/N11-ref-postdates-claim`, which expects INVALID with sub-verdict INVALID-CHRONOLOGY: a fix that returns on an empty history before check 10 has finished turns it into MATERIAL_UNAVAILABLE. The patch header says the ordering is deliberate, and N11 is the case that tests whether it is.
+ 
+ | case | before the patch | after the patch |
+ | --- | --- | --- |
+@@ -109,7 +109,7 @@
+ 
+ Bind the walk to both sides before walking. Read the covering segment from `header_echo.stream_segments` and compare four things: the history's first and last sequence numbers against `first_seq` and `last_seq`; the last record's hash against `head_hash`; `stream_context.prev_tx_hash` against the record at `seq_no - 1`; and, separately, whether the walk ran at all. Contradictions return INVALID. A shortfall in coverage, or an absent history against a known extent, returns MATERIAL_UNAVAILABLE with the missing range named.
+ 
+-**One ordering hazard, found while testing a throwaway fix of exactly this shape.** Returning MATERIAL_UNAVAILABLE for an empty history before the rest of check 10 has run breaks a shipped vector. `negative/N11-ref-postdates-claim` carries a `stream_context`, an empty history, a `_ref` that postdates the claimed timestamp, and expects INVALID with sub-verdict INVALID-CHRONOLOGY. A patch that returns on emptiness first turns N11 into MATERIAL_UNAVAILABLE and fails the suite: that is what happened on the copy I ran that throwaway patch against, and the count is recorded under test counts rather than here. Contradictions found in check 10 must be evaluated before the material return.
++**One ordering hazard, found while testing a throwaway fix of exactly this shape.** Returning MATERIAL_UNAVAILABLE for an empty history before the rest of check 10 has run breaks a shipped vector. `negative/N11-ref-postdates-claim` carries a `stream_context`, an empty history, a `_ref` that postdates the claimed timestamp, and expects INVALID with sub-verdict INVALID-CHRONOLOGY. A patch that returns on emptiness first turns N11 into MATERIAL_UNAVAILABLE and fails the suite: that is what happened on the copy I ran that throwaway patch against, and the observation is recorded under test counts rather than here. Contradictions found in check 10 must be evaluated before the material return.
+ 
+ `Accepts as closed when` regression modes exist for the five cases above, each returning the outcome in the expected column on the current tree, and the suite stays where it is on the tree under review, counted with the command recorded under test counts below.
+ 
+@@ -301,12 +301,14 @@
+ 
+ ### Test counts
+ 
+-Two counts appear in this document and only one of them arrives with a command.
++Two numbers appear in this document, 29 and 36, and both are real. What differs is the scope of the command behind each.
+ 
+-The author runs `npm test` in the verifier folder at `05267a36` and reports 36 tests across 3 files. That is the count to quote, because the tree and the command travel with it.
++The author runs `npm test` in the verifier folder at `05267a36` and reports 36 tests across three files. Run one at a time by the author, those files are `test/abh-serialization-examples.test.mjs` with 6 tests and 6 passing, `test/run-vectors.mjs` with 29 and 29 passing, and `test/verify-broken-build-fails.mjs` with 1 and 1 passing. That is the count to quote for the suite, because the tree, the command and the file list travel with it.
+ 
+-The 29 of 29 that stood in every earlier revision is withdrawn. It carried no command and no file list, and I cannot re-derive it: the verifier is not in my working copy, so there is no run of mine behind it that I can point at. The same goes for the pass and fail pair once reported in W-02's ordering hazard, which was an observation on a throwaway patch and never a suite count.
++The 29 of 29 that stood in every earlier revision is the vector file alone. It is a real count and not a wrong one, and it is now identified: what was missing was the filename, not the run. My own statement of it carried no command and no file list, and the verifier is not in my working copy, so I can still label what it measured without being able to re-derive it.
+ 
+-The likely explanation is that `05267a36` carries tests added after `b890d2c`, spread over two more files. I have not checked that, and I will not record it as a finding until I have. What the register can say now is what each number is attached to, and the honest answer for one of them is nothing.
++No tests were added between the two revisions. `05267a36` differs from `b890d2c` in one file, `lib/streams.mjs`, with 86 lines added, so the difference between 29 and 36 is the other two files that `npm test` has always run and that the vector file on its own does not. The explanation offered in the last revision, that the merge commit carried new tests spread over two more files, was wrong and is withdrawn.
++
++The pass and fail pair once reported in W-02's ordering hazard remains an observation on a throwaway patch and never a suite count.
+ 
+ Both output files and the patch itself are kept with the review rather than pasted into this document, so that the figures above can be re-derived without trusting the transcription.

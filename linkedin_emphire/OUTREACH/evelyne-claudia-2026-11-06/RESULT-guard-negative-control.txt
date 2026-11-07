@@ -1,0 +1,22 @@
+Negative control for the source-hash guard, 2026-11-06
+
+What was done
+A copy of the benchmark was taken and one comment line appended to its bench/store.py. That copy is
+not the tree this case names, and the runner has to refuse it rather than measure it. Nothing else was
+changed, and the appended line is a comment, so a run without a guard would have proceeded happily.
+
+The copy's bench/store.py, after the change
+aecd4aeeeade0fdbc704c215f582854bbf0260653502b3cd342d023667177627
+
+The hash this case names for that file
+99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982
+
+The runner's answer
+refusing to run: bench/store.py is aecd4aeeeade0fdbc704c215f582854bbf0260653502b3cd342d023667177627, expected 99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982
+
+Exit code
+1
+
+So the guard refuses on a one-line change that no reviewer would see, which is the property
+Evelyne-Claudia asked for: a matching patch line establishes presence, and only a hash establishes that
+the rest of the file is what it was.

@@ -1,0 +1,79 @@
+--- a/FINDINGS-02-register-entries-v5.md
++++ b/FINDINGS-02-register-entries-v6.md
+@@ -4,11 +4,11 @@
+ 
+ **Reviewer:** Olusanya Timothy, independent. Private until the author agrees what enters the register.
+ 
+-**Date:** 6 November 2026, fourth revision. Supersedes the version of 4 November and all three revisions of today. Two additions: the patch results in the section after next, and a status column against the author's merge commit `05267a36a57edf31bae2c2b9390f85df9c899a43` at the head of the open items. The identifier W-04 below is the author's, assigned to what this document called W-01g.
++**Date:** 6 November 2026, version 5. Supersedes the version of 4 November and every earlier revision of this document. Two additions: the patch results in the section after next, and a status column against the author's merge commit `05267a36a57edf31bae2c2b9390f85df9c899a43` at the head of the open items. The identifier W-04 below is the author's, assigned to what this document called W-01g.
+ 
+ **Text referred to:** Verifier Specification v0.4 §3 and §8.5; amendment v0.25 §5.5.4, §7.3, §7.4, and the outcome taxonomy at §10.1.
+ 
+-**Code referred to:** WP-1 verifier `b890d2c357b4b2a06f7db440157c33c7f311c4df`, archive SHA-256 `45a624e4dfbbc9280e59a9538fcf52e4c05f25b606a6c43fc35d95090958e5c9`; conformance suite `25a856fff788e7ef72490cb180b4453a6fa3dad0`, archive SHA-256 `bf02a2e2ea8a9940a5c4cb1867bfb607753fd12b943cb47fb345ebf7190f427c`.
++**Code referred to:** WP-1 verifier at two revisions, both named because they are not the same thing. `b890d2c357b4b2a06f7db440157c33c7f311c4df`, archive SHA-256 `45a624e4dfbbc9280e59a9538fcf52e4c05f25b606a6c43fc35d95090958e5c9`, is the base the patch and the probe were measured on. `05267a36a57edf31bae2c2b9390f85df9c899a43` is the author's merge commit, where the probe was run against the applied fix on 6 November; conformance suite `25a856fff788e7ef72490cb180b4453a6fa3dad0`, archive SHA-256 `bf02a2e2ea8a9940a5c4cb1867bfb607753fd12b943cb47fb345ebf7190f427c`.
+ 
+ **Patch tested:** `foray-streams-fix-b890d2c-v0_3.patch`, 4,677 bytes, SHA-256 `3fca8c725b589b9e5a8748d38e3a8a30ecea6bd6d7ded9db8e5675c6c1ac41e0`, from commit `63bcd0201864844c3db2f171a87040a332510014`.
+ 
+@@ -109,9 +109,9 @@
+ 
+ Bind the walk to both sides before walking. Read the covering segment from `header_echo.stream_segments` and compare four things: the history's first and last sequence numbers against `first_seq` and `last_seq`; the last record's hash against `head_hash`; `stream_context.prev_tx_hash` against the record at `seq_no - 1`; and, separately, whether the walk ran at all. Contradictions return INVALID. A shortfall in coverage, or an absent history against a known extent, returns MATERIAL_UNAVAILABLE with the missing range named.
+ 
+-**One ordering hazard, found while testing a throwaway fix of exactly this shape.** Returning MATERIAL_UNAVAILABLE for an empty history before the rest of check 10 has run breaks a shipped vector. `negative/N11-ref-postdates-claim` carries a `stream_context`, an empty history, a `_ref` that postdates the claimed timestamp, and expects INVALID with sub-verdict INVALID-CHRONOLOGY. A patch that returns on emptiness first turns N11 into MATERIAL_UNAVAILABLE and fails the suite, 28 pass and 1 fail on my copy. Contradictions found in check 10 must be evaluated before the material return.
++**One ordering hazard, found while testing a throwaway fix of exactly this shape.** Returning MATERIAL_UNAVAILABLE for an empty history before the rest of check 10 has run breaks a shipped vector. `negative/N11-ref-postdates-claim` carries a `stream_context`, an empty history, a `_ref` that postdates the claimed timestamp, and expects INVALID with sub-verdict INVALID-CHRONOLOGY. A patch that returns on emptiness first turns N11 into MATERIAL_UNAVAILABLE and fails the suite: that is what happened on the copy I ran that throwaway patch against, and the count is recorded under test counts rather than here. Contradictions found in check 10 must be evaluated before the material return.
+ 
+-`Accepts as closed when` regression modes exist for the five cases above, each returning the outcome in the expected column on the current tree, and the suite stays at 29 of 29.
++`Accepts as closed when` regression modes exist for the five cases above, each returning the outcome in the expected column on the current tree, and the suite stays where it is on the tree under review, counted with the command recorded under test counts below.
+ 
+ ---
+ 
+@@ -164,7 +164,7 @@
+ 
+ **Result at `05267a36`:** `SYNTH-D` returns INVALID, check 10, with `declared seq_no 500 is outside every anchored segment for stream aaaaaaaa...`, and the other 22 lines hold. The acceptance test written above asked for that outcome and for a reason naming both the stream and the declared position. Both are present, so this entry closes. The reason prints the stream in the encoding the segments use, which is the W-04 question appearing inside the message rather than in the comparison.
+ 
+-### W-04. The two stream identifiers are not the same type, and the extent branch cannot run while that is true. Medium, and it blocks the fix for W-01f as well. Re-registered by the author from W-01g as a specification question.
++### W-04. The two stream identifiers are not the same type, and the extent branch cannot run while that is true. Medium. It does not block f, which closed at `05267a36`, and it blocks the extent branch until the encoding is specified. Re-registered by the author from W-01g as a specification question.
+ 
+ `header_echo.stream_segments[].stream_id` is validated as 16 bytes. `stream_context.stream_id` is a readable name in the packet's own vectors: `rotated-seam-stream`, `n10-stream`. The patch matches the two with `===`, so on the packet's encoding no segment is ever found for a shipped bundle and the extent checks never run.
+ 
+@@ -172,7 +172,7 @@
+ 
+ This needs a ruling at §2 and §5.5.4 on the encoding of the field in both places, plus one vector carrying a `stream_context` and a populated extent with matching ids. Without both, the strongest part of the fix cannot be exercised, and a producer that emits the two in different shapes gets silence instead of a diagnosis.
+ 
+-**Author's ruling of 6 November:** this is a specification question and it is registered as W-04. I agree with the split. As a defect it asks the code to guess which of two encodings the author of a bundle meant; as a question it asks the text to say what the field is in each place, which is answerable once, in one place.
++**Author's registration of 6 November:** this is a specification question, registered as W-04, and not ruled on yet. The word was mine and it was wrong. I agree with the split. As a defect it asks the code to guess which of two encodings the author of a bundle meant; as a question it asks the text to say what the field is in each place, which is answerable once, in one place.
+ 
+ Two consequences of the split, both recorded here rather than assumed. `SYNTH-C` establishes that the extent branch works when the identifiers agree, so the ruling has a working branch to describe. `SYNTH-E` establishes that it does nothing when they do not, so the ruling has a failure it removes. Until the ruling lands, `SYNTH-E` returning VALID is the correct observation and not a regression.
+ 
+@@ -198,6 +198,8 @@
+ 
+ **Status: closed in code by the patch, still open in the text.** The patch returns MATERIAL_UNAVAILABLE when a bundle declares a `stream_context` and supplies no history, and the probe confirms it. What follows is the part the patch cannot settle.
+ 
++**Author's note of 6 November:** stream history is being adopted as MATERIAL_UNAVAILABLE in the next revision of the specification. That answers the text question here from the source rather than from a reading of the current text, and the entry closes when that revision lands.
++
+ ### What happens
+ 
+ `const history = context.streamHistory ?? []; if (history.length > 0) { ...walk... }`. Zero records means the walk is skipped, and a skipped walk is indistinguishable from a clean one. Nothing in the base build produces MATERIAL_UNAVAILABLE for absent stream state; the patch does, which is what closes this entry in code.
+@@ -269,7 +271,7 @@
+ 
+ Base archive, `b890d2c`, Node v22.22.3. Every case returns VALID except two: N10 as shipped, and N10 with the declared `prev_tx_hash` falsified. Both return INVALID at check 10 for the FORK in the history, which is the fork the walk does catch.
+ 
+-With the patch applied, 29 of 29 conformance tests pass and the probe prints:
++With patch v0.3 applied to `b890d2c`, the probe prints the lines below. They are the patch state on that base, not the `05267a36` run, and they are labelled that way because the two differ in one case: `SYNTH-D` reads VALID here and INVALID there. The `05267a36` lines are in the comparison file beside this register and in the W-01f entry above.
+ 
+ ```
+ rotated-chain-seam: as shipped                        VALID
+@@ -297,4 +299,14 @@
+ SYNTH-E segment id and stream_context id differ       VALID
+ ```
+ 
++### Test counts
++
++Two counts appear in this document and only one of them arrives with a command.
++
++The author runs `npm test` in the verifier folder at `05267a36` and reports 36 tests across 3 files. That is the count to quote, because the tree and the command travel with it.
++
++The 29 of 29 that stood in every earlier revision is withdrawn. It carried no command and no file list, and I cannot re-derive it: the verifier is not in my working copy, so there is no run of mine behind it that I can point at. The same goes for the pass and fail pair once reported in W-02's ordering hazard, which was an observation on a throwaway patch and never a suite count.
++
++The likely explanation is that `05267a36` carries tests added after `b890d2c`, spread over two more files. I have not checked that, and I will not record it as a finding until I have. What the register can say now is what each number is attached to, and the honest answer for one of them is nothing.
++
+ Both output files and the patch itself are kept with the review rather than pasted into this document, so that the figures above can be re-derived without trusting the transcription.

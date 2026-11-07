@@ -1,0 +1,30 @@
+Evelyne-Claudia,
+
+Both corrections are right, and both now live in a file rather than in a reply only.
+
+The sentence about indistinguishability was too broad and I withdraw it as written. Measured, the two cells differ at every surface a person reads. The reply differs. The journal differs. The host's own problem list differs too, one entry in the accepted cell against four in the refused one. What is identical is narrower than I said: the three host event kinds and the withholding reason, which is "store reply rejected" in both. What the refused reply fails to do is name which write was refused, and that is all I can defend.
+
+On the second point, you are right and my table let one path stand for both. The wire cells carry a BLOCK at sequence 4 and an ALLOW at sequence 5 against the same descriptor, so the disagreement is the verdict value. The host cells carry two BLOCK records, decision times 4 and 2, with different descriptors, so the disagreement is the descriptor and the clock. The first of those two is the verdict the host already held, which the run names as the seeded record at sequence 4, and the second is the one the command under test wrote. Both pairs are two different verdicts for one action id, which is why the same rule text applies to both, and they are not the same difference.
+
+The retry is scripted, as you say, and I will not put it more strongly than that.
+
+The version you asked for is attached: store.py, host.py and common.py as shipped, from commit e3f43dc2be39582e0c58abb86bc2b6153daa9af5, which is the revision at which all three last changed. The copy that actually ran is in the archive too, and the change that produced it is below, in case you would rather rebuild it than take it:
+
+    before:  if self.failpoint == "verdict" and record.get("kind") == "verdict":
+
+    after:   if (self.failpoint in ("verdict", "conflict")
+                    and self.failpoint == record.get("kind")):
+
+Patched, store.py reproduces as a57d8bf7df51538c46d502b3c25697f1b1eae5bb2c1ed8453875a25726dd1add, which was verified here by applying the change and hashing the result rather than by copying a file out of a working folder. The copy that ran is in the archive as store.patched.py, 21,114 bytes, so checking it is one hash rather than a careful patch. The second line sits at sixteen spaces, and the manifest spells out both.
+
+The archive is 26,369 bytes and hashes to 865c118a4cbddc1351a4986478d806c95caf58b90087ddf9bfb0eb7cd3ebd7ba.
+
+Inside it, store.py is 21,077 bytes at 99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982, host.py is 15,652 bytes at 97aa10fc8dca799db7f089d782376e782bde8e7c1fdb8fe4ff3568bd62f8b32f, and common.py is 3,223 bytes at c4039b867b287388e7f90126ea78db2489836bf78a815c7805b64f1473cead45.
+
+The manifest inside the archive carries every hash including the note's own, and the commands to check them on Windows are in it.
+
+One limit I should state plainly, because it bears on the title. The benchmark's own failpoint refuses a verdict write. I never ran that world. So I have no measured comparison between a genuine verdict refusal and the one I did run, and my title is not a claim that the two are indistinguishable. It is the smaller claim the reply itself supports: the refused conflict write is reported in the words of a refused verdict write. If you want the comparison, it is one more cell and a new run, and I would rather measure it than argue it.
+
+The three findings stand as written, and so do the limits. Your separation of artifact correspondence from independent reproduction is the one I am keeping in the file.
+
+Olusanya

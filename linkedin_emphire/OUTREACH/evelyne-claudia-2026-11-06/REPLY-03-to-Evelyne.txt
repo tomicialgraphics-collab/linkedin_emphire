@@ -1,0 +1,38 @@
+Evelyne,
+
+The pin first, because it is what unblocks your reproduction.
+
+The benchmark is public and MIT licensed, co-authored, at github.com/Teamthy/host-failure-benchmark. The copy I ran is commit 126f1c0 of 2026-11-03. Here are the three files you named, each with the hash of the bytes I used and the Git blob identifier for the same bytes at that commit.
+
+bench/store.py is 21,077 bytes, SHA-256 99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982, blob 1bfe1fd90e2a43d9f2756c487301dbf1d8a3e3d7.
+
+bench/host.py is 15,652 bytes, SHA-256 97aa10fc8dca799db7f089d782376e782bde8e7c1fdb8fe4ff3568bd62f8b32f, blob ee59ad073da190d8cdf61ff22130a1e148fb9868.
+
+bench/common.py is 3,223 bytes, SHA-256 c4039b867b287388e7f90126ea78db2489836bf78a815c7805b64f1473cead45, blob 59fb81f74be8134cba7d13b3d4dce4dfe00e9b8d.
+
+I checked those blob identifiers against that commit before writing this, and they match. So the bytes I ran are the bytes the public tree holds, and you can fetch them instead of taking a file from me. If a pin archive reached you earlier, these are the same bytes, and the addition is that they're checkable against the public tree rather than only against my message.
+
+One line changed, and only one. The benchmark's failpoint refuses records of kind verdict. This case needs it to refuse a conflict annotation, so the runner rewrites that single predicate and nothing else:
+
+before: if self.failpoint == "verdict" and record.get("kind") == "verdict":
+after: if (self.failpoint in ("verdict", "conflict") and self.failpoint == record.get("kind")):
+
+Applied to store.py, that yields 21,114 bytes, SHA-256 a57d8bf7df51538c46d502b3c25697f1b1eae5bb2c1ed8453875a25726dd1add. The run output printed the first sixteen characters of exactly that hash. It also refuses to patch at all if the line has moved, so it cannot patch a version it does not recognise. The runner is mine, 17,594 bytes, SHA-256 991e9eec09c291bf0179b6677577c5929b688df0b2b2c10fea2cc163d669e891, and the copy already with you is that one.
+
+To reproduce, check out the benchmark at 126f1c0, put the runner beside it, and run `python3 F9b-conflict-write.py --bench <checkout> --out ./run2` from inside that folder. Then compare result.json. It carries no timestamps and no absolute paths, so the expected value is exact rather than approximate: e5216e9c3a651f10e3830a036cd56e6719c3582f5385a1b5f67c168e823a3d7b. I re-ran it from a clean extraction before writing this and got that hash.
+
+Both of your clarifications are accepted, and both are already in the correction note rather than left standing in the page.
+
+On the first, the sentence that survives is that identity holds at the host event kinds and the withholding reason and nowhere else. What's identical is the three event kinds and the reason "store reply rejected". The replies differ, the journals differ, and the host's own diagnostic list differs, which is your point exactly and became mine only after you made it.
+
+On the second, the wire cells carry BLOCK at sequence 4 and ALLOW at sequence 5, so they differ in the verdict value. The host cells carry BLOCK at both and differ in the descriptor and the decision time. That's two different verdicts for one action id in both cases, and it isn't the same difference. A comparison across worlds has to say which pair it means, and the page did not say.
+
+On the retry, agreed, and I won't put it higher than you have. The script issues it, on every cell, the same way. Nothing here observes a client, an operator or a runbook.
+
+Governing-effect contradiction is not claimed. Three findings rest on their own evidence. The reply is false about durability, with two verdict records fsynced before the refusal. A conflict between two signed verdicts reaches the host as a storage failure. Replay recomputes the state as conflicted from the two differing verdicts alone, so the annotation is lost and the state is not.
+
+The comparison I'd want next is the one I haven't measured. The benchmark's own failpoint, the one that refuses a verdict write, has never been exercised by me. So there's no measured difference between a genuine verdict refusal and this one, and the surviving claim is the smaller one the reply supports: a refused conflict write is reported in the words of a refused verdict write. If that comparison is worth having, it's a new cell and a new run, and I'd rather measure it than argue it.
+
+Correspondence, reproduction and validation remain three events. Your inspection established the first. The second is now open to you. The third is yours to give or withhold.
+
+Olusanya

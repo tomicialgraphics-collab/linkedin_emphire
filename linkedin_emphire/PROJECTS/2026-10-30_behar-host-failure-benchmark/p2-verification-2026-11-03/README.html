@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>P2 verification kit and the S1 to S5 reproduction</title>
+<style>
+:root{
+  --ink:#14181f; --muted:#5b6472; --line:#dfe3ea; --paper:#ffffff;
+  --say:#0f3d33; --say-bg:#f2f8f5; --say-line:#2f7a63;
+  --note:#4a5262; --note-bg:#f6f7f9;
+  --accent:#1a4f8b;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#eef0f4; color:var(--ink);
+  font-family:Charter, "Bitstream Charter", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  font-size:18px; line-height:1.62;
+}
+main{
+  max-width:44rem; margin:0 auto; background:var(--paper);
+  padding:3.2rem 2.4rem 4rem; box-shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 40px rgba(16,24,40,.07);
+}
+pre.code{background:#f6f7f9;border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem;margin:1rem 0;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.65;white-space:pre-wrap;word-break:break-word}
+pre.code code{background:none;border:0;padding:0;font-size:1em}
+h1{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.9rem; line-height:1.2; letter-spacing:-.02em; margin:0 0 .4rem;
+}
+h2{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1.16rem; letter-spacing:-.01em; margin:2.6rem 0 .9rem;
+  padding-top:1.1rem; border-top:1px solid var(--line);
+}
+h2:first-of-type{border-top:0; padding-top:0}
+h3{
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:1rem; margin:1.8rem 0 .5rem; color:var(--accent);
+}
+p{margin:0 0 1rem}
+strong{font-weight:650}
+em{font-style:italic}
+hr{border:0; border-top:1px solid var(--line); margin:2rem 0}
+ul,ol{margin:0 0 1rem; padding-left:1.3rem}
+li{margin:.3rem 0}
+code{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size:.86em; background:#eef1f5; padding:.1em .35em; border-radius:3px;
+}
+blockquote{
+  margin:1.1rem 0; padding:.9rem 1.1rem; background:#f7f9fc;
+  border-left:3px solid #b9c6d8; color:#24303f;
+}
+blockquote p:last-child{margin-bottom:0}
+.say{
+  margin:1.1rem 0 1.4rem; padding:1.1rem 1.2rem; background:var(--say-bg);
+  border-left:4px solid var(--say-line); border-radius:0 6px 6px 0;
+  font-size:1.06rem; line-height:1.66;
+}
+.say p{margin:0 0 .85rem}
+.say p:last-child{margin:0}
+.note{
+  margin:1rem 0 1.6rem; padding:.85rem 1.1rem; background:var(--note-bg);
+  border-left:3px solid #c6ccd6; border-radius:0 6px 6px 0;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.88rem; line-height:1.55; color:var(--note);
+}
+.note p{margin:0 0 .6rem}
+.note p:last-child{margin:0}
+.note .tag{display:block; font-weight:700; letter-spacing:.08em; font-size:.7rem; text-transform:uppercase; color:#8a93a1; margin-bottom:.35rem}
+.say .tag{display:block; font-weight:700; letter-spacing:.14em; font-size:.66rem; text-transform:uppercase; color:#4f8b76; margin-bottom:.45rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+table{border-collapse:collapse; width:100%; margin:1rem 0 1.4rem; font-size:.92rem;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif}
+th,td{text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:1px solid #c8ced9}
+footer{margin-top:3rem; padding-top:1rem; border-top:1px solid var(--line);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  font-size:.78rem; color:var(--muted)}
+a{color:var(--accent)}
+@media (max-width:600px){
+  body{font-size:17px}
+  main{padding:1.6rem 1.1rem 3rem; box-shadow:none}
+  h1{font-size:1.55rem}
+}
+@media print{
+  /* Margin 0 collapses the browser's own margin box, which is where Chrome and Edge
+     render the local path and the page counter. Padding on body restores the white
+     space, so the printed page carries the document and nothing else. */
+  @page{size:A4; margin:0}
+  body{background:#fff; font-size:11.2pt; padding:14mm 16mm}
+  main{max-width:none; box-shadow:none; padding:0; margin:0}
+  h1{break-after:avoid; page-break-after:avoid}
+  h2{break-after:avoid; page-break-after:avoid}
+  table{break-inside:auto; page-break-inside:auto}
+  tr,td,th{break-inside:avoid; page-break-inside:avoid}
+  .say,.note,blockquote,li{break-inside:avoid; page-break-inside:avoid}
+  .say{background:#f3f7f5}
+  footer{border-top:1px solid #ccc}
+  pre.code{font-size:8pt; border-color:#ccc}
+  a[href]::after{content:""}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>P2 verification kit and the S1 to S5 reproduction</h1>
+<p>Everything the independent P2 review supplied on 3 November, plus the reproduction results produced against the pinned baseline the same evening.</p>
+<p><strong>Evaluation target:</strong> <code>006d7ee71aa6599521d6675c32f496c5427a846b</code> <strong>Documentation commit, not a code baseline:</strong> <code>759834945147152bcf2259477ec48425cce5d9f1</code></p>
+<h2>The digest covers the container, the manifest covers the content</h2>
+<p>The review states <code>hfb-p2-verification.zip</code> hashes to:</p>
+<pre class="code"><code>e34c35c8a9269dddfd0ec9452b5a3b3e5894246362ce031c36be3d5b26b33f98</code></pre>
+<p>The 42 files delivered here are the archive&#x27;s contents, so nothing is missing from the working set. What is missing is the container. A SHA-256 of a zip covers the compression stream, the local and central directory headers, the modification timestamps, the extra fields and the file order. None of that survives extraction, so the digest cannot be recomputed from the files, and it cannot be checked against them either.</p>
+<p>It also means a fresh re-zip will not match. Re-zipping the same folder produces a different digest because the timestamps and ordering differ. Only the original file can satisfy that number.</p>
+<p>Two ways to close it:</p>
+<ol><li><strong>Fast path.</strong> Run <code>MANIFEST-delivered.sha256</code> against the extracted copy on the sender&#x27;s side. Forty-two</li></ol>
+<p>matching hashes prove the content sets are equal, which is what the reproduction results actually depend on, and lets both sides state the position precisely: content verified equal, container digest unverified.</p>
+<ol><li><strong>Record path.</strong> Put the original zip in a release asset. Then the bytes anyone fetches are the bytes the</li></ol>
+<p>digest describes.</p>
+<p><code>MANIFEST.sha256</code> pins the files at their paths in this repository, after the move and the rename. <code>MANIFEST-delivered.sha256</code> pins them at the names they arrived with, so it can be checked against an extracted copy directly:</p>
+<pre class="code"><code>sha256sum -c MANIFEST-delivered.sha256</code></pre>
+<h2>Layout</h2>
+<pre class="code"><code>review/2026-11-03_p2-verification/
+  README.md                  this file
+  MANIFEST.sha256            hashes of all 42 files, at their paths below
+  MANIFEST-delivered.sha256  the same 42 hashes at the names they arrived with
+  scripts/                   the runners and fixtures
+    p2probes.py               S1 (P08) and S2 (P07)
+    runner_checks.sh          S3, checks R1 to R5
+    runner_extra.sh           S3, checks R6 to R9b
+    extra_checks.py           helper used by the runners
+    v2lib.py, v2tests.py      shared library and the V-series probes
+    v3fixes.py                S4 (N11), with an obsolete N13 tail
+    build_matrix.py           the results matrix builder
+  recorded/                  the review&#x27;s own recorded outputs, kept byte for byte
+    p2probes.delivered.json   the delivered capture, renamed so a re-run cannot overwrite it
+    p2probes.log, p2-n-rerun.log, p2-v-rerun.log
+    runner_checks.log, runner_extra.log
+    p2-results-matrix.json, p2-results-matrix.csv, v2results.json
+    campaign-1.out to campaign-3.out, reg-*.out, challenge-example.out, verify-*.out
+  results-2026-11-03/        the reproduction run described below
+    RESULTS.md               one row per finding, with commands, environment and status
+    logs/                    the six logs behind that file</code></pre>
+<h2>Two changes from the delivered layout, and why</h2>
+<ol><li><strong>The files moved out of the repository root.</strong> They were uploaded flat, next to <code>verify.py</code>, <code>run.py</code></li></ol>
+<p>and <code>bench/</code>, which put an independent reviewer&#x27;s fixtures inside the maintainer&#x27;s tree at the top level. They now sit under <code>review/</code>, which is where a review belongs.</p>
+<ol><li><strong><code>p2probes.json</code> was renamed to <code>p2probes.delivered.json</code>.</strong> <code>p2probes.py</code> writes <code>p2probes.json</code> next</li></ol>
+<p>to itself, so the first re-run overwrites the review&#x27;s recorded capture. The delivered copy is preserved under the new name and the working file is ignored by git.</p>
+<p>Nothing inside the 42 files was edited. <code>MANIFEST.sha256</code> was generated from the delivered bytes before the rename, and a move does not change a hash.</p>
+<h2>How to run it</h2>
+<p>Source and evidence must be two different trees, and the source must be the pinned commit, not the repository head.</p>
+<pre class="code"><code>git archive 006d7ee71aa6599521d6675c32f496c5427a846b | tar -x -C /tmp/p2/source
+export HFB_REPO=/tmp/p2/source
+python3 -c &#x27;import os; assert os.path.isfile(os.path.join(os.environ[&quot;HFB_REPO&quot;], &quot;bench&quot;, &quot;store.py&quot;))&#x27;
+
+cd review/2026-11-03_p2-verification/scripts
+export PYTHONDONTWRITEBYTECODE=1
+python3 p2probes.py P08          # S1
+python3 p2probes.py P07          # S2
+HFB_REPO=$HFB_REPO bash runner_checks.sh
+HFB_REPO=$HFB_REPO bash runner_extra.sh
+PYTHONUNBUFFERED=1 python3 v3fixes.py    # S4, needs chattr +i</code></pre>
+<p>S5 needs a disposable checkout and a fresh temporary parent:</p>
+<pre class="code"><code>TMPROOT=&quot;$(mktemp -d)&quot;; mkdir -p &quot;$TMPROOT/checkout&quot;
+cp -a &quot;$HFB_REPO/.&quot; &quot;$TMPROOT/checkout/&quot;
+( cd &quot;$TMPROOT/checkout&quot; &amp;&amp; TMPDIR=&quot;$TMPROOT&quot; python3 audit/regressions.py f20 )
+find &quot;$TMPROOT&quot; -maxdepth 1 -type d -name &#x27;hfb-f2*&#x27; -print</code></pre>
+<p>Requirements: Python 3 with the standard library, bash and coreutils, <code>bc</code> for the timing columns in the runners, and a filesystem that permits <code>chattr +i</code> for S4.</p>
+<h2>Result</h2>
+<p>Four of the five findings reproduced on 3 November. S4 could not be executed because <code>chattr +i</code> is refused in the container it ran in, so N11 stays unreconciled rather than reproduced or disputed. Details and the per-finding rows are in <code>results-2026-11-03/RESULTS.md</code>.</p>
+<footer></footer>
+</main>
+</body>
+</html>

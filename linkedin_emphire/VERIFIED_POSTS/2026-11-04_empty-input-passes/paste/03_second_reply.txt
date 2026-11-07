@@ -1,0 +1,3 @@
+The version of this that costs money is the compliance one. A control that ran against an empty population is not evidence the control works, and the report won't say which it was.
+
+Ask for the population count on the same page as the pass rate. If the number isn't there, the pass rate isn't either.

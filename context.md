@@ -2,9 +2,31 @@
 
 > Read top to bottom before acting. This is the handoff for the next session.
 
-- **Updated:** 2026-10-31 (Lagos, UTC+1)
-- **Session branch:** `arena/1422cb2a-linkedin-emphire` (branched from `main`)
-- **Repo:** `Teamthy/linkedin_emphire` (public)
+- **Updated:** 2026-11-06 (Lagos, UTC+1)
+- **Session branch:** `arena/70379866-linkedin-emphire` (branched from `main`), pipeline work landed 2026-11-06
+- **Repo:** private development copy; the public profile repo is `Teamthy/ai-redteam-five-tests`. Never name the
+  development repo's organisation in anything outward (rule R03).
+
+---
+
+## 0. Read this first (added 2026-11-06)
+
+This file is the handoff, not the rulebook. The rulebook is the pipeline:
+
+1. `AGENTS.md` at the repository root, the contract for any session.
+2. `linkedin_emphire/PIPELINE/00-START.md`, the read order.
+3. `linkedin_emphire/PIPELINE/20-RULES.md`, 30 numbered rules, 23 of them blocking, generated from
+   `PIPELINE/registry/rules.json`.
+4. `linkedin_emphire/PIPELINE/50-CONTRACT.md`, the front matter every deliverable carries.
+5. `linkedin_emphire/STATE/OPEN-LOOPS.md`, what is unfinished.
+
+Then, before anything leaves the repo:
+
+```
+python3 linkedin_emphire/TOOLING/pipeline.py check <path>
+```
+
+Everything below is still true. It is the story; the pipeline is the enforcement.
 
 ---
 
@@ -83,9 +105,11 @@ The owner is a self-taught **software engineer who builds and tests AI for safet
 
 - **No em dashes** in any owner-facing content (comments, articles, resume, emails). Use commas, periods, colons.
 - **No fabricated numbers or results.** Real runs only. If there is no model access, use the honest "the tell": ship the method, no invented counts or rates.
+- **Never reference `tomicialgraphics` in any deliverable (owner instruction, 2026-11-04).** No repository URL, no account name, no handle, no email variant, in anything a client, reviewer, hiring team or vendor receives. That includes the public repository `tomicialgraphics-collab/linkedin_emphire` and every GitHub link built from it. Pinned revisions are identified to outsiders by commit SHA and file SHA-256 only, never by URL. Deliver review artefacts as files (Drive link or attachment) with a hash in the message. Internal repo paths inside the owner's own files are fine; anything outward-facing is not.
+- **Contact address (owner instruction, 2026-11-04):** `olusanyatimothy54@gmail.com` is the only address used for applications, outreach, vendor files and anything a hiring team or protocol author receives. **Never use `tomicialgraphics@gmail.com`** for outbound contact, never put it in a deliverable, and never name it as the owner's address. It is already public twice over: it sits in the Contact info on the LinkedIn profile, and it appears as the author of one commit in the public repository `tomicialgraphics-collab/linkedin_emphire`. Treat it as burned for outreach. Commits made from now on use the GitHub noreply identity, so the leak is historical, not ongoing.
 - **PII:** never hand the owner's resume / contact a public link to a hiring manager (owner declined that). The repo itself is public and already holds an older resume, so anything committed here is public. Confirm with the owner before committing new PII to the public repo.
 - **Every daily post ships with a HEADLINE and a SUBHEADLINE** (owner instruction, 2026-10-31). Not optional, not only when asked. The headline is the memorable line and goes first. The subheadline carries the number or the stakes and must add something the headline does not say. Together they have to land inside the first ~200 characters, because that is what shows before "see more". They are the post's first two lines, and the same pair is reused as the card or article title and deck. Give one recommended pair plus two alternatives. No em dashes in either, no banned words, no clickbait, and no question in the headline.
-- **The first line must force the "see more"** (owner instruction, 2026-11-01). Under 120 characters, no question, no greeting, and incomplete without the next line. Use one of three mechanisms: a number that fights its own unit, a contradiction in two clauses, or a cost stated flatly. If the headline already hooks, it IS the first line and you do not add another. Full rules and the three approved cards are in `DAILY CONTENT/visual_and_hook_spec.md`.
+- **The first line must force the "see more"** (owner instruction, 2026-11-01). Under 120 characters, no question, no greeting, and incomplete without the next line. Use one of three mechanisms: a number that fights its own unit, a contradiction in two clauses, or a cost stated flatly. If the headline already hooks, it IS the first line and you do not add another. Full rules and the three approved cards are in `linkedin_emphire/DAILY CONTENT/visual_and_hook_spec.md`.
 - **Every post names the words to box in its visual** (owner instruction, 2026-11-01). One boxed phrase per card, one to three words, never opening line one. Box the quantity or the failure verb, never the topic. It must pass the portability test: if the phrase could headline a different post by a different writer, it is wrong. Give a primary box and one alternative, and say which is stronger and why.
 - **Everything ships through the human gate** (owner instruction, 2026-10-31). Before any deliverable is called done, run `python3 linkedin_emphire/TOOLING/voice_lint.py --human <file>`. Target 90 or above with zero errors. The gate scores rhythm, not vocabulary: triads, repetitive sentence openings, sentence-length variance, hedges, missing contractions, and paragraphs with no terminal punctuation. Vocabulary and the em-dash rule are already covered by the base lint. Proper punctuation means every paragraph ends in a full stop, comma, colon or question mark, no doubled words, and a space after every comma.
 - **Every session writes its own log** (owner instruction, 2026-10-31). Append to or create `SESSION_LOG/SESSION_LOG_<date>.md` capturing each user instruction, each decision, each artifact with its path, the open loops, and anything a future session would otherwise have to re-derive from chat. Record the reasoning, not just the output. If an instruction in the chat is not in the repo, it will be lost, and losing it costs the owner work he has already paid for once.
@@ -151,13 +175,44 @@ Signature moves to reuse:
 
 ## 12. Repo and file map
 
-- `context.md` = this file.
-- `RESUME/Timothy_Olusanya_Aithos_Research_Engineer.{pdf,docx}` = Aithos resume (1 page). Currently UNTRACKED in git.
-- `linkedin_emphire/RESUME/build_resume_aithos.py` = Aithos resume generator.
-- `linkedin_emphire/RESUME/` = older public AI/ML resume + `build_resume.py` + audit plan.
-- `ARTICLES/2026-10-13_article-2_five-boring-failure-modes/` = Article 2 package (publish doc, cards).
-- `DESIGN/` = article render scripts + fonts.
-- `STRATEGY/`, `OPPORTUNITIES/`, `UPWORK/` = strategy and opportunity docs.
+Restructured 2026-11-06. The root is now thin on purpose: boot files, launchers, and nothing that
+could be mistaken for a second copy of the work. Everything else is inside `linkedin_emphire/`.
+
+**Root**
+
+- `AGENTS.md` = the contract for any session or agent. Read before acting.
+- `README.md` = the map for a human in a hurry.
+- `context.md` = this file, the handoff.
+- `emphire` and `emphire.ps1` = the pipeline commands, for bash and for Windows PowerShell 5.1.
+- `books/`, `manual/`, `host-failure-benchmark/`, `google_drive/`, `uploads/` = inputs and mirrors,
+  not part of the pipeline, never a deliverable.
+
+**Inside `linkedin_emphire/`**
+
+- `PIPELINE/` = the rules, stages, contract and roles. `registry/*.json` is the only place a rule,
+  template or hashtag is defined. `20-RULES.md`, `30-TEMPLATES.md` and `40-HASHTAGS.md` are generated
+  from it, so they cannot drift.
+- `TOOLING/gate.py` = enforces every automatable rule, reads front matter, exits non-zero when a file
+  would fail one. `TOOLING/pipeline.py` = start, status, check, log, audit, render, map, loops.
+- `TOOLING/voice_lint.py` = vocabulary and rhythm. `TOOLING/md2html.py` = markdown to a page.
+- `STATE/OPEN-LOOPS.md` = the only list of unfinished work. `STATE/DELIVERY-LOG.md` = every file that
+  left, with size and SHA-256. `STATE/GATE-REPORT.md` = the generated scoreboard.
+- `MAP.md` = generated index of every folder, its purpose, its role and its stage.
+- `DAILY CONTENT/` = the editorial canon: `post_templates.txt`, `visual_and_hook_spec.md`,
+  `banned_words.txt` (the 84-entry list), `voice_dna.txt`, `master_prompt.txt`, `content_bank.txt`,
+  `content_strategy.txt`, `inspiration_library.txt`, `drafts/`. `_variants/` holds superseded copies
+  kept for the record, never the canon.
+- `VERIFIED_POSTS/` = one folder per post, `INDEX.md`, and 25 legacy posts that predate the contract.
+- `RESUME/` = PDFs and DOCX for three roles (AITHOS MTS, Aithos Research Engineer, Anthropic Fellows).
+  PII. Never linked publicly.
+- `CLIENTS/`, `PROJECTS/`, `OUTREACH/` = client work, named projects, confidential working files.
+- `ARTICLES/`, `CONTENT/`, `CONTENT_CALENDARS/`, `LINKEDIN/`, `PUBLISH/` = content pipeline.
+- `ENGAGEMENT/`, `NETWORKING/` = comments, DMs, contacts.
+- `OPPURTUNITIES/`, `UPWORK/`, `APPLICATIONS/`, `EMAIL/`, `LEADS/` = opportunities and applications.
+- `DESIGN/`, `VISUAL/`, `ASSETS/` = card geometry, brand rules, photographs.
+- `EMPIRE/`, `STRATEGY/`, `PLANS/`, `analytics/` = the operating layer.
+- `SESSION_LOG/` = one log per working day, 2026-10-31 onward.
+- `ARCHIVE/` = superseded files and `RESTRUCTURE-2026-11-06.md`, the record of the restructure.
 
 ---
 ---

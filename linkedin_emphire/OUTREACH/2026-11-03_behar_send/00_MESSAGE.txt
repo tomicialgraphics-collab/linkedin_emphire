@@ -1,0 +1,54 @@
+Behar,
+
+All five are run, and the results are in the repository, so there is nothing to attach. Everything below
+resolves there.
+
+The 42 files in the repository are the archive's contents, so nothing is missing. What is missing is the
+container, and that changes what can be checked. A zip's SHA-256 covers the compression stream, the
+headers, the timestamps and the file order, none of which survives extraction, so e34c35c8 cannot be
+recomputed from the files or checked against them. A fresh re-zip will not match either, so please do not
+send one.
+
+The manifest is at review/2026-11-03_p2-verification/MANIFEST-delivered.sha256, holding the hashes at the
+names the files arrived with. One command on your extracted copy closes the content half:
+
+  sha256sum -c MANIFEST-delivered.sha256
+
+Forty-two matching hashes prove the two sets are equal, which is what the results depend on. The container
+digest stays unverified until the original zip exists somewhere we can both fetch, and a release asset is
+the cleanest place for it. I am recording the position as content complete and pinned, container digest
+unverified, not as a confirmed digest.
+
+The write-up is at review/2026-11-03_p2-verification/results-2026-11-03/RESULTS.md, with the six logs
+beside it. Summary:
+
+Run: 006d7ee extracted with git archive, so the checkout was never written to. Python 3.11.2, Debian 12,
+ext4.
+
+S1 reproduced: ok:false, durable:false, second verdict durable on disk, live and restarted both conflicted,
+no conflict row, your error string exactly.
+
+S2 reproduced: quarantine side file present, journal reads boot, issued, issued, boot, no repair row.
+
+S3 reproduced: R2 gives nothing until completion, 15.63 s to the first byte. R3a fails after 15 s with no
+port announced. R5 hits the 45 s timeout with zero bytes. R7 reports MISSED for f1, f10, f11, f13, f14,
+f18, f19 and f20. One difference in surface: R6 reported the campaign incomplete with modes 0 rather than
+dying, which is weaker than an abort, so do not cite an abort from this run. bc is absent here, so the
+duration columns print empty and the classifications are unaffected.
+
+S4 not executed: chattr +i is refused in this container, confirmed with a bare probe on an empty file
+outside the script. The labelled N11 line says not testable here, then the obsolete N13 tail raises
+FileNotFoundError, as you warned. N11 stays unreconciled.
+
+S5 reproduced: one f20 run with its own TMPDIR left hfb-f20-benign and hfb-f20-old, 58 files and 384 KB
+each.
+
+Four reproduced, one environment-limited, none not-reproduced. S1, S2, S3 and S5 move to reproduced with
+the date in the register, and S4 stays unreconciled, now recorded as environment-limited rather than
+untested. Reproduced is not fixed, and I am not treating any of these as agreed.
+
+The kit now sits under review/2026-11-03_p2-verification, split into scripts and recorded, with your
+p2probes.json preserved as p2probes.delivered.json so a re-run cannot overwrite it. Nothing inside the
+files changed.
+
+Olusanya

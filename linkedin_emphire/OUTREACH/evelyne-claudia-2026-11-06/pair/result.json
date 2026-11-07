@@ -1,0 +1,129 @@
+{
+  "checks": [
+    {
+      "check": "P1 both cells ran with the source hashes pinned",
+      "detail": "{\"patched_store\": \"a57d8bf7df51538c46d502b3c25697f1b1eae5bb2c1ed8453875a25726dd1add\", \"source\": {\"bench/common.py\": \"c4039b867b287388e7f90126ea78db2489836bf78a815c7805b64f1473cead45\", \"bench/host.py\": \"97aa10fc8dca799db7f089d782376e782bde8e7c1fdb8fe4ff3568bd62f8b32f\", \"bench/store.py\": \"99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982\"}}",
+      "ok": true
+    },
+    {
+      "check": "P2 the conflict refusal left two signed verdicts on disk",
+      "detail": "verdict records: 2",
+      "ok": true
+    },
+    {
+      "check": "P3 the verdict refusal left none",
+      "detail": "verdict records: 0",
+      "ok": true
+    },
+    {
+      "check": "P4 the refused replies carry the same text, which is the finding",
+      "detail": "{\"conflict\": {\"durable\": false, \"error\": \"injected: the journal refused a verdict write\", \"ok\": false}, \"verdict\": {\"durable\": false, \"error\": \"injected: the journal refused a verdict write\", \"ok\": false}}",
+      "ok": true
+    },
+    {
+      "check": "P5 the replayed state differs: conflicted against not",
+      "detail": "{\"conflict\": \"conflicted\", \"verdict\": null}",
+      "ok": true
+    },
+    {
+      "check": "P6 the host event kinds are identical, against my written expectation",
+      "detail": "{\"conflict\": [\"wal_commit\", \"reply_rejected\", \"effect_withheld\"], \"verdict\": [\"wal_commit\", \"reply_rejected\", \"effect_withheld\"]}",
+      "ok": true
+    },
+    {
+      "check": "P7 the accepted-write count differs, which is where a reader could notice",
+      "detail": "{\"conflict\": 1, \"verdict\": 0}",
+      "ok": true
+    }
+  ],
+  "checks_failed": [],
+  "surfaces": {
+    "conflict_refusal": {
+      "durable_records": [
+        {
+          "decision_ts": 4,
+          "descriptor": "sha256:1111111111111",
+          "store_seq": 4,
+          "verdict": "BLOCK"
+        },
+        {
+          "decision_ts": 2,
+          "descriptor": "sha256:3e76ead0e1297",
+          "store_seq": 5,
+          "verdict": "BLOCK"
+        }
+      ],
+      "first_reply": {
+        "action_id": "F9-P0001",
+        "ok": true,
+        "state": "verified",
+        "store_seq": 4,
+        "stored": true
+      },
+      "host_events": [
+        "wal_commit",
+        "reply_rejected",
+        "effect_withheld"
+      ],
+      "host_stderr": "",
+      "refused_operation": {
+        "accepted_verdict_writes": 1,
+        "journal_conflict_count": 0,
+        "journal_verdict_count": 2,
+        "refused_reply_key": "verdict_2"
+      },
+      "refused_reply": {
+        "durable": false,
+        "error": "injected: the journal refused a verdict write",
+        "ok": false
+      },
+      "replayed_conflict": null,
+      "replayed_state": "conflicted",
+      "reply_retry": {
+        "durable": false,
+        "error": "injected: the journal refused a verdict write",
+        "ok": false
+      }
+    },
+    "verdict_refusal": {
+      "durable_records": [],
+      "first_reply": {
+        "durable": false,
+        "error": "injected: the journal refused a verdict write",
+        "ok": false
+      },
+      "host_events": [
+        "wal_commit",
+        "reply_rejected",
+        "effect_withheld"
+      ],
+      "host_stderr": "",
+      "refused_operation": {
+        "accepted_verdict_writes": 0,
+        "journal_conflict_count": 0,
+        "journal_verdict_count": 0,
+        "refused_reply_key": "verdict_1"
+      },
+      "refused_reply": {
+        "durable": false,
+        "error": "injected: the journal refused a verdict write",
+        "ok": false
+      },
+      "replayed_conflict": null,
+      "replayed_state": null,
+      "reply_retry": {
+        "durable": false,
+        "error": "injected: the journal refused a verdict write",
+        "ok": false
+      }
+    }
+  },
+  "verified_hashes": {
+    "patched_store": "a57d8bf7df51538c46d502b3c25697f1b1eae5bb2c1ed8453875a25726dd1add",
+    "source": {
+      "bench/common.py": "c4039b867b287388e7f90126ea78db2489836bf78a815c7805b64f1473cead45",
+      "bench/host.py": "97aa10fc8dca799db7f089d782376e782bde8e7c1fdb8fe4ff3568bd62f8b32f",
+      "bench/store.py": "99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982"
+    }
+  }
+}
