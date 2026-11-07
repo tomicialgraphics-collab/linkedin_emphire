@@ -1,0 +1,39 @@
+Marvin,
+
+Thank you for checking the patch rather than the description of it, and for running each file on its own. All three
+points are right, and the third is better evidence than anything I had.
+
+The label first. The date line now says version 7, not 6, for the reason you have been holding me to all along.
+Version 6 exists at `c3888fbf...d4614`, and you have checked the patch that produces it. Folding these corrections
+into it would leave two files under one name, and a hash in your hands that no longer described what was on disk.
+Version 6 therefore stands frozen, and the reason is written into the new date line so that the next person to
+compare the two understands why there are two.
+
+The defect is worth naming because it explains itself. In the v5 to v6 transform I replaced the words "fourth
+revision" with "version 5" at the moment the transformation was itself making version 6. The patch shows it, and it
+will not survive a reading.
+
+The stale sentence is gone. "Same 29 tests before and after" cannot stand in a document whose test section withdraws
+the figure it rests on, and I should have caught it in the same pass that withdrew the number. What replaces it is
+only what the patch itself supports: `lib/streams.mjs` is the single file it touches, so no test file changes either
+side of it, and `negative/N11-ref-postdates-claim` is named as the vector that would notice a fix returning on an
+empty history before check 10 has finished.
+
+The counts are taken as you put them, and your file list does work my paragraph could not. The section now gives each
+file its own count at `05267a36`, that is 6, 29 and 1, totalling 36 with no failures, and it states that the 29 of 29
+standing in every earlier revision was the vector file alone: a real count with the wrong scope, not a wrong one. The
+explanation about tests being added after `b890d2c` is withdrawn, since one file changed and it was not a test file.
+
+One further change of a single word, disclosed because you did not ask for it. In W-02's ordering hazard the sentence
+pointed at the count recorded under test counts, and that count no longer exists, so it points at the observation.
+
+The patch is 7,570 bytes, SHA-256 `70e9aec1...5218`, four hunks. Applied to a copy of version 6 whose hash I checked
+before touching it, it produces version 7 at 34,757 bytes, `b9af6973...8bce`. Applied to a tree that already has it,
+all four hunks are refused, which is the check I should have been running on my own patches from the beginning.
+
+The file is here: https://drive.google.com/file/d/1BlNzAb1C8gbHkx5-t30PMHVFeah18gU0/view?usp=drivesdk and the
+hash above is what to check if the download and this letter ever disagree.
+
+W-04 stays with you, and I am not asking after it.
+
+Timothy

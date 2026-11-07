@@ -11,7 +11,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `ARTICLES` | 94 | 42773 KB | the Breaking AI series, one package per article | content | S3 |
 | `ASSETS` | 10 | 2742 KB | photos, logos, fonts and anything a card is built from | visual | S3 |
 | `BREAKLAB` | 5 | 44 KB | the public harness work | content | S3 |
-| `CLIENTS` | 45 | 481 KB | one folder per client, per engagement, dated. Findings first, private to them | empire | S3,S5,S6 |
+| `CLIENTS` | 48 | 525 KB | one folder per client, per engagement, dated. Findings first, private to them | empire | S3,S5,S6 |
 | `CONTENT` | 2 | 5 KB | content working files that are not yet a post | content | S3 |
 | `CONTENT_CALENDARS` | 2 | 47 KB | the posting calendar | content | S1 |
 | `CURRICULUM` | 1 | 27 KB | the red-team and research study plan | strategist | S2 |
@@ -32,7 +32,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `RESOURCES` | 1 | 2 KB | reference material that is not authored here | strategist | S2 |
 | `RESUME` | 16 | 327 KB | resumes and generators. PII, never linked publicly | opportunities | S3 |
 | `SESSION_LOG` | 3 | 35 KB | one log per working day, instructions and decisions | strategist | S7 |
-| `STATE` | 4 | 26 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
+| `STATE` | 4 | 28 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
 | `STRATEGY` | 18 | 234 KB | ICP, positioning, weekly plans | strategist | S1,S8 |
 | `THE CONTENT CREATOR` | 1 | 3 KB | role prompt for content | content | S0 |
 | `THE EMPIRE BUILDER` | 1 | 3 KB | role prompt for the empire | empire | S0 |
