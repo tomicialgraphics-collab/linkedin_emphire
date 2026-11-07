@@ -1,0 +1,17 @@
+ok   P1 both cells ran with the source hashes pinned
+ok   P2 the conflict refusal left two signed verdicts on disk
+ok   P3 the verdict refusal left none
+ok   P4 the refused replies carry the same text, which is the finding
+ok   P5 the replayed state differs: conflicted against not
+ok   P6 the host event kinds are identical, against my written expectation
+ok   P7 the accepted-write count differs, which is where a reader could notice
+
+conflict refused reply: {"durable": false, "error": "injected: the journal refused a verdict write", "ok": false}
+verdict  refused reply: {"durable": false, "error": "injected: the journal refused a verdict write", "ok": false}
+conflict state: conflicted | verdict state: None
+conflict host : ['wal_commit', 'reply_rejected', 'effect_withheld']
+verdict  host : ['wal_commit', 'reply_rejected', 'effect_withheld']
+
+0 check(s) failed
+evidence: ./pair/result.json
+exit: 0
