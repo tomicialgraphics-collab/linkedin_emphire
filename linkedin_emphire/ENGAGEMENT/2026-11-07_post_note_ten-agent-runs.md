@@ -25,7 +25,7 @@ Pull ten agent runs at random and ask who can prove what each one was allowed to
 
 Brad Wolfe published a test last week that I have been running in a different form. Take ten documents and
 ask who in the building can state what may be shared, for how long, and where the rule is written. Most
-companies score three or four. The AI cannot score higher than the building does.
+companies score three or four, and the AI can't score higher than the building does.
 
 Run the same test on agent runs and the score gets worse.
 
@@ -33,14 +33,14 @@ Take ten consequential actions an agent took in production. For each one ask whi
 could have refused it, and where the record of that decision lives. In most systems the answer is a log line
 saying the call succeeded.
 
-That is not an audit trail. It records that something happened, not that anything was checked. A run that
+That isn't an audit trail. It records that something happened, not that anything was checked. A run that
 was authorised and a run nobody examined write the same entry, which is why the first incident review always
 turns into an argument about what the system was allowed to do.
 
-The fix is not a better log. It is a decision record: what was asked, against which rule, by whom, and what
+The fix isn't a better log. It is a decision record: what was asked, against which rule, by whom, and what
 was refused. Refusals need their own entry, because the question after an incident is never what succeeded.
 
-Ten runs. If you cannot answer for eight of them, you do not have governance. You have telemetry.
+Ten runs. If you can't answer for eight of them, you don't have governance. You have telemetry.
 
 ## Graphic
 

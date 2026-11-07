@@ -1,6 +1,6 @@
 # Gate report
 
-Generated 2026-11-06 19:31 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-07 03:40 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 
@@ -32,18 +32,30 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `2026-11-04_could-not-look` | legacy | 7 | 0 | legacy |
 | `2026-11-04_empty-input-passes` | legacy | 6 | 1 | legacy |
 | `2026-11-06_absence-of-a-record` | yes | 0 | 0 | pass |
+| `2026-11-07_twelve-swings` | yes | 0 | 1 | pass, warnings |
 | `2026-11-11_judge-needs-a-test` | legacy | 6 | 1 | legacy |
 | `2026-11-13_open-benchmark-open-defects` | legacy | 7 | 0 | legacy |
 | `ENGAGEMENT/2026-11-03_allie-miller_agent-handoff.md` | legacy | 1 | 1 | legacy |
 | `ENGAGEMENT/2026-11-03_jerry-liu_ocria-speed.md` | legacy | 3 | 1 | legacy |
 | `ENGAGEMENT/2026-11-03_nvidia_derczynski.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/2026-11-03_sarah_bird_ai-code-scanning.md` | legacy | 1 | 0 | legacy |
+| `ENGAGEMENT/2026-11-06_comment-round_feed-sweep-2.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-06_comment_ai-news-world-altman.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-06_comment_hitesh-choudhary.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-06_comment_soubhik-ghosh.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-06_comment_stephen-klein.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-06_comment_taha-hussain.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-06_connection-triage_moskowitz-gotsiridze.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-06_dm-gotsiridze-reply.md` | legacy | 1 | 0 | legacy |
+| `ENGAGEMENT/2026-11-06_icp-follow-30-batch2.md` | legacy | 2 | 0 | legacy |
+| `ENGAGEMENT/2026-11-06_icp-follow-30.md` | legacy | 2 | 0 | legacy |
 | `ENGAGEMENT/2026-11-06_reply_brad-wolfe.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-07_comment_christopher-story.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-07_comment_guillermo-flor.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-07_comment_legal-ai-completeness.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-07_comment_shawn-bullock.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-07_post_note_ten-agent-runs.md` | yes | 0 | 2 | pass, warnings |
+| `ENGAGEMENT/FOLLOW-LIST-RULES.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/audience_follow_list_2026-10-24.md` | legacy | 1 | 1 | legacy |
 | `ENGAGEMENT/comment_round_2026-10-31.md` | legacy | 4 | 1 | legacy |
 | `ENGAGEMENT/comment_round_2026-11-01.md` | legacy | 2 | 1 | legacy |

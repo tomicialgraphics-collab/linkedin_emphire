@@ -10,6 +10,8 @@ headline: Twelve swings a year is a tempo, not a learning rate.
 subheadline: Speed compounds only when each cycle changes one thing and the result says which one.
 headline_alt: The clock is not the advantage. Attribution is.
 subheadline_alt: A thirty-day loop gives you twelve samples. It only gives you twelve lessons if you can say what each one changed.
+headline_alt2: Twelve samples is not twelve lessons.
+subheadline_alt2: A fast loop teaches you nothing unless each cycle changes one thing and says which.
 box: TWELVE INVOICES
 box_alt: ONE VARIABLE
 hashtags: [#AIEvaluation, #AIEngineering, #AIGovernance, #MachineLearning]
