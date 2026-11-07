@@ -1,0 +1,395 @@
+{
+  "checks": [
+    {
+      "check": "G1 every source hash and the imported runner's hash were verified before use",
+      "detail": "{\"patched\": \"a57d8bf7df51538c46d502b3c25697f1b1eae5bb2c1ed8453875a25726dd1add\", \"runner\": \"991e9eec09c291bf0179b6677577c5929b688df0b2b2c10fea2cc163d669e891\", \"source\": {\"bench/common.py\": \"c4039b867b287388e7f90126ea78db2489836bf78a815c7805b64f1473cead45\", \"bench/host.py\": \"97aa10fc8dca799db7f089d782376e782bde8e7c1fdb8fe4ff3568bd62f8b32f\", \"bench/store.py\": \"99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982\"}}",
+      "ok": true
+    },
+    {
+      "check": "G2 the recorder returned the same parsed objects the cells hold",
+      "detail": "26 calls recorded, 25 distinct replies",
+      "ok": true
+    },
+    {
+      "check": "W1 the two refused replies are the same bytes, not merely equal as parsed JSON",
+      "detail": "{\"conflict\": \"1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7\", \"verdict\": \"1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7\"}",
+      "ok": true
+    },
+    {
+      "check": "W2 the two parsed replies are equal objects",
+      "detail": "{\"conflict\": {\"durable\": false, \"error\": \"injected: the journal refused a verdict write\", \"ok\": false}, \"verdict\": {\"durable\": false, \"error\": \"injected: the journal refused a verdict write\", \"ok\": false}}",
+      "ok": true
+    },
+    {
+      "check": "W3 the retried replies are also the same bytes",
+      "detail": "{\"conflict\": \"1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7\", \"verdict\": \"1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7\"}",
+      "ok": true
+    },
+    {
+      "check": "H1 the host event kinds are identical",
+      "detail": "{\"conflict\": [\"wal_commit\", \"reply_rejected\", \"effect_withheld\"], \"verdict\": [\"wal_commit\", \"reply_rejected\", \"effect_withheld\"]}",
+      "ok": true
+    },
+    {
+      "check": "H2 the host event records are identical in full, not only in kind",
+      "detail": "3 records against 3 records",
+      "ok": true
+    },
+    {
+      "check": "R1 the durable verdict records differ: two against none",
+      "detail": "{\"conflict\": 2, \"verdict\": 0}",
+      "ok": true
+    },
+    {
+      "check": "R2 the acknowledged verdict requests differ: one against none",
+      "detail": "{\"conflict\": 1, \"verdict\": 0}",
+      "ok": true
+    },
+    {
+      "check": "S1 the replayed state differs: conflicted against not",
+      "detail": "{\"conflict\": {\"conflict\": null, \"verdict_state\": \"conflicted\"}, \"verdict\": {\"conflict\": null, \"verdict_state\": null}}",
+      "ok": true
+    }
+  ],
+  "checks_failed": [],
+  "host": {
+    "conflict": {
+      "event_count": 3,
+      "kinds": [
+        "wal_commit",
+        "reply_rejected",
+        "effect_withheld"
+      ],
+      "provenance": "host event records read from the host journal by F9b-conflict-write.py host_cell() at 991e9eec09c291bf",
+      "records": [
+        {
+          "action_id": "F9-H0001",
+          "decision_ts": 2,
+          "kind": "wal_commit",
+          "phase": "WAL_COMMIT",
+          "run": "initial",
+          "scenario": "B",
+          "step": 3
+        },
+        {
+          "action_id": "F9-H0001",
+          "command": "verdict",
+          "kind": "reply_rejected",
+          "phase": "REPLY_REJECTED",
+          "problems": [
+            "store refused: injected: the journal refused a verdict write",
+            "reply names None, the request was 'F9-H0001'",
+            "store did not store the record: stored=None",
+            "store did not resolve the verdict: state=None (conflict=None)"
+          ],
+          "run": "initial",
+          "scenario": "B",
+          "step": 4
+        },
+        {
+          "action_id": "F9-H0001",
+          "kind": "effect_withheld",
+          "phase": "EFFECT_WITHHELD",
+          "reason": "store reply rejected",
+          "run": "initial",
+          "scenario": "B",
+          "step": 5
+        }
+      ]
+    },
+    "verdict": {
+      "event_count": 3,
+      "kinds": [
+        "wal_commit",
+        "reply_rejected",
+        "effect_withheld"
+      ],
+      "provenance": "host event records read from the host journal by F9b-conflict-write.py host_cell() at 991e9eec09c291bf",
+      "records": [
+        {
+          "action_id": "F9-H0001",
+          "decision_ts": 2,
+          "kind": "wal_commit",
+          "phase": "WAL_COMMIT",
+          "run": "initial",
+          "scenario": "B",
+          "step": 3
+        },
+        {
+          "action_id": "F9-H0001",
+          "command": "verdict",
+          "kind": "reply_rejected",
+          "phase": "REPLY_REJECTED",
+          "problems": [
+            "store refused: injected: the journal refused a verdict write",
+            "reply names None, the request was 'F9-H0001'",
+            "store did not store the record: stored=None",
+            "store did not resolve the verdict: state=None (conflict=None)"
+          ],
+          "run": "initial",
+          "scenario": "B",
+          "step": 4
+        },
+        {
+          "action_id": "F9-H0001",
+          "kind": "effect_withheld",
+          "phase": "EFFECT_WITHHELD",
+          "reason": "store reply rejected",
+          "run": "initial",
+          "scenario": "B",
+          "step": 5
+        }
+      ]
+    }
+  },
+  "host_action_ids": {
+    "conflict": "F9-H0001",
+    "verdict": "F9-H0001"
+  },
+  "match_host_id": true,
+  "records": {
+    "conflict": {
+      "acknowledged_verdict_requests": 1,
+      "durable_verdict_records": 2
+    },
+    "verdict": {
+      "acknowledged_verdict_requests": 0,
+      "durable_verdict_records": 0
+    }
+  },
+  "state": {
+    "conflict": {
+      "conflict": null,
+      "verdict_state": "conflicted"
+    },
+    "verdict": {
+      "conflict": null,
+      "verdict_state": null
+    }
+  },
+  "verified_hashes": {
+    "imported_runner": {
+      "F9b-conflict-write.py": "991e9eec09c291bf0179b6677577c5929b688df0b2b2c10fea2cc163d669e891"
+    },
+    "patched_store": "a57d8bf7df51538c46d502b3c25697f1b1eae5bb2c1ed8453875a25726dd1add",
+    "source": {
+      "bench/common.py": "c4039b867b287388e7f90126ea78db2489836bf78a815c7805b64f1473cead45",
+      "bench/host.py": "97aa10fc8dca799db7f089d782376e782bde8e7c1fdb8fe4ff3568bd62f8b32f",
+      "bench/store.py": "99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982"
+    }
+  },
+  "wire": {
+    "call_log": [
+      {
+        "bytes": 38,
+        "call": 1,
+        "cmd": "issue",
+        "sha256": "ce770e66c0bd1c7ed86c8ad80ee1b5f67faa52cd41094415a9d837a746f8f47c"
+      },
+      {
+        "bytes": 38,
+        "call": 2,
+        "cmd": "commit",
+        "sha256": "ce770e66c0bd1c7ed86c8ad80ee1b5f67faa52cd41094415a9d837a746f8f47c"
+      },
+      {
+        "bytes": 91,
+        "call": 3,
+        "cmd": "verdict",
+        "sha256": "1cd7c614baad6206c6a376fbad3b07fdc72bbecb75fda419c5249df4386ea0a0"
+      },
+      {
+        "bytes": 90,
+        "call": 4,
+        "cmd": "verdict",
+        "sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7"
+      },
+      {
+        "bytes": 90,
+        "call": 5,
+        "cmd": "verdict",
+        "sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7"
+      },
+      {
+        "bytes": 385,
+        "call": 6,
+        "cmd": "state",
+        "sha256": "a68d5a63682aeebb6679e2081b216ca73f26b7f191f0f826eb9fdc0867c5e75e"
+      },
+      {
+        "bytes": 964,
+        "call": 7,
+        "cmd": "lookup",
+        "sha256": "2691afd2b261a1cc1ca0f79833a2dbe50400fd5ede7594272f85d61663f44283"
+      },
+      {
+        "bytes": 964,
+        "call": 8,
+        "cmd": "lookup",
+        "sha256": "2691afd2b261a1cc1ca0f79833a2dbe50400fd5ede7594272f85d61663f44283"
+      },
+      {
+        "bytes": 385,
+        "call": 9,
+        "cmd": "state",
+        "sha256": "a68d5a63682aeebb6679e2081b216ca73f26b7f191f0f826eb9fdc0867c5e75e"
+      },
+      {
+        "bytes": 38,
+        "call": 10,
+        "cmd": "issue",
+        "sha256": "7fb53881af298893351295aa14571ac6e6f4233064fd18f9a83e7030d0f4442b"
+      },
+      {
+        "bytes": 38,
+        "call": 11,
+        "cmd": "commit",
+        "sha256": "7fb53881af298893351295aa14571ac6e6f4233064fd18f9a83e7030d0f4442b"
+      },
+      {
+        "bytes": 91,
+        "call": 12,
+        "cmd": "verdict",
+        "sha256": "95f1b4c4619380ff1af76d5d81ab2bb7ffd8447b602ff9bf6eb1771ecfe322e3"
+      },
+      {
+        "bytes": 964,
+        "call": 13,
+        "cmd": "lookup",
+        "sha256": "3a48ac3fc262583c4a3cddaadd516d9813584bfc7260c2658266a6d9271acaed"
+      },
+      {
+        "bytes": 38,
+        "call": 14,
+        "cmd": "issue",
+        "sha256": "8182a638ed0776d52df865c90bcfef22f0420ec6e9c1d3f4aff5f95dbe7ce2d8"
+      },
+      {
+        "bytes": 38,
+        "call": 15,
+        "cmd": "commit",
+        "sha256": "8182a638ed0776d52df865c90bcfef22f0420ec6e9c1d3f4aff5f95dbe7ce2d8"
+      },
+      {
+        "bytes": 90,
+        "call": 16,
+        "cmd": "verdict",
+        "sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7"
+      },
+      {
+        "bytes": 90,
+        "call": 17,
+        "cmd": "verdict",
+        "sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7"
+      },
+      {
+        "bytes": 90,
+        "call": 18,
+        "cmd": "verdict",
+        "sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7"
+      },
+      {
+        "bytes": 355,
+        "call": 19,
+        "cmd": "state",
+        "sha256": "e5332351fe05f252063811ec78558587d62a3f4416b833d43773d9af14155a6c"
+      },
+      {
+        "bytes": 452,
+        "call": 20,
+        "cmd": "lookup",
+        "sha256": "27f2808fc76349680c081197ca95fac5eadf36248b9438c1455b16cfc3639b09"
+      },
+      {
+        "bytes": 452,
+        "call": 21,
+        "cmd": "lookup",
+        "sha256": "27f2808fc76349680c081197ca95fac5eadf36248b9438c1455b16cfc3639b09"
+      },
+      {
+        "bytes": 355,
+        "call": 22,
+        "cmd": "state",
+        "sha256": "e5332351fe05f252063811ec78558587d62a3f4416b833d43773d9af14155a6c"
+      },
+      {
+        "bytes": 38,
+        "call": 23,
+        "cmd": "issue",
+        "sha256": "7fb53881af298893351295aa14571ac6e6f4233064fd18f9a83e7030d0f4442b"
+      },
+      {
+        "bytes": 38,
+        "call": 24,
+        "cmd": "commit",
+        "sha256": "7fb53881af298893351295aa14571ac6e6f4233064fd18f9a83e7030d0f4442b"
+      },
+      {
+        "bytes": 90,
+        "call": 25,
+        "cmd": "verdict",
+        "sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7"
+      },
+      {
+        "bytes": 452,
+        "call": 26,
+        "cmd": "lookup",
+        "sha256": "7bf7487fdf3dd31bcfcb17eccdfaf81f644fb40b8773df046c72063e038ff571"
+      }
+    ],
+    "conflict": {
+      "label": "conflict refusal reply (verdict_2)",
+      "parsed": {
+        "durable": false,
+        "error": "injected: the journal refused a verdict write",
+        "ok": false
+      },
+      "provenance": "reply text captured from the socket by the recorder in this file; the parsed object and the call itself are F9b-conflict-write.py wire_cell() at 991e9eec09c291bf",
+      "raw_bytes": 90,
+      "raw_sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7",
+      "raw_text": "{\"durable\": false, \"error\": \"injected: the journal refused a verdict write\", \"ok\": false}\n",
+      "trailing_newline": true
+    },
+    "retry": {
+      "conflict": {
+        "label": "conflict retry reply",
+        "parsed": {
+          "durable": false,
+          "error": "injected: the journal refused a verdict write",
+          "ok": false
+        },
+        "provenance": "reply text captured from the socket by the recorder in this file; the parsed object and the call itself are F9b-conflict-write.py wire_cell() at 991e9eec09c291bf",
+        "raw_bytes": 90,
+        "raw_sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7",
+        "raw_text": "{\"durable\": false, \"error\": \"injected: the journal refused a verdict write\", \"ok\": false}\n",
+        "trailing_newline": true
+      },
+      "verdict": {
+        "label": "verdict retry reply",
+        "parsed": {
+          "durable": false,
+          "error": "injected: the journal refused a verdict write",
+          "ok": false
+        },
+        "provenance": "reply text captured from the socket by the recorder in this file; the parsed object and the call itself are F9b-conflict-write.py wire_cell() at 991e9eec09c291bf",
+        "raw_bytes": 90,
+        "raw_sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7",
+        "raw_text": "{\"durable\": false, \"error\": \"injected: the journal refused a verdict write\", \"ok\": false}\n",
+        "trailing_newline": true
+      }
+    },
+    "verdict": {
+      "label": "verdict refusal reply (verdict_1)",
+      "parsed": {
+        "durable": false,
+        "error": "injected: the journal refused a verdict write",
+        "ok": false
+      },
+      "provenance": "reply text captured from the socket by the recorder in this file; the parsed object and the call itself are F9b-conflict-write.py wire_cell() at 991e9eec09c291bf",
+      "raw_bytes": 90,
+      "raw_sha256": "1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7",
+      "raw_text": "{\"durable\": false, \"error\": \"injected: the journal refused a verdict write\", \"ok\": false}\n",
+      "trailing_newline": true
+    }
+  }
+}

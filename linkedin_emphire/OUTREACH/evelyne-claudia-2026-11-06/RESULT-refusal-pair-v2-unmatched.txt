@@ -1,0 +1,28 @@
+ok   G1 every source hash and the imported runner's hash were verified before use
+ok   G2 the recorder returned the same parsed objects the cells hold
+ok   W1 the two refused replies are the same bytes, not merely equal as parsed JSON
+ok   W2 the two parsed replies are equal objects
+ok   W3 the retried replies are also the same bytes
+ok   H1 the host event kinds are identical
+FAIL H2 the host event records are identical in full, not only in kind
+ok   R1 the durable verdict records differ: two against none
+ok   R2 the acknowledged verdict requests differ: one against none
+ok   S1 the replayed state differs: conflicted against not
+
+WIRE
+  conflict reply bytes: 90, sha256 1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7
+  verdict  reply bytes: 90, sha256 1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7
+  conflict text: {"durable": false, "error": "injected: the journal refused a verdict write", "ok": false}
+  verdict  text: {"durable": false, "error": "injected: the journal refused a verdict write", "ok": false}
+HOST
+  conflict kinds: ['wal_commit', 'reply_rejected', 'effect_withheld']
+  verdict  kinds: ['wal_commit', 'reply_rejected', 'effect_withheld']
+  full records equal: False
+RECORDS
+  conflict: durable verdict records 2, acknowledged verdict requests 1
+  verdict: durable verdict records 0, acknowledged verdict requests 0
+STATE
+  conflict: {"conflict": null, "verdict_state": "conflicted"} | verdict: {"conflict": null, "verdict_state": null}
+
+1 check(s) failed
+evidence: ./pair2-unmatched/result.json
