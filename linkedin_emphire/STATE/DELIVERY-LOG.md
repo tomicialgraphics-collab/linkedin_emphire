@@ -96,4 +96,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_eaton-zveare-god-mode-border.md` | 4,010 B | `b9f0bdff7cd8ba870004de9ec23f343a3456b08e0bff10796a8bedd7fefce411` | PASS 0/0, voice 100/100 | Eaton Zveare (comment, not posted; DM draft held, not sent) | 114 w: BOLA is a code problem, whether it stays fixed across a contractor change is a procurement one, so the durable artefact is a register of which systems exist, who built them and which findings were verified |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_aiswarya-venkitesh-diwali.md` | 2,279 B | `ee372d4d33220521abce0eb23800f467dee55b26527333e919f0d32d720eeb7d` | PASS 0/0, voice 100/100 | Aiswarya Venkitesh (comment, not posted) | 39 w: the diya is the right picture for teaching because whoever explains something well is rarely there to see what it builds; deliberately a different shape from the other Diwali greeting on the same day |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
