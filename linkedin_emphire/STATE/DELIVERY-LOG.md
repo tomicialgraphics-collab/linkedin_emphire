@@ -106,4 +106,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_salman-lakhani-fallback-attribution.md` | 3,416 B | `27848c9e44a05b2669858736b74c85e38a69224c39aba4b9ff1c6b1392177e15` | PASS 0/0, voice 100/100 | Salman Lakhani (comment, not posted) | 103 w: answers his question, then turns it, since a fallback model is also a forecast that silently becomes fact, so every response must carry which model produced it and the flip must be logged |
 
+| 2026-11-08 | `VERIFIED_POSTS/2026-11-08_eval-case-argument/post.md` | 2,434 B | `e94d99ff14ca2361605e2999a5c90c5cd524f59a57351191202014927ce029fc` | PASS 0/0, voice 92/100 | public, 8 Nov evening slot | 274 w body: the verdict survives and the argument does not, so three fields (what was expected, which spec version, who decided and what the losing side argued) keep the suite from changing meaning after a model upgrade |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.

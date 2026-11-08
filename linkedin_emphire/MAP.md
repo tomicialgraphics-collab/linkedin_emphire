@@ -43,7 +43,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `TOLU TEMPLATE` | 148 | 57339 KB | document templates inherited from a bundle | strategist | S3 |
 | `TOOLING` | 6 | 101 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
 | `UPWORK` | 51 | 30449 KB | catalog, proposals, gig delivery | opportunities | S1,S6 |
-| `VERIFIED_POSTS` | 98 | 982 KB | every post that passed the gate, one folder each, plus the index | content | S3,S7 |
+| `VERIFIED_POSTS` | 99 | 985 KB | every post that passed the gate, one folder each, plus the index | content | S3,S7 |
 | `VISUAL` | 11 | 631 KB | brand guidelines and approved card references | visual | S3 |
 | `analytics` | 2 | 6 KB | post performance, follower counts, weekly numbers | strategist | S8 |
 
