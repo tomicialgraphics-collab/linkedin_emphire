@@ -102,4 +102,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_paolo-perrone-pipe-attribution.md` | 2,336 B | `d6b98cd79e5ff1dd2415ef53dcbae18c28931b44de56e9a4d02df549cb920256` | PASS 0/0, voice 92/100 | Paolo Perrone (reply in thread, not posted) | 64 w: pipefail gets the code right and loses the attribution, so the code has to arrive with who emitted it or it only works while the pipeline has two parts |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_eva-benn-sans-dma-vote.md` | 3,270 B | `8219dbd7f179f8cc595c08c6ab972289e1fdf17df98e5a42829dbded237ac99f` | PASS 0/0, voice 100/100 | Eva Benn (comment, not posted) | 55 w: specific praise for the human operating system framing, which aims at what AI does to the person rather than at the model, with the vote claim left to the owner to add only if he votes |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
