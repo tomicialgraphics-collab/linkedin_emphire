@@ -19,7 +19,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `DESIGN` | 5 | 88 KB | render scripts, fonts, locked geometry | visual | S3 |
 | `EMAIL` | 10 | 142 KB | email drafts and send logs | opportunities | S3,S6 |
 | `EMPIRE` | 12 | 643 KB | the operating layer: pipeline, prompts, money rows | empire | S8 |
-| `ENGAGEMENT` | 89 | 1976 KB | comment and DM drafts, feed sweeps, replies | engagement | S1,S3 |
+| `ENGAGEMENT` | 90 | 1980 KB | comment and DM drafts, feed sweeps, replies | engagement | S1,S3 |
 | `LEADS` | 1 | 1 KB | raw inbound leads | opportunities | S1 |
 | `LINKEDIN` | 14 | 191 KB | profile copy, headline variants, about section | content | S3 |
 | `NETWORKING` | 6 | 55 KB | contacts, connect notes, follow-ups | engagement | S2 |
@@ -32,7 +32,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `RESOURCES` | 1 | 2 KB | reference material that is not authored here | strategist | S2 |
 | `RESUME` | 16 | 327 KB | resumes and generators. PII, never linked publicly | opportunities | S3 |
 | `SESSION_LOG` | 3 | 35 KB | one log per working day, instructions and decisions | strategist | S7 |
-| `STATE` | 4 | 39 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
+| `STATE` | 4 | 40 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
 | `STRATEGY` | 18 | 234 KB | ICP, positioning, weekly plans | strategist | S1,S8 |
 | `THE CONTENT CREATOR` | 1 | 3 KB | role prompt for content | content | S0 |
 | `THE EMPIRE BUILDER` | 1 | 3 KB | role prompt for the empire | empire | S0 |
