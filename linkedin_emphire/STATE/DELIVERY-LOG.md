@@ -92,4 +92,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_marcus-chan-hand-typed-numbers.md` | 3,129 B | `08bf280541d86bc313abbdc28ff3ff9ce02935fefd2d6fa090febe5c58f5c594` | PASS 0/0, voice 100/100 | Marcus Chan (comment, not posted) | 90 w: friction is the wrong name for it, authorship is the thing, and the same rule decides whether an agent's account of its own action is evidence or decoration |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_ben-li-agent-eval-ownership.md` | 3,454 B | `6029399b04eca22e3dbccb39344efa3d3968335c5fc5b3dc7089766d27905e7e` | PASS 0/0, voice 92/100 | Ben (Xiaojun) Li (comment, not posted) | 126 w: the distributed eval model writes the cases the product already handles, so each case must keep the disagreement that produced it or the pass rate is a number with no argument behind it |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
