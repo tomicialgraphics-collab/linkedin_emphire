@@ -90,4 +90,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_shane-butler-self-serve-analytics.md` | 3,217 B | `bc21597096719e88a3e365de2a3c236cbe943c0ad090d22fed87179fc15763ae` | PASS 0/0, voice 100/100 | Shane Butler (comment, not posted) | 101 w: the cost isn't bad SQL, it's five definitions of active users and none of them visible in the answer, so the fix is the query and the definition travelling with the number |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_marcus-chan-hand-typed-numbers.md` | 3,129 B | `08bf280541d86bc313abbdc28ff3ff9ce02935fefd2d6fa090febe5c58f5c594` | PASS 0/0, voice 100/100 | Marcus Chan (comment, not posted) | 90 w: friction is the wrong name for it, authorship is the thing, and the same rule decides whether an agent's account of its own action is evidence or decoration |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
