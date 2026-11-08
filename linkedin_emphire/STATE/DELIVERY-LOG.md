@@ -76,4 +76,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_soribel-feliz-nvidia-board-investigation.md` | 3,512 B | `7b511dbd5a2ff9f5bbd2d1a9618b3288ed7045e4bead60fe3d4912e2e89a36b0` | PASS 0/0, voice 92/100 | Soribel Feliz (comment, not posted) | reads the Nvidia board statement as an artefact: an investigation opened in the same breath as its conclusion, and a scope that says all available information without saying what can be compelled, published or found undetermined |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_thomas-roccia-volta-refusal-router.md` | 3,752 B | `2103cd2664822d1e1a1de4a049e3352fa9b43826f741037e5290f4529c6a7f58` | PASS 0/0, voice 92/100 | Thomas Roccia (comment, not posted) | 111 w: the refusal string-match makes a refusal a routing decision, not a control, so the fallback order is a live measurement of which guardrails held and the operation cannot tell refusal from empty reply |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
