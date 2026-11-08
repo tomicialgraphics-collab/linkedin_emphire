@@ -104,4 +104,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_eva-benn-sans-dma-vote.md` | 3,270 B | `8219dbd7f179f8cc595c08c6ab972289e1fdf17df98e5a42829dbded237ac99f` | PASS 0/0, voice 100/100 | Eva Benn (comment, not posted) | 55 w: specific praise for the human operating system framing, which aims at what AI does to the person rather than at the model, with the vote claim left to the owner to add only if he votes |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_salman-lakhani-fallback-attribution.md` | 3,416 B | `27848c9e44a05b2669858736b74c85e38a69224c39aba4b9ff1c6b1392177e15` | PASS 0/0, voice 100/100 | Salman Lakhani (comment, not posted) | 103 w: answers his question, then turns it, since a fallback model is also a forecast that silently becomes fact, so every response must carry which model produced it and the flip must be logged |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
