@@ -80,4 +80,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_adi-rashkes-queen-of-hearts-vishing-ctf.md` | 3,526 B | `95b825acceb89ec9510a84188c23c0cfe523202ee14bff1c305de99dfc41559e` | PASS 0/0, voice 100/100 | Adi Rashkes (comment, not posted) | 125 w: score the attempts not the outcomes, because the crack that never reached the secret is the reusable data, and a bot that cannot name the rule it bent can only be scored on the leak |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_ananya-ghosh-chowdhury-diwali.md` | 2,292 B | `6e1ff7f28eff7252b1a9e452f8903307f4213ffb39e526a522e16627e48de993` | PASS 0/0, voice 100/100 | Ananya Ghosh Chowdhury (comment, not posted) | 44 w: a Diwali greeting with one idea returned sharper, most of the architecture worth admiring is subtraction and it rarely gets a festival; no pivot, no link, no pitch |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
