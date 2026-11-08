@@ -110,4 +110,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_eva-benn-vote-cast.md` | 1,294 B | `f3e0620c167f7a0e08f13da6461c753256099c3be433672e6c2e18178c5e0fae` | PASS 0/0, voice 92/100 | Eva Benn (reply, owner confirms the vote was cast) | 17 w: confirms the vote, which is the whole content, because she asked directly and a vote with no word back is indistinguishable from none |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_brandon-crimmins-refusal-seam.md` | 2,938 B | `d9020ef406da1da7cb9f58c123c46ba45951349ef2ea701d8c02d285e9ff219c` | PASS 0/0, voice 100/100 | Brandon Crimmins (comment, not posted) | 110 w: the gap is in the seam between his access and recovery items, since a refused call must never enter the recovery path or the agent escalates by persistence |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
