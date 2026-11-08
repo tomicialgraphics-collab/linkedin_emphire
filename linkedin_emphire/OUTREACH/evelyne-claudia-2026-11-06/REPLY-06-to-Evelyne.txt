@@ -1,0 +1,50 @@
+Evelyne-Claudia,
+
+All three are right, and the first one is a defect in my instrument rather than in the observation.
+
+You are correct that exact result-file reproduction failed. Your files read 26 distinct replies where mine read 25, and
+the cause is what you diagnosed: I keyed the stored replies by id(parsed), and CPython reuses object identities once
+an object is released. In my run two parsed replies landed on the same identity and the count collapsed to 25. In
+yours the allocator behaved differently and it printed the true number. So my sentence, that the archive reproduces
+its own result file with the same hash, was true of my machine and false as a property of the artifact. It is
+withdrawn as stated, and it is the same class of error I told you I had fixed, arriving through a door I had not
+looked behind.
+
+The recorder now assigns a sequential exchange number to each call and returns a dict carrying it, so consumers see
+an ordinary dict and the number survives. Each exchange retains the request, the parsed reply and the raw bytes
+together. Object identity is measured and printed, and nothing rests on it. The test is aimed at the variable that
+broke it: eight runs, including five hash seeds, one run with PYTHONMALLOC=malloc so the allocator itself changes,
+and one under developer mode. One hash, d41a3e55, every time. A fresh unpack of the archive reproduces its own
+result file and the hash I am sending.
+
+On provenance you are exactly right about the mechanism. On the conflict cell I called update() with the host result,
+so the host execution's journal and restart lookup overwrote the wire execution's. The acknowledged count came from
+the wire replies and the durable count from the host journal. Your repair is the repair: keep them apart. The four
+executions are now reported separately, and the counts are the ones you predicted. Conflict wire, three verdict
+records after its retry. Conflict host, two. Both verdict executions, none. Acknowledged requests are counted only
+where the reply was captured, one against none in the wire executions, and reported as null in the host executions
+rather than inferred, because the host's own reply is not captured by this artifact. Restart state is reported four
+times, conflicted for both conflict executions and null for both verdict executions, each with the digest of the
+journal it was read from.
+
+On the third, conceded. The whole journals are not equal and cannot be: the injection exists to stop a verdict from
+landing, so one holds two verdict records and the other holds none. That difference is now stated rather than
+filtered away, together with the restart boot record that counts what was replayed, five of five and three of three.
+What remains is the narrower claim, the selected host records identical in full, and it is labelled as the narrower
+claim it is.
+
+So your position is the position I am working to: bounded reproduction achieved, exact result-file reproduction
+failed in your examination, execution provenance now separated. Nothing here establishes an architecture or
+REACHABLE, and reproducibility alone does not establish that an architecture is correct. Frozen REACHABLE remains
+unchanged, and a reproducible observation is still not a reproducible experiment in its entirety.
+
+It is here: https://drive.google.com/file/d/1QZufdZ6VFJJoKyWG-Xpzrr73FfRptkRf/view?usp=drivesdk and the archive
+is 43,489 bytes, SHA-256 3643a92c95e493923572e1908167a1e8ceca66fc41c2ba065d1fa7ec8bdd7ab6, md5
+162cec51c4d2bc3af8306a351d49ed88, with Drive reporting the same md5 for the copy it holds.
+
+The matched run's result file is d41a3e55. The distinct-action-id run's is 078b4e39, and it fails two checks, which
+is why the matched condition is a condition rather than a convenience.
+
+Reproduction remains yours, and nothing in this letter upgrades the evidentiary status of the result.
+
+Timothy
