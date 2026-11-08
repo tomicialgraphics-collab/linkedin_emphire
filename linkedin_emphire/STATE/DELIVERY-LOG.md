@@ -98,4 +98,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_aiswarya-venkitesh-diwali.md` | 2,279 B | `ee372d4d33220521abce0eb23800f467dee55b26527333e919f0d32d720eeb7d` | PASS 0/0, voice 100/100 | Aiswarya Venkitesh (comment, not posted) | 39 w: the diya is the right picture for teaching because whoever explains something well is rarely there to see what it builds; deliberately a different shape from the other Diwali greeting on the same day |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_paul-sheals-attribution-split.md` | 3,659 B | `41bb6e22c19a28c00259a9fca2dd210fb6f8824c5aa522ab0a94a3c06d2967fb` | PASS 0/0, voice 92/100 | Paul Sheals (reply in thread, not posted) | 121 w: he answered with a turn-level split and a counterfactual, so the reply concedes it and moves the finding into plumbing, since using an injected fact 10 of 10 shows delivery at the decision turn is the variable, not that the fact was missing |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
