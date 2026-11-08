@@ -108,4 +108,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `VERIFIED_POSTS/2026-11-08_eval-case-argument/post.md` | 2,434 B | `e94d99ff14ca2361605e2999a5c90c5cd524f59a57351191202014927ce029fc` | PASS 0/0, voice 92/100 | public, 8 Nov evening slot | 274 w body: the verdict survives and the argument does not, so three fields (what was expected, which spec version, who decided and what the losing side argued) keep the suite from changing meaning after a model upgrade |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_eva-benn-vote-cast.md` | 1,294 B | `f3e0620c167f7a0e08f13da6461c753256099c3be433672e6c2e18178c5e0fae` | PASS 0/0, voice 92/100 | Eva Benn (reply, owner confirms the vote was cast) | 17 w: confirms the vote, which is the whole content, because she asked directly and a vote with no word back is indistinguishable from none |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
