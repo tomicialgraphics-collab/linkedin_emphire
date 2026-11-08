@@ -1,0 +1,19 @@
+Behar,
+
+Agreed, and recorded as you stated it. M1 covers S1 and S2 only. S3 stays in M2, S5 in M3, and S4 remains open with no
+code until its precondition is established and tested.
+
+The pack you will receive carries five things and nothing is submitted as a finding before they are all in it: the
+baseline failure, produced on the pinned revision before any change, the post-fix result on the exact revision that
+carries the change, the execution environment, the regression classification log showing every mode unaffected by M1
+classified as before, and the diff with the hash of the file it applies to. Each closure is written up per row rather
+than per milestone, so S1 and S2 can be accepted or refused separately.
+
+On S1 the pack will say which design shipped: the single append carrying both records, or the two appends with the
+reply state carrying the whole burden. If it is the first, the partial-write evidence comes from a torn batch rather
+than a refused second write, because that is the failure the shipped design actually has.
+
+Nothing is described as closed on my side. Closure is yours, and the register stays pinned until a milestone ends in a
+new revision with its own hash.
+
+Olusanya
