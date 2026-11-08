@@ -74,4 +74,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `VERIFIED_POSTS/2026-11-08_refusal-record/FIRST-COMMENT.md` | 843 B | `1c84dae11c4518a3a392996bcb45d3bde664bfb21127a6c9ab47b6c0c686001d` | PASS 0/0, voice 100/100 | public first comment under the refusal-record post, owner to paste at T+20-30 | 95 w: throw the reply away and rebuild the refusal from records alone; if that needs the person who wrote the guard it is a memory, not a record |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_soribel-feliz-nvidia-board-investigation.md` | 3,512 B | `7b511dbd5a2ff9f5bbd2d1a9618b3288ed7045e4bead60fe3d4912e2e89a36b0` | PASS 0/0, voice 92/100 | Soribel Feliz (comment, not posted) | reads the Nvidia board statement as an artefact: an investigation opened in the same breath as its conclusion, and a scope that says all available information without saying what can be compelled, published or found undetermined |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
