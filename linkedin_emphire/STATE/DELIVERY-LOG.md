@@ -88,4 +88,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_dietrick-hardwick-history-eraser.md` | 3,286 B | `0ed3347ab00ff49c047f2a2a2fb9ea270f61e8b4541f0410d36de8c76f869058` | PASS 0/0, voice 100/100 | Dietrick Hardwick (comment, not posted) | 96 w: the eraser's real property is that after it is pressed nothing in the machine can say it was pressed, so a witness inside the system can testify about everything except the event that removes its ability to testify |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_shane-butler-self-serve-analytics.md` | 3,217 B | `bc21597096719e88a3e365de2a3c236cbe943c0ad090d22fed87179fc15763ae` | PASS 0/0, voice 100/100 | Shane Butler (comment, not posted) | 101 w: the cost isn't bad SQL, it's five definitions of active users and none of them visible in the answer, so the fix is the query and the definition travelling with the number |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
