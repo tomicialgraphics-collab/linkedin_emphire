@@ -94,4 +94,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_ben-li-agent-eval-ownership.md` | 3,454 B | `6029399b04eca22e3dbccb39344efa3d3968335c5fc5b3dc7089766d27905e7e` | PASS 0/0, voice 92/100 | Ben (Xiaojun) Li (comment, not posted) | 126 w: the distributed eval model writes the cases the product already handles, so each case must keep the disagreement that produced it or the pass rate is a number with no argument behind it |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_eaton-zveare-god-mode-border.md` | 4,010 B | `b9f0bdff7cd8ba870004de9ec23f343a3456b08e0bff10796a8bedd7fefce411` | PASS 0/0, voice 100/100 | Eaton Zveare (comment, not posted; DM draft held, not sent) | 114 w: BOLA is a code problem, whether it stays fixed across a contractor change is a procurement one, so the durable artefact is a register of which systems exist, who built them and which findings were verified |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
