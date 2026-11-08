@@ -78,4 +78,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_thomas-roccia-volta-refusal-router.md` | 3,752 B | `2103cd2664822d1e1a1de4a049e3352fa9b43826f741037e5290f4529c6a7f58` | PASS 0/0, voice 92/100 | Thomas Roccia (comment, not posted) | 111 w: the refusal string-match makes a refusal a routing decision, not a control, so the fallback order is a live measurement of which guardrails held and the operation cannot tell refusal from empty reply |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_adi-rashkes-queen-of-hearts-vishing-ctf.md` | 3,526 B | `95b825acceb89ec9510a84188c23c0cfe523202ee14bff1c305de99dfc41559e` | PASS 0/0, voice 100/100 | Adi Rashkes (comment, not posted) | 125 w: score the attempts not the outcomes, because the crack that never reached the secret is the reusable data, and a bot that cannot name the rule it bent can only be scored on the leak |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
