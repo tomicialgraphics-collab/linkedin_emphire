@@ -86,4 +86,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_paolo-perrone-exit-codes.md` | 2,509 B | `22d960ab3e184b98e02d7669f743aadba14f85346c7df3793b05ca35ef49182d` | PASS 0/0, voice 100/100 | Paolo Perrone (reply in thread, not posted) | 101 w: he already has 1 failed and 2 refused, so the reply hands over the third code, 3 for indeterminate, plus the wrapper that flattens a non-zero exit and deletes the refusal |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_dietrick-hardwick-history-eraser.md` | 3,286 B | `0ed3347ab00ff49c047f2a2a2fb9ea270f61e8b4541f0410d36de8c76f869058` | PASS 0/0, voice 100/100 | Dietrick Hardwick (comment, not posted) | 96 w: the eraser's real property is that after it is pressed nothing in the machine can say it was pressed, so a witness inside the system can testify about everything except the event that removes its ability to testify |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
