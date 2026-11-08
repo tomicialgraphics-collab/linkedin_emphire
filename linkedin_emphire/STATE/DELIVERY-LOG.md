@@ -82,4 +82,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_ananya-ghosh-chowdhury-diwali.md` | 2,292 B | `6e1ff7f28eff7252b1a9e452f8903307f4213ffb39e526a522e16627e48de993` | PASS 0/0, voice 100/100 | Ananya Ghosh Chowdhury (comment, not posted) | 44 w: a Diwali greeting with one idea returned sharper, most of the architecture worth admiring is subtraction and it rarely gets a festival; no pivot, no link, no pitch |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_ricky-jones-round-table.md` | 2,652 B | `7a18f19cb797bc51ea148c669c19216bf33232830287c67842622074381d89a4` | PASS 0/0, voice 100/100 | Ricky Jones (reply in thread, not posted) | 90 w: accepts the Seat, names that he said out loud Lala wrote it as the cheapest provenance an account can carry, and turns it into a live test of his own stop-system thesis |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
