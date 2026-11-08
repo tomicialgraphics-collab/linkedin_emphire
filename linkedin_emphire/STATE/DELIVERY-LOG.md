@@ -84,4 +84,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_ricky-jones-round-table.md` | 2,652 B | `7a18f19cb797bc51ea148c669c19216bf33232830287c67842622074381d89a4` | PASS 0/0, voice 100/100 | Ricky Jones (reply in thread, not posted) | 90 w: accepts the Seat, names that he said out loud Lala wrote it as the cheapest provenance an account can carry, and turns it into a live test of his own stop-system thesis |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_paolo-perrone-exit-codes.md` | 2,509 B | `22d960ab3e184b98e02d7669f743aadba14f85346c7df3793b05ca35ef49182d` | PASS 0/0, voice 100/100 | Paolo Perrone (reply in thread, not posted) | 101 w: he already has 1 failed and 2 refused, so the reply hands over the third code, 3 for indeterminate, plus the wrapper that flattens a non-zero exit and deletes the refusal |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
