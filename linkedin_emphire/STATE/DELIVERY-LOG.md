@@ -112,4 +112,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_brandon-crimmins-refusal-seam.md` | 2,938 B | `d9020ef406da1da7cb9f58c123c46ba45951349ef2ea701d8c02d285e9ff219c` | PASS 0/0, voice 100/100 | Brandon Crimmins (comment, not posted) | 110 w: the gap is in the seam between his access and recovery items, since a refused call must never enter the recovery path or the agent escalates by persistence |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_guillermo-flor-bubble-cables.md` | 2,879 B | `2957dbe3985f727575ed1b5ef7f81e49feb08ea8b24b0bfac817d8748a8962a4` | PASS 0/0, voice 100/100 | Guillermo Flor (comment, not posted) | 122 w: fibre survived because nobody had to keep paying for it, compute does not, so what inherits is the people and the evaluation practice, neither of which appears in the write-down |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
