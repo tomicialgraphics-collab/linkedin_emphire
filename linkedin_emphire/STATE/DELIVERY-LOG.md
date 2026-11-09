@@ -144,4 +144,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-09 | `CURRICULUM/2026-11-09_ai-red-teaming-flat-list.md` | 5,286 B | `e17e2b63a1779a40ddf066677da085a33ef2134262bdf50798acd9d8ffade1dc` | PASS 0/0, R14 not applicable (fragment list) | owner (reference checklist, not published) | 165 items in six sections: model behaviour, retrieval, agents, output handling, measurement, governance, plus the three lines that are missing from it |
 
+| 2026-11-09 | `BREAKLAB/ai-red-team-playbook/` (30 files) + `ai-red-team-playbook-1.0.0.zip` | 213 KB | `5f0eda08eb978554` | validate OK, render --check OK, coverage OK, wilson OK | public repo, not yet published | standalone repo: 168 items in checklist.json, generated CHECKLIST.md and CSV, 8 docs, 4 templates, 4 stdlib tools, CI, MIT plus CC BY 4.0 |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.

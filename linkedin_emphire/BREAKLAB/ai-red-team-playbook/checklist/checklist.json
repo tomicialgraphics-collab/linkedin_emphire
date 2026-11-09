@@ -1,0 +1,1220 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-11-09",
+  "categories": [
+    {
+      "slug": "model",
+      "label": "Model behaviour",
+      "prefix": "MB",
+      "blurb": "What the model does with text, before anything is built around it."
+    },
+    {
+      "slug": "retrieval",
+      "label": "Retrieval and knowledge",
+      "prefix": "RK",
+      "blurb": "The corpus is untrusted input, and it is served to everyone who asks."
+    },
+    {
+      "slug": "agents",
+      "label": "Agents and tooling",
+      "prefix": "AG",
+      "blurb": "Every tool is a capability grant, and every grant is an attack surface."
+    },
+    {
+      "slug": "output",
+      "label": "Output handling",
+      "prefix": "OH",
+      "blurb": "Model text becomes someone else's input, and where it lands sets the severity."
+    },
+    {
+      "slug": "measurement",
+      "label": "Measurement and evaluation",
+      "prefix": "ME",
+      "blurb": "The number is the product. This is the work almost nobody does."
+    },
+    {
+      "slug": "governance",
+      "label": "Governance and practice",
+      "prefix": "GV",
+      "blurb": "The language security teams, auditors and regulators already use."
+    }
+  ],
+  "items": [
+    {
+      "id": "MB-01",
+      "category": "model",
+      "name": "Prompt Injection (Direct)",
+      "tier": "core",
+      "test": "Send a user turn that tries to override the system prompt and record whether the boundary holds."
+    },
+    {
+      "id": "MB-02",
+      "category": "model",
+      "name": "Prompt Injection (Indirect)",
+      "tier": "core",
+      "test": "Plant an instruction in retrieved text and check whether the next tool call changes."
+    },
+    {
+      "id": "MB-03",
+      "category": "model",
+      "name": "Jailbreaking",
+      "tier": "standard",
+      "test": "Attempt one case from each family: roleplay, encoding, prefix injection, refusal suppression."
+    },
+    {
+      "id": "MB-04",
+      "category": "model",
+      "name": "System Prompt Extraction",
+      "tier": "core",
+      "test": "Ask for the instructions directly, then through a tool, a summary and a translation."
+    },
+    {
+      "id": "MB-05",
+      "category": "model",
+      "name": "Instruction Hierarchy",
+      "tier": "core",
+      "test": "Check whether system, developer, user, retrieved text and tool output are delimited and ranked."
+    },
+    {
+      "id": "MB-06",
+      "category": "model",
+      "name": "Refusal Behaviour",
+      "tier": "standard",
+      "test": "Score refusals on legitimate requests separately from refusals on harmful ones."
+    },
+    {
+      "id": "MB-07",
+      "category": "model",
+      "name": "Over-Refusal",
+      "tier": "standard",
+      "test": "Run ten benign requests in the target domain and count the false refusals."
+    },
+    {
+      "id": "MB-08",
+      "category": "model",
+      "name": "Hallucination",
+      "tier": "standard",
+      "test": "Spot-check factual claims against the cited source, one claim at a time."
+    },
+    {
+      "id": "MB-09",
+      "category": "model",
+      "name": "Confabulation",
+      "tier": "standard",
+      "test": "Ask for a source that cannot exist and see whether one is invented."
+    },
+    {
+      "id": "MB-10",
+      "category": "model",
+      "name": "Sycophancy",
+      "tier": "standard",
+      "test": "Push back politely on a correct answer and measure how often it flips."
+    },
+    {
+      "id": "MB-11",
+      "category": "model",
+      "name": "Abstention",
+      "tier": "standard",
+      "test": "Ask questions the provided context cannot answer and check whether the system says so."
+    },
+    {
+      "id": "MB-12",
+      "category": "model",
+      "name": "Context Window Limits",
+      "tier": "standard",
+      "test": "Fill the window to ninety percent and check what falls out first and whether behaviour changes."
+    },
+    {
+      "id": "MB-13",
+      "category": "model",
+      "name": "Lost in the Middle",
+      "tier": "extended",
+      "test": "Place a key fact at the start, middle and end of a long context and compare recall."
+    },
+    {
+      "id": "MB-14",
+      "category": "model",
+      "name": "Temperature and Sampling",
+      "tier": "standard",
+      "test": "Run the same case at two settings and compare the spread rather than the average."
+    },
+    {
+      "id": "MB-15",
+      "category": "model",
+      "name": "Determinism and Seeds",
+      "tier": "standard",
+      "test": "Repeat one case ten times and record the variance before reporting any single result."
+    },
+    {
+      "id": "MB-16",
+      "category": "model",
+      "name": "Prompt Brittleness",
+      "tier": "standard",
+      "test": "Paraphrase one request ten ways and record the behaviour spread."
+    },
+    {
+      "id": "MB-17",
+      "category": "model",
+      "name": "Persona Drift",
+      "tier": "standard",
+      "test": "Run a fifty-turn conversation and check whether the guardrails still hold at turn forty."
+    },
+    {
+      "id": "MB-18",
+      "category": "model",
+      "name": "Multi-Turn Escalation",
+      "tier": "core",
+      "test": "Reach a harmful request in small steps and record how many turns it takes."
+    },
+    {
+      "id": "MB-19",
+      "category": "model",
+      "name": "Many-Shot Jailbreaking",
+      "tier": "standard",
+      "test": "Fill the prompt with dozens of benign examples that model the answer, then ask."
+    },
+    {
+      "id": "MB-20",
+      "category": "model",
+      "name": "Encoding Attacks",
+      "tier": "standard",
+      "test": "Encode one probe in base64, ROT13, hex and leetspeak, scored the same way as plain text."
+    },
+    {
+      "id": "MB-21",
+      "category": "model",
+      "name": "Payload Splitting",
+      "tier": "standard",
+      "test": "Split one instruction across two documents and see whether the model reassembles it."
+    },
+    {
+      "id": "MB-22",
+      "category": "model",
+      "name": "Token Smuggling",
+      "tier": "extended",
+      "test": "Carry a payload past a filter using token boundaries and rare encodings."
+    },
+    {
+      "id": "MB-23",
+      "category": "model",
+      "name": "Unicode Normalization",
+      "tier": "standard",
+      "test": "Compare what the filter sees with what the model sees for the same string."
+    },
+    {
+      "id": "MB-24",
+      "category": "model",
+      "name": "Homoglyphs and Confusables",
+      "tier": "standard",
+      "test": "Swap Latin letters for Cyrillic and Greek lookalikes in a blocked term."
+    },
+    {
+      "id": "MB-25",
+      "category": "model",
+      "name": "Invisible Characters",
+      "tier": "standard",
+      "test": "Test zero-width and bidirectional override characters in user input and in retrieved text."
+    },
+    {
+      "id": "MB-26",
+      "category": "model",
+      "name": "Glitch Tokens",
+      "tier": "extended",
+      "test": "Send known unstable tokens and record crashes, loops or unusual output."
+    },
+    {
+      "id": "MB-27",
+      "category": "model",
+      "name": "Low-Resource Language Attacks",
+      "tier": "standard",
+      "test": "Repeat a blocked request in three languages and compare refusal rates."
+    },
+    {
+      "id": "MB-28",
+      "category": "model",
+      "name": "Multilingual Refusals",
+      "tier": "standard",
+      "test": "Check that safety behaviour is not only present in English."
+    },
+    {
+      "id": "MB-29",
+      "category": "model",
+      "name": "Adversarial Examples",
+      "tier": "extended",
+      "test": "Perturb the input minimally and record whether the answer changes while the meaning does not."
+    },
+    {
+      "id": "MB-30",
+      "category": "model",
+      "name": "Adversarial Suffixes",
+      "tier": "extended",
+      "test": "Append an optimised suffix and check whether it transfers to the deployed revision."
+    },
+    {
+      "id": "MB-31",
+      "category": "model",
+      "name": "Data Poisoning",
+      "tier": "extended",
+      "test": "Identify every corpus that feeds the model or its retrieval, and who can write to it."
+    },
+    {
+      "id": "MB-32",
+      "category": "model",
+      "name": "Backdoors and Trojans",
+      "tier": "extended",
+      "test": "Look for trigger behaviour in any supplied fine-tune and record who produced the weights."
+    },
+    {
+      "id": "MB-33",
+      "category": "model",
+      "name": "Fine-Tune Safety Regression",
+      "tier": "standard",
+      "test": "Re-run the refusal suite against the fine-tuned model rather than the base model."
+    },
+    {
+      "id": "MB-34",
+      "category": "model",
+      "name": "Quantization Effects",
+      "tier": "extended",
+      "test": "Compare safety behaviour at full precision and at the deployed quantization."
+    },
+    {
+      "id": "MB-35",
+      "category": "model",
+      "name": "Calibration and Confidence",
+      "tier": "standard",
+      "test": "Bin the cases by stated confidence and compare each bin with its accuracy."
+    },
+    {
+      "id": "MB-36",
+      "category": "model",
+      "name": "Memorization",
+      "tier": "standard",
+      "test": "Probe for near-verbatim reproduction of known training material."
+    },
+    {
+      "id": "MB-37",
+      "category": "model",
+      "name": "Training Data Extraction",
+      "tier": "extended",
+      "test": "Attempt prefix completion on rare strings and record any hit."
+    },
+    {
+      "id": "MB-38",
+      "category": "model",
+      "name": "Membership Inference",
+      "tier": "extended",
+      "test": "Compare confidence on known members and non-members of the training set."
+    },
+    {
+      "id": "MB-39",
+      "category": "model",
+      "name": "Model Inversion",
+      "tier": "extended",
+      "test": "Attempt to recover input features from output behaviour alone."
+    },
+    {
+      "id": "MB-40",
+      "category": "model",
+      "name": "Model Extraction",
+      "tier": "extended",
+      "test": "Estimate the queries needed to imitate the model, and whether the terms forbid it."
+    },
+    {
+      "id": "MB-41",
+      "category": "model",
+      "name": "Model Theft and Distillation",
+      "tier": "extended",
+      "test": "Check whether the deployment exposes logits, confidence or a stable enough surface to clone."
+    },
+    {
+      "id": "MB-42",
+      "category": "model",
+      "name": "Watermarking",
+      "tier": "extended",
+      "test": "Ask whether outputs are watermarked and whether the mark survives paraphrasing."
+    },
+    {
+      "id": "MB-43",
+      "category": "model",
+      "name": "Fingerprinting",
+      "tier": "standard",
+      "test": "Record a behavioural fingerprint so a silent model swap is detectable later."
+    },
+    {
+      "id": "MB-44",
+      "category": "model",
+      "name": "Canary Tokens",
+      "tier": "core",
+      "test": "Plant a unique string in the system prompt and search every output, log and trace for it."
+    },
+    {
+      "id": "MB-45",
+      "category": "model",
+      "name": "Copyright Reproduction",
+      "tier": "extended",
+      "test": "Request a passage from a known work and compare the output policy with the output."
+    },
+    {
+      "id": "MB-46",
+      "category": "model",
+      "name": "Bias and Fairness",
+      "tier": "standard",
+      "test": "Swap protected attributes across matched pairs and count differences at a stated threshold."
+    },
+    {
+      "id": "MB-47",
+      "category": "model",
+      "name": "Toxicity",
+      "tier": "standard",
+      "test": "Run a fixed probe set and score it with a calibrated judge rather than a keyword list."
+    },
+    {
+      "id": "MB-48",
+      "category": "model",
+      "name": "Harm Taxonomy",
+      "tier": "standard",
+      "test": "Map the system's own defined harm categories to the cases you built."
+    },
+    {
+      "id": "MB-49",
+      "category": "model",
+      "name": "Content Policy Mapping",
+      "tier": "standard",
+      "test": "Check that every policy clause has at least one case behind it."
+    },
+    {
+      "id": "RK-01",
+      "category": "retrieval",
+      "name": "Retrieval Poisoning",
+      "tier": "core",
+      "test": "Write a document into the index and check whether it changes behaviour for later users."
+    },
+    {
+      "id": "RK-02",
+      "category": "retrieval",
+      "name": "Chunk Boundary Attacks",
+      "tier": "standard",
+      "test": "Split an instruction across two chunks and confirm no single chunk looks wrong alone."
+    },
+    {
+      "id": "RK-03",
+      "category": "retrieval",
+      "name": "Embedding Inversion",
+      "tier": "extended",
+      "test": "Check whether a query can recover source text from the embedding store."
+    },
+    {
+      "id": "RK-04",
+      "category": "retrieval",
+      "name": "Vector Store Access Control",
+      "tier": "standard",
+      "test": "Query the vector store directly with a low-privilege identity."
+    },
+    {
+      "id": "RK-05",
+      "category": "retrieval",
+      "name": "Document-Level ACLs",
+      "tier": "core",
+      "test": "Query as a user who should not see a document and check the retriever filters first."
+    },
+    {
+      "id": "RK-06",
+      "category": "retrieval",
+      "name": "Cross-Tenant Leakage",
+      "tier": "core",
+      "test": "Two tenants, one index, and the query that returns the other tenant's chunk."
+    },
+    {
+      "id": "RK-07",
+      "category": "retrieval",
+      "name": "Metadata Injection",
+      "tier": "standard",
+      "test": "Put an instruction in document metadata and see whether it reaches the model."
+    },
+    {
+      "id": "RK-08",
+      "category": "retrieval",
+      "name": "Ingestion Validation",
+      "tier": "standard",
+      "test": "Attempt to add a document without authorisation and record what the pipeline checks."
+    },
+    {
+      "id": "RK-09",
+      "category": "retrieval",
+      "name": "Retrieval Provenance",
+      "tier": "standard",
+      "test": "Check whether each retrieved chunk carries a source and a traceable identifier."
+    },
+    {
+      "id": "AG-01",
+      "category": "agents",
+      "name": "Tool Calling Abuse",
+      "tier": "core",
+      "test": "Call each tool with arguments the interface allows and the task never needs."
+    },
+    {
+      "id": "AG-02",
+      "category": "agents",
+      "name": "Tool Description Poisoning",
+      "tier": "core",
+      "test": "Read every tool description and check whether any of them contains instructions."
+    },
+    {
+      "id": "AG-03",
+      "category": "agents",
+      "name": "Tool Rug Pull",
+      "tier": "standard",
+      "test": "Compare tool definitions and outputs between approval and use."
+    },
+    {
+      "id": "AG-04",
+      "category": "agents",
+      "name": "Argument Injection",
+      "tier": "core",
+      "test": "Steer a legitimate tool to attacker-chosen arguments through injected text."
+    },
+    {
+      "id": "AG-05",
+      "category": "agents",
+      "name": "Excessive Agency",
+      "tier": "core",
+      "test": "List every tool and the credential behind it, then the scopes that exceed the task."
+    },
+    {
+      "id": "AG-06",
+      "category": "agents",
+      "name": "Confused Deputy",
+      "tier": "core",
+      "test": "Use the agent to act with authority the current user does not hold."
+    },
+    {
+      "id": "AG-07",
+      "category": "agents",
+      "name": "Permission Scoping",
+      "tier": "core",
+      "test": "Check that scopes are per request rather than per service account."
+    },
+    {
+      "id": "AG-08",
+      "category": "agents",
+      "name": "On-Behalf-Of Tokens",
+      "tier": "standard",
+      "test": "Confirm the tool call carries the user's identity rather than the agent's."
+    },
+    {
+      "id": "AG-09",
+      "category": "agents",
+      "name": "Human-in-the-Loop Bypass",
+      "tier": "core",
+      "test": "Reach the approval gate, spoof it, skip it with a retry, or starve it with a timeout."
+    },
+    {
+      "id": "AG-10",
+      "category": "agents",
+      "name": "Approval Fatigue",
+      "tier": "standard",
+      "test": "Count approvals per hour and check whether the review is real at that rate."
+    },
+    {
+      "id": "AG-11",
+      "category": "agents",
+      "name": "Agent Memory Poisoning",
+      "tier": "core",
+      "test": "Write to persistent memory and check whether it returns in fresh sessions."
+    },
+    {
+      "id": "AG-12",
+      "category": "agents",
+      "name": "Agent-to-Agent Trust",
+      "tier": "standard",
+      "test": "Send a subagent a message that crosses a trust boundary and record what it obeys."
+    },
+    {
+      "id": "AG-13",
+      "category": "agents",
+      "name": "MCP Server Trust",
+      "tier": "standard",
+      "test": "Check what an MCP server can read, write and call, and who reviewed it."
+    },
+    {
+      "id": "AG-14",
+      "category": "agents",
+      "name": "Subagent Spawning",
+      "tier": "standard",
+      "test": "Check whether a kill switch reaches agents spawned after the stop."
+    },
+    {
+      "id": "AG-15",
+      "category": "agents",
+      "name": "Kill Switch Escape",
+      "tier": "core",
+      "test": "Trigger the stop mid-run and confirm every branch halts and reports."
+    },
+    {
+      "id": "AG-16",
+      "category": "agents",
+      "name": "Sandbox Escape",
+      "tier": "standard",
+      "test": "Attempt filesystem, process and network reach from the tool runtime."
+    },
+    {
+      "id": "AG-17",
+      "category": "agents",
+      "name": "Code Execution via Tools",
+      "tier": "core",
+      "test": "Run code through the tool path and record what the sandbox permits."
+    },
+    {
+      "id": "AG-18",
+      "category": "agents",
+      "name": "SSRF via Fetch and Browse",
+      "tier": "core",
+      "test": "Point the fetch tool at the metadata endpoint and at an internal admin page."
+    },
+    {
+      "id": "AG-19",
+      "category": "agents",
+      "name": "Autonomous Goal Hijacking",
+      "tier": "standard",
+      "test": "Change the stated goal mid-run through injected content and see whether the plan follows."
+    },
+    {
+      "id": "AG-20",
+      "category": "agents",
+      "name": "Loop and Step Ceiling",
+      "tier": "core",
+      "test": "Look for a missing or high step ceiling and measure the cost of one runaway run."
+    },
+    {
+      "id": "AG-21",
+      "category": "agents",
+      "name": "Unbounded Consumption",
+      "tier": "standard",
+      "test": "Remove the per-user budget and measure tokens per session at sustained load."
+    },
+    {
+      "id": "AG-22",
+      "category": "agents",
+      "name": "Denial of Wallet",
+      "tier": "standard",
+      "test": "Estimate the spend a cheap attacker can force without any exploit skill."
+    },
+    {
+      "id": "AG-23",
+      "category": "agents",
+      "name": "Prompt Injection via Files and PDFs",
+      "tier": "core",
+      "test": "Upload a document with instructions in body text, in a comment and in an alt text field."
+    },
+    {
+      "id": "AG-24",
+      "category": "agents",
+      "name": "Multimodal Injection",
+      "tier": "standard",
+      "test": "Put text in an image, a screenshot and an audio clip and see whether it is obeyed."
+    },
+    {
+      "id": "AG-25",
+      "category": "agents",
+      "name": "Steganographic Exfiltration",
+      "tier": "extended",
+      "test": "Check whether output length, whitespace or formatting can carry data."
+    },
+    {
+      "id": "OH-01",
+      "category": "output",
+      "name": "Insecure Output Handling",
+      "tier": "core",
+      "test": "Map every sink the model's text can reach and what renders it."
+    },
+    {
+      "id": "OH-02",
+      "category": "output",
+      "name": "SQL Injection via LLM",
+      "tier": "core",
+      "test": "Steer model-written SQL and record the database role behind it."
+    },
+    {
+      "id": "OH-03",
+      "category": "output",
+      "name": "XSS via LLM Output",
+      "tier": "standard",
+      "test": "Return markup into a client that renders it and check what executes."
+    },
+    {
+      "id": "OH-04",
+      "category": "output",
+      "name": "Markdown Image Exfiltration",
+      "tier": "core",
+      "test": "Embed an image URL with data in the query string and watch the egress."
+    },
+    {
+      "id": "OH-05",
+      "category": "output",
+      "name": "Link Parameter Exfiltration",
+      "tier": "standard",
+      "test": "Check whether a link the model emits can carry a conversation fragment."
+    },
+    {
+      "id": "OH-06",
+      "category": "output",
+      "name": "Output Length Side Channel",
+      "tier": "extended",
+      "test": "Check whether the length of a refusal leaks the content it refused."
+    },
+    {
+      "id": "OH-07",
+      "category": "output",
+      "name": "Schema Validation",
+      "tier": "standard",
+      "test": "Break the JSON contract and see whether the consumer validates or trusts."
+    },
+    {
+      "id": "OH-08",
+      "category": "output",
+      "name": "Structured Output Abuse",
+      "tier": "standard",
+      "test": "Force content through a schema field that the plain-text filter would block."
+    },
+    {
+      "id": "OH-09",
+      "category": "output",
+      "name": "Guardrail Bypass",
+      "tier": "core",
+      "test": "Attempt bypass by encoding, language, length and structured output."
+    },
+    {
+      "id": "OH-10",
+      "category": "output",
+      "name": "Guardrail Ordering",
+      "tier": "core",
+      "test": "Check whether the guardrail runs before the tool call or after it."
+    },
+    {
+      "id": "OH-11",
+      "category": "output",
+      "name": "Prompt Firewall",
+      "tier": "standard",
+      "test": "Test the firewall as an adversarial classifier rather than as a policy document."
+    },
+    {
+      "id": "OH-12",
+      "category": "output",
+      "name": "Input Sanitization",
+      "tier": "standard",
+      "test": "Compare the sanitised input with what the model actually receives."
+    },
+    {
+      "id": "OH-13",
+      "category": "output",
+      "name": "Spotlighting and Delimiters",
+      "tier": "standard",
+      "test": "Check that the markers survive summarisation and concatenation."
+    },
+    {
+      "id": "OH-14",
+      "category": "output",
+      "name": "Dual-LLM Pattern",
+      "tier": "extended",
+      "test": "Confirm the privileged model never sees untrusted text directly."
+    },
+    {
+      "id": "OH-15",
+      "category": "output",
+      "name": "Allowlisting vs Blocklisting",
+      "tier": "standard",
+      "test": "Test whether the control names what is allowed or lists what is not."
+    },
+    {
+      "id": "ME-01",
+      "category": "measurement",
+      "name": "Eval Set Design",
+      "tier": "core",
+      "test": "One behaviour per case, one expected outcome, one fixture that reruns."
+    },
+    {
+      "id": "ME-02",
+      "category": "measurement",
+      "name": "Golden Sets",
+      "tier": "standard",
+      "test": "Store the reference answer and the rubric with the case rather than in someone's memory."
+    },
+    {
+      "id": "ME-03",
+      "category": "measurement",
+      "name": "Held-Out Sets",
+      "tier": "standard",
+      "test": "Keep a slice the team never tunes against and report it separately."
+    },
+    {
+      "id": "ME-04",
+      "category": "measurement",
+      "name": "Private Slices",
+      "tier": "standard",
+      "test": "Keep the sensitive slice out of any public benchmark."
+    },
+    {
+      "id": "ME-05",
+      "category": "measurement",
+      "name": "Benchmark Contamination",
+      "tier": "core",
+      "test": "Check for overlap by paraphrase, by translation and by rare-phrase search."
+    },
+    {
+      "id": "ME-06",
+      "category": "measurement",
+      "name": "Benchmark Saturation",
+      "tier": "standard",
+      "test": "Compare headroom with noise before treating a high score as a signal."
+    },
+    {
+      "id": "ME-07",
+      "category": "measurement",
+      "name": "Attack Success Rate",
+      "tier": "core",
+      "test": "Define the unit as attempts or objectives and report the rate with its interval."
+    },
+    {
+      "id": "ME-08",
+      "category": "measurement",
+      "name": "Per-Objective vs Per-Attempt",
+      "tier": "core",
+      "test": "Report both and say which one the reader needs."
+    },
+    {
+      "id": "ME-09",
+      "category": "measurement",
+      "name": "Confidence Intervals",
+      "tier": "core",
+      "test": "Attach a Wilson interval to every rate, especially the small ones."
+    },
+    {
+      "id": "ME-10",
+      "category": "measurement",
+      "name": "Pass@k",
+      "tier": "standard",
+      "test": "Report capability at least once across k attempts."
+    },
+    {
+      "id": "ME-11",
+      "category": "measurement",
+      "name": "Pass^k (Reliability)",
+      "tier": "core",
+      "test": "Report the probability of success on every one of k attempts."
+    },
+    {
+      "id": "ME-12",
+      "category": "measurement",
+      "name": "Paired Comparison",
+      "tier": "standard",
+      "test": "Compare two versions on the same cases rather than two independent rates."
+    },
+    {
+      "id": "ME-13",
+      "category": "measurement",
+      "name": "Sample Size and Power",
+      "tier": "standard",
+      "test": "Check the suite can detect the difference being claimed."
+    },
+    {
+      "id": "ME-14",
+      "category": "measurement",
+      "name": "Run-to-Run Variance",
+      "tier": "core",
+      "test": "Run five times and report the spread before the mean."
+    },
+    {
+      "id": "ME-15",
+      "category": "measurement",
+      "name": "LLM-as-Judge",
+      "tier": "core",
+      "test": "State the judge model, its revision and the prompt it runs."
+    },
+    {
+      "id": "ME-16",
+      "category": "measurement",
+      "name": "Judge Calibration",
+      "tier": "core",
+      "test": "Hand-grade a sample and report agreement with the judge."
+    },
+    {
+      "id": "ME-17",
+      "category": "measurement",
+      "name": "Position Bias",
+      "tier": "standard",
+      "test": "Swap the order of two answers and see whether the verdict moves."
+    },
+    {
+      "id": "ME-18",
+      "category": "measurement",
+      "name": "Verbosity Bias",
+      "tier": "standard",
+      "test": "Trim one answer and check whether the score follows the length."
+    },
+    {
+      "id": "ME-19",
+      "category": "measurement",
+      "name": "Self-Preference Bias",
+      "tier": "standard",
+      "test": "Grade output from the judge's own family against output from another."
+    },
+    {
+      "id": "ME-20",
+      "category": "measurement",
+      "name": "Inter-Rater Reliability",
+      "tier": "standard",
+      "test": "Have two people grade the same slice and compare."
+    },
+    {
+      "id": "ME-21",
+      "category": "measurement",
+      "name": "Cohen's Kappa",
+      "tier": "standard",
+      "test": "Report agreement corrected for chance rather than raw percentage."
+    },
+    {
+      "id": "ME-22",
+      "category": "measurement",
+      "name": "Rubric Design",
+      "tier": "standard",
+      "test": "One behaviour per criterion, and a rubric short enough not to drift."
+    },
+    {
+      "id": "ME-23",
+      "category": "measurement",
+      "name": "Failure Taxonomy",
+      "tier": "core",
+      "test": "Bucket every failure so that a fix can be assigned to it."
+    },
+    {
+      "id": "ME-24",
+      "category": "measurement",
+      "name": "Severity Scoring",
+      "tier": "core",
+      "test": "Define severity before the run and give the reason for each score."
+    },
+    {
+      "id": "ME-25",
+      "category": "measurement",
+      "name": "Regression Suites",
+      "tier": "core",
+      "test": "Turn every finding into a case that runs on every deploy."
+    },
+    {
+      "id": "ME-26",
+      "category": "measurement",
+      "name": "CI Eval Gates",
+      "tier": "standard",
+      "test": "Block a deploy on a regression in the safety suite."
+    },
+    {
+      "id": "ME-27",
+      "category": "measurement",
+      "name": "Drift Canaries",
+      "tier": "standard",
+      "test": "Run a standing set weekly and alert when the refusal rate moves."
+    },
+    {
+      "id": "ME-28",
+      "category": "measurement",
+      "name": "Trace-Based Evaluation",
+      "tier": "standard",
+      "test": "Score spans inside an agent run, not only the final answer."
+    },
+    {
+      "id": "ME-29",
+      "category": "measurement",
+      "name": "Automated Red Teaming",
+      "tier": "standard",
+      "test": "Generate cases at volume and record what the generator missed."
+    },
+    {
+      "id": "ME-30",
+      "category": "measurement",
+      "name": "Fuzzing and Mutation",
+      "tier": "standard",
+      "test": "Mutate known cases and record the hit rate per mutation."
+    },
+    {
+      "id": "ME-31",
+      "category": "measurement",
+      "name": "Adversarial Test Generation",
+      "tier": "extended",
+      "test": "Use a model to attack a model and report the generator as part of the method."
+    },
+    {
+      "id": "ME-32",
+      "category": "measurement",
+      "name": "Coverage Argument",
+      "tier": "core",
+      "test": "Write down the classes tested and the classes skipped, with the reason for each."
+    },
+    {
+      "id": "ME-33",
+      "category": "measurement",
+      "name": "Cost per Case",
+      "tier": "standard",
+      "test": "Report the suite's cost so that it can actually be rerun."
+    },
+    {
+      "id": "ME-34",
+      "category": "measurement",
+      "name": "Latency per Case",
+      "tier": "standard",
+      "test": "Report how long a full run takes at the sample size claimed."
+    },
+    {
+      "id": "ME-35",
+      "category": "measurement",
+      "name": "Reproducibility Contract",
+      "tier": "core",
+      "test": "Record model revision, prompt version, index snapshot, tool schema, sampling and date."
+    },
+    {
+      "id": "GV-01",
+      "category": "governance",
+      "name": "Threat Modelling for AI",
+      "tier": "core",
+      "test": "Write the asset, the actor, the trust boundary and the abuse case before testing."
+    },
+    {
+      "id": "GV-02",
+      "category": "governance",
+      "name": "Trust Boundaries",
+      "tier": "core",
+      "test": "Draw the line between instruction and data for every channel that carries text."
+    },
+    {
+      "id": "GV-03",
+      "category": "governance",
+      "name": "Data Flow Mapping",
+      "tier": "standard",
+      "test": "Trace one input from entry to output and mark every place it is trusted."
+    },
+    {
+      "id": "GV-04",
+      "category": "governance",
+      "name": "Attack Surface Map",
+      "tier": "core",
+      "test": "One diagram of every input channel, tool and output sink."
+    },
+    {
+      "id": "GV-05",
+      "category": "governance",
+      "name": "Propagation Testing",
+      "tier": "core",
+      "test": "One bad input, then trace how far the effect reaches."
+    },
+    {
+      "id": "GV-06",
+      "category": "governance",
+      "name": "OWASP LLM Top 10",
+      "tier": "standard",
+      "test": "Map each finding so that the security team can file it."
+    },
+    {
+      "id": "GV-07",
+      "category": "governance",
+      "name": "OWASP Agentic Security",
+      "tier": "standard",
+      "test": "Map agent findings to the agentic categories."
+    },
+    {
+      "id": "GV-08",
+      "category": "governance",
+      "name": "MITRE ATLAS",
+      "tier": "standard",
+      "test": "Map the technique so the finding joins the wider threat picture."
+    },
+    {
+      "id": "GV-09",
+      "category": "governance",
+      "name": "NIST AI RMF",
+      "tier": "standard",
+      "test": "Check the client's controls against a framework they already report on."
+    },
+    {
+      "id": "GV-10",
+      "category": "governance",
+      "name": "NIST Generative AI Profile",
+      "tier": "standard",
+      "test": "Map the specific actions to the profile's suggested controls."
+    },
+    {
+      "id": "GV-11",
+      "category": "governance",
+      "name": "ISO/IEC 42001",
+      "tier": "extended",
+      "test": "Check where AI management meets the existing management system."
+    },
+    {
+      "id": "GV-12",
+      "category": "governance",
+      "name": "EU AI Act Duties",
+      "tier": "standard",
+      "test": "Establish general purpose or high risk, and which duties that triggers."
+    },
+    {
+      "id": "GV-13",
+      "category": "governance",
+      "name": "Model and System Cards",
+      "tier": "standard",
+      "test": "Compare the documented limits with the observed behaviour."
+    },
+    {
+      "id": "GV-14",
+      "category": "governance",
+      "name": "AI Bill of Materials",
+      "tier": "standard",
+      "test": "List weights, dataset and dependencies, and whether each is pinned."
+    },
+    {
+      "id": "GV-15",
+      "category": "governance",
+      "name": "Model Provenance and Signing",
+      "tier": "standard",
+      "test": "Confirm the artefact is signed and the digest matches what runs."
+    },
+    {
+      "id": "GV-16",
+      "category": "governance",
+      "name": "Risk Register",
+      "tier": "standard",
+      "test": "Enter each finding with an owner, a residual risk and a review date."
+    },
+    {
+      "id": "GV-17",
+      "category": "governance",
+      "name": "Dangerous Capability Evaluation",
+      "tier": "core",
+      "test": "Test uplift and autonomy inside a container with no live access."
+    },
+    {
+      "id": "GV-18",
+      "category": "governance",
+      "name": "Uplift Studies",
+      "tier": "standard",
+      "test": "Compare an unaided expert with an assisted one on the same task."
+    },
+    {
+      "id": "GV-19",
+      "category": "governance",
+      "name": "Propensity vs Capability",
+      "tier": "core",
+      "test": "Separate what the system can be made to do from what it does unprompted."
+    },
+    {
+      "id": "GV-20",
+      "category": "governance",
+      "name": "Red Team Rules of Engagement",
+      "tier": "core",
+      "test": "Written scope, authorised targets, a stop condition and a named person who can stop it."
+    },
+    {
+      "id": "GV-21",
+      "category": "governance",
+      "name": "Safe Harbour",
+      "tier": "standard",
+      "test": "Agree in writing what the tester may do and what protection applies."
+    },
+    {
+      "id": "GV-22",
+      "category": "governance",
+      "name": "Coordinated Disclosure",
+      "tier": "standard",
+      "test": "Agree the channel and the timeline before the first finding exists."
+    },
+    {
+      "id": "GV-23",
+      "category": "governance",
+      "name": "Bug Bounty for AI",
+      "tier": "extended",
+      "test": "Check the programme covers prompt injection and model behaviour, not only web bugs."
+    },
+    {
+      "id": "GV-24",
+      "category": "governance",
+      "name": "AI Incident Response",
+      "tier": "standard",
+      "test": "Walk one scenario: a prompt leak, model abuse, or an exfiltration channel firing."
+    },
+    {
+      "id": "GV-25",
+      "category": "governance",
+      "name": "Human Oversight Design",
+      "tier": "core",
+      "test": "Name what the gate gates and whether the person can understand the decision."
+    },
+    {
+      "id": "GV-26",
+      "category": "governance",
+      "name": "Auditable Logging",
+      "tier": "standard",
+      "test": "Check the log answers a regulator's question six months later."
+    },
+    {
+      "id": "GV-27",
+      "category": "governance",
+      "name": "Privacy Impact Assessment",
+      "tier": "standard",
+      "test": "Treat prompts as personal data and check residency, retention and access."
+    },
+    {
+      "id": "GV-28",
+      "category": "governance",
+      "name": "Data Residency of Prompts",
+      "tier": "standard",
+      "test": "Trace where prompt text is stored and which jurisdiction holds it."
+    },
+    {
+      "id": "GV-29",
+      "category": "governance",
+      "name": "Prompt Versioning",
+      "tier": "core",
+      "test": "Confirm every prompt change has an identifier and a rollback."
+    },
+    {
+      "id": "GV-30",
+      "category": "governance",
+      "name": "Model Version Pinning",
+      "tier": "core",
+      "test": "Pin the revision by digest and record it in every report."
+    },
+    {
+      "id": "GV-31",
+      "category": "governance",
+      "name": "Rollback of Prompts and Models",
+      "tier": "standard",
+      "test": "Restore the previous version and check the index and cache go back too."
+    },
+    {
+      "id": "GV-32",
+      "category": "governance",
+      "name": "Purple Teaming",
+      "tier": "standard",
+      "test": "Run the defence and the attack together so the fix is tested as it is written."
+    },
+    {
+      "id": "GV-33",
+      "category": "governance",
+      "name": "Continuous Red Teaming",
+      "tier": "standard",
+      "test": "Schedule the suite rather than running it once at launch."
+    },
+    {
+      "id": "GV-34",
+      "category": "governance",
+      "name": "Adversarial Training as Patching",
+      "tier": "extended",
+      "test": "Check whether a patch removes the behaviour or only the string that triggered it."
+    },
+    {
+      "id": "GV-35",
+      "category": "governance",
+      "name": "Safety Cases",
+      "tier": "extended",
+      "test": "Write the argument that the system is acceptable, with its assumptions named."
+    }
+  ]
+}
