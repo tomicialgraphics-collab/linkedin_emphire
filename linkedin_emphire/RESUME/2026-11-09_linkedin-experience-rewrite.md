@@ -112,3 +112,26 @@ Two sentences, true and short, better than a defensive paragraph:
 > OpenCV was my full-time role. The university and the health system work were short remote contracts I took alongside it, and Teamart began as an independent practice before that role ended. The labels on the profile should say so, and I will fix them.
 
 That answer is only available to you if the labels say so first. Do that before the next application, not after.
+
+## Saving the role form
+
+Seen in the add-role form on 9 November. Four fields need changing before Save, one of them badly.
+
+| Field | Shown | Set it to | Why |
+|---|---|---|---|
+| Start month / year | November 2026 | **May 2025** | November 2026 is next month. With "I currently work here" ticked the entry would display 1 mo, and the AI work would read as starting after the playbook was published |
+| Employment type | Full-time | **Self-employed** | The description opens "Independent engineering practice". A full-time post at your own practice is not a thing, and the mismatch is the first thing a careful reader notices |
+| Location | remote | **Lagos, Nigeria**, or leave empty | With location type Remote it renders "remote · Remote", which is the duplicate already on the old entry |
+| Organization | Teamart.inc | **Teamart Inc.** | Pick one spelling and use it on the profile, the CV and everywhere else. Changing it later breaks the company link on every entry |
+
+Keep: job title **AI Red Team Engineer**, location type **Remote**, "I currently work here" ticked, and Where did you find this job as Other.
+
+**Duplicate check.** The profile already has a Software Engineer entry at Teamart.inc from May 2025. A second entry means two Teamart roles and two sets of dates side by side. Either edit the existing entry instead of adding one, or delete the old one after saving this.
+
+**The highlights box.** As pasted it arrived as one paragraph: the breaks between sections are gone and the bullets read as " - " inline. LinkedIn keeps line breaks when the text arrives as plain text, so paste from a plain source. `RESUME/2026-11-09_teamart-highlights.txt` is that source. If it still collapses, put the cursor before each bullet and press Enter once, plus a blank line after the opening sentence and before Stack. Five breaks in total.
+
+**Skills on the role.** `ai red teaming` is lowercase, and the profile displays exactly what you type, so fix the case to `AI Red Teaming`. `Software Systems Engineering` is the weakest of the five; swap it for `Threat Modeling` or `AI Security` if either autocompletes. Go and Python stay.
+
+**Media.** Add `VERIFIED_POSTS/2026-11-09_red-team-playbook-launch/card.png` as media on this entry, with the description linking `https://github.com/Teamthy/Ai-Red-Team-Playbook`. That puts a checkable artefact beside the claim, which is the whole argument of the entry.
+
+**Headline.** Leave the long one selected. The auto-generated `Ai Red Team Engineer at Teamart.inc` is 33 characters, drops every differentiator, and has a lowercase "Ai" in it. If you want to tighten the current headline, cut `Web · AI Integration` and `Teaching engineers to ship things that don't break`, which point at work the Experience section no longer leads with.

@@ -157,3 +157,4 @@ not have to re-derive them. Neither has been confirmed sent.
 | 2026-11-09 | `RESUME/2026-11-09_linkedin-experience-rewrite.md` | 8,347 B | `77235865864e543f` | PASS 0/0 | owner (working document, not published) | rewrite of the four Experience entries: Teamart carries the red teaming evidence, the overlaps get labels that admit them, two blank descriptions filled, three questions the owner must answer |
 
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
+| 2026-11-09 | `RESUME/2026-11-09_linkedin-experience-rewrite.md` + `RESUME/2026-11-09_teamart-highlights.txt` | `d5f1bf0d9950f511` | PASS 0/0 | owner (working documents) | field-by-field fix for the add-role form: start date November 2026 to May 2025, employment type to Self-employed, location off 'remote', organisation spelling, newline-safe paste source, skills case, media card |
