@@ -130,4 +130,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_neil-mcloughlin-legacy-policy-inventory.md` | 3,027 B | `d0236700bffd447cea94030789cefb87d343dc977c69afd93ef69af535c1c248` | PASS 0/0, voice 100/100 | Neil McLoughlin (comment, not posted; off-lane) | 113 w: policy and script both write local admin membership, so last writer wins and the loser leaves no line, which makes the per-person record of who holds admin and why the thing worth keeping |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_mourad-elmaalaoui-sovereign-evaluation.md` | 3,240 B | `94273f899110c244259bdf788b1c6086ecbc56bbcd736072de266700ede4eff5` | PASS 0/0, voice 100/100 | Mourad Elmaaloui (comment, not posted) | 110 w: all three models buy compute or models, none buys the evaluation, so model 2 in particular runs sovereign infrastructure under somebody else's judgement layer |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
