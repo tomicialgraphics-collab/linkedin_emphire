@@ -122,4 +122,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment-shalini-goyal-bola-gap.md` | 3,012 B | `375771317a10b32ea379982a11ae80e928ac2ec8e14c8e6c331e0c45da7842e3` | PASS 0/0, voice 100/100 | Shalini Goyal (comment, not posted) | 106 w: her access control step answers who the caller is but not whether this caller may read this record, and BOLA survives every mechanism on her list |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_christopher-paradise-entropy-bounds.md` | 3,030 B | `6d8ea88937845a343e6c206d77ea0ba6588f6cf7d6261b8c42e935ea46f38317` | PASS 0/0, voice 92/100 | Christopher Paradise (reply in thread, not posted) | 105 w: Shannon bounds the coder on a single file, so the gains on already-compressed media sit outside it, in near-duplicates, silence, repeated art and container overhead, which is the per-library number |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
