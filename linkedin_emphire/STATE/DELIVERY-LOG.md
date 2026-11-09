@@ -138,4 +138,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-09 | `CURRICULUM/2026-11-09_infrastructure-principles-for-ai-red-teaming.md` | 19,736 B | `cc8608711dc13f9340afd1bcc1e4d526e1df357ac929771af7f6efa7f9aa6f6b` | PASS 0/0 | owner (reference, not published) | 3357 w: the hundred-plus principle list ranked by blast radius for AI red teaming, twelve tier one items with the test to run on each, tier two and three, the twelve kickoff questions, and the gap that nothing on the list pins the model, the prompt or the eval set |
 
+| 2026-11-09 | `ENGAGEMENT/2026-11-09_comment_anthony-alcaraz-cost-per-task.md` | 3,951 B | `ab8e82ffcc75c236b3ac797897c2f094b453ec501de86ca4a7ecef346fc3d5ec` | PASS 0/0, voice 92/100 | Anthony Alcaraz (comment, not posted) | 148 w: the model choice moves the denominator too, so the comparison across models is steps per completed task rather than tokens per task, and the fine tune moved the recurring cost from per token to per relabel |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
