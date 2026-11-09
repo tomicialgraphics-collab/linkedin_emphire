@@ -120,4 +120,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_love-babbar-who-holds-the-switch.md` | 2,566 B | `b0c35c0f81b5a2168708d7cfdfdc021beb599e5f4f5a9c182c215e9921810d4c` | PASS 0/0, voice 100/100 | Love Babbar (comment, not posted) | 92 w: the salary is what people will read, the decision was who held the switch, so his floor test beats advice that only asks whether the choice can be explained |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment-shalini-goyal-bola-gap.md` | 3,012 B | `375771317a10b32ea379982a11ae80e928ac2ec8e14c8e6c331e0c45da7842e3` | PASS 0/0, voice 100/100 | Shalini Goyal (comment, not posted) | 106 w: her access control step answers who the caller is but not whether this caller may read this record, and BOLA survives every mechanism on her list |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
