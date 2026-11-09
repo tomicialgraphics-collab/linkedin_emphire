@@ -134,4 +134,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_artur-walisko-self-verification.md` | 3,318 B | `ea1b5bac7b37527b381bd19cdb207740ca0891980d9523bd5b740e9bfb08fe89` | PASS 0/0, voice 100/100 | Artur Walisko (comment, not posted) | 124 w: the 79 inside 109 was a containment error rather than a factual one, the class self-review is worst at, and asking again reduces variance rather than bias |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_christopher-paradise-codec-noise.md` | 2,790 B | `f38989d09da960cba07f15621119daaf583e657b9ff8a1d232296559ad75701d` | PASS 0/0, voice 100/100 | Christopher Paradise (reply in thread, not posted) | 103 w: concedes the misread of noise, then names the boundary, since under a byte-exact promise the codec noise is data and modelling it costs what storing it costs, while a bounded tolerance is a different product |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
