@@ -152,4 +152,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-09 | `ENGAGEMENT/2026-11-09_comment_tina-austin-purple-flower.md` | 4,160 B | `8aa8d9e988e78bffca6e60a3cd4e3bbb7fd2878abf691fed74d06137f4863783` | PASS 0/0, voice 100/100 | Tina Austin (comment, not posted) | 147 w: the purple flower in security work is the negative result, and her relevance finding is the same mechanism seen from the other side, so the test is to ask for limitations before findings. Logged off lane, educator audience |
 
+| 2026-11-09 | `VERIFIED_POSTS/2026-11-09_red-team-playbook-launch/` post.md + card.png | 2,416 B | `8bbc3677659313d5` | PASS 0/1 warn (R08 by design), voice 92/100, 303 w | owner (public post, not posted) | T11 launch post for the repo: 168 classes, the three ways an engagement fails, the open count as the honest line. Card 1200x627 in the same visual language as the repo banner |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
