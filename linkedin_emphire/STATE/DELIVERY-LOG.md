@@ -128,4 +128,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_mitko-vasilev-forward-deployed-handover.md` | 3,098 B | `2c158db702f93245bd5912de1b3e2c108fc3352fd3514008b30cf19a734bf852` | PASS 0/0, voice 100/100 | Mitko Vasilev (comment, not posted) | 118 w: embedded work creates dependency by design, so the handover is the deliverable and the client needs an eval suite they can run, since weights you cannot measure are rented capability |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_neil-mcloughlin-legacy-policy-inventory.md` | 3,027 B | `d0236700bffd447cea94030789cefb87d343dc977c69afd93ef69af535c1c248` | PASS 0/0, voice 100/100 | Neil McLoughlin (comment, not posted; off-lane) | 113 w: policy and script both write local admin membership, so last writer wins and the loser leaves no line, which makes the per-person record of who holds admin and why the thing worth keeping |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
