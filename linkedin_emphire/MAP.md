@@ -10,7 +10,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `ARCHIVE` | 1 | 5 KB | superseded files and the record of every restructure | strategist | S8 |
 | `ARTICLES` | 94 | 42773 KB | the Breaking AI series, one package per article | content | S3 |
 | `ASSETS` | 10 | 2742 KB | photos, logos, fonts and anything a card is built from | visual | S3 |
-| `BREAKLAB` | 35 | 260 KB | the public harness work | content | S3 |
+| `BREAKLAB` | 36 | 263 KB | the public harness work | content | S3 |
 | `CLIENTS` | 49 | 526 KB | one folder per client, per engagement, dated. Findings first, private to them | empire | S3,S5,S6 |
 | `CONTENT` | 2 | 5 KB | content working files that are not yet a post | content | S3 |
 | `CONTENT_CALENDARS` | 2 | 47 KB | the posting calendar | content | S1 |

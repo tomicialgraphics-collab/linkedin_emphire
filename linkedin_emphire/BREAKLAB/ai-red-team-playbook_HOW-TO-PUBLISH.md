@@ -48,23 +48,19 @@ You can remove the collaborator straight after the push. The commit author is al
 
 ## Route B: you push in two minutes
 
-The folder is also packaged as `BREAKLAB/ai-red-team-playbook-1.0.0.zip` inside the portfolio repository. Download it, unpack, then:
+`BREAKLAB/publish-playbook.ps1` does it in one run. It is a script rather than prose, so the voice gate does not apply to it and `emphire check` will flag that if you point it at the file.
+
+1. Download `BREAKLAB/ai-red-team-playbook-1.0.0.zip` from this workspace.
+2. Save `publish-playbook.ps1` anywhere, for example Documents.
+3. Run it:
 
 ```powershell
-git clone https://github.com/Teamthy/Ai-Red-Team-Playbook.git
-Copy-Item -Path .\ai-red-team-playbook\* -Destination .\Ai-Red-Team-Playbook\ -Recurse -Force
-cd .\Ai-Red-Team-Playbook
-git add -A
-git commit -m "AI Red Team Playbook 1.0.0: 168 testable classes"
-git push -u origin main
+powershell -ExecutionPolicy Bypass -File .\publish-playbook.ps1
 ```
 
-Set the author first if the machine is not already configured:
+What it does, in order: finds the zip anywhere under your home folder (so Documents or Downloads both work), unpacks it, clones the empty repository, copies the 28 files in, sets the commit author to Olusanya Timothy, commits, pushes to `main`, then prints the file count and the four things to set on the repository page.
 
-```powershell
-git config user.name "Olusanya Timothy"
-git config user.email "olusanyatimothy54@gmail.com"
-```
+If you prefer to type it yourself, the same steps are in the script and each line is independent, so you can run them one at a time in a PowerShell window.
 
 ## After the first push, whichever route
 
