@@ -124,4 +124,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_christopher-paradise-entropy-bounds.md` | 3,030 B | `6d8ea88937845a343e6c206d77ea0ba6588f6cf7d6261b8c42e935ea46f38317` | PASS 0/0, voice 92/100 | Christopher Paradise (reply in thread, not posted) | 105 w: Shannon bounds the coder on a single file, so the gains on already-compressed media sit outside it, in near-duplicates, silence, repeated art and container overhead, which is the per-library number |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_andreas-horn-access-lives-in-people.md` | 3,302 B | `0358521d2bc40bff41e05c87802780a10e2f8aa1ef5c83192ea1ade489e75973` | PASS 0/0, voice 100/100 | Andreas Horn (comment, not posted) | 118 w: access is people-shaped all the way down and the person worth recruiting is not the chief executive, agents make it worse because authority goes to identities nobody recruited |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
