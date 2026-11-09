@@ -118,4 +118,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_ilir-aliu-robot-arm-repeatability.md` | 2,518 B | `972d48b5f546f9f6bbc91645a4e07ffa6c53a6c8543f2e3b9dc519043b94e7cf` | PASS 0/0, voice 100/100 | Ilir Aliu (comment, not posted; off-lane, reach only) | 102 w: backlog costs repeatability nothing recovers, so the useful artefact is the first hundred cycles measured with a dial indicator, not the demo |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_love-babbar-who-holds-the-switch.md` | 2,566 B | `b0c35c0f81b5a2168708d7cfdfdc021beb599e5f4f5a9c182c215e9921810d4c` | PASS 0/0, voice 100/100 | Love Babbar (comment, not posted) | 92 w: the salary is what people will read, the decision was who held the switch, so his floor test beats advice that only asks whether the choice can be explained |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
