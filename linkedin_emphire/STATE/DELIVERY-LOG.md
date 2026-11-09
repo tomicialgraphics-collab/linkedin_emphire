@@ -158,3 +158,4 @@ not have to re-derive them. Neither has been confirmed sent.
 
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
 | 2026-11-09 | `RESUME/2026-11-09_linkedin-experience-rewrite.md` + `RESUME/2026-11-09_teamart-highlights.txt` | `d5f1bf0d9950f511` | PASS 0/0 | owner (working documents) | field-by-field fix for the add-role form: start date November 2026 to May 2025, employment type to Self-employed, location off 'remote', organisation spelling, newline-safe paste source, skills case, media card |
+| 2026-11-09 | `RESUME/2026-11-09_featured-section-website.md` | 5,590 B | `16601a1817ce6e58` | PASS 0/0 | owner (working document) | verdict on featuring olusanyatimothy.vercel.app, card title and description typed rather than scraped, add order, the Open Graph question left open, and the CV-versus-profile naming clash |
