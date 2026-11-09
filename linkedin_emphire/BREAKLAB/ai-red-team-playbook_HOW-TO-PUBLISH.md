@@ -6,52 +6,84 @@ audience: internal
 status: ready
 approved: no
 warm: no
-thread: how to publish the standalone playbook repo under the owner's own account, and why it was not created from this workspace
-verified: the commands were written against the GitHub CLI interface and match the repository as built. Nothing about the publication state is asserted, since nothing has been published.
+thread: how the playbook gets published to Teamthy/Ai-Red-Team-Playbook, and why the push is the one step this workspace cannot complete
+verified: the repository exists, is public, is empty, and the workspace account has pull access only. The push attempt returned 403 permission denied, which is recorded below rather than described.
 ---
 
-# Publishing the playbook
+# Publishing the playbook to Teamthy/Ai-Red-Team-Playbook
 
-This file sits outside `ai-red-team-playbook/` on purpose. It is for you, not for the public repo.
+## Where things stand
 
-## Why it is not already on GitHub
+- Repo exists: `https://github.com/Teamthy/Ai-Red-Team-Playbook`, public, empty, default branch `main`.
+- Local source, committed and ready: `/home/user/ai-red-team-playbook`, 28 files, branch `main`, remote `origin` already pointing at the repo, commit author set to `Olusanya Timothy <olusanyatimothy54@gmail.com>` so the public history carries your name and not the retired one.
+- Checks green on that copy: validate, render, coverage, wilson.
 
-The GitHub connection in this workspace is authenticated as the retired identity you asked never to show in a deliverable. A public repository created under that account would put the name in the URL, on the Featured card, and in every clone line. So the repo is built, tested and packaged, and the one step left needs your own account.
+What stops it:
 
-## Publish in four commands
-
-```bash
-cd path/to/ai-red-team-playbook
-git init -b main
-git add -A
-git commit -m "AI Red Team Playbook 1.0.0: 168 testable classes"
+```
+remote: Permission to Teamthy/Ai-Red-Team-Playbook.git denied to tomicialgraphics-collab.
+fatal: unable to access ...: The requested URL returned error: 403
 ```
 
-Then, with the GitHub CLI signed in as your own account:
+The workspace account can read the repo and nothing else. That is the whole of the problem, and it is one permission away from solved.
+
+## Route A, fastest: invite the workspace account, then I push
+
+In the repository, Settings, Collaborators, Add people, paste `tomicialgraphics-collab`, role **Write**. No need to accept anything on this side.
+
+Then say so in the chat, and the next turn is:
 
 ```bash
-gh repo create ai-red-team-playbook --public --source . --push \
+cd /home/user/ai-red-team-playbook
+git push -u origin main
+gh api -X PUT repos/Teamthy/Ai-Red-Team-Playbook/topics \
+  -f "names[]=ai-security" -f "names[]=llm-security" -f "names[]=red-teaming" \
+  -f "names[]=ai-evaluation" -f "names[]=prompt-injection" -f "names[]=agentic-ai" \
+  -f "names[]=checklist"
+gh repo edit Teamthy/Ai-Red-Team-Playbook \
   --description "168 testable classes for AI red teaming, with a coverage argument and honest intervals"
 ```
 
-Without the CLI, create the empty repository in the browser, then:
+You can remove the collaborator straight after the push. The commit author is already yours, so nothing in the history changes when it goes.
 
-```bash
-git remote add origin https://github.com/YOUR-ACCOUNT/ai-red-team-playbook.git
+## Route B: you push in two minutes
+
+The folder is also packaged as `BREAKLAB/ai-red-team-playbook-1.0.0.zip` inside the portfolio repository. Download it, unpack, then:
+
+```powershell
+git clone https://github.com/Teamthy/Ai-Red-Team-Playbook.git
+Copy-Item -Path .\ai-red-team-playbook\* -Destination .\Ai-Red-Team-Playbook\ -Recurse -Force
+cd .\Ai-Red-Team-Playbook
+git add -A
+git commit -m "AI Red Team Playbook 1.0.0: 168 testable classes"
 git push -u origin main
 ```
 
-## After the first push
+Set the author first if the machine is not already configured:
 
-1. **Set the social preview.** Repository settings, then upload an image. It is what shows on the Featured card, and GitHub does not take it from a file in the repository.
-2. **Add the topics.** `ai-security`, `llm-security`, `red-teaming`, `ai-evaluation`, `prompt-injection`, `agentic-ai`, `checklist`. Topics are how people find it.
-3. **Check the CI run.** The workflow validates the checklist, checks the rendered files match, runs the coverage example and the interval tool. It should be green on the first run because it was green here.
-4. **Add the description line.** The one in the command above is used as the tagline under the name on the Featured card.
+```powershell
+git config user.name "Olusanya Timothy"
+git config user.email "olusanyatimothy54@gmail.com"
+```
 
-## What to attach on LinkedIn
+## After the first push, whichever route
 
-Featured item, type Link, with the repository URL. Title it `AI Red Team Playbook` and use the description line. If the card shows the README, the first screen is the tagline, the three badges and the thesis, which is the part worth reading.
+1. **Social preview.** Settings, then upload an image. GitHub does not take it from a file in the repository, and it is what the LinkedIn Featured card shows.
+2. **Topics.** The command above, or the gear icon on the repo page.
+3. **Description.** The one-liner above. It becomes the line under the name on the card.
+4. **CI.** The workflow should go green on the first run, since it is green here.
+5. **Pin it.** Profile, Customize your pins, choose the repo, so it sits above the other work.
 
-## Second deliverable, if you want one from the same work
+## Keeping the two copies in step
 
-The two reference documents behind this repo live in the private tree: the ranked explanation of why each class sits where it does, and the infrastructure counterpart. Neither belongs in the public repo, since the README has to stay a map rather than an argument. They are for conversations, not for the Featured section.
+`BREAKLAB/ai-red-team-playbook/` in the portfolio repository stays the source of truth, and `/home/user/ai-red-team-playbook` is the publishing copy. After any edit, refresh the publishing copy with:
+
+```bash
+cp -a /home/user/linkedin_emphire/linkedin_emphire/BREAKLAB/ai-red-team-playbook/. /home/user/ai-red-team-playbook/
+cd /home/user/ai-red-team-playbook
+python3 tools/validate.py
+python3 tools/render.py
+git add -A
+git commit -m "update the checklist"
+git push
+```

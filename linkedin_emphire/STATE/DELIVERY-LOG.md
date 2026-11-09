@@ -146,4 +146,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-09 | `BREAKLAB/ai-red-team-playbook/` (30 files) + `ai-red-team-playbook-1.0.0.zip` | 213 KB | `5f0eda08eb978554` | validate OK, render --check OK, coverage OK, wilson OK | public repo, not yet published | standalone repo: 168 items in checklist.json, generated CHECKLIST.md and CSV, 8 docs, 4 templates, 4 stdlib tools, CI, MIT plus CC BY 4.0 |
 
+| 2026-11-09 | `BREAKLAB/ai-red-team-playbook-1.0.0.zip` + `_HOW-TO-PUBLISH.md` | 62 KB | `7b4d1554d7c1c4ad` | PASS (internal note) | Teamthy/Ai-Red-Team-Playbook (empty, awaiting write access) | local repo at `/home/user/ai-red-team-playbook` committed as Olusanya Timothy, remote set, push refused 403, two routes documented |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
