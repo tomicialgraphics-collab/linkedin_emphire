@@ -126,4 +126,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_andreas-horn-access-lives-in-people.md` | 3,302 B | `0358521d2bc40bff41e05c87802780a10e2f8aa1ef5c83192ea1ade489e75973` | PASS 0/0, voice 100/100 | Andreas Horn (comment, not posted) | 118 w: access is people-shaped all the way down and the person worth recruiting is not the chief executive, agents make it worse because authority goes to identities nobody recruited |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_mitko-vasilev-forward-deployed-handover.md` | 3,098 B | `2c158db702f93245bd5912de1b3e2c108fc3352fd3514008b30cf19a734bf852` | PASS 0/0, voice 100/100 | Mitko Vasilev (comment, not posted) | 118 w: embedded work creates dependency by design, so the handover is the deliverable and the client needs an eval suite they can run, since weights you cannot measure are rented capability |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
