@@ -140,4 +140,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-09 | `ENGAGEMENT/2026-11-09_comment_anthony-alcaraz-cost-per-task.md` | 3,951 B | `ab8e82ffcc75c236b3ac797897c2f094b453ec501de86ca4a7ecef346fc3d5ec` | PASS 0/0, voice 92/100 | Anthony Alcaraz (comment, not posted) | 148 w: the model choice moves the denominator too, so the comparison across models is steps per completed task rather than tokens per task, and the fine tune moved the recurring cost from per token to per relabel |
 
+| 2026-11-09 | `CURRICULUM/2026-11-09_ai-security-eval-principles.md` | 23,724 B | `ac6163864d514d6b777f5014634a5e87eb4822543578e95e9450bf67d7dae94f` | PASS 0/0 | owner (reference, not published) | 3946 w: the AI security and eval counterpart to the infrastructure list, twelve tier one items each with its test, tier two in four tables (model surface, agents, measurement, governance), the order to learn it, and the caveat that no finite checklist certifies safety |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
