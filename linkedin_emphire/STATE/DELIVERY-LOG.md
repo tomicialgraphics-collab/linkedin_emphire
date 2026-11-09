@@ -114,4 +114,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_guillermo-flor-bubble-cables.md` | 2,879 B | `2957dbe3985f727575ed1b5ef7f81e49feb08ea8b24b0bfac817d8748a8962a4` | PASS 0/0, voice 100/100 | Guillermo Flor (comment, not posted) | 122 w: fibre survived because nobody had to keep paying for it, compute does not, so what inherits is the people and the evaluation practice, neither of which appears in the write-down |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_christopher-paradise-sara-compression.md` | 3,451 B | `f5e681d9f15c93bd0dec0ad337f9bb28a044ff7d08a22d1125d28b97e0b35748` | PASS 0/0, voice 100/100 | Christopher Paradise (comment, not posted) | 110 w: the honest MP3 paragraph earns the rest, but ZIP means deflate, so the single-pass baseline is thirty years old and the incremental claim belongs next to deduplicating backup tools |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
