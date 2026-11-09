@@ -14,7 +14,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `CLIENTS` | 49 | 526 KB | one folder per client, per engagement, dated. Findings first, private to them | empire | S3,S5,S6 |
 | `CONTENT` | 2 | 5 KB | content working files that are not yet a post | content | S3 |
 | `CONTENT_CALENDARS` | 2 | 47 KB | the posting calendar | content | S1 |
-| `CURRICULUM` | 3 | 69 KB | the red-team and research study plan | strategist | S2 |
+| `CURRICULUM` | 4 | 74 KB | the red-team and research study plan | strategist | S2 |
 | `DAILY CONTENT` | 32 | 1166 KB | the editorial canon: templates, hook and visual spec, banned words, voice DNA, drafts | content | S1,S3 |
 | `DESIGN` | 5 | 88 KB | render scripts, fonts, locked geometry | visual | S3 |
 | `EMAIL` | 10 | 142 KB | email drafts and send logs | opportunities | S3,S6 |

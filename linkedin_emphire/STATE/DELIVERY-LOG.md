@@ -142,4 +142,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-09 | `CURRICULUM/2026-11-09_ai-security-eval-principles.md` | 23,724 B | `ac6163864d514d6b777f5014634a5e87eb4822543578e95e9450bf67d7dae94f` | PASS 0/0 | owner (reference, not published) | 3946 w: the AI security and eval counterpart to the infrastructure list, twelve tier one items each with its test, tier two in four tables (model surface, agents, measurement, governance), the order to learn it, and the caveat that no finite checklist certifies safety |
 
+| 2026-11-09 | `CURRICULUM/2026-11-09_ai-red-teaming-flat-list.md` | 5,286 B | `e17e2b63a1779a40ddf066677da085a33ef2134262bdf50798acd9d8ffade1dc` | PASS 0/0, R14 not applicable (fragment list) | owner (reference checklist, not published) | 165 items in six sections: model behaviour, retrieval, agents, output handling, measurement, governance, plus the three lines that are missing from it |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
