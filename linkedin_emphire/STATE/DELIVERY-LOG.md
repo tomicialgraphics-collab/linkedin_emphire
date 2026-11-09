@@ -116,4 +116,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_christopher-paradise-sara-compression.md` | 3,451 B | `f5e681d9f15c93bd0dec0ad337f9bb28a044ff7d08a22d1125d28b97e0b35748` | PASS 0/0, voice 100/100 | Christopher Paradise (comment, not posted) | 110 w: the honest MP3 paragraph earns the rest, but ZIP means deflate, so the single-pass baseline is thirty years old and the incremental claim belongs next to deduplicating backup tools |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_ilir-aliu-robot-arm-repeatability.md` | 2,518 B | `972d48b5f546f9f6bbc91645a4e07ffa6c53a6c8543f2e3b9dc519043b94e7cf` | PASS 0/0, voice 100/100 | Ilir Aliu (comment, not posted; off-lane, reach only) | 102 w: backlog costs repeatability nothing recovers, so the useful artefact is the first hundred cycles measured with a dial indicator, not the demo |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
