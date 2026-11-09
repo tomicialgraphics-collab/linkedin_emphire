@@ -28,6 +28,7 @@ The tool parses this format, so keep it exact: `- [ ] L<n> text  (opened YYYY-MM
 - [ ] L58 **LinkedIn Experience rewrite: three answers needed from the owner.** Drafted 2026-11-09 to `RESUME/2026-11-09_linkedin-experience-rewrite.md`, paste-ready text for all four entries. Blocked on: which role was genuinely full-time during 2024-25, what Corewell Health actually was, and whether YKAY ConsultingHub belongs on the profile (the CV has it, the profile does not). Also outstanding: CV says Teamart starts July 2025, profile says May 2025  (opened 2026-11-09)
 - [ ] L58 Teamart role form **not yet saved**. Start date was set to November 2026 and employment type to Full-time; must be May 2025 and Self-employed, and the old duplicate Teamart entry deleted or edited. Awaiting the Corewell and YKAY answers (opened 2026-11-09)
 - [ ] L59 Website Featured card **unconfirmed**: the dialog will show either an OG image or a grey placeholder. If grey, draw a 1200x627 card plus the Next.js metadata lines (opened 2026-11-09)
+- [ ] L60 Projects section **not started**: five entries drafted with first-commit date commands. Also pending Services categories, Publications (3 live URLs + 1 to copy), Languages, and three recommendation requests (opened 2026-11-09)
 - [ ] L12 Video script: written, not filmed  (opened 2026-11-04)
 
 ## Open work in the repo
