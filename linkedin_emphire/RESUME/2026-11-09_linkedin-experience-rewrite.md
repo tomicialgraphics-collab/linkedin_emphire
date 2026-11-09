@@ -111,4 +111,4 @@ Two sentences, true and short, better than a defensive paragraph:
 
 > OpenCV was my full-time role. The university and the health system work were short remote contracts I took alongside it, and Teamart began as an independent practice before that role ended. The labels on the profile should say so, and I will fix them.
 
-That answer is only available to you if the labels are fixed first. Do that before the next application, not after.
+That answer is only available to you if the labels say so first. Do that before the next application, not after.
