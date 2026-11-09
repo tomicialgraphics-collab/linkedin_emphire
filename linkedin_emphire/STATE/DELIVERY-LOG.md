@@ -132,4 +132,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_mourad-elmaalaoui-sovereign-evaluation.md` | 3,240 B | `94273f899110c244259bdf788b1c6086ecbc56bbcd736072de266700ede4eff5` | PASS 0/0, voice 100/100 | Mourad Elmaaloui (comment, not posted) | 110 w: all three models buy compute or models, none buys the evaluation, so model 2 in particular runs sovereign infrastructure under somebody else's judgement layer |
 
+| 2026-11-08 | `ENGAGEMENT/2026-11-08_comment_artur-walisko-self-verification.md` | 3,318 B | `ea1b5bac7b37527b381bd19cdb207740ca0891980d9523bd5b740e9bfb08fe89` | PASS 0/0, voice 100/100 | Artur Walisko (comment, not posted) | 124 w: the 79 inside 109 was a containment error rather than a factual one, the class self-review is worst at, and asking again reduces variance rather than bias |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
