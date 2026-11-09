@@ -68,6 +68,12 @@ What it does, in order: finds the zip anywhere under your home folder (so Docume
 
 If you prefer to type it yourself, the same steps are in the script and each line is independent, so you can run them one at a time in a PowerShell window.
 
+## Route C: one block, no script files to save
+
+This is the route that worked in practice. The zip is already at `C:\Users\USER\ai-red-team-playbook-1.0.0.zip` and the target folder is `C:\Desktop\PROJECTS\Ai Red Teaming Playbook`, so nothing needs downloading again and no `.ps1` needs saving. Run the block from the summary of 9 November, which clones into the existing empty folder, copies the 28 files in, sets the author, commits and pushes.
+
+The reason the script route failed was ordinary: `-File .\download-playbook.ps1` looks for a file on disk, and the script had only been pasted into the chat, never saved. A block pasted into the window avoids the question entirely.
+
 ## After the first push, whichever route
 
 1. **Social preview.** Settings, then upload an image. GitHub does not take it from a file in the repository, and it is what the LinkedIn Featured card shows.
