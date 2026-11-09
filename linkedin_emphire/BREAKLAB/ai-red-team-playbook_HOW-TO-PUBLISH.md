@@ -50,7 +50,13 @@ You can remove the collaborator straight after the push. The commit author is al
 
 `BREAKLAB/publish-playbook.ps1` does it in one run. It is a script rather than prose, so the voice gate does not apply to it and `emphire check` will flag that if you point it at the file.
 
-1. Download `BREAKLAB/ai-red-team-playbook-1.0.0.zip` from this workspace.
+1. Download the zip into the root of your home folder:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\download-playbook.ps1
+```
+
+   It pulls the file from the repository, checks the size and the SHA256, and prints the path. If you already have the zip, skip this step.
 2. Save `publish-playbook.ps1` anywhere, for example Documents.
 3. Run it:
 
