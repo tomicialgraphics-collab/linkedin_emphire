@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1, 9 November 2026
+
+Presentation release. No change to the checklist or the tooling behaviour.
+
+- Banner and social preview card, drawn as SVG by `assets/make-banner.py` and rendered to PNG. The grid is the coverage argument as an image: a minority of squares lit, because most classes are open at the start.
+- README rebuilt around the same structure as the checklist: banner, badges, table of contents with working anchors, one section per category, and the measurement argument in full.
+- `assets/social-preview.png` is the file to upload as the repository social preview, which is what a LinkedIn card shows.
+
 ## 1.0.0, 9 November 2026
 
 First release.

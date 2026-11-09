@@ -76,7 +76,7 @@ The reason the script route failed was ordinary: `-File .\download-playbook.ps1`
 
 ## After the first push, whichever route
 
-1. **Social preview.** Settings, then upload an image. GitHub does not take it from a file in the repository, and it is what the LinkedIn Featured card shows.
+1. **Social preview.** Settings, then upload `assets/social-preview.png` from the repository. GitHub does not take the preview from a file in the repository, so this upload is the step that puts the card image on LinkedIn. The banner in the README is `assets/banner.png`.
 2. **Topics.** The command above, or the gear icon on the repo page.
 3. **Description.** The one-liner above. It becomes the line under the name on the card.
 4. **CI.** The workflow should go green on the first run, since it is green here.

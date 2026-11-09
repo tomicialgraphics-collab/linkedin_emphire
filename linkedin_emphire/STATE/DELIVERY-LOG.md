@@ -148,4 +148,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-09 | `BREAKLAB/ai-red-team-playbook-1.0.0.zip` + `_HOW-TO-PUBLISH.md` | 62 KB | `7b4d1554d7c1c4ad` | PASS (internal note) | Teamthy/Ai-Red-Team-Playbook (empty, awaiting write access) | local repo at `/home/user/ai-red-team-playbook` committed as Olusanya Timothy, remote set, push refused 403, two routes documented |
 
+| 2026-11-09 | `BREAKLAB/ai-red-team-playbook/` banner + README, `ai-red-team-playbook-1.0.1.zip` | 140 KB | `156f19fa726f3f7c` | validate OK, render --check OK, coverage OK, wilson OK | Teamthy/Ai-Red-Team-Playbook (staged, 33 files) | banner.svg and social-preview.png drawn by assets/make-banner.py, README rebuilt with banner, badges, working anchors, six category sections, measurement and coverage sections |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
