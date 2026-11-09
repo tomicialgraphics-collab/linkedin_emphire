@@ -136,4 +136,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-08 | `ENGAGEMENT/2026-11-08_reply_christopher-paradise-codec-noise.md` | 2,790 B | `f38989d09da960cba07f15621119daaf583e657b9ff8a1d232296559ad75701d` | PASS 0/0, voice 100/100 | Christopher Paradise (reply in thread, not posted) | 103 w: concedes the misread of noise, then names the boundary, since under a byte-exact promise the codec noise is data and modelling it costs what storing it costs, while a bounded tolerance is a different product |
 
+| 2026-11-09 | `CURRICULUM/2026-11-09_infrastructure-principles-for-ai-red-teaming.md` | 19,736 B | `cc8608711dc13f9340afd1bcc1e4d526e1df357ac929771af7f6efa7f9aa6f6b` | PASS 0/0 | owner (reference, not published) | 3357 w: the hundred-plus principle list ranked by blast radius for AI red teaming, twelve tier one items with the test to run on each, tier two and three, the twelve kickoff questions, and the gap that nothing on the list pins the model, the prompt or the eval set |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
