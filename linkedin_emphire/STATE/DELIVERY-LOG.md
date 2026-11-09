@@ -154,4 +154,6 @@ not have to re-derive them. Neither has been confirmed sent.
 
 | 2026-11-09 | `VERIFIED_POSTS/2026-11-09_red-team-playbook-launch/` post.md + card.png | 2,416 B | `8bbc3677659313d5` | PASS 0/1 warn (R08 by design), voice 92/100, 303 w | owner (public post, not posted) | T11 launch post for the repo: 168 classes, the three ways an engagement fails, the open count as the honest line. Card 1200x627 in the same visual language as the repo banner |
 
+| 2026-11-09 | `RESUME/2026-11-09_linkedin-experience-rewrite.md` | 8,347 B | `77235865864e543f` | PASS 0/0 | owner (working document, not published) | rewrite of the four Experience entries: Teamart carries the red teaming evidence, the overlaps get labels that admit them, two blank descriptions filled, three questions the owner must answer |
+
 The v3 row above is now void: v4 supersedes it, and the reason for the new hash is recorded in the v4 header.
