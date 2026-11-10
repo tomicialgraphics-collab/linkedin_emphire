@@ -18,7 +18,7 @@ Start here if you want to use it rather than read it.
 
 → The checklist data file, 168 classes, if you're only going to open one thing.
 
-→ wilson.py, if you've ever reported a rate from a small sample.
+→ The Wilson interval script, if you've ever reported a rate from a small sample.
 
 → The example engagement, which ships with its open count left in.
 

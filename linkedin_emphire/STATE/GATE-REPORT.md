@@ -1,6 +1,6 @@
 # Gate report
 
-Generated 2026-11-10 20:38 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-10 20:41 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 
@@ -45,7 +45,7 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/2026-11-03_nvidia_derczynski.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/2026-11-03_sarah_bird_ai-code-scanning.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/2026-11-06_comment-round_feed-sweep-2.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-06_comment_ai-news-world-altman.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-06_comment_ai-news-world-altman.md` | yes | 0 | 1 | pass, warnings |
 | `ENGAGEMENT/2026-11-06_comment_hitesh-choudhary.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-06_comment_soubhik-ghosh.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-06_comment_stephen-klein.md` | yes | 0 | 0 | pass |

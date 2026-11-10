@@ -38,6 +38,9 @@ lists as `[a, b]`, comments after `#`. Nothing nested.
 
 `profile_checked`, which is the date you read the person's profile and something only they said.
 `warm: yes` if a link is allowed.
+`premise_checked`, from 2026-11-10 on, which is the fact the post rests on and the day it was checked:
+`checked: <claim>, <where>, <date>`, or `stable: <why it cannot have moved>`, or `opinion: <no checkable claim>`. A post quoting a price, a follower count, a benchmark or a funding round is dated the moment it is written.
+
 `sources_read`, from 2026-11-10 on. **Every link a post attaches is opened before the comment is
 written** (owner instruction, 2026-11-09: "please always read it"). The line records what happened:
 

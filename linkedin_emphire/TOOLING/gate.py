@@ -172,6 +172,28 @@ BODY_END = "<!-- gate:body:end -->"
 PASTE_HEADING = re.compile(r"^##+\s*(post,?\s*paste-ready|paste-ready|the post)\s*$", re.I | re.M)
 
 
+PASTE_REGION = re.compile(
+    r"^##+\s*(?:the\s+)?(?:comment|reply|dm|message|post)[^\n]*\b(?:paste[^\n]*|send[^\n]*this[^\n]*)\s*$",
+    re.I | re.M,
+)
+
+
+def paste_region(text: str) -> str:
+    """The lines a human copies out, when the file says where they are.
+
+    Comment files carry working notes next to the comment. Those notes are allowed
+    to name files, paths and dates, because nobody pastes them. This returns the
+    marked region when a file has one, and the whole text when it does not, which
+    is the safe direction: a bare draft is treated as all paste.
+    """
+    m = PASTE_REGION.search(text)
+    if not m:
+        return text
+    rest = text[m.end():]
+    nxt = re.search(r"^##\s", rest, re.M)
+    return (rest[: nxt.start()] if nxt else rest).strip()
+
+
 def post_body(text: str) -> str:
     """The part of a post file that actually gets pasted into LinkedIn.
 
@@ -317,6 +339,20 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
     else:
         rep.add("R24", "PASS", "no phone number")
 
+    # R32 a filename typed into pasted text autolinks to a dead address
+    if dtype in ("post", "comment", "dm"):
+        region = paste_region(pasted)
+        dotted = re.findall(
+            r"(?<![\w/.:-])[\w][\w-]*\.(?:zip|md|json|txt|pdf|docx|xlsx|csv|png|jpg|py|sh|ps1)(?![\w])",
+            region,
+        )
+        if dotted:
+            status = "FAIL" if str(meta.get("date", "")) >= "2026-11-10" else "WARN"
+            rep.add("R32", status, "filename with an extension in the pasted text, which autolinks to a dead address: "
+                                   + ", ".join(sorted(set(dotted))[:4]) + ". Name it without the extension.")
+        else:
+            rep.add("R32", "PASS", "no dotted filenames in the pasted text")
+
     # R30 relative dates
     if dtype != "internal":
         rel = re.findall(r"\b(?:yesterday|last week|last night|this morning|tomorrow)\b", body, re.I)
@@ -348,6 +384,18 @@ def check_contract(rep: Report, meta: dict, dtype: str, audience: str, path: str
     # that post points at. Saying whether that material was opened is the difference
     # between a reading and a reaction, so the file states it from 2026-11-10 onward.
     # Nothing before that date is retro-fitted: the values would be reconstruction.
+    if dtype in ("comment", "dm") and str(meta.get("date", "")) >= "2026-11-10":
+        prem = str(meta.get("premise_checked", "")).strip()
+        if not prem:
+            rep.add("R33", "FAIL", "missing premise_checked: name the fact the post rests on and the day it was checked, "
+                                   "or opinion: when the post makes no checkable claim")
+        elif not prem.lower().startswith(("checked:", "stable:", "opinion:")):
+            rep.add("R33", "WARN", "premise_checked must open with checked:, stable: or opinion:")
+        elif prem.lower().startswith("checked:") and len(prem.split()) < 4:
+            rep.add("R33", "WARN", "checked: names the claim, where it was checked, and the date")
+        else:
+            rep.add("R33", "PASS", "premise accounted for")
+
     if dtype in ("comment", "dm") and str(meta.get("date", "")) >= "2026-11-10":
         src = str(meta.get("sources_read", "")).strip()
         if not src:

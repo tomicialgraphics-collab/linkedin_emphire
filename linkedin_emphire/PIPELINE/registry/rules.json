@@ -348,6 +348,73 @@
    ],
    "check": "manual",
    "verify_with": "The post's front matter first_comment names the comment file, and that file holds the text that goes under it."
+  },
+  {
+   "id": "R32",
+   "text": "A filename typed into pasted text autolinks to an address that does not exist. Anything a human copies into LinkedIn names the file without its extension, and the working URL, where one is allowed, carries the path. Learned twice: a .zip and a .md both turned into dead links inside a comment.",
+   "source": "engagement, 2026-11-06 and 2026-11-09",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "post",
+    "comment",
+    "dm"
+   ],
+   "check": "dotted-filename"
+  },
+  {
+   "id": "R33",
+   "text": "A post that rests on a fact which moves is checked the same day, and the file says which fact and where it was checked. A number in a screenshot can be right on Monday and wrong on Tuesday, and a comment written from it is dated either way. Where the post makes no checkable claim, say so with opinion: rather than leaving the field out.",
+   "source": "owner question 2026-11-09, the Nvidia repricing check",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "comment",
+    "dm"
+   ],
+   "check": "premise"
+  },
+  {
+   "id": "R34",
+   "text": "Two substantive exchanges per person per thread, then stop. The other person keeps the last substantive word, whether or not they use it. A third reply is an argument, and an argument under somebody else's post is read as a fight rather than as a point.",
+   "source": "engagement pattern, October and November 2026",
+   "severity": "manual",
+   "scope": [
+    "outward"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R35",
+   "text": "A claim about somebody else's system names the version and the surface it was tested on. A proof that runs on an internal path is not a capability: it says the code does the thing, not that anyone can reach it. Say which, every time, because the difference is the whole finding.",
+   "source": "FORAY correspondence, 2026-11-09, the Tier-2 reachability correction",
+   "severity": "manual",
+   "scope": [
+    "outward",
+    "doc"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R36",
+   "text": "Every hash, byte count and word count quoted to an outside reader is recomputed from the file in the same command that writes the letter, and the delivery log row carries the same value. A hash copied from an earlier message is a claim about a file that may have changed since.",
+   "source": "the Evelyne-Claudia recomputation, 2026-11-09",
+   "severity": "manual",
+   "scope": [
+    "outward",
+    "doc"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R37",
+   "text": "A question the owner has answered twice is not asked a third time. Once he has chosen, the choice is the working assumption, and re-raising it spends his attention on a decision already made. Record the choice and the date instead.",
+   "source": "owner instruction pattern, November 2026, the Drive ownership caveat",
+   "severity": "manual",
+   "scope": [
+    "internal"
+   ],
+   "check": "manual"
   }
  ]
 }
