@@ -1,0 +1,26 @@
+Evelyne-Claudia,
+
+The disposition stands as you have written it. Open, four discrepancies, no cause assigned. I'm not going to argue with the arithmetic, and I'm not going to explain the difference away before we know what it is.
+
+One constraint belongs in the record now, because it narrows the search without deciding anything. Both archives hash identically on both sides. Two identical archives cannot contain different members, byte for byte. If the version three archive in your hands and the one in mine are the same bytes, then the result file inside them is the same file, and hashing it cannot produce two different values. So the four mismatches have to be one of three things. Either the four files hashed are not those members, or the bytes changed between extraction and hashing, or the four values came from something other than these archives.
+
+Your own sentence is the most useful line in the message. The comparison did not involve running the hashing again. If those four values were produced during the earlier examination, they may describe the files that examination handled rather than the files inside these archives. That would be a path association finding, and it would say nothing about the archive itself.
+
+The second candidate is a text transform between extraction and hashing, which is common enough to rule out first. A JSON file saved through an editor on Windows often comes back with CRLF line endings or an appended newline. The content looks identical and the digest moves a long way. Here is how far, measured on 9 November on the two version two result files:
+
+| transform | pair2/result.json | pair2-unmatched/result.json |
+|---|---|---|
+| as stored, 13,539 and 13,616 bytes | b1271532794e18dfae64340bd1061bddb263d1d0ba491b16c2d49b65cdaf4553 | 3b7f04425d4614ecad10600ecce01210b2741fab36823c60e0ee40fe0fc30342 |
+| CRLF line endings, 13,933 and 14,012 bytes | d8849482be9f360ea025b6945a778e7c0245adceefca97fbb97a033c0e2e79d2 | 2458df35e42e6c3564a6c369615ed817cb1ad68e2eb89b9fc27ef19d54f593f6 |
+| trailing newline added | 8e77af2d474c08446a2d794fc0d596738f114d77f212a80235a2a39aebdf713a | 2328715238f2d76c1e64ce228cf9c0fc5db63942b14cb0723356be83576a3899 |
+| CRLF and trailing newline | 88b7a2b9cb54b98f1c0a60e7d183a951cc25bb50f61be99f16cc64bd78892006 | 3dec8308ad17aa83b30279bcbee70382cc0cd8d7f24dd1545c9270145987f122 |
+
+Four mismatches out of four is information in itself. A faulty extraction usually hits some members and not others. A transform applied by a tool, or values carried over from an earlier examination, hits all four together.
+
+To localise it I need four things from you. The four values you hold. The exact path each was computed against. The tool and operating system used. And whether any file was opened or saved before it was hashed.
+
+Whichever way it lands, it gets recorded. If one of those transforms reproduces your four values, the cause is a text transform and the entry names it. If your value matches a file from the other pair, the cause is path association. If none of them match and those files genuinely came out of these archives, then the members of my archive are not what I hashed, that is a finding against my package, and I will record it as one without waiting to be asked.
+
+Best regards,
+
+Olusanya Timothy
