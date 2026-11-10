@@ -415,6 +415,36 @@
     "internal"
    ],
    "check": "manual"
+  },
+  {
+   "id": "R38",
+   "text": "A direct question from a reader is answered within a day, or it is acknowledged with the day it will be answered. The queue lives in STATE/REPLY-QUEUE.md with the date received and the date due, so an unanswered question is visible rather than forgotten. A question that arrives on a Friday may be answered on Monday, and it still gets a row.",
+   "source": "owner instruction 2026-11-09, add all of it",
+   "severity": "manual",
+   "scope": [
+    "outward"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R39",
+   "text": "No comments on reposts, because a repost carries no author argument to answer and a substantive comment under one is a broadcast. The single exception is a repost that carries the author's own writing around it, which is recorded in the file as the author's argument. The held-file pattern already exists for these; this makes it the rule rather than the habit.",
+   "source": "owner instruction 2026-11-09, add all of it",
+   "severity": "manual",
+   "scope": [
+    "outward"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R40",
+   "text": "Every post carries a real number, from a run that happened, or says in the text why it carries none. R06 still owns the figures: the number is real or it is absent, and absent-with-a-reason is the acceptable version of absent. A post that wants a number and has no run writes the method and says so.",
+   "source": "owner instruction 2026-11-09, add all of it; bounded by R06",
+   "severity": "warn",
+   "scope": [
+    "post"
+   ],
+   "check": "post-number"
   }
  ]
 }

@@ -58,3 +58,22 @@ the feed is not a service desk. A rule against commenting on reposts, because th
 pattern already handles it and a blanket ban would lose the one repost worth answering. A rule
 requiring a figure in every post, because it would manufacture the thing R06 exists to prevent.
 
+## Owner instruction: add all of it
+
+The three rules I had argued against were wanted anyway, so they are now R38, R39 and R40. Two of them
+needed bounding rather than adopting at face value, because as written each would have damaged something
+that already works:
+
+- **R38, a question answered within a day.** Written as an obligation with a visible queue rather than a
+  deadline in the air. `STATE/REPLY-QUEUE.md` holds date received, date due, state and file, and is empty
+  of overdue items on 9 November. The threads where somebody else holds the last word are listed
+  separately so a later session does not read silence as neglect.
+- **R39, no comments on reposts.** Kept the single exception: a repost that carries the author's own
+  writing around it. Without it the rule would have blocked the pattern that already produced the held
+  Anthropic file, which was correct to hold for a different reason.
+- **R40, every post carries a number.** Kept the sentence but bounded it with R06, which owns the figures
+  and forbids invention: a real number from a run, or the text says why there is none. Enforced as a WARN
+  when a post contains no digit at all, which is the only form of it a machine can check.
+
+Rules now number 40, audit is 147 deliverables and 0 blocked, documents regenerated.
+

@@ -353,6 +353,14 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
         else:
             rep.add("R32", "PASS", "no dotted filenames in the pasted text")
 
+    # R40 a post carries a real number, or says why it carries none
+    if dtype == "post":
+        if not re.search(r"\d", pasted):
+            rep.add("R40", "WARN", "no number anywhere in the post: add one from a run you actually have, "
+                                   "or say in the text why the post has none")
+        else:
+            rep.add("R40", "PASS", "carries a number")
+
     # R30 relative dates
     if dtype != "internal":
         rel = re.findall(r"\b(?:yesterday|last week|last night|this morning|tomorrow)\b", body, re.I)
