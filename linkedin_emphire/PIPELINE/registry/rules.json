@@ -445,6 +445,16 @@
     "post"
    ],
    "check": "post-number"
+  },
+  {
+   "id": "R41",
+   "text": "A session opens with the pace reading and the reply queue, and no post ships on a day whose follower row is missing. The two questions are what the number did and who is waiting. Both are answered in a second, and both are invisible otherwise.",
+   "source": "owner question 2026-11-09 on systems; the follower log with one row in it",
+   "severity": "manual",
+   "scope": [
+    "internal"
+   ],
+   "check": "manual"
   }
  ]
 }
