@@ -30,6 +30,7 @@ The tool parses this format, so keep it exact: `- [ ] L<n> text  (opened YYYY-MM
 - [ ] L59 Website Featured card **unconfirmed**: the dialog will show either an OG image or a grey placeholder. If grey, draw a 1200x627 card plus the Next.js metadata lines (opened 2026-11-09)
 - [ ] L60 Projects section **not started**: five entries drafted with first-commit date commands. Also pending Services categories, Publications (3 live URLs + 1 to copy), Languages, and three recommendation requests (opened 2026-11-09)
 - [ ] L61 **FORAY public statement not yet posted** (drafted 2026-11-09, slot Tue 10 Nov 09:00 WAT). Marvin consented; the wording must keep v0.4 named and the no-audit line. Also outstanding: re-run probe groups C, D and E against v0.9 with derived segment ids, and ask Marvin whether DUNIN7/foray will be made public (it returns 404) (opened 2026-11-09)
+- [ ] L62 **F9b v4 not built.** Evelyne-Claudia found three qualifications in v3 (identity-keyed recorder, mixed provenance, over-broad host claim). v4 needs: sequential exchange records, regenerated result file in the same commit, manifest of v3-vs-v4 file hashes, eight-run matrix with conditions, per-execution counts and journal digests. Until then the exact-file claim stays withdrawn (opened 2026-11-09)
 - [ ] L12 Video script: written, not filmed  (opened 2026-11-04)
 
 ## Open work in the repo
