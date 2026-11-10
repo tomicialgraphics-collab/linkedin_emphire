@@ -1,0 +1,15 @@
+Evelyne-Claudia,
+
+Attached: F9b-refusal-pair-v3.zip and F9b-refusal-pair-v2.zip, and an artifact manifest that lists the byte count and the SHA-256 of each archive and of the four result files inside them. The manifest is the document to work from, because it also says which values were computed today and which were carried over from the eighth.
+
+Version two, and the two result files inside it, were hashed again on 9 November and are unchanged. Version three, and its two result files, were hashed on the eighth from the copy now held at Google Drive, file ID 1QZufdZ6VFJJoKyWG-Xpzrr73FfRptkRf, and were not re-hashed today, because the working copy is no longer on this machine. Drive's own record for that upload gives an MD5 of 162cec51c4d2bc3af8306a351d49ed88, created on the eighth at 21:31:43 UTC, which agrees with the digest I sent you. That is a platform's arithmetic rather than an independent reproduction, and I'd rather say that plainly than let the match carry more weight than it can.
+
+The four qualifications stay where you put them until your numbers exist. Nothing in this message asks you to move one.
+
+When you have computed them, one of three things happens. If everything matches, we move to reproducibility and the identity question is closed. If the archive matches and a result file inside it doesn't, the archive was altered after it was built and the file that disagrees is the finding. If the archive itself doesn't match, then we have been examining different artifacts this whole time, which is a larger finding than the one under dispute and it needs recording first.
+
+If a file will not open, say so. An unopenable artifact is an unresolved result, not a mismatch.
+
+Best regards,
+
+Olusanya Timothy
