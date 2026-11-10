@@ -13,7 +13,7 @@ drafted, so the permission ask is visible rather than remembered.
 
 | ID | Client | Milestone | File | Permission | State |
 | --- | --- | --- | --- | --- | --- |
-| C1 | FORAY / Dunin7 | the register, its first corrected finding, and the reopened W-05 | `CLIENTS/foray-dunin7/` (page not written) | not-requested | candidate |
+| C1 | FORAY / Dunin7 | the register, its first corrected finding, and the reopened W-05 | `CLIENTS/foray-dunin7/CASE-STUDY-1_open-protocol-anchoring.md`, ask drafted beside it | not-requested | drafted, ask ready |
 | C2 | Evelyne-Claudia | the file-hash recomputation and what it settled | `OUTREACH/evelyne-claudia-2026-11-06/` (page not written) | not-requested | candidate |
 
 ## Why these two first

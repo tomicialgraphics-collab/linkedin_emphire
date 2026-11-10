@@ -59,3 +59,18 @@ Built:
   three weekly decisions must be a borrowed ask when none went out, and a monthly question asks whether
   a finished client milestone has gone thirty days without a page.
 
+## Owner question: what next
+
+Answered by doing the cheapest unblocked thing rather than listing it: C1 of the case-study system is
+now a drafted page, `CLIENTS/foray-dunin7/CASE-STUDY-1_open-protocol-anchoring.md`, PASS 0/0, with the
+permission ask written beside it as `CASE-STUDY-1_permission-ask.txt`. The ask names the seven things
+that would be removed and offers him the choice of being named or not, because the ask is easier to
+answer than to postpone.
+
+The page is a draft and stays one. `permission: not-requested`, and R43 will block it the moment anyone
+sets it to ready.
+
+Order proposed to the owner, in this order: the follower row for today (thirty seconds, and the pace
+line is blind without it), the two borrowed asks for this week (route first, then pitch), the C1 ask
+attached to the next Marvin reply, and the day's post.
+
