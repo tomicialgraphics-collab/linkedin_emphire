@@ -1,0 +1,39 @@
+Evelyne-Claudia,
+
+Your four distinctions are the right ones and I accept the structure without qualification. Archive identity unresolved, hash not verified, independent reproduction of v3 not verified, the earlier adverse finding contested. I'm not asking you to withdraw it. I won't record it as withdrawn either, and I'll tell you why at the end.
+
+Here's everything I can supply, so the comparison becomes arithmetic rather than argument.
+
+The two archives, since the disagreement is between two. Version 3, F9b-refusal-pair-v3.zip, is 43,489 bytes, SHA-256 3643a92c95e493923572e1908167a1e8ceca66fc41c2ba065d1fa7ec8bdd7ab6, MD5 162cec51c4d2bc3af8306a351d49ed88, held on Drive as 1QZufdZ6VFJJoKyWG-Xpzrr73FfRptkRf and created on 8 November at 21:31:43 UTC.
+
+Version 2, F9b-refusal-pair-v2.zip, is 35,857 bytes, SHA-256 29593fbc1f57a67325430de22d9578d7402d816178a94ff8437d02ec56dac706, MD5 a1764c08a6df0a30573c87a936f8caca.
+
+The result files shipped inside each. In version 3: pair3/result.json is d41a3e5546e1a4fe6683604d4bf237dad97da47e9693fead6428a64494beef81, and pair3-unmatched/result.json is 078b4e39f5a8a2f39f4e7b8c34de5dcd344c4faff0fe07a9a0f27df0cad1b351.
+
+In version 2: pair2/result.json is b1271532794e18dfae64340bd1061bddb263d1d0ba491b16c2d49b65cdaf4553, and pair2-unmatched/result.json is 3b7f04425d4614ecad10600ecce01210b2741fab36823c60e0ee40fe0fc30342.
+
+The four executions in version 3, each with the digest of the journal it was read from, so provenance can be checked without reading my prose. Conflict-host has six records and its journal is cedc5f3c3b4d95f6154bb89ef1afaa9499a0741105bce6231d377abc1d892358.
+
+Conflict-wire has seven records and its journal is dfa5c69d34d1f4447d9c5462f4546cad6a02fa06effbd17c89cdb4565e9d2980.
+
+Verdict-host has four records and its journal is 33bfaa1bf09957099cd4de5ebea34d3d007247f3d76016d1933d2f5ce4ef3be7.
+
+Verdict-wire has four records and its journal is b467398465ff00b8c22c9fb41870c1fe71eed39b579874e2a15bdc5d689fc5ec.
+
+What only you can supply is the other half, and it's two commands: sha256sum on the archive you extracted, then sha256sum on each result file your run wrote. Send me those four values and the question closes on its own.
+
+Two mechanical discriminators, so neither of us has to interpret anything. The string "25 distinct replies" occurs in the version 2 result files and in neither version 3 file.
+
+The string "distinct_by_exchange" occurs in the version 3 result files and in neither version 2 file. Whichever string your generated file carries identifies the archive that produced it, without either of us making a judgement.
+
+On the record. I'll enter the earlier finding as contested and unresolved, not withdrawn and not confirmed. If the hash you compute matches version 2, the correction belongs to your record and I'll cite it as yours, precisely, including the fact that you made it. If it matches version 3, then version 3 fails under a documented reproduction and I'll record the finding in your terms, with the artifact preserved unchanged as the evidence of the failure.
+
+One distinction of yours that I want to adopt rather than dispute. My own checks are self-reproduction by the author of the artifact, which isn't independent reproduction in the sense you use the phrase, and I'll stop using the two in the same sentence as though they were the same thing. Mine is the weaker claim and it should be named as the weaker one.
+
+On your last point, the correction of an examination error doesn't establish the artifact, and a correct artifact doesn't retrospectively validate an examination performed against another version. Agreed, and it cuts in both directions, which is why the hash decides rather than either of us.
+
+Nothing here modifies frozen REACHABLE, and reproducibility remains distinct from architectural correctness.
+
+Integrity in principle, discipline in practice, accountability without exceptions. Applied to me first.
+
+Timothy
