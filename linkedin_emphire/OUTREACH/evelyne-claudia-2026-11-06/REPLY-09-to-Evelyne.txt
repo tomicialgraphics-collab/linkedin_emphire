@@ -1,0 +1,15 @@
+Evelyne-Claudia,
+
+The record as you've written it stands. Archive identity unresolved, SHA-256 not verified, independent reproduction of v3 not verified, the earlier finding contested. I'm not going to touch any of those four lines and I'm not going to argue the point again.
+
+"Reported reference values" is the correct label, and I'd like to be exact about what would change it. The values I sent are hashes of files I hold. Anyone with the same bytes gets the same digest, which is exactly why I sent them, and none of that makes them independent verification. Verification is your sha256sum on the same archive and on the result files your run wrote. That's the entire gap.
+
+So the one question left is whether the artifacts are in your hands. If they aren't, say so in a line and I'll send version 3 and version 2 today, the archives and the result files both, so we're working from identical bytes. If what you receive hashes to something other than what I reported, that is a finding, it counts against my numbers, and I'll record it in those terms.
+
+On your safeguard, agreed, and it was built in from the start. I wrote both discriminators down before either of us knew which way they'd fall, which is the only reason an inconclusive outcome was ever available to us. If neither string appears, or if something unexpected does, we log it as unresolved and neither of us forces a side.
+
+The next message from me on this is files, or nothing.
+
+Best regards,
+
+Olusanya Timothy
