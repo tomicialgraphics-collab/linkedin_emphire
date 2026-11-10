@@ -16,7 +16,7 @@ box: TWO EXTRA WORDS
 box_alt: BOUNDARY, NOT FACT
 hashtags: [#AIEvaluation, #LLMEvaluation, #AIEngineering, #AISecurity]
 slot: 13:30 WAT, Monday 9 November 2026, ahead of the 19:00 launch post
-first_comment: none, the post stands alone
+first_comment: ENGAGEMENT/2026-11-09_comment_span-scoring-playbook-link.md
 ---
 
 Exact match scores the truncated answer as right and the complete one as wrong.

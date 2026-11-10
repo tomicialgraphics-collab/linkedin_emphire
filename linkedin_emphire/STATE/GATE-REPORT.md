@@ -1,6 +1,6 @@
 # Gate report
 
-Generated 2026-11-10 07:17 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-10 07:22 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 
@@ -108,11 +108,14 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/2026-11-09_comment_daniel-moka-loops-and-the-oracle.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_emily-j-ai-evals-launch.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_giorgio-severi-memorydojo.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-09_comment_launch-playbook-link.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_martha-boeckenfeld-forestry-standard.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_olushola-olaleye-purpose-and-the-no.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_shreya-shankar-quail-extract.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-09_comment_span-scoring-playbook-link.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_tanya-janca-instruction-vs-capability.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_tina-austin-purple-flower.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-09_first-comment-spine.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_held_anthropic-sales-tools-repost.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_reply_christian-macdonald-prompt-injection.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_reply_christian-macdonald-take-the-note.md` | yes | 0 | 0 | pass |

@@ -16,7 +16,7 @@ box: 142 OPEN
 box_alt: NOT TESTED
 hashtags: [#AISecurity, #AIEvaluation, #AIRedTeam, #LLMEvaluation]
 slot: 19:00 WAT, Monday 9 November 2026
-first_comment: none, the post carries the link
+first_comment: ENGAGEMENT/2026-11-09_comment_launch-playbook-link.md
 ---
 
 I published the checklist I use for AI red teaming. 168 classes. The list is not the useful part.
