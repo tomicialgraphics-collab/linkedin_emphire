@@ -38,19 +38,23 @@ lists as `[a, b]`, comments after `#`. Nothing nested.
 
 `profile_checked`, which is the date you read the person's profile and something only they said.
 `warm: yes` if a link is allowed.
-`sources_read`, from 2026-11-10 on, which is what the post points at and what happened to it:
+`sources_read`, from 2026-11-10 on. **Every link a post attaches is opened before the comment is
+written** (owner instruction, 2026-11-09: "please always read it"). The line records what happened:
 
 | value | means |
 | --- | --- |
-| `read: <what> <date>` | opened it, and the comment is written against it |
-| `none: nothing attached` | there was no link, paper, film or thread to open |
-| `blocked: <why>, so <what the comment claims anyway>` | could not open it, with the reason and the consequence |
-| `not-needed: <why>` | a link exists and the comment deliberately rests on the post alone |
+| `read: <what it was> <date>` | opened it, and the comment is written against it |
+| `none: nothing attached` | there was no link, paper, film, thread or repository to open |
+| `blocked: <why>, so <what the comment claims anyway>` | it will not open, with the reason and the consequence |
 
 A post points at something far more often than it looks. A paper, an SSRN version, a film, a waitlist,
-another post, a repository. The value is what tells a later reader whether the comment was written
-against the thing or beside it. `blocked:` and `not-needed:` are both legitimate and both have to be
-typed out, because the failure worth preventing is silence.
+a publisher page, another post, a repository. A landing page or a waitlist still counts as read: open
+it, say what it turned out to be, and the line reads `read:`. `blocked:` is for material that will not
+open at all, and it has to say what the comment claims without it.
+
+There is no "I read the post so the link does not matter". That was the earlier version of this rule
+and the owner struck it out on 2026-11-09, the same evening. Working from a summary of a source and
+working from the source are different acts, and only one of them can be checked afterwards.
 
 ### When the file leaves the repo as it stands
 

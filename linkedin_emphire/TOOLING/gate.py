@@ -353,10 +353,15 @@ def check_contract(rep: Report, meta: dict, dtype: str, audience: str, path: str
         if not src:
             rep.add("R26", "FAIL", "missing sources_read: name the linked material and whether it was opened, "
                                    "or none: nothing attached")
-        elif not src.lower().startswith(("read:", "none:", "blocked:", "not-needed:")):
-            rep.add("R26", "WARN", "sources_read must open with read:, none:, blocked: or not-needed:")
+        elif src.lower().startswith("not-needed"):
+            rep.add("R26", "FAIL", "not-needed is retired (owner instruction 2026-11-09): open it and say what it was, "
+                                   "or blocked: if it will not open")
+        elif not src.lower().startswith(("read:", "none:", "blocked:")):
+            rep.add("R26", "WARN", "sources_read must open with read:, none: or blocked:")
         elif src.lower().startswith("blocked:") and len(src.split()) < 8:
             rep.add("R26", "WARN", "blocked: states the reason, then what the comment claims without it")
+        elif src.lower().startswith("read:") and len(src.split()) < 4:
+            rep.add("R26", "WARN", "read: names what was opened and the date")
         else:
             rep.add("R26", "PASS", "linked material accounted for")
 
