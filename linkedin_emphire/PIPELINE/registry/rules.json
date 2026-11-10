@@ -284,8 +284,8 @@
   },
   {
    "id": "R26",
-   "text": "Every deliverable states what it is, who it is for, and what the reader should do next, in the file itself, not in the chat.",
-   "source": "owner instruction 2026-11-06, this restructure",
+   "text": "Every deliverable states what it is, who it is for, and what the reader should do next, in the file itself, not in the chat. A comment or a DM from 2026-11-10 also carries sources_read: whether the material the post points at was opened (read:), whether there was nothing attached (none:), whether it could not be opened and what the comment claims without it (blocked:), or whether the comment is written from the post alone by choice (not-needed:).",
+   "source": "owner instruction 2026-11-06, this restructure; owner question 2026-11-09 on reading attached links",
    "severity": "block",
    "scope": [
     "outward",

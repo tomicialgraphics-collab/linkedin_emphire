@@ -38,6 +38,19 @@ lists as `[a, b]`, comments after `#`. Nothing nested.
 
 `profile_checked`, which is the date you read the person's profile and something only they said.
 `warm: yes` if a link is allowed.
+`sources_read`, from 2026-11-10 on, which is what the post points at and what happened to it:
+
+| value | means |
+| --- | --- |
+| `read: <what> <date>` | opened it, and the comment is written against it |
+| `none: nothing attached` | there was no link, paper, film or thread to open |
+| `blocked: <why>, so <what the comment claims anyway>` | could not open it, with the reason and the consequence |
+| `not-needed: <why>` | a link exists and the comment deliberately rests on the post alone |
+
+A post points at something far more often than it looks. A paper, an SSRN version, a film, a waitlist,
+another post, a repository. The value is what tells a later reader whether the comment was written
+against the thing or beside it. `blocked:` and `not-needed:` are both legitimate and both have to be
+typed out, because the failure worth preventing is silence.
 
 ### When the file leaves the repo as it stands
 

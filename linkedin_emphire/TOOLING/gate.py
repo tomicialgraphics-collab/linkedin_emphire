@@ -344,6 +344,22 @@ def check_contract(rep: Report, meta: dict, dtype: str, audience: str, path: str
     ):
         rep.add("R26", "WARN", f"status '{meta['status']}' is not one of draft/ready/sent/posted")
 
+    # R26 linked material. A comment on somebody else's post is written about material
+    # that post points at. Saying whether that material was opened is the difference
+    # between a reading and a reaction, so the file states it from 2026-11-10 onward.
+    # Nothing before that date is retro-fitted: the values would be reconstruction.
+    if dtype in ("comment", "dm") and str(meta.get("date", "")) >= "2026-11-10":
+        src = str(meta.get("sources_read", "")).strip()
+        if not src:
+            rep.add("R26", "FAIL", "missing sources_read: name the linked material and whether it was opened, "
+                                   "or none: nothing attached")
+        elif not src.lower().startswith(("read:", "none:", "blocked:", "not-needed:")):
+            rep.add("R26", "WARN", "sources_read must open with read:, none:, blocked: or not-needed:")
+        elif src.lower().startswith("blocked:") and len(src.split()) < 8:
+            rep.add("R26", "WARN", "blocked: states the reason, then what the comment claims without it")
+        else:
+            rep.add("R26", "PASS", "linked material accounted for")
+
 
 def check_post(rep: Report, meta: dict, body: str) -> None:
     headline = str(meta.get("headline", "")).strip()
