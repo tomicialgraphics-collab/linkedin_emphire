@@ -1,0 +1,17 @@
+Evelyne-Claudia,
+
+The manifest is attached to this message on its own, as ARTIFACT-MANIFEST-v3-v2.md. The extension says markdown and the file is plain text, so it opens in Notepad, TextEdit or any editor without rendering anything. It evidently did not reach you with the previous send, and that is a delivery failure on my side rather than a gap in your records.
+
+So you can compare today rather than waiting on another round trip, the six values are below exactly as they appear in the file. Version three archive: 3643a92c95e493923572e1908167a1e8ceca66fc41c2ba065d1fa7ec8bdd7ab6, at 43,489 bytes. Version two archive: 29593fbc1f57a67325430de22d9578d7402d816178a94ff8437d02ec56dac706, at 35,857 bytes.
+
+Inside version three, pair3/result.json is d41a3e5546e1a4fe6683604d4bf237dad97da47e9693fead6428a64494beef81 and pair3-unmatched/result.json is 078b4e39f5a8a2f39f4e7b8c34de5dcd344c4faff0fe07a9a0f27df0cad1b351.
+
+Inside version two, pair2/result.json is b1271532794e18dfae64340bd1061bddb263d1d0ba491b16c2d49b65cdaf4553 and pair2-unmatched/result.json is 3b7f04425d4614ecad10600ecce01210b2741fab36823c60e0ee40fe0fc30342.
+
+If your six values and these six differ anywhere, the difference is the finding and the manifest is the page it gets recorded against, with the file you preserved and the file I sent both named. I'm not going to predict which way that goes.
+
+The four qualifications stay exactly where they are until your comparison is done. Nothing in this message moves one of them.
+
+Best regards,
+
+Olusanya Timothy
