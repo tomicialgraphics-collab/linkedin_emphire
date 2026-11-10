@@ -11,7 +11,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `ARTICLES` | 94 | 42773 KB | the Breaking AI series, one package per article | content | S3 |
 | `ASSETS` | 10 | 2742 KB | photos, logos, fonts and anything a card is built from | visual | S3 |
 | `BREAKLAB` | 43 | 546 KB | the public harness work | content | S3 |
-| `CLIENTS` | 50 | 529 KB | one folder per client, per engagement, dated. Findings first, private to them | empire | S3,S5,S6 |
+| `CLIENTS` | 51 | 532 KB | one folder per client, per engagement, dated. Findings first, private to them | empire | S3,S5,S6 |
 | `CONTENT` | 2 | 5 KB | content working files that are not yet a post | content | S3 |
 | `CONTENT_CALENDARS` | 2 | 47 KB | the posting calendar | content | S1 |
 | `CURRICULUM` | 4 | 74 KB | the red-team and research study plan | strategist | S2 |
@@ -19,20 +19,20 @@ and this file is its index. If an area is undeclared, declare it in
 | `DESIGN` | 5 | 88 KB | render scripts, fonts, locked geometry | visual | S3 |
 | `EMAIL` | 10 | 142 KB | email drafts and send logs | opportunities | S3,S6 |
 | `EMPIRE` | 12 | 643 KB | the operating layer: pipeline, prompts, money rows | empire | S8 |
-| `ENGAGEMENT` | 144 | 2139 KB | comment and DM drafts, feed sweeps, replies | engagement | S1,S3 |
+| `ENGAGEMENT` | 162 | 2178 KB | comment and DM drafts, feed sweeps, replies | engagement | S1,S3 |
 | `LEADS` | 1 | 1 KB | raw inbound leads | opportunities | S1 |
 | `LINKEDIN` | 14 | 191 KB | profile copy, headline variants, about section | content | S3 |
 | `NETWORKING` | 6 | 55 KB | contacts, connect notes, follow-ups | engagement | S2 |
 | `OPPURTUNITIES` | 13 | 161 KB | job and gig leads, the tracker | opportunities | S1 |
-| `OUTREACH` | 144 | 1094 KB | client-facing outreach and confidential working files | empire | S3,S6 |
-| `PIPELINE` | 11 | 57 KB | the rules registry, the stages and the contracts. Read first, change rarely | strategist | S0 |
-| `PLANS` | 15 | 300 KB | dated plans with a target and a number | strategist | S1,S8 |
+| `OUTREACH` | 151 | 1114 KB | client-facing outreach and confidential working files | empire | S3,S6 |
+| `PIPELINE` | 13 | 75 KB | the rules registry, the stages and the contracts. Read first, change rarely | strategist | S0 |
+| `PLANS` | 16 | 304 KB | dated plans with a target and a number | strategist | S1,S8 |
 | `PROJECTS` | 279 | 3298 KB | named multi-session work with an owner and a due date | empire | S3,S5 |
 | `PUBLISH` | 17 | 161 KB | publish-ready exports and the queue | content | S6 |
 | `RESOURCES` | 1 | 2 KB | reference material that is not authored here | strategist | S2 |
 | `RESUME` | 20 | 354 KB | resumes and generators. PII, never linked publicly | opportunities | S3 |
-| `SESSION_LOG` | 3 | 35 KB | one log per working day, instructions and decisions | strategist | S7 |
-| `STATE` | 4 | 72 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
+| `SESSION_LOG` | 5 | 44 KB | one log per working day, instructions and decisions | strategist | S7 |
+| `STATE` | 7 | 55 KB | open loops, delivery log, gate report. The truth about what happened | strategist | S6,S7 |
 | `STRATEGY` | 18 | 234 KB | ICP, positioning, weekly plans | strategist | S1,S8 |
 | `THE CONTENT CREATOR` | 1 | 3 KB | role prompt for content | content | S0 |
 | `THE EMPIRE BUILDER` | 1 | 3 KB | role prompt for the empire | empire | S0 |
@@ -41,7 +41,7 @@ and this file is its index. If an area is undeclared, declare it in
 | `THE STRATEGIST` | 1 | 3 KB | role prompt for strategy | strategist | S0 |
 | `THE VISUAL DESIGNER` | 149 | 57342 KB | role prompt for visuals | visual | S0 |
 | `TOLU TEMPLATE` | 148 | 57339 KB | document templates inherited from a bundle | strategist | S3 |
-| `TOOLING` | 6 | 101 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
+| `TOOLING` | 8 | 115 KB | the gate, the linter, the renderer. Code only, no prose | strategist | S0,S4 |
 | `UPWORK` | 51 | 30449 KB | catalog, proposals, gig delivery | opportunities | S1,S6 |
 | `VERIFIED_POSTS` | 103 | 1037 KB | every post that passed the gate, one folder each, plus the index | content | S3,S7 |
 | `VISUAL` | 11 | 631 KB | brand guidelines and approved card references | visual | S3 |
@@ -56,7 +56,7 @@ and this file is its index. If an area is undeclared, declare it in
 
 ## Rules, templates, tags
 
-- rules: 31 in `PIPELINE/registry/rules.json`
+- rules: 43 in `PIPELINE/registry/rules.json`
 - templates: 14 in `PIPELINE/registry/templates.json`
 - verified hashtags: 11 in `PIPELINE/registry/hashtags.json`
 

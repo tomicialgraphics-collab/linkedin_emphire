@@ -250,7 +250,7 @@ def body_words(text: str) -> int:
 
 
 def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
-               pasted: str | None = None, exported: bool = False) -> None:
+               pasted: str | None = None, exported: bool = False, path: str = "") -> None:
     pasted = pasted if pasted is not None else body
     # R01 em dash
     dashes = [i for i, ch in enumerate(body) if ch in "\u2014\u2013"]
@@ -360,6 +360,19 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
                                    "or say in the text why the post has none")
         else:
             rep.add("R40", "PASS", "carries a number")
+
+    # R43 a case study carries its client permission
+    if "CASE-STUDY" in path.upper() and "PIPELINE" not in path.upper():
+        perm = str(meta.get("permission", "")).strip().lower()
+        state = str(meta.get("status", "")).strip().lower()
+        if not perm:
+            rep.add("R43", "FAIL", "case study without permission: in front matter")
+        elif perm.startswith("granted"):
+            rep.add("R43", "PASS", f"permission {perm.split(':')[0]}: client agreed")
+        elif state in ("draft", ""):
+            rep.add("R43", "PASS", f"permission {perm}: drafting is allowed before the ask")
+        else:
+            rep.add("R43", "FAIL", f"permission {perm} but status {state}: nothing leaves until the client agrees in writing")
 
     # R30 relative dates
     if dtype != "internal":
@@ -624,7 +637,7 @@ def gate_file(path: str, forced_type: str | None = None) -> Report:
         check_contract(rep, meta, dtype, audience, path)
     else:
         rep.add("R26", "PASS", "exported artefact, internal metadata not required")
-    check_text(rep, body, meta, dtype, audience, pasted, exported)
+    check_text(rep, body, meta, dtype, audience, pasted, exported, path)
     check_profile_read(rep, meta, dtype)
     check_cold_link(rep, meta, body, dtype)
     check_approval(rep, meta)

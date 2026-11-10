@@ -9,6 +9,7 @@
     python3 TOOLING/pipeline.py audit              # gate every live deliverable, write the report
     python3 TOOLING/pipeline.py render             # rebuild the generated docs and MAP.md
     python3 TOOLING/pipeline.py map                # inventory the whole tree
+    python3 TOOLING/pipeline.py board              # what is late and what is due today
     python3 TOOLING/pipeline.py loops              # list open loops
     python3 TOOLING/pipeline.py loops done L3      # close one
     python3 TOOLING/pipeline.py loops add "text"   # open one
@@ -39,6 +40,7 @@ GATE = os.path.join(HERE, "gate.py")
 
 sys.path.insert(0, HERE)
 import gate as G  # noqa: E402
+import board as B  # noqa: E402
 
 TODAY = dt.date.today().isoformat()
 
@@ -97,6 +99,9 @@ Read these before writing anything, in this order:
   6  DAILY CONTENT/post_templates.txt         the fourteen templates
   7  context.md s7 and s8                     standing rules and voice
   8  STATE/OPEN-LOOPS.md                      what is unfinished
+  9  STATE/BORROWED-AUDIENCE.md               who has been asked, and who is due
+ 10  STATE/CASE-STUDY-INDEX.md                which client page is waiting on permission
+ 11  PIPELINE/70-WEEKLY-REVIEW.md             the twenty minutes that kills something
 
 Then, before it leaves the repo:
 
@@ -105,6 +110,8 @@ Then, before it leaves the repo:
 Nothing is delivered that the gate blocks. Nothing is delivered without a line in
 STATE/DELIVERY-LOG.md. Nothing is sent by the agent: the owner sends.
 """)
+    print("WHAT IS DUE")
+    B.main(["--brief"])
     print(f"OPEN LOOPS ({len(loops)})")
     for item in loops[:12]:
         print(f"  {item['id']:>3}  {item['text']}")
@@ -112,6 +119,10 @@ STATE/DELIVERY-LOG.md. Nothing is sent by the agent: the owner sends.
         print(f"       ... {len(loops) - 12} more, run `pipeline.py loops`")
     print()
     return 0
+
+
+def cmd_board(_args) -> int:
+    return B.main([])
 
 
 # --------------------------------------------------------------------------
@@ -689,6 +700,7 @@ def main(argv=None) -> int:
 
     sub.add_parser("start").set_defaults(fn=cmd_start)
     sub.add_parser("status").set_defaults(fn=cmd_status)
+    sub.add_parser("board").set_defaults(fn=cmd_board)
 
     p = sub.add_parser("check")
     p.add_argument("paths", nargs="+")

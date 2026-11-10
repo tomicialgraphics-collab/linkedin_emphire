@@ -18,9 +18,9 @@ removal loop end up ignored, which is worse than twenty that are kept. This is t
 
 | Minutes | Read | Ask |
 | --- | --- | --- |
-| 0 to 5 | `python3 TOOLING/pace.py` | Is this week's number real, and which checkpoint is next |
+| 0 to 5 | `./emphire board` | What is late, what is due, and did two asks go out |
 | 5 to 10 | `STATE/DELIVERY-LOG.md`, last seven days | Which artefact produced a measured outcome, and which produced nothing |
-| 10 to 15 | `STATE/OPEN-LOOPS.md`, `STATE/REPLY-QUEUE.md` | What is older than seven days, and who is waiting |
+| 10 to 15 | `STATE/OPEN-LOOPS.md`, `STATE/BORROWED-AUDIENCE.md` | What is older than seven days, and who is waiting on a follow-up |
 | 15 to 20 | the week's posts and comments | Which single piece would I keep if I could keep one |
 
 ## The three decisions
@@ -30,7 +30,14 @@ removal loop end up ignored, which is worse than twenty that are kept. This is t
    it goes in the file.
 2. **Kill one thing.** A thread type, a template, a posting slot, a habit, or a rule. Every week.
    Something goes. The review that only adds is the review that fills the repo with unread files.
-3. **Point the next week at three things.** Not five. Each names the artefact and the day.
+3. **Point the next week at three things.** Not five. Each names the artefact and the day. If no
+   borrowed audience ask went out this week, one of the three is an ask, and it comes first.
+
+## The fifth question, once a month
+
+`STATE/CASE-STUDY-INDEX.md`: is there a client milestone that was finished more than thirty days ago
+and still has no de-identified page? If there is, the permission ask has been postponed past the point
+where the client was pleased with the work, and it gets written that week or dropped.
 
 ## The template
 

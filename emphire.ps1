@@ -5,6 +5,7 @@
 #   .\emphire.ps1 start
 #   .\emphire.ps1 check linkedin_emphire\VERIFIED_POSTS\2026-11-06_absence-of-a-record\post.md
 #   .\emphire.ps1 log linkedin_emphire\CLIENTS\foray-dunin7\2026-11-06\FINDINGS-02-register-entries-v3.md -To "Marvin" -How "Drive link, hash in message"
+#   .\emphire.ps1 board
 #   .\emphire.ps1 status
 #   .\emphire.ps1 audit
 #

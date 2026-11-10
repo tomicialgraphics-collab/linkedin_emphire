@@ -31,3 +31,31 @@ Proposed, not built, because each starts with the owner's voice or his permissio
 
 Rejected: more posting slots (output is not the bottleneck), a CRM (four clients), a second analytics
 stack (the most comfortable kind of displacement activity).
+
+## Owner instruction: build and integrate them, ensure they are always implemented
+
+The two systems that were proposals at the end of the last message are now built, and the integration is
+the part that makes them survive a session where nobody remembers they exist.
+
+Built:
+
+- **`STATE/BORROWED-AUDIENCE.md`.** Eight named shows and newsletters in the lane and adjacent to it,
+  checked against public listings on 10 November, each with a route column that currently reads
+  "unknown" because a route that is guessed is a route that fails at the pitch. States run from prospect
+  to booked. Reach numbers are deliberately absent.
+- **`PIPELINE/80-CASE-STUDIES.md` and `STATE/CASE-STUDY-INDEX.md`.** The permission ladder in front
+  matter, the six things a case study contains, the de-identification list, and the argument for asking
+  at the first milestone rather than at the end. C1 is the FORAY register, C2 is the Evelyne-Clarke
+  recomputation, both drafted-first, neither shared.
+- **`TOOLING/board.py`.** Reads the follower log, the reply queue, the two new boards and says what is
+  late in four lines.
+- **`./emphire board`, and `./emphire start` now prints the brief.** That is the integration: the boot
+  brief cannot be skipped without skipping the rules, so the boards are read every session whether or
+  not anyone thinks about them. First run says the follower row is four days old and that no borrowed
+  ask has gone out.
+- **R42 and R43.** The cadence, and the permission check, which blocks a case study at `status: ready`
+  without `permission: granted`.
+- **Weekly review extended.** `./emphire board` replaces the separate pace and queue reads, one of the
+  three weekly decisions must be a borrowed ask when none went out, and a monthly question asks whether
+  a finished client milestone has gone thirty days without a page.
+

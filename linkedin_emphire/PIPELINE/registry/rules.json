@@ -455,6 +455,27 @@
     "internal"
    ],
    "check": "manual"
+  },
+  {
+   "id": "R42",
+   "text": "Borrowed audiences are worked as a board, not as a hope: two asks a week, each to a named host with a named route to them, each with a follow-up date seven days out. A borrowed audience ask that is not a row in STATE/BORROWED-AUDIENCE.md did not happen. One appearance in front of twenty thousand people does what a month of posting cannot, and nothing else in the repo has a lead time measured in weeks.",
+   "source": "owner instruction 2026-11-09, build and integrate the systems; the growth plan's lever four",
+   "severity": "manual",
+   "scope": [
+    "internal"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R43",
+   "text": "Client work stays private until the client agrees in writing, and a case study carries that agreement in its front matter: permission: not-requested, requested: <date>, granted: <date and how>, or granted-anonymous. A case study at status ready or later without granted permission is blocked. Drafting before asking is allowed and is the point: the draft is what gets approved.",
+   "source": "R19, made checkable on 2026-11-09",
+   "severity": "block",
+   "scope": [
+    "doc",
+    "outward"
+   ],
+   "check": "case-study-permission"
   }
  ]
 }
