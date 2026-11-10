@@ -35,8 +35,9 @@ November. Version 3, and the two result files inside it, were hashed on 8 Novemb
 file ID 1QZufdZ6VFJJoKyWG-Xpzrr73FfRptkRf, and were not re-hashed on 9 November because the working copy no longer exists on
 this side. That is a limitation and it is stated here rather than left for the reader to discover.
 
-Drive records its own MD5 for that upload as 162cec51c4d2bc3af8306a351d49ed88, created 8 November at 21:31:43 UTC. It
-matches the value above. A platform digest is still not an independent reproduction, and it is the closest thing available
+Drive records its own MD5 for each upload. Version 3 is 162cec51c4d2bc3af8306a351d49ed88, created 8 November at
+21:31:43 UTC, and version 2 is a1764c08a6df0a30573c87a936f8caca, created 7 November at 03:17:15 UTC. Both match the
+local values above. A platform digest is still not an independent reproduction, and it is the closest thing available
 without the archive being opened on another machine.
 
 ## How to check a value
