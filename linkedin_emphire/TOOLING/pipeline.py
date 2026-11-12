@@ -404,6 +404,60 @@ def cmd_growth(_args) -> int:
 
 
 # --------------------------------------------------------------------------
+# revenue
+# --------------------------------------------------------------------------
+
+REVENUE_TARGET = 5000
+REVENUE_DEADLINE = "2026-12-25"
+
+
+def _revenue_rows():
+    path = os.path.join(EMPIRE, "STATE", "REVENUE-LOG.md")
+    rows = []
+    if not os.path.exists(path):
+        return rows
+    for line in open(path).read().splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) < 6 or not re.match(r"\d{4}-\d{2}-\d{2}$", cells[0]):
+            continue
+        try:
+            amount = float(re.sub(r"[^0-9.]", "", cells[3]) or 0)
+        except ValueError:
+            amount = 0.0
+        rows.append({"date": cells[0], "deal": cells[1], "client": cells[2],
+                     "amount": amount, "state": cells[4].lower()})
+    return rows
+
+
+def cmd_revenue(_args) -> int:
+    rows = _revenue_rows()
+    if not rows:
+        print("revenue: STATE/REVENUE-LOG.md has no deals. A deal that is not a row does not exist for the maths.")
+        return 1
+    paid = sum(r["amount"] for r in rows if r["state"] == "paid")
+    won = sum(r["amount"] for r in rows if r["state"] == "won")
+    proposed = sum(r["amount"] for r in rows if r["state"] == "proposed")
+    free = [r for r in rows if r["state"] == "free"]
+    open_deals = [r for r in rows if r["state"] in ("prospect", "proposed", "won")]
+    d_last = dt.date.today()
+    days_left = (dt.date.fromisoformat(REVENUE_DEADLINE) - d_last).days
+    gap = max(0.0, REVENUE_TARGET - paid - won)
+    avg = (sum(r["amount"] for r in rows if r["state"] in ("paid", "won")) / max(1, len([r for r in rows if r["state"] in ("paid", "won")])))
+    print(f"\n  revenue to {REVENUE_DEADLINE}: paid {paid:,.0f}  agreed {won:,.0f}  proposed {proposed:,.0f}  of {REVENUE_TARGET:,}")
+    print(f"  days left {days_left}   gap to target {gap:,.0f}")
+    if days_left > 0:
+        print(f"  gap per day {gap / days_left:,.0f}")
+    print(f"  deals at 0 USD recorded as free: {len(free)} of {len(rows)}")
+    print(f"  open conversations: {len(open_deals)}")
+    for r in open_deals:
+        print(f"    {r['state']:<9} {r['amount']:>8,.0f}  {r['client']}  ({r['deal']})")
+    if avg:
+        print(f"  average closed deal {avg:,.0f}, so the gap is about {gap / avg:.1f} more deals at that size")
+    print()
+    return 0
+
+
+# --------------------------------------------------------------------------
 # audit
 # --------------------------------------------------------------------------
 
@@ -803,6 +857,7 @@ def main(argv=None) -> int:
     p.set_defaults(fn=cmd_audit)
 
     sub.add_parser("growth").set_defaults(fn=cmd_growth)
+    sub.add_parser("revenue").set_defaults(fn=cmd_revenue)
 
     sub.add_parser("render").set_defaults(fn=cmd_render)
     sub.add_parser("map").set_defaults(fn=cmd_map)

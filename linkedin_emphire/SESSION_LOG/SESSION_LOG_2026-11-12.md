@@ -442,3 +442,20 @@ whether the comment lever still works at volume rather than chase 1,600.
 Implemented as a command rather than a document alone. ./emphire growth reads analytics/follower-log.md and the
 checkpoints, prints the required rate, the observed rate, the projection and the next checkpoint with the pace
 it needs. The page says what to do; the command says where the number is.
+## The goal is money, not followers
+
+He corrected it: five thousand dollars by 25 December, not five thousand followers. The follower reading was
+mine, taken from the 6 November line, and it was wrong in the direction that flattered the plan.
+
+The revenue log says where this actually starts: 90 dollars paid, from one tutoring booking; two engagements
+delivered at zero, one of them six weeks long; nothing ever priced and put in front of anyone. So it is a
+first-sale problem rather than a reach problem, and audience growth is a different goal with a different page.
+
+The plan takes five small closes as the engine and one 3,500 engagement as the upside, ranks the two existing
+relationships first because both have had weeks of unpaid work and neither has been asked for money, and puts
+Lagos and West African teams above cold outbound because proximity is the one advantage a foreign consultancy
+cannot copy. The Arcezia ask is the fix-verification phase, which is a new scope and does not touch the fee
+waiver or his three constraints. Marvin is explicitly not asked until he has replied about the case study.
+
+STATE/REVENUE-LOG.md holds the deals and ./emphire revenue prints paid, agreed, proposed, the gap and the gap
+per day. Its most useful line today is the one that says open conversations: 0.
