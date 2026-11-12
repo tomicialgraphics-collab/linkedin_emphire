@@ -101,3 +101,18 @@ says the serialiser is unbuilt.
 
 Also in the reply: the case study permission ask, C1, in one paragraph with the removal list.
 
+## Evelyne-Claudia, 13:08: the answer is nothing
+
+She replied to the closing message with a closing message of her own. No question, no disagreement, no
+artefact offered, and her one substantive sentence agrees with the position already taken: section 7 can
+stay open until the v3 archive returns, and the same standard applies either way it falls.
+
+Nothing is sent. The commitment made to her was that the next message would be files or nothing, and a
+reply here would break it to say that nothing has changed. R34 also applies: she holds the last
+substantive word, and taking it back would turn a closed examination into a correspondence.
+
+Recorded: a row in the reply queue so a later session does not read the silence as neglect, and a loop
+for the one thing actually outstanding, which is the archive. The C2 case study permission is not asked
+in this window even though the moment is warm, because the page does not exist yet and asking for
+approval of nothing is how a permission gets refused politely.
+

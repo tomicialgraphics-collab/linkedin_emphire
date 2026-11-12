@@ -37,6 +37,7 @@ Not owed a reply. Listed so a later session does not mistake silence for an unan
 | Sam Illingworth | whether to plan the study as a project | offered a one-page protocol; if he accepts, a design document is owed, not a message |
 | Juliet Ugbor | preparedness and who carries the failure | ended on his day-four line; the next word is hers |
 | Dr Martha Boeckenfeld | intent versus obligation | one reply given and the thread closed by design, per R34 |
+| Evelyne-Claudia Yantony | the F9b record and its section 7 | closed on 10 November with her agreement that section 7 stays open pending the v3 archive; the next message from him is files or nothing |
 | Marvin Percival | FORAY stream records | he owes the transaction id; nothing is owed to him |
 
 ## What the gate cannot do
