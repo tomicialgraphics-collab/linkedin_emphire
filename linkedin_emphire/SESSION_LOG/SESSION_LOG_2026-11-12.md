@@ -123,3 +123,16 @@ what an assessor does on the first day.
 There is a deliberate small disagreement with his second bullet, that sharing what you learn publicly is
 worth less in this field than the artefact. It is said once, mid-comment, and the rest of his advice is
 left alone.
+## Hayete Gallot, negative ten hours
+
+A launch post for a podcast that starts every episode from one number. Her number is negative ten hours:
+the window between discovery and attack now sits in the past. The show's stated conclusion is that the
+answer is not fixing everything but a different operating model.
+
+The gap a comment can fill is what replaces patch time. If the advisory arrives after the exploit, no
+severity score exists at the moment that matters, and the only signal left is the defender's own logs. So
+the number worth having is coverage of the exposed estate plus retention, which can be improved before
+the event rather than explained after it.
+
+Deliberately not a fact-check of the ten hours, not a summary of an episode that was only read about, and
+not a mention of Microsoft tooling under a Microsoft executive's launch post.
