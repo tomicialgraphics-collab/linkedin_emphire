@@ -157,3 +157,23 @@ cannot fetch them byte for byte, so recomputing on rewrapped text would have bee
 
 Also flagged: the post being replied to is this account's own, so its first comment should carry the playbook
 link until a thousand stars, and nothing in the pasted thread shows one.
+## Marvin Percival, the aggregate landed
+
+He answered REPLY-9 with the third anchor on chain, the three closes, and permission for the case study.
+
+Checked from the public chain before writing, no repository and no verifier: transaction 6944db12 has payload
+9ca34d90 and nothing else, accepted, block time 16:28:25 UTC on 12 November. Batches 1 and 2 re-read the same
+way and their block times replace the broadcaster's log time in items 9 and 11.
+
+One thing he had not noticed. Batch 2 spends batch 1's output, so the first pair is joined at the transaction
+level; batch 3's input is a different outpoint, so the third anchor is not joined by spend. A browser user can
+confirm three anchors and cannot join the third to the extent, because the client header lives inside the
+aggregate leaf and the payload is the root. That is the sentence the sales material needs, and it is narrower
+than the one he proposed.
+
+Three record items: the message named v9 while v10 was attached; W-06 closes in Amendment v0.26 which 404s,
+and reopens in v0.13 section 10 item 10, which still says the amendment needs its own revision; and 66 of 66
+is the number section 8.1 calls stale, so the suite needs naming.
+
+Case study: granted, named, on condition he reads it first. The reply says what naming costs him, since his
+name makes the project findable no matter what the removal list keeps out.

@@ -4,13 +4,15 @@ id: case-study-1-foray-anchoring
 date: 2026-11-10
 audience: internal
 status: draft
-permission: requested: 2026-11-10
+permission: granted 2026-11-12: named, on the condition that he reads the draft before anyone else does
 client: FORAY (Dunin7)
 ---
 
 # CASE STUDY 1: five weeks of a claim that was true and not yet reachable
 
-Draft. Nothing here is shared until the front matter says `granted`. This is the page to put in front
+Permission was granted on 12 November 2026 with two conditions: he may be named, and he reads the draft
+before it is shown to anyone. Nothing here is shared with a third party until he has read it, which is a
+stricter rule than the permission alone would impose. This is the page to put in front
 of the author with the removal list, because a client asked to approve a page that does not exist yet
 is being asked for a favour rather than for a decision.
 
@@ -81,3 +83,17 @@ of this and are tested separately.
 
 Not a protocol review. A demonstration that the sentence a team is most confident about is often the one
 never tested from the position of the person the sentence is meant to convince.
+
+## Permission, 12 November 2026
+
+He answered the ask inside his reply: the case study may be shown and he may be named, and he would like to
+read it first so he can check that nothing identifies the work more than intended. Two consequences.
+
+Naming him does not preserve anonymity. His name plus his published work makes the project findable by
+anyone who wants to find it, so the removal list (project, repository, package, finding identifiers,
+version codes, commit hashes, dates) stops doing its real work at the point his name goes in. The reply sent
+on 12 November says this plainly and asks him to choose between an identifiable named account and an
+anonymous one. The draft goes to him either way, and the section on where I was wrong first stays.
+
+The text below is unchanged by the permission. What changes is that a named version can now be prepared,
+and it should not be prepared until he has answered the naming question.
