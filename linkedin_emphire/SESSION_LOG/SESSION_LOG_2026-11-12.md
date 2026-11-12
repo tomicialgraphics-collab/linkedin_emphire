@@ -192,3 +192,18 @@ the build identity rather than the developer's shell.
 
 Recorded against the standing playbook-link rule: this is the second comment turned into a post, and
 neither shows a first comment carrying the link.
+## Stephen Platten, the next hour
+
+A motivational post from a first degree connection who tests for a living: potential, the Musonius Rufus
+last-day line, keep going. There is no claim in it and no technical surface, so a testing comment would be
+a lecture under somebody's encouragement.
+
+The comment translates rather than agrees. The last-day frame applied to a release becomes one decision,
+which scenario gets the next hour, and the closing line says where my own hour goes rather than where his
+should. Three hundred and fourteen characters, which is the right length under a personal post and the
+same judgment as the round table comment in November.
+
+The quotation was checked before use: Musonius Rufus, Fragments 22, attested in that form. Nothing in the
+comment turns on it, but a comment that leans on a line should know who said it.
+
+The newsletter link on his profile returns 403, so it was not read and the file says so.
