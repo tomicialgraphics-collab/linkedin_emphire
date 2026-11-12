@@ -15,6 +15,7 @@ on 15 November and 29 November are arithmetic against this table.
 
 | Date | Followers | Net | Posts published | Comments sent | Best impression count | What brought them |
 |---|---|---|---|---|---|---|
+| 2026-11-12 | 1,125 | +118 | 1 confirmed live (paired-run post, 42 impressions at T+49m), 2 drafted today | 0 confirmed | 42 at T+49m | unknown; sixteen days of comments and posts, attribution still unresolved (L18) |
 | 2026-11-06 | 1,007 | baseline | 1 (absence of a record) | 6 drafted, 0 confirmed | unknown | **unknown, and this is the problem** |
 
 ## How to fill it

@@ -6,24 +6,24 @@ audience: public
 status: ready
 approved: no
 template: T1
-headline: Nvidia's interim chief executive is also still the chief financial officer.
-subheadline: Two jobs built to check each other, now held by one person. The emergency is real. The end date is not written.
-headline_alt: The emergency replacement kept two roles that were designed to check each other.
-subheadline_alt: The board did the reasonable thing in a day. Reasonable things are how exceptions become the design.
-headline_alt2: The control that vanished on the way out of the crisis.
-subheadline_alt2: An interim appointment is where separation of duties normally goes, and the compensating control is normally a sentence nobody writes.
+headline: Nvidia's chief executive resigned and was replaced within a day.
+subheadline: The interim chief executive is still the chief financial officer. Week one may have forced that. Week twenty will not.
+headline_alt: Nvidia changed its chief executive in a day and kept two jobs in one pair of hands.
+subheadline_alt: The company did the fast thing and the defensible thing. The sentence nobody read closely is the one about the finance role.
+headline_alt2: The resignation is the news. The second sentence is the story.
+subheadline_alt2: An interim chief executive who still signs the accounts is normal in a crisis, and the part that outlives it is the part nobody dates.
 box: NO END DATE
-box_alt: TWO ROLES
+box_alt: WEEK TWENTY
 hashtags: [#AISecurity, #AIGovernance, #AIRedTeam, #AIEvaluation]
 slot: 19:00 WAT, Thursday 12 November 2026, after the clock post
 first_comment: FIRST_COMMENT.md, carries the repository link
 ---
 
-# Post for 12 November 2026: two jobs, one person
+# Post for 12 November 2026: what the Nvidia announcement says in its second paragraph
 
-Second post of the day, after the clock piece. Slot **19:00 to 21:00 WAT, Thursday 12 November 2026**. Standalone,
-no links in the body. Built only from the company's own announcement and the day's reporting, checked before
-writing and recorded in sources.md.
+Second post of the day, after the clock piece. Slot **19:00 to 21:00 WAT, Thursday 12 November 2026**.
+This is the news post the owner asked for: it reports what happened, then finds the one line in the company's
+own announcement that the coverage has not picked up. Facts checked on the day; every source in sources.md.
 
 ## Rules this was built against
 
@@ -31,57 +31,59 @@ writing and recorded in sources.md.
 - Headline plus subheadline inside 200 characters.
 - Exactly one boxed phrase, one to three words, not opening line one, portable out of context.
 - Four targeted hashtags on the final line.
-- No em dashes, no bold, no emoji as punctuation, no fabricated number, no allegation restated as a finding.
+- No em dashes, no bold, no emoji as punctuation, no fabricated number.
+- No allegation restated as a finding. Conduct is named as reporting, once, and not described.
 - Human gate 90 or above with zero errors.
 
 ## Recommended headline pair
 
-**HEADLINE:** Nvidia's interim chief executive is also still the chief financial officer.
+**HEADLINE:** Nvidia's chief executive resigned and was replaced within a day.
 
-**SUBHEADLINE:** Two jobs built to check each other, now held by one person. The emergency is real. The end date is not written.
+**SUBHEADLINE:** The interim chief executive is still the chief financial officer. Week one may have forced that. Week twenty will not.
 
-75 characters and 111 characters, 186 together.
+64 characters and 118 characters, 182 together.
 
 ## Alternative headline pairs
 
-**Alt 1.** The emergency replacement kept two roles that were designed to check each other. / The board did the reasonable thing in a day. Reasonable things are how exceptions become the design.
+**Alt 1.** Nvidia changed its chief executive in a day and kept two jobs in one pair of hands. / The company did the fast thing and the defensible thing. The sentence nobody read closely is the one about the finance role.
 
-**Alt 2.** The control that vanished on the way out of the crisis. / An interim appointment is where separation of duties normally goes, and the compensating control is normally a sentence nobody writes.
+**Alt 2.** The resignation is the news. The second sentence is the story. / An interim chief executive who still signs the accounts is normal in a crisis, and the part that outlives it is the part nobody dates.
 
-Alt 2 is the most provocative and names the mechanism, but it reads as an accusation of a company in
-difficulty, which is not the argument. The recommended pair states the arrangement as fact and puts the
-criticism where it belongs, on the missing end date rather than on the people.
+Alt 2 is the most confident and assumes the reader has already seen the resignation everywhere, which they
+have. The recommended pair still opens with the event, so it works for someone who has not.
 
 ## Card copy
 
 ```
-HEADLINE   NVIDIA'S INTERIM CHIEF EXECUTIVE
-           IS ALSO STILL THE CHIEF
-           FINANCIAL OFFICER.
+HEADLINE   NVIDIA'S CHIEF EXECUTIVE
+           RESIGNED AND WAS REPLACED
+           WITHIN A DAY.
            [NO END DATE]
 
-SUB        TWO JOBS BUILT TO CHECK EACH OTHER, NOW HELD BY ONE PERSON.
-           THE EMERGENCY IS REAL. THE END DATE IS NOT WRITTEN.
+SUB        THE INTERIM CHIEF EXECUTIVE IS STILL THE CHIEF FINANCIAL OFFICER.
+           WEEK ONE MAY HAVE FORCED THAT. WEEK TWENTY WILL NOT.
 ```
 
-**Box:** NO END DATE. Three words, does not open line one, and it carries the whole critique when lifted onto
-a card without the paragraph around it.
+**Box:** NO END DATE. Three words, does not open line one, and it carries the argument on a card with no
+paragraph to lean on.
 
 ## Post, paste-ready
 
 <!-- gate:body:start -->
-Nvidia's interim chief executive is also still the chief financial officer.
-Two jobs built to check each other, now held by one person. The emergency is real. The end date is not written.
+Nvidia's chief executive resigned and was replaced within a day.
+The interim chief executive is still the chief financial officer. Week one may have forced that. Week twenty will not.
 
-Their own announcement says it in a line: Kress continues as executive vice president and chief financial officer while serving as interim chief executive until a permanent successor is named.
+Jensen Huang stepped down on Thursday as president, chief executive and board member, effective immediately, after 33 years running the company he co-founded in 1993. Shares opened 13 percent lower and the market value slipped below 4 trillion dollars for the first time since July last year.
 
-Those two jobs are separate for a reason that has nothing to do with talent. One runs the company. The second signs the accounts, owns the close, and certifies the controls around them. Separation of duties exists so that the person under pressure to hit a number is never the person who attests to it, and most boards write that combination out of bounds entirely.
+The board moved quickly and, by the standard of a first week, it moved well. Colette Kress, the chief financial officer, was named interim chief executive. Harvey Jones, who ran Synopsys, became the company's first-ever chair of the board. A search began, and it will consider candidates from inside and outside.
 
-It was also, until this week, a board that had never had a chair of its own. Nvidia appointed its first-ever chair in the same announcement, a former chief executive of Synopsys, and started a search that will consider internal and external candidates. Read plainly, the failover worked. It still ran for the first time in 33 years, on a morning when the shares opened 13% down.
+Then there is the sentence that has been read as a detail. Kress continues as executive vice president and chief financial officer while serving as interim chief executive.
 
-So the appointment is not the failure. In the first week of a crisis there may be no alternative, and the independent chair is a real check on the combination.
+Those jobs are separate for a reason that has nothing to do with ability. One runs the company. It signs the accounts and certifies the controls around them. Separation of duties exists so that the person under pressure to make a quarter land is never the person who attests that it did, and most boards rule the combination out on sight.
 
-What happens next is the part worth watching, and it is usually nothing. Exceptions granted in an emergency are rarely written with a date attached, so the compensating control lives in the room where it was agreed. Six months later the interim arrangement is still running, the search has gone quiet, and nobody can name the moment it stopped being temporary.
+In the first week of a crisis there may be no alternative, and the new independent chair is a real check on it. It is not the appointment.
+
+The date is what nobody writes down. Exceptions granted in an emergency rarely get written with an expiry, so the compensating control lives in the room where it was agreed. Six months later the interim arrangement is still in place, the search has gone quiet, and nobody can name the day it stopped being temporary.
 
 An exception with no end date is not a temporary measure. It is the configuration.
 

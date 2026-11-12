@@ -308,3 +308,20 @@ Deliberately excluded: any restatement of the allegations, any figure for market
 varies from about 700 billion upward), and any claim that Nvidia failed to document a compensating control,
 which is not knowable from outside. The release's silence on the reason for the resignation is a point made in
 the earlier Eva Benn comment and is not reused here.
+## Post 31 rebuilt as a news post
+
+The owner's note was that the post he asked for was about the Jensen story, and v1 never reported it. So v1 is
+kept intact as draft_v1_controls-only.md and the body was rebuilt to lead with the event: resigned on Thursday
+as president, chief executive and board member, effective immediately, 33 years, co-founded 1993, shares
+opened 13 percent lower, market value below 4 trillion dollars for the first time since July 2025.
+
+Then the board's response, which was fast and defensible: Kress as interim, Harvey Jones as the first-ever
+chair, a search open to internal and external candidates. Then the sentence that keeps the CFO role, and the
+separation of duties argument, and the missing end date.
+
+Two figures were refused on purpose. No dollar figure for value lost, because the reporting ranges from about
+700 billion upward. No claim that Nvidia has failed to document a compensating control, because that record is
+not visible from outside.
+
+Follower number taken down from the owner's own screen: 1,125 followers, 978 connections, 708 following. That
+is +118 since the 1,007 on 6 November, about 20 a day.

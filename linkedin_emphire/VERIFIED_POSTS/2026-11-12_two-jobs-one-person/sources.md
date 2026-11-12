@@ -53,3 +53,23 @@ Wachtell, Lipton, Rosen & Katz appointed for the investigation, per the Guardian
 - No claim that the arrangement is unlawful or improper. It is a governance trade-off made under time pressure,
   and the post says the independent chair is a real check on it.
 - No figure for market value lost, no figure for revenue at risk, nothing about the investigation's findings.
+
+## Added for v2: the news paragraph
+
+The owner asked for a post about the news itself rather than the controls angle alone, so the body now reports
+the event before it analyses it. The three numbers that moved into the body are verified as follows.
+
+| Line in the post | Source |
+| --- | --- |
+| Stepped down as president, CEO and board member, effective immediately | Nvidia newsroom release, 12 November 2026 |
+| 33 years, co-founded 1993 | the same release, and Reuters |
+| Shares opened 13 percent lower | Reuters, carried by Times of India and India Today, 13.09% at $150.98 at the open |
+| Market value below 4 trillion dollars, first time since July 2025 | Times of India market report and India Today, both citing the intraday fall |
+
+Quartz puts the fall at about 8 percent shortly after the bell and AP at about 9.7 percent, so the post uses
+the opening figure and attributes nothing beyond it. No dollar figure for value lost is used: the reporting
+ranges from roughly 700 billion to the whole-of-week total, and an unattributable number is worse than none.
+
+The conduct reporting is referred to only as the reason he stepped down, in no more than the phrase "after 33
+years" implies. The post does not describe the allegations, does not name anyone, and does not treat any of it
+as established. The board's investigation is not characterised.
