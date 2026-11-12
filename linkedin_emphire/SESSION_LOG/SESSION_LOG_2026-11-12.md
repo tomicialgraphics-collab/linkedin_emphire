@@ -225,3 +225,17 @@ cost more than it earns.
 
 Facts were checked through the day's coverage before writing, and the file records what the reporting says
 and what the comment does not assert.
+## Tim Zlomke, second round
+
+He accepted the age-versus-change distinction and did something better than agreeing: he said he would not
+designate a new examination before checking what coverage already exists. So the reply stops asking for a
+specimen and gives him the criterion that makes existing coverage scoreable. The refusal has to name the age
+and the window it was judged against, because a control that records only "refused" cannot be told apart
+from one that failed to parse a field.
+
+Then the variable that hides inside freshness: which clock. If the window is measured against the receiver's
+own time rather than the timestamp on the evidence, drift turns stale into fresh and the specimen passes for
+the wrong reason.
+
+R45 fired on the first draft for a mirrored clause, "what separates having measured freshness from having
+watched a refusal". The sentence was cut rather than reworded, and the paragraph is stronger without it.
