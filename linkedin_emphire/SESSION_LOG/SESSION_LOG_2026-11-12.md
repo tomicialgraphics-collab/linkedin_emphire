@@ -292,3 +292,19 @@ control was never about the token.
 Every number in it is a parameter of a test rather than a statistic, so nothing in the post can be fabricated,
 and sources.md says so explicitly. Headline pair 183 characters, box WHOSE CLOCK, four verified tags, first
 comment carries the playbook link with no star ask anywhere.
+## Post 31, two jobs one person
+
+He asked for a post on the Nvidia story and for the verification to be done first. It was: the company's own
+release read in full, share move at the open taken from Reuters as carried by two outlets, the sequence checked
+against the BBC live timeline and PC Gamer's.
+
+The angle is not the scandal. Nvidia's announcement says Kress continues as EVP and chief financial officer
+while serving as interim chief executive, which is exactly the combination most boards forbid, because the
+person under pressure to hit a number should not be the person who attests to it. The appointment is
+defensible in week one, the new independent chair is a real check on it, and the failure is that exceptions
+granted in an emergency rarely get an end date. An exception with no end date is the configuration.
+
+Deliberately excluded: any restatement of the allegations, any figure for market value lost (the reporting
+varies from about 700 billion upward), and any claim that Nvidia failed to document a compensating control,
+which is not knowable from outside. The release's silence on the reason for the resignation is a point made in
+the earlier Eva Benn comment and is not reused here.

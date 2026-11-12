@@ -1,0 +1,14 @@
+{
+  "post_number": 31,
+  "date": "2026-11-12",
+  "slug": "two-jobs-one-person",
+  "pillar": "AI Security / AI Governance",
+  "style": "TEMPLATE 1 technical, current-events governance",
+  "word_count": 301,
+  "summary": "Nvidia's interim chief executive is still the chief financial officer, which is where separation of duties usually goes in a crisis. The appointment is defensible. The missing end date is the control failure.",
+  "hashtags": ["#AISecurity", "#AIGovernance", "#AIRedTeam", "#AIEvaluation"],
+  "slot": "19:00 WAT, Thursday 12 November 2026",
+  "fact_verification": "Built from the company's own release plus Reuters-reported share move at the open. No allegation restated. See sources.md.",
+  "link_placement": "first comment",
+  "status": "READY"
+}
