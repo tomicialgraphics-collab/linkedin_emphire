@@ -248,3 +248,19 @@ Two verifiable additions. The first report of the relationship was 29 October, s
 That is her human operating system frame applied to the institution: the person is the surface that gets compromised, and the institution's records are built to describe what happened rather than why, which is why the human layer never appears in them.
 
 Her second link, the earlier post, returned 500 and was not read, so the comment does not reference it.
+## Tim Zlomke, third round, and where it stops
+
+He took the criterion and specified it better than I had: a trusted clock rather than the evidence timestamp,
+permitted skew, issuance time, applicable window, evaluation time, a control either side of the boundary,
+and the skew assumptions frozen before the run. Nothing in that list is wrong, so the reply does not add
+requirements to it.
+
+It names one thing the list has not settled, which is the interaction between two of its own items. The inside
+control is "just inside the window" and the skew is "permitted", and if the margin is smaller than the skew,
+the same evidence can pass that control and fail it without anyone having violated an assumption. The
+examination then carries a false negative no one can explain from the record. One sentence fixes it: the
+margin is at least one permitted skew.
+
+That is the last contribution I would make without a result. He has the specimen, the criterion and the rule
+for scoring it, and he has said he will bring coverage. A fourth round from me would be agreement dressed as
+content, and the next useful message in the thread is one with examination records in it.
