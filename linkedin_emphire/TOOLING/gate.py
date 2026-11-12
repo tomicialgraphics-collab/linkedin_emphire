@@ -107,9 +107,26 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
     if not m:
         return {}, text
     meta: dict = {}
-    for raw in m.group(1).splitlines():
+    lines = m.group(1).splitlines()
+    i = 0
+    while i < len(lines):
+        raw = lines[i]
+        i += 1
         # Full-line comments only. A "#" inside a value is a hashtag, not a comment.
         if not raw.strip() or raw.lstrip().startswith("#") or ":" not in raw:
+            continue
+        # Block scalars: `key: >-` or `key: |` fold every following indented line into
+        # the value. Without this, the value parsed as the marker itself, which is how
+        # a `profile_checked: >-` header read as ">-" for a while.
+        if raw.rstrip().endswith((">-", ">", "|-", "|")):
+            key, _, _marker = raw.rstrip().partition(":")
+            body = []
+            while i < len(lines) and (lines[i].startswith((" ", "\t")) or not lines[i].strip()):
+                body.append(lines[i].strip())
+                i += 1
+            folded = " ".join(x for x in body if x)
+            if folded:
+                meta[key.strip().lower()] = folded
             continue
         line = raw.rstrip()
         key, _, val = line.partition(":")
