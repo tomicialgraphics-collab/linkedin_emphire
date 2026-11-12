@@ -83,3 +83,18 @@ He is a first degree connection with two prior warm exchanges and the closest pr
 so the comment is deliberately technical and does no relationship work. Nothing about Lala, nothing about his
 consulting, no link. If he answers that the trace already covers both directions, the follow-up is authorship,
 not coverage, which continues the 8 November exchange rather than starting a new one.
+## Elena Bobkova, the guessing game
+
+She spoke at Genworth's AI risk summit on the leading cause of security incidents in 2026 and 2027, gave
+three hints, and invited guesses. The hints are the whole brief: only indirectly about AI, massive scale,
+and even the top 5 percent of organisations in that discipline struggle.
+
+The guess is non-human identity, because it is the only candidate that satisfies all three without
+strain. Credentials predate the agents and the agents inherit them, the scale is a count of authenticating
+paths rather than incidents, and a mature access review can be excellent while still asking only what a
+person may reach. Shadow AI fails the first hint, third-party risk fails the second by being well covered,
+and misconfiguration fails the third.
+
+The runner-up, unpatched systems with no owner, is named in the last line so a wrong guess still lands
+somewhere. If she replies, R38 makes the answer due within the day and the file carries the follow-up for
+each of the two likely reveals.
