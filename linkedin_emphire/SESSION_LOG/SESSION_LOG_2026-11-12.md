@@ -177,3 +177,18 @@ is the number section 8.1 calls stale, so the suite needs naming.
 
 Case study: granted, named, on condition he reads it first. The reply says what naming costs him, since his
 name makes the project findable no matter what the removal list keeps out.
+## Rock Lambros replies on the env var map
+
+He came back on the trojan post with the right edge: taking the names and leaving the values means the
+attacker still holds a map of which secrets each developer keeps, and the next build on that laptop reads
+the same environment, so rotation alone does not finish it. His remedy was rotate and move those
+credentials out of environment variables for everyone who ran it.
+
+The reply takes the population problem, which his sentence assumes away. Install records sit on the
+machines, and the machines are the ones an organisation cannot query, which is the same reason the version
+string was untrustworthy in the first place. So the rule is to rotate for everyone who could have run it,
+not everyone provable, and to change the credential shape at the same time: scoped, short lived, bound to
+the build identity rather than the developer's shell.
+
+Recorded against the standing playbook-link rule: this is the second comment turned into a post, and
+neither shows a first comment carrying the link.
