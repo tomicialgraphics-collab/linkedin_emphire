@@ -24,10 +24,11 @@ edited away.
 | date received | who | the question, in their words | date due | state | file |
 | --- | --- | --- | --- | --- | --- |
 | 2026-11-11 | Hitesh Choudhary | replied to the comment on his prompt post: confidence as a hypothesis to review, and isolating deletions by checking callers and tests | 2026-11-12 | open | not drafted |
+| 2026-11-12 | Tim Zlomke | replied to this account's post agreeing on the paired control and evidence provenance, then linked Harmonic's preserved examination lineage, BS-003 to BS-005 | 2026-11-12 | drafted | `ENGAGEMENT/2026-11-12_reply_tim-zlomke-age-rather-than-change.md` |
 | 2026-11-11 | Saim Saudagar | replied twice under the Replit post: error strings as input, and whoever triggers the error steering the fix | 2026-11-12 | open | not drafted |
 
-Two inbound replies are open as of 12 November 2026. Both are substantive and both are owed an answer
-within the day under R38.
+Two inbound replies from 11 November are open, and one from 12 November is drafted. All three are
+substantive and are owed an answer within the day under R38.
 
 ## Threads where the other person holds the last word
 

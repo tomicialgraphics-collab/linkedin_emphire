@@ -136,3 +136,24 @@ the event rather than explained after it.
 
 Deliberately not a fact-check of the ten hours, not a summary of an episode that was only read about, and
 not a mention of Microsoft tooling under a Microsoft executive's launch post.
+## Tim Zlomke, the lineage
+
+The trigger was unusual: the owner published the Ricky Jones comment as a post on his own profile, and Tim
+replied six minutes later agreeing on the paired control and on evidence provenance, then linked Harmonic's
+preserved examination lineage.
+
+The page is stronger than most public security evidence. Frozen criteria before the run, BS-003 and BS-004
+left failed in public, an append-only rule that a successor confers no standing backward, explicit
+non-claims, a manifest, and a production persistence record with request and trace ids, primitive versions
+and per specimen digests. The obvious critiques are already answered on the page.
+
+So the reply adds the specimen the family lacks. Both published specimens move one variable, the material
+state transition, and ran twenty five seconds apart on the same runtime. Nothing in the pair tests age: the
+same values with the authority evidence past its freshness window. A path that refuses a changed binding
+can still admit an unchanged binding whose witness is hours old.
+
+My own hash check is recorded as failed rather than passed. The manifest covers three files and this sandbox
+cannot fetch them byte for byte, so recomputing on rewrapped text would have been a false check.
+
+Also flagged: the post being replied to is this account's own, so its first comment should carry the playbook
+link until a thousand stars, and nothing in the pasted thread shows one.

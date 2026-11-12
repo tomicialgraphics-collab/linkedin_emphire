@@ -41,3 +41,11 @@ Nothing about his consulting, his round table, or a call, and no link. He sells 
 ## If he answers
 
 The likely reply is that the trace already records the consulted state in both directions, which is a fair reading of his sentence and would make the first half of this comment unnecessary while leaving the second half standing. The follow-up then is authorship, not coverage: who writes the entry, and can the agent reach it. That question is answerable inside his own practice, and it is the natural continuation of the exchange from 8 November rather than a new one.
+
+## Where this text actually went, added 2026-11-12
+
+The owner published this text as a standalone post on his own profile rather than, or in addition to,
+a comment under Ricky Jones's reply. The pasted feed shows it as a post at eleven minutes old with one
+reaction and seven impressions, and Tim Zlomke answered it there six minutes later. Whether it also ran
+under Ricky's comment is not known from what was pasted, and this file does not assert either way. The
+reply to Tim is in `2026-11-12_reply_tim-zlomke-age-rather-than-change.md`.
