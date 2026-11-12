@@ -1,7 +1,7 @@
 FIVE WEEKS OF A CLAIM THAT WAS TRUE AND NOT YET REACHABLE
-Prepared for Marvin Percival, DUNIN7. 12 November 2026. Version 2.
+Prepared for Marvin Percival, DUNIN7. 12 November 2026. Version 3.
 
-Version 1 was written on 10 November. Three things in it are no longer true, and they are marked in the page
+Version 3, 12 November, after his read of version 2. Version 1 was written on 10 November. Three things in it are no longer true, and they are marked in the page
 rather than edited away, because a document that hides its own revisions is the failure it describes.
 
 The situation, in three sentences
@@ -21,7 +21,8 @@ an opinion.
 
 What the register found
 
-Five findings, of which one was the load-bearing one.
+Four numbered entries in register version 7, W-01, W-02, W-03 and W-04, with W-01 carrying the sub-findings
+that the walk, the declared position and the anchoring each failed. One of them was load-bearing.
 
 The producer serialised every batch header through the route that carries no segments, and both the batch
 accumulator and the Tier-2 aggregator used it. The full segments serialiser existed and was tested. On the
@@ -40,14 +41,18 @@ showed it counted a command he had not run, and the sentence was withdrawn rathe
 claim, that a specific subsystem was closed, lost its heading and became a registered item instead. A third
 correction was mine alone: two commits were named without saying which was which.
 
-Four corrections across seven revisions, three of them prompted by the author, one found by re-reading my own
-text. The register carries a revision history for exactly this reason: a reviewer who reports only the
-corrections he was forced into is not keeping a record.
+Three corrections, two of them raised by the author and one found by re-reading my own text. The register
+carries a revision history for exactly this reason: a reviewer who reports only the corrections he was forced
+into is not keeping a record. Version 7's own header records a separate set, three editorial fixes applied in
+that version, the label, a stale count and the explanation of two counts. The two threes are not the same
+three, which is exactly the sort of sentence that has to be written down rather than remembered.
 
 What has changed in the project since
 
-The project closed every item on the register, and closed them in the text as well as in the code, which is the
-rarer half. The verifier specification has moved from v0.10 to v0.14 and each revision names the finding it
+The project closed every item on the register in code or in text, which is the rarer half. One exception, W-04:
+it is closed in the text, and the author's own status record says he has not re-run my probe against the rule
+that now states the mapping. So it is closed in the specification and not yet confirmed against my test, and
+that distinction is his, stated in his record before I asked for it. The verifier specification has moved from v0.10 to v0.14 and each revision names the finding it
 answers. A correction raised in the last exchange, that one amendment sentence still described the segments
 serialiser as unbuilt after it had been built, is closed in both places: Batch Anchoring Amendment v0.26
 corrects the sentence, keeps the old wording visible as superseded, and points at the verifier rule; the
@@ -74,6 +79,10 @@ that proves it now exists rather than being promised.
 
 What is still not established
 
+The mapping that closes W-04 is stated in the specification and has not been re-run against my probe. The
+author says so in his own record, which is why the register's closure is a textual one: the rule exists, the
+test of the rule is outstanding.
+
 The live Tier-2 aggregate has one leaf, so the path from the client header to the aggregate root is empty on
 chain. A path with sibling hashes is covered by vectors and by the verifier's own tests, not yet by an anchor.
 
@@ -99,6 +108,10 @@ Not a protocol review. A demonstration that the sentence a team is most confiden
 tested from the position of the person the sentence is meant to convince.
 
 Naming, and what it costs
+
+He asked that the document be restricted to his address until he has cleared it, and that is now the state:
+the open link was withdrawn the same evening, so the page is reachable by nobody rather than by everybody until
+he confirms. His read-first condition and this one are the same condition stated twice.
 
 He accepted the point that naming him does not protect anonymity: his name plus his published work makes the
 project findable by anyone who wants to find it, so a removal list stops doing its real work at the moment the

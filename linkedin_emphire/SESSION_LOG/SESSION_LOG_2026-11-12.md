@@ -459,3 +459,19 @@ waiver or his three constraints. Marvin is explicitly not asked until he has rep
 
 STATE/REVENUE-LOG.md holds the deals and ./emphire revenue prints paid, agreed, proposed, the gap and the gap
 per day. Its most useful line today is the one that says open conversations: 0.
+## Marvin's four corrections
+
+He read version 2, confirmed the facts, and found four things. Three were quick. The fourth was a real error and
+mine: the page said four corrections, listed three, and attributed three to the author when only two were his.
+Worse, the four had been assembled out of two different sets. Version 7's header records its own three editorial
+fixes, the label, the stale count and the explanation of the two counts, and my sentence had merged those with
+the withdrawn-claims history. The page now says three, lists three, attributes two and one, and states plainly
+that the two threes are not the same three.
+
+The count of findings was the other correction worth doing properly. Register v7 has four numbered entries,
+W-01, W-02, W-03 and W-04, with W-01 carrying the sub-findings. The case study said five, which counted the
+re-registered W-04 twice. It says four now and says why the sub-findings are not a second count.
+
+He also asked that the document be restricted to his address. The open link was withdrawn within the hour, so
+the page is now reachable by nobody. Person-level sharing needs an address and the record has none, so the reply
+says exactly that and leaves the request where it belongs.
