@@ -4,7 +4,7 @@ id: case-study-1-foray-anchoring
 date: 2026-11-10
 audience: internal
 status: draft
-permission: not-requested
+permission: requested: 2026-11-10
 client: FORAY (Dunin7)
 ---
 

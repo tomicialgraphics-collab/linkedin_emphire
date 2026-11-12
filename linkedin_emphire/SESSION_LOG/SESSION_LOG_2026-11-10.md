@@ -74,3 +74,30 @@ Order proposed to the owner, in this order: the follower row for today (thirty s
 line is blind without it), the two borrowed asks for this week (route first, then pitch), the C1 ask
 attached to the next Marvin reply, and the day's post.
 
+## Marvin Percival, 16:42 and 17:34: the close, and what I checked before accepting it
+
+His status record arrived as a two-page PDF and a v0.12 specification now live on the project's own domain.
+Both items I had left open are closed. The reply is `REPLY-9-to-Marvin.txt`, 3,841 B, 676 words,
+R14 human 100, R26 failing as every plain letter does and accepted.
+
+What I did rather than take his word for it:
+
+- Read both pages of the PDF. Its claims, vector counts and two limits match the email.
+- Fetched the specification to check that sections 4.4.4, 4.4.5 and 10 items 8 to 11 say what he says
+  they say. They do, and item 9's own wording is the sentence that closes W-05: a non-zero segment range
+  anchored through a client-registrable lane on Kaspa mainnet.
+- Fetched both transactions from the Kaspa public API. Both accepted, both payloads equal to the two
+  anchored values at 32 bytes, and the second transaction spends the first one's output. Block times
+  12:20:15 and 15:17:42 UTC on 10 November. That last check is the one worth keeping: it ties the two
+  anchors together at the transaction level, so the lane's chain is visible without the header chain
+  claim being taken on trust.
+- Fetched the stablecoin article he sent afterwards, because the rule now is that a link gets read before
+  anything is said about it.
+
+What went into the register: an addendum, not an edit. v7 is frozen because he holds its hash, so
+`FINDINGS-02-register-addendum-v8.md` closes W-05, records the two limits he stated without scoring them,
+and opens W-06 on a documentation defect he disclosed against himself, the amendment sentence that still
+says the serialiser is unbuilt.
+
+Also in the reply: the case study permission ask, C1, in one paragraph with the removal list.
+
