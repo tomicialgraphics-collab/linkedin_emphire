@@ -207,3 +207,21 @@ The quotation was checked before use: Musonius Rufus, Fragments 22, attested in 
 comment turns on it, but a comment that leans on a line should know who said it.
 
 The newsletter link on his profile returns 403, so it was not read and the file says so.
+## Jess Ramos, and the resignation
+
+The Nvidia story is real and it is the day's biggest: Huang resigned on 12 November, Kress is interim,
+Wachtell Lipton is investigating, and the coverage carries a second relationship with an executive who
+reported to him alongside the affair with a woman US intelligence alleges was a Chinese asset.
+
+Her post argues about consequences and about who carries them, which is a conduct argument. The comment
+takes the other half, exposure: a chief executive can read the roadmap, the unannounced silicon, the
+export-control strategy and the deal file, and none of that passes through the DLP and session logging that
+covers everyone else in the building. So the law firm can settle conduct and cannot settle exposure, and
+exposure is the part with a security question attached.
+
+Deliberately absent: the women, the marriage, whether he should have resigned. Those are hers and not this
+account's, and repeating any of them as established would be the one thing that could make this comment
+cost more than it earns.
+
+Facts were checked through the day's coverage before writing, and the file records what the reporting says
+and what the comment does not assert.
