@@ -339,3 +339,22 @@ single-change catalog can be fully satisfied while two real outputs are ordered 
 Watched twice on this one. The invitation is the only thing that licenses the comment, so it had to be
 answered rather than ignored. And the first pass had no contractions anywhere, which the voice gate caught;
 three went in and the paste reads like speech now.
+## Stephen Klein, and the grownup question
+
+He wrote this one in grief rather than analysis: he thought there was one adult in the room and now he is not
+sure there were ever any. The comment answers the question rather than auditing the post, which is the whole
+editorial decision here.
+
+The observation is that Jensen Huang was the one whose claims could be checked. Chips ship, revenue is
+audited, a roadmap arrives or slips. Everything else in the field runs on a story nobody can test until later,
+so the checkable person came to stand for the trustworthy one. Those are different variables, and none of the
+audits that work on a machine tell you what a person does when the machine gives them reach.
+
+The Anthropic IPO line in his post was checked before writing, because I would not want to answer a grief post
+built on a guess. The filing is real, S-1 filed 26 October, amended twice, price range 70 to 78, listing as
+ANT. The same filing has produced 1 trillion, 1.3 trillion and 1.4 trillion valuations depending on the share
+count, which is close to a perfect illustration of his own complaint, and it is the wrong comment to leave
+under this post. It is kept in the file for a post of his own.
+
+R20 caught the word "fixed" in the closing line on the first pass, which was a true positive: the sentence was
+about a governance gap, not a repair, and it was rewritten.
