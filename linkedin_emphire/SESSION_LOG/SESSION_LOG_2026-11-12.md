@@ -35,3 +35,20 @@ agent's, or there is nothing left to compare against once the dispute arrives.
 
 Kept to one idea and 1,002 characters. No link, no pitch, and nothing about the 18 comments behind the
 expander, which were not read and are not claimed.
+## Sara Hooker, Expand
+
+A launch post, so the useful stranger's contribution is the question that decides whether the buyer gets
+what they think they bought. Expand grows ten rows to a hundred thousand, which is a volume problem
+solved. Whether the model got better at the task is a different measurement, and it only holds if the
+held-out rows stayed out of the expansion. A randomly split test set will contain siblings of generated
+rows, so the score becomes a consistency check on the generator.
+
+The ask: real data held aside, never expanded, split at the document or the source. Ten seeds cannot
+seed that set, so the client has to agree to the ordering before the volume exists.
+
+Two angles left out on purpose. Provenance of generated rows against the seed licence belongs in a
+contract conversation. The coverage argument, that ten seeds cannot contain the rare case, is the
+strongest version of the usual argument and would have made a second idea.
+
+The company permalink returned 403, so the file records that and rests on the founder's post and the
+public site, which carry the same claims.
