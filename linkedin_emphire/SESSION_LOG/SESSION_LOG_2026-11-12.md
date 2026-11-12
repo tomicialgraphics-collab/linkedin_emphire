@@ -98,3 +98,15 @@ and misconfiguration fails the third.
 The runner-up, unpatched systems with no owner, is named in the last line so a wrong guess still lands
 somewhere. If she replies, R38 makes the answer due within the day and the file carries the follow-up for
 each of the two likely reveals.
+## Karan Dwivedi, who gets paged
+
+He asks who owns the outcome when an agent does something it was permitted to do and nobody
+intended, and closes by asking the reader who owns it at their organisation. The thread answer will be
+job titles, and a title can only own what reaches it.
+
+The comment takes his own analogy seriously. A manager notices a new hire because the manager holds a
+baseline of what the work should look like, and is close enough to see the deviation the same day. An
+agent has no manager, so the baseline has to be manufactured: the request recorded in the shape the agent
+acted on, and a deviation that produces a page. A log alone is a fact with no opinion attached.
+
+The closing line separates naming an owner from giving that owner a system that would have told them.
