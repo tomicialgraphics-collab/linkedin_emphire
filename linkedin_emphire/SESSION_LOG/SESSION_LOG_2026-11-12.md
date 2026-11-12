@@ -358,3 +358,18 @@ under this post. It is kept in the file for a post of his own.
 
 R20 caught the word "fixed" in the closing line on the first pass, which was a true positive: the sentence was
 about a governance gap, not a repair, and it was rewritten.
+## Love Babbar, the authority to refuse
+
+His post does the thing most people miss under this story, which is to turn it into a question for a team of
+six. Agreeing with that adds nothing, so the comment separates two things his questions run together. Head
+knowledge is recoverable in a week: someone rebuilds it. Standing is not, because standing is a history of
+decisions other people watched you make and accept, and what a 33-year chief executive held was the authority
+to say no in a room where nobody else could.
+
+An interim appointment transfers the title in an afternoon and none of that comes with it. The succession test
+worth adding is who is allowed to refuse, and whether anyone else has ever done it out loud.
+
+His 4 percent close and the AMD comparison were left alone. I have the open, which was down more than 13
+percent on several reports, and no reliable close. Correcting an open against someone's close would be wrong on
+the facts and wrong as a comment. The separation-of-duties point also stayed out: it went out as a post today
+and does not belong under his succession argument.
