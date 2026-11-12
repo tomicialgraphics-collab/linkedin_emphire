@@ -33,3 +33,26 @@ That is the human operating system point turned onto the institution. Her thesis
 She closes by asking what people think and by calling this a wake-up call, so the comment answers the question and agrees with the frame. It does not argue with her timeline so much as extend it backwards, and the correction is worth making because it changes the lesson from speed to delay.
 
 No link, no pitch, nothing about her awards post, and nothing that repeats the affairs themselves, which she has already described and which are not the point of the comment.
+
+## Considered and skipped: her earlier post, 16h
+
+The owner also pasted Eva Benn's post from sixteen hours earlier, the one that reports the second affair and
+asks how the world should be protected from the human vulnerabilities of the people who run the AI industry.
+It was not written for, and the reason is the comment above rather than the post.
+
+The answer that post wants is a good one and it is not a repeat of the comment above. The answer, roughly,
+is that you do not protect the world from a person's judgement; you make the position carry less, by taking
+the decisions that cannot be undone out of a single signature and by making the exit cheap enough that the
+board can use it. The board did a version of that within hours of the resignation, by appointing its
+first-ever chair separate from the chief executive, which is a smaller job for the person above the chief
+executive and a second place for the question to be asked from.
+
+It is skipped for a scheduling reason and a visibility reason. Two comments from this account under one
+author's two posts on one news story, inside one day, is the clearest possible signal of production rather
+than conversation, and this account has already made two Nvidia comments today under two different authors.
+The later post is also thirty-nine minutes old against sixteen hours, so it is the placement that carries
+the comment further.
+
+If the owner prefers this post, the swap is a replacement and not an addition: the comment above comes down
+and the argument that follows from the chair appointment goes here instead. That is a reasonable choice, and
+it makes the exchange a conversation with her question rather than an entrance under her news.
