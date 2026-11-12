@@ -3,15 +3,15 @@ deliverable: doc
 id: case-study-1-foray-anchoring
 date: 2026-11-12
 audience: client
-status: ready for client read
+status: cleared by the client 2026-11-12, may be shown with him named
 permission: granted
-permission_note: granted 2026-11-12, named, on the condition he reads it before anyone else. He has since confirmed the naming and asked for the draft. Read-first still applies.
+permission_note: granted 2026-11-12, named. He read versions 2 and 3 line by line, raised seven corrections in total, cleared version 4 on 12 November, and said it may be shown with him named. The page records where the reviewer was wrong first, at his instruction.
 client: FORAY (Dunin7)
 ---
 
 # Five weeks of a claim that was true and not yet reachable
 
-Version 3, 12 November, after his read of version 2. Version 1 was written on 10 November. Three things in it are no longer true, and they are marked in the page
+Version 4, 12 November 2026. Version 1 was written on 10 November. Three things in it are no longer true, and they are marked in the page
 rather than edited away, because a document that hides its own revisions is the failure it describes.
 
 ## The situation, in three sentences
@@ -60,10 +60,12 @@ three, which is exactly the sort of sentence that has to be written down rather 
 ## What has changed in the project since
 
 The project closed every item on the register in code or in text, which is the rarer half. One exception, W-04:
-it is closed in the text, and the author's own status record says he has not re-run my probe against the rule
-that now states the mapping. So it is closed in the specification and not yet confirmed against my test, and
-that distinction is his, stated in his record before I asked for it. The verifier specification has moved from v0.10 to v0.14 and each revision names the finding it
-answers. A correction raised in the last exchange, that one amendment sentence still described the segments
+it is closed in the text, and his record does not show a re-run of my probe against the rule that now states the
+mapping. So it is closed in the specification and not yet confirmed against my test, and that distinction is
+his, stated in his record before I asked for it. The verifier specification has moved from v0.10 to v0.14. The last three revisions each name the finding
+they answer, v0.12 answering A11 and A12 and the two after it naming the corrections raised in review. The
+earlier revisions name the section items they change rather than a finding, which is the smaller claim and the
+one that holds. A correction raised in the last exchange, that one amendment sentence still described the segments
 serialiser as unbuilt after it had been built, is closed in both places: Batch Anchoring Amendment v0.26
 corrects the sentence, keeps the old wording visible as superseded, and points at the verifier rule; the
 specification now points at v0.26 instead of promising a revision that already exists.
@@ -89,9 +91,9 @@ that proves it now exists rather than being promised.
 
 ## What is still not established
 
-The mapping that closes W-04 is stated in the specification and has not been re-run against my probe. The
-author says so in his own record, which is why the register's closure is a textual one: the rule exists, the
-test of the rule is outstanding.
+The mapping that closes W-04 is stated in the specification, and his record does not show a re-run of my
+probe against it. That is why the register's closure is a textual one: the rule exists, and the test of the rule
+is outstanding in the record rather than settled by it.
 
 The live Tier-2 aggregate has one leaf, so the path from the client header to the aggregate root is empty on
 chain. A path with sibling hashes is covered by vectors and by the verifier's own tests, not yet by an anchor.
@@ -118,10 +120,6 @@ Not a protocol review. A demonstration that the sentence a team is most confiden
 tested from the position of the person the sentence is meant to convince.
 
 ## Naming, and what it costs
-
-He asked that the document be restricted to his address until he has cleared it, and that is now the state:
-the open link was withdrawn the same evening, so the page is reachable by nobody rather than by everybody until
-he confirms. His read-first condition and this one are the same condition stated twice.
 
 He accepted the point that naming him does not protect anonymity: his name plus his published work makes the
 project findable by anyone who wants to find it, so a removal list stops doing its real work at the moment the

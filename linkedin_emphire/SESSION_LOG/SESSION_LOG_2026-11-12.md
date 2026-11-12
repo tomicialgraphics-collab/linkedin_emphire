@@ -483,3 +483,22 @@ settles the sharing question: nothing to restrict if there is no link.
 The page is 8,021 characters, which does not fit one message box comfortably, so it went as four parts of 2,208,
 1,915, 1,334 and 2,564, each cut on a section boundary so no argument is split across two messages. Cutting for
 a text box is a delivery decision and is recorded as one; the page itself is unchanged.
+## Cleared
+
+Marvin read version 3 in full, found three more things, and cleared the page once they were in. Two were
+substantive and one was a check he was right about.
+
+The restriction paragraph had to go entirely. It said the page existed only in the thread, which was false: the
+private document still exists and no address was ever exchanged. Worse, it described how the review was handled,
+which is correspondence and not a finding, and a case study that narrates its own permissions is a case study
+about the reviewer.
+
+W-04 now says "his record does not show a re-run of my probe", which is his claim about his record rather than my
+inference about his testing.
+
+The revision sentence was too strong and he caught it by checking. v0.10 and v0.11 name the section items they
+change; only v0.12, v0.13 and v0.14 name the finding they answer. The page now claims the smaller thing.
+
+Seven corrections across two reads, all of them real, and the permission stands: version 4 goes out with him
+named. That is the first case study in the record with a client's signature on the review that found his own
+work wrong first.
