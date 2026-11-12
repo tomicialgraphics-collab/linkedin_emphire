@@ -392,3 +392,19 @@ three anchors and keeps the earlier version beside it. The naming section said t
 chosen. And the current-state paragraph was written before v0.14 and v0.26 existed.
 
 Version 1 is preserved unmodified as CASE-STUDY-1_v1_2026-11-10.md with a line at the top saying what changed.
+## The case study goes up to Drive
+
+He asked for the files on Drive with the link attached, so the plain-text draft was uploaded and converted to a
+Google Doc, unlisted, readable by anyone holding the link, and the cover message now carries the URL instead of
+hoping an attachment survives a DM.
+
+Link: https://docs.google.com/document/d/1Ic2xEhDuOj9KPvA_VbxdzNLJEgtdHZZCY085-opo8x0/edit
+
+The sharing setting is the weak point and it is recorded as an open loop rather than left implicit. Anyone with
+the URL can read it, and the whole condition of the permission is that he reads first. The message says so and
+offers to restrict it to his address.
+
+Two lint catches on the way. The first draft of the message had the URL as its own paragraph and the voice gate
+read that as a sentence with no terminal punctuation, which it is; the link is now inline and the sentence
+around it ends properly. The second: the workspace had silently reverted to 941eef0 again, so the files were
+missing until a fetch and reset. That failure is now three times today.
