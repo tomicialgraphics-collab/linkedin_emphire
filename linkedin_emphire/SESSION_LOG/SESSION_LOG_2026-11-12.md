@@ -278,3 +278,17 @@ audited as a questionnaire, which cannot count an identity.
 She closed with thanks and no question, so nothing is asked of her. The follow-up worth having, if she opens
 the door, is contractual: does any supplier agreement require a report of identities retired and revoked, and
 who reconciles the two lists.
+## Post 30, whose clock
+
+He asked for today's post. Post 30 is the freshness argument taken one step past this morning's paired run:
+age is a different variable from change, and the part nobody defines is the clock. If the receiver supplies both
+the evidence timestamp and the current time, it is measuring its own drift, and rolling that clock back 45
+minutes makes expired evidence fresh without anyone violating an assumption.
+
+The test at the end is the one worth stealing: a token with a 1 hour lifetime, evaluated at minute 59 and at
+minute 61, then both runs repeated with the receiver clock shifted. If the pair disagrees with itself, the
+control was never about the token.
+
+Every number in it is a parameter of a test rather than a statistic, so nothing in the post can be fabricated,
+and sources.md says so explicitly. Headline pair 183 characters, box WHOSE CLOCK, four verified tags, first
+comment carries the playbook link with no star ask anywhere.
