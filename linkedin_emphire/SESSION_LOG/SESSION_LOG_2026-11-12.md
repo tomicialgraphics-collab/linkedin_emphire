@@ -521,3 +521,16 @@ The line that mattered most: the review so far was unpaid and that was a choice,
 Without it, charging for the follow-up reads as back-billing six weeks of goodwill.
 
 No coffee, no call, no "would love to chat". One ask, one number, one week.
+## Post 32, and the page gets a home
+
+Marvin cleared the page at 8:13pm, so the case study becomes a post rather than a file that only two people have
+read. Post 32 opens on the seven corrections, not on the finding, because the finding is his and the corrections
+are mine, and a launch post that opens on someone else's defect is a different post.
+
+Three numbers were removed from the first draft after checking. "Seven weeks" against the case study's five,
+"six months" and "seventy-odd pages" which nothing in the record supports. What replaced them is checkable: five
+weeks, 34,757 bytes, v0.14.
+
+The document is republished at version 4 as a public, unlisted Google Doc, which is the place Marvin asked for
+and the place the first comment points at. A message to him is drafted with the surrounding wording, to send once
+the post is live.
