@@ -325,3 +325,17 @@ not visible from outside.
 
 Follower number taken down from the owner's own screen: 1,125 followers, 978 connections, 708 following. That
 is +118 since the 1,007 on 6 November, about 20 a day.
+## Jerry Liu, one change at a time
+
+His launch post closes by inviting an error to test or a severity choice to disagree with, so the comment takes
+that and nothing else. The paper's introduction says each test scenario applies one change to a correct output
+on a given page, and the severity policy fixes how far the score should drop. That measures sensitivity to a
+change. Parsers don't fail that way: a table comes back as a plausible list with every cell shifted a column,
+and no single injected change looks like it.
+
+The ask is a pairwise test on real outputs, ordered by someone who reads them for a living, because a
+single-change catalog can be fully satisfied while two real outputs are ordered the wrong way round.
+
+Watched twice on this one. The invitation is the only thing that licenses the comment, so it had to be
+answered rather than ignored. And the first pass had no contractions anywhere, which the voice gate caught;
+three went in and the paste reads like speech now.
