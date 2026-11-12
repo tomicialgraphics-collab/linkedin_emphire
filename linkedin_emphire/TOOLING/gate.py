@@ -405,6 +405,26 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
         else:
             rep.add("R44", "PASS", f"{n:,} characters")
 
+    # R45 the comment register: list scaffolding and aphorism closers read as generated
+    if dtype == "comment":
+        region = paste_region(pasted)
+        tells = []
+        for pat, name in (
+            (r"\b(?:Two|Three|Four|Five)\s+(?:things|rows|points|reasons|tests|questions)\b", "a counted frame"),
+            (r"\bThe first (?:is|one)\b", "first/second scaffolding"),
+            (r"\bHere(?:'s| is) what I\b", "an announced structure"),
+            (r"\bOf the lot\b", "a selection announcement"),
+            (r"\bCheap to (?:add|fix)\b", "a cost aside that flatters the author"),
+            (r"\bWhat (?:separates|distinguishes) .+ from .+\b", "a mirrored clause"),
+        ):
+            if re.search(pat, region, re.I):
+                tells.append(name)
+        if tells:
+            rep.add("R45", "WARN", "reads as generated: " + ", ".join(dict.fromkeys(tells))
+                    + ". Start inside the problem and keep one idea.")
+        else:
+            rep.add("R45", "PASS", "no generated tells")
+
     # R30 relative dates
     if dtype != "internal":
         rel = re.findall(r"\b(?:yesterday|last week|last night|this morning|tomorrow)\b", body, re.I)

@@ -487,6 +487,17 @@
     "comment"
    ],
    "check": "char-limit"
+  },
+  {
+   "id": "R45",
+   "text": "A comment is written the way a person talks, not the way a list is presented. No counted frame (\"two things\"), no first and second scaffolding, no announcement of what is coming, no mirrored closing clause and no aphorism at the end. Start inside the problem, keep one idea, use contractions, admit a limit, and finish on something a person would actually say. The tells are listed in the rule and warned on by the gate.",
+   "source": "owner instruction 2026-11-12, after the Jerry Liu draft was read back as generated",
+   "severity": "warn",
+   "scope": [
+    "outward",
+    "comment"
+   ],
+   "check": "read-as-generated"
   }
  ]
 }

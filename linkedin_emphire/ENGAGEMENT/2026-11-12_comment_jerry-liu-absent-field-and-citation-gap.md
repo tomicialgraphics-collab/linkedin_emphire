@@ -14,16 +14,16 @@ sources_read: read: the llamaindex.ai research page, the ExtractBench abstract a
 
 ## Comment, paste as is
 
-Two rows I would want beside the headline, and both are cheap to add to a benchmark already curated at this scale.
+Completeness is the number I'd poke at, given what it does on the documents that actually matter. Where the purchase order number doesn't exist, a model that invents one scores better than a model that returns nothing, and the invented value arrives with no warning attached to it.
 
-The first is fields that are genuinely absent. Completeness rewards a filled field, so on a document where the purchase order number does not exist, the safe answer scores worse than the plausible one. Reporting that slice separately, field absent and a value returned anyway, would separate the systems that know what they do not have from the systems that guess fluently.
+I don't think you can weight your way out of that, and it isn't a criticism of the corpus. What I'd want is the row on its own: field absent, value returned anyway. You already have to mark absence to score completeness, so it shouldn't cost a new annotation pass.
 
-The second follows Joel's line about evidence an auditor can check, because that is where the citation gap decides it. Word and page F1 is the right unit, and the number an auditor needs is the share of extracted values carrying no citation at all. Near misses belong beside it: a citation pointing at the right page and the wrong line reads as evidence and is not.
+Same reason I'd take a no-citation count beside the grounding average. A citation at the right page and the wrong line passes the score and fails the auditor.
 
-Ahmad's template holdout and Ramkrushna's correction rate complete the picture. Of the lot, the absent-field row is the one a buyer would act on, because it is the failure that costs money quietly.
+Publish that and I'll stop asking every vendor for a pilot before I believe anything they tell me about supplier invoices.
 
-## Why these two rows
+## Why it is written this way
 
-Both are additions to metrics the paper already reports rather than replacements for them, which is the only kind of comment that survives the author reading it. Neither criticises the corpus, the curation, or the vendor position, because on the evidence in the paper all three are stronger than most work of this kind.
+The first draft of this had a frame: "two rows I would want beside the headline", then "the first is", then "the second follows Joel's line". The owner read it and said it sounded generated. It did. The tells were the list scaffolding, the mirrored clause about systems that know what they do not have against systems that guess fluently, and a closing aphorism about failure that costs money quietly.
 
-The absent-field row matters because completeness and accuracy pull opposite ways on exactly the documents that reach production. The citation gap matters because a grounding average can be high while a meaningful share of values carry no source at all, and the average hides that the way an average always does.
+What replaced it starts inside the problem, uses contractions, admits a limit ("you can't weight your way out of that"), and ends on something a person would actually say to a vendor. One idea carries it, with the citation point as an aside rather than a second item on a list. Shorter, and it sounds like somebody who has read supplier invoices.
