@@ -408,3 +408,23 @@ Two lint catches on the way. The first draft of the message had the URL as its o
 read that as a sentence with no terminal punctuation, which it is; the link is now inline and the sentence
 around it ends properly. The second: the workspace had silently reverted to 941eef0 again, so the files were
 missing until a fetch and reset. That failure is now three times today.
+## Martina Brazelton, and who can act on the signal
+
+She answered the four-test message, picked out the reachability point, and asked the question underneath her
+own work: how do you find the condition the builders never knew was missing. She used the Pizza Hut franchisee
+suit as the example, and asked whether anyone thought to test for pizza temperature.
+
+Checked the case before answering, because agreeing with a misremembered lawsuit is a cheap way to lose a
+thread. Chaac Pizza Northeast, 111 locations, filed 6 May in the Business Court of Texas, at least 100 million,
+Dragontail, Dashers batching up to fifteen minutes, rack time under five minutes before the rollout. All of it
+is allegation in a complaint and the reply says so.
+
+The answer avoids restating her example back to her. The missing variable wasn't temperature, which is a
+domain fact somebody could have listed. It was that the system published oven timing to a party whose
+objective is earnings per hour, so the machine optimised for the other side of the transaction. That is a
+class, not an instance, and it is invisible from inside the model however much you test it.
+
+Then the method that actually finds these: the workaround is the requirement. Drivers batching, operators
+keeping a spreadsheet, an engineer's manual override. The behaviour is the spec they were never given, and it
+appears before the incident rather than after it. The honest limit is that it appears after people have
+already compensated, which is why the earlier question is what somebody checks by feel.
