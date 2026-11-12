@@ -84,4 +84,4 @@ The v3 row above is now void: v4 supersedes it, and the reason for the new hash 
 | 2026-11-10 | `ENGAGEMENT/2026-11-10_comment_gadi-evron-milliseconds-are-a-telemetry-claim.md` | 3,454 B | `c74000bf8303f8df` | PASS 0/0, human 92 | Gadi Evron post | second row, supersedes the one above it: 1,072 characters and 175 w in the paste, cut from the 1,258 that LinkedIn refused. Same argument, one clause shorter per paragraph. R44 added to stop this at the gate rather than the composer |
 
 The first Gadi Evron row above is void: it was 1,258 characters and LinkedIn refused it with the margin at minus eight. The reasoning is unchanged, only the length.
-
+| 2026-11-12 | `ENGAGEMENT/2026-11-12_comment_rock-lambros-the-version-string-lied.md` | 3,975 B | `9158fc9286b2960e` | PASS 0/0, human 92 | Rock Lambros feed post | 1,061 characters, 178 w. Adds the two details the thread will not have: 2.1.313 reported itself internally as 2.1.312, so a version-string inventory was wrong during the window that mattered, and the payload took the names of forty environment variables rather than the values, which is a map rather than restraint |

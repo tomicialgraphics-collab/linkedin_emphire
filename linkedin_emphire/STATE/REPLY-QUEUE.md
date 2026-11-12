@@ -23,10 +23,11 @@ edited away.
 
 | date received | who | the question, in their words | date due | state | file |
 | --- | --- | --- | --- | --- | --- |
-| none | | | | | |
+| 2026-11-11 | Hitesh Choudhary | replied to the comment on his prompt post: confidence as a hypothesis to review, and isolating deletions by checking callers and tests | 2026-11-12 | open | not drafted |
+| 2026-11-11 | Saim Saudagar | replied twice under the Replit post: error strings as input, and whoever triggers the error steering the fix | 2026-11-12 | open | not drafted |
 
-Nothing is overdue as of 9 November 2026. Every inbound question from the current rounds has a reply
-filed and sent.
+Two inbound replies are open as of 12 November 2026. Both are substantive and both are owed an answer
+within the day under R38.
 
 ## Threads where the other person holds the last word
 
