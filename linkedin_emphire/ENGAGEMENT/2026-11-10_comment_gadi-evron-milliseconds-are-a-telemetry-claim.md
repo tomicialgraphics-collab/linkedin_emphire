@@ -15,18 +15,22 @@ sources_read: read: the GTIG and Mandiant findings on ARTEX, PentAGI and CAIRN a
 
 ## Comment, paste as is
 
-Believed, and the part that makes it land is that it is no longer only your word for it. The reporting on ARTEX and CAIRN describes agents doing reconnaissance, movement and collection in real engagements, and thousands of forks later the capability did not leave the field when the repository did.
+Believed, and it lands harder because it is no longer only your word for it. The ARTEX and CAIRN reporting describes agents doing reconnaissance, movement and collection in real engagements, and the forks outlived the takedown.
 
-The thing I would add to the CISO list, because it decides whether any of this can be proved afterwards: coordination at millisecond scale is a claim about your telemetry before it is a claim about an attacker. Without synchronised clocks across sites and sub-second retention, a coordinated intrusion looks like three unrelated incidents, and you cannot refute the picture you are being shown either.
+What I would add to the CISO list, because it decides whether any of this can be proved afterwards: coordination at millisecond scale is a claim about your telemetry before it is a claim about an attacker. Without synchronised clocks across sites and sub-second retention, a coordinated intrusion looks like three unrelated incidents, and you cannot refute the picture either.
 
-So the budget line that follows from this is correlation rather than AI security. One clock, one joined timeline, retention long enough to reach across sites.
+So the budget line is correlation, not AI security. One clock, one joined timeline, retention long enough to reach across sites.
 
-On disclosing incidents, most of us cannot, and it is not cowardice. The substitute that carries the same information is a de-identified timeline with the site names removed, which is shareable without a legal review. An IoC proves you were touched. A timeline proves you can see, and it is the harder thing to fake.
+On disclosure, most of us cannot, and it is not cowardice. The de-identified timeline carries the same information with the site names removed, so it survives a legal review. An IoC proves you were touched. A timeline proves you can see, and it is harder to fake.
 
-Nobody in the room is disbelieving you. The gap has moved to instrumentation.
+Nobody here is disbelieving you. The gap has moved to instrumentation.
 
 ## Why it lands
 
 He asks to be believed, and belief is the one thing a comment cannot add. What it can add is the next question after belief: whether a defender has the clock resolution to see what he describes, which is also the difference between an incident report that survives scrutiny and one that does not.
 
 No links, no hashtags, no mention of red teaming work or the challenge coin he called an IoC. He is asking for disclosure and the comment answers that ask with something a security team can actually do this week.
+
+## The 1,250 character wall
+
+The first paste was 1,258 characters and LinkedIn refused it with eight to spare, which is the whole margin. The comment above is 1,072, and R44 now fails anything over the limit at the gate rather than at the composer.

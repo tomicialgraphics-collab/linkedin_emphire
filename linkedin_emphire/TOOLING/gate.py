@@ -391,6 +391,20 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
         else:
             rep.add("R43", "FAIL", f"permission {perm} but status {state}: nothing leaves until the client agrees in writing")
 
+    # R44 the comment box is a hard boundary at 1,250 characters
+    if dtype == "comment":
+        marked = PASTE_REGION.search(pasted) is not None
+        n = len(paste_region(pasted).strip())
+        if n > 1250 and marked:
+            rep.add("R44", "FAIL", f"{n:,} characters, over the 1,250 LinkedIn comment limit by {n - 1250}")
+        elif n > 1250:
+            rep.add("R44", "WARN", f"{n:,} characters, but no paste region is marked, so the count includes "
+                                   "notes and may be harmless: mark the block with a paste heading")
+        elif marked and n > 1180:
+            rep.add("R44", "WARN", f"{n:,} characters, inside the limit with no room to edit")
+        else:
+            rep.add("R44", "PASS", f"{n:,} characters")
+
     # R30 relative dates
     if dtype != "internal":
         rel = re.findall(r"\b(?:yesterday|last week|last night|this morning|tomorrow)\b", body, re.I)

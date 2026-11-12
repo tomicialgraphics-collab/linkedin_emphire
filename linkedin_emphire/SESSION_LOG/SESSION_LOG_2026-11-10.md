@@ -116,3 +116,18 @@ for the one thing actually outstanding, which is the archive. The C2 case study 
 in this window even though the moment is warm, because the page does not exist yet and asking for
 approval of nothing is how a permission gets refused politely.
 
+## The comment box refused it: 1,258 characters against a 1,250 cap
+
+The Gadi Evron comment came back with the composer reporting minus eight. LinkedIn caps a comment at
+1,250 characters, and it refuses rather than trims, so the refusal arrives after the paste and after the
+writing.
+
+Cut to 1,072 characters, 175 words, with every argument intact: one clause shorter in three paragraphs
+and the opening no longer spells out the takedown story. The measure now lives in the gate as R44 rather
+than in anyone's memory. It fails a comment over the cap when the paste region is marked, warns when the
+region is not marked because the count then includes working notes, and warns above 1,180 characters
+because a comment that close cannot be edited inside the box without losing its ending.
+
+Also fixed while wiring it: R44 first measured the whole file and failed at 1,876 characters, which is
+the notes rather than the comment. It reads the marked paste region now, the same way R32 does.
+

@@ -1,6 +1,6 @@
 # Gate report
 
-Generated 2026-11-12 04:33 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-12 04:36 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 
@@ -45,55 +45,55 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/2026-11-03_nvidia_derczynski.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/2026-11-03_sarah_bird_ai-code-scanning.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/2026-11-06_comment-round_feed-sweep-2.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-06_comment_ai-news-world-altman.md` | yes | 0 | 1 | pass, warnings |
-| `ENGAGEMENT/2026-11-06_comment_hitesh-choudhary.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-06_comment_soubhik-ghosh.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-06_comment_stephen-klein.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-06_comment_taha-hussain.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-06_comment_ai-news-world-altman.md` | yes | 0 | 2 | pass, warnings |
+| `ENGAGEMENT/2026-11-06_comment_hitesh-choudhary.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-06_comment_soubhik-ghosh.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-06_comment_stephen-klein.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-06_comment_taha-hussain.md` | yes | 0 | 1 | pass, warnings |
 | `ENGAGEMENT/2026-11-06_connection-triage_moskowitz-gotsiridze.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-06_dm-gotsiridze-reply.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/2026-11-06_icp-follow-30-batch2.md` | legacy | 2 | 0 | legacy |
 | `ENGAGEMENT/2026-11-06_icp-follow-30.md` | legacy | 2 | 0 | legacy |
-| `ENGAGEMENT/2026-11-06_reply_brad-wolfe.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_christopher-story.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_eduardo-ordax-airbnb-agent-workflows.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_guillermo-flor.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_legal-ai-completeness.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_luis-roquette-multi-agent.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_marin-ivezic-quantum-finance-pqc.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_paolo-caressa-devfest-judge.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_paolo-perrone-agent-budget.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_ricky-jones-round-table.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_rock-lambros-agent-blinded-security.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_shawn-bullock.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_unnamed-agentic-era-visibility.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_comment_vallikat-peethamber-vector-state.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-07_held_endrit-restelica-animation-provenance.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-06_reply_brad-wolfe.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_christopher-story.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_eduardo-ordax-airbnb-agent-workflows.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_guillermo-flor.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_legal-ai-completeness.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_luis-roquette-multi-agent.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_marin-ivezic-quantum-finance-pqc.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_paolo-caressa-devfest-judge.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_paolo-perrone-agent-budget.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_ricky-jones-round-table.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_rock-lambros-agent-blinded-security.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_shawn-bullock.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_unnamed-agentic-era-visibility.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_comment_vallikat-peethamber-vector-state.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-07_held_endrit-restelica-animation-provenance.md` | yes | 0 | 2 | pass, warnings |
 | `ENGAGEMENT/2026-11-07_post_note_ten-agent-runs.md` | yes | 0 | 2 | pass, warnings |
 | `ENGAGEMENT/2026-11-07_reply_brad-wolfe_own-post.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment-shalini-goyal-bola-gap.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_adi-rashkes-queen-of-hearts-vishing-ctf.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_aiswarya-venkitesh-diwali.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_ananya-ghosh-chowdhury-diwali.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_andreas-horn-access-lives-in-people.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_artur-walisko-self-verification.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_ben-li-agent-eval-ownership.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_brandon-crimmins-refusal-seam.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_christopher-paradise-sara-compression.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_dietrick-hardwick-history-eraser.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_eaton-zveare-god-mode-border.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_eva-benn-sans-dma-vote.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_guillermo-flor-bubble-cables.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_ilir-aliu-robot-arm-repeatability.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_love-babbar-who-holds-the-switch.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_marcus-chan-hand-typed-numbers.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_mitko-vasilev-forward-deployed-handover.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_mourad-elmaalaoui-sovereign-evaluation.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_neil-mcloughlin-legacy-policy-inventory.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_salman-lakhani-fallback-attribution.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_shane-butler-self-serve-analytics.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_soribel-feliz-nvidia-board-investigation.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-08_comment_thomas-roccia-volta-refusal-router.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-08_comment-shalini-goyal-bola-gap.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_adi-rashkes-queen-of-hearts-vishing-ctf.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_aiswarya-venkitesh-diwali.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_ananya-ghosh-chowdhury-diwali.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_andreas-horn-access-lives-in-people.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_artur-walisko-self-verification.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_ben-li-agent-eval-ownership.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_brandon-crimmins-refusal-seam.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_christopher-paradise-sara-compression.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_dietrick-hardwick-history-eraser.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_eaton-zveare-god-mode-border.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_eva-benn-sans-dma-vote.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_guillermo-flor-bubble-cables.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_ilir-aliu-robot-arm-repeatability.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_love-babbar-who-holds-the-switch.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_marcus-chan-hand-typed-numbers.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_mitko-vasilev-forward-deployed-handover.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_mourad-elmaalaoui-sovereign-evaluation.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_neil-mcloughlin-legacy-policy-inventory.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_salman-lakhani-fallback-attribution.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_shane-butler-self-serve-analytics.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_soribel-feliz-nvidia-board-investigation.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-08_comment_thomas-roccia-volta-refusal-router.md` | yes | 0 | 1 | pass, warnings |
 | `ENGAGEMENT/2026-11-08_reply_christopher-paradise-codec-noise.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-08_reply_christopher-paradise-entropy-bounds.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-08_reply_eva-benn-vote-cast.md` | yes | 0 | 0 | pass |
@@ -104,7 +104,7 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/2026-11-09_comment_adrian-lee-sanchez-fiduciary-process.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_alejandro-saucedo-pando-force-with-lease.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_amjad-masad-error-text-is-input.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-09_comment_anthony-alcaraz-cost-per-task.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-09_comment_anthony-alcaraz-cost-per-task.md` | yes | 0 | 1 | pass, warnings |
 | `ENGAGEMENT/2026-11-09_comment_chinasa-okolo-sovereignty-over-evaluation.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_damien-filiatrault-commit-and-push.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_daniel-moka-loops-and-the-oracle.md` | yes | 0 | 0 | pass |
@@ -124,10 +124,10 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/2026-11-09_comment_shreya-shankar-quail-extract.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_span-scoring-playbook-link.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_comment_tanya-janca-instruction-vs-capability.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-09_comment_tina-austin-purple-flower.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-09_comment_tina-austin-purple-flower.md` | yes | 0 | 1 | pass, warnings |
 | `ENGAGEMENT/2026-11-09_first-comment-spine.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-09_held_anthropic-sales-tools-repost.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-09_held_denis-panjuta-viktor-ad.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-09_held_anthropic-sales-tools-repost.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-09_held_denis-panjuta-viktor-ad.md` | yes | 0 | 1 | pass, warnings |
 | `ENGAGEMENT/2026-11-09_reply_christian-macdonald-prompt-injection.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_reply_christian-macdonald-take-the-note.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-09_reply_efi-pylarinou-the-side-door.md` | yes | 0 | 0 | pass |
@@ -151,7 +151,7 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/dm_2026-11-04_marvin.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/dm_2026-11-06_evelyne-claudia.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/dm_2026-11-09_martina-brazelton.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/drafts_2026-11-04-feed.md` | legacy | 2 | 0 | legacy |
-| `ENGAGEMENT/drafts_2026-11-06-feed.md` | legacy | 2 | 0 | legacy |
+| `ENGAGEMENT/drafts_2026-11-04-feed.md` | legacy | 2 | 1 | legacy |
+| `ENGAGEMENT/drafts_2026-11-06-feed.md` | legacy | 2 | 1 | legacy |
 | `ENGAGEMENT/potential_clients_2026-10-24.md` | legacy | 3 | 1 | legacy |
 | `ENGAGEMENT/truefolio_A1-A6_runbook_2026-10-25.md` | legacy | 1 | 0 | legacy |

@@ -476,6 +476,17 @@
     "outward"
    ],
    "check": "case-study-permission"
+  },
+  {
+   "id": "R44",
+   "text": "A LinkedIn comment is capped at 1,250 characters, and the composer refuses rather than trims. The gate measures the pasted text, fails anything over the cap and warns above 1,000, because a comment at 1,240 characters cannot be edited in the box without losing the ending.",
+   "source": "owner paste 2026-11-10, refused at 1,258 characters",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "comment"
+   ],
+   "check": "char-limit"
   }
  ]
 }
