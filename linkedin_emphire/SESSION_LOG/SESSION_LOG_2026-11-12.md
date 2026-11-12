@@ -21,3 +21,17 @@ against 1,055, human 100 against 92.
 R45 now lists those tells and the gate warns on them. It will not catch everything, and the honest
 lesson is that a person reading it out loud remains the check that works.
 
+## Allie K. Miller, judgment
+
+Her post says AI already shows judgment and gives examples from her own use. The thread answered with
+oversight: boundaries, delegation lists, review before it lands. All of that is true and none of it is
+checkable afterwards.
+
+The comment takes the property her examples share and does not name. Every one of them can be graded
+within a minute by the person who asked, because the outcome is visible and reversing it costs an
+afternoon. That is why the argument is easy to win. The calls that hurt a business have a delayed
+outcome and no counterfactual, so the reviewer's own answer has to be written before they see the
+agent's, or there is nothing left to compare against once the dispute arrives.
+
+Kept to one idea and 1,002 characters. No link, no pitch, and nothing about the 18 comments behind the
+expander, which were not read and are not claimed.

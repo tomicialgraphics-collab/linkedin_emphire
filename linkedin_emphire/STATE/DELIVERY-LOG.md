@@ -90,3 +90,4 @@ The first Gadi Evron row above is void: it was 1,258 characters and LinkedIn ref
 
 The first Jerry Liu row is void. It scored human 92 and the number was the problem: a list frame, a mirrored clause and a closing aphorism all pass a rhythm gate and still read as a machine.
 
+| 2026-11-12 16:46 | `ENGAGEMENT/2026-11-12_comment_allie-miller-the-answer-you-cannot-grade-later.md` | 5,014 B | `4b636689e3585b06adeb53864286e37a8c8ce76594c983d17d4fe68e6482953a` | pass (0F/0W) | Allie K. Miller (comment, not posted) | 1,002 characters, 176 w. The examples she gives are gradeable within a minute, so they say nothing about the calls with a delayed outcome and no counterfactual: an indemnity clause waved through as boilerplate reads the same as a clause read correctly until the dispute. Asks for one field in the ticket, the reviewer's own answer before they open the agent's, which is the only artefact that survives to settle it |
