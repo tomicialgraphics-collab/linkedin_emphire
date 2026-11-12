@@ -502,3 +502,22 @@ change; only v0.12, v0.13 and v0.14 name the finding they answer. The page now c
 Seven corrections across two reads, all of them real, and the permission stands: version 4 goes out with him
 named. That is the first case study in the record with a client's signature on the review that found his own
 work wrong first.
+## The first price ever quoted
+
+He said go, so the Marvin message is a commercial ask rather than a favour. Four things shaped it.
+
+The scope is the one open item, W-04, because it is the only thing left between them that a week can settle and
+because Marvin named the limit himself: closed in the text, not against the test.
+
+The deliverable is stated as a result rather than effort: one result per case, the reason each passes or fails,
+and the register moved from a textual closure to one with a tested rule behind it. A failure is worth more to him
+than a pass and the message says so, which is the honest version and also the persuasive one.
+
+The price is 1,500 for one week with the invoice on delivery and one revision included. Below the 3,500 starter
+engagement because the reading is already done, and above a day rate because the output is a register change
+rather than hours.
+
+The line that mattered most: the review so far was unpaid and that was a choice, not an invoice presented late.
+Without it, charging for the follow-up reads as back-billing six weeks of goodwill.
+
+No coffee, no call, no "would love to chat". One ask, one number, one week.

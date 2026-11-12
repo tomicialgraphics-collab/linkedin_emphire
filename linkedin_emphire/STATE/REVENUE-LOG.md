@@ -19,6 +19,7 @@ paid), `paid` (money received), `lost`, `free` (delivered at no fee, recorded so
 |---|---|---|---|---|---|
 | 2026-10-24 | Action Gate review, seven findings | Arcezia (Praveen) | 0 | free | Fee waived in writing in the scope. The write-up is the asset, not the fee. |
 | 2026-10-12 | Tutoring session plus Upwork booking | Sudhir | 90 | paid | About 83.50 net after the platform fee. The only money in the record. |
+| 2026-11-12 | W-04 probe re-run, one week | FORAY (Marvin Percival) | 1500 | prospect | Scope drafted in REPLY-14, not yet sent. Price fixed, invoice on delivery, one revision included. |
 | 2026-11-12 | Protocol anchoring review, six weeks unpaid | FORAY (Marvin Percival) | 0 | free | Case study permission granted, named, read-first. A paid engagement is a separate conversation and has not been had. |
 
 ## How to add a row
