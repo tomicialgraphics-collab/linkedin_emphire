@@ -110,3 +110,16 @@ agent has no manager, so the baseline has to be manufactured: the request record
 acted on, and a deviation that produces a page. A log alone is a fact with no opinion attached.
 
 The closing line separates naming an owner from giving that owner a system that would have told them.
+## Tolulope Michael, one step
+
+Career advice for people entering GRC, ending with a direct question about one step to take today. The
+comment answers it with a control test and a short written result: what was checked, what the evidence
+showed, and what could not be verified. A certificate proves attendance and a post proves interest, and
+the write-up is the only one of the three a hiring manager can assess for the job itself.
+
+The limitation line is the whole point. Reporting a pass is easy, and saying what you could not check is
+what an assessor does on the first day.
+
+There is a deliberate small disagreement with his second bullet, that sharing what you learn publicly is
+worth less in this field than the artefact. It is said once, mid-comment, and the rest of his advice is
+left alone.
