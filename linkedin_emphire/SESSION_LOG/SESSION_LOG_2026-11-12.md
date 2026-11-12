@@ -239,3 +239,12 @@ the wrong reason.
 
 R45 fired on the first draft for a mirrored clause, "what separates having measured freshness from having
 watched a refusal". The sentence was cut rather than reworded, and the paragraph is stronger without it.
+## Eva Benn, the record without a cause
+
+The same story as the Jess Ramos comment and a deliberately different surface, because two comments on one story that make the same argument is how an account starts reading as a template. That one took exposure, what a chief executive's access touched. This takes the record.
+
+Two verifiable additions. The first report of the relationship was 29 October, so her four day timeline begins after a denial and closes a two week window, which turns the lesson from speed into delay. And Nvidia's own announcement of 12 November thanks him for 33 years, names Kress and the new chair, announces the search and the earnings date, and never says why he left. Anyone opening the primary source meets a resignation with no cause attached.
+
+That is her human operating system frame applied to the institution: the person is the surface that gets compromised, and the institution's records are built to describe what happened rather than why, which is why the human layer never appears in them.
+
+Her second link, the earlier post, returned 500 and was not read, so the comment does not reference it.
