@@ -475,3 +475,11 @@ re-registered W-04 twice. It says four now and says why the sub-findings are not
 He also asked that the document be restricted to his address. The open link was withdrawn within the hour, so
 the page is now reachable by nobody. Person-level sharing needs an address and the record has none, so the reply
 says exactly that and leaves the request where it belongs.
+## Version 3 goes into the thread
+
+He cleared the four corrections against v7 and asked for the whole page as plain text in the thread, which also
+settles the sharing question: nothing to restrict if there is no link.
+
+The page is 8,021 characters, which does not fit one message box comfortably, so it went as four parts of 2,208,
+1,915, 1,334 and 2,564, each cut on a section boundary so no argument is split across two messages. Cutting for
+a text box is a delivery decision and is recorded as one; the page itself is unchanged.

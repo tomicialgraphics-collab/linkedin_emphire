@@ -1,0 +1,20 @@
+The absence that stopped being an absence
+
+Version 1 of this page ended with the one thing review could not establish: whether a non-zero segment range had
+ever been anchored on the public network, since no transaction identifier existed for one, and the absence of a
+record is not a record of absence.
+
+That question was answered inside two days, by the project rather than by the review. On 10 November a header
+carrying a non-zero segment range was anchored through a client lane, and on 12 November a Tier-2 aggregate
+carrying such a header was anchored as well. Three anchors now sit on Kaspa mainnet, at 12:20:15 and 15:17:42
+UTC on 10 November and 16:28:25 UTC on 12 November, and each payload is the anchored value and nothing else.
+
+The second transaction spends the first one's output. The third does not: its input is an earlier transaction,
+and all three pay one address, which is consistent and is not lineage. The join of the third is inside the
+client header within the aggregate leaf, and that is not in the payload. So a holder with a browser can check
+each anchor and its block time, and the extent from sequence 0 to 8 is checked with the proof bundle.
+
+This is the outcome the page argued for. The claim was not withdrawn; it was made reachable, and the record
+that proves it now exists rather than being promised.
+
+[part 3 of 4]

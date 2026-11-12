@@ -1,0 +1,41 @@
+What is still not established
+
+The mapping that closes W-04 is stated in the specification and has not been re-run against my probe. The
+author says so in his own record, which is why the register's closure is a textual one: the rule exists, the
+test of the rule is outstanding.
+
+The live Tier-2 aggregate has one leaf, so the path from the client header to the aggregate root is empty on
+chain. A path with sibling hashes is covered by vectors and by the verifier's own tests, not yet by an anchor.
+
+The producer takes the sequence number and the previous transaction hash from the request. It does not read them
+out of the record body, and neither does the verifier. The extent proves what was committed and in what order.
+It does not prove that the numbers match anything inside the records, and the specification says so.
+
+The verifier's own test suite passes in full, 66 of 66, and that figure is not the conformance vector count.
+The specification's table of vector families totals 91 across seven families, and its own note records that the
+suite it describes runs 121 vectors in nine families at wire 4.3. A conformance claim has to name the suite
+version it was run against, and both numbers are in the text for anyone who wants to check which one is being
+used.
+
+The artefact
+
+The register, revision seven, 34,757 bytes, SHA-256 beginning b9af6973, delivered to the author with a
+v6-to-v7 patch that applies cleanly and a negative control showing an already-patched tree refusing every hunk.
+The author holds the earlier revision and its hash, which is why version six was frozen rather than edited.
+
+What this is worth to a reader
+
+Not a protocol review. A demonstration that the sentence a team is most confident about is often the one never
+tested from the position of the person the sentence is meant to convince.
+
+Naming, and what it costs
+
+He asked that the document be restricted to his address until he has cleared it, and that is now the state:
+the open link was withdrawn the same evening, so the page is reachable by nobody rather than by everybody until
+he confirms. His read-first condition and this one are the same condition stated twice.
+
+He accepted the point that naming him does not protect anonymity: his name plus his published work makes the
+project findable by anyone who wants to find it, so a removal list stops doing its real work at the moment the
+name goes in. He chose to be named anyway, which is his call to make and not mine.
+
+The section on where I was wrong first stays in, at his instruction and for the obvious reason.

@@ -1,0 +1,37 @@
+FIVE WEEKS OF A CLAIM THAT WAS TRUE AND NOT YET REACHABLE
+Prepared for Marvin Percival, DUNIN7. 12 November 2026. Version 3.
+
+Version 3, 12 November, after his read of version 2. Version 1 was written on 10 November. Three things in it are no longer true, and they are marked in the page
+rather than edited away, because a document that hides its own revisions is the failure it describes.
+
+The situation, in three sentences
+
+An open protocol project was preparing to describe its anchoring and verification story as complete. The author
+had built the segment code, the serialiser and the test vectors, and could demonstrate a byte match between
+producer and verifier on his own machine. Two things stood between that demonstration and the claim: whether a
+holder could reach the code path, and whether anything had ever been anchored on the network that a walk could
+read.
+
+What was reviewed
+
+The producer and verifier as published at the revision the author pinned, the conformance packet, the vector
+files, and the specification text beside them. Every claim in the register was checked against one of those
+four surfaces and cited to a file and a line, because a review that cannot be re-run from its own citations is
+an opinion.
+
+What the register found
+
+Four numbered entries in register version 7, W-01, W-02, W-03 and W-04, with W-01 carrying the sub-findings
+that the walk, the declared position and the anchoring each failed. One of them was load-bearing.
+
+The producer serialised every batch header through the route that carries no segments, and both the batch
+accumulator and the Tier-2 aggregator used it. The full segments serialiser existed and was tested. On the
+surface the author tested, producer and verifier agreed byte for byte.
+
+What the review added was a reachability question rather than a truth question. The segment path was real, and
+no outside client could invoke it: every lane an outside client could register bound to the aggregate. The proof
+was correct and the capability was not yet a capability. That distinction moved the finding from "the code is
+wrong" to "the claim is ahead of the surface", which is the finding the author accepted and reopened against
+his own test.
+
+[part 1 of 4]
