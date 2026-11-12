@@ -68,3 +68,18 @@ There is an earlier comment to him on 7 November, on his quantum-finance post, a
 register is an existence test and completeness needs reconciliation. That was about whether the inventory
 is complete. This one takes completeness as given and asks which column is missing, and the file says so
 so a later session does not mistake the two for the same argument.
+## Ricky Jones, enforcement versus framing
+
+He wrote a public reply to Tim Zlomke's Temporal Standing post: observation, enforcement, trust, a commit rule,
+and a bounded test of grant, prepare, revoke, attempt. He closes by saying he would like to know whether anyone
+installed the brakes.
+
+The test is one-sided. A refusal plus a trace that names an authority state is exactly what a system with no
+check in it also produces, because it refuses nothing and records nothing. So the comment adds the run beside
+it, permission intact at the same moment, and moves authorship of the record to the enforcing boundary rather
+than the agent that requested the action.
+
+He is a first degree connection with two prior warm exchanges and the closest professional fit in the network,
+so the comment is deliberately technical and does no relationship work. Nothing about Lala, nothing about his
+consulting, no link. If he answers that the trace already covers both directions, the follow-up is authorship,
+not coverage, which continues the 8 November exchange rather than starting a new one.
