@@ -428,3 +428,17 @@ Then the method that actually finds these: the workaround is the requirement. Dr
 keeping a spreadsheet, an engineer's manual override. The behaviour is the spec they were never given, and it
 appears before the incident rather than after it. The honest limit is that it appears after people have
 already compensated, which is why the earlier question is what somebody checks by feel.
+## The 5k question, answered with arithmetic
+
+He asked how he reaches 5,000 followers by 25 December. The 6 November plan already had the arithmetic and the
+checkpoints; what it did not have was the number that decides between its scenarios. That number now exists:
+1,125 on 12 November against 1,007 on 6 November, which is 118 in six days, or 19.7 a day, against the 90.1
+a day the target requires. At that rate the deadline lands near 1,970.
+
+So the honest read is that the target is not reachable on current behaviour, the 15 November checkpoint has
+already answered itself three days early, and the useful thing to do with the remaining three days is test
+whether the comment lever still works at volume rather than chase 1,600.
+
+Implemented as a command rather than a document alone. ./emphire growth reads analytics/follower-log.md and the
+checkpoints, prints the required rate, the observed rate, the projection and the next checkpoint with the pace
+it needs. The page says what to do; the command says where the number is.

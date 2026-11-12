@@ -348,6 +348,62 @@ def cmd_status(_args) -> int:
 
 
 # --------------------------------------------------------------------------
+# growth
+# --------------------------------------------------------------------------
+
+GROWTH_TARGET = 5000
+GROWTH_DEADLINE = "2026-12-25"
+GROWTH_CHECKPOINTS = [("2026-11-15", 1600), ("2026-11-29", 2600), ("2026-12-13", 3300)]
+
+
+def _follower_rows():
+    path = os.path.join(EMPIRE, "analytics", "follower-log.md")
+    rows = []
+    if not os.path.exists(path):
+        return rows
+    for line in open(path).read().splitlines():
+        m = re.match(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d,]+)\s*\|", line)
+        if m:
+            rows.append((m.group(1), int(m.group(2).replace(",", ""))))
+    return sorted(rows)
+
+
+def cmd_growth(_args) -> int:
+    rows = _follower_rows()
+    if not rows:
+        print("growth: analytics/follower-log.md has no dated rows yet. One line a day, or this command cannot speak.")
+        return 1
+    last_date, last = rows[-1]
+    first_date, first = rows[0]
+    d_last = dt.date.fromisoformat(last_date)
+    d_dead = dt.date.fromisoformat(GROWTH_DEADLINE)
+    days_left = (d_dead - d_last).days
+    need = GROWTH_TARGET - last
+    per_day = need / days_left if days_left > 0 else float("inf")
+    span = (d_last - dt.date.fromisoformat(first_date)).days
+    observed = (last - first) / span if span > 0 else 0.0
+    projected = int(last + observed * days_left)
+
+    print(f"\n  followers {last:,} on {last_date}   target {GROWTH_TARGET:,} by {GROWTH_DEADLINE}")
+    print(f"  net new needed {need:,} over {days_left} day(s)  =  {per_day:.1f} a day")
+    print(f"  observed since {first_date}: {observed:.1f} a day  ->  {projected:,} on the deadline")
+    verdict = "on track" if observed >= per_day else "behind the rate the target needs"
+    print(f"  verdict: {verdict}")
+    print("\n  checkpoints from STRATEGY/2026-11-06_follower-plan_1007-to-5000.md")
+    for day, floor in GROWTH_CHECKPOINTS:
+        d = dt.date.fromisoformat(day)
+        if d <= d_last:
+            state = "met" if last >= floor else "MISSED"
+        else:
+            gap_days = (d - d_last).days
+            pace = (floor - last) / gap_days
+            state = f"due in {gap_days} day(s), needs {pace:.1f} a day to reach {floor:,}"
+        print(f"    {day}  floor {floor:,}   {state}")
+    print("\n  the one line to fill tonight: analytics/follower-log.md\n")
+    return 0
+
+
+# --------------------------------------------------------------------------
 # audit
 # --------------------------------------------------------------------------
 
@@ -745,6 +801,8 @@ def main(argv=None) -> int:
     p = sub.add_parser("audit")
     p.add_argument("--tolerant", action="store_true")
     p.set_defaults(fn=cmd_audit)
+
+    sub.add_parser("growth").set_defaults(fn=cmd_growth)
 
     sub.add_parser("render").set_defaults(fn=cmd_render)
     sub.add_parser("map").set_defaults(fn=cmd_map)
