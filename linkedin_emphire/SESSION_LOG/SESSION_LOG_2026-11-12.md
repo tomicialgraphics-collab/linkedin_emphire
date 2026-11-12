@@ -264,3 +264,17 @@ margin is at least one permitted skew.
 That is the last contribution I would make without a result. He has the specimen, the criterion and the rule
 for scoring it, and he has said he will bring coverage. A fourth round from me would be agreement dressed as
 content, and the next useful message in the thread is one with examination records in it.
+## Elena Bobkova, the answer and the boundary
+
+She was generous about the miss: the answer is supply chain, vendors and subcontractors. The reply does not
+defend the guess and does not fold either. It shows that a subcontractor's access is the same population as
+the credentials nobody owns, seen from the other end: minted for one integration, the person moved off the
+project, and the review that would catch it happens inside a company that never employed them.
+
+Then the part that is harder than tooling. The register is split. The organisation holding the credential and
+the one carrying the consequence are different, neither ends up with the full list, and vendor risk is
+audited as a questionnaire, which cannot count an identity.
+
+She closed with thanks and no question, so nothing is asked of her. The follow-up worth having, if she opens
+the door, is contractual: does any supplier agreement require a report of identities retired and revoked, and
+who reconciles the two lists.
