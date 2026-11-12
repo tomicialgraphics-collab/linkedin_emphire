@@ -24,7 +24,7 @@ Which is the part your human operating system frame predicts. Every signal that 
 
 A comment on this story went out under Jess Ramos's post earlier with the exposure argument, that a board can settle conduct and cannot settle what a chief executive's access touched. Repeating it here would read as a template dropped on a second author, so this one takes a different surface: the timeline before the collapse, and the artefact the company published.
 
-The new fact is in the announcement itself, and it is verifiable by anyone who opens it. Nvidia's release runs to the succession, the new chair, the search and the earnings date, and never states why he left. That is not a cover-up; it is how corporate announcements work. It also means the primary record of the largest corporate departure of the year is a document that does not contain its own cause, and everything that explains it lives in newspapers.
+What is new sits in the announcement itself, and it is verifiable by anyone who opens it. Nvidia's release runs to the succession, the new chair, the search and the earnings date, and never states why he left. That is not a cover-up; it is how corporate announcements work. It also means the primary record of the largest corporate departure of the year is a document that does not contain its own cause, and everything that explains it lives in newspapers.
 
 That is the human operating system point turned onto the institution. Her thesis is that the person is the surface that gets compromised; the observation here is that the institution's records are built to describe what happened rather than why, which is why the human layer never shows up in them.
 
@@ -40,17 +40,16 @@ The owner also pasted Eva Benn's post from sixteen hours earlier, the one that r
 asks how the world should be protected from the human vulnerabilities of the people who run the AI industry.
 It was not written for, and the reason is the comment above rather than the post.
 
-The answer that post wants is a good one and it is not a repeat of the comment above. The answer, roughly,
-is that you do not protect the world from a person's judgement; you make the position carry less, by taking
+The answer that post wants is a good one and it is not a repeat of the comment above. Roughly, you do not protect the world from a person's judgement; you make the position carry less, by taking
 the decisions that cannot be undone out of a single signature and by making the exit cheap enough that the
-board can use it. The board did a version of that within hours of the resignation, by appointing its
+board can use it. Nvidia's board did a version of that within hours of the resignation, by appointing its
 first-ever chair separate from the chief executive, which is a smaller job for the person above the chief
 executive and a second place for the question to be asked from.
 
 It is skipped for a scheduling reason and a visibility reason. Two comments from this account under one
 author's two posts on one news story, inside one day, is the clearest possible signal of production rather
 than conversation, and this account has already made two Nvidia comments today under two different authors.
-The later post is also thirty-nine minutes old against sixteen hours, so it is the placement that carries
+Her later post is also thirty-nine minutes old against sixteen hours, so it is the placement that carries
 the comment further.
 
 If the owner prefers this post, the swap is a replacement and not an addition: the comment above comes down
