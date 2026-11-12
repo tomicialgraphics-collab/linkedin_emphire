@@ -16,7 +16,7 @@ box: SEVEN CORRECTIONS
 box_alt: NOT REACHABLE
 hashtags: [#AISecurity, #AIRedTeam, #AIEvaluation, #AIGovernance]
 slot: 09:00 WAT, Friday 13 November 2026
-first_comment: FIRST_COMMENT.md, case study link then the playbook link
+first_comment: FIRST_COMMENT.md, the three-page PDF then the playbook link
 ---
 
 # Post for 13 November 2026: seven corrections

@@ -534,3 +534,17 @@ weeks, 34,757 bytes, v0.14.
 The document is republished at version 4 as a public, unlisted Google Doc, which is the place Marvin asked for
 and the place the first comment points at. A message to him is drafted with the surrounding wording, to send once
 the post is live.
+## The page as a PDF
+
+Asked for a PDF as well as the Doc. Typeset from the cleared markdown rather than retyped, so the file cannot
+drift from the version Marvin cleared: TOOLING/case_study_pdf.py parses the front matter and the headings and
+sets three A4 pages in Times, with the client's name and the version on the cover and a footer that carries the
+page number.
+
+Checked before shipping: every token of the markdown appears in the extracted PDF text, the extracted text has no
+em dash, and the backticked hash is set without the backticks. The first comment now points at the PDF rather
+than the Doc, because a three-page PDF reads in the browser while a Google Doc asks for a sign-in on some
+networks.
+
+The generated PDF fired the known artefact trap when logged, the same one the paste parts hit: no front matter, so
+R26/R43 and a BLOCKED row. The row is annotated and points at the markdown, which is the logged artefact.
