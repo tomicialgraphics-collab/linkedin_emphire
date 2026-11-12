@@ -52,3 +52,19 @@ strongest version of the usual argument and would have made a second idea.
 
 The company permalink returned 403, so the file records that and rests on the founder's post and the
 public site, which carry the same claims.
+## Marin Ivezic, Part 1 of the quantum series
+
+He posts the opening of an eleven part series, so summarising it back is worthless. His own article hands
+over the better thread: trusted timestamps and transparency logs still prove what existed before the
+break, so bare signature verification is the exposed case. Nobody in the thread will turn that into an
+ordering rule.
+
+The comment does. For each signing key, the tail is the last verification of something it signed that no
+timestamp protects, because that is the check a future attacker can mint again. Firmware on a device that
+checks a signature and nothing else runs to 2034; the same key with every release timestamped is a much
+shorter problem. A register records the key and not the verifier's behaviour, so both cases share a row.
+
+There is an earlier comment to him on 7 November, on his quantum-finance post, arguing that a crypto
+register is an existence test and completeness needs reconciliation. That was about whether the inventory
+is complete. This one takes completeness as given and asks which column is missing, and the file says so
+so a later session does not mistake the two for the same argument.
