@@ -13,7 +13,7 @@ drafted, so the permission ask is visible rather than remembered.
 
 | ID | Client | Milestone | File | Permission | State |
 | --- | --- | --- | --- | --- | --- |
-| C1 | FORAY / Dunin7 | the register, its first corrected finding, and the reopened W-05 | `CLIENTS/foray-dunin7/CASE-STUDY-1_open-protocol-anchoring.md`, ask sent inside REPLY-9 on 10 Nov | requested: 2026-11-10 | drafted, awaiting his answer |
+| C1 | FORAY / Dunin7 | the register, its first corrected finding, and the reopened W-05 | `CLIENTS/foray-dunin7/CASE-STUDY-1_open-protocol-anchoring.md` v2, sent inside REPLY-11 on 12 Nov; v1 of 10 Nov kept as `CASE-STUDY-1_v1_2026-11-10.md` | granted 2026-11-12, named, read-first | sent to him 2026-11-12 for his read; public release waits on his reply |
 | C2 | Evelyne-Claudia | the file-hash recomputation and what it settled | `OUTREACH/evelyne-claudia-2026-11-06/` (page not written) | not-requested | candidate |
 
 ## Why these two first

@@ -1,0 +1,21 @@
+Marvin,
+
+Read v11, v0.14 and v0.26. All three closes hold, and I checked each one rather than taking the
+status line's word for it. Item 10 points at v0.26, the old sentence is kept as superseded, and
+4.4.4 and 4.4.5 are named as coverage while item 9 stays the closing basis. Three block times
+match what I read off the chain, and your lineage sentence is the narrow one, which is the true one.
+
+One thing for your own record before someone quotes the wrong figure. Section 8.1's table totals 91
+vectors across seven families, and its own pin note says the suite runs 121 in nine families at wire
+4.3. Both sentences are in the text, so 91 is the table and 121 is the suite. That is your note, not
+a defect, and it will still get misquoted by somebody in a hurry.
+
+It is below, version 2. Version 1 ended on the one thing I could not establish,
+whether a non-zero segment range had ever been anchored, and your item 9 answered that inside two
+days. So the page says so now, and the earlier version sits beside it unchanged rather than being edited
+away. Where I was wrong first is still in, as you asked.
+
+Read it before anyone else does, and tell me what comes out. Removal list is on the file, and naming you makes the project findable, which you already know better
+than I do.
+
+Timothy

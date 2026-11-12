@@ -373,3 +373,22 @@ His 4 percent close and the AMD comparison were left alone. I have the open, whi
 percent on several reports, and no reliable close. Correcting an open against someone's close would be wrong on
 the facts and wrong as a comment. The separation-of-duties point also stayed out: it went out as a post today
 and does not belong under his succession argument.
+## The case study goes to Marvin
+
+He sent v11 with the three closes and, at the end, the one line that was owed: send the draft here, he reads it
+before it goes anywhere, and the part where I was wrong first stays.
+
+Checked before handing it over. v11 read in full from the attached PDF: W-01 through W-06, the three anchors
+with their block times, the lineage paragraph, the limits, and the 66 of 66 with the sentence that says it is
+not the conformance vector count. The v0.26 amendment is now served and readable: a truth revision that
+corrects the "stays unbuilt" sentence, keeps the old wording as superseded, and points at 4.4.4 and 4.4.5. The
+v0.14 specification is in force from today and its header lists the three corrections as text-only. Section 8.1
+confirms seven families and 91 vectors, and its own pin note says the suite runs 121 in nine at wire 4.3, which
+is the one addition the reply makes to his record.
+
+The case study needed three updates before it could go. Its "what could not be established" section said no
+non-zero segment range had ever been anchored, which his item 9 answered within two days; it now records the
+three anchors and keeps the earlier version beside it. The naming section said the choice was still his; he has
+chosen. And the current-state paragraph was written before v0.14 and v0.26 existed.
+
+Version 1 is preserved unmodified as CASE-STUDY-1_v1_2026-11-10.md with a line at the top saying what changed.
