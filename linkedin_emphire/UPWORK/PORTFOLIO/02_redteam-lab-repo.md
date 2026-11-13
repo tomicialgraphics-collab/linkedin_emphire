@@ -25,3 +25,8 @@ A personal lab documenting real prompt injection testing against my own chatbot:
 1. Took the three concrete findings already documented in the article and the sample findings report (system-prompt leak, fake-refund trigger word, content-policy bypass).
 2. Structured the repo so each finding maps to four things: the exact input that triggered it, the observed broken behavior, the fix that was shipped, and a regression test that reruns the original input plus several reworded variants.
 3. Scoped everything to self-owned systems only, no client data and no third-party systems, so the entire repo can be fully public with zero confidentiality conflict.
+
+**Route line (append to the description, last sentence):**
+```
+The four-layer test behind this lab is the Standard tier of my project catalog, $600, delivered in seven days.
+```

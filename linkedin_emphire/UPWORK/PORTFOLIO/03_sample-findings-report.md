@@ -26,3 +26,8 @@ A real findings report from testing my own chatbot, shown in the exact four-part
 1. Took each of the three findings and forced them into the fixed four-field template instead of the looser narrative style used in the article.
 2. Wrote the "which layer failed" field as a root-cause statement rather than a restated symptom, for example "no instruction-boundary check" or "conversation text was being treated as an authorization event" instead of just repeating what the bot said. This is the part of a findings report that actually earns the fee, because it tells a client what structurally has to change, not just which input broke things.
 3. Added an explicit verification step to each finding: re-ran the original input plus several reworded variants to prove the fix holds against minor rephrasing, not just the exact original attack string.
+
+**Route line (append to the description, last sentence):**
+```
+The four-layer test this report comes from is the Standard tier of my project catalog, $600, delivered in seven days.
+```
