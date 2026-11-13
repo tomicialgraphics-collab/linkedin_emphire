@@ -80,7 +80,7 @@ carousel, and a DM Me card. That is a portfolio sequence: it answers "who is thi
 this cost and how do I start". A stranger who lands on the profile sees an engineer first and a shop second, and the shop
 is where the money is.
 
-Seven cards is too many; four is enough, and the order is the whole message:
+Six cards is too many for the two that are visible on a phone; five is enough, and the order is the whole message:
 
 | Slot | Card | Added with | Why it is here |
 |---|---|---|---|
@@ -88,6 +88,7 @@ Seven cards is too many; four is enough, and the order is the whole message:
 | 2 | Review my AI design before I build it | Add a link | The cheap first yes, directly under the priced project, so someone who is not ready for a build still has a button. |
 | 3 | Teamthy/Ai-Red-Team-Playbook | already there, move down | Credibility, and the one card that proves the work is public. It answers the doubt created by slots one and two. |
 | 4 | Case Study: data to deployment | already there, move down | Proof of judgement for the people shopping for a full build rather than a test. |
+| 5 | Build it with the testing inside | Add a link | The $300 to $2,500 build. Fifth because a build is the slowest and rarest sale, and it is here for the reader who scrolls. |
 
 **Delete the DM Me card.** It spends a slot to say "message me" and gives the reader nothing to click toward. The post
 itself can stay in the feed; the slot should belong to a page that takes money.
