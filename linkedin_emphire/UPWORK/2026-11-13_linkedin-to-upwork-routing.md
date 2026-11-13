@@ -206,3 +206,19 @@ all, the Featured section is not being seen and the route needs to be the DM ins
 - No new Upwork listing for every post. Two catalog listings and six portfolio items is already more than a buyer reads.
 - No article that is a repost of a LinkedIn post with a different first line. That is the pattern that reads as generated,
   and it is the one thing the whole system is built to avoid.
+
+### 1e. Signed off on the page, 13 November
+
+The section was rebuilt and read back. Three Upwork cards are live, each with the title and description above, and each
+pointing at the right page: the chatbot listing, the consultation, and the red team listing. The DM Me card is gone. The
+playbook post, the mission carousel and the case study carousel survived.
+
+Two moves left, both on the Reorder screen:
+
+1. **Red team listing to slot one, consultation to slot two, playbook post to slot three, case study to four, chatbot
+   listing to five.** As it stands the chatbot listing is first, which means the first thing a phone visitor reads is a
+   $300 to $2,500 build. That is the largest ask on the account sitting in the smallest space on the page.
+2. **Drop the mission carousel, or move it last.** It restates the About section that sits directly beneath the featured
+   cards on the same screen.
+
+After that the section reads as: a priced test, a cheap call, public proof, proof of judgement, and a build.
