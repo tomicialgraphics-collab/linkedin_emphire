@@ -73,6 +73,40 @@ Featured card can break but a URL cannot.
 The case study does not belong in Featured as a third Upwork card. It is the proof of judgement, it lives on LinkedIn
 already, and a fourth card dilutes the three that lead to a checkout.
 
+### 1c. The section as it stands, and the order it should be in
+
+On 13 November the section held four cards, in this order: the playbook repo, the My Mission carousel, the case study
+carousel, and a DM Me card. That is a portfolio sequence: it answers "who is this person" and never answers "what does
+this cost and how do I start". A stranger who lands on the profile sees an engineer first and a shop second, and the shop
+is where the money is.
+
+Seven cards is too many; four is enough, and the order is the whole message:
+
+| Slot | Card | Added with | Why it is here |
+|---|---|---|---|
+| 1 | AI red team test, priced by depth | Add a link | The only card that states a price and a delivery date. It is the first thing a stranger should be able to buy. |
+| 2 | Review my AI design before I build it | Add a link | The cheap first yes, directly under the priced project, so someone who is not ready for a build still has a button. |
+| 3 | Teamthy/Ai-Red-Team-Playbook | already there, move down | Credibility, and the one card that proves the work is public. It answers the doubt created by slots one and two. |
+| 4 | Case Study: data to deployment | already there, move down | Proof of judgement for the people shopping for a full build rather than a test. |
+
+**Delete the DM Me card.** It spends a slot to say "message me" and gives the reader nothing to click toward. The post
+itself can stay in the feed; the slot should belong to a page that takes money.
+
+**Move My Mission to the end, or drop it.** It points at the About section, which is already visible on the same page one
+scroll below. A Featured card that duplicates the page it sits on is the cheapest kind of wasted slot.
+
+Mechanics, because the menu offers four ways to get this wrong:
+
+1. Click **+**, then **Add a link**. Not Add a post, which pulls an existing post and cannot point anywhere new. Not Add a
+   document, which uploads a file and renders a carousel. Not Add an image, which cannot carry a destination.
+2. Paste the full URL, wait for the preview card to fill in. On these pages the card title comes from Upwork's own page
+   title, so it may read "You will get an AI red team test and prompt injection audit". Where LinkedIn offers a title
+   field, shorten it to the text in the table above.
+3. If the preview comes back blank, keep it. A clickable card with a grey box still costs nothing and still links to a
+   page that shows a price; delete it only if it fails to link.
+4. Reorder with the handles on the Reorder screen. The order is not cosmetic: two cards sit above the fold on mobile, so
+   slots one and two are the entire first impression for anyone arriving from a comment.
+
 ### 1b. The consultation is the first-review machine, and it is mispriced if it is priced low
 
 Of the three pages, the consultation is the only one that can produce a completed contract with no build and no scoping
