@@ -15,15 +15,16 @@ subheadline_alt2: Jensen Huang's 33 years ended when the evidence stopped being 
 box: READABLE RECORD
 box_alt: PREFERENCE, NOT CONTROL
 hashtags: [#AIGovernance, #AISecurity, #AIRedTeam, #AIEvaluation]
-slot: 21:30 WAT, Thursday 12 November 2026
+slot: 09:00 WAT, Friday 13 November 2026
 first_comment: FIRST_COMMENT.md, playbook link only
 ---
 
 # Post 33: the Nvidia resignation, and what actually moved the board
 
-Slot **21:30 WAT tonight, 12 November 2026**, because the news is today and a governance read on it is
-worthless by the weekend. Post 32 (the case study) keeps 09:00 on 13 November, as cleared with the client. The two are twelve hours apart,
-different templates, and neither repeats the other's premise.
+Slot **09:00 WAT, Friday 13 November 2026**. The case study post took the evening of 12 November instead, because
+the client cleared it at 20:13 and asked for the location. The news is a day older at this slot and the post still
+stands, since the resignation, the interim appointment and the share move are what it reports. The two posts are
+twelve hours apart, different templates, and neither repeats the other's premise.
 
 ## Verification: what is established, what is reported, what is not established
 

@@ -1,6 +1,6 @@
 # Gate report
 
-Generated 2026-11-13 10:40 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-13 10:43 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 

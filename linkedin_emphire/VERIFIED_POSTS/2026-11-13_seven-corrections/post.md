@@ -15,13 +15,15 @@ subheadline_alt2: A component that passed every test it had, and could not be re
 box: SEVEN CORRECTIONS
 box_alt: NOT REACHABLE
 hashtags: [#AISecurity, #AIRedTeam, #AIEvaluation, #AIGovernance]
-slot: 09:00 WAT, Friday 13 November 2026
+slot: 21:00 WAT, Thursday 12 November 2026
 first_comment: FIRST_COMMENT.md, the three-page PDF then the playbook link
 ---
 
 # Post for 13 November 2026: seven corrections
 
-Slot **09:00 WAT, Friday 13 November 2026**, after the two posts of the 12th. The subject is case study 1, which
+Slot **21:00 WAT, Thursday 12 November 2026**. Moved forward from the morning of 13 November because the
+client cleared the page at 20:13 and asked for the location, and a cleared page with no home is still a private
+page. Post 33 takes the morning slot. The subject is case study 1, which
 the client read line by line, corrected twice, and cleared for release with his name on it on 12 November.
 
 ## Rules this was built against
