@@ -1,36 +1,36 @@
 # Gate report
 
-Generated 2026-11-13 10:54 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-13 11:48 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 
 | File | Contract | Blocking | Warnings | Verdict |
 |---|---|---|---|---|
-| `2026-08-19_first-post_CAREERTRANS_STORY` | legacy | 8 | 0 | legacy |
-| `2026-08-21_bug-not-in-code_SE_OBSERVE` | legacy | 9 | 2 | legacy |
-| `2026-08-24_messy-middle_CAREERTRANS_OPENION` | legacy | 8 | 0 | legacy |
-| `2026-09-16_boring-ratio_AETHICS_STORY` | legacy | 9 | 3 | legacy |
-| `2026-09-18_friday-cutoff_SE_OBSERVE` | legacy | 9 | 1 | legacy |
-| `2026-09-18_tutorials-vs-production_CAREERBUILDER_STORY` | legacy | 9 | 1 | legacy |
-| `2026-09-23_clever-code-tax_SE_OBSERVE` | legacy | 9 | 0 | legacy |
-| `2026-10-02_break-your-own-bot_AREDTEAM_MICRO` | legacy | 8 | 2 | legacy |
-| `2026-10-03_boring-attacks-worked_AREDTEAM_MICRO` | legacy | 7 | 0 | legacy |
-| `2026-10-04_quiet-work-compounds_PERSONAL_MICRO` | legacy | 7 | 2 | legacy |
-| `2026-10-06_take-a-line-out_PILLAR_MICRO` | legacy | 7 | 2 | legacy |
-| `2026-10-07_pineapple-confession_AREDTEAM_TEASER` | legacy | 6 | 1 | legacy |
-| `2026-10-08_group-log-own-product_AREDTEAM_STORY` | legacy | 7 | 1 | legacy |
-| `2026-10-11_checking-not-breakthrough_PERSONAL_MICRO` | legacy | 6 | 2 | legacy |
-| `2026-10-11_messy-backstage_PERSONAL_MICRO` | legacy | 6 | 2 | legacy |
-| `2026-10-12_pre-publish-boring-failures_AREDTEAM_TEASER` | legacy | 8 | 2 | legacy |
-| `2026-10-21_check-never-failed_AREDTEAM_STANDALONE` | legacy | 6 | 1 | legacy |
-| `2026-10-22_php2shell_AREDTEAM_EVENT` | legacy | 7 | 0 | legacy |
-| `2026-10-23_aithos-answer-key_AREDTEAM_STANDALONE` | legacy | 6 | 0 | legacy |
-| `2026-10-31_prompt-is-0-10-percent` | legacy | 6 | 1 | legacy |
-| `2026-10-31_soc2-model-behaviour` | legacy | 6 | 1 | legacy |
-| `2026-11-01_redteam-pluralism` | legacy | 6 | 1 | legacy |
-| `2026-11-02_agent-pr-denominator` | legacy | 6 | 1 | legacy |
-| `2026-11-04_could-not-look` | legacy | 7 | 0 | legacy |
-| `2026-11-04_empty-input-passes` | legacy | 6 | 2 | legacy |
+| `2026-08-19_first-post_CAREERTRANS_STORY` | legacy | 9 | 0 | legacy |
+| `2026-08-21_bug-not-in-code_SE_OBSERVE` | legacy | 10 | 2 | legacy |
+| `2026-08-24_messy-middle_CAREERTRANS_OPENION` | legacy | 9 | 0 | legacy |
+| `2026-09-16_boring-ratio_AETHICS_STORY` | legacy | 10 | 3 | legacy |
+| `2026-09-18_friday-cutoff_SE_OBSERVE` | legacy | 10 | 1 | legacy |
+| `2026-09-18_tutorials-vs-production_CAREERBUILDER_STORY` | legacy | 10 | 1 | legacy |
+| `2026-09-23_clever-code-tax_SE_OBSERVE` | legacy | 10 | 0 | legacy |
+| `2026-10-02_break-your-own-bot_AREDTEAM_MICRO` | legacy | 9 | 2 | legacy |
+| `2026-10-03_boring-attacks-worked_AREDTEAM_MICRO` | legacy | 8 | 0 | legacy |
+| `2026-10-04_quiet-work-compounds_PERSONAL_MICRO` | legacy | 8 | 2 | legacy |
+| `2026-10-06_take-a-line-out_PILLAR_MICRO` | legacy | 8 | 2 | legacy |
+| `2026-10-07_pineapple-confession_AREDTEAM_TEASER` | legacy | 7 | 1 | legacy |
+| `2026-10-08_group-log-own-product_AREDTEAM_STORY` | legacy | 8 | 1 | legacy |
+| `2026-10-11_checking-not-breakthrough_PERSONAL_MICRO` | legacy | 7 | 2 | legacy |
+| `2026-10-11_messy-backstage_PERSONAL_MICRO` | legacy | 7 | 2 | legacy |
+| `2026-10-12_pre-publish-boring-failures_AREDTEAM_TEASER` | legacy | 9 | 2 | legacy |
+| `2026-10-21_check-never-failed_AREDTEAM_STANDALONE` | legacy | 7 | 1 | legacy |
+| `2026-10-22_php2shell_AREDTEAM_EVENT` | legacy | 8 | 0 | legacy |
+| `2026-10-23_aithos-answer-key_AREDTEAM_STANDALONE` | legacy | 7 | 0 | legacy |
+| `2026-10-31_prompt-is-0-10-percent` | legacy | 7 | 1 | legacy |
+| `2026-10-31_soc2-model-behaviour` | legacy | 7 | 1 | legacy |
+| `2026-11-01_redteam-pluralism` | legacy | 7 | 1 | legacy |
+| `2026-11-02_agent-pr-denominator` | legacy | 7 | 1 | legacy |
+| `2026-11-04_could-not-look` | legacy | 8 | 0 | legacy |
+| `2026-11-04_empty-input-passes` | legacy | 7 | 2 | legacy |
 | `2026-11-06_absence-of-a-record` | yes | 0 | 1 | pass, warnings |
 | `2026-11-07_twelve-swings` | yes | 0 | 2 | pass, warnings |
 | `2026-11-08_eval-case-argument` | yes | 0 | 1 | pass, warnings |
@@ -38,11 +38,11 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `2026-11-09_foray-review-receipt` | yes | 0 | 1 | pass, warnings |
 | `2026-11-09_red-team-playbook-launch` | yes | 0 | 1 | pass, warnings |
 | `2026-11-09_span-boundary-scoring` | yes | 0 | 1 | pass, warnings |
-| `2026-11-11_judge-needs-a-test` | legacy | 6 | 2 | legacy |
+| `2026-11-11_judge-needs-a-test` | legacy | 7 | 2 | legacy |
 | `2026-11-12_nvidia-readable-record` | yes | 0 | 0 | pass |
 | `2026-11-12_two-jobs-one-person` | yes | 0 | 0 | pass |
 | `2026-11-12_whose-clock` | yes | 0 | 0 | pass |
-| `2026-11-13_open-benchmark-open-defects` | legacy | 7 | 1 | legacy |
+| `2026-11-13_open-benchmark-open-defects` | legacy | 8 | 1 | legacy |
 | `2026-11-13_seven-corrections` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-03_allie-miller_agent-handoff.md` | legacy | 1 | 1 | legacy |
 | `ENGAGEMENT/2026-11-03_jerry-liu_ocria-speed.md` | legacy | 3 | 1 | legacy |

@@ -17,6 +17,8 @@ box_alt: NOT REACHABLE
 hashtags: [#AISecurity, #AIRedTeam, #AIEvaluation, #AIGovernance]
 slot: 21:00 WAT, Thursday 12 November 2026
 first_comment: FIRST_COMMENT.md, the three-page PDF then the playbook link
+visual_link: https://drive.google.com/file/d/1FgbhJbgS_CoPFCTlMRB0ttTtjdY1RE9M/view
+carousel_link: https://drive.google.com/file/d/1CxamkmVNHKBiK4o25Rg_NYzQojTsh8_R/view
 ---
 
 # Post for 13 November 2026: seven corrections

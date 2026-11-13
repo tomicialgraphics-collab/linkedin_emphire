@@ -17,6 +17,7 @@ box_alt: PREFERENCE, NOT CONTROL
 hashtags: [#AIGovernance, #AISecurity, #AIRedTeam, #AIEvaluation]
 slot: 09:00 WAT, Friday 13 November 2026
 first_comment: FIRST_COMMENT.md, playbook link only
+visual_link: https://drive.google.com/file/d/1juflp-w3B8amzPKhKhh58fO56q96TBKP/view
 ---
 
 # Post 33: the Nvidia resignation, and what actually moved the board

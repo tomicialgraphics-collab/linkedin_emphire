@@ -577,6 +577,30 @@ def check_post(rep: Report, meta: dict, body: str) -> None:
         rep.add("R13", "PASS", tpl)
 
 
+def check_visual(rep: Report, meta: dict, path: str) -> None:
+    """R46 the card, and the link to it.
+
+    The rule is dated so that posts written before the card system existed keep the
+    gate result they shipped with. New posts cannot pass without one.
+    """
+    date = str(meta.get("date", "")).strip()
+    if date and date < "2026-11-14":
+        rep.add("R46", "SKIP", "post predates the card system (14 November 2026)")
+        return
+
+    card = os.path.join(os.path.dirname(os.path.abspath(path)), "visual", "cover.png")
+    if not os.path.exists(card):
+        rep.add("R46", "FAIL", "no visual/cover.png beside the post: run `./emphire visual <post>`")
+        return
+    link = str(meta.get("visual_link", "")).strip()
+    if not link:
+        rep.add("R46", "WARN", "card rendered, Drive link not in the front matter yet")
+    elif "drive.google.com" not in link:
+        rep.add("R46", "WARN", f"visual_link is not a Drive link: {link[:60]}")
+    else:
+        rep.add("R46", "PASS", "card rendered and linked")
+
+
 def check_profile_read(rep: Report, meta: dict, dtype: str) -> None:
     if dtype not in ("comment", "dm"):
         rep.add("R16", "SKIP", "not a per-person deliverable")
@@ -695,6 +719,7 @@ def gate_file(path: str, forced_type: str | None = None) -> Report:
     if dtype == "post":
         check_post(rep, meta, pasted)
         check_index_row(rep, meta, path)
+        check_visual(rep, meta, path)
     check_delivery_log(rep, meta, path)
     rep.rows.sort(key=lambda r: STATUS_ORDER.get(r["status"], 9))
     return rep

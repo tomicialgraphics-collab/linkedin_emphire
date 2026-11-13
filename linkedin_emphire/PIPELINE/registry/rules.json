@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-09",
+ "updated": "2026-11-13",
  "note": "Machine-readable rule registry. This is the only place a rule is defined. PIPELINE/20-RULES.md is rendered from it, and TOOLING/gate.py enforces the ones with a check. To add a rule, add it here, run pipeline.py render, then run the gate on a known-good file so you know the check does not misfire.",
  "severity_levels": {
   "block": "gate exits non-zero and the file cannot be delivered",
@@ -498,6 +498,17 @@
     "comment"
    ],
    "check": "read-as-generated"
+  },
+  {
+   "id": "R46",
+   "text": "Every post ships with a card rendered from the post itself, and the Drive link comes back with the post. The gate blocks a post dated 14 November 2026 or later that has no visual/cover.png beside it, and warns until visual_link is filled in, because a card that exists on this machine and not in his hands is not a card.",
+   "source": "owner paste 2026-11-13: generate the visual for each post that goes out and give the Google Drive link to download it every time",
+   "severity": "block",
+   "scope": [
+    "post",
+    "outward"
+   ],
+   "check": "visual-present"
   }
  ]
 }

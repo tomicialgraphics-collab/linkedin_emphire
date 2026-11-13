@@ -30,6 +30,7 @@ import re
 import shutil
 import subprocess
 import sys
+from pathlib import Path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EMPIRE = os.path.abspath(os.path.join(HERE, ".."))
@@ -728,6 +729,27 @@ def cmd_map(args) -> int:
     return 0
 
 
+def cmd_visual(args) -> int:
+    """Render the card that ships with a post. One implementation, in VISUAL."""
+    sys.path.insert(0, os.path.join(EMPIRE, "VISUAL"))
+    import post_visual
+
+    post = Path(args.post)
+    if not post.is_absolute():
+        post = Path(EMPIRE) / post if (Path(EMPIRE) / post).exists() else Path(post).resolve()
+    if not post.exists():
+        print(f"no such post: {args.post}")
+        return 2
+    result = post_visual.build(post, args.pages)
+    print(f"card    {rel(result['cover'])}")
+    for page in sorted(result["out"].glob("page*.png")):
+        print(f"page    {rel(page)}")
+    if result["pdf"]:
+        print(f"pdf     {rel(result['pdf'])}  ({result['pages']} pages)")
+    print("\nUpload it, then put the Drive link in the post's front matter as visual_link.")
+    return 0
+
+
 def cmd_render(_args) -> int:
     rules = load("rules.json")["rules"]
     by_sev = {}
@@ -858,6 +880,11 @@ def main(argv=None) -> int:
 
     sub.add_parser("growth").set_defaults(fn=cmd_growth)
     sub.add_parser("revenue").set_defaults(fn=cmd_revenue)
+
+    p = sub.add_parser("visual")
+    p.add_argument("post", help="path to a post.md")
+    p.add_argument("--pages", type=int, default=None, help="how many cards counting the cover")
+    p.set_defaults(fn=cmd_visual)
 
     sub.add_parser("render").set_defaults(fn=cmd_render)
     sub.add_parser("map").set_defaults(fn=cmd_map)
