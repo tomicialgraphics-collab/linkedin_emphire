@@ -427,7 +427,16 @@ def _revenue_rows():
             amount = 0.0
         rows.append({"date": cells[0], "deal": cells[1], "client": cells[2],
                      "amount": amount, "state": cells[4].lower()})
-    return rows
+    # The log is append only: a deal that moves state gets a new row, never an edit.
+    # So a client and an amount can appear more than once, and the arithmetic has to
+    # take the last word rather than add every word. Without this, a proposal that was
+    # declined still counts as proposed, and the gap to the target is a fiction.
+    latest = {}
+    for row in rows:
+        key = (row["client"].lower(), row["amount"])
+        if key not in latest or row["date"] >= latest[key]["date"]:
+            latest[key] = row
+    return list(latest.values())
 
 
 def cmd_revenue(_args) -> int:
