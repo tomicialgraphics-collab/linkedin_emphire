@@ -90,3 +90,17 @@ If something is still open, tell me now rather than closing on it.
 Three things that message does without asking for a favour: it names the end reason, it asks for feedback in the client's
 own interest rather than yours, and it gives the client an exit if something is wrong, which is the only way to hear
 about a problem before it becomes a private score.
+
+## Which one, right now
+
+The review, and specifically the close. A score does not exist until two contracts close with two different clients, so
+price has nothing to act on yet.
+
+There is one rule worth keeping from this: **inside a price band, a discount buys nothing.** A $150 scan and a $40 scan
+both weigh 1x in the score, and both produce the same stars. Discounting from $150 to $40 therefore loses $110 and
+changes nothing except how the buyer reads the offer. The bands are $1 to $250, $251 to $1,000, and over $1,000, so the
+only price moves that mean anything are the ones that cross a band: $250 up to $300, $600 up to $1,000, $1,000 up to
+$1,500.
+
+Sequence on this account: close two contracts at the current prices, $150 and the consultation, with two different
+clients. Then price stops being a question of what the market will bear and becomes what the score will carry.
