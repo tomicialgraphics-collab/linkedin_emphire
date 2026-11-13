@@ -1,6 +1,6 @@
 # Gate report
 
-Generated 2026-11-13 11:48 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-13 12:14 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 
@@ -170,6 +170,13 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/2026-11-12_reply_tim-zlomke-age-rather-than-change.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-12_reply_tim-zlomke-margin-against-skew.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-12_reply_tim-zlomke-score-the-refusal-not-the-outcome.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_comment_alok-sharan-llmops-pillars.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_comment_ashley-gross-team-in-the-ai-strategy.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_comment_cameron-black-being-heard-and-being-shown.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_comment_kuldeep-patil-runtime-authorization.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_comment_manish-goenka-outage-plans-do-not-cover-policy.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_comment_ruben-hassid-ask-me-first-has-an-owner.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_reply_sam-illingworth-how-to-improve.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/FOLLOW-LIST-RULES.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/audience_follow_list_2026-10-24.md` | legacy | 1 | 1 | legacy |
 | `ENGAGEMENT/comment_round_2026-10-31.md` | legacy | 4 | 1 | legacy |

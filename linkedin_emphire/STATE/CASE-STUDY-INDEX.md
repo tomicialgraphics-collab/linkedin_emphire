@@ -13,7 +13,7 @@ drafted, so the permission ask is visible rather than remembered.
 
 | ID | Client | Milestone | File | Permission | State |
 | --- | --- | --- | --- | --- | --- |
-| C1 | FORAY / Dunin7 | the register, its first corrected finding, and the reopened W-05 | `CLIENTS/foray-dunin7/CASE-STUDY-1_open-protocol-anchoring.md` v2, sent inside REPLY-11 on 12 Nov; v1 of 10 Nov kept as `CASE-STUDY-1_v1_2026-11-10.md` | granted 2026-11-12, named | **CLEARED 2026-11-12.** He read v2 and v3 line by line, raised seven corrections, cleared v4, and said it may be shown with him named. Next action is the owner's: publish |
+| C1 | FORAY / Dunin7 | the register, its first corrected finding, and the reopened W-05 | `CLIENTS/foray-dunin7/CASE-STUDY-1_open-protocol-anchoring_v5_2026-11-13.md` v5 of 13 Nov, after his correction of the review length; v4 as cleared kept at `CASE-STUDY-1_open-protocol-anchoring.md`, v1 of 10 Nov at `CASE-STUDY-1_v1_2026-11-10.md` | granted 2026-11-12, named | **CLEARED 2026-11-12.** He read v2 and v3 line by line, raised seven corrections and cleared v4. On 13 Nov he corrected the review length to ten days; v5 carries it and the post sentence is corrected with it |
 | C2 | Evelyne-Claudia | the file-hash recomputation and what it settled | `OUTREACH/evelyne-claudia-2026-11-06/` (page not written) | not-requested | candidate |
 
 ## Why these two first

@@ -16,7 +16,7 @@ box: SEVEN CORRECTIONS
 box_alt: NOT REACHABLE
 hashtags: [#AISecurity, #AIRedTeam, #AIEvaluation, #AIGovernance]
 slot: 21:00 WAT, Thursday 12 November 2026
-first_comment: FIRST_COMMENT.md, the three-page PDF then the playbook link
+first_comment: FIRST_COMMENT.md, the three-page v5 PDF then the playbook link
 visual_link: https://drive.google.com/file/d/1FgbhJbgS_CoPFCTlMRB0ttTtjdY1RE9M/view
 carousel_link: https://drive.google.com/file/d/1CxamkmVNHKBiK4o25Rg_NYzQojTsh8_R/view
 ---
@@ -65,7 +65,7 @@ SUB        HE CLEARED IT ANYWAY, WITH HIS NAME ON IT.
 A client found seven errors in the case study written about his own code.
 He cleared it anyway, with his name on it. That is the part I did not expect.
 
-Five weeks of review, unpaid, of a protocol's anchoring and verification claims. The finding that mattered was not a bug. The segment path existed, was tested, and no outside client could reach it, so the proof was correct and the capability did not exist yet.
+Ten days of review, unpaid, of a protocol's anchoring and verification claims. The finding that mattered was not a bug. The segment path existed, was tested, and no outside client could reach it, so the proof was correct and the capability did not exist yet.
 
 He read the write-up twice. Five of the seven corrections are his: a count of findings that double-counted one item, a closure claim that said more than his own record says, a paragraph about permissions that belonged in the correspondence rather than in the page, and a claim about his specification revisions that was stronger than v0.14 supports. Two were mine, found by re-reading.
 
