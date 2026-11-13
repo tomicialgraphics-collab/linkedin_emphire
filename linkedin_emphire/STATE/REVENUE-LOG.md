@@ -22,6 +22,7 @@ paid), `paid` (money received), `lost`, `free` (delivered at no fee, recorded so
 | 2026-11-12 | W-04 probe re-run, one week | FORAY (Marvin Percival) | 1500 | prospect | Scope drafted in REPLY-14, not yet sent. Price fixed, invoice on delivery, one revision included. |
 | 2026-11-12 | Protocol anchoring review, six weeks unpaid | FORAY (Marvin Percival) | 0 | free | Case study permission granted, named, read-first. A paid engagement is a separate conversation and has not been had. |
 | 2026-11-13 | Agent authorization test pass, scope not yet set | InvisibleAct (Kuldeep Patil) | 0 | prospect | Warm inbound: he read the comment on his post and asked on 13 Nov what I would try to break first in a pre-execution gate. Answered in a DM with four tests and an offer to run them against his n8n setup. No price discussed. |
+| 2026-11-13 | Four-scenario gate test, one week | InvisibleAct (Kuldeep Patil) | 1500 | proposed | Sent 13 Nov after he asked for terms. Isolated n8n, synthetic invoices, report plus re-runnable requests, invoice on delivery. A $600 two-scenario option offered in the same message. |
 
 ## How to add a row
 
