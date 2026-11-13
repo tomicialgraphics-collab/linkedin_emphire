@@ -57,25 +57,53 @@ Diversion is a closing move, not an acquisition move. It works on the person who
 Every profile view lands here, and it is permanent. `572 profile views` is the number to look at, not impressions,
 because a profile view is someone checking whether you are real.
 
-Add three entries, each pointing at an Upwork page. Copy the exact URLs from your own catalog and portfolio pages, since
-the slugs are long and easy to mistype.
+Add three entries. The URLs below are the live pages, opened on 13 November 2026 and checked against what they actually
+sell.
 
-| Entry title | Points at | Why |
+| Entry title | URL | What the page is |
 |---|---|---|
-| AI red team test, fixed scope and price | the red team catalog listing | The only entry that shows a price. Someone comparing three freelancers can act on it immediately. |
-| Sample findings report, real deliverable | portfolio item 3 | Shows the artefact before the purchase, which is the objection that kills most AI security enquiries. |
-| Case study: a review that found seven errors | the case study PDF, not Upwork | This one is proof of judgement rather than of price, and it is the reason to believe the other two. |
+| AI red team test, priced by depth | `https://www.upwork.com/services/product/development-it-an-ai-red-team-test-and-prompt-injection-audit-2109166740052666541` | $150 scan in 3 days, $600 four-layer test in 7, $1,500 test plus scoped fixes in 14. The only page with a price on it. |
+| Review my AI design before I build it | `https://www.upwork.com/services/product/development-it-timothy-1697327656243625984` | The paid consultation: a video call, a prioritised risk list, a time and cost estimate, and a written summary. |
+| Build it with the testing inside | `https://www.upwork.com/services/product/development-it-an-ai-chatbot-or-agent-built-tested-and-hardened-2109189706859183826` | Chatbot or agent build at $300, $900 and $2,500, with the regression suite included rather than sold after. |
+
+Order them as above: price first, then the cheap first step, then the bigger build. The profile link itself is
+`https://www.upwork.com/freelancers/timothyo28`, and it is worth putting in the About section as plain text once, since a
+Featured card can break but a URL cannot.
+
+The case study does not belong in Featured as a third Upwork card. It is the proof of judgement, it lives on LinkedIn
+already, and a fourth card dilutes the three that lead to a checkout.
+
+### 1b. The consultation is the first-review machine, and it is mispriced if it is priced low
+
+Of the three pages, the consultation is the only one that can produce a completed contract with no build and no scoping
+call: a client books, pays, turns up, and the contract closes. That is the shortest path to the review and the Job Success
+Score that the whole account is missing.
+
+Two consequences:
+
+1. **Price it at $75 to $95 for 45 minutes**, not lower. Under about $50 it reads as a free call with a payment step, and
+   the client who books a free call does not leave a review.
+2. **Ask for the review at the end of the call, in plain words.** The consultation is the one product where the client has
+   already received everything by the time you ask.
+
+That single contract is worth more than three $150 scans, because it moves the profile from no score to scored, and every
+proposal after it argues from a 5.0 instead of from nothing.
 
 ### 2. The DM handoff, at the moment price is asked
 
 This is where money is won or lost, and the message is three lines. Do not send it before someone asks.
 
 ```
-Two ways to do this. A fixed-scope review at a set price, which is the catalog listing here: [catalog link], with escrow
-and a delivery date, or an invoice on delivery if you would rather keep it simple and you are not already on Upwork.
+Two ways to do this. A fixed-scope review at a set price, which is the catalog listing here:
+https://www.upwork.com/services/product/development-it-an-ai-red-team-test-and-prompt-injection-audit-2109166740052666541
+with escrow and a delivery date, or an invoice on delivery if you would rather keep it simple and you are not already on
+Upwork.
 
 If you tell me what the system does and what it is allowed to touch, I will tell you which of those fits.
 ```
+
+If the person is earlier than that, unsure what they even need, the consultation link is the better send, because it asks
+for an hour rather than a project.
 
 The link is allowed because the conversation started on LinkedIn. The same link inside an Upwork message would not be.
 
