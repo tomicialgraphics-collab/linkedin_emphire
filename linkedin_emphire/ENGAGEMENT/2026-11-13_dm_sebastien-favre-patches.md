@@ -68,7 +68,11 @@ corpus then reads PASS=33, AMBIGUOUS=8, ERROR=9 instead of PASS=35, FAIL=5. ERRO
 for a technical condition that prevents a conclusion, which is what a refusal is, and it's the better of the two
 readings. It still can't distinguish a refusal from a crash, and I didn't invent a fourth state for you.
 
-Your suite is 24/24 with the patch, after I rewrote cases 4 and 15 to expect 2 and 4. 95 lines across three files. Say the word and I'll paste it whole, or send it wherever you want it.
+Your suite is 24/24 with the patch, after I rewrote cases 4 and 15 to expect 2 and 4. That's 95 lines across three
+files, and it sits at https://drive.google.com/file/d/1t5GYgpd-IALXAa7Ggf7xAeJzMmzyqWkv/view rather than in a message,
+where the indentation would die.
+
+Open it in the browser, or apply it to a branch with git apply. Same diff I ran above, nothing added.
 
 Timothy
 <!-- gate:body:end -->
