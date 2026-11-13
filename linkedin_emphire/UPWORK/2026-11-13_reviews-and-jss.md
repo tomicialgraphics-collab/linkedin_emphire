@@ -104,3 +104,38 @@ $1,500.
 
 Sequence on this account: close two contracts at the current prices, $150 and the consultation, with two different
 clients. Then price stops being a question of what the market will bear and becomes what the score will carry.
+
+## Three 50 dollar payments, and what they add up to
+
+The first thing to settle is whether those are three milestones on one contract or three contracts. The answer changes
+what the client can even leave.
+
+**Feedback is per contract, not per milestone.** A milestone approval releases money. The review appears when the
+contract ends, on the end-of-contract form. So three milestones inside one contract produce one review at the close, no
+matter how many times the client was pleased along the way.
+
+| Shape | Money net of the 10 percent fee | Public reviews | Weight in the score |
+|---|---|---|---|
+| one contract, three 50 dollar milestones | 135 | 1, at the close | one outcome, 1x |
+| three contracts, one client | 135 | up to 3, one per contract | still one client relationship, so the relationship count does not triple. Roughly one outcome, 1x |
+| three contracts, three clients | 135 | 3 | three outcomes at 1x, and this is the shape that makes a score appear at all |
+
+Two things the arithmetic hides.
+
+1. **The score is relationship weighted, not contract weighted.** Ten small contracts with one happy client do not behave
+   like ten separate outcomes. Three contracts with one client is one relationship that happened three times.
+2. **A run of 50 dollar reviews is visible.** Contract values sit in the work history next to the stars. Three 50 dollar
+   reviews read as a person who has been paid three times, which is honest and also small. One 300 dollar review reads as
+   a person who has been hired.
+
+The 90 day bonus does not rescue this either: it needs a payment every 90 days on one running contract, not three
+payments inside a week.
+
+### What to do instead, when a client wants to pay in instalments
+
+Put the same money on one contract, and put the boundary at a band. A single 250 dollar contract is one clean outcome,
+one review, and the top of the 1x band. A single 300 dollar contract is 1.25x. Three 50 dollar contracts are none of
+those things, and they cost three times the admin for the same 135 dollars.
+
+If the client genuinely wants to pay per piece, keep it one contract with milestones and close it once, at the end, in
+writing.
