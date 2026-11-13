@@ -9,7 +9,36 @@ approved: no
 
 # Should the Upwork profile link go to Kuldeep and Favre
 
-Short answer: not as the first move, and not at all until the profile says what the price says.
+**Update, same day.** He pasted the live profile. The rebrand was executed: the headline is "Software Engineer | AI Red
+Teaming (LLM, RAG, Agents)", the rate is $65/hr, the overview sells injection, RAG poisoning and agent abuse, and the
+portfolio carries the red-team lab and a sample findings report. So the concern below is answered, and the link can be
+sent. What follows was written before he pasted it, and is kept because the second finding still stands.
+
+## What the live profile says, checked 13 November from his paste
+
+| Item | Value | Consequence for a $1,500 week |
+|---|---|---|
+| Headline and rate | Software Engineer, AI Red Teaming, $65/hr | Matches the quote: $1,500 is a week, not a discount |
+| Total earnings, jobs | $100+, 2 jobs, both still in progress | Thin but honest; he has not finished a job on the platform |
+| Project catalog | red team test from $150, 3 days; chatbot from $300, 5 days | This is the anchor a client will read before the $1,500 |
+| Open for work | Off | Costs him invitations; turn it on before sending the link |
+| Average response | more than 24 hours | Worth knowing when a client expects a reply today |
+| Work history | Shopify and PayPal jobs of 2023 and 2024 | The residue sits next to the security claim; it is account history, not a contradiction |
+
+## What follows from that
+
+Do not ask him to place an order. Nothing in the catalog costs $1,500, so there is no order to place; the catalog is
+entry pricing and the week is a different product. Two routes work better: an Upwork Direct Contract, which he invites
+from his own account and which puts the money in escrow for a freelancer-side fee of a few per cent rather than the
+marketplace 10, or a plain invoice.
+
+The $150 scan is not a problem if the message names the relationship out loud: the scan is one pass, the week is four
+scenarios, a report per scenario and cases the client can re-run. A client who is told that reads the catalog as a menu
+rather than as a price list.
+
+---
+
+## Original note, written before the profile was confirmed
 
 ## What the profile currently is, on the record
 
