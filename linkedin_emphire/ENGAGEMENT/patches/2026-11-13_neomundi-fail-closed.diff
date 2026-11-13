@@ -1,0 +1,202 @@
+diff --git a/conformance/runners/run.py b/conformance/runners/run.py
+index df3004e..8c8e6ca 100644
+--- a/conformance/runners/run.py
++++ b/conformance/runners/run.py
+@@ -272,7 +272,19 @@ def verdict_observe(sortie: dict, fiche: dict, verificateur: str,
+         # faux echecs. La grandeur comparable est le NIVEAU ; le verdict est
+         # derive du code de sortie, et la derivation est DITE.
+         if "BILAN" in texte:
+-            verdict = "REJETE" if sortie["code"] == 1 else "ACCEPTE"
++            # TROIS CODES, TROIS LECTURES. `verify_attestation.py` sort 1 sur
++            # FAIL, 0 sur verdict demontre, 2 sur verdict NON demontre et 4
++            # quand il refuse de s executer (capacite de verification
++            # absente). Lire << tout ce qui n est pas 1 est accepte >> fait
++            # passer une attestation jamais verifiee pour une attestation
++            # acceptee : c est le sens de la panne, et il doit rester lisible
++            # dans le tableau, pas seulement dans le code de sortie.
++            if sortie["code"] == 1:
++                verdict = "REJETE"
++            elif sortie["code"] == 0:
++                verdict = "ACCEPTE"
++            else:
++                verdict = "NON VERIFIE"
+             source = ("derive du code de sortie (verify_attestation.py rend "
+                       "un NIVEAU, pas un verdict)")
+     if niveau is None and "cryptographically_attested" in texte:
+diff --git a/tests/test_attestation.py b/tests/test_attestation.py
+index 1e865e6..07f6fa7 100644
+--- a/tests/test_attestation.py
++++ b/tests/test_attestation.py
+@@ -288,8 +288,12 @@ def cas(banc: Banc) -> list[tuple[str, str, bool, str]]:
+         lambda m: m["keys"][0].update({"kid": "nm-ev-test-inconnue"}),
+     )
+     code, s = verifier(banc.jws, banc.archive, inconnu, ["--allow-test-keys"])
++    # Le code attendu est passe de 0 a 2 : un pilier NOT TESTED n est pas
++    # un FAIL, mais il n est plus un succes. Le VERDICT est inchange (NOT
++    # TESTED, aucun niveau) ; seul ce qu un appelant automatise peut en
++    # conclure change.
+     pose("4", "cle publique inconnue",
+-         code == 0 and etat(s, "signature cryptographique") == "NOT TESTED"
++         code == 2 and etat(s, "signature cryptographique") == "NOT TESTED"
+          and etat(s, "identite de confiance") == "NOT TESTED"
+          and niveau(s) == "aucun",
+          "NOT TESTED et non FAIL : la signature est peut-etre valide")
+@@ -504,11 +508,19 @@ def cas(banc: Banc) -> list[tuple[str, str, bool, str]]:
+     )
+     env = dict(os.environ)
+     env["PYTHONPATH"] = str(faux_paquet)
+-    code, s = verifier(banc.jws, banc.archive, banc.magasin, ["--allow-test-keys"], env=env)
+-    pose("15", "`cryptography` absent : NOT TESTED, jamais PASS ni FAIL",
+-         code == 0 and etat(s, "signature cryptographique") == "NOT TESTED"
++    # Sans capacite de verification, le programme REFUSE desormais de rendre
++    # un bilan (code 4) plutot que de le rendre sous un code de sortie qui se
++    # lit comme un resultat. `--allow-no-crypto` demande explicitement le
++    # bilan partiel : on garde donc ce cas, et il observe alors NOT TESTED
++    # sous le code 2 -- jamais PASS, jamais FAIL.
++    code_refus, _ = verifier(banc.jws, banc.archive, banc.magasin, ["--allow-test-keys"], env=env)
++    code, s = verifier(banc.jws, banc.archive, banc.magasin,
++                       ["--allow-test-keys", "--allow-no-crypto"], env=env)
++    pose("15", "`cryptography` absent : refus, ou NOT TESTED sur demande",
++         code_refus == 4 and code == 2
++         and etat(s, "signature cryptographique") == "NOT TESTED"
+          and niveau(s) == "aucun",
+-         "signature NOT TESTED, aucun niveau atteint")
++         "refus 4 par defaut ; NOT TESTED sous --allow-no-crypto, aucun niveau atteint")
+ 
+     # ---- 16. le verificateur n atteint aucune cle privee ------------------
+     import ast
+diff --git a/verify_attestation.py b/verify_attestation.py
+index 3698b79..3c28bf9 100644
+--- a/verify_attestation.py
++++ b/verify_attestation.py
+@@ -177,15 +177,40 @@ class Bilan:
+     def est_passe(self, intitule: str) -> bool:
+         return any(e == PASS and i == intitule for e, i, _ in self.lignes)
+ 
+-    def code_de_sortie(self, strict: bool = False) -> int:
+-        """0 sain, 1 au moins un FAIL, 2 garantie requise non demontree.
++    def piliers_non_demontres(self) -> list[str]:
++        """Les piliers du verdict qui ne sont pas `PASS`, dans l ordre vu.
+ 
+-        Un `FAIL` l emporte sur un manque en strict : c est l enonce le plus
+-        fort, et un consommateur qui ne distingue pas les codes non nuls
+-        n est pas induit en erreur pour autant.
++        Ce sont eux qui decident si un niveau a pu etre atteint. Une ligne
++        de durcissement en plus -- l empreinte du magasin confrontee -- n en
++        fait pas partie : son absence affaiblit la preuve, elle ne rend pas
++        le verdict faux.
++        """
++        return [i for e, i, _ in self.lignes if i in PILIERS and e != PASS]
++
++    def code_de_sortie(self, strict: bool = False,
++                       allow_untested: bool = False) -> int:
++        """0 sain, 1 au moins un FAIL, 2 verdict non demontre.
++
++        FAIL-CLOSED PAR DEFAUT. Un pilier laisse en NOT TESTED sort en 2
++        sans qu on ait a demander `--strict` : un appelant qui ne lit que
++        le code de sortie ne peut plus confondre << je n ai pas pu
++        verifier >> avec << c est verifie >>. C etait le defaut : sans
++        magasin de confiance, la signature n etait jamais eprouvee et le
++        programme rendait 0.
++
++        `--allow-untested` retablit l ancien defaut, pour les appelants
++        existants qui n exploitent que 0 et 1. `--strict` garde son sens :
++        il exige EN PLUS les lignes de durcissement (empreinte du magasin
++        confrontee), qui ne bloquent pas le verdict.
++
++        Un `FAIL` l emporte sur un manque : c est l enonce le plus fort, et
++        un consommateur qui ne distingue pas les codes non nuls n est pas
++        induit en erreur pour autant.
+         """
+         if self.compte(FAIL):
+             return 1
++        if self.piliers_non_demontres() and not allow_untested:
++            return 2
+         if strict and self.requises_non_demontrees():
+             return 2
+         return 0
+@@ -783,6 +808,7 @@ def arguments_de_verification(
+     strict: bool = False,
+     store_digest: str | None = None,
+     lang: str = "fr",
++    allow_untested: bool = False,
+ ) -> argparse.Namespace:
+     """Le jeu d arguments complet de `verifier`, pour un appelant interne.
+ 
+@@ -808,6 +834,7 @@ def arguments_de_verification(
+         strict=strict,
+         store_digest=store_digest,
+         lang=lang,
++        allow_untested=allow_untested,
+     )
+ 
+ 
+@@ -987,7 +1014,7 @@ def rendre(bilan: Bilan, niveau: str | None, contexte: dict,
+                        "not_tested": bilan.compte(NOT_TESTED)},
+             "strict": bool(arguments.strict),
+             "required_not_demonstrated": manquantes,
+-            "exit_code": bilan.code_de_sortie(arguments.strict),
++            "exit_code": bilan.code_de_sortie(arguments.strict, arguments.allow_untested),
+             "attained_level": niveau,
+             "subject": attestation.get("subject"),
+             "identities": attestation.get("identities"),
+@@ -1010,7 +1037,7 @@ def rendre(bilan: Bilan, niveau: str | None, contexte: dict,
+         )
+         print("\nrapport lisible par machine : %s" % arguments.json)
+ 
+-    return bilan.code_de_sortie(arguments.strict)
++    return bilan.code_de_sortie(arguments.strict, arguments.allow_untested)
+ 
+ 
+ def main() -> int:
+@@ -1039,6 +1066,12 @@ def main() -> int:
+              "reste NOT TESTED : un magasin non confronte n est pas faux, "
+              "il est simplement non confronte.",
+     )
++    analyseur.add_argument(
++        "--allow-no-crypto", action="store_true",
++        help="rendre quand meme un bilan si `cryptography` est absent. Sans "
++             "cette option, le programme refuse de s executer (code 4) : un "
++             "bilan sans verification de signature se lit comme un resultat.",
++    )
+     analyseur.add_argument(
+         "--lang",
+         choices=("fr", "en"),
+@@ -1048,12 +1081,34 @@ def main() -> int:
+     )
+     analyseur.add_argument(
+         "--strict", action="store_true",
+-        help="sortir en code 2 si une garantie REQUISE n est pas demontree. Ne "
+-             "change AUCUN verdict : les lignes restent PASS, FAIL ou NOT TESTED "
+-             "a l identique. Pour les consommateurs automatises.",
++        help="exiger EN PLUS les lignes de durcissement (empreinte du magasin "
++             "confrontee) : sans elles, code 2. Le verdict non demontre sort "
++             "desormais en 2 sans cette option. Ne change AUCUN verdict.",
++    )
++    analyseur.add_argument(
++        "--allow-untested", action="store_true",
++        help="retablir l ancien defaut : sortir 0 quand un pilier est reste "
++             "NOT TESTED. Pour les appelants existants qui n exploitent que 0 "
++             "et 1. Deconseille : c est ce comportement qui rendait une "
++             "attestation jamais verifiee indiscernable d une attestation saine.",
+     )
+     arguments = analyseur.parse_args()
+ 
++    # Un verificateur qui ne peut pas verifier ne doit pas rendre un bilan
++    # qu on lira comme un resultat. Sans `cryptography`, Ed25519 n est pas
++    # eprouvable : on refuse, avec un code distinct, au lieu de degrader en
++    # silence et de laisser la prose dire NOT TESTED sous un code de sortie.
++    if not CRYPTO and not arguments.allow_no_crypto:
++        print(
++            "REFUS : `cryptography` est absent de cet environnement. "
++            "Ed25519 n est pas verifiable avec la bibliotheque standard, donc "
++            "ce programme ne peut eprouver ni signature ni confiance. "
++            "`pip install cryptography`, ou relancer avec --allow-no-crypto "
++            "pour obtenir un bilan partiel explicitement demande.",
++            file=sys.stderr,
++        )
++        return 4
++
+     bilan, niveau, contexte = verifier(arguments)
+     return rendre(bilan, niveau, contexte, arguments)
+ 

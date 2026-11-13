@@ -232,6 +232,27 @@ def post_body(text: str) -> str:
     return text.strip()
 
 
+CODE_FENCE = re.compile(r"```.*?```", re.S)
+INDENTED = re.compile(r"^(?: {2,}|\t)\S.*$", re.M)
+
+
+def prose_only(text: str, indented: bool = False) -> str:
+    """The part of a pasted block a human reads as sentences.
+
+    A command, a diff and a code snippet are not prose: they carry no terminal
+    punctuation, no sentence openings and no dotted filename a reader would
+    follow. Scoring them as voice measures the wrong text, which is what R14 and
+    R32 were doing to a technical message whose whole substance is the commands.
+
+    Fenced blocks always go. Indented lines go only when the caller says so, and
+    only a dm or an email says so: a command written in a message is not prose,
+    while an indented line in a comment or a post is usually a quotation or a
+    list, and stripping it was silently re-scoring 20 historical files.
+    """
+    stripped = CODE_FENCE.sub("", text)
+    return INDENTED.sub("", stripped) if indented else stripped
+
+
 # --------------------------------------------------------------------------
 # checks
 # --------------------------------------------------------------------------
@@ -316,7 +337,7 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
         rep.add("R05", "PASS", "no local paths")
 
     # R14 voice gate
-    human = VL.human_gate(pasted, profile)
+    human = VL.human_gate(prose_only(pasted, indented=dtype in ("dm", "email")), profile)
     score = VL.score_findings(findings + human["findings"])
     errs = [f for f in findings + human["findings"] if f["severity"] == "error"]
     if dtype == "internal":
@@ -358,7 +379,7 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
 
     # R32 a filename typed into pasted text autolinks to a dead address
     if dtype in ("post", "comment", "dm"):
-        region = paste_region(pasted)
+        region = prose_only(paste_region(pasted), indented=dtype in ("dm", "email"))
         dotted = re.findall(
             r"(?<![\w/.:-])[\w][\w-]*\.(?:zip|md|json|txt|pdf|docx|xlsx|csv|png|jpg|py|sh|ps1)(?![\w])",
             region,
