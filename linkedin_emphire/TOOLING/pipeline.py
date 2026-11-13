@@ -468,6 +468,100 @@ def cmd_revenue(_args) -> int:
 
 
 # --------------------------------------------------------------------------
+# upwork: the volume channel, measured rather than intended
+# --------------------------------------------------------------------------
+
+UPWORK_DIR = os.path.join(EMPIRE, "UPWORK")
+CONNECTS_FILE = os.path.join(UPWORK_DIR, "connects.txt")
+PROPOSAL_QUOTA = 8  # two a day, Monday to Thursday
+
+
+def _field(text: str, meta: dict, key: str) -> str:
+    """A front-matter value, or the older `Key: value` line inside the file.
+
+    The proposals folder predates front matter, so the first entries record
+    connects and dates as a plain line. Read both rather than rewriting history.
+    """
+    value = str(meta.get(key, "")).strip()
+    if value:
+        return value
+    m = re.search(r"^%s:\s*(.+)$" % re.escape(key), text, re.M | re.I)
+    return m.group(1).strip() if m else ""
+
+
+def _proposal_rows() -> list[dict]:
+    folder = os.path.join(UPWORK_DIR, "PROPOSALS")
+    rows = []
+    if not os.path.isdir(folder):
+        return rows
+    for name in sorted(os.listdir(folder)):
+        if not name.endswith(".md") or name.upper() == "README.MD":
+            continue
+        text = read(os.path.join(folder, name))
+        meta, _ = G.parse_front_matter(text)
+        raw_date = _field(text, meta, "date")
+        m = re.search(r"\d{4}-\d{2}-\d{2}", raw_date)
+        connects = _field(text, meta, "connects")
+        m2 = re.search(r"\d+", connects)
+        quoted = _field(text, meta, "quoted")
+        m3 = re.search(r"[\d,]+", quoted)
+        rows.append({
+            "file": name,
+            "date": m.group(0) if m else "",
+            "connects": int(m2.group(0)) if m2 else 0,
+            "quoted": float(m3.group(0).replace(",", "")) if m3 else 0.0,
+            "status": (_field(text, meta, "status") or "unknown").split(".")[0].strip().lower(),
+        })
+    return rows
+
+
+def cmd_upwork(_args) -> int:
+    rows = _proposal_rows()
+    today = dt.date.today()
+    week_ago = today - dt.timedelta(days=7)
+
+    def in_week(r):
+        try:
+            return dt.date.fromisoformat(r["date"]) >= week_ago
+        except ValueError:
+            return False
+
+    sent = [r for r in rows if r["status"].startswith(("sent", "reply", "interview", "won", "hired"))]
+    recent = [r for r in rows if in_week(r) and r["status"] != "draft"]
+    spent = int(round(sum(r["connects"] for r in sent)))
+    quoted = sum(r["quoted"] for r in rows if r["quoted"])
+
+    balance = None
+    if os.path.exists(CONNECTS_FILE):
+        m = re.search(r"\d+", read(CONNECTS_FILE))
+        balance = int(m.group(0)) if m else None
+
+    print()
+    if balance is None:
+        print("  connects: unknown. Put the number Upwork shows in UPWORK/connects.txt and it stops being a guess.")
+    else:
+        print(f"  connects: {balance:,} on hand")
+    print(f"  proposals sent: {len(sent)} of {len(rows)} files   quoted total {quoted:,.0f}")
+    print(f"  last 7 days: {len(recent)} of {PROPOSAL_QUOTA} quota ({PROPOSAL_QUOTA / 7:.1f} a day)")
+    print(f"  connects spent on sent proposals: {spent:,}")
+    if balance is not None:
+        typical = 12
+        print(f"  at about {typical} connects a proposal, {balance:,} connects buys {balance // typical} proposals, "
+              f"under the {PROPOSAL_QUOTA} a week the plan asks for")
+    won = [r for r in rows if r["status"].startswith(("won", "hired"))]
+    print(f"  won through this folder: {len(won)}")
+    if not sent:
+        print()
+        print("  Nothing has been sent. A proposal that stays a draft costs nothing and earns nothing;")
+        print("  the first send is the only event in this file that can turn into money.")
+    print()
+    print("  An agreed job becomes a row in STATE/REVENUE-LOG.md. ./emphire revenue is the only place")
+    print("  that counts, so a win that is not a row is not money yet.")
+    print()
+    return 0
+
+
+# --------------------------------------------------------------------------
 # audit
 # --------------------------------------------------------------------------
 
@@ -889,6 +983,8 @@ def main(argv=None) -> int:
 
     sub.add_parser("growth").set_defaults(fn=cmd_growth)
     sub.add_parser("revenue").set_defaults(fn=cmd_revenue)
+
+    sub.add_parser("upwork").set_defaults(fn=cmd_upwork)
 
     p = sub.add_parser("visual")
     p.add_argument("post", help="path to a post.md")

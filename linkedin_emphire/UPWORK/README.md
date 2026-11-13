@@ -43,6 +43,9 @@ other without duplicating effort — one thesis, two acquisition channels.
 | `gallery/` | All portfolio and profile cover images |
 | `PROPOSALS/` | One dated file per proposal sent, mirrors the `OUTREACH/` convention |
 | `CLIENT_SUDHIR/` | First Upwork client engagement materials: audit, session script, glossary, invoice/payment tracking |
+| `2026-11-13_channel-loop.md` | The two-channel operating system: what the 13 November stats say, the connect arithmetic, the four job archetypes, and the week that fits inside the LinkedIn slots |
+| `templates/2026-11-13_four-archetype-proposals.md` | Four paste-ready proposals, one per archetype, each under 120 words, with the tier and the attachment named |
+| `connects.txt` | The connect balance as Upwork shows it. `./emphire upwork` reads it, so the budget is a number rather than a memory |
 
 ## Hard rules (do not violate — see `PLANS/2026-10-10_upwork-rebrand-empire.md` for full detail)
 1. **Never open a second account.** Pivot this one. Duplicate accounts = permanent ban, and the Shopify/TikTok history is proof of platform trust, not a liability to hide.
