@@ -96,6 +96,31 @@ itself can stay in the feed; the slot should belong to a page that takes money.
 **Move My Mission to the end, or drop it.** It points at the About section, which is already visible on the same page one
 scroll below. A Featured card that duplicates the page it sits on is the cheapest kind of wasted slot.
 
+### 1d. Paste copy for the three link cards
+
+The Add a link dialog gives you a URL, a Title, a Description and a Thumbnail. The Description is the only field most
+people leave empty, and it is the only field that can carry a price before the click.
+
+**Card 1. Title:** AI red team test, priced by depth
+Description (179 characters):
+```
+A 15-attack injection scan from $150 in 3 days, a four-layer test at $600 in 7, or the test plus scoped fixes at $1,500. You get the attack, the evidence and the fix, not a score.
+```
+
+**Card 2. Title:** Review my AI design before I build it
+Description (189 characters):
+```
+45 minutes on your AI feature, API or agent: where it can be attacked, what it costs to close, what to do first. You leave with a prioritised list, an effort estimate and a written summary.
+```
+
+**Card 3. Title:** Build it with the testing inside
+Description (169 characters):
+```
+A chatbot or agent built in Go, Node or Python at $300, $900 or $2,500, with the regression suite written during the build so the second version does not undo the first.
+```
+
+Keep the thumbnail Upwork offers. The one on card 1 reads "15-Point Scan. Know Before You Spend" over a three-day promise, which is the right face for the section: it looks like a product and it names a number.
+
 Mechanics, because the menu offers four ways to get this wrong:
 
 1. Click **+**, then **Add a link**. Not Add a post, which pulls an existing post and cannot point anywhere new. Not Add a
