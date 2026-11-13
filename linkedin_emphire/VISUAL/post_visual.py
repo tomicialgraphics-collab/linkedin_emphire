@@ -209,12 +209,28 @@ def body_page(lead: str, rest: str, page: int, total: int) -> Image.Image:
     cursor = top + len(lines) * line_h + 46
 
     if rest:
-        body_face = font(FONT_REGULAR, 40)
-        for line in wrap(rest, body_face, W - MARGIN * 2):
-            if cursor > H - 220:
+        # A paragraph that does not fit used to be CUT at the last whole line, which
+        # is how a card ended mid-clause with no sign that text was missing. Shrink
+        # to fit instead, and if even the smallest size overflows, say so loudly:
+        # a silently truncated card is worse than a render that refuses.
+        fitted = None
+        for size in (40, 38, 36, 34, 32, 30, 28):
+            body_face = font(FONT_REGULAR, size)
+            step = int(size * 1.4)
+            lines = wrap(rest, body_face, W - MARGIN * 2)
+            if cursor + len(lines) * step <= H - 200:
+                fitted = (body_face, lines, step)
                 break
+        if fitted is None:
+            raise SystemExit(
+                "body text does not fit page %d even at 28px: shorten the paragraph "
+                "or raise --pages, rather than shipping a card that cuts a sentence"
+                % page
+            )
+        body_face, lines, step = fitted
+        for line in lines:
             draw.text((MARGIN, cursor), line, font=body_face, fill=INK)
-            cursor += 56
+            cursor += step
 
     footer(draw, page, total)
     return canvas

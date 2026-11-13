@@ -7,7 +7,7 @@ status: ready
 approved: no
 template: T1
 headline: The verifier printed NOT TESTED and exited 0.
-subheadline: Three states, two codes, and the one that could not be demonstrated inherited success.
+subheadline: Three states, two codes, and the one that could not be demonstrated inherited the same exit as success.
 headline_alt: A check that could not run reported that everything was fine.
 subheadline_alt: The tool's own test suite required that behaviour, which makes it a contract and not a bug.
 headline_alt2: Two codes for three states is how a verifier lies by accident.
@@ -17,8 +17,8 @@ box_alt: THE INTERFACE
 hashtags: [#AISecurity, #AIEvaluation, #AIRedTeam, #AIGovernance]
 slot: 09:00 WAT, Saturday 14 November 2026
 first_comment: FIRST_COMMENT.md, playbook link only
-visual_link: https://drive.google.com/file/d/1wJ2JbM2Juak5BxdlQfviVuza24ibxjaE/view
-carousel_link: https://drive.google.com/file/d/1V6U_JPvfX34F7xZu3iyZvVgF1eri85ml/view
+visual_link: https://drive.google.com/file/d/1qRxHwUOxG8UCPZGDau1RlIX2faSWQuYs/view
+carousel_link: https://drive.google.com/file/d/1XjjzuwsA2wNXxtjiH-exGlxt3xi28nIo/view
 ---
 
 # Post 34: the exit code that reports success for a check that never ran
@@ -59,9 +59,9 @@ author or the repository, and none of the counts come from a private document.
 
 **HEADLINE:** The verifier printed NOT TESTED and exited 0.
 
-**SUBHEADLINE:** Three states, two codes, and the one that could not be demonstrated inherited success.
+**SUBHEADLINE:** Three states, two codes, and the one that could not be demonstrated inherited the same exit as success.
 
-47 characters and 78 characters, 125 together.
+45 characters and 105 characters, 150 together.
 
 ## Card copy
 
