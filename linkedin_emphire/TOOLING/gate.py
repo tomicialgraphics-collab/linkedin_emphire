@@ -636,6 +636,13 @@ def check_cold_link(rep: Report, meta: dict, body: str, dtype: str) -> None:
     if dtype != "comment":
         rep.add("R17", "SKIP", "not a comment")
         return
+    # R17 targets a link inside a cold comment, which is where an unsolicited URL
+    # reads as spam. The first comment under his own post is not that: the playbook
+    # link there is a standing requirement. Exempt it by name rather than by
+    # "warm: yes", which would claim a conversation that is not happening.
+    if os.path.basename(getattr(rep, "path", "")).upper().startswith("FIRST_COMMENT"):
+        rep.add("R17", "SKIP", "first comment on his own post, where the playbook link is required")
+        return
     warm = str(meta.get("warm", "")).lower() in ("yes", "true", "1")
     links = re.findall(r"https?://\S+|www\.\S+", body)
     if links and not warm:

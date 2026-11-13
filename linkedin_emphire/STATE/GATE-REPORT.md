@@ -1,6 +1,6 @@
 # Gate report
 
-Generated 2026-11-13 18:36 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-13 19:52 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 
@@ -42,6 +42,7 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `2026-11-12_nvidia-readable-record` | yes | 0 | 0 | pass |
 | `2026-11-12_two-jobs-one-person` | yes | 0 | 0 | pass |
 | `2026-11-12_whose-clock` | yes | 0 | 0 | pass |
+| `2026-11-13_exit-zero-never-checked` | yes | 0 | 0 | pass |
 | `2026-11-13_open-benchmark-open-defects` | legacy | 8 | 1 | legacy |
 | `2026-11-13_seven-corrections` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-03_allie-miller_agent-handoff.md` | legacy | 1 | 1 | legacy |
@@ -191,8 +192,10 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/2026-11-13_dm_sebastien-favre-second-reader.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-13_dm_sebastien-favre-single-message-and-folder.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-13_reply_dan-sorensen-breaking-is-the-cheap-half.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_reply_kira-mamula-comparisons-fail-on-timing.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-13_reply_sam-illingworth-how-to-improve.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-13_reply_sam-illingworth-one-procurement-clause.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-13_reply_stephen-zhou-the-question-has-two-owners.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/FOLLOW-LIST-RULES.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/audience_follow_list_2026-10-24.md` | legacy | 1 | 1 | legacy |
 | `ENGAGEMENT/comment_round_2026-10-31.md` | legacy | 4 | 1 | legacy |
