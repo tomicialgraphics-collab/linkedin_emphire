@@ -363,7 +363,7 @@ def _follower_rows():
     if not os.path.exists(path):
         return rows
     for line in open(path).read().splitlines():
-        m = re.match(r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([\d,]+)\s*\|", line)
+        m = re.match(r"\|\s*(\d{4}-\d{2}-\d{2})[^|]*\|\s*([\d,]+)\s*\|", line)
         if m:
             rows.append((m.group(1), int(m.group(2).replace(",", ""))))
     return sorted(rows)

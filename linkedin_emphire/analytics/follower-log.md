@@ -16,6 +16,7 @@ on 15 November and 29 November are arithmetic against this table.
 | Date | Followers | Net | Posts published | Comments sent | Best impression count | What brought them |
 |---|---|---|---|---|---|---|
 | 2026-11-13 | 1,148 | +23 | 3 live in 7 days (Nvidia 7,241; case study 47 at the time of reading; freshness clock 185) | 105 in 7 days | 7,241, the Nvidia post | unknown; out-of-network at 87 percent, so the audience is being handed the posts rather than following to them |
+| 2026-11-13, evening | 1,193 | +45 | 3 live in 7 days, unchanged | 105 in 7 days | 7,241, the Nvidia post | unknown. Following 729, so the account is not a follow-back page; the ratio moved from 1.52 to 1.64 in one day, which is the fastest single day recorded after 12 November |
 | 2026-11-12 | 1,125 | +118 | 1 confirmed live (paired-run post, 42 impressions at T+49m), 2 drafted today | 0 confirmed | 42 at T+49m | unknown; sixteen days of comments and posts, attribution still unresolved (L18) |
 | 2026-11-06 | 1,007 | baseline | 1 (absence of a record) | 6 drafted, 0 confirmed | unknown | **unknown, and this is the problem** |
 
@@ -42,6 +43,11 @@ on 15 November and 29 November are arithmetic against this table.
 ## Notes
 
 Append only, dated, one line each. This is where "unknown" gets resolved.
+
+- 2026-11-13, evening: 1,193 followers against 729 following. The 15 November checkpoint in the follower plan asks
+  for 1,600, which needs 204 a day for two days, so that checkpoint is lost and the plan's own stop rule applies to
+  the 5,000 target. The target was written as a proxy for reach; the reach that pays is catalog views and profile
+  views, and those are the two numbers worth spending a decision on.
 
 - 2026-11-06: 522 net new in six days, from 485 on 31 October to 1,007. No record in the repo of which
   post or comment produced it. Resolve before the next post goes out.

@@ -41,7 +41,7 @@ So the article you are imagining has to live on LinkedIn, where the writing alre
 Three reasons, in order of cost:
 
 1. **It costs reach.** LinkedIn suppresses posts that send people off platform. A post carrying an external link reaches a
-   fraction of the same post without one, and you are building from 1,148 followers, so the fraction matters.
+   fraction of the same post without one, and you are building from 1,193 followers, so the fraction matters.
 2. **It breaks your own rule.** No link, no pitch, no hashtag beyond the four, in the body of a post. The place for a link
    is the first comment, and that slot is held by the playbook until it has a thousand stars.
 3. **The arithmetic is not there.** 572 profile views and 9,192 impressions in the last period, 5 and 6 catalog views in
