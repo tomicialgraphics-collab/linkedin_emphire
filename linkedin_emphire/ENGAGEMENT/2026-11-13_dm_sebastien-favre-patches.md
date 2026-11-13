@@ -62,11 +62,12 @@ Patch two, refuse rather than degrade:
 
 Measured: no cryptography, plain call 0 to 4; --allow-no-crypto 0 to 2.
 
-That needed one line outside the verifier. The conformance runner derives the verdict as "REJETE if code == 1 else ACCEPTE", so a 4
-would have been logged as ACCEPTE. It now maps 1 to REJETE, 0 to ACCEPTE, and anything else to NON VERIFIE. Without cryptography the
-corpus then reads PASS=33, AMBIGUOUS=8, ERROR=9 instead of PASS=35, FAIL=5. ERROR is your existing state
-for a technical condition that prevents a conclusion, which is what a refusal is, and it's the better of the two
-readings. It still can't distinguish a refusal from a crash, and I didn't invent a fourth state for you.
+That needed one line outside the verifier. The conformance runner derives the verdict as "REJETE if code == 1 else
+ACCEPTE", so a 4 would have been logged as ACCEPTE. It now maps 1 to REJETE, 0 to ACCEPTE, and anything else to NON
+VERIFIE. Without cryptography the corpus then reads PASS=33, AMBIGUOUS=8, ERROR=9 instead of PASS=35, FAIL=5. ERROR is
+your existing state for a technical condition that prevents a conclusion, which is what a refusal is, and it's the
+better of the two readings. It still can't distinguish a refusal from a crash, and I didn't invent a fourth state for
+you.
 
 Your suite is 24/24 with the patch, after I rewrote cases 4 and 15 to expect 2 and 4. That's 95 lines across three
 files, and it sits at https://drive.google.com/file/d/1t5GYgpd-IALXAa7Ggf7xAeJzMmzyqWkv/view rather than in a message,
