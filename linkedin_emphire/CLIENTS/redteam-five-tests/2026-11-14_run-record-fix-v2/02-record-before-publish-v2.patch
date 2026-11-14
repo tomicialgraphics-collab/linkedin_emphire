@@ -1,0 +1,362 @@
+diff --git a/package/build_package.py b/package/build_package.py
+index 1904a61..9ad3656 100644
+--- a/package/build_package.py
++++ b/package/build_package.py
+@@ -25,12 +25,14 @@ next to it, and that part is not automatable.
+ """
+ 
+ import argparse
++import hashlib
+ import json
+ import os
+ import re
+ import shutil
+ import subprocess
+ import sys
++import time
+ import tempfile
+ from datetime import datetime, timezone
+ from pathlib import Path
+@@ -173,6 +175,21 @@ def get_harness(path, workdir):
+     return target
+ 
+ 
++def snapshot(path):
++    """Size, mtime and digest of a file, or None when it is absent.
++
++    Three fields rather than one, because a file can be rewritten to identical bytes and a
++    timestamp alone cannot tell a rewrite from a leftover.
++    """
++    import hashlib
++
++    path = Path(path)
++    if not path.exists():
++        return None
++    raw = path.read_bytes()
++    return (len(raw), hashlib.sha256(raw).hexdigest(), path.stat().st_mtime)
++
++
+ def run_harness(harness, model, base_url, api_key, prompt_file=None):
+     """Run the harness and return (results dict, generated results.md text)."""
+     env = dict(os.environ)
+@@ -189,6 +206,13 @@ def run_harness(harness, model, base_url, api_key, prompt_file=None):
+     results_json = harness / "results" / "results.json"
+     results_md = harness / "results" / "results.md"
+ 
++    # What the results directory looked like before this run. Finding 3 from the 14 November
++    # review: existence alone accepted a stale file, so a harness that died early published an
++    # earlier run's evidence under this run's name. The snapshot is taken before the subprocess
++    # starts, and the comparison happens only when the exit code is non-zero.
++    started = time.time()
++    before = snapshot(results_json)
++
+     # The harness writes results.json, then crashes while writing results.md, because write_outputs()
+     # indexes the results dict by display name ("Test 1 - prompt injection") instead of by key
+     # ("test1"). Known defect at the pinned commit. The run itself finishes before the crash, so a
+@@ -200,6 +224,19 @@ def run_harness(harness, model, base_url, api_key, prompt_file=None):
+                 "the run failed and wrote no results/results.json\n"
+                 + (proc.stdout + proc.stderr)[-2500:]
+             )
++        if before is not None and snapshot(results_json) == before:
++            raise SystemExit(
++                "refused: the harness exited %d and results/results.json is byte for byte the "
++                "file that was on disk before the run started, so this run did not write it. "
++                "Archiving it would publish an earlier run's evidence under this run's name."
++                % proc.returncode
++            )
++        if results_json.stat().st_mtime < started - 2:
++            raise SystemExit(
++                "refused: the harness exited %d and results/results.json predates the start of "
++                "this run by more than a second, so it cannot be this run's record."
++                % proc.returncode
++            )
+         note = (
+             "The harness exited with an error after writing `results.json` and before writing "
+             "`results.md`. Known defect at the pinned commit: `write_outputs()` reads the results "
+@@ -210,73 +247,214 @@ def run_harness(harness, model, base_url, api_key, prompt_file=None):
+ 
+     data = json.loads(results_json.read_text(encoding="utf-8"))
+     md = results_md.read_text(encoding="utf-8") if results_md.exists() else ""
+-    return data, md, note, (proc.stdout or "") + (proc.stderr or "")
++    return data, md, note, (proc.stdout or "") + (proc.stderr or ""), proc.returncode
++
++
++def encoding_of(raw):
++    """What the bytes actually are, not what the extension suggests.
++
++    Line endings are part of the answer. An object that already holds CRLF cannot be changed by
++    a checkout setting, and a reader comparing digests needs to know which of the two it has.
++    """
++    if raw.startswith(b"\xff\xfe"):
++        return "utf-16le+bom"
++    if raw.startswith(b"\xfe\xff"):
++        return "utf-16be+bom"
++    if raw.startswith(b"\xef\xbb\xbf"):
++        return "utf-8+bom+crlf" if b"\r\n" in raw else "utf-8+bom"
++    try:
++        raw.decode("utf-8")
++        return "utf-8+crlf" if b"\r\n" in raw else "utf-8"
++    except UnicodeDecodeError:
++        return "binary"
++
++
++def served_digest(raw, encoding):
++    """What a browser will hash, for the files a hosting layer re-encodes on the way out.
++
++    GitHub serves text as UTF-8 with a BOM. A file stored as UTF-16LE therefore has two digests
++    that are both correct: the one of the object and the one of the response. Publishing only the
++    first is what made an independent reviewer report a mismatch on 4 November, and publishing
++    only the second would be worse.
++    """
++    import hashlib
++
++    if encoding == "utf-16le+bom":
++        return hashlib.sha256(raw.decode("utf-16").encode("utf-8-sig")).hexdigest()
++    if encoding == "utf-16be+bom":
++        return hashlib.sha256(raw.decode("utf-16").encode("utf-8-sig")).hexdigest()
++    return None
++
+ 
++def fsync_dir(path):
++    """Make a directory entry durable. POSIX only, silently skipped elsewhere."""
++    try:
++        fd = os.open(str(path), os.O_RDONLY)
++    except OSError:
++        return
++    try:
++        os.fsync(fd)
++    except OSError:
++        pass
++    finally:
++        os.close(fd)
++
++
++def fsync_file(path):
++    with open(path, "rb") as fh:
++        os.fsync(fh.fileno())
+ 
+-def archive_run(harness, package, console):
+-    """Keep the raw record beside the package, with hashes.
+ 
+-    Added 2026-11-02 after an independent reviewer asked for the original results.json from a run
+-    whose package had already been built. The package reproduced every flagged response but the raw
+-    JSON was not kept, which is a retention defect in the process rather than in the run. From here
+-    on the package travels with its record: results.json, the console log, and a hash manifest
+-    covering both plus the harness file that produced them.
++def archive_run(harness, package, console, package_digest=None, run_meta=None):
++    """Stage the run record next to the package. Nothing is published here.
++
++    Two findings from the 14 November review are answered here rather than in prose.
++
++    Finding 2, ordering only is not atomicity. The earlier version wrote the record into its
++    final directory and then wrote the package, so a crash between the two left a record with no
++    package, and a crash inside the record write left a half-written record that looked complete.
++    This version builds the whole record in a staging directory, fsyncs every file and the
++    directory, and only then hands it to publish(), which renames. A rename is atomic; a sequence
++    of two renames is not, so the guarantee is stated in the direction it actually holds: the
++    record is published first, and the package never exists without one.
++
++    Finding 3, a stale file. The caller refuses a results file that predates the run, so what
++    arrives here is the file this run wrote.
+     """
+     import hashlib
++    import json
+ 
+-    out = Path(package).resolve().parent / "run_record"
+-    out.mkdir(exist_ok=True)
++    parent = Path(package).resolve().parent
++    out = parent / "run_record.staging"
++    if out.exists():
++        shutil.rmtree(out)
++    out.mkdir(parents=True)
+ 
+     results_json = Path(harness) / "results" / "results.json"
+     if not results_json.exists():
+-        raise SystemExit("no results/results.json to archive at %s" % results_json)
++        raise SystemExit("refused: no results/results.json to archive at %s" % results_json)
++    try:
++        with open(results_json, encoding="utf-8") as fh:
++            payload = json.load(fh)
++    except (ValueError, OSError) as exc:
++        raise SystemExit("refused: results.json did not parse (%s), so it cannot be archived "
++                         "as a run record" % exc)
++    if not isinstance(payload, dict) or not payload.get("meta"):
++        raise SystemExit("refused: results.json has no meta block, so it is not a run record")
+     shutil.copy2(results_json, out / "results.json")
+ 
+     if console.strip():
+         (out / "console.log").write_text(console, encoding="utf-8")
+ 
+-    def digest(path):
+-        h = hashlib.sha256()
++    def read_bytes(path):
+         with open(path, "rb") as fh:
+-            for chunk in iter(lambda: fh.read(65536), b""):
+-                h.update(chunk)
+-        return h.hexdigest()
+-
+-    lines = ["# SHA-256 manifest, written by build_package.py", ""]
+-    for name in ("results.json", "console.log"):
+-        target = out / name
+-        if target.exists():
+-            lines.append("%s  %s" % (digest(target), name))
++            return fh.read()
++
++    def digest(raw):
++        return hashlib.sha256(raw).hexdigest()
++
++    names = [n for n in ("results.json", "console.log") if (out / n).exists()]
+     redteam = Path(harness) / "redteam.py"
+-    if redteam.exists():
+-        lines.append("%s  redteam.py" % digest(redteam))
++    harness_names = ["redteam.py"] if redteam.exists() else []
++
+     head = sh(["git", "rev-parse", "HEAD"], cwd=str(harness)).strip()
+-    blob = ""
+-    try:
+-        blob = sh(["git", "rev-parse", "HEAD:redteam.py"], cwd=str(harness)).strip()
+-    except SystemExit:
+-        pass
+-    lines += ["", "commit  %s" % head]
+-    if blob:
+-        lines.append("blob    %s  redteam.py" % blob)
++    blobs, encodings, sizes, digests, served = {}, {}, {}, {}, {}
++    for name in names + harness_names:
++        path = redteam if name == "redteam.py" else out / name
++        raw = read_bytes(path)
++        encodings[name] = encoding_of(raw)
++        sizes[name] = len(raw)
++        digests[name] = digest(raw)
++        served[name] = served_digest(raw, encodings[name])
++        try:
++            blobs[name] = sh(["git", "rev-parse", "HEAD:%s" % name], cwd=str(harness)).strip()
++        except SystemExit:
++            blobs[name] = ""
++
++    meta = dict(run_meta or {})
++    run = {
++        "run_commit": head,
++        "started_utc": meta.get("started_utc"),
++        "finished_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
++        "harness_exit": meta.get("harness_exit"),
++        "package_sha256": package_digest,
++        "package_bytes": meta.get("package_bytes"),
++        "publication": "record published before package; the pair is bound by package_sha256",
++        "files": {n: {"bytes": sizes[n], "encoding": encodings[n], "sha256": digests[n],
++                      "blob": blobs.get(n, "")} for n in names + harness_names},
++    }
++    (out / "RUN.json").write_text(json.dumps(run, indent=2, sort_keys=True) + "\n",
++                                  encoding="utf-8")
++
++    lines = ["# SHA-256 manifest, run record, written by build_package.py", ""]
++    for name in names:
++        lines.append("%s  %s" % (digests[name], name))
++    run_digest = digest(read_bytes(out / "RUN.json"))
++    lines.append("%s  RUN.json" % run_digest)
++    # Everything below the digests is a comment, so `sha256sum -c SHA256SUMS.txt` runs clean and
++    # a reader who wants the metadata does not have to teach a tool to skip it.
++    lines += ["", "# commit  %s" % head, "", "# name  bytes  encoding  blob"]
++    for name in names:
++        lines.append("# %-14s %6d  %-12s %s" % (name, sizes[name], encodings[name],
++                                                blobs[name] or "not in a git checkout"))
++    for name in harness_names:
++        # Not a checksum row: `sha256sum -c` in this directory would look for the harness here
++        # and fail. The harness lives in its own checkout, so it is named by blob id instead.
++        lines.append("# harness %-10s %6d  %-12s %s" % (name, sizes[name], encodings[name],
++                                                        blobs[name] or "not in a git checkout"))
++    served_names = [n for n in names if served[n]]
++    if served_names:
++        lines += ["", "# What a browser hashes. The hosting layer serves text as UTF-8 with a BOM,"]
++        lines.append("# so a file stored in another encoding has a second correct digest.")
++        for name in served_names:
++            lines.append("# served %-14s %s" % (name, served[name]))
+     lines += [
+         "",
+-        "# Digests above are of the files as they exist in this working tree. A checkout on another",
+-        "# platform may convert line endings, which changes the SHA-256 without changing the content.",
+-        "# The blob id is the platform independent identifier for the same file, added 2026-11-03",
+-        "# after a Windows checkout reported a different SHA-256 for the same commit.",
++        "# A digest belongs to the bytes of one stored object, not to a filename. Two mechanisms",
++        "# change bytes on the way to a reader and both are recorded above rather than described:",
++        "#   line endings   a checkout that converts LF to CRLF (set core.autocrlf=false to stop it)",
++        "#   encoding       a file stored as UTF-16 and served as UTF-8, which no checkout change fixes",
++        "# The blob id is the identifier that survives both, because it names the object, not a copy",
++        "# of it. Where a digest and a blob id disagree about a file, the blob id is right.",
+         "",
+     ]
++    (out / "SHA256SUMS.txt").write_text("\n".join(lines), encoding="utf-8")
++    (out / "SHA256SUMS.txt").write_text("\n".join(lines), encoding="utf-8")
+ 
+-    manifest = out / "SHA256SUMS.txt"
+-    manifest.write_text("\n".join(lines), encoding="utf-8")
+-    print("[record] %s" % manifest)
+-    for line in lines:
+-        if line and not line.startswith("#"):
+-            print("  " + line)
++    for name in sorted(os.listdir(out)):
++        fsync_file(out / name)
++    fsync_dir(out)
+     return out
+ 
+ 
++def publish(staging, package, text):
++    """Publish the record, then the package. The record is never missing when the package exists.
++
++    Called after archive_run has built and fsynced the staging directory. The package is staged
++    beside its final name and fsynced before either rename happens, so the second rename cannot
++    fail on a full disk after the first has succeeded. A crash between the renames leaves a record
++    with no package, which is the safe direction and is detectable, because RUN.json names the
++    digest of the package that was meant to sit beside it.
++    """
++    package = Path(package).resolve()
++    staging = Path(staging).resolve()
++    final_record = package.parent / "run_record"
++
++    pkg_stage = package.with_name(package.name + ".staging")
++    pkg_stage.write_text(text, encoding="utf-8")
++    fsync_file(pkg_stage)
++
++    if final_record.exists():
++        previous = package.parent / ("run_record.previous-%s"
++                                     % datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S"))
++        os.replace(final_record, previous)
++
++    os.replace(staging, final_record)
++    fsync_dir(package.parent)
++    os.replace(pkg_stage, package)
++    fsync_dir(package.parent)
++    return final_record, package
++
+ 
+ def empty_answer_report(data):
+     """Count responses that came back with no words. An empty answer is not a refusal."""
+@@ -431,7 +609,9 @@ def main():
+     workdir = tempfile.mkdtemp(prefix="fivetests-")
+     try:
+         harness = get_harness(args.harness, workdir)
+-        data, md, note, console = run_harness(harness, args.model, args.base_url, args.api_key, args.prompt_file)
++        run_started_utc = datetime.now(timezone.utc).isoformat(timespec="seconds")
++        data, md, note, console, exit_code = run_harness(
++            harness, args.model, args.base_url, args.api_key, args.prompt_file)
+ 
+         total, empties = empty_answer_report(data)
+         if total and len(empties) >= total:
+@@ -456,9 +636,16 @@ def main():
+         text = replace_block(
+             text, "RESULTS", results_block(data, md, args.model, args.base_url, timestamp, note)
+         )
+-        package.write_text(text, encoding="utf-8")
++        # The record is staged and fsynced first, then the pair is published record first. If
++        # archiving raises, the package is never written.
++        staged = archive_run(harness, package, console,
++                             package_digest=hashlib.sha256(text.encode("utf-8")).hexdigest(),
++                             package_bytes=len(text.encode("utf-8")),
++                             run_meta={"started_utc": run_started_utc,
++                                       "harness_exit": exit_code})
++        record, package = publish(staged, package, text)
+         print("[done] filled %s" % package)
+-        archive_run(harness, package, console)
++        print("[record] %s" % record)
+         print("[next] send the package and the run_record directory together, never the package alone.")
+         print("[next] read section 4 and put a human verdict beside every flagged response.")
+     finally:

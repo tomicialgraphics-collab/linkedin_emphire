@@ -1,0 +1,281 @@
+# The prefix collision, reproduced and then fixed
+
+
+The reviewer's first finding: the verifier compared 16 hexadecimal characters of each SHA-256, so
+two digests that agree in those 16 characters are accepted as equal. The whole point of a verifier
+is that it cannot do that.
+
+The test is a manifest whose console.log row is the true digest for its first 16 characters and
+forty eight characters of `f` after it. Everything else in the manifest is untouched.
+
+## A. Published verifier, true manifest
+
+$ python3 03-verify_run_record.py --repo <v1 checkout> --manifest manifest.txt
+
+manifest  manifest.txt
+repo      <v1 checkout>
+  pass  manifest has checksum rows                     7 rows
+  pass  every row carries a blob id and encoding       7 of 7
+  pass  run commit recorded                            d95a57e3d5bf
+  pass  record commit recorded                         d60579ac66b4
+  pass  record commit is present                       d60579ac66b4
+  pass  results.json digest of the stored object       d9a9b0669262f9c7
+  pass  results.json byte count                        6574
+  pass  results.json encoding                          utf-8+crlf
+  pass  results.json blob id at the record commit      33aeedabde0ec9b674c21b26
+  pass  results.json working tree matches the object   byte for byte
+  pass  console.log digest of the stored object        4889096bc551a891
+  pass  console.log byte count                         5274
+  pass  console.log encoding                           utf-16le+bom
+  pass  console.log blob id at the record commit       e238092d04e26c29557677df
+  pass  console.log working tree matches the object    byte for byte
+  pass  README.md digest of the stored object          c8c0df12c5131177
+  pass  README.md byte count                           705
+  pass  README.md encoding                             utf-8+bom+crlf
+  pass  README.md blob id at the record commit         a7cbe989172e1767ddab289d
+  pass  README.md working tree matches the object      byte for byte
+  pass  check_results.py digest of the stored object   2788ee0444718eab
+  pass  check_results.py byte count                    481
+  pass  check_results.py encoding                      utf-8+bom+crlf
+  pass  check_results.py blob id at the record commit  3b72d82936520e4e406fe1f5
+  pass  check_results.py working tree matches the object byte for byte
+  pass  provenance.txt digest of the stored object     6ccc69e83e53337f
+  pass  provenance.txt byte count                      124
+  pass  provenance.txt encoding                        utf-8+bom+crlf
+  pass  provenance.txt blob id at the record commit    d004cbba1a959de214d2e236
+  pass  provenance.txt working tree matches the object byte for byte
+  pass  provenance-after.txt digest of the stored object e3b0c44298fc1c14
+  pass  provenance-after.txt byte count                0
+  pass  provenance-after.txt encoding                  utf-8
+  pass  provenance-after.txt blob id at the record commit e69de29bb2d1d6434b8b29ae
+  pass  provenance-after.txt working tree matches the object byte for byte
+  pass  .gitattributes digest of the stored object     8b9c3028d6467ff3
+  pass  .gitattributes byte count                      9
+  pass  .gitattributes encoding                        utf-8+crlf
+  pass  .gitattributes blob id at the record commit    625449502ba4b4d7c229c6cc
+  pass  .gitattributes working tree matches the object byte for byte
+  pass  console.log served digest                      9828c763bf9822a4
+  pass  console.log served byte count                  2639
+  pass  harness digest at the run commit               6048b70aadfe2750
+  pass  harness byte count                             19173
+  pass  harness blob id matches the run commit         d39a4bedd4e00ba1c67be67b
+  pass  harness digest through crlf                    540cf2abfa264314
+  pass  builder archives before it publishes           archive line 530, write line 531
+  pass  the archive result is held, not discarded      record = archive_run(...)
+  pass  archive refuses when results are missing       SystemExit
+  pass  package untouched by the refusal               placeholder
+
+
+50 passed, 0 failed
+
+## B. Published verifier, forged manifest
+
+$ python3 03-verify_run_record.py --repo <v1 checkout> --manifest manifest.forged.txt
+
+manifest  manifest.forged.txt
+repo      <v1 checkout>
+  pass  manifest has checksum rows                     7 rows
+  pass  every row carries a blob id and encoding       7 of 7
+  pass  run commit recorded                            d95a57e3d5bf
+  pass  record commit recorded                         d60579ac66b4
+  pass  record commit is present                       d60579ac66b4
+  pass  results.json digest of the stored object       d9a9b0669262f9c7
+  pass  results.json byte count                        6574
+  pass  results.json encoding                          utf-8+crlf
+  pass  results.json blob id at the record commit      33aeedabde0ec9b674c21b26
+  pass  results.json working tree matches the object   byte for byte
+  pass  console.log digest of the stored object        4889096bc551a891
+  pass  console.log byte count                         5274
+  pass  console.log encoding                           utf-16le+bom
+  pass  console.log blob id at the record commit       e238092d04e26c29557677df
+  pass  console.log working tree matches the object    byte for byte
+  pass  README.md digest of the stored object          c8c0df12c5131177
+  pass  README.md byte count                           705
+  pass  README.md encoding                             utf-8+bom+crlf
+  pass  README.md blob id at the record commit         a7cbe989172e1767ddab289d
+  pass  README.md working tree matches the object      byte for byte
+  pass  check_results.py digest of the stored object   2788ee0444718eab
+  pass  check_results.py byte count                    481
+  pass  check_results.py encoding                      utf-8+bom+crlf
+  pass  check_results.py blob id at the record commit  3b72d82936520e4e406fe1f5
+  pass  check_results.py working tree matches the object byte for byte
+  pass  provenance.txt digest of the stored object     6ccc69e83e53337f
+  pass  provenance.txt byte count                      124
+  pass  provenance.txt encoding                        utf-8+bom+crlf
+  pass  provenance.txt blob id at the record commit    d004cbba1a959de214d2e236
+  pass  provenance.txt working tree matches the object byte for byte
+  pass  provenance-after.txt digest of the stored object e3b0c44298fc1c14
+  pass  provenance-after.txt byte count                0
+  pass  provenance-after.txt encoding                  utf-8
+  pass  provenance-after.txt blob id at the record commit e69de29bb2d1d6434b8b29ae
+  pass  provenance-after.txt working tree matches the object byte for byte
+  pass  .gitattributes digest of the stored object     8b9c3028d6467ff3
+  pass  .gitattributes byte count                      9
+  pass  .gitattributes encoding                        utf-8+crlf
+  pass  .gitattributes blob id at the record commit    625449502ba4b4d7c229c6cc
+  pass  .gitattributes working tree matches the object byte for byte
+  pass  console.log served digest                      9828c763bf9822a4
+  pass  console.log served byte count                  2639
+  pass  harness digest at the run commit               6048b70aadfe2750
+  pass  harness byte count                             19173
+  pass  harness blob id matches the run commit         d39a4bedd4e00ba1c67be67b
+  pass  harness digest through crlf                    540cf2abfa264314
+  pass  builder archives before it publishes           archive line 530, write line 531
+  pass  the archive result is held, not discarded      record = archive_run(...)
+  pass  archive refuses when results are missing       SystemExit
+  pass  package untouched by the refusal               placeholder
+
+
+50 passed, 0 failed
+
+That is the finding, reproduced: a manifest with a completely wrong digest for one file passes every check.
+
+
+## C. Corrected verifier, true manifest
+
+$ python3 03-verify_run_record.py --repo <v2 checkout> --manifest manifest.txt
+
+manifest  manifest.txt
+repo      <v2 checkout>
+  pass  manifest has checksum rows                     7 rows
+  pass  every row carries a blob id and encoding       7 of 7
+  pass  run commit recorded                            d95a57e3d5bf
+  pass  record commit recorded                         d60579ac66b4
+  pass  record commit is present                       d60579ac66b4
+  pass  results.json digest of the stored object       d9a9b0669262f9c7ab745c04
+  pass  results.json byte count                        6574
+  pass  results.json encoding                          utf-8+crlf
+  pass  results.json blob id at the record commit      33aeedabde0ec9b674c21b26
+  pass  results.json working tree matches the object   byte for byte
+  pass  console.log digest of the stored object        4889096bc551a89116ee8e83
+  pass  console.log byte count                         5274
+  pass  console.log encoding                           utf-16le+bom
+  pass  console.log blob id at the record commit       e238092d04e26c29557677df
+  pass  console.log working tree matches the object    byte for byte
+  pass  README.md digest of the stored object          c8c0df12c513117739c9bfdd
+  pass  README.md byte count                           705
+  pass  README.md encoding                             utf-8+bom+crlf
+  pass  README.md blob id at the record commit         a7cbe989172e1767ddab289d
+  pass  README.md working tree matches the object      byte for byte
+  pass  check_results.py digest of the stored object   2788ee0444718eababef3ae6
+  pass  check_results.py byte count                    481
+  pass  check_results.py encoding                      utf-8+bom+crlf
+  pass  check_results.py blob id at the record commit  3b72d82936520e4e406fe1f5
+  pass  check_results.py working tree matches the object byte for byte
+  pass  provenance.txt digest of the stored object     6ccc69e83e53337f62fc0a14
+  pass  provenance.txt byte count                      124
+  pass  provenance.txt encoding                        utf-8+bom+crlf
+  pass  provenance.txt blob id at the record commit    d004cbba1a959de214d2e236
+  pass  provenance.txt working tree matches the object byte for byte
+  pass  provenance-after.txt digest of the stored object e3b0c44298fc1c149afbf4c8
+  pass  provenance-after.txt byte count                0
+  pass  provenance-after.txt encoding                  utf-8
+  pass  provenance-after.txt blob id at the record commit e69de29bb2d1d6434b8b29ae
+  pass  provenance-after.txt working tree matches the object byte for byte
+  pass  .gitattributes digest of the stored object     8b9c3028d6467ff3be7c7931
+  pass  .gitattributes byte count                      9
+  pass  .gitattributes encoding                        utf-8+crlf
+  pass  .gitattributes blob id at the record commit    625449502ba4b4d7c229c6cc
+  pass  .gitattributes working tree matches the object byte for byte
+  pass  console.log served digest                      9828c763bf9822a40ba2186a
+  pass  console.log served byte count                  2639
+  pass  harness digest at the run commit               6048b70aadfe2750ff463d28
+  pass  harness byte count                             19173
+  pass  harness blob id matches the run commit         d39a4bedd4e00ba1c67be67b
+  pass  harness digest through crlf                    540cf2abfa2643143d0c84b1
+  pass  archive is staged before publication           line 641, publish at 646
+  pass  record is renamed before the package           record 452, package 454
+  pass  package bytes are on disk before the rename    fsync at 445, rename at 454
+  pass  the pair is bound by a digest in RUN.json      package_sha256
+  pass  a stale results file is refused                snapshot compared
+  pass  archive refuses when results are missing       SystemExit
+  pass  package untouched by the refusal               placeholder
+
+  pass  no record was published                        False
+
+54 passed, 0 failed
+
+## D. Corrected verifier, forged manifest
+
+$ python3 03-verify_run_record.py --repo <v2 checkout> --manifest manifest.forged.txt
+
+manifest  manifest.forged.txt
+repo      <v2 checkout>
+  pass  manifest has checksum rows                     7 rows
+  pass  every row carries a blob id and encoding       7 of 7
+  pass  run commit recorded                            d95a57e3d5bf
+  pass  record commit recorded                         d60579ac66b4
+  pass  record commit is present                       d60579ac66b4
+  pass  results.json digest of the stored object       d9a9b0669262f9c7ab745c04
+  pass  results.json byte count                        6574
+  pass  results.json encoding                          utf-8+crlf
+  pass  results.json blob id at the record commit      33aeedabde0ec9b674c21b26
+  pass  results.json working tree matches the object   byte for byte
+  FAIL  console.log digest of the stored object        got 4889096bc551a89116ee8e83..., manifest says 4889096bc551a891ffffffff...
+  pass  console.log byte count                         5274
+  pass  console.log encoding                           utf-16le+bom
+  pass  console.log blob id at the record commit       e238092d04e26c29557677df
+  pass  console.log working tree matches the object    byte for byte
+  pass  README.md digest of the stored object          c8c0df12c513117739c9bfdd
+  pass  README.md byte count                           705
+  pass  README.md encoding                             utf-8+bom+crlf
+  pass  README.md blob id at the record commit         a7cbe989172e1767ddab289d
+  pass  README.md working tree matches the object      byte for byte
+  pass  check_results.py digest of the stored object   2788ee0444718eababef3ae6
+  pass  check_results.py byte count                    481
+  pass  check_results.py encoding                      utf-8+bom+crlf
+  pass  check_results.py blob id at the record commit  3b72d82936520e4e406fe1f5
+  pass  check_results.py working tree matches the object byte for byte
+  pass  provenance.txt digest of the stored object     6ccc69e83e53337f62fc0a14
+  pass  provenance.txt byte count                      124
+  pass  provenance.txt encoding                        utf-8+bom+crlf
+  pass  provenance.txt blob id at the record commit    d004cbba1a959de214d2e236
+  pass  provenance.txt working tree matches the object byte for byte
+  pass  provenance-after.txt digest of the stored object e3b0c44298fc1c149afbf4c8
+  pass  provenance-after.txt byte count                0
+  pass  provenance-after.txt encoding                  utf-8
+  pass  provenance-after.txt blob id at the record commit e69de29bb2d1d6434b8b29ae
+  pass  provenance-after.txt working tree matches the object byte for byte
+  pass  .gitattributes digest of the stored object     8b9c3028d6467ff3be7c7931
+  pass  .gitattributes byte count                      9
+  pass  .gitattributes encoding                        utf-8+crlf
+  pass  .gitattributes blob id at the record commit    625449502ba4b4d7c229c6cc
+  pass  .gitattributes working tree matches the object byte for byte
+  pass  console.log served digest                      9828c763bf9822a40ba2186a
+  pass  console.log served byte count                  2639
+  pass  harness digest at the run commit               6048b70aadfe2750ff463d28
+  pass  harness byte count                             19173
+  pass  harness blob id matches the run commit         d39a4bedd4e00ba1c67be67b
+  pass  harness digest through crlf                    540cf2abfa2643143d0c84b1
+  pass  archive is staged before publication           line 641, publish at 646
+  pass  record is renamed before the package           record 452, package 454
+  pass  package bytes are on disk before the rename    fsync at 445, rename at 454
+  pass  the pair is bound by a digest in RUN.json      package_sha256
+  pass  a stale results file is refused                snapshot compared
+  pass  archive refuses when results are missing       SystemExit
+  pass  package untouched by the refusal               placeholder
+
+  pass  no record was published                        False
+
+53 passed, 1 failed
+
+## E. The tool proves it can fail
+
+$ python3 03-verify_run_record.py --self-test
+
+FAIL  prefix collision is a difference               got e41eba7f89729c8300000000..., manifest says e41eba7f89729c8358da8b98...
+
+self-test: 0 passed, 1 failed (1 failed means the checker compares all 64)
+
+
+The self-test compares a digest against the same digest with its last 48 characters replaced. It
+expects exactly one failure and exits 0 only when it gets one, so a future edit that quietly
+restores prefix comparison makes the suite red rather than green.
+
+The comparison method now reads:
+
+    def compare(self, label: str, got, want) -> None:
+        if got == want:
+            ...
+
+The short forms in the log are display only. Nothing on the decision path is truncated.
