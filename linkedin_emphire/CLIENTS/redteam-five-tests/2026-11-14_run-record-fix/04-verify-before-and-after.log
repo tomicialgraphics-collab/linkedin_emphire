@@ -1,0 +1,140 @@
+# Verification, before the change and after it
+
+The same script and the same manifest, run against two checkouts of the same commit. The only
+difference between them is the patch.
+
+## Before: the published builder, at 80fa2cf
+
+$ python3 03-verify_run_record.py --repo <checkout>
+
+manifest  01-SHA256SUMS.corrected.txt
+repo      <checkout>
+  pass  manifest has checksum rows                     7 rows
+  pass  every row carries a blob id and encoding       7 of 7
+  pass  run commit recorded                            d95a57e3d5bf
+  pass  record commit recorded                         d60579ac66b4
+  pass  record commit is present                       d60579ac66b4
+  pass  results.json digest of the stored object       d9a9b0669262f9c7
+  pass  results.json byte count                        6574
+  pass  results.json encoding                          utf-8+crlf
+  pass  results.json blob id at the record commit      33aeedabde0ec9b674c21b26
+  pass  results.json working tree matches the object   byte for byte
+  pass  console.log digest of the stored object        4889096bc551a891
+  pass  console.log byte count                         5274
+  pass  console.log encoding                           utf-16le+bom
+  pass  console.log blob id at the record commit       e238092d04e26c29557677df
+  pass  console.log working tree matches the object    byte for byte
+  pass  README.md digest of the stored object          c8c0df12c5131177
+  pass  README.md byte count                           705
+  pass  README.md encoding                             utf-8+bom+crlf
+  pass  README.md blob id at the record commit         a7cbe989172e1767ddab289d
+  pass  README.md working tree matches the object      byte for byte
+  pass  check_results.py digest of the stored object   2788ee0444718eab
+  pass  check_results.py byte count                    481
+  pass  check_results.py encoding                      utf-8+bom+crlf
+  pass  check_results.py blob id at the record commit  3b72d82936520e4e406fe1f5
+  pass  check_results.py working tree matches the object byte for byte
+  pass  provenance.txt digest of the stored object     6ccc69e83e53337f
+  pass  provenance.txt byte count                      124
+  pass  provenance.txt encoding                        utf-8+bom+crlf
+  pass  provenance.txt blob id at the record commit    d004cbba1a959de214d2e236
+  pass  provenance.txt working tree matches the object byte for byte
+  pass  provenance-after.txt digest of the stored object e3b0c44298fc1c14
+  pass  provenance-after.txt byte count                0
+  pass  provenance-after.txt encoding                  utf-8
+  pass  provenance-after.txt blob id at the record commit e69de29bb2d1d6434b8b29ae
+  pass  provenance-after.txt working tree matches the object byte for byte
+  pass  .gitattributes digest of the stored object     8b9c3028d6467ff3
+  pass  .gitattributes byte count                      9
+  pass  .gitattributes encoding                        utf-8+crlf
+  pass  .gitattributes blob id at the record commit    625449502ba4b4d7c229c6cc
+  pass  .gitattributes working tree matches the object byte for byte
+  pass  console.log served digest                      9828c763bf9822a4
+  pass  console.log served byte count                  2639
+  pass  harness digest at the run commit               6048b70aadfe2750
+  pass  harness byte count                             19173
+  pass  harness blob id matches the run commit         d39a4bedd4e00ba1c67be67b
+  pass  harness digest through crlf                    540cf2abfa264314
+  FAIL  builder archives before it publishes           archive line 461 comes after write line 459
+  FAIL  the archive result is held, not discarded      return value is ignored
+  pass  archive refuses when results are missing       SystemExit
+  pass  package untouched by the refusal               placeholder
+
+
+48 passed, 2 failed
+
+
+## After: the same commit with the patch applied
+
+$ python3 03-verify_run_record.py --repo <checkout>
+
+manifest  01-SHA256SUMS.corrected.txt
+repo      <checkout>
+  pass  manifest has checksum rows                     7 rows
+  pass  every row carries a blob id and encoding       7 of 7
+  pass  run commit recorded                            d95a57e3d5bf
+  pass  record commit recorded                         d60579ac66b4
+  pass  record commit is present                       d60579ac66b4
+  pass  results.json digest of the stored object       d9a9b0669262f9c7
+  pass  results.json byte count                        6574
+  pass  results.json encoding                          utf-8+crlf
+  pass  results.json blob id at the record commit      33aeedabde0ec9b674c21b26
+  pass  results.json working tree matches the object   byte for byte
+  pass  console.log digest of the stored object        4889096bc551a891
+  pass  console.log byte count                         5274
+  pass  console.log encoding                           utf-16le+bom
+  pass  console.log blob id at the record commit       e238092d04e26c29557677df
+  pass  console.log working tree matches the object    byte for byte
+  pass  README.md digest of the stored object          c8c0df12c5131177
+  pass  README.md byte count                           705
+  pass  README.md encoding                             utf-8+bom+crlf
+  pass  README.md blob id at the record commit         a7cbe989172e1767ddab289d
+  pass  README.md working tree matches the object      byte for byte
+  pass  check_results.py digest of the stored object   2788ee0444718eab
+  pass  check_results.py byte count                    481
+  pass  check_results.py encoding                      utf-8+bom+crlf
+  pass  check_results.py blob id at the record commit  3b72d82936520e4e406fe1f5
+  pass  check_results.py working tree matches the object byte for byte
+  pass  provenance.txt digest of the stored object     6ccc69e83e53337f
+  pass  provenance.txt byte count                      124
+  pass  provenance.txt encoding                        utf-8+bom+crlf
+  pass  provenance.txt blob id at the record commit    d004cbba1a959de214d2e236
+  pass  provenance.txt working tree matches the object byte for byte
+  pass  provenance-after.txt digest of the stored object e3b0c44298fc1c14
+  pass  provenance-after.txt byte count                0
+  pass  provenance-after.txt encoding                  utf-8
+  pass  provenance-after.txt blob id at the record commit e69de29bb2d1d6434b8b29ae
+  pass  provenance-after.txt working tree matches the object byte for byte
+  pass  .gitattributes digest of the stored object     8b9c3028d6467ff3
+  pass  .gitattributes byte count                      9
+  pass  .gitattributes encoding                        utf-8+crlf
+  pass  .gitattributes blob id at the record commit    625449502ba4b4d7c229c6cc
+  pass  .gitattributes working tree matches the object byte for byte
+  pass  console.log served digest                      9828c763bf9822a4
+  pass  console.log served byte count                  2639
+  pass  harness digest at the run commit               6048b70aadfe2750
+  pass  harness byte count                             19173
+  pass  harness blob id matches the run commit         d39a4bedd4e00ba1c67be67b
+  pass  harness digest through crlf                    540cf2abfa264314
+  pass  builder archives before it publishes           archive line 530, write line 531
+  pass  the archive result is held, not discarded      record = archive_run(...)
+  pass  archive refuses when results are missing       SystemExit
+  pass  package untouched by the refusal               placeholder
+
+
+50 passed, 0 failed
+
+Two failures, both of them the reviewer's second finding, produced by a machine instead of by
+reading the code. The archive call sat at line 461, after the write at line 459, and its return
+value was discarded. The manifest checks pass on both checkouts, because the manifest is a
+separate correction.
+
+## Exit codes
+
+    before                                             1
+    after                                              0
+    manifest with one digest altered on purpose        1
+
+The third run is the control. A checker that cannot fail is not evidence, so the console.log
+digest was replaced with zeros in a copy of the manifest, and the script reported that row and
+no other.

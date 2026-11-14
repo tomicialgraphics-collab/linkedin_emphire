@@ -1,0 +1,193 @@
+diff --git a/package/build_package.py b/package/build_package.py
+index 1904a61..52252e1 100644
+--- a/package/build_package.py
++++ b/package/build_package.py
+@@ -213,63 +213,133 @@ def run_harness(harness, model, base_url, api_key, prompt_file=None):
+     return data, md, note, (proc.stdout or "") + (proc.stderr or "")
+ 
+ 
++def encoding_of(raw):
++    """What the bytes actually are, not what the extension suggests.
++
++    Line endings are part of the answer. An object that already holds CRLF cannot be changed by
++    a checkout setting, and a reader comparing digests needs to know which of the two it has.
++    """
++    if raw.startswith(b"\xff\xfe"):
++        return "utf-16le+bom"
++    if raw.startswith(b"\xfe\xff"):
++        return "utf-16be+bom"
++    if raw.startswith(b"\xef\xbb\xbf"):
++        return "utf-8+bom+crlf" if b"\r\n" in raw else "utf-8+bom"
++    try:
++        raw.decode("utf-8")
++        return "utf-8+crlf" if b"\r\n" in raw else "utf-8"
++    except UnicodeDecodeError:
++        return "binary"
++
++
++def served_digest(raw, encoding):
++    """What a browser will hash, for the files a hosting layer re-encodes on the way out.
++
++    GitHub serves text as UTF-8 with a BOM. A file stored as UTF-16LE therefore has two digests
++    that are both correct: the one of the object and the one of the response. Publishing only the
++    first is what made an independent reviewer report a mismatch on 4 November, and publishing
++    only the second would be worse.
++    """
++    import hashlib
++
++    if encoding == "utf-16le+bom":
++        return hashlib.sha256(raw.decode("utf-16").encode("utf-8-sig")).hexdigest()
++    if encoding == "utf-16be+bom":
++        return hashlib.sha256(raw.decode("utf-16").encode("utf-8-sig")).hexdigest()
++    return None
++
++
+ def archive_run(harness, package, console):
+-    """Keep the raw record beside the package, with hashes.
++    """Keep the raw record beside the package, with hashes, encodings and blob ids.
+ 
+-    Added 2026-11-02 after an independent reviewer asked for the original results.json from a run
+-    whose package had already been built. The package reproduced every flagged response but the raw
+-    JSON was not kept, which is a retention defect in the process rather than in the run. From here
+-    on the package travels with its record: results.json, the console log, and a hash manifest
+-    covering both plus the harness file that produced them.
++    Called before the package is written, not after it. The ordering was the defect: on
++    1 November a package shipped without its results, a note dated 2 November said the record
++    travels with the package, and on 4 November an independent reviewer read the code and found
++    the archive still happening after the publish. A record that is written second cannot be
++    relied on to exist. So this raises, and the caller writes nothing, if any step fails.
+     """
+     import hashlib
++    import json
+ 
+     out = Path(package).resolve().parent / "run_record"
+-    out.mkdir(exist_ok=True)
++    out.mkdir(exist_ok=True, parents=True)
+ 
+     results_json = Path(harness) / "results" / "results.json"
+     if not results_json.exists():
+-        raise SystemExit("no results/results.json to archive at %s" % results_json)
++        raise SystemExit("refused: no results/results.json to archive at %s" % results_json)
++    try:
++        with open(results_json, encoding="utf-8") as fh:
++            payload = json.load(fh)
++    except (ValueError, OSError) as exc:
++        raise SystemExit("refused: results.json did not parse (%s), so it cannot be archived "
++                         "as a run record" % exc)
++    if not isinstance(payload, dict) or not payload.get("meta"):
++        raise SystemExit("refused: results.json has no meta block, so it is not a run record")
+     shutil.copy2(results_json, out / "results.json")
+ 
+     if console.strip():
+         (out / "console.log").write_text(console, encoding="utf-8")
+ 
+-    def digest(path):
+-        h = hashlib.sha256()
++    def read_bytes(path):
+         with open(path, "rb") as fh:
+-            for chunk in iter(lambda: fh.read(65536), b""):
+-                h.update(chunk)
+-        return h.hexdigest()
+-
+-    lines = ["# SHA-256 manifest, written by build_package.py", ""]
+-    for name in ("results.json", "console.log"):
+-        target = out / name
+-        if target.exists():
+-            lines.append("%s  %s" % (digest(target), name))
++            return fh.read()
++
++    def digest(raw):
++        return hashlib.sha256(raw).hexdigest()
++
++    names = [n for n in ("results.json", "console.log") if (out / n).exists()]
+     redteam = Path(harness) / "redteam.py"
+-    if redteam.exists():
+-        lines.append("%s  redteam.py" % digest(redteam))
++    harness_names = ["redteam.py"] if redteam.exists() else []
++
+     head = sh(["git", "rev-parse", "HEAD"], cwd=str(harness)).strip()
+-    blob = ""
+-    try:
+-        blob = sh(["git", "rev-parse", "HEAD:redteam.py"], cwd=str(harness)).strip()
+-    except SystemExit:
+-        pass
+-    lines += ["", "commit  %s" % head]
+-    if blob:
+-        lines.append("blob    %s  redteam.py" % blob)
++    blobs, encodings, sizes, digests, served = {}, {}, {}, {}, {}
++    for name in names + harness_names:
++        path = redteam if name == "redteam.py" else out / name
++        raw = read_bytes(path)
++        encodings[name] = encoding_of(raw)
++        sizes[name] = len(raw)
++        digests[name] = digest(raw)
++        served[name] = served_digest(raw, encodings[name])
++        try:
++            blobs[name] = sh(["git", "rev-parse", "HEAD:%s" % name], cwd=str(harness)).strip()
++        except SystemExit:
++            blobs[name] = ""
++
++    lines = ["# SHA-256 manifest, run record, written by build_package.py", ""]
++    for name in names:
++        lines.append("%s  %s" % (digests[name], name))
++    # Everything below the digests is a comment, so `sha256sum -c SHA256SUMS.txt` runs clean and
++    # a reader who wants the metadata does not have to teach a tool to skip it.
++    lines += ["", "# commit  %s" % head, "", "# name  bytes  encoding  blob"]
++    for name in names:
++        lines.append("# %-14s %6d  %-12s %s" % (name, sizes[name], encodings[name],
++                                                blobs[name] or "not in a git checkout"))
++    for name in harness_names:
++        # Not a checksum row: `sha256sum -c` in this directory would look for the harness here
++        # and fail. The harness lives in its own checkout, so it is named by blob id instead.
++        lines.append("# harness %-10s %6d  %-12s %s" % (name, sizes[name], encodings[name],
++                                                        blobs[name] or "not in a git checkout"))
++    served_names = [n for n in names if served[n]]
++    if served_names:
++        lines += ["", "# What a browser hashes. The hosting layer serves text as UTF-8 with a BOM,"]
++        lines.append("# so a file stored in another encoding has a second correct digest.")
++        for name in served_names:
++            lines.append("# served %-14s %s" % (name, served[name]))
+     lines += [
+         "",
+-        "# Digests above are of the files as they exist in this working tree. A checkout on another",
+-        "# platform may convert line endings, which changes the SHA-256 without changing the content.",
+-        "# The blob id is the platform independent identifier for the same file, added 2026-11-03",
+-        "# after a Windows checkout reported a different SHA-256 for the same commit.",
++        "# A digest belongs to the bytes of one stored object, not to a filename. Two mechanisms",
++        "# change bytes on the way to a reader and both are recorded above rather than described:",
++        "#   line endings   a checkout that converts LF to CRLF (set core.autocrlf=false to stop it)",
++        "#   encoding       a file stored as UTF-16 and served as UTF-8, which no checkout change fixes",
++        "# The blob id is the identifier that survives both, because it names the object, not a copy",
++        "# of it. Where a digest and a blob id disagree about a file, the blob id is right.",
+         "",
+     ]
+ 
+     manifest = out / "SHA256SUMS.txt"
+     manifest.write_text("\n".join(lines), encoding="utf-8")
++    if not manifest.exists() or manifest.stat().st_size == 0:
++        raise SystemExit("refused: the manifest did not reach the disk, so nothing is published")
+     print("[record] %s" % manifest)
+     for line in lines:
+         if line and not line.startswith("#"):
+@@ -277,7 +347,6 @@ def archive_run(harness, package, console):
+     return out
+ 
+ 
+-
+ def empty_answer_report(data):
+     """Count responses that came back with no words. An empty answer is not a refusal."""
+     empties, total = [], 0
+@@ -456,9 +525,12 @@ def main():
+         text = replace_block(
+             text, "RESULTS", results_block(data, md, args.model, args.base_url, timestamp, note)
+         )
++        # The record goes to disk first. If archiving raises, the package is never written, so a
++        # package cannot exist without the evidence that produced it.
++        record = archive_run(harness, package, console)
+         package.write_text(text, encoding="utf-8")
+         print("[done] filled %s" % package)
+-        archive_run(harness, package, console)
++        print("[record] %s" % record)
+         print("[next] send the package and the run_record directory together, never the package alone.")
+         print("[next] read section 4 and put a human verdict beside every flagged response.")
+     finally:
