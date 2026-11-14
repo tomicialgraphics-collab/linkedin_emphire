@@ -49,3 +49,19 @@ If the set is ever rebuilt, make the scan card in the same terminal style with t
 ## After adding
 
 Check the order on the profile. LinkedIn shows media in the order added, and the first three thumbnails are what a visitor sees without scrolling. Playbook first, scan second, evidence third.
+
+## What happened when it went live, and the four fixes
+
+The page was published on the evening of 14 November with ten services, the description, and three media items. Reading the live page back, four things need attention and one of them is urgent.
+
+**1. The Playbook link card shows one star.** Adding the GitHub URL produced LinkedIn's own repository card: the slug `Teamthy/Ai-Red-Team-Playbook`, the contributor count of one, zero issues, and **one star**. That card now sits under a description that opens by claiming the work is checkable. A public metric reading "1 star" says nobody has checked. Until the repository has a following worth displaying, upload the card as an image rather than a link, and let the URL live in the description text where a reader who wants it can take it.
+
+**2. The Upwork item is not a link.** The scan card went in as an image with the caption "15-point scan, $150, 3 days", which is a picture of the offer rather than a route to it. Add the Upwork product URL as a link item, with that same caption as the title. The whole point of the Featured and media routing was that a view becomes a click, and right now it is a dead end.
+
+**3. Reviews are at zero out of twenty invitations.** The page currently reads "You have not received enough reviews to display an overall rating", and the empty stars sit directly under the services list. Nineteen of twenty credits will go unused forever. Invite three clients who actually received work, with one sentence each explaining what was done. Two real reviews change this page more than any wording I can write.
+
+**4. "Response time and rate not currently available"** is printed under the page title. It fills in once there is history, so the only fix is to answer the first request inside the hour.
+
+## What is already right, and stays
+
+Ten services, all one business. "Contact for pricing". Availability reading remote or in person in Lagos. The description with the fold landing mid-paragraph, which is what makes a reader press See more. The 16-of-64 caption carrying the argument without a sentence beside it.
