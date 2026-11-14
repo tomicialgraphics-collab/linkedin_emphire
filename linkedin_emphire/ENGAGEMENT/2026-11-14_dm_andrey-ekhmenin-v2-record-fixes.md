@@ -3,7 +3,7 @@ deliverable: dm
 id: 2026-11-14_andrey-record-fixes-v2
 date: 2026-11-14
 time_checked: >-
-  checked: 2026-11-14 18:31 WAT, read from the system clock in the sandbox before this file was sent for gate.
+  checked: 2026-11-14 18:45 WAT WAT, read from the system clock in the sandbox before this file was sent for gate.
 audience: andrey-ekhmenin
 status: ready
 approved: no
@@ -12,7 +12,9 @@ premise_checked: >-
   checked: all three findings were reproduced before anything was changed. The forged manifest keeps
   the true digest for sixteen characters and replaces the last forty eight, and the published
   verifier passed it 50 to 0. The corrected verifier fails that same file 53 to 1 while passing the
-  true manifest 54 to 0. The failure path suite runs six cases and reports 13 passed, 0 failed. Every
+  true manifest 54 to 0. The two digests quoted in his message of 17:01 were recomputed here: the manifest
+  is dfa8a6bd and the patch is 7c504ea6, both matching to the full sixty four characters, so the manifest
+  he verified is the identical file in this pack and only the patch changed. The failure path suite runs six cases and reports 13 passed, 0 failed. Every
   number in this message is copied from the two logs in the pack, which were produced on fresh clones
   of 80fa2cf rather than recalled.
 sources_read: >-
@@ -32,6 +34,8 @@ thread: the independent review of the run record and the package builder, fourth
 # Andrey Ekhmenin, 14 November 2026, second reply
 
 All three of your findings are correct. I reproduced each one before changing anything, so what follows is measured, not asserted.
+
+One thing first, so you do not have to re-check work you have already done. The manifest in this pack is byte for byte the file you verified: `dfa8a6bd` and the same forty eight characters after it. Your four passes still stand. The patch is the one file that changed, from `7c504ea6` to `55e95a33`, and it replaces the earlier patch rather than stacking on it.
 
 ## 1. The verifier compared 16 of 64 characters
 
