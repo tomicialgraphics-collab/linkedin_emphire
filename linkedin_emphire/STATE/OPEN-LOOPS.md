@@ -18,6 +18,7 @@ The tool parses this format, so keep it exact: `- [ ] L<n> text  (opened YYYY-MM
 - [ ] L6 AEC MCP gig: one nudge on 7 Nov if the proposal is still silent. No second nudge  (opened 2026-11-06)
 - [ ] L7 Sudhir: $65 Upwork milestone still unreleased  (opened 2026-10-14)
 
+- [ ] L11 Anthropic Fellows: three deliverables, one deadline, **Sat 28 Nov 08:59 WAT** (11:59 pm PT Fri 27 Nov). CodeSignal 2h no-AI proctored, invitation unconfirmed; takehome 5h with the clock starting at the begin form, transcripts mandatory and numbered-slide prose in the owner's own words; references Behar **submitted 13 Nov 23:13**, Praveen and Oladimeji outstanding with chases drafted. Plan and both chases in `APPLICATIONS/2026-11-14_anthropic-fellows_next-steps/PLAN.md`. Decisions targeted 20 Dec, cohort starts in person SF Bay 18 Jan 2027. Oladimeji is not recorded anywhere in the repo  (opened 2026-11-14)
 ## Waiting on the owner
 
 - [ ] L8 6 Nov post: publish at 13:30 WAT with the card built to the headline and box in the file, first comment at T+20 to T+30  (opened 2026-11-06)
