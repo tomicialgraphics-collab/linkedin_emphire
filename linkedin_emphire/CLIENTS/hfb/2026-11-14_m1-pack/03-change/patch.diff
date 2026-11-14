@@ -1,0 +1,156 @@
+--- a/bench/store.py
++++ b/bench/store.py
+@@ -49,6 +49,9 @@
+         self.discarded = 0
+         self.unframed = 0
+         self.quarantine = None
++        # Records from a batch that arrived without its other half. Kept out of the index and
++        # named, rather than indexed as if they stood alone.
++        self.withheld = []
+         # A failpoint, so a journal that refuses a write can be tested without a full disk.
+         # It refuses before anything is written, which is the case the ordering claim is about.
+         self.failpoint = os.environ.get("HFB_FAILPOINT", "")
+@@ -84,6 +87,46 @@
+         self.seq = record["store_seq"]
+         return record
+ 
++    def append_batch(self, records):
++        """Several records, one write call, one fsync, and a marker linking them.
++
++        The conflict path used to write the verdict, and then, in a second append with its own
++        fsync, the record that names the conflict. A crash between the two left a store that
++        reported a conflict it could no longer name. One write and one fsync means the batch is
++        whole or absent. A reader that finds part of a batch withholds what it found and says
++        so, because half of a two-part claim is not a smaller claim.
++        """
++        if not records:
++            return []
++        prepared = []
++        seq = self.seq
++        for record in records:
++            seq += 1
++            record = dict(record)
++            record["store_seq"] = seq
++            prepared.append(record)
++        blob_key = json.dumps(prepared, sort_keys=True)
++        batch_id = hashlib.sha256(blob_key.encode("utf-8")).hexdigest()[:16]
++        for index, record in enumerate(prepared, start=1):
++            record["batch"] = {"id": batch_id, "index": index, "of": len(prepared)}
++            record["digest"] = frame(record)
++            if self.failpoint == "verdict" and record.get("kind") == "verdict":
++                raise JournalError("injected: the journal refused a verdict write")
++        blob = "".join(json.dumps(record, sort_keys=True) + "\n" for record in prepared)
++        before = self._size()
++        if before and not self._ends_clean():
++            before = self._cut_damaged_tail(before)
++        try:
++            with open(self.path, "a", encoding="utf-8", newline="\n") as fh:
++                fh.write(blob)
++                fh.flush()
++                os.fsync(fh.fileno())
++        except OSError as exc:
++            self._rollback(before, exc)
++            raise JournalError("journal did not take the batch: %s" % exc)
++        self.seq = seq
++        return prepared
++
+     def _ends_clean(self):
+         try:
+             with open(self.path, "rb") as fh:
+@@ -205,10 +248,30 @@
+                 fh.flush()
+                 os.fsync(fh.fileno())
+             os.replace(tmp, self.path)
++        # A batch is all or nothing. If a marker says two records went out and only one is here,
++        # the one that is here is not indexed: indexing it would make half a claim into a claim.
++        claims = {}
++        for record in out:
++            batch = record.get("batch") or {}
++            if isinstance(batch, dict) and batch.get("id"):
++                claims.setdefault(batch["id"], []).append(record)
++        whole = []
++        self.withheld = []
++        for record in out:
++            batch = record.get("batch") or {}
++            batch_id = batch.get("id") if isinstance(batch, dict) else None
++            if batch_id and len(claims[batch_id]) < int(batch.get("of") or 1):
++                self.withheld.append({"batch": batch_id, "store_seq": record.get("store_seq"),
++                                      "kind": record.get("kind"),
++                                      "present": len(claims[batch_id]),
++                                      "of": batch.get("of")})
++                continue
++            whole.append(record)
+         # Numbering follows the records that survived, not a count of them: after a repair the
+         # surviving store_seq values are not contiguous, and the next record must not reuse one.
++        # A withheld record still consumed its number, so the maximum is taken over everything.
+         self.seq = max([r.get("store_seq") or 0 for r in out] or [0])
+-        return out
++        return whole
+ 
+ 
+ class Store:
+@@ -269,6 +332,13 @@
+         self.index(stored)
+         return stored
+ 
++    def record_batch(self, records):
++        """Journal both records in one write, then index them. Same order as record()."""
++        written = self.journal.append_batch(records)
++        for record in written:
++            self.index(record)
++        return written
++
+     @staticmethod
+     def state_of(record, action_id=None):
+         """verified, unverified or unbound, recomputed from the record's own bytes.
+@@ -313,21 +383,27 @@
+         aid = rec["action_id"]
+         state = self.state_of(rec)
+         first = self.verdicts.get(aid)
+-        stored = self.record({"kind": "verdict", "action_id": aid, "record": rec,
+-                              "state": state})
++        row = {"kind": "verdict", "action_id": aid, "record": rec, "state": state}
+         if first is not None and first.get("record") != rec:
+-            conflict = self.record({
++            # Two different verdicts for one action. The verdict and the record that names the
++            # conflict leave together: one write, one fsync. A crash can now lose both or keep
++            # both, and can no longer leave a reported conflict with nothing to name it.
++            # The batch takes the next two sequence numbers, this verdict first.
++            conflict = {
+                 "kind": "conflict",
+                 "action_id": aid,
+                 "first_seq": first.get("store_seq"),
+-                "second_seq": stored.get("store_seq"),
++                "second_seq": self.journal.seq + 1,
+                 "first_verdict": (first.get("record") or {}).get("verdict"),
+                 "second_verdict": rec.get("verdict"),
+                 "rule": "two different verdicts for one action id: neither resolves the gap",
+-            })
++            }
++            written = self.record_batch([row, conflict])
++            stored, named = written[0], written[1]
+             return {"ok": True, "stored": True, "state": "conflicted", "conflict": True,
+                     "action_id": aid, "store_seq": stored.get("store_seq"),
+-                    "conflict_seq": conflict.get("store_seq")}
++                    "conflict_seq": named.get("store_seq")}
++        stored = self.record(row)
+         return {"ok": True, "stored": True, "state": self.verdict_state.get(aid, state),
+                 "action_id": aid, "store_seq": stored.get("store_seq")}
+ 
+@@ -449,6 +525,16 @@
+     # How many records the replay recovered. Named for what it counts: a sequence number here
+     # used to be off by one, which made a repair look like it lost one more record than it did.
+     replayed = store.journal.seq
++    if store.journal.withheld:
++        first = store.journal.withheld[0]
++        store.journal.append({"kind": "repair",
++                              "withheld_batch": first.get("batch"),
++                              "withheld_records": len(store.journal.withheld),
++                              "withheld_seqs": [w.get("store_seq") for w in store.journal.withheld],
++                              "rule": "a batch that is not whole is not indexed: half a claim "
++                                      "is not a claim"})
++        print("batch withheld: %d record(s) from an incomplete batch, not indexed"
++              % len(store.journal.withheld), flush=True)
+     if store.journal.discarded:
+         # Say what was lost instead of silently presenting a shorter history as the whole one.
+         store.journal.append({"kind": "repair",

@@ -1,0 +1,23 @@
+artifacts -> /tmp/hfb-chg/artifacts/run-20261114T085957Z
+[store] starting
+[store] port 46475
+  host A   exit 0
+  host A'  exit 0
+[store] stopping, so the ship in B can fail for a real reason
+  host B   exit 0
+[store] restarting from its journal
+[store] port 46595
+  host B   exit 0
+  host C   exit 9
+  host C'  exit 9
+  host C'' exit 9
+  host D   exit 0
+  host D'  exit 0
+[probe] conflict: two verdicts for one action id
+[probe] durability: a journal that refuses a verdict write
+[probe] repair: a torn journal, and where its tail goes
+[probe] reply: a store that confirms the wrong action
+  host E   exit 0
+
+run finished. A finished run is not a pass.
+  python verify.py artifacts/run-20261114T085957Z

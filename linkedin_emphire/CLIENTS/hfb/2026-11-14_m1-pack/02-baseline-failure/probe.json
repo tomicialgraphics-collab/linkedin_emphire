@@ -1,0 +1,114 @@
+{
+  "action_id": "M1-7001",
+  "cuts": [
+    {
+      "batch_withheld": false,
+      "bytes": 102,
+      "conflict_named": false,
+      "conflicted": false,
+      "cut": "line-1",
+      "named_seqs": [],
+      "property_holds": true,
+      "records_recovered": 2,
+      "repair_reported": false,
+      "verdict_seqs": []
+    },
+    {
+      "batch_withheld": false,
+      "bytes": 207,
+      "conflict_named": false,
+      "conflicted": false,
+      "cut": "line-2",
+      "named_seqs": [],
+      "property_holds": true,
+      "records_recovered": 3,
+      "repair_reported": false,
+      "verdict_seqs": []
+    },
+    {
+      "batch_withheld": false,
+      "bytes": 742,
+      "conflict_named": false,
+      "conflicted": false,
+      "cut": "line-3",
+      "named_seqs": [],
+      "property_holds": true,
+      "records_recovered": 4,
+      "repair_reported": false,
+      "verdict_seqs": [
+        3
+      ]
+    },
+    {
+      "batch_withheld": false,
+      "bytes": 1277,
+      "conflict_named": false,
+      "conflicted": true,
+      "cut": "line-4",
+      "named_seqs": [],
+      "property_holds": false,
+      "records_recovered": 5,
+      "repair_reported": false,
+      "verdict_seqs": [
+        3,
+        4
+      ]
+    },
+    {
+      "batch_withheld": false,
+      "bytes": 1412,
+      "conflict_named": false,
+      "conflicted": true,
+      "cut": "mid-final-line",
+      "log_tail": [
+        "journal repaired: 135 trailing bytes discarded",
+        "store listening on 127.0.0.1:39931"
+      ],
+      "named_seqs": [],
+      "property_holds": false,
+      "records_recovered": 6,
+      "repair_reported": true,
+      "verdict_seqs": [
+        3,
+        4
+      ]
+    }
+  ],
+  "failed_cuts": [
+    "line-4",
+    "mid-final-line"
+  ],
+  "journal_bytes": 1548,
+  "journal_lines": 5,
+  "probe": "m1-conflict-crash",
+  "property_holds": false,
+  "revision": "126f1c00dfae18b30456a8dc698ac906ca7ddb0e",
+  "store_response_to_second_verdict": {
+    "action_id": "M1-7001",
+    "conflict": true,
+    "conflict_seq": 5,
+    "ok": true,
+    "state": "conflicted",
+    "store_seq": 4,
+    "stored": true
+  },
+  "torn_final_line": {
+    "batch_withheld": false,
+    "bytes": 1412,
+    "conflict_named": false,
+    "conflicted": true,
+    "cut": "mid-final-line",
+    "log_tail": [
+      "journal repaired: 135 trailing bytes discarded",
+      "store listening on 127.0.0.1:39931"
+    ],
+    "named_seqs": [],
+    "property_holds": false,
+    "records_recovered": 6,
+    "repair_reported": true,
+    "verdict_seqs": [
+      3,
+      4
+    ]
+  }
+}
