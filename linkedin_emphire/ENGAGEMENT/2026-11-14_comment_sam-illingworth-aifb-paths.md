@@ -2,6 +2,8 @@
 deliverable: comment
 id: 2026-11-14_sam-illingworth-aifb-paths
 date: 2026-11-14
+time_checked: >-
+  checked: 2026-11-14 18:19 WAT, read from the system clock in the sandbox before this file was sent for gate.
 audience: public
 status: ready
 approved: no
@@ -19,8 +21,8 @@ premise_checked: >-
   persistence. Nothing in the comment restates a number from the post that the paper does not
   carry.
 sources_read: >-
-  opened: the article page at the DOI the short link resolves to, and the abstract and highlights
-  in full. Not opened: the full text, which is a pre-proof and behind the PDF button. The
+  read: on 14 November 2026, the article page at the DOI the short link resolves to, with the abstract
+  and highlights in full. Not opened: the full text, which is a pre-proof and behind the PDF button. The
   screenshot attached to the post was read but not trusted for identifiers, because at that
   resolution the journal code looked like compedu and the first author's name looked like Cheng
   Lu, while the resolvable page says caeai and Chang Liu. A first attempt at the compedu DOI

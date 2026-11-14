@@ -34,6 +34,7 @@ import os
 import re
 import subprocess
 import sys
+from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EMPIRE = os.path.abspath(os.path.join(HERE, ".."))            # linkedin_emphire/
@@ -622,6 +623,72 @@ def check_visual(rep: Report, meta: dict, path: str) -> None:
         rep.add("R46", "PASS", "card rendered and linked")
 
 
+WAT = timezone(timedelta(hours=1))
+
+
+def wat_now() -> datetime:
+    """The clock this check reads, in one place, so a wrong clock has one place to be fixed."""
+    return datetime.now(WAT)
+
+
+def check_clock(rep: Report, meta: dict, dtype: str, path: str) -> None:
+    """R47: read a clock before delivering, and put the reading in the file.
+
+    Every draft is written against a day. If nobody reads the clock, the day in the file is the
+    day the work started, and the file ends up answering a message that arrived after it, naming
+    a slot that has already passed, or calling Saturday a Friday. The record is one line and it
+    has to survive being read back: a date, a time, the zone, and the clock it came from. A
+    landing date that disagrees with the file's own date is not a nuance, it is the failure this
+    rule exists to catch.
+    """
+    if dtype in ("internal", "session-log"):
+        rep.add("R47", "SKIP", "internal file, never delivered")
+        return
+    # Nothing before 14 November 2026 is retro-fitted. A clock reading for an old file would be
+    # reconstruction, and a reconstructed timestamp is worse than an absent one because it looks
+    # like a check.
+    if str(meta.get("date", "")) < "2026-11-14":
+        rep.add("R47", "SKIP", "dated before the rule; a later clock reading would be reconstruction")
+        return
+    raw = " ".join(str(meta.get("time_checked") or "").split())
+    if not raw:
+        rep.add("R47", "FAIL",
+                "no time_checked: read a clock before this leaves, then record the date, the time "
+                "in WAT, and which clock was read")
+        return
+
+    problems = []
+    if not re.match(r"^checked:", raw, re.I):
+        problems.append("must open with checked:")
+    date = re.search(r"\b(20\d\d-\d\d-\d\d)\b", raw)
+    stamp = re.search(r"\b([01]\d|2[0-3]):[0-5]\d\b", raw)
+    if not date:
+        problems.append("no date in YYYY-MM-DD form")
+    if not stamp:
+        problems.append("no time as HH:MM")
+    if "WAT" not in raw:
+        problems.append("no WAT, so the reader cannot convert it")
+    if not re.search(r"\b(clock|device|system|sandbox|owner|handset|terminal)\b", raw, re.I):
+        problems.append("no clock named, so nobody can tell what was read")
+    if date and meta.get("date") and date.group(1) != str(meta["date"]).strip():
+        problems.append("verified on %s but the file is dated %s" % (date.group(1), meta["date"]))
+    if problems:
+        rep.add("R47", "FAIL", "; ".join(problems))
+        return
+
+    now = wat_now()
+    status = str(meta.get("status", "")).lower()
+    if date.group(1) != now.strftime("%Y-%m-%d") and status not in ("sent", "posted"):
+        rep.add("R47", "WARN",
+                "verified %s %s WAT; the clock reads %s %s WAT now, so check it again before sending"
+                % (date.group(1), stamp.group(0), now.strftime("%Y-%m-%d"), now.strftime("%H:%M")))
+    else:
+        rep.add("R47", "PASS",
+                "verified %s %s WAT against the %s"
+                % (date.group(1), stamp.group(0),
+                   (re.search(r"\b(clock|device|system|sandbox|owner|handset|terminal)\b", raw, re.I).group(1)).lower()))
+
+
 def check_profile_read(rep: Report, meta: dict, dtype: str) -> None:
     if dtype not in ("comment", "dm"):
         rep.add("R16", "SKIP", "not a per-person deliverable")
@@ -741,6 +808,7 @@ def gate_file(path: str, forced_type: str | None = None) -> Report:
     else:
         rep.add("R26", "PASS", "exported artefact, internal metadata not required")
     check_text(rep, body, meta, dtype, audience, pasted, exported, path)
+    check_clock(rep, meta, dtype, path)
     check_profile_read(rep, meta, dtype)
     check_cold_link(rep, meta, body, dtype)
     check_approval(rep, meta)

@@ -2,6 +2,8 @@
 deliverable: repost-thought
 id: 2026-11-14_repost_sam-illingworth-aifb
 date: 2026-11-14
+time_checked: >-
+  checked: 2026-11-14 18:19 WAT, read from the system clock in the sandbox before this file was sent for gate.
 audience: public
 status: ready
 approved: no

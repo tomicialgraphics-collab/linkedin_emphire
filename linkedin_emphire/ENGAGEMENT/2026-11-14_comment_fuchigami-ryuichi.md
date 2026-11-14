@@ -2,6 +2,8 @@
 deliverable: comment
 id: 2026-11-14_fuchigami-ryuichi-tri-state
 date: 2026-11-14
+time_checked: >-
+  checked: 2026-11-14 18:19 WAT, read from the system clock in the sandbox before this file was sent for gate.
 audience: public
 status: ready
 approved: no
@@ -13,8 +15,8 @@ premise_checked: >-
   his script now returns OK, retry or unavailable instead of two states. His three states come
   from the comment itself, not from an inference about his stack.
 sources_read: >-
-  none opened by link. The post and both comments were read in the paste the owner supplied, and
-  no page was fetched, so nothing here rests on a summary of something unread.
+  none: nothing is linked. The post and both comments were read in the paste the owner supplied
+  on 14 November 2026, and no page was fetched, so nothing here rests on a summary of something unread.
 profile_checked: >-
   Fuchigami Ryuichi, first degree. Headline as supplied: building a Japan-born startup studio,
   solo plus AI, serial founder, ex-EIR at a US venture studio, with one exit, running 0-to-1

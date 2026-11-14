@@ -2,6 +2,8 @@
 deliverable: doc
 id: 2026-11-14_kuldeep-patil-deal-sheet
 date: 2026-11-14
+time_checked: >-
+  checked: 2026-11-14 18:19 WAT, read from the system clock in the sandbox before this file was sent for gate.
 audience: internal
 status: ready
 approved: no

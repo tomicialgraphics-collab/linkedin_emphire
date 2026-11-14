@@ -2,6 +2,8 @@
 deliverable: dm
 id: 2026-11-14_andrey-record-fixes
 date: 2026-11-14
+time_checked: >-
+  checked: 2026-11-14 18:19 WAT, read from the system clock in the sandbox before this file was sent for gate.
 audience: andrey-ekhmenin
 status: ready
 approved: no
