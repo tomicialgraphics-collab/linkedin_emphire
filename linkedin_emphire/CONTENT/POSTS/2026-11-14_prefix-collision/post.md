@@ -9,6 +9,7 @@ status: ready
 approved: no
 warm: no
 template: T1
+first_comment: FIRST_COMMENT.md
 headline: The hash was wrong in 48 characters and the check passed anyway.
 headline_alt: My verifier passed a manifest I had forged on purpose.
 headline_alt2: A check that compares 16 of 64 characters cannot fail.
