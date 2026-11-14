@@ -1,524 +1,535 @@
 {
-  "version": 1,
-  "updated": "2026-11-14",
-  "note": "Machine-readable rule registry. This is the only place a rule is defined. PIPELINE/20-RULES.md is rendered from it, and TOOLING/gate.py enforces the ones with a check. To add a rule, add it here, run pipeline.py render, then run the gate on a known-good file so you know the check does not misfire.",
-  "severity_levels": {
-    "block": "gate exits non-zero and the file cannot be delivered",
-    "warn": "gate reports it, delivery is a judgement call, record the reason in DELIVERY-LOG.md",
-    "manual": "no automated check exists, a human must confirm it and say so"
+ "version": 1,
+ "updated": "2026-11-14",
+ "note": "Machine-readable rule registry. This is the only place a rule is defined. PIPELINE/20-RULES.md is rendered from it, and TOOLING/gate.py enforces the ones with a check. To add a rule, add it here, run pipeline.py render, then run the gate on a known-good file so you know the check does not misfire.",
+ "severity_levels": {
+  "block": "gate exits non-zero and the file cannot be delivered",
+  "warn": "gate reports it, delivery is a judgement call, record the reason in DELIVERY-LOG.md",
+  "manual": "no automated check exists, a human must confirm it and say so"
+ },
+ "scopes": {
+  "all": "every file that leaves this repo",
+  "outward": "files a client, reviewer, hiring team or vendor receives",
+  "post": "LinkedIn posts",
+  "comment": "feed comments and replies",
+  "dm": "direct messages",
+  "doc": "long form: reviews, scopes, reports, articles",
+  "internal": "repo-only notes, session logs, state files"
+ },
+ "rules": [
+  {
+   "id": "R01",
+   "text": "No em dashes in anything owner-facing. Use a comma, a colon, or a full stop and a new sentence.",
+   "source": "context.md s7, standing since 2026-10-31",
+   "severity": "block",
+   "scope": [
+    "all"
+   ],
+   "check": "emdash"
   },
-  "scopes": {
-    "all": "every file that leaves this repo",
-    "outward": "files a client, reviewer, hiring team or vendor receives",
-    "post": "LinkedIn posts",
-    "comment": "feed comments and replies",
-    "dm": "direct messages",
-    "doc": "long form: reviews, scopes, reports, articles",
-    "internal": "repo-only notes, session logs, state files"
+  {
+   "id": "R02",
+   "text": "No word from banned_words.txt. The list is taken literally on LinkedIn, with the technical exceptions in voice_lint.py allowed only in doc and email profiles.",
+   "source": "DAILY CONTENT/banned_words.txt",
+   "severity": "block",
+   "scope": [
+    "all"
+   ],
+   "check": "banned"
   },
-  "rules": [
-    {
-      "id": "R01",
-      "text": "No em dashes in anything owner-facing. Use a comma, a colon, or a full stop and a new sentence.",
-      "source": "context.md s7, standing since 2026-10-31",
-      "severity": "block",
-      "scope": [
-        "all"
-      ],
-      "check": "emdash"
-    },
-    {
-      "id": "R02",
-      "text": "No word from banned_words.txt. The list is taken literally on LinkedIn, with the technical exceptions in voice_lint.py allowed only in doc and email profiles.",
-      "source": "DAILY CONTENT/banned_words.txt",
-      "severity": "block",
-      "scope": [
-        "all"
-      ],
-      "check": "banned"
-    },
-    {
-      "id": "R03",
-      "text": "Never name tomicialgraphics, or any repository URL, account name, handle or email variant built from it, in anything a client, reviewer, hiring team or vendor receives. Pinned revisions are identified to outsiders by commit SHA and file SHA-256 only.",
-      "source": "owner instruction 2026-11-04",
-      "severity": "block",
-      "scope": [
-        "outward"
-      ],
-      "check": "identity-leak"
-    },
-    {
-      "id": "R04",
-      "text": "olusanyatimothy54@gmail.com is the only outbound address. Never use tomicialgraphics@gmail.com and never present it as the owner's address.",
-      "source": "owner instruction 2026-11-04",
-      "severity": "block",
-      "scope": [
-        "outward"
-      ],
-      "check": "outbound-address"
-    },
-    {
-      "id": "R05",
-      "text": "No local machine paths in a deliverable. No C:\\Users, no file:/// URLs, no sandbox paths. Anything the reader cannot open is noise.",
-      "source": "owner instruction 2026-11-03",
-      "severity": "block",
-      "scope": [
-        "outward",
-        "doc"
-      ],
-      "check": "local-path"
-    },
-    {
-      "id": "R06",
-      "text": "No fabricated numbers, rates, sample sizes or results. Only runs that happened, with the run next to the number. When there is no run, ship the method and say so.",
-      "source": "context.md s7",
-      "severity": "manual",
-      "scope": [
-        "all"
-      ],
-      "check": "manual",
-      "verify_with": "Every figure in the file traces to a file, a command, or a run recorded in DELIVERY-LOG.md. If it cannot, delete the figure."
-    },
-    {
-      "id": "R07",
-      "text": "Every post ships a recommended headline and subheadline pair, plus two alternative pairs.",
-      "source": "owner instruction 2026-10-31, restated 2026-11-06",
-      "severity": "block",
-      "scope": [
-        "post"
-      ],
-      "check": "headline-pair"
-    },
-    {
-      "id": "R08",
-      "text": "The headline is under 120 characters, carries the claim, and is never a question. The first line must be incomplete without the second.",
-      "source": "context.md s7, visual_and_hook_spec.md part 1",
-      "severity": "block",
-      "scope": [
-        "post"
-      ],
-      "check": "first-line"
-    },
-    {
-      "id": "R09",
-      "text": "Headline plus subheadline are complete inside 200 characters, because that is what shows before the see-more cut.",
-      "source": "visual_and_hook_spec.md part 1",
-      "severity": "block",
-      "scope": [
-        "post"
-      ],
-      "check": "pair-length"
-    },
-    {
-      "id": "R10",
-      "text": "One boxed phrase per card, one to three words, on a single line, never opening line one. Give the primary box and one alternative.",
-      "source": "owner instruction 2026-11-01, visual_and_hook_spec.md part 2",
-      "severity": "block",
-      "scope": [
-        "post"
-      ],
-      "check": "box"
-    },
-    {
-      "id": "R11",
-      "text": "The box passes the portability test. If the phrase could headline a different post by a different writer, it is wrong. Box the quantity or the failure verb, never the topic.",
-      "source": "visual_and_hook_spec.md part 2",
-      "severity": "manual",
-      "scope": [
-        "post"
-      ],
-      "check": "manual",
-      "verify_with": "Swap the box into three other posts from the INDEX. If it fits any of them, replace it."
-    },
-    {
-      "id": "R12",
-      "text": "Hashtags must be ones actually in use on LinkedIn in this lane, checked against PIPELINE/registry/hashtags.json. Three to five, on the final line. Never invent a tag, never quote a follower count.",
-      "source": "owner instruction 2026-11-06",
-      "severity": "block",
-      "scope": [
-        "post"
-      ],
-      "check": "hashtags"
-    },
-    {
-      "id": "R13",
-      "text": "Every post names the template it was built on, from the fourteen in DAILY CONTENT/post_templates.txt, and the file records which one.",
-      "source": "owner instruction 2026-11-06",
-      "severity": "block",
-      "scope": [
-        "post",
-        "comment"
-      ],
-      "check": "template"
-    },
-    {
-      "id": "R14",
-      "text": "Everything ships through the human gate. voice_lint minus the gate must be 0 errors, and the human gate must score 90 or above with 0 errors.",
-      "source": "owner instruction 2026-10-31",
-      "severity": "block",
-      "scope": [
-        "post",
-        "comment",
-        "dm",
-        "doc",
-        "outward"
-      ],
-      "check": "voice"
-    },
-    {
-      "id": "R15",
-      "text": "Deliverables end on a statement, not a question. A light offer is allowed in a warm reply.",
-      "source": "context.md s8, comment style",
-      "severity": "warn",
-      "scope": [
-        "post",
-        "comment"
-      ],
-      "check": "ending"
-    },
-    {
-      "id": "R16",
-      "text": "Read the profile of the person before writing a word to them or about them. Name, role, their actual argument, and something only they said.",
-      "source": "owner instruction 2026-11-01",
-      "severity": "block",
-      "scope": [
-        "comment",
-        "dm"
-      ],
-      "check": "profile-read"
-    },
-    {
-      "id": "R17",
-      "text": "No links in cold comments. Links are allowed in a warm reply, or where one was already posted.",
-      "source": "context.md s7",
-      "severity": "block",
-      "scope": [
-        "comment"
-      ],
-      "check": "cold-link"
-    },
-    {
-      "id": "R18",
-      "text": "Nothing goes to a live Upwork or LinkedIn account without owner approval. Drafts are drafts.",
-      "source": "context.md s7",
-      "severity": "block",
-      "scope": [
-        "all"
-      ],
-      "check": "approval"
-    },
-    {
-      "id": "R19",
-      "text": "Client and reviewer work stays private to that person until they agree otherwise. Findings go to them first, as a file plus a SHA-256, never as a repository link.",
-      "source": "owner instruction 2026-11-04",
-      "severity": "block",
-      "scope": [
-        "outward"
-      ],
-      "check": "confidence"
-    },
-    {
-      "id": "R20",
-      "text": "Never claim a fix is fixed. Until the post-fix run is in hand, the patch is under test.",
-      "source": "FORAY engagement rule, 2026-11-06",
-      "severity": "block",
-      "scope": [
-        "doc",
-        "outward"
-      ],
-      "check": "overclaim"
-    },
-    {
-      "id": "R21",
-      "text": "Every session writes its own log at SESSION_LOG/SESSION_LOG_<date>.md, recording each instruction, each decision, each artifact with its path, and the open loops.",
-      "source": "owner instruction 2026-10-31",
-      "severity": "block",
-      "scope": [
-        "internal"
-      ],
-      "check": "session-log"
-    },
-    {
-      "id": "R22",
-      "text": "Every delivered file is journalled in STATE/DELIVERY-LOG.md with its path, SHA-256, gate result, and who it went to. If it is not in the log, it is not delivered.",
-      "source": "owner instruction 2026-11-06, this restructure",
-      "severity": "block",
-      "scope": [
-        "outward",
-        "doc",
-        "post"
-      ],
-      "check": "delivery-log"
-    },
-    {
-      "id": "R23",
-      "text": "A post is not ready until its row exists in VERIFIED_POSTS/INDEX.md.",
-      "source": "repo convention",
-      "severity": "block",
-      "scope": [
-        "post"
-      ],
-      "check": "index-row"
-    },
-    {
-      "id": "R24",
-      "text": "No PII in a public link. The repo is public. Confirm with the owner before committing a new resume, address, phone number or document.",
-      "source": "context.md s7",
-      "severity": "block",
-      "scope": [
-        "outward",
-        "doc"
-      ],
-      "check": "pii"
-    },
-    {
-      "id": "R25",
-      "text": "Card geometry and colour are locked. Per-article changes are copy and a generated background only. No AI-generated face of the owner, ever.",
-      "source": "context.md s7",
-      "severity": "manual",
-      "scope": [
-        "post"
-      ],
-      "check": "manual",
-      "verify_with": "Compare against the three approved cards in visual_and_hook_spec.md part 4."
-    },
-    {
-      "id": "R26",
-      "text": "Every deliverable states what it is, who it is for, and what the reader should do next, in the file itself, not in the chat. A comment or a DM from 2026-11-10 also carries sources_read:, because every link a post attaches is read before the comment is written (owner instruction 2026-11-09). The value is read: <what it was, the date>, or none: nothing attached, or blocked: <why it will not open, what the comment claims without it>. A link that turns out to be a landing page, a waitlist or a listing is still read and still reported as read, with what it turned out to be.",
-      "source": "owner instruction 2026-11-06, this restructure; owner question 2026-11-09 on reading attached links, then 'please always read it' the same day",
-      "severity": "block",
-      "scope": [
-        "outward",
-        "doc",
-        "post",
-        "dm"
-      ],
-      "check": "contract"
-    },
-    {
-      "id": "R27",
-      "text": "Read the rules end to end before writing a deliverable, not after. The gate exists to catch what reading missed, not to replace reading.",
-      "source": "owner instruction 2026-11-06",
-      "severity": "manual",
-      "scope": [
-        "all"
-      ],
-      "check": "manual",
-      "verify_with": "pipeline.py start has been run in this session, and the read order in PIPELINE/00-START.md was followed."
-    },
-    {
-      "id": "R28",
-      "text": "Nothing is sent on the owner's behalf. Every send is the owner's action; the agent drafts, gates, and hands over.",
-      "source": "owner instruction 2026-11-01",
-      "severity": "block",
-      "scope": [
-        "all"
-      ],
-      "check": "approval"
-    },
-    {
-      "id": "R29",
-      "text": "A skill or tool that is not in this repo, or not in the EMPIRE, does not get imported into a deliverable. If it is missing, say it is missing.",
-      "source": "owner instruction 2026-11-03",
-      "severity": "manual",
-      "scope": [
-        "doc",
-        "outward"
-      ],
-      "check": "manual",
-      "verify_with": "Every capability claimed in a deliverable maps to a file or a run in this repo."
-    },
-    {
-      "id": "R30",
-      "text": "Dates and times are stated in WAT and written as 6 Nov 2026. No relative dates in a file that will outlive the week.",
-      "source": "this restructure",
-      "severity": "warn",
-      "scope": [
-        "all"
-      ],
-      "check": "dates"
-    },
-    {
-      "id": "R31",
-      "text": "Every post goes out with a first comment carrying the AI Red Team Playbook link, from 2026-11-09 until the repository reaches 1,000 stars. The comment earns the link by naming the file that answers that post's point; it is never a bare link drop, and the star count is never quoted.",
-      "source": "owner instruction 2026-11-09",
-      "severity": "manual",
-      "scope": [
-        "post"
-      ],
-      "check": "manual",
-      "verify_with": "The post's front matter first_comment names the comment file, and that file holds the text that goes under it."
-    },
-    {
-      "id": "R32",
-      "text": "A filename typed into pasted text autolinks to an address that does not exist. Anything a human copies into LinkedIn names the file without its extension, and the working URL, where one is allowed, carries the path. Learned twice: a .zip and a .md both turned into dead links inside a comment.",
-      "source": "engagement, 2026-11-06 and 2026-11-09",
-      "severity": "block",
-      "scope": [
-        "outward",
-        "post",
-        "comment",
-        "dm"
-      ],
-      "check": "dotted-filename"
-    },
-    {
-      "id": "R33",
-      "text": "A post that rests on a fact which moves is checked the same day, and the file says which fact and where it was checked. A number in a screenshot can be right on Monday and wrong on Tuesday, and a comment written from it is dated either way. Where the post makes no checkable claim, say so with opinion: rather than leaving the field out.",
-      "source": "owner question 2026-11-09, the Nvidia repricing check",
-      "severity": "block",
-      "scope": [
-        "outward",
-        "comment",
-        "dm"
-      ],
-      "check": "premise"
-    },
-    {
-      "id": "R34",
-      "text": "Two substantive exchanges per person per thread, then stop. The other person keeps the last substantive word, whether or not they use it. A third reply is an argument, and an argument under somebody else's post is read as a fight rather than as a point.",
-      "source": "engagement pattern, October and November 2026",
-      "severity": "manual",
-      "scope": [
-        "outward"
-      ],
-      "check": "manual"
-    },
-    {
-      "id": "R35",
-      "text": "A claim about somebody else's system names the version and the surface it was tested on. A proof that runs on an internal path is not a capability: it says the code does the thing, not that anyone can reach it. Say which, every time, because the difference is the whole finding.",
-      "source": "FORAY correspondence, 2026-11-09, the Tier-2 reachability correction",
-      "severity": "manual",
-      "scope": [
-        "outward",
-        "doc"
-      ],
-      "check": "manual"
-    },
-    {
-      "id": "R36",
-      "text": "Every hash, byte count and word count quoted to an outside reader is recomputed from the file in the same command that writes the letter, and the delivery log row carries the same value. A hash copied from an earlier message is a claim about a file that may have changed since.",
-      "source": "the Evelyne-Claudia recomputation, 2026-11-09",
-      "severity": "manual",
-      "scope": [
-        "outward",
-        "doc"
-      ],
-      "check": "manual"
-    },
-    {
-      "id": "R37",
-      "text": "A question the owner has answered twice is not asked a third time. Once he has chosen, the choice is the working assumption, and re-raising it spends his attention on a decision already made. Record the choice and the date instead.",
-      "source": "owner instruction pattern, November 2026, the Drive ownership caveat",
-      "severity": "manual",
-      "scope": [
-        "internal"
-      ],
-      "check": "manual"
-    },
-    {
-      "id": "R38",
-      "text": "A direct question from a reader is answered within a day, or it is acknowledged with the day it will be answered. The queue lives in STATE/REPLY-QUEUE.md with the date received and the date due, so an unanswered question is visible rather than forgotten. A question that arrives on a Friday may be answered on Monday, and it still gets a row.",
-      "source": "owner instruction 2026-11-09, add all of it",
-      "severity": "manual",
-      "scope": [
-        "outward"
-      ],
-      "check": "manual"
-    },
-    {
-      "id": "R39",
-      "text": "No comments on reposts, because a repost carries no author argument to answer and a substantive comment under one is a broadcast. The single exception is a repost that carries the author's own writing around it, which is recorded in the file as the author's argument. The held-file pattern already exists for these; this makes it the rule rather than the habit.",
-      "source": "owner instruction 2026-11-09, add all of it",
-      "severity": "manual",
-      "scope": [
-        "outward"
-      ],
-      "check": "manual"
-    },
-    {
-      "id": "R40",
-      "text": "Every post carries a real number, from a run that happened, or says in the text why it carries none. R06 still owns the figures: the number is real or it is absent, and absent-with-a-reason is the acceptable version of absent. A post that wants a number and has no run writes the method and says so.",
-      "source": "owner instruction 2026-11-09, add all of it; bounded by R06",
-      "severity": "warn",
-      "scope": [
-        "post"
-      ],
-      "check": "post-number"
-    },
-    {
-      "id": "R41",
-      "text": "A session opens with the pace reading and the reply queue, and no post ships on a day whose follower row is missing. The two questions are what the number did and who is waiting. Both are answered in a second, and both are invisible otherwise.",
-      "source": "owner question 2026-11-09 on systems; the follower log with one row in it",
-      "severity": "manual",
-      "scope": [
-        "internal"
-      ],
-      "check": "manual"
-    },
-    {
-      "id": "R42",
-      "text": "Borrowed audiences are worked as a board, not as a hope: two asks a week, each to a named host with a named route to them, each with a follow-up date seven days out. A borrowed audience ask that is not a row in STATE/BORROWED-AUDIENCE.md did not happen. One appearance in front of twenty thousand people does what a month of posting cannot, and nothing else in the repo has a lead time measured in weeks.",
-      "source": "owner instruction 2026-11-09, build and integrate the systems; the growth plan's lever four",
-      "severity": "manual",
-      "scope": [
-        "internal"
-      ],
-      "check": "manual"
-    },
-    {
-      "id": "R43",
-      "text": "Client work stays private until the client agrees in writing, and a case study carries that agreement in its front matter: permission: not-requested, requested: <date>, granted: <date and how>, or granted-anonymous. A case study at status ready or later without granted permission is blocked. Drafting before asking is allowed and is the point: the draft is what gets approved.",
-      "source": "R19, made checkable on 2026-11-09",
-      "severity": "block",
-      "scope": [
-        "doc",
-        "outward"
-      ],
-      "check": "case-study-permission"
-    },
-    {
-      "id": "R44",
-      "text": "A LinkedIn comment is capped at 1,250 characters, and the composer refuses rather than trims. The gate measures the pasted text, fails anything over the cap and warns above 1,000, because a comment at 1,240 characters cannot be edited in the box without losing the ending.",
-      "source": "owner paste 2026-11-10, refused at 1,258 characters",
-      "severity": "block",
-      "scope": [
-        "outward",
-        "comment"
-      ],
-      "check": "char-limit"
-    },
-    {
-      "id": "R45",
-      "text": "A comment is written the way a person talks, not the way a list is presented. No counted frame (\"two things\"), no first and second scaffolding, no announcement of what is coming, no mirrored closing clause and no aphorism at the end. Start inside the problem, keep one idea, use contractions, admit a limit, and finish on something a person would actually say. The tells are listed in the rule and warned on by the gate.",
-      "source": "owner instruction 2026-11-12, after the Jerry Liu draft was read back as generated",
-      "severity": "warn",
-      "scope": [
-        "outward",
-        "comment"
-      ],
-      "check": "read-as-generated"
-    },
-    {
-      "id": "R46",
-      "text": "Every post ships with a card rendered from the post itself, and the Drive link comes back with the post. The gate blocks a post dated 14 November 2026 or later that has no visual/cover.png beside it, and warns until visual_link is filled in, because a card that exists on this machine and not in his hands is not a card.",
-      "source": "owner paste 2026-11-13: generate the visual for each post that goes out and give the Google Drive link to download it every time",
-      "severity": "block",
-      "scope": [
-        "post",
-        "outward"
-      ],
-      "check": "visual-present"
-    },
-    {
-      "id": "R47",
-      "text": "Read a clock before every delivery, and record what it said: the date, the time in WAT, and which clock. A draft is written against a day, so a file with no clock reading is dated by when the work started, and it answers a message that arrived after it or names a slot that has passed. The gate refuses a missing record and a record whose date disagrees with the file's date.",
-      "source": "owner instruction 2026-11-14, always verify date and time before every delivery",
-      "severity": "block",
-      "scope": [
-        "all"
-      ],
-      "check": "clock"
-    }
-  ]
+  {
+   "id": "R03",
+   "text": "Never name tomicialgraphics, or any repository URL, account name, handle or email variant built from it, in anything a client, reviewer, hiring team or vendor receives. Pinned revisions are identified to outsiders by commit SHA and file SHA-256 only.",
+   "source": "owner instruction 2026-11-04",
+   "severity": "block",
+   "scope": [
+    "outward"
+   ],
+   "check": "identity-leak"
+  },
+  {
+   "id": "R04",
+   "text": "olusanyatimothy54@gmail.com is the only outbound address. Never use tomicialgraphics@gmail.com and never present it as the owner's address.",
+   "source": "owner instruction 2026-11-04",
+   "severity": "block",
+   "scope": [
+    "outward"
+   ],
+   "check": "outbound-address"
+  },
+  {
+   "id": "R05",
+   "text": "No local machine paths in a deliverable. No C:\\Users, no file:/// URLs, no sandbox paths. Anything the reader cannot open is noise.",
+   "source": "owner instruction 2026-11-03",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "doc"
+   ],
+   "check": "local-path"
+  },
+  {
+   "id": "R06",
+   "text": "No fabricated numbers, rates, sample sizes or results. Only runs that happened, with the run next to the number. When there is no run, ship the method and say so.",
+   "source": "context.md s7",
+   "severity": "manual",
+   "scope": [
+    "all"
+   ],
+   "check": "manual",
+   "verify_with": "Every figure in the file traces to a file, a command, or a run recorded in DELIVERY-LOG.md. If it cannot, delete the figure."
+  },
+  {
+   "id": "R07",
+   "text": "Every post ships a recommended headline and subheadline pair, plus two alternative pairs.",
+   "source": "owner instruction 2026-10-31, restated 2026-11-06",
+   "severity": "block",
+   "scope": [
+    "post"
+   ],
+   "check": "headline-pair"
+  },
+  {
+   "id": "R08",
+   "text": "The headline is under 120 characters, carries the claim, and is never a question. The first line must be incomplete without the second.",
+   "source": "context.md s7, visual_and_hook_spec.md part 1",
+   "severity": "block",
+   "scope": [
+    "post"
+   ],
+   "check": "first-line"
+  },
+  {
+   "id": "R09",
+   "text": "Headline plus subheadline are complete inside 200 characters, because that is what shows before the see-more cut.",
+   "source": "visual_and_hook_spec.md part 1",
+   "severity": "block",
+   "scope": [
+    "post"
+   ],
+   "check": "pair-length"
+  },
+  {
+   "id": "R10",
+   "text": "One boxed phrase per card, one to three words, on a single line, never opening line one. Give the primary box and one alternative.",
+   "source": "owner instruction 2026-11-01, visual_and_hook_spec.md part 2",
+   "severity": "block",
+   "scope": [
+    "post"
+   ],
+   "check": "box"
+  },
+  {
+   "id": "R11",
+   "text": "The box passes the portability test. If the phrase could headline a different post by a different writer, it is wrong. Box the quantity or the failure verb, never the topic.",
+   "source": "visual_and_hook_spec.md part 2",
+   "severity": "manual",
+   "scope": [
+    "post"
+   ],
+   "check": "manual",
+   "verify_with": "Swap the box into three other posts from the INDEX. If it fits any of them, replace it."
+  },
+  {
+   "id": "R12",
+   "text": "Hashtags must be ones actually in use on LinkedIn in this lane, checked against PIPELINE/registry/hashtags.json. Three to five, on the final line. Never invent a tag, never quote a follower count.",
+   "source": "owner instruction 2026-11-06",
+   "severity": "block",
+   "scope": [
+    "post"
+   ],
+   "check": "hashtags"
+  },
+  {
+   "id": "R13",
+   "text": "Every post names the template it was built on, from the fourteen in DAILY CONTENT/post_templates.txt, and the file records which one.",
+   "source": "owner instruction 2026-11-06",
+   "severity": "block",
+   "scope": [
+    "post",
+    "comment"
+   ],
+   "check": "template"
+  },
+  {
+   "id": "R14",
+   "text": "Everything ships through the human gate. voice_lint minus the gate must be 0 errors, and the human gate must score 90 or above with 0 errors.",
+   "source": "owner instruction 2026-10-31",
+   "severity": "block",
+   "scope": [
+    "post",
+    "comment",
+    "dm",
+    "doc",
+    "outward"
+   ],
+   "check": "voice"
+  },
+  {
+   "id": "R15",
+   "text": "Deliverables end on a statement, not a question. A light offer is allowed in a warm reply.",
+   "source": "context.md s8, comment style",
+   "severity": "warn",
+   "scope": [
+    "post",
+    "comment"
+   ],
+   "check": "ending"
+  },
+  {
+   "id": "R16",
+   "text": "Read the profile of the person before writing a word to them or about them. Name, role, their actual argument, and something only they said.",
+   "source": "owner instruction 2026-11-01",
+   "severity": "block",
+   "scope": [
+    "comment",
+    "dm"
+   ],
+   "check": "profile-read"
+  },
+  {
+   "id": "R17",
+   "text": "No links in cold comments. Links are allowed in a warm reply, or where one was already posted.",
+   "source": "context.md s7",
+   "severity": "block",
+   "scope": [
+    "comment"
+   ],
+   "check": "cold-link"
+  },
+  {
+   "id": "R18",
+   "text": "Nothing goes to a live Upwork or LinkedIn account without owner approval. Drafts are drafts.",
+   "source": "context.md s7",
+   "severity": "block",
+   "scope": [
+    "all"
+   ],
+   "check": "approval"
+  },
+  {
+   "id": "R19",
+   "text": "Client and reviewer work stays private to that person until they agree otherwise. Findings go to them first, as a file plus a SHA-256, never as a repository link.",
+   "source": "owner instruction 2026-11-04",
+   "severity": "block",
+   "scope": [
+    "outward"
+   ],
+   "check": "confidence"
+  },
+  {
+   "id": "R20",
+   "text": "Never claim a fix is fixed. Until the post-fix run is in hand, the patch is under test.",
+   "source": "FORAY engagement rule, 2026-11-06",
+   "severity": "block",
+   "scope": [
+    "doc",
+    "outward"
+   ],
+   "check": "overclaim"
+  },
+  {
+   "id": "R21",
+   "text": "Every session writes its own log at SESSION_LOG/SESSION_LOG_<date>.md, recording each instruction, each decision, each artifact with its path, and the open loops.",
+   "source": "owner instruction 2026-10-31",
+   "severity": "block",
+   "scope": [
+    "internal"
+   ],
+   "check": "session-log"
+  },
+  {
+   "id": "R22",
+   "text": "Every delivered file is journalled in STATE/DELIVERY-LOG.md with its path, SHA-256, gate result, and who it went to. If it is not in the log, it is not delivered.",
+   "source": "owner instruction 2026-11-06, this restructure",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "doc",
+    "post"
+   ],
+   "check": "delivery-log"
+  },
+  {
+   "id": "R23",
+   "text": "A post is not ready until its row exists in VERIFIED_POSTS/INDEX.md.",
+   "source": "repo convention",
+   "severity": "block",
+   "scope": [
+    "post"
+   ],
+   "check": "index-row"
+  },
+  {
+   "id": "R24",
+   "text": "No PII in a public link. The repo is public. Confirm with the owner before committing a new resume, address, phone number or document.",
+   "source": "context.md s7",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "doc"
+   ],
+   "check": "pii"
+  },
+  {
+   "id": "R25",
+   "text": "Card geometry and colour are locked. Per-article changes are copy and a generated background only. No AI-generated face of the owner, ever.",
+   "source": "context.md s7",
+   "severity": "manual",
+   "scope": [
+    "post"
+   ],
+   "check": "manual",
+   "verify_with": "Compare against the three approved cards in visual_and_hook_spec.md part 4."
+  },
+  {
+   "id": "R26",
+   "text": "Every deliverable states what it is, who it is for, and what the reader should do next, in the file itself, not in the chat. A comment or a DM from 2026-11-10 also carries sources_read:, because every link a post attaches is read before the comment is written (owner instruction 2026-11-09). The value is read: <what it was, the date>, or none: nothing attached, or blocked: <why it will not open, what the comment claims without it>. A link that turns out to be a landing page, a waitlist or a listing is still read and still reported as read, with what it turned out to be.",
+   "source": "owner instruction 2026-11-06, this restructure; owner question 2026-11-09 on reading attached links, then 'please always read it' the same day",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "doc",
+    "post",
+    "dm"
+   ],
+   "check": "contract"
+  },
+  {
+   "id": "R27",
+   "text": "Read the rules end to end before writing a deliverable, not after. The gate exists to catch what reading missed, not to replace reading.",
+   "source": "owner instruction 2026-11-06",
+   "severity": "manual",
+   "scope": [
+    "all"
+   ],
+   "check": "manual",
+   "verify_with": "pipeline.py start has been run in this session, and the read order in PIPELINE/00-START.md was followed."
+  },
+  {
+   "id": "R28",
+   "text": "Nothing is sent on the owner's behalf. Every send is the owner's action; the agent drafts, gates, and hands over.",
+   "source": "owner instruction 2026-11-01",
+   "severity": "block",
+   "scope": [
+    "all"
+   ],
+   "check": "approval"
+  },
+  {
+   "id": "R29",
+   "text": "A skill or tool that is not in this repo, or not in the EMPIRE, does not get imported into a deliverable. If it is missing, say it is missing.",
+   "source": "owner instruction 2026-11-03",
+   "severity": "manual",
+   "scope": [
+    "doc",
+    "outward"
+   ],
+   "check": "manual",
+   "verify_with": "Every capability claimed in a deliverable maps to a file or a run in this repo."
+  },
+  {
+   "id": "R30",
+   "text": "Dates and times are stated in WAT and written as 6 Nov 2026. No relative dates in a file that will outlive the week.",
+   "source": "this restructure",
+   "severity": "warn",
+   "scope": [
+    "all"
+   ],
+   "check": "dates"
+  },
+  {
+   "id": "R31",
+   "text": "Every post goes out with a first comment carrying the AI Red Team Playbook link, from 2026-11-09 until the repository reaches 1,000 stars. The comment earns the link by naming the file that answers that post's point; it is never a bare link drop, and the star count is never quoted.",
+   "source": "owner instruction 2026-11-09",
+   "severity": "manual",
+   "scope": [
+    "post"
+   ],
+   "check": "manual",
+   "verify_with": "The post's front matter first_comment names the comment file, and that file holds the text that goes under it."
+  },
+  {
+   "id": "R32",
+   "text": "A filename typed into pasted text autolinks to an address that does not exist. Anything a human copies into LinkedIn names the file without its extension, and the working URL, where one is allowed, carries the path. Learned twice: a .zip and a .md both turned into dead links inside a comment.",
+   "source": "engagement, 2026-11-06 and 2026-11-09",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "post",
+    "comment",
+    "dm"
+   ],
+   "check": "dotted-filename"
+  },
+  {
+   "id": "R33",
+   "text": "A post that rests on a fact which moves is checked the same day, and the file says which fact and where it was checked. A number in a screenshot can be right on Monday and wrong on Tuesday, and a comment written from it is dated either way. Where the post makes no checkable claim, say so with opinion: rather than leaving the field out.",
+   "source": "owner question 2026-11-09, the Nvidia repricing check",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "comment",
+    "dm"
+   ],
+   "check": "premise"
+  },
+  {
+   "id": "R34",
+   "text": "Two substantive exchanges per person per thread, then stop. The other person keeps the last substantive word, whether or not they use it. A third reply is an argument, and an argument under somebody else's post is read as a fight rather than as a point.",
+   "source": "engagement pattern, October and November 2026",
+   "severity": "manual",
+   "scope": [
+    "outward"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R35",
+   "text": "A claim about somebody else's system names the version and the surface it was tested on. A proof that runs on an internal path is not a capability: it says the code does the thing, not that anyone can reach it. Say which, every time, because the difference is the whole finding.",
+   "source": "FORAY correspondence, 2026-11-09, the Tier-2 reachability correction",
+   "severity": "manual",
+   "scope": [
+    "outward",
+    "doc"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R36",
+   "text": "Every hash, byte count and word count quoted to an outside reader is recomputed from the file in the same command that writes the letter, and the delivery log row carries the same value. A hash copied from an earlier message is a claim about a file that may have changed since.",
+   "source": "the Evelyne-Claudia recomputation, 2026-11-09",
+   "severity": "manual",
+   "scope": [
+    "outward",
+    "doc"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R37",
+   "text": "A question the owner has answered twice is not asked a third time. Once he has chosen, the choice is the working assumption, and re-raising it spends his attention on a decision already made. Record the choice and the date instead.",
+   "source": "owner instruction pattern, November 2026, the Drive ownership caveat",
+   "severity": "manual",
+   "scope": [
+    "internal"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R38",
+   "text": "A direct question from a reader is answered within a day, or it is acknowledged with the day it will be answered. The queue lives in STATE/REPLY-QUEUE.md with the date received and the date due, so an unanswered question is visible rather than forgotten. A question that arrives on a Friday may be answered on Monday, and it still gets a row.",
+   "source": "owner instruction 2026-11-09, add all of it",
+   "severity": "manual",
+   "scope": [
+    "outward"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R39",
+   "text": "No comments on reposts, because a repost carries no author argument to answer and a substantive comment under one is a broadcast. The single exception is a repost that carries the author's own writing around it, which is recorded in the file as the author's argument. The held-file pattern already exists for these; this makes it the rule rather than the habit.",
+   "source": "owner instruction 2026-11-09, add all of it",
+   "severity": "manual",
+   "scope": [
+    "outward"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R40",
+   "text": "Every post carries a real number, from a run that happened, or says in the text why it carries none. R06 still owns the figures: the number is real or it is absent, and absent-with-a-reason is the acceptable version of absent. A post that wants a number and has no run writes the method and says so.",
+   "source": "owner instruction 2026-11-09, add all of it; bounded by R06",
+   "severity": "warn",
+   "scope": [
+    "post"
+   ],
+   "check": "post-number"
+  },
+  {
+   "id": "R41",
+   "text": "A session opens with the pace reading and the reply queue, and no post ships on a day whose follower row is missing. The two questions are what the number did and who is waiting. Both are answered in a second, and both are invisible otherwise.",
+   "source": "owner question 2026-11-09 on systems; the follower log with one row in it",
+   "severity": "manual",
+   "scope": [
+    "internal"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R42",
+   "text": "Borrowed audiences are worked as a board, not as a hope: two asks a week, each to a named host with a named route to them, each with a follow-up date seven days out. A borrowed audience ask that is not a row in STATE/BORROWED-AUDIENCE.md did not happen. One appearance in front of twenty thousand people does what a month of posting cannot, and nothing else in the repo has a lead time measured in weeks.",
+   "source": "owner instruction 2026-11-09, build and integrate the systems; the growth plan's lever four",
+   "severity": "manual",
+   "scope": [
+    "internal"
+   ],
+   "check": "manual"
+  },
+  {
+   "id": "R43",
+   "text": "Client work stays private until the client agrees in writing, and a case study carries that agreement in its front matter: permission: not-requested, requested: <date>, granted: <date and how>, or granted-anonymous. A case study at status ready or later without granted permission is blocked. Drafting before asking is allowed and is the point: the draft is what gets approved.",
+   "source": "R19, made checkable on 2026-11-09",
+   "severity": "block",
+   "scope": [
+    "doc",
+    "outward"
+   ],
+   "check": "case-study-permission"
+  },
+  {
+   "id": "R44",
+   "text": "A LinkedIn comment is capped at 1,250 characters, and the composer refuses rather than trims. The gate measures the pasted text, fails anything over the cap and warns above 1,000, because a comment at 1,240 characters cannot be edited in the box without losing the ending.",
+   "source": "owner paste 2026-11-10, refused at 1,258 characters",
+   "severity": "block",
+   "scope": [
+    "outward",
+    "comment"
+   ],
+   "check": "char-limit"
+  },
+  {
+   "id": "R45",
+   "text": "A comment is written the way a person talks, not the way a list is presented. No counted frame (\"two things\"), no first and second scaffolding, no announcement of what is coming, no mirrored closing clause and no aphorism at the end. Start inside the problem, keep one idea, use contractions, admit a limit, and finish on something a person would actually say. The tells are listed in the rule and warned on by the gate.",
+   "source": "owner instruction 2026-11-12, after the Jerry Liu draft was read back as generated",
+   "severity": "warn",
+   "scope": [
+    "outward",
+    "comment"
+   ],
+   "check": "read-as-generated"
+  },
+  {
+   "id": "R46",
+   "text": "Every post ships with a card rendered from the post itself, and the Drive link comes back with the post. The gate blocks a post dated 14 November 2026 or later that has no visual/cover.png beside it, and warns until visual_link is filled in, because a card that exists on this machine and not in his hands is not a card.",
+   "source": "owner paste 2026-11-13: generate the visual for each post that goes out and give the Google Drive link to download it every time",
+   "severity": "block",
+   "scope": [
+    "post",
+    "outward"
+   ],
+   "check": "visual-present"
+  },
+  {
+   "id": "R47",
+   "text": "Read a clock before every delivery, and record what it said: the date, the time in WAT, and which clock. A draft is written against a day, so a file with no clock reading is dated by when the work started, and it answers a message that arrived after it or names a slot that has passed. The gate refuses a missing record and a record whose date disagrees with the file's date.",
+   "source": "owner instruction 2026-11-14, always verify date and time before every delivery",
+   "severity": "block",
+   "scope": [
+    "all"
+   ],
+   "check": "clock"
+  },
+  {
+   "id": "R48",
+   "text": "A post that introduces an asset never opens by announcing the author's own activity. It opens on an event, a failure or a number, and the asset earns its place inside the argument or in the first comment. Read line one: if it begins with 'I published', 'I built', 'I wrote' or 'I launched', rewrite it.",
+   "source": "owner analytics, 14 November 2026",
+   "severity": "warn",
+   "scope": [
+    "post"
+   ],
+   "check": "manual",
+   "verify_with": "On 14 November the post opening 'I published the checklist I use for AI red teaming' reached 77 impressions. The post opening on a board statement about a chief executive reached 8,001 in the same week from the same account. Same author, same method, different first line."
+  }
+ ]
 }
