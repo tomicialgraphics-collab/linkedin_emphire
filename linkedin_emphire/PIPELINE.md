@@ -12,8 +12,9 @@ Rule: every dollar and every relationship has a row, a stage, a value, a next ac
 | Sudhir (NCD tutor) | His review of report pending; make-good offered (Tue before 1 PM ET or Wed/Thu) | $65 | Wednesday WAT nudge if silent; no action after that | 2026-10-14 |
 | Upwork catalog (Quick Scan $200 / Red Team Review $800 / Pre-Launch Hardening $2,000) | Listings live | Open | Triage by rule: no spec, no apply | ongoing |
 | SmartScale agency gig | SKIP logged (economics, no differentiator, voice overclaim) | 0 | none | done |
+| Kuldeep Patil, InvisibleAct (agent authorization gate) | **PROPOSED 2026-11-14** in DM; awaiting his environment and an agreed rail | $1,000 for four scenarios, or $500 for two | Send nothing until he answers. If no environment by **2026-11-18**, one nudge covering the environment and the rail only | 2026-11-18 |
 
-Identified money total: $4,065. **In play as of 2026-10-31: $4,000 of it, for the first time.** Collected: still $0.
+Identified money total: $5,065 as of 2026-11-14, the extra $1,000 being the Kuldeep row, which is proposed and not contracted. **In play as of 2026-10-31: $4,000 of it, for the first time**, plus $1,000 proposed on 2026-11-14. Collected: still $0.
 70-day target: $5,000. Day 20 of 70 as of 2026-10-31.
 
 The AEC proposal sat unsent for nineteen days and is now out. That one move turned the largest
