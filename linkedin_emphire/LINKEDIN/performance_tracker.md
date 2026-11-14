@@ -186,3 +186,64 @@ window 2026-10-19 to 2026-10-25, daily data UTC)
   THE LINE). New surface: Anthonette Ochieze
   Adanyin (AI security, 2nd, not followed) added to
   tier 2 + follow-back flag.
+
+## Snapshot 2026-11-14 (7-day window: 2026-11-08 to 2026-11-14)
+
+Source: creator analytics Overview, Content performance, Discovery and Engagement panels, plus two exports read from Drive on the same day (`PostPerformance_2025-11-15_2026-11-14.xlsx` `1aLRhnbJAwGc_LSEWcfp579E7GQ5g9q4Y`, `AggregateAnalytics_…xlsx` `1CvLQrc_By5Q3UlKM-VKDn3xcjMzmCi9`). Per-post figures are transcribed to `ANALYTICS/2026-11-14_post-performance.tsv`.
+
+### Headline metrics
+| Metric | Value | Delta |
+|---|---|---|
+| Post impressions (7 days) | 11,144 | +517% vs prior 7 days |
+| Total followers | 1,244 | +16% vs prior 7 days (~+172) |
+| Profile viewers (90 days) | 599 | +11% |
+| Search appearances (Nov 3-9) | 11 | 0% vs Oct 27-Nov 2 |
+| Posts this week | 10 | 126 comments written this week |
+
+### Discovery and engagement, 7 days
+- 11,144 impressions, 15% in-network / 85% out-of-network, 6,835 members reached. 1.63 impressions per member reached.
+- 42 social engagements: 23 reactions, 15 comments, 0 reposts, 4 saves, **0 sends**. Engagement rate 0.38% of impressions.
+
+### Against the previous snapshot (2026-10-23)
+| Metric | 23 Oct | 14 Nov | Change |
+|---|---|---|---|
+| Impressions (7 days) | 971 | 11,144 | 11.5x |
+| Followers | 684 | 1,244 | +82% |
+| Profile viewers (90 days) | 285 | 599 | +110% |
+| Search appearances | 2 | 11 | +450%, then 0% week over week |
+
+### Per-post, 2026-11-08 to 2026-11-14 (export)
+| Date | Type | Impressions | Reached | Profile viewers | Followers | Engagements |
+|---|---|---|---|---|---|---|
+| 11/12 | Image | 8,013 | 5,527 | 8 | 0 | 5 |
+| 11/10 | Text | 744 | 145 | 0 | 0 | 3 |
+| 11/13 | Text | 472 | 289 | 0 | 0 | 2 |
+| 11/13 | Text | 380 | 256 | 0 | 0 | 5 |
+| 11/14 | Repost | 342 | 184 | 0 | 2 | 8 |
+| 11/9 | Text | 310 | 206 | 0 | 0 | 2 |
+| 11/8 | Text | 218 | 140 | 0 | 0 | 2 |
+| 11/12 | Text | 203 | 104 | 0 | 0 | 2 |
+| 11/14 | Image | 193 | 99 | 1 | 0 | 11 |
+| 11/9 | Article | 79 | 33 | 0 | 0 | 2 |
+
+Column totals reconcile exactly with the Engagement panel (23 reactions, 15 comments, 4 saves) and reach 10,954 impressions against the dashboard's 11,144, the 190 difference being metrics still accruing when the export was taken.
+
+### The exported year (2026-08-19 to 2026-11-14, 66 rows)
+- 24,576 impressions transcribed against the aggregate sheet's 24,925 for the full year, so this week is 45% of everything the account has ever done.
+- Profile viewers attributed to posts across the whole export: 28. Followers gained attributed to posts: 6.
+- Reactions 131, comments 51, reposts 10, saves 5, sends 1.
+- By post type, profile viewers per 1,000 impressions: Article 4.0 (248 impressions), Text 1.4 (8,868), Repost 1.3 (1,579), Image 0.9 (13,881).
+- Best and worst converters at scale: the 11/12 news post converted 1.0 profile view per 1,000 impressions on 8,013; the 10/2 debugging post converted 5.0 on 603; the 10/12 "real talk" post 3.9 on 760; the 11/14 hash post 5.2 on 193.
+
+### Read (2026-11-14)
+- The reach engine works and it is one event. A single post carried 73% of the week and 45% of a year of impressions arrived in seven days. That is distribution, not a habit.
+- Reach is not routing. 11,144 impressions produced 9 post-attributed profile views and 42 engagements. The 8,013-impression post drew 5 engagements. At 96% out-of-network, the audience read and left.
+- News posts buy reach, check posts buy visits. Per 1,000 impressions the first-person defect posts converted at four to five times the news post. The sample is small (9 profile views in a week, 28 in a year) so this is a direction, not a doctrine.
+- Follower growth is not coming from the posts. 684 to 1,244 in three weeks, against 6 post-attributed follows in the whole export, means the follows are happening at the profile and from comment threads. The profile rebuild this week is therefore working on the right surface.
+- Nobody forwards anything. One send in a year and ten reposts across 66 posts. Content is not a referral channel here; the DM and the profile are.
+- Search lines have not moved: 11 appearances, 0% week over week, after 2 in the October window. This is the number the About and Top-skills edit is supposed to move. Re-read on 21 November.
+
+### Tweaks applied from this snapshot (2026-11-14)
+- Weekly read changes from impressions to profile viewers and engagements per 1,000 impressions.
+- Cap on news-anchored posts at one a week. The rest of the week carries the check format that converts.
+- 7-day test set: search appearances above 11 on 21 November, or search is retired as a channel rather than re-tuned.
