@@ -369,6 +369,64 @@ def _follower_rows():
     return sorted(rows)
 
 
+
+VIEWER_DIR = os.path.join(EMPIRE, "analytics", "profile-viewers")
+
+_VIEWER_BUCKETS = [
+    ("founder or owner", ("founder", "business owner")),
+    ("university or student", ("university", "college", "student", "institute of technology",
+                               "universita", "epfl", "icfo")),
+    ("research fellow or professor", ("research fellow", "professor")),
+    ("security industry or vendor", ("network security", "security and investigations", "infragard",
+                                     "cymulate", "gray swan", "sonatype", "palo alto", "advai",
+                                     "tenet security", "nimble")),
+    ("named engineering role", ("software developer at", "engineer at", "developer at",
+                                "chief technology officer", "technology manager")),
+]
+
+
+def _viewer_file(args):
+    name = getattr(args, "file", None)
+    if name:
+        return name
+    if not os.path.isdir(VIEWER_DIR):
+        return None
+    files = sorted(f for f in os.listdir(VIEWER_DIR) if f.endswith(".txt"))
+    return os.path.join(VIEWER_DIR, files[-1]) if files else None
+
+
+def cmd_viewers(args) -> int:
+    """Segment a pasted profile viewer list. One descriptor per line."""
+    path = _viewer_file(args)
+    if not path or not os.path.exists(path):
+        print("\n  viewers: no list found. Save the pasted page to analytics/profile-viewers/YYYY-MM-DD_visible.txt\n")
+        return 1
+    lines = [l.strip() for l in open(path, encoding="utf-8").read().splitlines() if l.strip()]
+    if not lines:
+        print("  viewers: the file is empty.")
+        return 1
+    total = len(lines)
+    print(f"\n  {os.path.basename(path)}: {total} visible entries")
+    print("  a share, not a census. LinkedIn shows part of the ninety day total.\n")
+    for label, words in _VIEWER_BUCKETS:
+        hits = [l for l in lines if any(w in l.lower() for w in words)]
+        print(f"    {len(hits):>4}  {len(hits) / total:>5.0%}  {label}")
+    industries = {}
+    for line in lines:
+        m = re.search(r"in the ([A-Za-z ,&]+) industry", line)
+        if m:
+            k = m.group(1).strip()
+            industries[k] = industries.get(k, 0) + 1
+    print("\n  industries named in the descriptors")
+    for label, count in sorted(industries.items(), key=lambda kv: -kv[1])[:6]:
+        print(f"    {count:>4}  {label}")
+    founders = [l for l in lines if "founder" in l.lower() or "business owner" in l.lower()]
+    soft = [l for l in founders if re.search(r"software|it services|technology, information|security", l.lower())]
+    print(f"\n  founders in a software, IT or security industry: {len(soft)} of {len(founders)}")
+    print("  that last number is the one that names buyers.\n")
+    return 0
+
+
 def cmd_growth(_args) -> int:
     rows = _follower_rows()
     if not rows:
@@ -981,6 +1039,9 @@ def main(argv=None) -> int:
     p.add_argument("--tolerant", action="store_true")
     p.set_defaults(fn=cmd_audit)
 
+    pv = sub.add_parser("viewers")
+    pv.add_argument("file", nargs="?")
+    pv.set_defaults(fn=cmd_viewers)
     sub.add_parser("growth").set_defaults(fn=cmd_growth)
     sub.add_parser("revenue").set_defaults(fn=cmd_revenue)
 
