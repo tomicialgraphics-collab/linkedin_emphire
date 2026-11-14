@@ -47,7 +47,8 @@ The patch applies to `bench/store.py` only. Nothing else in the tree is modified
 | 5. the diff against the hash it applies to | `03-change/patch.diff` + `02-baseline-failure/revision.txt` | the diff and the two hashes of the file it changes |
 
 Also here: `harness/probe_conflict_crash.py` (the probe itself), `01-environment.sh` and
-`rebuild.sh` (both regenerate their outputs), `05-SHA256SUMS.txt`.
+`rebuild.sh` (both regenerate their outputs), `make_zip.sh` (builds the delivery zip
+deterministically, so the zip has a hash worth printing), `05-SHA256SUMS.txt`.
 
 ## What the probe does, exactly
 
