@@ -3,53 +3,66 @@ deliverable: email
 id: 2026-11-14_email_aithos-status-bump
 date: 2026-11-14
 time_checked: >-
-  checked: 2026-11-14 23:08 WAT, read from the system clock in the sandbox before this file was sent for gate.
+  checked: 2026-11-14 23:15 WAT, read from the system clock in the sandbox before this file was sent for gate.
 audience: outbound
 status: ready
 approved: no
 warm: yes
-profile_checked: "Aithos Research Foundation, Amsterdam, a Dutch ANBI. The published contact page lists nadia@aithos.org for general inquiries and collaborations, daan@aithos.org for research partnerships, and info@aithos.org as the start of a conversation. It does not list hiring@aithos.org anywhere. The vacancy page, read today, is struck through and marked closed, and its application line reads 'email your resume and a brief motivation letter to by 31 October' with no address in it at all."
+supersedes: >-
+  the 23:08 version of this file, which was written from the repo alone and addressed info@aithos.org on the
+  assumption that nothing had ever come back. The thread pasted at 23:12 shows an acknowledgement inside 26 hours,
+  from a named person, so that premise was wrong and that draft must not be sent.
+profile_checked: "Sicco Pier van Gosliga, sicco@aithos.org, is the person who acknowledged the application on 15 October and signs as the Aithos hiring team. He is on the research side of a two-person research team in Amsterdam and is the contact the role was advertised under. He is named in the thread, so the bump replies to him rather than opening a new conversation."
 premise_checked: >-
-  checked: the vacancy page was fetched and read at 23:05 WAT on 14 November. It says applications closed on 31 October, that the team would review in the first week of November, and that shortlisted candidates would get a 30 minute screen, a three hour take-home and a 60 minute technical. The page is now headed 'Open Vacancy: Research Engineer (closed)'. Five working days have passed since the end of the advertised review week.
+  checked: the thread, pasted in full. Applied Wednesday 14 October at 09:06 WAT. Acknowledged Thursday 15 October
+  at 12:08 by Sicco, confirming the CV and motivation letter arrived and that the team would review in the first
+  week of November and then reach out with next steps. Owner replied Friday 16 October at 04:51. Nothing since.
+  The review week (2 to 8 November) ended four working days before 14 November.
 sources_read: >-
-  read: aithos.org/vacancies/research-engineer/ (closed, process and dates above), aithos.org/contact/ (the three addresses), the LinkedIn posts by their own team inviting questions on the role. The connected Gmail is tomicialgraphics@gmail.com and holds nothing from aithos.org in any folder including spam, but the application went from olusanyatimothy54@gmail.com, so that mailbox cannot confirm or deny receipt.
+  read: the pasted thread (three messages, verbatim dates), aithos.org/vacancies/research-engineer/ (closed to new
+  applications, same three-stage process, review week first week of November), aithos.org/contact/. The attached
+  resume as sent is 73,004 bytes, `6c3b5e38624d`; the copy in RESUME is a different build at 29,814 bytes,
+  `1bc812d1de8b`, so the file in the repo is not the file that went out.
 ---
 
 ## The email
 
-**To:** info@aithos.org
-**Subject:** Follow-up, Application, Research Engineer, Olusanya Timothy (31 Oct)
-**Attach:** `RESUME/Timothy_Olusanya_Aithos_Research_Engineer.pdf`
+**Reply in the existing thread.** To `sicco@aithos.org`, subject unchanged: "Application, Research Engineer, Olusanya Timothy". Attach nothing.
 
 <!-- gate:body:start -->
-Hello,
+Sicco,
 
-I applied for the Research Engineer role on 31 October under the subject "Application, Research Engineer, Olusanya Timothy". The vacancy page has since closed and I have heard nothing either way, so this is a status question and not a chase.
+Following up on your confirmation of 15 October, where you said the team would reach out once the first week of November review was done. I am asking where things stand, not for a decision, and two lines would be enough.
 
-One practical detail. The application line on that page had no address in it when I read it, so I sent to hiring@aithos.org. If that inbox is not one you monitor, this is the first copy you have received, and the resume is attached again.
+One thing has changed since my letter, and it is the kind of thing the role is about. A verifier of mine was comparing the first sixteen characters of every SHA-256 instead of all sixty-four, so a forged manifest passed all fifty checks while the suite stayed green. It now fails unless it can prove it rejects a digest that matches on a prefix.
 
-One thing has changed since I applied. I found a verifier of mine comparing the first sixteen characters of every SHA-256 instead of all sixty-four, so a forged manifest passed all fifty checks. It now fails unless it can prove it rejects a digest that matches on a prefix. That is the failure your role description is written against, a number that traces back to nothing.
-
-Either answer helps: whether my application was among those reviewed in the first week of November, and whether the role is filled.
+Either way, thank you for the consideration.
 
 Olusanya Timothy
-olusanyatimothy54@gmail.com · +234 812 786 8211
 <!-- gate:body:end -->
 
-## What the repo held, and what was wrong with it
+## Correcting the record, because the repo had it wrong
 
-**What it held.** `APPLICATIONS/2026-10-31_aithos_research-engineer_send-package/` (letter 527 words, `.eml` built and round-trip verified, resume PDF, `build_eml.py`) and `SENT.md`, which records the send as 31 October to hiring@aithos.org from olusanyatimothy54@gmail.com, and states the rule: one bump only, 14 November, short, warm, referencing the original subject.
+Four things were recorded wrongly, and each one changes the next move.
 
-**What was blank.** Every row of the reply tracker after "Application sent": auto-acknowledgement, human reply, screen proposed, screen held, take-home, technical round, outcome. The time sent is also a blank, and the checklist of which variant of the letter actually went out was never ticked. So the record establishes that something was sent and not one fact about what came back.
+**The date.** `SENT.md` says the application went out on 31 October, "before the deadline". It went out on **14 October at 09:06**, seventeen days earlier than recorded. A seventeen-day error in a two-week follow-up rule is the whole rule.
 
-**What the record did not know.** The vacancy is closed, and the address the application went to does not appear on Aithos's own contact page. Those two facts were not in the repo, because nobody had opened the page again since 31 October.
+**The acknowledgement.** The reply tracker has "Auto-acknowledgement received" blank and "Human reply" blank. There was a **human acknowledgement in twenty-six hours**, from Sicco, confirming both documents arrived and naming the review window. Silence since then is four working days past a date they set, not eleven days of nothing.
 
-## Why info@ and not hiring@ again
+**The address.** The 23:08 draft argued that `hiring@aithos.org` might be an inbox nobody reads, because it is printed nowhere on their site. The thread settles it: it reached the team, and a named person answered from it. Sending to `info@` would have told them that their own confirmation email did not exist.
 
-The bump is one message. Sent to hiring@aithos.org it repeats the send that has already produced eleven days of silence from an address nobody can point to on the site. Sent to info@aithos.org it arrives where the site says a conversation starts, it is forwardable to whoever runs hiring, and it carries the information that makes the original loss plausible. It also asks a question that has a factual answer, which is the kind of email a small foundation answers.
+**The letter.** `letter.txt` is not the text that was sent. The sent version carries different sentences around the harness and the principles paragraph. `SENT.md` asks for the sent text to be pasted at the bottom when the two differ, and it never was.
 
-**Not dania@ or daan@ directly.** Daan Henselmans is the Research Director and the right person substantively, but a first contact to a director about a closed round reads as bypassing a process. If info@ answers with nothing useful, that address is the escalation, and it is one message, not two.
+## Why this bump, in this shape
 
-## If they answer closed
+**It replies, so it does not restart anything.** Same thread, same subject, no attachment. He can read it in five seconds and answer in one.
 
-Take the answer and ask for the next opening in the same sentence. The 16-of-64 material is the strongest thing to leave behind either way, and the Playbook link belongs in a follow-up only if they ask what else you have built. Do not offer the take-home unsolicited a second time; the letter already did.
+**It quotes his own commitment.** "Once the first week of November review was done" is his sentence, not an accusation, so the question of lateness never arises.
+
+**It asks for status, not for a decision.** A busy person can answer "still with the panel" without pre-empting an outcome. Asking for a decision invites a no.
+
+**The one new thing is the point of the message.** A verifier that compared sixteen characters of a sixty-four character digest is exactly the failure the role description is written against, and saying it about his own tool is the cheapest possible demonstration of the scientific mindset the listing asks for. It is also the only reason a hiring team re-reads an application it has already read.
+
+## If nothing comes back
+
+One message, and this is it. If there is no answer by **21 November**, the round is over and the next contact is a fresh application when they post the next research engineer role, not another message to this thread.
