@@ -33,5 +33,5 @@ That's the part worth stealing. Gerald's committee is not a brake, it's minutes.
 
 Which leaves the sloth as the only one of you doing proper assurance work. He has not signed off and he is not going to.
 
-Turn it up. 🚐
+Turn it up. If anyone asks, the sloth authorised it.
 <!-- gate:body:end -->
