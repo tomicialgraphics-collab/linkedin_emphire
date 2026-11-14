@@ -28,7 +28,7 @@ sources_read: >-
 <!-- gate:body:start -->
 Hello,
 
-The CodeSignal invitation hasn't arrived, so I'm flagging it as your email asked. I've checked the inbox and the spam folder for the address on my application, and there's nothing from CodeSignal there.
+The CodeSignal invitation hasn't arrived, so I'm flagging it as your email asked. I've checked the inbox and the spam folder on the address from my application, and I've logged into CodeSignal with that address to see whether the assessment is sitting on the account. There's nothing in either place.
 
 I'm writing from that address, so a resend to it will reach me.
 
