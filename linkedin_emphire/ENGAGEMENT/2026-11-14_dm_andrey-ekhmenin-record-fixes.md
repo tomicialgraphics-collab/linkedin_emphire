@@ -6,6 +6,16 @@ audience: andrey-ekhmenin
 status: ready
 approved: no
 fix_verified: true
+premise_checked: >-
+  checked: every number in this message was recomputed on 14 November from a fresh clone of the
+  pinned commit, at the object layer, not read from the earlier message. The console log object
+  is UTF-16LE with a BOM, 5,274 bytes, digest 4889096b; the served rendering is UTF-8 with a BOM,
+  2,639 bytes, digest 9828c763. The builder ordering is 459 write and 461 archive at 80fa2cf, and
+  530 archive and 531 write after the patch. The verifier reports 48 passed 2 failed on the
+  published code and 50 passed 0 failed on the patched code.
+sources_read: >-
+  none: nothing is linked. The repository, its run record and the builder were read directly from
+  the clone at 80fa2cf, and every digest was recomputed rather than taken from a page.
 profile_checked: >-
   Andrey Ekhmenin, independent reviewer of the pinned five-test harness. He verified the
   redteam.py and results.json digests himself before writing, so he reads numbers rather than
@@ -45,19 +55,19 @@ Everything sits in one folder at https://drive.google.com/drive/folders/1W7a8z98
 
 Five files are in it. Corrected manifest `dfa8a6bda65d15ae747036f222102f8a6524580aa5bc3028637934e2959174d0`, the patch is `7c504ea63c3e5fd5c95c9e9033e76ec4ec183ec2553ab37593e3080c985cc86e`, and the verifier is `8d6f77209c9ca8651b79dce22233df60fc7d9ff50f1ea6c282c49eaf46cbf074`.
 
-## Paste copy
+## DM to paste
 
 Andrey,
 
 Both findings are done, and one was worse than a wrong number.
 
-console.log is stored as UTF-16LE with a byte order mark. 5,274 bytes, first bytes ff fe, blob e238092d. Its own digest is 4889096b, which is what the manifest said. A host displaying it decodes to UTF-8 with a BOM first, so you got 2,639 bytes and 9828c763. One content, two encodings, both numbers correct. The footnote blamed line endings, which was true of redteam.py and never true of this file. Naming the wrong cause is worse than naming none, because no checkout setting fixes an encoding.
+The console log is stored as UTF-16LE with a byte order mark. 5,274 bytes, first bytes ff fe, blob e238092d. Its own digest is 4889096b, which is what the manifest said. A host displaying it decodes to UTF-8 with a BOM first, so you got 2,639 bytes and 9828c763. One content, two encodings, both numbers correct. The footnote blamed line endings, which was true of the harness file and never true of this one. Naming the wrong cause is worse than naming none, because no checkout setting fixes an encoding.
 
 Every file in that directory now carries a digest of its stored bytes, a byte count, an encoding and a blob id. The one a host re-encodes also carries its served digest. The old manifest covered three files out of seven, which I hadn't noticed. sha256sum -c runs clean there now.
 
 On the builder, you read it right. Write at 459, archive at 461, return value discarded. My patch archives first, holds the result, and refuses on four conditions, the main one being nothing to archive. Ordering after the change is archive 530, write 531.
 
-One command checks it offline, 50 checks. Two failures on the published code, none on the patched one. I zeroed a digest in a copy of the manifest as well, to confirm the script can fail, and it reported that row alone.
+The verifier checks it offline in one command, 50 checks. Two failures on the published code, none on the patched one. I zeroed a digest in a copy of the manifest as well, to confirm the script can fail, and it reported that row alone.
 
 Everything sits in one folder at https://drive.google.com/drive/folders/1W7a8z98zYLtVgMHKnhOdNad0nQmRn9hH, open to anyone with the link. Manifest hashes to dfa8a6bda65d15ae747036f222102f8a6524580aa5bc3028637934e2959174d0 and the patch to 7c504ea63c3e5fd5c95c9e9033e76ec4ec183ec2553ab37593e3080c985cc86e.
 
