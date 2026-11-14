@@ -3,8 +3,7 @@ deliverable: dm
 id: 2026-11-14_dm_marvin-percival-cyber-dataset-card
 date: 2026-11-14
 time_checked: >-
-  checked: 2026-11-14 20:33 WAT, read from the system clock in the sandbox (19:33 UTC) before this
-  file was sent for gate. The clock helper used earlier is not present in this checkout.
+  checked: 2026-11-14 20:33 WAT, read from the system clock in the sandbox before this file was sent for gate.
 audience: peer
 status: ready
 approved: no
