@@ -71,3 +71,14 @@ Section 10 step 7 is the one piece of prep worth doing before that call: build o
 clean, reproducible eval artifact with a real question, a defined sample, results
 with sample size and rate, limitations, and a runnable script. That is the bridge
 from practitioner to researcher, and it is the thing the take-home will test.
+
+## Status check, 2026-11-14 (23:05 WAT)
+
+Nothing has come back, and the tracker above is still blank from "Application sent" onward: no acknowledgement, no reply, no screen proposed. Two facts the record did not have, both read from the source today:
+
+- **The vacancy is closed.** `aithos.org/vacancies/research-engineer/` is headed "Open Vacancy: Research Engineer (closed)" and the application line is struck through. The same page said applications would be reviewed in the **first week of November**, with shortlisted candidates going to a 30 minute screen, a three hour take-home and a 60 minute technical. Today is five working days past the end of that week.
+- **The address was never published.** The page's application line reads "email your resume and a brief motivation letter to by 31 October", with no address in it. The contact page lists `nadia@aithos.org`, `daan@aithos.org` and `info@aithos.org`, and does not list `hiring@aithos.org` anywhere. The send may therefore have gone to an address nobody reads.
+
+The connected Gmail (`tomicialgraphics@gmail.com`) holds nothing from aithos.org in any folder, spam included, but the application went from `olusanyatimothy54@gmail.com`, so that mailbox neither confirms nor denies receipt.
+
+Decision: the single bump goes to `info@aithos.org`, not to `hiring@aithos.org` again. Draft and reasoning in `APPLICATIONS/2026-11-14_aithos-status-bump/EMAIL.md`. Still one bump only.
