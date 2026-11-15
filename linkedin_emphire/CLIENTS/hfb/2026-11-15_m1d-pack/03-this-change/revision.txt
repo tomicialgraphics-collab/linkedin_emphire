@@ -1,0 +1,7 @@
+revision
+  applies to: bench/store.py at 99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982
+  bench/store.py after the patch: 837ca42d94d9bfeaee088303ec5f8ea413c782b307feddf2a1fd0596ccebcc90
+  audit/regressions.py after the patch: f4204cccb64b53873152a9f905d4e36c44bdeb09503a92c3b5b2e7bcdb8d98c1
+  patch sha256: ebaaea3dc06f55fc03755ce6c84c5bfbe15729b99fd794ba94d943ef465f2c6f
+  audit modes: 23, all caught
+  suite verifier: VERDICT: every check holds

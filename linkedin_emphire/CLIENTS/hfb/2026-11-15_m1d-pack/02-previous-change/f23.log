@@ -1,0 +1,5 @@
+f23  MISSED  a verdict retry after an unconfirmed rollback, and a recovery read that fails
+             retry after unknown: conflict 5 pointing at 2 and 3, verdict 4; write after a failed recovery read answered None, and the same write once the read worked True
+
+NOT CAUGHT: f23
+A counterexample the verifier still accepts is a claim it does not support.

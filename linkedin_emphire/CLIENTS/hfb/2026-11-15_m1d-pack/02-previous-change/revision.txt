@@ -1,0 +1,5 @@
+revision
+  what this tree is: the change delivered on 15 November 2026, before this one
+  bench/store.py sha256: ee42139cab14fdb02dd82ad88d6421afc4af7a808cf0f561cc15f2db3a0bde85
+  audit/regressions.py sha256: 68a87228fb13f46c1db0d65affd2320cf841c1c38ad7ad65fc65513d474f2db0
+  result: f23 MISSED, and both of its answers are wrong; see f23.log
