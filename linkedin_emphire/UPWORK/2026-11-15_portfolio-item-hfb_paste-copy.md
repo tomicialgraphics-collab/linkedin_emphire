@@ -3,7 +3,7 @@ deliverable: doc
 id: 2026-11-15_upwork-portfolio-hfb
 date: 2026-11-15
 time_checked: >-
-  checked: 2026-11-15 11:20 WAT, read from the system clock before this file was opened for gate.
+  checked: 2026-11-15 11:29 WAT, read from the system clock before this file was opened for gate.
 audience: internal
 status: ready
 approved: no
@@ -83,24 +83,22 @@ Test Automation
 
 If `Test Automation` is not offered, use `Automated Testing`, then `Technical Writing`.
 
-## The content block, in this order
+## The content block, built and ready
 
-**1. The manifest, as a screenshot.** `05-SHA256SUMS.txt` open in an editor, showing the commit hash and both file
-hashes for `bench/store.py`. This is the single most persuasive image available, because almost nobody else on the
-platform can show a verifiable artifact at all.
+Four files sit in `UPWORK/PORTFOLIO/hfb-item/`. All are 1600px wide except the cover, and all carry his name and a
+small portrait.
 
-**2. The folder tree, as a screenshot.** The numbered files from `00-README.md` through `05-SHA256SUMS.txt`. It reads as
-a process rather than a claim.
+| file | size | what it shows |
+|---|---|---|
+| `01_manifest.png` | 1600x955 | `05-SHA256SUMS.txt` in full, with the "prove the file tested is the file delivered" line, 24 files, 36,215 bytes, rebuilt twice |
+| `02_structure.png` | 1600x550 | the numbered pack layout, read as a process rather than a claim |
+| `03_classification-log.png` | 1600x1036 | the log's opening, the aligned table of checks, and "every check holds" at both revisions |
+| `04_cover.png` | 1080x1350 | the brand card for the portfolio grid, name and portrait on the template |
 
-**3. The classification log, as a screenshot.** `04-classification-log.md`, one page. This is the four-part findings
-format that the overview promises, shown rather than described.
+Upload order is 01, 02, 03, then the cover last, because a buyer who clicks reads the evidence first and the poster last.
 
-For all three: remove the client's name, any repository URL, and any path containing his organisation if one appears.
-Variant A promises the pack under NDA, so nothing sensitive needs to be in the images.
-
-**Optional fourth: a cover card.** The repo has the card script at `CONTENT/POSTS/2026-11-15_coverage-page/`, 1080x1350,
-his palette, his name and photo. A cover helps the grid and adds nothing a client cannot get from the screenshots, so
-treat it as last.
+The cover carries a follow pill from the brand template reading `Follow @Olusanya Timothy`. On an Upwork portfolio that
+reads as a social card, so it can be rebuilt without the pill in one command if he wants it.
 
 ## Leave blank
 
