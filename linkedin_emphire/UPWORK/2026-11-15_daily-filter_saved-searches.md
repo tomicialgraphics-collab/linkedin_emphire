@@ -32,18 +32,25 @@ terms and nothing else.
 
 | # | name | exact string | URL to paste | filters | returned at 10:44 WAT |
 |---|---|---|---|---|---|
-| 1 | Money | `penetration test` | `https://www.upwork.com/nx/search/jobs/?q=penetration%20test&contractor_tier=3&t=1&sort=recency` | Expert, Fixed-Price, Newest first | 10 |
+| 1 | Money | `penetration test` | `https://www.upwork.com/nx/search/jobs/?q=penetration%20test&contractor_tier=3&sort=recency` | Expert, Newest first, both job types | 22 |
 | 2 | Lane | `AI security` | `https://www.upwork.com/nx/search/jobs/?q=AI%20security&contractor_tier=3&sort=recency` | Expert, Newest first, hourly and fixed together | 112 |
 | 3 | Precise | `prompt injection` | `https://www.upwork.com/nx/search/jobs/?q=prompt%20injection&sort=recency` | Newest first, all levels | 6 |
 | 4 | Standard | `OWASP` | `https://www.upwork.com/nx/search/jobs/?q=OWASP&sort=recency` | Newest first, all levels | 7 |
 | 5 | Adjacent | `MCP server` | `https://www.upwork.com/nx/search/jobs/?q=MCP%20server&contractor_tier=3&sort=recency` | Expert, Newest first | 11 |
 
-Search 1 is the one that pays. It is the only filter that returns fixed-price, expert-level, report-shaped work in
-volume: of the 10 it carried, five sat in the $1K to $5K band and three above $5K, and four came from clients who have
-never hired. Those are the $2,000 and $2,500 report-plus-retest buyers.
+Search 1 is the one that pays. It is the only filter that returns expert-level, report-shaped work in volume: 22
+postings, 10 of them fixed-price, and of those ten five sat in the $1K to $5K band and three above $5K, with four from
+clients who have never hired. Those are the $2,000 and $2,500 report-plus-retest buyers.
+
+**The fixed-price half of this search is US-gated at the top, and that is why the type filter came off.** Read at 10:46
+WAT with `&t=1` applied, the four newest fixed-price expert postings in it were a $10,000 macOS AI hardening job, a
+$500 WooCommerce assessment, a $5,000 nonprofit security review and a $20,000 source-recovery job. Three of the four say
+US-based in the body, two say it twice, and one says the client will not approve access from outside the United States.
+Only the oldest of the four, the $2,500 FDA report at four weeks, carries no residency clause, and it requires OSCP or
+CREST. Leave the type filter off so the hourly work, which does not carry that clause, stays in view.
 
 Search 2 is the market. It is too broad to read whole, which is why it is sorted newest: you check the top ten and
-close the tab. Expert and fixed-price together would leave 31, so the type filter stays off on this one.
+close the tab. Expert and fixed-price together would leave 31, so the type filter stays off on this one too.
 
 Search 3 and search 4 are small on purpose. Between them they carry the buyers who already know what they want, which
 is the cheapest conversation on the platform.
