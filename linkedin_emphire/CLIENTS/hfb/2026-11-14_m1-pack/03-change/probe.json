@@ -63,7 +63,7 @@
       "log_tail": [
         "batch withheld: 1 record(s) from an incomplete batch, not indexed",
         "journal repaired: 164 trailing bytes discarded",
-        "store listening on 127.0.0.1:35239"
+        "store listening on 127.0.0.1:33205"
       ],
       "named_seqs": [],
       "property_holds": true,
@@ -99,7 +99,7 @@
     "log_tail": [
       "batch withheld: 1 record(s) from an incomplete batch, not indexed",
       "journal repaired: 164 trailing bytes discarded",
-      "store listening on 127.0.0.1:35239"
+      "store listening on 127.0.0.1:33205"
     ],
     "named_seqs": [],
     "property_holds": true,

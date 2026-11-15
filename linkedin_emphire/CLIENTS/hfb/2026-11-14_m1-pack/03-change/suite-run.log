@@ -1,12 +1,12 @@
-artifacts -> /tmp/hfb-chg/artifacts/run-20261114T085957Z
+artifacts -> /tmp/chg/artifacts/run-20261115T085701Z
 [store] starting
-[store] port 46475
+[store] port 36267
   host A   exit 0
   host A'  exit 0
 [store] stopping, so the ship in B can fail for a real reason
   host B   exit 0
 [store] restarting from its journal
-[store] port 46595
+[store] port 33321
   host B   exit 0
   host C   exit 9
   host C'  exit 9
@@ -20,4 +20,4 @@ artifacts -> /tmp/hfb-chg/artifacts/run-20261114T085957Z
   host E   exit 0
 
 run finished. A finished run is not a pass.
-  python verify.py artifacts/run-20261114T085957Z
+  python verify.py artifacts/run-20261115T085701Z

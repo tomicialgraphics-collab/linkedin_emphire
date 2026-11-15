@@ -1,0 +1,145 @@
+{
+  "case_a": {
+    "case": "A missing terminator",
+    "checks": {
+      "r1_gap_names_seq": false,
+      "r1_gap_present": false,
+      "r1_gap_reason": false,
+      "r1_journal_unchanged": false,
+      "r1_not_indexed": false,
+      "r1_said_on_startup": false,
+      "r2_gap_names_seq": false,
+      "r2_gap_present": false,
+      "r2_gap_reason": false,
+      "r2_journal_unchanged": false,
+      "r2_not_indexed": false,
+      "r2_said_on_startup": false,
+      "r3_gap_names_seq": false,
+      "r3_gap_present": false,
+      "r3_gap_reason": false,
+      "r3_journal_unchanged": false,
+      "r3_not_indexed": false,
+      "r3_said_on_startup": false,
+      "r4_gap_names_seq": false,
+      "r4_gap_present": false,
+      "r4_gap_reason": false,
+      "r4_journal_unchanged": false,
+      "r4_not_indexed": false,
+      "r4_said_on_startup": false,
+      "r5_gap_names_seq": false,
+      "r5_gap_present": false,
+      "r5_gap_reason": false,
+      "r5_journal_unchanged": false,
+      "r5_not_indexed": false,
+      "r5_said_on_startup": false
+    },
+    "expected_seq": 5,
+    "holds": false,
+    "journal_sha256_before": "1c67c5160d9bd6b2f640c56c0d577fe26c3a101365db3d1aea9d95197df6703d",
+    "replies_before_stripping": {
+      "first": {
+        "action_id": "M1-7001",
+        "ok": true,
+        "state": "verified",
+        "store_seq": 3,
+        "stored": true
+      },
+      "issue": {
+        "action_id": "M1-7001",
+        "ok": true
+      },
+      "second": {
+        "action_id": "M1-7001",
+        "conflict": true,
+        "conflict_seq": 5,
+        "ok": true,
+        "state": "conflicted",
+        "store_seq": 4,
+        "stored": true
+      }
+    },
+    "restarts": [
+      {
+        "conflict_named": true,
+        "conflicted": true,
+        "gap": null,
+        "gap_named_on_startup": false,
+        "journal_sha256": "ff4172440f16302199971f1f288321e8fdac5890c79a73359390ac49745bb85d",
+        "restart": 1
+      },
+      {
+        "conflict_named": false,
+        "conflicted": true,
+        "gap": null,
+        "gap_named_on_startup": false,
+        "journal_sha256": "f2f59b6951cb687fc0d0443db09c6112a2c0a2418fd584fd46772a8222ea518d",
+        "restart": 2
+      },
+      {
+        "conflict_named": false,
+        "conflicted": true,
+        "gap": null,
+        "gap_named_on_startup": false,
+        "journal_sha256": "a2c07d99411008483b0ce65c1647357d4a0bc0cf59f78f69f21665849e3a4178",
+        "restart": 3
+      },
+      {
+        "conflict_named": false,
+        "conflicted": true,
+        "gap": null,
+        "gap_named_on_startup": false,
+        "journal_sha256": "5f11d56ba123e01c7150fe2ad626ba0b32f55e46d941b5c8e064070567c6a19d",
+        "restart": 4
+      },
+      {
+        "conflict_named": false,
+        "conflicted": true,
+        "gap": null,
+        "gap_named_on_startup": false,
+        "journal_sha256": "8d07eb9f3c94d68681152902bd00e6ed76b1d2bd64f0aeaedd9b26bdb35e5b3f",
+        "restart": 5
+      }
+    ]
+  },
+  "case_b": {
+    "case": "B unknown disk state",
+    "checks": {
+      "disk_state_unknown": false,
+      "durable_is_unknown": false,
+      "not_durable_false": true,
+      "reason_named": false,
+      "reply_not_ok": false,
+      "restart_names_what_it_found": true
+    },
+    "failpoint_command_supported": false,
+    "holds": false,
+    "journal_sha256_after_failure": "816fd9c5b0471a73a5619eaf75323a22df7687341874ff57d48153f800e4147b",
+    "kinds_after_restart": [
+      "issued",
+      "verdict",
+      "verdict",
+      "conflict"
+    ],
+    "observed_conflict_named_after_restart": true,
+    "observed_pair_present_after_restart": true,
+    "observed_quarantine_named_after_restart": false,
+    "observed_recovered_records": 8,
+    "refused_verdict_reply_on_this_tree": {
+      "durable": false,
+      "error": "injected: the journal refused a verdict write",
+      "ok": false
+    },
+    "reply_to_failed_batch": {
+      "action_id": "M1B-7101",
+      "conflict": true,
+      "conflict_seq": 6,
+      "ok": true,
+      "state": "conflicted",
+      "store_seq": 5,
+      "stored": true
+    }
+  },
+  "holds": false,
+  "probe": "m1b-two-cases",
+  "revision": "126f1c00dfae18b30456a8dc698ac906ca7ddb0e"
+}

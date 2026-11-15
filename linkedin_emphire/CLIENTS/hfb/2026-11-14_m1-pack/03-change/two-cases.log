@@ -1,0 +1,39 @@
+== A missing terminator
+   r1_gap_names_seq                       hold
+   r1_gap_present                         hold
+   r1_gap_reason                          hold
+   r1_journal_unchanged                   hold
+   r1_not_indexed                         hold
+   r1_said_on_startup                     hold
+   r2_gap_names_seq                       hold
+   r2_gap_present                         hold
+   r2_gap_reason                          hold
+   r2_journal_unchanged                   hold
+   r2_not_indexed                         hold
+   r2_said_on_startup                     hold
+   r3_gap_names_seq                       hold
+   r3_gap_present                         hold
+   r3_gap_reason                          hold
+   r3_journal_unchanged                   hold
+   r3_not_indexed                         hold
+   r3_said_on_startup                     hold
+   r4_gap_names_seq                       hold
+   r4_gap_present                         hold
+   r4_gap_reason                          hold
+   r4_journal_unchanged                   hold
+   r4_not_indexed                         hold
+   r4_said_on_startup                     hold
+   r5_gap_names_seq                       hold
+   r5_gap_present                         hold
+   r5_gap_reason                          hold
+   r5_journal_unchanged                   hold
+   r5_not_indexed                         hold
+   r5_said_on_startup                     hold
+== B unknown disk state
+   disk_state_unknown                     hold
+   durable_is_unknown                     hold
+   not_durable_false                      hold
+   reason_named                           hold
+   reply_not_ok                           hold
+   restart_names_what_it_found            hold
+both cases hold: a named gap that survives restarts, and an unknown state said out loud

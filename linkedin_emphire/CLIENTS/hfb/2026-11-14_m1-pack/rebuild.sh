@@ -7,6 +7,8 @@
 #
 #   probe on the pinned tree      exit 2, two named failing cuts: line-4 and mid-final-line
 #   probe on the patched tree     exit 0, every cut holds
+#   two-case probe, pinned tree   exit 2, no gap named and no unknown state, at every restart
+#   two-case probe, patched tree  exit 0, the gap holds at restarts 1, 2 and 5, unknown said aloud
 #   suite on either tree          run.py then verify.py, verify exits 0, "every check holds"
 #   verifier outputs              byte-identical between the two trees
 #
@@ -37,6 +39,31 @@ python3 "$HERE/harness/probe_conflict_crash.py" --repo "$CHG" --json "$HERE/03-c
 code=$?
 [ "$code" = "0" ] || fail "change probe exited $code, expected 0"
 
+echo "== two-case probe"
+python3 "$HERE/harness/probe_two_cases.py" --repo "$BASE" \
+  --json "$HERE/02-baseline-failure/two-cases.json" \
+  > "$HERE/02-baseline-failure/two-cases.log" 2>&1
+code=$?
+[ "$code" = "2" ] || fail "two-case probe on the baseline exited $code, expected 2"
+grep -q "a case failed" "$HERE/02-baseline-failure/two-cases.log" \
+  || fail "the two-case probe on the baseline did not report a failure"
+grep -q "r1_gap_present *FAIL" "$HERE/02-baseline-failure/two-cases.log" \
+  || fail "the baseline named a gap on restart 1, which is not what this pack says it does"
+grep -q "durable_is_unknown *FAIL" "$HERE/02-baseline-failure/two-cases.log" \
+  || fail "the baseline produced an unknown durable state, so there is no case B to fix"
+
+python3 "$HERE/harness/probe_two_cases.py" --repo "$CHG" \
+  --json "$HERE/03-change/two-cases.json" \
+  > "$HERE/03-change/two-cases.log" 2>&1
+code=$?
+[ "$code" = "0" ] || fail "two-case probe on the changed tree exited $code, expected 0"
+for check in r1_gap_present r2_gap_present r5_gap_present r1_journal_unchanged \
+             r2_journal_unchanged r5_journal_unchanged r1_not_indexed r2_not_indexed \
+             r5_not_indexed durable_is_unknown disk_state_unknown; do
+  grep -q "$check *hold" "$HERE/03-change/two-cases.log" \
+    || fail "the changed tree did not hold $check"
+done
+
 echo "== suite on both trees"
 for tree in "$BASE" "$CHG"; do
   ( cd "$tree" && rm -rf artifacts && python3 run.py > "$HERE/$( [ "$tree" = "$BASE" ] && echo 02-baseline-failure || echo 03-change )/suite-run.log" 2>&1 ) \
@@ -61,6 +88,7 @@ echo "== hashes"
   echo "  sha256 at this revision: $(sha256sum "$BASE/bench/store.py" | cut -d' ' -f1)"
   echo "  sha256 after the patch:  $(sha256sum "$CHG/bench/store.py" | cut -d' ' -f1)"
   echo "  patch sha256: $(sha256sum "$HERE/03-change/patch.diff" | cut -d' ' -f1)"
+  echo "  two-case probe sha256: $(sha256sum "$HERE/harness/probe_two_cases.py" | cut -d' ' -f1)"
 } > "$HERE/02-baseline-failure/revision.txt"
 
 ( cd "$HERE" && find . -type f ! -name 05-SHA256SUMS.txt ! -name '*.pyc' | sort \

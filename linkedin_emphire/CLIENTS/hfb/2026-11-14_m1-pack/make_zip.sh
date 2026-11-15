@@ -23,7 +23,7 @@ for base, dirs, files in os.walk(root):
 paths.sort()
 with zipfile.ZipFile(out, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
     for rel in paths:
-        info = zipfile.ZipInfo(rel, date_time=(2026, 11, 14, 0, 0, 0))
+        info = zipfile.ZipInfo(rel, date_time=(2026, 11, 15, 0, 0, 0))
         info.compress_type = zipfile.ZIP_DEFLATED
         info.external_attr = 0o644 << 16
         with open(os.path.join(root, rel), "rb") as fh:

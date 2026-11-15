@@ -62,7 +62,7 @@
       "cut": "mid-final-line",
       "log_tail": [
         "journal repaired: 135 trailing bytes discarded",
-        "store listening on 127.0.0.1:39931"
+        "store listening on 127.0.0.1:35873"
       ],
       "named_seqs": [],
       "property_holds": false,
@@ -100,7 +100,7 @@
     "cut": "mid-final-line",
     "log_tail": [
       "journal repaired: 135 trailing bytes discarded",
-      "store listening on 127.0.0.1:39931"
+      "store listening on 127.0.0.1:35873"
     ],
     "named_seqs": [],
     "property_holds": false,

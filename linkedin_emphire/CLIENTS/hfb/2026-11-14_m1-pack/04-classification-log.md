@@ -1,7 +1,7 @@
 ---
 deliverable: doc
 id: 2026-11-14_m1-classification-log
-date: 2026-11-14
+date: 2026-11-15
 audience: collaborator
 status: ready
 approved: no
@@ -60,15 +60,44 @@ These are unchanged by the patch, line for line, and are named so that the claim
 | reply-checked | the host logs an effect only when the store's reply names the action asked about |
 | reconcile | the store's reconciliation report against what its own journal implies |
 
+## The two cases, classified
+
+The reviewer raised two cases on 15 November. Both are in `harness/probe_two_cases.py`, both run
+against both revisions, and both are in `02-baseline-failure/two-cases.log` and
+`03-change/two-cases.log`.
+
+| case | pinned revision | changed tree |
+|---|---|---|
+| A, final newline missing, restart 1 | conflict named, journal rewritten `1c67c5...` to `ff4172...` | named gap at byte 1335, 328 bytes, store_seq 5; journal unchanged |
+| A, restart 2 | action conflicted, conflict not nameable; file rewritten to `f2f59b...` | the same named gap; journal unchanged |
+| A, restart 5 | action conflicted, conflict not nameable | the same named gap; journal unchanged |
+| B, batch write half-written, rollback refused | the state cannot be produced: the nearest answer is `durable: false` | `durable: unknown`, `disk_state: unknown`, `reason: rollback-failed` |
+
+Case A is the one where an earlier message from this side described the mechanism wrongly. The
+first restart does read the unterminated record and names the conflict from it; the loss is the
+`boot` append in that same start-up, which finds an unclean tail, truncates the record into
+`store.jsonl.quarantine-N.bin` and rewrites the journal, so restart 2 opens a clean file with no
+conflict record in it. The gap is therefore a byte range, not a withheld sequence number, and
+the changed tree names the byte range and leaves the bytes where they are.
+
+Case B on the pinned revision is recorded as `durable: false` from `HFB_FAILPOINT=verdict`,
+which refuses the write before any byte lands. That is the two-state answer the patch replaces:
+`false` is right when nothing was written, and it is a claim the process cannot support when a
+write landed and the rollback failed.
+
 ## The exact artifact difference
 
 The suite writes 24 artifact files. Comparing the pinned run to the patched run:
 
-- **23 of 24 files byte-identical.** Including `host-*.jsonl`, `wal-B.jsonl`, `reconciled.json`,
-  `store-state.json`, `lookups.json`, the three probe directories and the manifests.
+- **17 of 24 files byte-identical.** Including `host-*.jsonl`, `wal-B.jsonl`, `reconciled.json`,
+  `lookups.json`, the probe directories' journals and the manifests.
 - **`port.txt` differs in four places.** These record the ephemeral port each store process bound
   to. They are not evidence about anything and they differ between two runs of the same revision too.
-- **`store.jsonl`, the one substantive difference.** Both runs write 18 lines. Sixteen are identical.
+- **`store-state.json` gains one key**, `"journal_gap": null`, and
+  `probe-durability/result.json` gains two, `"journal_gap": null` and
+  `"disk_state": "unchanged"`. Nothing is removed and no value changes: on a clean journal the
+  gap is null, and a failed write that was rolled back reports its disk state as unchanged.
+- **`store.jsonl`, the substantive difference in behaviour.** Both runs write 18 lines. Sixteen are identical.
   The two that differ are the C-9009 verdict and the C-9009 conflict, and in both cases the only
   difference is one added field:
 
@@ -85,6 +114,8 @@ being edited.
 
 ## What the change adds, and where it lives
 
+What the 14 November patch added:
+
 One method on the journal, `append_batch`: it assigns the next two sequence numbers, marks both
 records with a shared batch id that is computed from their content, writes both lines in one
 write call, and calls fsync once.
@@ -96,6 +127,20 @@ numbering does not reuse them. The store prints one line when this happens, and 
 
 One line in the store's start-up: if records were withheld, say so instead of presenting a
 shorter history as the whole one.
+
+What the 15 November rebuild adds, all in `bench/store.py`:
+
+- **A withheld unterminated tail.** `_unterminated_tail()` names a final line that is whole JSON
+  with a valid digest and no terminator; `replay()` stops before it instead of indexing it and
+  instead of rewriting the file; `append()` raises while it stands, so no later write can cut it.
+- **A third durable state.** `JournalStateUnknown` carries `disk_state` and a reason code;
+  `handle()` answers it with `durable: "unknown"` and never with `false`. A rolled-back write
+  answers `durable: false, disk_state: "unchanged"`.
+- **A named gap in the state reply**, and one line on every start-up that names the byte range,
+  the length, the sequence number and the record kind.
+- **A failpoint command**, so the unknown state can be produced through the protocol instead of
+  described in a comment. It is scaffolding, it is labelled as scaffolding, and the behaviour it
+  exercises does not depend on it.
 
 ## The classification the last exchange settled
 
