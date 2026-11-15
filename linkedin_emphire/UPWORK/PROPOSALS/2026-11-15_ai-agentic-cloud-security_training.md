@@ -29,7 +29,7 @@ sources_read: >-
 
 **Set hours per week.** The field is empty on the live page, and this client filters on availability because the posting caps at under thirty hours a week.
 
-**Send at $45/hr with the hours capped at eight.** Their own sentence invites it: they say they will pay higher for the most experienced person, and their band is the platform default arguing with that sentence. A $65 profile quoting $25 is the incoherent choice. If winning matters more than the rate, the same text at $25 works.
+**Send at $45/hr with the hours capped at eight.** Their own sentence invites it: they say they will pay higher for the most experienced person, and their band is the platform default arguing with that sentence. The apply form pre-fills $65, which is the one number not to leave there. If winning matters more than the rate, the same text at $25 works.
 
 ## The proposal, paste this
 
@@ -42,12 +42,29 @@ How I would work: one paid session against something real of yours, an agent you
 
 Eight hours, capped, so the total stays predictable and you are not buying my learning curve.
 
+If you want a sample before spending anything, the free 30-minute starter test is on my profile. Run it on one agent and you will know within the hour whether a session is worth it.
+
 One thing shapes the first session. Whether this is for your own capability or for a team you have to bring up, tell me and I will bring the right material.
 <!-- gate:body:end -->
 
 **Rate: $45/hr, capped at 8 hours, roughly $360.** Their posting says they will pay higher for the most experienced freelancer, and their own band is a default that contradicts that sentence. Quoting $25 with a $65 profile rate is the incoherent choice, and quoting $45 uses their sentence against their band rather than against you.
 
 **If the win matters more than the rate**, which for a first completed contract it might, send the same text at $25 and keep the cap. The proposal does not change.
+
+## The form, field by field
+
+| Field | Answer | Why |
+|---|---|---|
+| Hourly rate | **$45** | The form pre-fills $65, the profile rate. Leave it at $65 and the bid is 2.6 times a $25 ceiling, which reads as not having read the post, whatever their sentence about paying more says. At $45 it is still 80% above their band and 31% below your own rate, so it reads as senior and flexible at once. You receive $40.50 after the 10% fee. |
+| Schedule a rate increase | Leave empty | The engagement is capped at eight hours. A rate increase inside eight hours is a formality that only creates a term to argue about. |
+| Cover letter | The text above | 195 words. The first line does the work, because the client previews two lines before clicking. |
+| Attachments | None | The three published portfolio items are already on the page and get highlighted below, and the form itself warns about contact details in files. Attaching a duplicate adds risk and no information. |
+| Profile highlights | **Three of four**: the 30-minute starter test, the sample findings report, the six-attempt lab | These are the only samples that match an agent-security training request. Leave the certificate slot empty rather than filling it with something unrelated. |
+| Boost your proposal | **1 Connect** | All four ranks showed no bids, so one Connect takes first place in a market with fewer than five proposals. It buys almost nothing and costs almost nothing; more would be paying for a queue that does not exist. |
+
+**Total: 8 Connects**, 7 for the proposal and 1 for the boost, leaving 84 of the 92.
+
+**If the contract arrives:** hourly protection only applies when time is tracked through the Upwork desktop app, and the client's payment method was unverified when the job was read, so do not start a minute before the contract is active and the payment method verified. Eight hours at $45 is $360 gross and $324 net.
 
 ## What this job is actually worth
 
