@@ -3,7 +3,7 @@ deliverable: doc
 id: 2026-11-15_upwork-title-overview-copy
 date: 2026-11-15
 time_checked: >-
-  checked: 2026-11-15 11:09 WAT, read from the system clock before this file was opened for gate.
+  checked: 2026-11-15 11:16 WAT, read from the system clock before this file was opened for gate.
 audience: internal
 status: ready
 approved: no
@@ -44,9 +44,9 @@ Two fields are still empty and both are cheap: **Video introduction** and **Lang
 
 ## The title
 
-Current: `Software Engineer | AI Red Teaming (LLM, RAG, Agents)` at 54 characters.
+Current: `Software Engineer | AI Red Teaming (LLM, RAG, Agents)` at 53 characters.
 
-**My recommendation, 59 characters:**
+**My recommendation, 61 characters:**
 
 ```
 AI Security Engineer | LLM & Agent Testing, Findings + Retest
@@ -55,7 +55,7 @@ AI Security Engineer | LLM & Agent Testing, Findings + Retest
 It carries `AI Security`, the phrase with 174 public postings behind it, and `Findings + Retest`, which is what two of
 the fixed-price buyers asked for in their first paragraph. It loses nothing he wants to keep: LLM and agent stay.
 
-**Alternative if you would rather keep the trade's own name, 58 characters:**
+**Alternative if you would rather keep the trade's own name, 62 characters:**
 
 ```
 AI Security | LLM Red Teaming, Agent Testing, Rerunnable Evals
@@ -69,7 +69,7 @@ The current opening leads with "full-stack software engineer" and puts the secur
 work leads and the stack moves down. Every claim is one he can already evidence, the 21-part number is gone because two
 parts exist, and the paid entry offer stays.
 
-**First line, 78 characters, under the 120 limit:**
+**First line, 87 characters, under the 120 limit:**
 
 > I find the ways an AI feature fails, then leave behind a test that proves the fix held.
 
@@ -90,6 +90,20 @@ Who this is for: teams shipping an AI feature who need the security loop before 
 
 Start with the $150 AI Quick Scan for a focused first look, or send what you are building and I will scope it.
 ```
+
+## Paste check, measured rather than estimated
+
+The overview modal states a **5,000 character limit**. The block above is **1,246 characters across five paragraphs**, so
+there is room for another three hundred words if a sentence needs to come back. The first line is **87 characters**
+against a 120 limit. The two titles measure **61 and 62 characters** against a 60-ish norm, which is inside the limit
+Upwork enforces.
+
+The modal I was shown came up with the example text and `This field is required`, which is the same empty-load as the
+skills editor. Here the blank state is harmless: nothing is stored in an empty overview, so pasting over it destroys
+nothing. That was not true of the skills modal, where the blank state sat in front of twenty saved tags.
+
+If both modals keep loading empty, hard-refresh the page or open the editor in a private window signed in as yourself.
+Two empty editors in a row is a session problem rather than a coincidence.
 
 ## What to keep exactly as it is
 
