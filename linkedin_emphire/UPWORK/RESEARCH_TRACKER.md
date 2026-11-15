@@ -68,6 +68,8 @@
 
 | 41 | Primary, 2026-11-15 12:22 to 12:24 WAT | Alex Wolf's post as pasted, and linkedin.com/in/systemic-engineer read in full. | **The person quoting the owner is an observability engineer, so the reply goes at coupling rather than at governance.** Alex Wolf, they/them, Cologne and Bonn: fifteen years of distributed systems, ten on the BEAM, systemic training, EventStorming master class under Brandolini, sells architecture reviews with written decisions and OpenTelemetry rollouts, available now, and runs their own anti-extraction licence. Their post argues that agent governance is coupled to the minutes and not to the motion, which is a control-system claim in their own field. The owner's line is quoted by name inside it. | One comment drafted at 965 characters, gated clean, not posted. `ENGAGEMENT/2026-11-15_comment_alex-wolf_agent-governance.md`. A connection request is a separate ask and was not taken. |
 
+| 42 | External review, 2026-11-15 10:13 WAT | Behar Dalipi's message, read against `03-change/patch.diff` and `bench/store.py`. | **Two new reproducible defects in the HFB change, both confirmed by reading the code.** First, the journal counter advances only after a successful fsync, so an unconfirmed rollback leaves it untouched and a retry in the same process reuses the sequence number; if the failed truncation left the first copy on disk, two records share a number. Second, replay detects an unterminated tail as a gap and stops reading at that byte, but a repair triggered by a different damaged line rewrites the file from the accepted records and quarantines only the damaged line, so the gap record is deleted and never quarantined, which is the failure the gap mechanism was written to prevent. f21 asserts durable false for all three states, so it fails against the patched tree as reported. | Reply drafted in `ENGAGEMENT/2026-11-15_dm_behar-two-more-cases.md`. Merge offered to stay held. No code changed here. |
+
 ---
 
 ## Open verification items (carry to next refresh)
@@ -102,3 +104,4 @@
 | 2026-11-15 (12:14 WAT) | The four links the owner will watch, read logged out. | Entry 39 added. Visibility question closed in the affirmative. Four new defects found, none fixed by me. |
 | 2026-11-15 (12:19 WAT) | The owner's request that the link check become a daily rule. | Entry 40 added. R49 registered, rendered, and enforced by TOOLING/link_watch.py. Nothing live changed. |
 | 2026-11-15 (12:24 WAT) | Alex Wolf's post and profile. | Entry 41 added. Comment drafted, no link, no pitch. Nothing sent. |
+| 2026-11-15 (12:31 WAT) | Behar's review of the rebuilt pack. | Entry 42 added. Two defects named from the code; merge stays held. |
