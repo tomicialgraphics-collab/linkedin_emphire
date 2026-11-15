@@ -178,6 +178,20 @@ and it is the shape the OpenAI and Upwork figures support: bigger scope is where
 | No paid consultation | Eugene, Carmen, Don, Dmitry, Monica and most of the credible cards offer one | nothing on the card, so the cheapest conversion path on the platform is closed before anyone clicks |
 | Hours and video are empty | availability is filled and a video sits on the card | both are unset, and the title still carries a word that no longer earns its place. One edit and one afternoon, in that order |
 
+## 4a. Amended at 10:44 WAT, after the job feed
+
+The job feed was readable without a login, so the demand side got measured. Two changes follow, and both are recorded
+in `UPWORK/2026-11-15_job-feed-corpus_seventeen-posts.md`.
+
+Evals come out of the lead. The $50 to $100 evaluation engineering work is US-resident only, the fixed $10,000 role
+says "US based" in its title, and the trainer market requires a US time zone. What is left open to Lagos is the $5 to
+$30 benchmark-authoring mill. Evals stay in the offer as the second half of a security review, which is where the feed
+puts them anyway: twice as a bullet inside .NET jobs.
+
+The title should say **AI Security**, not red teaming. `AI red team` returns no public postings and `red teaming`
+returns sixteen results that are a Red Hat ad and a coating chemist. `AI security` returns 174. Keep the rerun and the
+retest in the subtitle, since two buyers asked for the retest before anyone asked for anything else.
+
 ## 5. What is still unproven
 
 These are supply-side screenshots. They do not show what clients post, how many proposals a post attracts, or what
