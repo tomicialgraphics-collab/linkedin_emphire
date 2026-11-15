@@ -66,6 +66,8 @@
 
 | 40 | Owner instruction 2026-11-15 | Rule R49 added to `PIPELINE/registry/rules.json`, rendered into `PIPELINE/20-RULES.md`. | **The link check is a daily rule, one pass, refused twice on the same day.** Five reads a day was declined: the catalogue carries 23 views in 30 days, so a five-read schedule multiplies the only traffic figure on the account by six and none of it would be a buyer. `TOOLING/link_watch.py` holds the rule as behaviour rather than text: `due` exits 1 once the day is recorded, `record` diffs the new read against the previous one and writes `STATE/LINK_CHECKS/<date>.md`. | Rule in `UPWORK/2026-11-15_daily-link-check_rule.md`. First record written at 12:14 WAT. The tool cannot fetch from this sandbox, so the read comes from a browser or the page reader. |
 
+| 41 | Primary, 2026-11-15 12:22 to 12:24 WAT | Alex Wolf's post as pasted, and linkedin.com/in/systemic-engineer read in full. | **The person quoting the owner is an observability engineer, so the reply goes at coupling rather than at governance.** Alex Wolf, they/them, Cologne and Bonn: fifteen years of distributed systems, ten on the BEAM, systemic training, EventStorming master class under Brandolini, sells architecture reviews with written decisions and OpenTelemetry rollouts, available now, and runs their own anti-extraction licence. Their post argues that agent governance is coupled to the minutes and not to the motion, which is a control-system claim in their own field. The owner's line is quoted by name inside it. | One comment drafted at 965 characters, gated clean, not posted. `ENGAGEMENT/2026-11-15_comment_alex-wolf_agent-governance.md`. A connection request is a separate ask and was not taken. |
+
 ---
 
 ## Open verification items (carry to next refresh)
@@ -99,3 +101,4 @@
 | 2026-11-15 (12:04 WAT) | The consultation editor, all six steps. | Entry 38 added. Four fixes named, five paste blocks supplied with counts. Nothing live changed. |
 | 2026-11-15 (12:14 WAT) | The four links the owner will watch, read logged out. | Entry 39 added. Visibility question closed in the affirmative. Four new defects found, none fixed by me. |
 | 2026-11-15 (12:19 WAT) | The owner's request that the link check become a daily rule. | Entry 40 added. R49 registered, rendered, and enforced by TOOLING/link_watch.py. Nothing live changed. |
+| 2026-11-15 (12:24 WAT) | Alex Wolf's post and profile. | Entry 41 added. Comment drafted, no link, no pitch. Nothing sent. |
