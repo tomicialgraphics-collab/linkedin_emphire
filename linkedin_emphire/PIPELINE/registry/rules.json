@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "note": "Machine-readable rule registry. This is the only place a rule is defined. PIPELINE/20-RULES.md is rendered from it, and TOOLING/gate.py enforces the ones with a check. To add a rule, add it here, run pipeline.py render, then run the gate on a known-good file so you know the check does not misfire.",
  "severity_levels": {
   "block": "gate exits non-zero and the file cannot be delivered",
@@ -530,6 +530,17 @@
    ],
    "check": "manual",
    "verify_with": "On 14 November the post opening 'I published the checklist I use for AI red teaming' reached 77 impressions. The post opening on a board statement about a chief executive reached 8,001 in the same week from the same account. Same author, same method, different first line."
+  },
+  {
+   "id": "R49",
+   "text": "The four Upwork links are read once a day and never more: the consultation, the red team project, the chatbot project and the profile. One pass, one record, in STATE/LINK_WATCH.json. A second pass on the same day is refused, because every read of a listing is traffic, and twenty reads a day from one machine turns the view counter into a record of the owner's own clicking rather than of buyers. A check that finds a change writes the diff before anyone acts on it.",
+   "source": "owner instruction 2026-11-15, 'add the link check as a daily rule'",
+   "severity": "warn",
+   "scope": [
+    "internal"
+   ],
+   "check": "manual",
+   "verify_with": "python3 linkedin_emphire/TOOLING/link_watch.py due exits 1 once the day's record exists, and STATE/LINK_CHECKS/ holds one file per day that lists what moved."
   }
  ]
 }

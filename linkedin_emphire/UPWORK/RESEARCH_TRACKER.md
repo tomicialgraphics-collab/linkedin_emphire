@@ -64,6 +64,8 @@
 
 | 39 | Primary, 2026-11-15 12:12 to 12:14 WAT | The three listings and the profile, all read logged out. | **All four pages load logged out, so every listing is live.** The bracketed character counts are published on the public booking page under the requirements heading, so the defect from entry 38 is client-facing, not internal. The consultation already uses all five expertise chips, including full-stack development and ai app development. Its "also viewed" rail lists four Top Rated Plus consultants at $35 to $200 with 1,283 to 3,655 reviews, which makes the $40 card the cheapest and least proven one on its own page. The red team listing leaves all three company-size rows blank and the chatbot listing prices its 14-day re-test guarantee at +$1. The profile renders "/freelancers/timothyo28" as its canonical address and carries an unexplained "Features 33% Complete" chip. | Baseline and fix order in `UPWORK/2026-11-15_four-links_baseline-and-fixes.md`. Daily five-click monitoring declined and replaced with an on-request diff. |
 
+| 40 | Owner instruction 2026-11-15 | Rule R49 added to `PIPELINE/registry/rules.json`, rendered into `PIPELINE/20-RULES.md`. | **The link check is a daily rule, one pass, refused twice on the same day.** Five reads a day was declined: the catalogue carries 23 views in 30 days, so a five-read schedule multiplies the only traffic figure on the account by six and none of it would be a buyer. `TOOLING/link_watch.py` holds the rule as behaviour rather than text: `due` exits 1 once the day is recorded, `record` diffs the new read against the previous one and writes `STATE/LINK_CHECKS/<date>.md`. | Rule in `UPWORK/2026-11-15_daily-link-check_rule.md`. First record written at 12:14 WAT. The tool cannot fetch from this sandbox, so the read comes from a browser or the page reader. |
+
 ---
 
 ## Open verification items (carry to next refresh)
@@ -96,3 +98,4 @@
 | 2026-11-15 (11:56 WAT) | The stats page and the services page, as sent by the owner. | Entry 37 added. The funnel is 23 catalogue views to 0 profile views to 0 orders. Nothing live changed. |
 | 2026-11-15 (12:04 WAT) | The consultation editor, all six steps. | Entry 38 added. Four fixes named, five paste blocks supplied with counts. Nothing live changed. |
 | 2026-11-15 (12:14 WAT) | The four links the owner will watch, read logged out. | Entry 39 added. Visibility question closed in the affirmative. Four new defects found, none fixed by me. |
+| 2026-11-15 (12:19 WAT) | The owner's request that the link check become a daily rule. | Entry 40 added. R49 registered, rendered, and enforced by TOOLING/link_watch.py. Nothing live changed. |
