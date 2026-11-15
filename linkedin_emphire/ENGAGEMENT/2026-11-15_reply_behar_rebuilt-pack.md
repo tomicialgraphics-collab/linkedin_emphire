@@ -62,7 +62,7 @@ stands, and the file stays byte-identical at `573a5554...`.
 revision that state can't be produced at all; its nearest answer to a refused write is
 `durable: false`, which is the claim the patch stops making.
 
-The probe exits 2 on the pinned revision and 0 with the patch. the rebuild script refuses to
+The probe exits 2 on the pinned revision and 0 with the patch. The rebuild script refuses to
 write a pack if either probe answers wrongly, and the two verifier outputs are still
 byte-identical.
 
