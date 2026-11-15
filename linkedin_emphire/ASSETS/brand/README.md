@@ -1,5 +1,7 @@
 # Brand card
 
+`MASTER_PROMPT.md` holds the prompt and the measured spec for this layout. It splits the job in two: an image model makes the portrait plate, the renderer sets every word.
+
 Rebuilt on 2026-11-15 to the reference layout the owner supplied. Every visual from here on follows this card: photo, name, headline, cut-out portrait, desk, yellow pill, yellow tag.
 
 **The name is Olusanya Timothy**, and it is an argument to the renderer rather than part of a design. The reference card belonged to somebody else and its name was printed onto two renders by mistake before this was fixed.
