@@ -3,7 +3,7 @@ deliverable: doc
 id: 2026-11-15_upwork-portfolio-hfb
 date: 2026-11-15
 time_checked: >-
-  checked: 2026-11-15 11:29 WAT, read from the system clock before this file was opened for gate.
+  checked: 2026-11-15 11:33 WAT, read from the system clock before this file was opened for gate.
 audience: internal
 status: ready
 approved: no
@@ -96,6 +96,8 @@ small portrait.
 | `04_cover.png` | 1080x1350 | the brand card for the portfolio grid, name and portrait on the template |
 
 Upload order is 01, 02, 03, then the cover last, because a buyer who clicks reads the evidence first and the poster last.
+
+Drive folder, public reader access, uploaded 15 November: `https://drive.google.com/drive/folders/1g9nnJzLJIgs7KBo-tQbSnnDaXktP-Kye`. Files: `01_manifest.png` 1DQOZSS3KlXg7w1q0wqVMGmqH5pm8vZCq, `02_structure.png` 1-XKjpgiXPjWlB3Tvt27NpOpo6Y-nJYIc, `03_classification-log.png` 1oVCyvzEN1ejHC-DW2UiEA4ELpe9CYyg_, `04_cover.png` 1mKSCA5IwK-77qOOldfV4Os3cL5mObeZo.
 
 The cover carries a follow pill from the brand template reading `Follow @Olusanya Timothy`. On an Upwork portfolio that
 reads as a social card, so it can be rebuilt without the pill in one command if he wants it.
