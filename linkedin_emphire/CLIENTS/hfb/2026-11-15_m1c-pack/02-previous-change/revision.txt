@@ -1,0 +1,7 @@
+revision
+  repository: Teamthy/host-failure-benchmark
+  what this tree is: the change delivered on 15 November 2026, before this one
+  file: bench/store.py
+  sha256 of that file: b987cc49e186d9281ce86eca76a940319107002d4c5bc05d2ce362f7acc70085
+  patch that produced it: 14997eac (in the pack of 2026-11-14_m1-pack)
+  result: both cases of 15 November fail on it; see new-cases.log

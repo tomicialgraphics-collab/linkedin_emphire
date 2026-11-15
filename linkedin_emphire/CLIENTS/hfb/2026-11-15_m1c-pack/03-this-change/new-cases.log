@@ -1,0 +1,20 @@
+C duplicate sequence numbers after an unconfirmed rollback
+  c_reply_says_unknown             hold  True
+  c_records_on_disk_after_failure  note  3
+  c_retry_replied                  hold  True
+  c_retry_seq                      note  None
+  c_unique_seq                     hold  True
+  holds                            yes
+D a malformed line before an unterminated final record
+  d_gap_on_restart_1               hold  True
+  d_gap_on_restart_2               hold  True
+  d_gap_same_sha                   hold  True
+  d_gap_names_seq                  hold  True
+  d_record_in_journal              hold  True
+  d_record_in_quarantine           hold  True
+  d_damage_in_quarantine           hold  True
+  d_journal_stable_across_restarts hold  True
+  d_record_not_indexed             hold  True
+  holds                            yes
+
+both cases hold

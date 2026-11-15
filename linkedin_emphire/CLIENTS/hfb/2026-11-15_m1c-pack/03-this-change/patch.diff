@@ -1,0 +1,622 @@
+--- base/bench/store.py	2026-11-15 12:27:36.000000000 +0000
++++ tree/bench/store.py	2026-11-15 12:33:51.460001621 +0000
+@@ -34,6 +34,18 @@
+     """The journal did not take the record. Nothing was persisted, so nothing may be claimed."""
+ 
+ 
++class JournalStateUnknown(JournalError):
++    """The write failed and the rollback that would have restored the file failed too.
++
++    This is not a failed write, which is a known state: nothing was persisted. This is a state
++    nobody can name, so the reply may not claim one. `durable: false` would be a claim that the
++    bytes will not survive, and the process does not know that.
++    """
++
++    disk_state = "unknown"
++    reason = "rollback-failed"
++
++
+ class Journal:
+     """Append-only, fsynced per record, framed so a torn write is detectable.
+ 
+@@ -44,16 +56,32 @@
+     """
+ 
+     def __init__(self, path):
++        self.gap = None
+         self.path = path
+         self.seq = 0
+         self.discarded = 0
+         self.unframed = 0
+         self.quarantine = None
++        # Records from a batch that arrived without its other half. Kept out of the index and
++        # named, rather than indexed as if they stood alone.
++        self.withheld = []
++        # A record whose bytes are whole and whose terminator is missing. Withheld rather than
++        # repaired: rewriting the file to drop it deletes the only evidence of it, which is what
++        # made the second restart go quiet.
++        self.gap = None
++        # Set when a rollback could not be confirmed, so the next append re-reads the file
++        # before it numbers anything.
++        self.unknown_state = False
+         # A failpoint, so a journal that refuses a write can be tested without a full disk.
+         # It refuses before anything is written, which is the case the ordering claim is about.
+         self.failpoint = os.environ.get("HFB_FAILPOINT", "")
+ 
+     def append(self, record):
++        if self.unknown_state:
++            # The last rollback could not be confirmed, so this process may not assume what the
++            # file holds, and it must not number from memory: a half-written batch leaves whole
++            # records behind whose numbers are already spent on disk.
++            self._resync()
+         record = dict(record)
+         record["store_seq"] = self.seq + 1
+         record["digest"] = frame(record)
+@@ -61,6 +89,14 @@
+             raise JournalError("injected: the journal refused a verdict write")
+         line = json.dumps(record, sort_keys=True)
+         before = self._size()
++        if self.gap is not None:
++            # Do not append onto, and do not cut, a tail that is a whole record missing its
++            # terminator. Cutting it is how the record stopped being reported on the second
++            # restart: the first restart named the conflict, the boot record cut it away.
++            raise JournalError(
++                "journal ends in an unterminated record at byte %d (store_seq %s); refusing to "
++                "append until that gap is resolved, and refusing to cut it"
++                % (self.gap["start"], self.gap["store_seq"]))
+         if before and not self._ends_clean():
+             # Somebody left a partial line at the end of the journal while this store was
+             # running. Appending to it would glue this record onto the damaged one, and the
+@@ -68,7 +104,21 @@
+             # Cut the damaged tail out first, with the same quarantine the start-up repair uses.
+             before = self._cut_damaged_tail(before)
+         try:
+-            with open(self.path, "a", encoding="utf-8", newline="\n") as fh:
++            handle = open(self.path, "a", encoding="utf-8", newline="\n")
++        except OSError as exc:
++            # The file was never opened, so no byte of this record was written and the state is
++            # known: nothing was persisted. Reporting that as unknown would be a claim about the
++            # disk that an open failure does not support.
++            raise JournalError("journal could not be opened for the record: %s" % exc)
++        try:
++            with handle as fh:
++                if "write-partial" in self.failpoint:
++                    # Half a line reaches the disk, then the write fails, so the rollback path
++                    # runs for real rather than being described.
++                    fh.write(line[: max(1, len(line) // 2)])
++                    fh.flush()
++                    os.fsync(fh.fileno())
++                    raise OSError("injected: partial write")
+                 fh.write(line + "\n")
+                 fh.flush()
+                 os.fsync(fh.fileno())
+@@ -84,6 +134,146 @@
+         self.seq = record["store_seq"]
+         return record
+ 
++    def append_batch(self, records):
++        """Several records, one write call, one fsync, and a marker linking them.
++
++        The conflict path used to write the verdict, and then, in a second append with its own
++        fsync, the record that names the conflict. A crash between the two left a store that
++        reported a conflict it could no longer name. One write and one fsync means the batch is
++        whole or absent. A reader that finds part of a batch withholds what it found and says
++        so, because half of a two-part claim is not a smaller claim.
++        """
++        if not records:
++            return []
++        if self.unknown_state:
++            # Same reason as append(): the numbers on disk are real even when the rollback was
++            # not confirmed, so the sequence is re-derived before the batch is numbered.
++            self._resync()
++        prepared = []
++        seq = self.seq
++        for record in records:
++            seq += 1
++            record = dict(record)
++            record["store_seq"] = seq
++            prepared.append(record)
++        blob_key = json.dumps(prepared, sort_keys=True)
++        batch_id = hashlib.sha256(blob_key.encode("utf-8")).hexdigest()[:16]
++        for index, record in enumerate(prepared, start=1):
++            record["batch"] = {"id": batch_id, "index": index, "of": len(prepared)}
++            record["digest"] = frame(record)
++            if self.failpoint == "verdict" and record.get("kind") == "verdict":
++                raise JournalError("injected: the journal refused a verdict write")
++        blob = "".join(json.dumps(record, sort_keys=True) + "\n" for record in prepared)
++        before = self._size()
++        if self.gap is not None:
++            # Do not append onto, and do not cut, a tail that is a whole record missing its
++            # terminator. Cutting it is how the record stopped being reported on the second
++            # restart: the first restart named the conflict, the boot record cut it away.
++            raise JournalError(
++                "journal ends in an unterminated record at byte %d (store_seq %s); refusing to "
++                "append until that gap is resolved, and refusing to cut it"
++                % (self.gap["start"], self.gap["store_seq"]))
++        if before and not self._ends_clean():
++            before = self._cut_damaged_tail(before)
++        try:
++            handle = open(self.path, "a", encoding="utf-8", newline="\n")
++        except OSError as exc:
++            raise JournalError("journal could not be opened for the batch: %s" % exc)
++        try:
++            with handle as fh:
++                if "write-partial" in self.failpoint:
++                    # Half the batch reaches the disk, then the write fails, so the rollback
++                    # path runs for real rather than being described in a comment.
++                    fh.write(blob[: max(1, len(blob) // 2)])
++                    fh.flush()
++                    os.fsync(fh.fileno())
++                    raise OSError("injected: partial batch write")
++                fh.write(blob)
++                fh.flush()
++                os.fsync(fh.fileno())
++        except OSError as exc:
++            self._rollback(before, exc)
++            raise JournalError("journal did not take the batch: %s" % exc)
++        self.seq = seq
++        return prepared
++
++    def _resync(self):
++        """Re-derive the next sequence from the file after an unconfirmed rollback.
++
++        `JournalStateUnknown` says this process does not know what reached the disk. It does not
++        say the file can be ignored. A batch that failed partway can leave whole records behind,
++        and each of those consumed a number; numbering from memory would hand the same number out
++        again, and two records sharing one store_seq is a store that cannot say which came first.
++
++        So the file is read, the bytes that never became a whole line are copied out and cut, and
++        the next number is taken from the records that are actually there.
++        """
++        self.unknown_state = False
++        try:
++            with open(self.path, "rb") as fh:
++                data = fh.read()
++        except OSError:
++            return self._size()
++        cut = data.rfind(b"\n") + 1
++        tail, complete = data[cut:], data[:cut]
++        highest = 0
++        for line in complete.splitlines():
++            stripped = line.strip()
++            if not stripped:
++                continue
++            try:
++                record = json.loads(stripped.decode("utf-8"))
++            except (ValueError, UnicodeDecodeError):
++                continue
++            if isinstance(record, dict):
++                highest = max(highest, record.get("store_seq") or 0)
++        self.seq = max(self.seq, highest)
++        if not tail:
++            return cut
++        name = self._quarantine_name()
++        with open(os.path.join(os.path.dirname(self.path) or ".", name), "wb") as fh:
++            fh.write(tail)
++            fh.flush()
++            os.fsync(fh.fileno())
++        self.quarantine = {"file": name, "bytes": len(tail),
++                           "sha256": hashlib.sha256(tail).hexdigest(),
++                           "ranges": [{"start": cut, "end": len(data)}]}
++        with open(self.path, "r+b") as fh:
++            fh.truncate(cut)
++            fh.flush()
++            os.fsync(fh.fileno())
++        return cut
++
++    def _unterminated_tail(self):
++        """A final line that is a whole, digest-valid record with no terminator.
++
++        The bytes arrived and the digest agrees with them, so the record is readable; the file
++        does not say the write finished. That is a gap, and it is withheld rather than indexed
++        or repaired: rewriting the file to drop it would delete the only evidence of it, which
++        is what made the second restart go quiet.
++        """
++        try:
++            with open(self.path, "rb") as fh:
++                data = fh.read()
++        except OSError:
++            return None
++        if not data or data.endswith(b"\n"):
++            return None
++        start = data.rfind(b"\n") + 1
++        tail = data[start:]
++        try:
++            record = json.loads(tail.decode("utf-8"))
++        except (ValueError, UnicodeDecodeError):
++            return None
++        if not isinstance(record, dict):
++            return None
++        if "digest" in record and not hmac.compare_digest(record["digest"], frame(record)):
++            return None
++        return {"reason": "unterminated record", "start": start, "bytes": len(tail),
++                "sha256": hashlib.sha256(tail).hexdigest(),
++                "store_seq": record.get("store_seq"), "kind": record.get("kind"),
++                "action_id": record.get("action_id")}
++
+     def _ends_clean(self):
+         try:
+             with open(self.path, "rb") as fh:
+@@ -128,13 +318,19 @@
+ 
+     def _rollback(self, size, exc):
+         """Cut a failed append back to the length the file had before the attempt."""
++        if "rollback" in self.failpoint:
++            self.unknown_state = True
++            raise JournalStateUnknown(
++                "journal write failed (%s) and the rollback was refused by the failpoint: the "
++                "record's state on disk is unknown" % exc)
+         try:
+             with open(self.path, "r+b") as fh:
+                 fh.truncate(size)
+                 fh.flush()
+                 os.fsync(fh.fileno())
+         except OSError as rollback_exc:
+-            raise JournalError(
++            self.unknown_state = True
++            raise JournalStateUnknown(
+                 "journal write failed (%s) and the rollback to %d bytes failed too (%s): the "
+                 "record's state on disk is unknown, so the store will not answer for it"
+                 % (exc, size, rollback_exc))
+@@ -159,9 +355,13 @@
+         """
+         if not os.path.exists(self.path):
+             return []
++        self.gap = self._unterminated_tail()
+         out, good, bad, offset = [], [], [], 0
++        gap_start = self.gap["start"] if self.gap else None
+         with open(self.path, "rb") as fh:
+             for line in fh:
++                if gap_start is not None and offset >= gap_start:
++                    break
+                 start, offset = offset, offset + len(line)
+                 stripped = line.strip()
+                 if not stripped:
+@@ -184,31 +384,74 @@
+                 out.append(record)
+                 good.append(line)
+         if bad:
+-            tail = b"".join(chunk for _, _, chunk in bad)
+-            self.discarded = len(tail)
++            damaged = b"".join(chunk for _, _, chunk in bad)
++            self.discarded = len(damaged)
++            kept = b"".join(good)
++            # The unterminated tail is not damage and must survive the repair. It was withheld
++            # rather than removed, so a repair that rewrote the file without it would delete the
++            # only copy of a record this store is still reporting, and the gap would go quiet on
++            # the next restart. It is copied into the quarantine as well, because evidence that
++            # exists in one place is evidence one repair away from nothing.
++            held = b""
++            if self.gap is not None:
++                with open(self.path, "rb") as fh:
++                    fh.seek(self.gap["start"])
++                    held = fh.read()
+             name = self._quarantine_name()
+             with open(os.path.join(os.path.dirname(self.path) or ".", name), "wb") as fh:
+-                fh.write(tail)
++                fh.write(damaged)
++                fh.write(held)
+                 fh.flush()
+                 os.fsync(fh.fileno())
+             self.quarantine = {
+                 "file": name,
+-                "bytes": len(tail),
+-                "sha256": hashlib.sha256(tail).hexdigest(),
++                "bytes": len(damaged) + len(held),
++                "sha256": hashlib.sha256(damaged + held).hexdigest(),
+                 "ranges": [{"start": start, "end": end} for start, end, _ in bad],
++                "unterminated_tail": None if not held else {
++                    "quarantine_offset": len(damaged),
++                    "bytes": len(held),
++                    "sha256": hashlib.sha256(held).hexdigest(),
++                    "store_seq": (self.gap or {}).get("store_seq"),
++                },
+             }
+             # Rewrite the whole file rather than truncating at the damage: the records after
+-            # the damaged line were acknowledged and have to survive the repair.
++            # the damaged line were acknowledged and have to survive the repair. The withheld
++            # tail is written back at the end, still unterminated, so the next restart reports
++            # the same gap at its new offset.
+             tmp = self.path + ".repair"
+             with open(tmp, "wb") as fh:
+-                fh.write(b"".join(good))
++                fh.write(kept + held)
+                 fh.flush()
+                 os.fsync(fh.fileno())
+             os.replace(tmp, self.path)
++            if held:
++                self.gap = dict(self.gap, start=len(kept), quarantine=name,
++                                quarantine_offset=len(damaged))
++        # A batch is all or nothing. If a marker says two records went out and only one is here,
++        # the one that is here is not indexed: indexing it would make half a claim into a claim.
++        claims = {}
++        for record in out:
++            batch = record.get("batch") or {}
++            if isinstance(batch, dict) and batch.get("id"):
++                claims.setdefault(batch["id"], []).append(record)
++        whole = []
++        self.withheld = []
++        for record in out:
++            batch = record.get("batch") or {}
++            batch_id = batch.get("id") if isinstance(batch, dict) else None
++            if batch_id and len(claims[batch_id]) < int(batch.get("of") or 1):
++                self.withheld.append({"batch": batch_id, "store_seq": record.get("store_seq"),
++                                      "kind": record.get("kind"),
++                                      "present": len(claims[batch_id]),
++                                      "of": batch.get("of")})
++                continue
++            whole.append(record)
+         # Numbering follows the records that survived, not a count of them: after a repair the
+         # surviving store_seq values are not contiguous, and the next record must not reuse one.
++        # A withheld record still consumed its number, so the maximum is taken over everything.
+         self.seq = max([r.get("store_seq") or 0 for r in out] or [0])
+-        return out
++        return whole
+ 
+ 
+ class Store:
+@@ -269,6 +512,13 @@
+         self.index(stored)
+         return stored
+ 
++    def record_batch(self, records):
++        """Journal both records in one write, then index them. Same order as record()."""
++        written = self.journal.append_batch(records)
++        for record in written:
++            self.index(record)
++        return written
++
+     @staticmethod
+     def state_of(record, action_id=None):
+         """verified, unverified or unbound, recomputed from the record's own bytes.
+@@ -313,21 +563,27 @@
+         aid = rec["action_id"]
+         state = self.state_of(rec)
+         first = self.verdicts.get(aid)
+-        stored = self.record({"kind": "verdict", "action_id": aid, "record": rec,
+-                              "state": state})
++        row = {"kind": "verdict", "action_id": aid, "record": rec, "state": state}
+         if first is not None and first.get("record") != rec:
+-            conflict = self.record({
++            # Two different verdicts for one action. The verdict and the record that names the
++            # conflict leave together: one write, one fsync. A crash can now lose both or keep
++            # both, and can no longer leave a reported conflict with nothing to name it.
++            # The batch takes the next two sequence numbers, this verdict first.
++            conflict = {
+                 "kind": "conflict",
+                 "action_id": aid,
+                 "first_seq": first.get("store_seq"),
+-                "second_seq": stored.get("store_seq"),
++                "second_seq": self.journal.seq + 1,
+                 "first_verdict": (first.get("record") or {}).get("verdict"),
+                 "second_verdict": rec.get("verdict"),
+                 "rule": "two different verdicts for one action id: neither resolves the gap",
+-            })
++            }
++            written = self.record_batch([row, conflict])
++            stored, named = written[0], written[1]
+             return {"ok": True, "stored": True, "state": "conflicted", "conflict": True,
+                     "action_id": aid, "store_seq": stored.get("store_seq"),
+-                    "conflict_seq": conflict.get("store_seq")}
++                    "conflict_seq": named.get("store_seq")}
++        stored = self.record(row)
+         return {"ok": True, "stored": True, "state": self.verdict_state.get(aid, state),
+                 "action_id": aid, "store_seq": stored.get("store_seq")}
+ 
+@@ -375,6 +631,11 @@
+                 })
+         return {"ok": True, "gaps": gaps}
+ 
++    def cmd_failpoint(self, req):
++        """Arm or disarm the journal's injected failure. Test scaffolding, and it says so."""
++        self.journal.failpoint = req.get("value") or ""
++        return {"ok": True, "failpoint": self.journal.failpoint}
++
+     def cmd_state(self, req):
+         return {
+             "ok": True,
+@@ -387,6 +648,7 @@
+             "unverified_verdicts": sorted(aid for aid, state in self.verdict_state.items()
+                                           if state != "verified"),
+             "gaps": self.cmd_reconcile({})["gaps"],
++            "journal_gap": self.journal.gap,
+         }
+ 
+     def handle(self, req):
+@@ -399,14 +661,19 @@
+             "lookup": self.cmd_lookup,
+             "reconcile": self.cmd_reconcile,
+             "state": self.cmd_state,
++            "failpoint": self.cmd_failpoint,
+         }
+         if cmd not in table:
+             return {"ok": False, "error": "unknown command: %r" % cmd}
+         try:
+             return table[cmd](req)
++        except JournalStateUnknown as exc:
++            # Not "false". False says the bytes will not survive, and nobody knows that here.
++            return {"ok": False, "durable": "unknown", "disk_state": exc.disk_state,
++                    "reason": exc.reason, "error": str(exc)}
+         except JournalError as exc:
+             # The write did not happen, so nothing is claimed and memory is untouched.
+-            return {"ok": False, "durable": False, "error": str(exc)}
++            return {"ok": False, "durable": False, "disk_state": "unchanged", "error": str(exc)}
+         except Exception as exc:  # noqa: BLE001 - a store that cannot answer is a store that lies
+             # A journal that raises something other than JournalError, a full disk, a closed
+             # file descriptor: the host is waiting for an acknowledgement, and the one thing
+@@ -449,7 +716,29 @@
+     # How many records the replay recovered. Named for what it counts: a sequence number here
+     # used to be off by one, which made a repair look like it lost one more record than it did.
+     replayed = store.journal.seq
+-    if store.journal.discarded:
++    if store.journal.gap:
++        # Named on every start-up, and nothing written: any append here would have to cut the
++        # withheld tail away, which is how the gap went quiet on the second restart.
++        gap = store.journal.gap
++        print("journal gap: unterminated record of %d bytes at byte %d, store_seq %s, kind %s, "
++              "withheld and not indexed; file left as found"
++              % (gap["bytes"], gap["start"], gap["store_seq"], gap["kind"]), flush=True)
++    if store.journal.withheld and store.journal.gap:
++        # The withheld batch and the gap are the same event seen twice. Nothing is written while
++        # the gap stands, so the file a reviewer opens is the file that was handed to them.
++        print("batch withheld: %d record(s) from an incomplete batch, not indexed; the gap is "
++              "named and nothing was rewritten" % len(store.journal.withheld), flush=True)
++    elif store.journal.withheld:
++        first = store.journal.withheld[0]
++        store.journal.append({"kind": "repair",
++                              "withheld_batch": first.get("batch"),
++                              "withheld_records": len(store.journal.withheld),
++                              "withheld_seqs": [w.get("store_seq") for w in store.journal.withheld],
++                              "rule": "a batch that is not whole is not indexed: half a claim "
++                                      "is not a claim"})
++        print("batch withheld: %d record(s) from an incomplete batch, not indexed"
++              % len(store.journal.withheld), flush=True)
++    if store.journal.discarded and not store.journal.gap:
+         # Say what was lost instead of silently presenting a shorter history as the whole one.
+         store.journal.append({"kind": "repair",
+                               "discarded_bytes": store.journal.discarded,
+@@ -460,7 +749,9 @@
+         print("journal repaired: %d trailing bytes discarded" % store.journal.discarded,
+               flush=True)
+     # A boot marker, so a reader can tell what arrived before a recovery and what arrived after.
+-    store.journal.append({"kind": "boot", "replayed_records": replayed})
++    # Not written while a gap stands: the marker would have to cut the withheld tail away.
++    if not store.journal.gap:
++        store.journal.append({"kind": "boot", "replayed_records": replayed})
+     srv = Server(("127.0.0.1", 0), Handler)
+     srv.store = store
+     port = srv.server_address[1]
+--- base/audit/regressions.py	2026-11-15 12:36:17.557444028 +0000
++++ tree/audit/regressions.py	2026-11-15 12:34:36.352444847 +0000
+@@ -549,6 +549,59 @@
+ s6 = S.Store(S.Journal(journal))
+ out["torn_tail"] = {"ack": ack, "survived": "T-3" in s6.handle({"cmd": "state"})["issued"]}
+ 
++# 4. a write that fails partway and a rollback that cannot run, arranged without the journal's
++#    own failpoint so the case is the same on every revision. The reply may say the state was
++#    unchanged only if the bytes are gone; if they may still be there, it has to say it cannot
++#    tell. Then a retry, because a retry is what reuses a sequence number.
++class Partial(object):
++    # A file that takes half a line, fsyncs it, then fails, the way a full disk does.
++
++    def __init__(self, fh):
++        self.fh = fh
++
++    def write(self, data):
++        self.fh.write(data[:max(1, len(data) // 2)])
++        self.fh.flush()
++        real_fsync(self.fh.fileno())
++        raise OSError(5, "Input/output error")
++
++    def __getattr__(self, name):
++        return getattr(self.fh, name)
++
++    def __enter__(self):
++        self.fh.__enter__()
++        return self
++
++    def __exit__(self, *args):
++        return self.fh.__exit__(*args)
++
++
++def failing_open(path, mode="r", *args, **kwargs):
++    if "+" in mode:
++        raise OSError(5, "Input/output error")
++    fh = real_open(path, mode, *args, **kwargs)
++    return Partial(fh) if "a" in mode else fh
++
++
++s7 = S.Store(S.Journal(journal))
++S.open = failing_open
++def attempt3():
++    try:
++        return {"reply": s7.handle({"cmd": "verdict", "action_id": "M-9",
++                                    "record": {"action_id": "M-9", "verdict": "BLOCK",
++                                               "signature": None}}), "raised": False}
++    except Exception as exc:
++        return {"reply": None, "raised": True, "error": repr(exc)}
++out["rollback_unknown"] = attempt3()
++S.open = real_open
++after_failure = real_open(journal, "rb").read()
++retry = s7.handle({"cmd": "issue", "action_id": "T-5"})
++rows_s7 = [json.loads(line) for line in real_open(journal, encoding="utf-8") if line.strip()]
++seqs_s7 = [row["store_seq"] for row in rows_s7]
++out["rollback_unknown"]["retry"] = retry
++out["rollback_unknown"]["unique_seq_after_retry"] = len(seqs_s7) == len(set(seqs_s7))
++out["rollback_unknown"]["bytes_on_disk_absent"] = b"M-9" not in after_failure
++
+ print(json.dumps(out))
+ """
+ 
+@@ -571,19 +624,61 @@
+         return False, "the case did not run: %s" % (proc.stderr or proc.stdout)[-300:]
+     out = json.loads(proc.stdout.strip().splitlines()[-1])
+ 
+-    def answered(case):
++    def named(case):
++        """Three states, named rather than collapsed into one false.
++
++        refused     the store answered, and it says the bytes are not there
++        unknown     the store answered, and it says it cannot tell what reached the disk
++        acknowledged the store answered, and it says the record is stored
++        raised      the store said nothing, which is the failure this check exists for
++        """
++        if case.get("raised"):
++            return "raised"
+         reply = case.get("reply") or {}
+-        return (not case["raised"]) and reply.get("ok") is False and reply.get("durable") is False
++        if reply.get("ok") is True:
++            return "acknowledged"
++        if reply.get("durable") == "unknown":
++            if reply.get("disk_state") == "unknown" and reply.get("reason"):
++                return "unknown"
++            return "unknown without a reason"
++        if reply.get("durable") is False:
++            return "refused"
++        return "other"
++
++    # Nothing was written when the file could not be opened, so the state is knowable and a
++    # claim of not knowing it would be a claim about the disk that the failure does not support.
++    open_state = named(out["open_eio"])
++    open_ok = (open_state == "refused" and not out["open_eio"]["live_knows"]
++               and not out["open_eio"]["restart_knows"])
++
++    # The bytes reached the page cache, so either answer is allowed, but each has to be true of
++    # the file: refused means a restart does not see the record, unknown means nothing is
++    # claimed and memory and disk still agree.
++    fsync_case, fsync_state = out["fsync_eio"], named(out["fsync_eio"])
++    fsync_ok = (
++        fsync_state in ("refused", "unknown")
++        and fsync_case["live_knows"] == fsync_case["restart_knows"]
++        and fsync_case["unique_seq"]
++        and (fsync_state == "unknown" or not fsync_case["restart_knows"])
++    )
++
++    # The same distinction where the rollback itself fails. Either is allowed; refused must be
++    # accompanied by the bytes being gone, and the retry must not reuse a sequence number
++    # whatever the answer was.
++    roll_case, roll_state = out["rollback_unknown"], named(out["rollback_unknown"])
++    roll_ok = (
++        roll_state in ("refused", "unknown")
++        and roll_case["unique_seq_after_retry"]
++        and (roll_state == "unknown" or roll_case["bytes_on_disk_absent"])
++    )
+ 
+-    open_ok = answered(out["open_eio"]) and not out["open_eio"]["live_knows"]         and not out["open_eio"]["restart_knows"]
+-    fsync_case = out["fsync_eio"]
+-    fsync_ok = answered(fsync_case) and fsync_case["live_knows"] == fsync_case["restart_knows"]         and fsync_case["unique_seq"]
+     torn_ok = out["torn_tail"]["survived"] and out["torn_tail"]["ack"].get("ok") is True
+-    detail = ("open EIO answered %s, fsync EIO answered %s and left memory and disk in step %s, "
+-              "record after a torn tail survived %s"
+-              % (open_ok, fsync_ok, fsync_case["live_knows"] == fsync_case["restart_knows"],
+-                 torn_ok))
+-    return open_ok and fsync_ok and torn_ok, detail
++    detail = ("open EIO %s, fsync EIO %s with memory and disk in step %s, rollback failure %s "
++              "with unique sequence numbers after the retry %s, record after a torn tail survived %s"
++              % (open_state, fsync_state,
++                 fsync_case["live_knows"] == fsync_case["restart_knows"], roll_state,
++                 roll_case["unique_seq_after_retry"], torn_ok))
++    return open_ok and fsync_ok and roll_ok and torn_ok, detail
+ 
+ 
+ def fingerprint(rundir: str) -> dict:

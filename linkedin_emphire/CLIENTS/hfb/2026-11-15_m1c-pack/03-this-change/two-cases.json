@@ -1,0 +1,177 @@
+{
+  "case_a": {
+    "case": "A missing terminator",
+    "checks": {
+      "r1_gap_names_seq": true,
+      "r1_gap_present": true,
+      "r1_gap_reason": true,
+      "r1_journal_unchanged": true,
+      "r1_not_indexed": true,
+      "r1_said_on_startup": true,
+      "r2_gap_names_seq": true,
+      "r2_gap_present": true,
+      "r2_gap_reason": true,
+      "r2_journal_unchanged": true,
+      "r2_not_indexed": true,
+      "r2_said_on_startup": true,
+      "r3_gap_names_seq": true,
+      "r3_gap_present": true,
+      "r3_gap_reason": true,
+      "r3_journal_unchanged": true,
+      "r3_not_indexed": true,
+      "r3_said_on_startup": true,
+      "r4_gap_names_seq": true,
+      "r4_gap_present": true,
+      "r4_gap_reason": true,
+      "r4_journal_unchanged": true,
+      "r4_not_indexed": true,
+      "r4_said_on_startup": true,
+      "r5_gap_names_seq": true,
+      "r5_gap_present": true,
+      "r5_gap_reason": true,
+      "r5_journal_unchanged": true,
+      "r5_not_indexed": true,
+      "r5_said_on_startup": true
+    },
+    "expected_seq": 5,
+    "holds": true,
+    "journal_sha256_before": "573a5554365ac1641f74ed8814d19cc973e409f563145487c5264164e73a028c",
+    "replies_before_stripping": {
+      "first": {
+        "action_id": "M1-7001",
+        "ok": true,
+        "state": "verified",
+        "store_seq": 3,
+        "stored": true
+      },
+      "issue": {
+        "action_id": "M1-7001",
+        "ok": true
+      },
+      "second": {
+        "action_id": "M1-7001",
+        "conflict": true,
+        "conflict_seq": 5,
+        "ok": true,
+        "state": "conflicted",
+        "store_seq": 4,
+        "stored": true
+      }
+    },
+    "restarts": [
+      {
+        "conflict_named": false,
+        "conflicted": false,
+        "gap": {
+          "action_id": "M1-7001",
+          "bytes": 328,
+          "kind": "conflict",
+          "reason": "unterminated record",
+          "sha256": "a80140d6df2f2136467deb3442f4fb85f46dfb1e760ccdee32971046924d14c6",
+          "start": 1335,
+          "store_seq": 5
+        },
+        "gap_named_on_startup": true,
+        "journal_sha256": "573a5554365ac1641f74ed8814d19cc973e409f563145487c5264164e73a028c",
+        "restart": 1
+      },
+      {
+        "conflict_named": false,
+        "conflicted": false,
+        "gap": {
+          "action_id": "M1-7001",
+          "bytes": 328,
+          "kind": "conflict",
+          "reason": "unterminated record",
+          "sha256": "a80140d6df2f2136467deb3442f4fb85f46dfb1e760ccdee32971046924d14c6",
+          "start": 1335,
+          "store_seq": 5
+        },
+        "gap_named_on_startup": true,
+        "journal_sha256": "573a5554365ac1641f74ed8814d19cc973e409f563145487c5264164e73a028c",
+        "restart": 2
+      },
+      {
+        "conflict_named": false,
+        "conflicted": false,
+        "gap": {
+          "action_id": "M1-7001",
+          "bytes": 328,
+          "kind": "conflict",
+          "reason": "unterminated record",
+          "sha256": "a80140d6df2f2136467deb3442f4fb85f46dfb1e760ccdee32971046924d14c6",
+          "start": 1335,
+          "store_seq": 5
+        },
+        "gap_named_on_startup": true,
+        "journal_sha256": "573a5554365ac1641f74ed8814d19cc973e409f563145487c5264164e73a028c",
+        "restart": 3
+      },
+      {
+        "conflict_named": false,
+        "conflicted": false,
+        "gap": {
+          "action_id": "M1-7001",
+          "bytes": 328,
+          "kind": "conflict",
+          "reason": "unterminated record",
+          "sha256": "a80140d6df2f2136467deb3442f4fb85f46dfb1e760ccdee32971046924d14c6",
+          "start": 1335,
+          "store_seq": 5
+        },
+        "gap_named_on_startup": true,
+        "journal_sha256": "573a5554365ac1641f74ed8814d19cc973e409f563145487c5264164e73a028c",
+        "restart": 4
+      },
+      {
+        "conflict_named": false,
+        "conflicted": false,
+        "gap": {
+          "action_id": "M1-7001",
+          "bytes": 328,
+          "kind": "conflict",
+          "reason": "unterminated record",
+          "sha256": "a80140d6df2f2136467deb3442f4fb85f46dfb1e760ccdee32971046924d14c6",
+          "start": 1335,
+          "store_seq": 5
+        },
+        "gap_named_on_startup": true,
+        "journal_sha256": "573a5554365ac1641f74ed8814d19cc973e409f563145487c5264164e73a028c",
+        "restart": 5
+      }
+    ]
+  },
+  "case_b": {
+    "case": "B unknown disk state",
+    "checks": {
+      "disk_state_unknown": true,
+      "durable_is_unknown": true,
+      "not_durable_false": true,
+      "reason_named": true,
+      "reply_not_ok": true,
+      "restart_names_what_it_found": true
+    },
+    "failpoint_command_supported": true,
+    "holds": true,
+    "journal_sha256_after_failure": "e759498ccd387386c7cdf5fce71ed4d0c4e3d66051e1c4793cb0b712c4712704",
+    "kinds_after_restart": [
+      "issued",
+      "verdict"
+    ],
+    "observed_conflict_named_after_restart": false,
+    "observed_pair_present_after_restart": false,
+    "observed_quarantine_named_after_restart": true,
+    "observed_recovered_records": 6,
+    "refused_verdict_reply_on_this_tree": null,
+    "reply_to_failed_batch": {
+      "disk_state": "unknown",
+      "durable": "unknown",
+      "error": "journal write failed (injected: partial batch write) and the rollback was refused by the failpoint: the record's state on disk is unknown",
+      "ok": false,
+      "reason": "rollback-failed"
+    }
+  },
+  "holds": true,
+  "probe": "m1b-two-cases",
+  "revision": "no git revision at this path"
+}
