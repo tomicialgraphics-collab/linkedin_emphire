@@ -6,7 +6,8 @@ audience: one person
 status: ready
 approved: no
 time_checked: >-
-  checked: 2026-11-15 12:42 WAT, read from the system clock before this file was written.
+  checked: 2026-11-15 12:47 WAT, read from the system clock before this revision. Revised on owner instruction at
+  12:47 WAT to remove the fellowship paragraph from the message.
 profile_checked: >-
   checked: 2026-11-15 12:31 WAT, linkedin.com/in/behar-dalipi-089069396 read in full, and the working
   correspondence since 2 November. Behar Dalipi, Skopje, North Macedonia. Independent researcher in AI
@@ -50,11 +51,9 @@ can actually use.
 What I don't bring is the policy side or a route into buyers. You have the first. Whether either of us has the
 second is the question I'd start with.
 
-Two facts you should have before we go further, because they set what I can commit to. I need revenue this
+One thing you should have before we go further, because it sets what I can commit to. I need revenue this
 quarter, so anything I build has to be paid work or lead to it, and a product that pays in 2027 isn't something I
-can fund with my own time now. And I've applied to a fellowship that starts in person in the Bay Area on 18
-January 2027 and runs for the cohort. If it lands, that's where I am for the first half of next year. If we're
-talking about a company rather than a project, that date belongs in the conversation now.
+can fund with my own time now.
 
 So: half an hour, and the first question I'd want to answer is who has already asked to buy this. That is the
 only evidence that beats a good deck.
@@ -76,9 +75,9 @@ that the person he would be building with has already built the hard bit at smal
 them has shown the second, and asking that question first is more useful than agreeing that the category is
 interesting.
 
-**Two constraints go in writing, now.** The revenue need this quarter is real: the plan is $5,000 in money by 25
-December, and a product with no revenue in 2026 does not serve it. The fellowship date is material to any company
-conversation and would be a worse disclosure in January than it is today.
+**One constraint goes in writing, now.** The revenue need this quarter is real: the plan is $5,000 in money
+by 25 December, and a product with no revenue in 2026 does not serve it. He is told what that means for what can
+be built, before any of the building starts.
 
 **The merge line is the most important line in the message.** It protects the evidence discipline that makes him
 worth talking to, and it tells him exactly what would not change the answer.
@@ -92,5 +91,14 @@ contributing, which is a conversation about work and not about equity on the fir
 ## Owner decisions before sending
 
 Whether he wants the call this week or after the next pack. Both are defensible; after the pack is cleaner
-because the technical hold closes first. Whether to keep the fellowship sentence, which is recommended and can be
-shortened. Nothing else needs his input.
+because the technical hold closes first. That is now the only open input.
+
+## The fellowship sentence, removed on instruction
+
+The owner read the draft at 12:47 WAT and said not to add the paragraph about the fellowship and the Bay Area
+move. It is out of the message and out of the reasoning above, so nothing else in this file argues for it.
+
+Recorded rather than argued, because it is his call and it may well be the right one on a first commercial
+message. The consequence is that the date is now unsaid: if the half hour turns into a company conversation, that
+commitment will need raising before anything is agreed, and the later it is raised the more it costs. This
+paragraph exists so the next session does not rediscover it and treat the omission as an oversight.
