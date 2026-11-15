@@ -1,6 +1,8 @@
 # Brand card template
 
-Set from the owner's reference card on 2026-11-15. Every visual from now on carries his photo and his name, in this layout.
+Set from a reference card the owner supplied on 2026-11-15. Every visual from now on carries his photo and his name, in this layout.
+
+**The name is Olusanya Timothy.** The reference card belonged to somebody else, whose name was printed on the first two renders by mistake. The renderer now defaults to the owner's name and takes it as an argument, so a design can never supply a name again.
 
 ## The rule
 
@@ -18,6 +20,12 @@ A visual without the photo and the name does not ship. The card is 1080x1350, th
 
 Fonts are DejaVu Sans Bold for headline and name, DejaVu Sans for everything else, both already on the machine.
 
+| Field | Value |
+|---|---|
+| Name | Olusanya Timothy |
+| Strapline under the header name | Lagos, Nigeria · AI red teaming, in public |
+| Second line on the yellow tag | SOFTWARE ENGINEER, AI RED TEAMING |
+
 ## Render
 
 ```
@@ -31,11 +39,11 @@ The last four arguments drive the proportion bar, so a card built on a count sho
 
 ## The assets
 
-- `headshot_tolulope_michael_400.jpg` is the master photo, 400x400, copied from the owner's upload on 2026-11-15. Never regenerate it, never restyle it.
+- `headshot_400.jpg` is the master photo, 400x400, copied from the owner's upload on 2026-11-15. Never regenerate it, never restyle it, and never take a portrait from a reference design.
 - `make_card.sh` is the renderer. It takes the copy, not a design decision.
 
 ## Fixed elements
 
-Photo circle and name top left, a yellow "AI RED TEAMING" tab, three headline lines, a proportion bar with the core label left and the remainder right, a yellow follow pill, and the name tag with the title bottom left. The lower right holds the portrait circle.
+Photo circle and name top left, a yellow "AI RED TEAMING" tab, three headline lines, a proportion bar with the core label left and the remainder right, a yellow follow pill above the yellow name tag bottom left, and a 372px portrait circle bottom right.
 
-The name tag reads TOLULOPE MICHAEL and CYBERSECURITY EXPERT, which is the owner's own branding from the reference card. Pass a different pair as arguments 10 and 11 if that ever changes.
+Arguments 10 and 11 are the name on the card and the second line of the tag. They default to Olusanya Timothy and SOFTWARE ENGINEER, AI RED TEAMING.
