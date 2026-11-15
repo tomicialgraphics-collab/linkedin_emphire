@@ -53,6 +53,8 @@ The overview text matches the prepared copy closely: engineeer identity first, t
 
 **4. The title was edited by hand.** The copy recommended `Full-Stack Software Engineer | AI Red Teaming (LLM, RAG, Agents)` at 64 characters, or Alternate A. What is live is `Software Engineer | AI Red Teaming (LLM, RAG, Agents)`, which drops "Full-Stack" from the front. That shortens the search surface for full-stack and backend posts, which the copy argues is half the reason for the title in the first place. If nothing else changes this week, that word is the one to put back.
 
+**Superseded at 10:26 WAT, on the strength of the talent pastes.** The fix is not "put Full-Stack back". Ten thousand pages of results for `AI INTEGRATION` are full of full-stack AI engineers at $10 to $25, and half the cards on the first page of `AI RED TEAMING` are full-stack AI shops. The word distinguishes nobody in the headline. Keep it in the skills and the overview, where it still answers a search. The headline earns its space by naming the thing that is thin on the page: red teaming, LLM security, evals, verifiers. `UPWORK/2026-11-15_talent-paste-analysis_lane-choice.md` carries the evidence and the replacement title.
+
 ## Two things visible on the page that are not yet true enough
 
 **"I write Breaking AI, a 21-part public field guide."** Two parts are published, in October. Twenty-one is the plan in `PLANS/2026-09-18_30day-daily_21-ai-redteam-articles.md`, not the current count. A client who clicks the profile will find two articles and a promise of nineteen more. The sentence is not a lie, exactly, because a series can be described by its shape, but it is the kind of claim that costs the whole profile its credibility when the arithmetic does not hold. Either publish on a schedule until the count catches up, or change the sentence to name the parts that exist.
@@ -65,7 +67,7 @@ The AI Agentic Cloud Security posting at $12 to $25 an hour is now worth sending
 
 ## The next four Upwork actions, in order
 
-1. Put "Full-Stack" back in the title, one edit, no cost.
+1. Rewrite the title to name the deliverable rather than the discipline, and put "Full-Stack" in the skills and overview instead of the headline. One edit, no cost. See the superseding note in correction 4.
 2. Set hours per week and record the video introduction.
 3. Publish the remaining three portfolio items and the three catalog listings.
 4. Send the proposal for the training job, then return to the profile stats tab in two weeks and compare impressions against this snapshot, which is the only way the title A/B test means anything.

@@ -227,6 +227,13 @@ harness, suite, benchmark or verifier to every query in this lane.
 `agentic`, `MCP`, `Claude Code`, `vibe coding`, `AI code review`, `no AI policy`, `AI usage policy`, `AI incident`.
 Those five to eight are the 2026 words; a profile that uses them is being found by the buyer who already thinks in them.
 
+## Read this before using the matrix at 10:26 WAT
+
+The owner ran the matrix and the results are in `UPWORK/2026-11-15_talent-paste-analysis_lane-choice.md`. Two things in this section are now known to be wrong in practice, and the analysis supersedes them:
+
+1. **Boolean strings do not work in the talent search box.** `AND`, `OR`, parentheses and quoted phrases arrive as literal words, and the query collapses to a word soup that matches any AI profile. Use one plain phrase per search, in double quotes if the box accepts them.
+2. **The page count is not a supply count.** `AI RED TEAMING` (2,771), `ai securiy` (2,141) and `AI EVALUATION` (6,171) are all fuzzy matches on `ai`; anything showing 10,001 is a capped ceiling. Read page-one composition instead, and take demand numbers from the job feed, where proposal counts are visible.
+
 ## What to paste, so the rows compare
 
 For each profile, these ten fields. If a field is not visible, say so and I will record it as unseen rather than guess.
