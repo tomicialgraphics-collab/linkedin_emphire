@@ -11,10 +11,10 @@ premise_checked: >-
   checked: the job facts are taken from the owner's screenshot, which shows the posting text, the $12 to $25 band,
   Expert level, fewer than 30 hours a week, less than a month, a one-time project, Dallas with the client clock at
   01:30, member since 14 November 2026, 3 jobs posted, 0% hire rate, payment method not verified, phone verified,
-  fewer than 5 proposals, last viewed 5 hours ago, and 7 Connects to apply against 92 available. The account facts are
-  from the repository rather than the screenshot: the live Upwork profile was last checked on 10 October 2026 and still
-  read Shopify and TikTok Shop Strategist VA, $20/hr, 33% complete, no completed jobs, with the replacement copy written
-  and never pasted.
+  fewer than 5 proposals, last viewed 5 hours ago, and 7 Connects to apply against 92 available. The account facts come from the owner's
+  profile screenshots of 15 November 2026, which show the rebrand already live: software engineer with AI red teaming in
+  the title, $65/hr, two jobs completed, $100 or more earned. An earlier draft of this file treated the profile as still
+  a Shopify VA page, which it no longer is, so the gate is recorded as cleared rather than deleted.
 sources_read: >-
   read: UPWORK/profile_copy_READY.md in full sections, UPWORK/README.md line 53, and the job tracker rows of
   2026-10-12 for the house format. Blocked: upwork.com itself, including the client's history and the other two posts,
@@ -23,15 +23,13 @@ sources_read: >-
 
 # AI Agentic Cloud Security, $12 to $25 an hour, Dallas, 7 Connects
 
-**Verdict: the proposal is worth sending, the account is not worth sending it from yet.** The gate on this job is not the writing. It is that the live profile still says Shopify and TikTok Shop Strategist VA at $20/hr, 33% complete, no completed jobs, while the job pays $12 to $25. The client will read the headline before the first line of the proposal, and the headline is in the wrong trade.
+**Verdict: send it.** The profile that would have been the wall behind this proposal now reads as the right trade in the right words: software engineer first, AI red teaming in the title, $65 an hour, two jobs completed. The posting asks for an AI agentic security practitioner who can give personal trainings, and that is what the page now says.
 
-The replacement copy has been written and waiting since 10 October: a 70-character title, a $65/hr rate, a full overview, twenty verified skill tags, two honest employment entries and six portfolio items. `UPWORK/profile_copy_READY.md`, section by section, finish it in one sitting.
+## Before sending, two clicks
 
-## The order of operations
+**Set hours per week.** The field is empty on the live page, and this client filters on availability because the posting caps at under thirty hours a week.
 
-1. **Paste the profile first**, about 40 minutes, one sitting. Nothing else on Upwork is worth doing before it.
-2. **Then send this proposal**, at the top of their band or above it, with the hours capped.
-3. **If the profile will not be pasted today**, skip the job and keep the 7 Connects. Connects do not come back, and a rejection from a client who read a Shopify headline teaches nothing.
+**Send at $45/hr with the hours capped at eight.** Their own sentence invites it: they say they will pay higher for the most experienced person, and their band is the platform default arguing with that sentence. A $65 profile quoting $25 is the incoherent choice. If winning matters more than the rate, the same text at $25 works.
 
 ## The proposal, paste this
 
@@ -55,7 +53,7 @@ One thing shapes the first session. Whether this is for your own capability or f
 
 Not the money. Eight hours at $45 is $360, which is 7% of the gap to 25 December and would take a week of evenings to earn.
 
-It is worth **a first completed contract and a review**, because zero completed jobs is the constraint on the whole account and every subsequent proposal pays a tax for it. It is also worth a curriculum: the material for training an agentic-security practitioner is the same material as the playbook, and written once it is a product that can be sold again without the hours.
+It is worth **a third completed contract and a review**, since two are already on the record and the third is what moves the account toward the reviewed tier where the higher rates open. It is also worth a curriculum: the material for training an agentic-security practitioner is the same material as the playbook, and written once it is a product that can be sold again without the hours.
 
 ## The client, read from the numbers
 

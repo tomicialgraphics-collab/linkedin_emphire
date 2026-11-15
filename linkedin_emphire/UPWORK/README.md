@@ -53,6 +53,6 @@ other without duplicating effort — one thesis, two acquisition channels.
 3. **Reviews don't transfer.** Upwork starts at zero. Price the first 3-5 jobs to win 100% JSS and reviews, not to win money. Raise the rate after review 5, not before.
 
 ## Status as of 2026-10-11
-Live profile still unchanged as of last check: "Timothy O. - Shopify & TikTok Shop Strategist VA," $20/hr, 33% complete, skills still 100% Shopify/TikTok/WordPress. The rebrand itself has not been executed yet, `profile_copy_READY.md` is the exact paste-in content for that session. All portfolio text (items 1-6) is now ready to paste, no remaining placeholders.
+The rebrand was **executed and verified on 2026-11-15** from owner screenshots: title `Software Engineer | AI Red Teaming (LLM, RAG, Agents)`, $65/hr, $100+ earned across 2 jobs, ID and phone verified. The earlier note that the profile was still a Shopify VA page is obsolete and is superseded by `2026-11-15_live-profile-state.md`, which lists every live field and the four gaps left (title missing "Full-Stack", hours per week unset, no video, three of six portfolio items).
 
 **One real change on the ground:** the first paid job already landed, Sudhir Shivaram, $65/hr Hourly contract, accepted 2026-10-10, before the profile rebrand happened. It came through a direct Upwork offer from a LinkedIn connection, not through search, so it doesn't yet validate the SEO work below, but it's the first real Upwork job and the first shot at a review. See `CLIENT_SUDHIR/` and `analytics_tracker.txt` Table 3.
