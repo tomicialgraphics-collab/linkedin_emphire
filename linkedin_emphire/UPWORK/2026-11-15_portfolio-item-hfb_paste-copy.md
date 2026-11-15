@@ -9,7 +9,7 @@ status: ready
 approved: no
 premise_checked: >-
   checked: the owner is in the Add a new portfolio project modal and asked to publish the HFB pack as the fifth item. The
-  modal's own limits are 600 characters of description and five skills. Before the copy, one thing has to be said: the
+  modal's own limits are 600 characters of description, five skills, and a project title under 70 characters. Before the copy, one thing has to be said: the
   pack was built for Behar and delivered to him, so the filed version of it is his until he says otherwise.
 sources_read: >-
   read: the modal screenshot at 11:20 WAT, CLIENTS/hfb/2026-11-14_m1-pack/ contents, and the 15 November delivery
@@ -27,11 +27,14 @@ So there are two versions below. **Variant A publishes now** and describes the w
 
 ## Variant A, publish now. 547 of 600 characters
 
-**Project title**
+**Project title**, 58 of the 70 allowed. The 77-character version was rejected by the form at 11:22 WAT.
 
 ```
-Host-failure benchmark: reproducible AI agent failures, hashed and rerunnable
+Reproducible AI agent failure benchmark, hashed and pinned
 ```
+
+Two alternates if that reads wrong, both inside the limit: `Agent failure benchmark: pinned, hashed, rerunnable` at 51
+characters, and `Hashed failure benchmark for AI agents, rerunnable` at 50.
 
 **Your role**
 
