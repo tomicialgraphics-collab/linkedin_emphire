@@ -117,6 +117,9 @@ or suppressed. Either way, a buyer comparing five cards sees his with a rate and
 
 ## What I cannot verify from outside
 
+**SETTLED at 11:09 WAT from the signed-in dashboard:** earnings $100+, two jobs, **zero hours billed** (both jobs were
+fixed-price), average response +24 hours, Work Now on, Open for work on, Boost off, video empty, languages empty.
+
 **OPEN.** The full overview (a logged-out visitor sees a truncated version with a Show more control), the proposal and
 invite counts behind the profile, his JSS, whether Rising Talent is achievable now and what the gate is, whether
 `AI Security` and `Prompt Injection Testing` exist as selectable skill tags in his editor, and what the "33% Complete"
@@ -134,7 +137,8 @@ indicator on the page refers to. Each of those needs his login, and each is one 
    only thing on the page a competitor cannot copy.
 4. **Offer a paid consultation.** It is a buyer-side filter, it renders on the card, and Manish has one at $65.
 5. **Chase Rising Talent.** Until a badge appears, he is invisible to every client who filters on one.
-6. **Set availability and hours.** The field is empty, and an empty availability is silently excluded from the
-   hours-per-week filter.
+6. **Record the video and add the languages.** Both fields were empty at 10:56 WAT, and the video is the fastest trust
+   signal on the page. Hours per week is set, contrary to what an earlier note in this repo says. Corrected here on
+   2026-11-15 at 11:09 WAT from the signed-in dashboard, which shows `As Needed - Open to Offers`.
 
 Items 1 and 2 take one sitting and are the whole difference between a card that renders and a card that ranks.
