@@ -58,6 +58,8 @@
 
 | 36 | Primary, 2026-11-15 11:46 WAT | Upwork help "How to use your Upwork stats and trends"; the search-features resource page; the freelancer marketing guide; community threads on impressions versus views. | **Impressions are a boosted-only counter, so they are not a visibility lever.** Upwork defines the metric as "(when boosted) How often your boosted profile showed up and how many people clicked", lists "profile views" and "invitations" as separate metrics, and marks proposals as boosted or organic. The published ranking criteria are query relevance, category hiring patterns, client account activity, client intent and client price preferences, none of which is an impression. With Boost off the figure cannot move, so the 11,144 impressions in the owner's notes is LinkedIn's number, not Upwork's. | Answer in `UPWORK/2026-11-15_traffic-points-and-impressions.md`. Stats page is login-only, so the metrics are named and the figures are his to read. |
 
+| 37 | Primary, 2026-11-15 11:56 WAT | The owner's Stats and trends screenshot (30-day views, 7-day proposals) and his Create and manage your services screenshot. | **Twenty-three catalogue views, zero profile views, zero proposals, zero orders, $0 in twelve months.** All three services are approved and, on the view counts, live. The red team listing drew 12 views against 8 for the chatbot listing, a third signal for the AI security lane. The Impressions and clicks tab renders dimmed beside the two live tabs, which is the boost meter with no boost behind it. Profile metrics carries "a month ago", which Upwork defines as the date of the last view, not the last refresh. | Read in `UPWORK/2026-11-15_stats-and-services_read.md`. Ranked fix: send proposals, rewrite the consultation, land one contract, boost last. |
+
 ---
 
 ## Open verification items (carry to next refresh)
@@ -87,3 +89,4 @@
 | 2026-11-15 (11:09 WAT) | Signed-in dashboard, and the copy to paste for the title and overview. | Entry 34 added. One audit finding corrected. Nothing live changed by me. |
 | 2026-11-15 (11:42 WAT) | The profile after the fixes, plus a ranking test. | Entry 35 added. Five of seven phrases covered. Ranking unchanged, and the reason is named. |
 | 2026-11-15 (11:46 WAT) | The stats and trends help article, the search-features page and the freelancer marketing guide. | Entry 36 added. Impressions separated from profile views and ruled out as a ranking input. Nothing live changed. |
+| 2026-11-15 (11:56 WAT) | The stats page and the services page, as sent by the owner. | Entry 37 added. The funnel is 23 catalogue views to 0 profile views to 0 orders. Nothing live changed. |
