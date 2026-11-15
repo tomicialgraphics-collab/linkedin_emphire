@@ -60,6 +60,8 @@
 
 | 37 | Primary, 2026-11-15 11:56 WAT | The owner's Stats and trends screenshot (30-day views, 7-day proposals) and his Create and manage your services screenshot. | **Twenty-three catalogue views, zero profile views, zero proposals, zero orders, $0 in twelve months.** All three services are approved and, on the view counts, live. The red team listing drew 12 views against 8 for the chatbot listing, a third signal for the AI security lane. The Impressions and clicks tab renders dimmed beside the two live tabs, which is the boost meter with no boost behind it. Profile metrics carries "a month ago", which Upwork defines as the date of the last view, not the last refresh. | Read in `UPWORK/2026-11-15_stats-and-services_read.md`. Ranked fix: send proposals, rewrite the consultation, land one contract, boost last. |
 
+| 38 | Primary, 2026-11-15 12:04 WAT | Six screenshots of the consultation editor, one per step. | **The rebuild is close but the character counts are inside the client-facing text.** Three requirements and the FAQ each carry "(101 characters)", "(142 characters)", "(111 characters)" as literal strings, and requirement 1's live counter reads 118 of 250 against a label saying 101, so the figures are stale as well as visible. The expertise chips still include User Testing, which routes the card to QA buyers. The third FAQ answers "Both." to a yes-or-no question and advertises general full-stack consulting at $40, reversing the narrowing. Availability hours are not visible in the screenshots and Lagos hours alone leave a US buyer unable to book. | Review and replacement copy in `UPWORK/2026-11-15_consultation-rebuild_review.md`. Price, documents and delivery days left as they are. |
+
 ---
 
 ## Open verification items (carry to next refresh)
@@ -90,3 +92,4 @@
 | 2026-11-15 (11:42 WAT) | The profile after the fixes, plus a ranking test. | Entry 35 added. Five of seven phrases covered. Ranking unchanged, and the reason is named. |
 | 2026-11-15 (11:46 WAT) | The stats and trends help article, the search-features page and the freelancer marketing guide. | Entry 36 added. Impressions separated from profile views and ruled out as a ranking input. Nothing live changed. |
 | 2026-11-15 (11:56 WAT) | The stats page and the services page, as sent by the owner. | Entry 37 added. The funnel is 23 catalogue views to 0 profile views to 0 orders. Nothing live changed. |
+| 2026-11-15 (12:04 WAT) | The consultation editor, all six steps. | Entry 38 added. Four fixes named, five paste blocks supplied with counts. Nothing live changed. |
