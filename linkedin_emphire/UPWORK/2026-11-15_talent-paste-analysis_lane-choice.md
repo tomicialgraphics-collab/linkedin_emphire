@@ -178,7 +178,7 @@ and it is the shape the OpenAI and Upwork figures support: bigger scope is where
 | No paid consultation | Eugene, Carmen, Don, Dmitry, Monica and most of the credible cards offer one | nothing on the card, so the cheapest conversion path on the platform is closed before anyone clicks |
 | Hours and video are empty | availability is filled and a video sits on the card | both are unset, and the title still carries a word that no longer earns its place. One edit and one afternoon, in that order |
 
-## 4a. Amended at 10:44 WAT, after the job feed
+## 4a. Amended at 10:38 WAT, after the job feed
 
 The job feed was readable without a login, so the demand side got measured. Two changes follow, and both are recorded
 in `UPWORK/2026-11-15_job-feed-corpus_seventeen-posts.md`.

@@ -3,7 +3,7 @@ deliverable: doc
 id: 2026-11-15_upwork-job-feed-corpus
 date: 2026-11-15
 time_checked: >-
-  checked: 2026-11-15 10:44 WAT, read from the system clock before this file was opened for gate.
+  checked: 2026-11-15 10:38 WAT, read from the system clock. An earlier 10:44 stamp in this line was written before the clock was read and is corrected here.
 audience: internal
 status: ready
 approved: no
@@ -13,7 +13,7 @@ premise_checked: >-
   thing: evals do not pay him, and the buyer's word is "AI security", not "red teaming".
 sources_read: >-
   read: nine unauthenticated job searches on upwork.com, each with its facet counts and first-page postings, fetched
-  10:37 to 10:43 WAT on 15 November 2026. Every figure below is copied from those pages. No estimate is labelled as a
+  10:37 to 10:38 WAT on 15 November 2026. Every figure below is copied from those pages. No estimate is labelled as a
   measurement anywhere in this file.
 ---
 
