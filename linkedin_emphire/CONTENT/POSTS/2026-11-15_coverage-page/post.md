@@ -17,7 +17,9 @@ subheadline: "51 core classes, and a reason written next to every skip."
 box: named, not hidden
 box_alt: coverage, counted
 hashtags: "#AIRedTeam #AIEngineering #AISecurity #LLMEvaluation"
-visual_link: https://drive.google.com/file/d/1GfRiKNUUIuPXE7Lzf72shmn-PYGZu5vB/view?usp=drivesdk
+visual_link: https://drive.google.com/file/d/1RtVxrRfPORM3AtTLokpPACi15GewL6bL/view?usp=drivesdk
+visual_template: ASSETS/brand/make_card.sh
+visual_note: 1080x1350 branded card, photo and name on the image, rendered from the template rather than generated
 premise_checked: >-
   checked: the counts were computed from the repository's own checklist file on 15 November 2026, not remembered. It
   holds 168 classes across six categories, split 51 core, 93 standard and 24 extended, and the core split by category
