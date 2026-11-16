@@ -1,13 +1,19 @@
 ---
 deliverable: dm
 id: 2026-11-15_dm_behar-m1d-three-findings
-date: 2026-11-15
+date: 2026-11-16
+date_note: >-
+  The body was written on 15 November and the file keeps that name and id so the pack references hold; the date
+  is the day it goes out, which is what R47 checks.
 audience: direct
 status: ready
 approved: no
 warm: yes
 time_checked: >-
-  checked: 2026-11-15 22:25 WAT, read from the system clock before this file was written.
+  checked: 2026-11-16 07:42 WAT, read from the system clock immediately before delivery. The body was written
+  at 22:25 WAT on 15 November and its figures were re-read against the pack at 07:40 WAT on 16 November; nothing
+  in it changed except the first line, which now marks the reply as belated rather than prompt, because sixteen
+  and a half hours have passed since his 15:10 message and he is still holding the merge.
 profile_checked: >-
   Behar Dalipi, Skopje. He tested the pack at 15:10 and found three things: a conflict pointing at
   the wrong verdict after a retry, a conflict naming a record replay withholds, and a write
@@ -62,7 +68,7 @@ MISSED on the revision he holds, passing here.
 
 ## Message, paste this
 
-All three reproduced, and all three are fixed. You're right to hold it.
+Late reply, and the fix is in. All three reproduced, and all three are fixed. You're right to hold it.
 
 The conflict pointer: the record was built from memory, and after an unknown the memory disagrees with the file. It took 3 as its second number while the verdict it was raised against was written at 4. The store reloads its index from the journal before it composes anything now, not only before it writes, so the numbers in a conflict come from what's on disk.
 
