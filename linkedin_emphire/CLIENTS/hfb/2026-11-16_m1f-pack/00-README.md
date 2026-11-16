@@ -85,5 +85,21 @@ python3 audit/regressions.py              # all twenty-two, 22 caught, 0 missed
 python3 run.py && python3 verify.py artifacts/<run>
 ```
 
-`03-this-change/` holds those outputs as produced, `02-previous-change/` holds f25 against M1e,
-and `revision.txt` in each names the file hashes so the two trees cannot be confused.
+`03-this-change/` holds those outputs as produced and `02-previous-change/` holds f25 run against
+the M1e `bench/store.py` with this change's audit code, since f25 does not exist before this change.
+`revision.txt` in each names the file hashes.
+
+## Corrections since first delivery
+
+**`04-CORRECTION.md`.** The reviewer found that `02-previous-change/revision.txt` carried the M1d
+hashes under an M1e label. Checked and confirmed, and it is corrected in place. Two further defects
+came out of the check: f25 is output-identical on M1d, M1e and M1f, so it identifies no tree, and
+the patch in `03-this-change/` is a diff from M1d rather than from M1e.
+
+**The reconstruction chain, stated rather than inferred.** `base 99f25cab` (the tree as reviewed),
+then the M1d patch, then `03-this-change/patch.diff`. Applying M1e first and this patch second fails
+with rejected hunks, because the M1e guard is already inside this patch. `base → M1d → M1f`
+reproduces `0989c8db`, `490de706`, `ae147a28` exactly.
+
+**`06-f25-tree-check/`.** The three f25 runs behind that statement, one per tree, all byte-identical,
+with the full twenty-two mode run and the verify verdict produced on the rebuilt M1f tree.
