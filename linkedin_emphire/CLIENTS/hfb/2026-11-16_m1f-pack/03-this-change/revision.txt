@@ -1,0 +1,4 @@
+0989c8dbc25780b7aac7a7a7298585c0fa6dda304b355df7c1f926027c9c2b09  bench/store.py
+490de706f220fbb0fe75d8319ad8973489fc746a290d45224e4554048429b7fb  audit/regressions.py
+ae147a282f84935016c077371d6248b1154f4a4b7704c3cd9c9ce80134dbfbf0  audit/README.md
+revision: M1f, M1e plus the scoped guarantee and its pin

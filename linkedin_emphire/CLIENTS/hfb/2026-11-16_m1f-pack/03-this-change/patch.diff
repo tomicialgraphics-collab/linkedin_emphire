@@ -1,0 +1,337 @@
+--- base/bench/store.py
++++ w/bench/store.py
+@@ -15,6 +15,13 @@
+ 
+ No network beyond loopback, no external key, no model. On start it replays its journal, so a
+ restart is a recovery rather than a reset.
++
++Scope of the refusal guarantee. A refused append does not cut what it refuses to append onto:
++a complete record whose terminator never arrived is named as a gap and the file is left as
++found. That guarantee covers the complete record only. A torn line is damage rather than a gap,
++and recovery quarantines a torn tail before any append is attempted, so a retry that then fails
++at open reports `disk_state: unchanged` about its own append, not about a file that recovery has
++already repaired. The mode f25 in `audit/regressions.py` pins both halves of that sentence.
+ """
+ 
+ import argparse
+@@ -234,6 +241,19 @@
+         self.seq = max(self.seq, highest)
+         if not tail:
+             return cut
++        gap = self._gap_from_tail(tail, cut)
++        if gap is not None:
++            # The tail is a whole record whose terminator never arrived. Cutting it here is the
++            # same repair as cutting it in append(), one step earlier and with worse evidence:
++            # the bytes move into a quarantine file, the journal stops ending in the record, and
++            # the next restart reports nothing. A resync runs before the append that would have
++            # refused on the gap, so the refusal came after the damage and claimed the file was
++            # unchanged. It is named here instead, and the file is left exactly as found.
++            self.gap = gap
++            raise JournalError(
++                "journal ends in an unterminated record at byte %d (store_seq %s); refusing to "
++                "append until that gap is resolved, and refusing to cut it"
++                % (gap["start"], gap["store_seq"]))
+         name = self._quarantine_name()
+         with open(os.path.join(os.path.dirname(self.path) or ".", name), "wb") as fh:
+             fh.write(tail)
+@@ -264,7 +284,16 @@
+         if not data or data.endswith(b"\n"):
+             return None
+         start = data.rfind(b"\n") + 1
+-        tail = data[start:]
++        return self._gap_from_tail(data[start:], start)
++
++    @staticmethod
++    def _gap_from_tail(tail, start):
++        """The same test, applied to bytes already in hand.
++
++        Resync holds the tail it is about to cut, so the check has to work without re-reading
++        the file. One implementation, used by both, because a repair that used a looser test than
++        start-up would cut a record that start-up reports.
++        """
+         try:
+             record = json.loads(tail.decode("utf-8"))
+         except (ValueError, UnicodeDecodeError):
+--- base/audit/regressions.py
++++ w/audit/regressions.py
+@@ -93,6 +93,16 @@
+             "custom", set(), set()),
+     "f22": ("one directory compared with itself, and a challenge that edits the evidence",
+             "custom", set(), set()),
++    # F-10. The fourth combination the reviewer found, 16 November: a batch interrupted one
++    # byte before its final newline, the rollback refused, and the retry cutting the withheld
++    # record out of the journal while reporting the file unchanged.
++    "f24": ("a batch interrupted before its final newline, with the rollback refused",
++            "custom", set(), set()),
++    # The scoped half. Documented rather than fixed: a torn line is damage, recovery quarantines
++    # it, and the refusal that follows is a claim about its own append. Pinned so the scope
++    # cannot widen without a mode failing.
++    "f25": ("a genuinely torn line quarantined by recovery, then a retry that fails at open",
++            "custom", set(), set()),
+ }
+ 
+ 
+@@ -825,6 +835,205 @@
+     return bool(pair_ok and read_ok), detail
+ 
+ 
++
++STORE_TORN_BATCH_CASE = r"""
++import glob, hashlib, json, os, sys, tempfile
++sys.path.insert(0, os.path.join(sys.argv[1], "bench"))
++import store as S
++
++work = tempfile.mkdtemp(prefix="hfb-f24-")
++journal = os.path.join(work, "store.jsonl")
++real_open = S.open if hasattr(S, "open") else open
++out = {}
++
++
++class ShortWrite:
++    # A file that stops one byte before the end of the write, then fails. The batch reaches
++    # the disk whole apart from its final terminator: everything arrived, the file never said
++    # so. This is the crash the reviewer injected, arranged without touching the store.
++    def __init__(self, fh):
++        self.fh = fh
++
++    def write(self, data):
++        self.fh.write(data[:-1] if data.endswith("\n") else data[: max(1, len(data) // 2)])
++        raise OSError("injected: the write stopped one byte short")
++
++    def __enter__(self):
++        return self
++
++    def __exit__(self, *a):
++        self.fh.close()
++        return False
++
++
++def short_open(path, mode="r", *a, **k):
++    fh = real_open(path, mode, *a, **k)
++    if mode.startswith("a") and str(path) == journal:
++        return ShortWrite(fh)
++    return fh
++
++
++s = S.Store(S.Journal(journal))
++s.handle({"cmd": "issue", "action_id": "H-1"})
++first = {"action_id": "H-1", "verdict": "BLOCK", "signature": None}
++second = {"action_id": "H-1", "verdict": "ALLOW", "signature": None}
++s.handle({"cmd": "verdict", "record": first})
++before = open(journal, "rb").read()
++
++s.journal.failpoint = "rollback"
++S.open = short_open
++crash = s.handle({"cmd": "verdict", "record": second})
++S.open = real_open
++s.journal.failpoint = ""
++
++torn = open(journal, "rb").read()
++retry = s.handle({"cmd": "verdict", "record": second})
++after = open(journal, "rb").read()
++
++out["crash_reply"] = crash
++out["retry_reply"] = retry
++out["torn_bytes"] = len(torn) - len(before)
++out["torn_sha"] = hashlib.sha256(torn[len(before):]).hexdigest()
++out["journal_intact"] = after == torn
++out["journal_bytes"] = [len(torn), len(after)]
++out["quarantine_files"] = sorted(os.path.basename(p) for p in glob.glob(os.path.join(work, "*.bin")))
++
++restarted = S.Store(S.Journal(journal))
++out["gap_after_restart"] = restarted.journal.gap and {
++    k: restarted.journal.gap[k] for k in ("store_seq", "kind", "bytes")}
++out["write_after_restart"] = restarted.handle({"cmd": "issue", "action_id": "H-9"})
++print(json.dumps(out, default=str))
++"""
++
++
++def custom_f24(repo: str) -> tuple[bool, str]:
++    """A batch interrupted one byte before its final newline, with the rollback refused.
++
++    The reviewer's fourth hold, 16 November: the retry after that crash reported the file
++    unchanged while moving the withheld record into a quarantine file and cutting the journal,
++    so the gap stopped being reported after a restart and writes were accepted again.
++    """
++    tree = fresh_copy(repo, "f24")
++    work = tempfile.mkdtemp(prefix="hfb-f24-run-")
++    script = os.path.join(work, "torn_batch_case.py")
++    with open(script, "w", encoding="utf-8") as fh:
++        fh.write(STORE_TORN_BATCH_CASE)
++    proc = subprocess.run([sys.executable, script, tree], capture_output=True, text=True,
++                          timeout=120)
++    if proc.returncode != 0:
++        return False, "the case did not run: %s" % (proc.stderr or proc.stdout)[-300:]
++    out = json.loads(proc.stdout.strip().splitlines()[-1])
++
++    retry = out["retry_reply"] or {}
++    crashed = out["crash_reply"] or {}
++    # The crash itself is the known state: the bytes are there and the file never said so.
++    crash_ok = crashed.get("durable") == "unknown"
++    # A refused retry may not touch the file it refuses to append to.
++    intact = (retry.get("ok") is False and out["journal_intact"]
++              and not out["quarantine_files"] and out["torn_bytes"] > 0)
++    # And the gap has to survive the restart, with writes still refused while it stands.
++    gap = out["gap_after_restart"]
++    restart_ok = (isinstance(gap, dict) and gap.get("store_seq") is not None
++                  and (out["write_after_restart"] or {}).get("ok") is False)
++    detail = ("retry after the torn batch: journal %s bytes, intact %s, quarantine %s; gap "
++              "after restart %s, write after restart answered %s"
++              % (out["journal_bytes"][1], out["journal_intact"],
++                 out["quarantine_files"] or "none",
++                 (gap or {}).get("store_seq"), (out["write_after_restart"] or {}).get("ok")))
++    return bool(crash_ok and intact and restart_ok), detail
++
++
++
++STORE_TORN_LINE_CASE = r"""
++import glob, hashlib, json, os, sys, tempfile
++sys.path.insert(0, os.path.join(sys.argv[1], "bench"))
++import store as S
++
++work = tempfile.mkdtemp(prefix="hfb-f25-")
++journal = os.path.join(work, "store.jsonl")
++real_open = S.open if hasattr(S, "open") else open
++out = {}
++
++s = S.Store(S.Journal(journal))
++s.handle({"cmd": "issue", "action_id": "T-1"})
++s.handle({"cmd": "verdict", "record": {"action_id": "T-1", "verdict": "BLOCK", "signature": None}})
++
++# a genuinely torn line: half a record, no valid JSON, left by a crash mid-write
++torn = b'{"kind": "verdict", "action_id": "T-1", "sto'
++with open(journal, "ab") as fh:
++    fh.write(torn)
++out["bytes_before_recovery"] = os.path.getsize(journal)
++
++# recovery, in a fresh process over that file
++s2 = S.Store(S.Journal(journal))
++out["bytes_after_recovery"] = os.path.getsize(journal)
++out["discarded"] = s2.journal.discarded
++out["torn_bytes"] = len(torn)
++out["torn_sha"] = hashlib.sha256(torn).hexdigest()
++q = s2.journal.quarantine or {}
++out["quarantine_file"] = q.get("file")
++out["quarantine_sha"] = q.get("sha256")
++out["quarantine_bytes"] = q.get("bytes")
++out["quarantine_files"] = sorted(os.path.basename(p) for p in glob.glob(os.path.join(work, "*.bin")))
++out["gap"] = s2.journal.gap
++
++
++def failing_open(path, mode="r", *a, **k):
++    if str(path) == journal and mode.startswith("a"):
++        raise OSError(5, "Input/output error")
++    return real_open(path, mode, *a, **k)
++
++
++S.open = failing_open
++reply = s2.handle({"cmd": "verdict", "record": {"action_id": "T-1", "verdict": "ALLOW",
++                                                "signature": None}})
++S.open = real_open
++out["retry_reply"] = reply
++out["bytes_after_retry"] = os.path.getsize(journal)
++print(json.dumps(out, default=str))
++"""
++
++
++def custom_f25(repo: str) -> tuple[bool, str]:
++    """A genuinely torn line, quarantined by recovery before a retry that then fails at open.
++
++    This is the limitation the reviewer scoped the guarantee to, and it is pinned rather than
++    fixed: the complete record in f24 is a gap and may not be cut, a torn line is damage and is
++    quarantined by recovery, and the `disk_state: unchanged` on the retry that follows is a claim
++    about that append rather than about the file recovery has already repaired.
++    """
++    tree = fresh_copy(repo, "f25")
++    work = tempfile.mkdtemp(prefix="hfb-f25-run-")
++    script = os.path.join(work, "torn_line_case.py")
++    with open(script, "w", encoding="utf-8") as fh:
++        fh.write(STORE_TORN_LINE_CASE)
++    proc = subprocess.run([sys.executable, script, tree], capture_output=True, text=True,
++                          timeout=120)
++    if proc.returncode != 0:
++        return False, "the case did not run: %s" % (proc.stderr or proc.stdout)[-300:]
++    out = json.loads(proc.stdout.strip().splitlines()[-1])
++
++    reply = out["retry_reply"] or {}
++    # Recovery must quarantine the torn bytes, whole and named, and must not call it a gap.
++    quarantined = (out["discarded"] == out["torn_bytes"]
++                   and out["quarantine_sha"] == out["torn_sha"]
++                   and out["quarantine_bytes"] == out["torn_bytes"]
++                   and bool(out["quarantine_file"])
++                   and out["quarantine_files"] == [out["quarantine_file"]])
++    not_a_gap = out["gap"] is None
++    # Recovery changes the file; the retry that follows must not change it again, whatever it
++    # says about itself. The first half of that sentence is the limitation, the second the claim.
++    recovery_changed = out["bytes_after_recovery"] < out["bytes_before_recovery"]
++    retry_clean = (out["bytes_after_retry"] == out["bytes_after_recovery"]
++                   and reply.get("ok") is False
++                   and reply.get("disk_state") == "unchanged")
++    detail = ("torn line of %d bytes quarantined by recovery (file %d to %d bytes), gap %s; "
++              "retry refused with disk_state unchanged and the file unchanged by the retry"
++              % (out["torn_bytes"], out["bytes_before_recovery"],
++                 out["bytes_after_recovery"], out["gap"]))
++    return bool(quarantined and not_a_gap and recovery_changed and retry_clean), detail
++
++
+ def fingerprint(rundir: str) -> dict:
+     out = {}
+     for root, _dirs, files in os.walk(rundir):
+@@ -863,7 +1072,8 @@
+     return refused and untouched and proc.returncode == 0, detail
+ 
+ 
+-CUSTOM = {"f20": custom_f20, "f21": custom_f21, "f22": custom_f22, "f23": custom_f23}
++CUSTOM = {"f20": custom_f20, "f21": custom_f21, "f22": custom_f22, "f23": custom_f23,
++          "f24": custom_f24, "f25": custom_f25}
+ 
+ 
+ def run_mode(repo: str, mode: str) -> tuple[bool, str]:
+--- base/audit/README.md
++++ w/audit/README.md
+@@ -7,7 +7,7 @@
+ caught by a named check, and the script fails if any of them is accepted again.
+ 
+ ```
+-python3 audit/regressions.py          # all nineteen
++python3 audit/regressions.py          # all twenty-two
+ python3 audit/regressions.py f5       # one, with the detail
+ ```
+ 
+@@ -32,6 +32,9 @@
+ | f20 | a routine restart after a valid run, both with the P2 binding and with the old one | B holds with the fix, B fails without it |
+ | f21 | open() and fsync() raising EIO during a verdict append, in process | the store answers `ok:false, durable:false` |
+ | f22 | one directory compared with itself, and a challenge run over the evidence directory | the refusal, and the directory unchanged |
++| f23 | a verdict retry after an unconfirmed rollback, and a write after a recovery read that failed | the conflict names two kept records, and the write is refused as `unknown` |
++| f24 | a batch interrupted one byte before its final newline, with the rollback refused | the withheld record stays in the journal, and the gap survives a restart |
++| f25 | a genuinely torn line, quarantined by recovery, then a retry that fails at open | the quarantine holds the torn bytes, the gap stays unclaimed, and the retry does not touch the file |
+ 
+ f7 and f9 damage the evidence; f10, f11, f19 and f20 damage the code, because those findings
+ are about the order a process acts in and there is no artifact that could carry the bug. f16,
+@@ -42,6 +45,26 @@
+ would read as a fix. Each mode says which kind it is, so a reader can tell
+ whether the counterexample is a bad record or a bad program.
+ 
++## What the refusal guarantee covers
++
++A refused append does not cut what it refuses to append onto. That guarantee is scoped, and the
++scope is the part worth reading:
++
++- **A complete record whose terminator never arrived is a gap.** It is named, the file is left
++  exactly as found, and the store keeps refusing to append until the gap is resolved. Cutting it
++  is the repair the guard exists to prevent. f24 pins this.
++- **A torn line is damage, not a gap.** Recovery quarantines it, copying the bytes out and
++  repairing the file, before any append is attempted. That is the correct repair and it happens
++  first.
++- **So `disk_state: unchanged` on a retry is a claim about the retry's own append, not about the
++  file.** Where recovery quarantined a torn line before that append was attempted, the file has
++  already changed by the time the reply is composed, and the reply says nothing about it. f25
++  pins that too, including the fact that the retry itself changes nothing.
++
++The limitation is recorded rather than fixed because the two repairs pull in opposite directions:
++recovery has to remove a torn line to produce a readable journal, and a refusal has to leave the
++file alone. Both are right, and only one of them can own the file at that moment.
++
+ Every mode copies the repository into a temporary directory and works there.
+ Nothing here modifies the checkout it is run from, and nothing here needs a
+ network, a key or a model.
