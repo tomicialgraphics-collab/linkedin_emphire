@@ -51,7 +51,7 @@ describe and which tree they replaced.
 He asked which checkout produced `02-previous-change/f25.log`. The log cannot answer that, and the
 reason matters more than the answer: **f25 produces byte-identical output on M1d, M1e and M1f.**
 
-Run on this machine on 16 November, each against a rebuilt tree, in `05-f25-tree-check/`:
+Run on this machine on 16 November, each against a rebuilt tree, in `06-f25-tree-check/`:
 
 | tree | `bench/store.py` | f25 output |
 |---|---|---|
