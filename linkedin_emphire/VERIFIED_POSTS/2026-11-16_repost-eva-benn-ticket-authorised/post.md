@@ -17,6 +17,7 @@ headline_alt: >-
 headline_alt2: >-
   When an agent picks up a ticket, a customer's wish and a product decision look identical. Provenance is what tells them apart.
 template: T1
+visual_link: https://drive.google.com/file/d/1kRYEyevlHu4BRPLFdLpgHAzMte6A0Hz3/view
 hashtags: ["#AISecurity", "#AIEngineering", "#AIGovernance", "#AIEvals"]
 time_checked: >-
   checked: 2026-11-16 23:08 WAT, read from the system clock before the first draft of this file.
@@ -63,9 +64,11 @@ The method ladder in the engagement notes says a repost replaces a comment on th
 
 The mitigation is that the repost carries a different argument from the comment. The comment was about where authority is lost; the repost is about what a control can and cannot read, which stands alone for somebody who never sees the thread.
 
-## What is outstanding
+## The card
 
-The card. R46 wants a visual beside any post from 14 November on, rendered from the house template with the owner's name and photograph. Those assets are not in this checkout, so no card has been made and none is claimed. The text is ready to paste; the card needs the template before this goes out.
+Rendered from the house template at 23:16 WAT, three lines: A FACTORY / FAILS AT THE / TICKET. 1080x1350, his own photograph, his name in the header and on the tag, the yellow follow pill. The renderer is `ASSETS/brand/make_card.sh`, which takes copy and never a design decision.
+
+Uploaded to Drive: `1kRYEyevlHu4BRPLFdLpgHAzMte6A0Hz3`, md5 `8a52be39c0c2d52d76fd28cfeb59c644`, 669,236 bytes, in the 16 November post folder.
 
 ## If it lands
 
