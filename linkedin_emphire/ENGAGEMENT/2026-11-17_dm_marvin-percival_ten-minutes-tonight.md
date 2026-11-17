@@ -7,7 +7,7 @@ status: ready
 approved: no
 recipient: Marvin Percival
 premise: >-
-  He has asked for a link and said he will join at eight o'clock his time tomorrow morning, and he has framed that call as
+  He has asked for a link and said he will join at eight o'clock his time on the morning of 18 November, and he has framed that call as
   a hello rather than as work. The hour booked for Wednesday is the one carrying the register questions, so this asks
   whether he is free now for the short version, which would leave the booked hour for the substance.
 time_checked: >-
@@ -40,7 +40,7 @@ He is at the end of his working day, which is the one window in the next eightee
 
 ## Why the booked hour is named
 
-He described tomorrow as a hello. The plan for it is not a hello. Saying so in one sentence now is better than surprising him with a working conversation, and it also gives the ten minutes a purpose: it clears the social business so the hour can be used for the thing he is presumably paying attention to.
+He described the Wednesday call as a hello. The plan for it is not a hello. Saying so in one sentence now is better than surprising him with a working conversation, and it also gives the ten minutes a purpose: it clears the social business so the hour can be used for the thing he is presumably paying attention to.
 
 ## What is not offered
 
