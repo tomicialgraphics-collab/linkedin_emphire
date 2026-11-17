@@ -46,6 +46,8 @@ Four things I'd like your view on when we speak, and none of them need any prepa
 
 4. What would you want a stranger to be able to verify about this in ten years, with no help from you?
 
+One thing I've wondered since we spoke, and it isn't about the protocol: what keeps you at it?
+
 Eight your time, and the link is here: [paste the Meet or Zoom link here]. Nothing for you to bring.
 
 Timothy
@@ -62,6 +64,14 @@ The close carries the link and one line about bringing nothing, which is the pro
 ## The one thing to decide before sending
 
 The link has to be in the message, or the last line is an empty promise. If the link is not ready, send the note without the questions and send them in the morning with the link.
+
+## The life question, and where it went
+
+He volunteered his age and his first line of code on the call, so the message can ask one thing back. It sits after the questions and before the close, where it reads as curiosity rather than as the opening move of a message that wants something.
+
+It is one question and it is about him. The other one worth asking, who else is in this with him, stays spoken, because it is a question about the shape of his business and asking it in writing invites a formal answer.
+
+If it goes in the message, it gets asked first on the call and then dropped. Asking it twice makes it a technique.
 
 ## What not to change
 
