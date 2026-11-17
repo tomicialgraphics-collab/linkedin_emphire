@@ -165,3 +165,32 @@ What the page states, in its own words:
 ### What not to do with it
 
 Do not test the checker live on the call as a stunt. Do not upload anything of his to it. Do not treat the public page as evidence about the internals of the validator, and do not add it to the case study without asking.
+
+## Added 00:17 WAT: life, and the employment question
+
+### Asking about him
+
+He disclosed first. He said his age and the year he started, unprompted, on a WhatsApp call he had asked for. Matching that depth is conversation; going past it is an interview.
+
+Two questions that are worth asking and cost nothing:
+
+- **What keeps you at it?** He is seventy-four and building a protocol from scratch. That is the most interesting thing about him and he will enjoy answering it.
+- **Who else is in this with you?** Personal in tone, and it tells me whether the protocol is one man and a validator, which changes what any future arrangement could carry.
+
+Where they go: the first two minutes, or the last five. Not the middle, because the middle is the hour's work and a personal question dropped between W-04 and version 5 reads as a device.
+
+What not to ask: health, family details, retirement, or anything carrying the words at your age. The one reference to his age is already in the thank-you note and one is the right number.
+
+### The employment question
+
+**Not on this call, and not in this shape.** Three reasons, in order of weight.
+
+The independence is the product. What is being sold is a review by somebody who is not paid to like the answer. A reviewer who wants a job from the person he is reviewing writes reviews that please, and every later finding carries that shadow whether or not it is fair.
+
+There is an open item with a price on it. The W-04 re-run is a service, and asking for placement in the same hour makes the service look like a route to employment rather than a thing worth buying.
+
+The plausible ask is different from the one being considered. He is seventy-four. The request that fits the relationship is not hire me, it is introduce me, and it belongs after a piece of paid work exists rather than before.
+
+**The version that is fine, later.** After the re-run, or after any standing arrangement, one sentence with no hedge: *if you know a team carrying this problem, I would like an introduction.* That is referral, it is normal between professional contacts, and it does not touch the independence.
+
+**If he raises it himself,** take it seriously and do not deflect, because a man offering something at seventy-four means it. Answer with one line about what the work is, ask what he has in mind, and do not turn it into a pitch for the paid item in the same breath.
