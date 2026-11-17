@@ -138,3 +138,30 @@ withdrawn, and the record that proves it now exists rather than being promised. 
 
 **If he offers an introduction:** take it, ask what the person is working on, and do not pitch. The next step after
 an introduction is a message, not a deck.
+
+## Added 00:09 WAT on 18 November: the public checker
+
+`try-foray.dunin7.com` was opened and read at 00:09 WAT. It is a self-serve front end to his validator, not a dashboard.
+
+What the page states, in its own words:
+
+- One record per file, up to 256 KiB, JSON, dropped or pasted.
+- The record is sent to the FORAY live validator at `foray.dunin7.com` and the page reports what it says.
+- Ten checks per minute.
+- It keeps nothing that is uploaded.
+- *The check tests the shape of a record against the published rules. It does not test whether the facts are true.*
+- It warns against uploading real personal or account data unless the uploader is happy for it to pass through DUNIN7's validator.
+
+### Why this matters to the hour
+
+**His own page draws the line I drew in the register.** Shape against published rules is not truth about the world, and the disclaimer says so in a sentence a customer will read before uploading. That is the same distinction as the recorded limit on the anchored extent, and it means the two records are already consistent. Say that out loud in the first ten minutes; it is a compliment that is also an observation.
+
+**The checker is the cheapest place to answer W-04.** The register's closure is textual because the probe has not been run against the mapping rule. If the checker embodies that rule, then running the probe against the checker is the re-run, and it is a smaller piece of work than a fresh vector harness. Ask him directly whether the checker and the specification are on the same rule set, and which one moves first when they diverge.
+
+**Four questions, in this order.** Which rule set version does the checker run, and is that version published so a result can be reproduced. Does it exercise the segmented header path at all, or only aggregate-shaped records, since the segment path was the finding. Does it ever assert anchoring, or only shape. And when the checker and the specification disagree, which is authoritative.
+
+**One claim I cannot check from the page:** that it keeps nothing uploaded. Do not repeat it as fact. Ask how that is enforced and whether it is logged, because "keeps nothing" is the kind of sentence that is true of the application and not of the proxy.
+
+### What not to do with it
+
+Do not test the checker live on the call as a stunt. Do not upload anything of his to it. Do not treat the public page as evidence about the internals of the validator, and do not add it to the case study without asking.
