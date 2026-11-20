@@ -1,6 +1,6 @@
 # Gate report
 
-Generated 2026-11-14 17:19 by `TOOLING/pipeline.py audit`.
+Generated 2026-11-20 15:09 by `TOOLING/pipeline.py audit`.
 Legacy rows are posts written before the contract existed. They are frozen: they are not
 re-gated, and they cannot be reposted without being brought under the contract first.
 
@@ -45,6 +45,11 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `2026-11-13_exit-zero-never-checked` | yes | 0 | 0 | pass |
 | `2026-11-13_open-benchmark-open-defects` | legacy | 8 | 1 | legacy |
 | `2026-11-13_seven-corrections` | yes | 0 | 0 | pass |
+| `2026-11-16_repost-eva-benn-ticket-authorised` | yes | 0 | 1 | pass, warnings |
+| `2026-11-17_limit-line` | yes | 0 | 1 | pass, warnings |
+| `2026-11-18_vibe-coding-balance` | yes | 0 | 1 | pass, warnings |
+| `2026-11-20_record-outlives-the-file` | yes | 0 | 0 | pass |
+| `2026-11-20_the-sentence-with-a-signature` | yes | 0 | 1 | pass, warnings |
 | `ENGAGEMENT/2026-11-03_allie-miller_agent-handoff.md` | legacy | 1 | 1 | legacy |
 | `ENGAGEMENT/2026-11-03_jerry-liu_ocria-speed.md` | legacy | 3 | 1 | legacy |
 | `ENGAGEMENT/2026-11-03_nvidia_derczynski.md` | legacy | 1 | 0 | legacy |
@@ -199,12 +204,166 @@ re-gated, and they cannot be reposted without being brought under the contract f
 | `ENGAGEMENT/2026-11-13_reply_sam-illingworth-one-procurement-clause.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/2026-11-13_reply_sebastien-favre-closing-round.md` | yes | 0 | 1 | pass, warnings |
 | `ENGAGEMENT/2026-11-13_reply_stephen-zhou-the-question-has-two-owners.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-14_comment_fuchigami-ryuichi.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-14_comment_sam-illingworth-aifb-paths.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-14_dm_andrey-ekhmenin-record-fixes.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-14_dm_behar-m1-pack.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-14_dm_kuldeep-patil-deal-sheet.md` | yes | 0 | 0 | pass |
-| `ENGAGEMENT/2026-11-14_repost_sam-illingworth-aifb.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-14_comment_aishwarya-srinivasan-reid-hoffman.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_comment_brad-wolfe-audit-trail.md` | yes | 0 | 2 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_comment_fuchigami-ryuichi.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_comment_fuchigami-three-answers.md` | yes | 0 | 2 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_comment_justin-dsouza-asymptote-hiring.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_comment_kvn-rajesh-looped-transformer.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_comment_ricky-jones-sandra-in-a-van.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_comment_sam-illingworth-aifb-paths.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_andrey-ekhmenin-record-fixes.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_andrey-ekhmenin-v2-record-fixes.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_behar-m1-pack.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_evelyne-claudia-runner-hash-qualification.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_justin-dsouza-founding-role-v2.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_justin-dsouza-founding-role.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_kuldeep-patil-deal-sheet.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_marvin-percival-call-slot.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_marvin-percival-cyber-dataset-card.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_marvin-percival-dataset-final.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-close-both-pages.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-draft-40-wording.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-merged-approval-and-ack.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-recommendation-ack.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-recommendation-published.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-recommendation-v2-approval.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-revised-recommendation-review.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-use-case-published.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_sebastien-favre-use-cases-wording-approval.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_travis-miragliotta-call-windows.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_dm_travis-miragliotta-connection-reply.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_reply_ron-brazil-harmless-mutation.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_reply_ron-brazil-red-first.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_repost_sam-illingworth-aifb.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-14_skip_charly-wargnier-jensen-petition.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_comment_alex-wolf_agent-governance.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_comment_andreas-horn_procrastination.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_comment_martha-boeckenfeld_7sense.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_comment_nadir-ali_situational-leadership.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_comment_neil-sahota_productivity.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_comment_ricky-jones_kettle-culture-authority.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_comment_tolulope-michael_nvidia-controls.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_behar-ai-action-assurance.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_behar-declined-pilot.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_behar-m1c-two-cases-covered.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_behar-m1c-zip-and-hash.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_behar-m1d-three-findings.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_behar-two-more-cases.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_behar-written-first-pilot.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_son-u-paik-management-side.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_son-u-paik-thanks-for-linking.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_dm_travis-miragliotta-call-confirmed.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_reply_behar_newline-outcome.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_reply_behar_rebuilt-pack.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_reply_behar_two-cases-and-n13.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-15_reply_nadir-ali_escalation-default.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_aashna-doshi_processes-are-the-memory-of-a-burn.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_alex-banks_whose-tuesday-gets-worse.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_anthony-alcaraz_the-window-you-do-not-control.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_daniel-miessler_friction-needs-an-instrument.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_daniel-miessler_the-probe-points-outside.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_duckjung-kim_access-as-a-dependency.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_eduardo-vedes_the-column-that-is-missing.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_eva-benn_the-queue-nobody-reads.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_eva-benn_the-ticket-launders-authority.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_ibrahim-saleem_the-second-check-must-be-able-to-fail.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_jeongmin-lee_the-label-is-the-weak-part.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_kun-yuan_constraint-that-can-fail.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_love-babbar_the-2-percent-nobody-measured.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_paolo-perrone_the-multiplier-not-the-percentage.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_richard-lundeen_attribution-not-throughput.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_rock-lambros_the-proof-test.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_sebastien-favre_the-24-is-the-evidence.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_stephen-klein_who-searched-and-what-was-left.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_stephen-platten_responsibility-without-authorship.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_comment_sudip-roy_the-edge-not-the-ratio.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_behar-m1e-the-refusal-had-a-side-effect.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_behar-m1f-the-scope-of-the-guarantee.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_behar-the-rerun-checklist.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_behar_the-tree-the-log-cannot-name.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_kuldeep-patil_budget-no-close.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_kuldeep-patil_last-word-optional.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_kuldeep-patil_the-start-date-is-today.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_marvin-percival_wednesday-the-18th.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_dm_travis-miragliotta-what-he-will-see.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_reply_paolo-perrone_per-step-with-the-prefix-hash.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-16_reply_sudip-roy_the-miss-that-means-eviction.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_comment_allie-k-miller_the-item-nobody-defined.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_comment_daniel-miessler_the-sentence-outside-the-facts.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_comment_hannah-westra_the-scorer-and-the-repeat.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_comment_jerry-liu_the-weights-and-the-judges-error-rate.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_comment_tanya-janca_who-held-the-authority.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_dm_behar_the-merge-and-the-one-line.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_dm_martina-brazelton_the-second-call-without-a-client.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_dm_marvin-percival_ten-minutes-tonight.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_reply_eva-benn_a-review-that-has-not-said-no.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_reply_paolo-perrone_when-the-hour-pays.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-17_reply_stephen-klein_both-is-the-untestable-answer.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_behar_a-record-is-the-answer.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_martina-brazelton_mutual-and-unpaid.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_five-things.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_four-questions-before-eight.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_mentor-i-will-take.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_one-test-case.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_page-one-in-my-words.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_page-two-and-the-three-fixes.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_thank-you-for-tonight.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_the-kit-and-two-questions.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_the-thank-you-and-the-four.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_the-vault-is-the-layers.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_which-one-would-you-trust.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_marvin-percival_which-project-is-the-prd-for.md` | yes | 0 | 2 | pass, warnings |
+| `ENGAGEMENT/2026-11-18_dm_travis-miragliotta_the-link-was-mine.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-19_dm_behar_only-if-you-want-the-last-word.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-19_dm_marvin-percival_page-four-the-levels-and-who-looks.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-19_dm_marvin-percival_page-three-the-flow.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-19_dm_travis-the-room-and-one-slot.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-20_call-card_travis-live-now.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-20_call-card_travis-windows-demo.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_call-sheet_marvin-thirty-minutes.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_comment_bernard-traversat-the-documented-no.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_comment_krishna-rao-the-10-per-cent.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_comment_paul-roetzer-what-measurable-means.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_comment_rakesh-gohel-the-gap-in-due-diligence.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_comment_travis-four-roi-lenses.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_behar-his-wording-and-the-final-attribution.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_behar-the-name-against-the-review.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_behar-the-sentence-and-where-it-goes.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_behar-the-zip-prefix-and-the-final-line.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_behar_co-author-and-independent-reviewer.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_behar_live-page-and-commit.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_behar_the-last-word.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-both-of-us-admin.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-co-founder-terms-and-thank-you.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-distribution-and-the-two-open-asks.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-20_dm_marvin-if-this-happens-we-have-failed.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-no-key-so-the-sample-is-the-plan.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-one-repo-and-not-the-team-plan.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-percival-full-answer-to-the-three-parts.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-percival-the-practice-build-and-one-thing-to-settle.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-percival-the-requirements-read.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-percival-thirty-minutes-from-now.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-thank-you-and-what-you-did-well.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-the-fourth-answer.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-the-mockups-three-notes.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-the-nipost-reference-and-what-the-test-proves.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-the-repo-is-up.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-the-requirements-and-your-message.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-the-scoped-plan-pdf.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-the-seventh-gap-and-monday.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_marvin-two-months-and-a-renewal-date.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_travis-technical-selling.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_travis-the-number-and-its-denominator.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_travis-the-roi-slide-inputs.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_dm_travis-you-were-right-on-the-money.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_note_terms-agreed-on-the-call.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_readme_attribution_block.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_readme_full_with_attribution.md` | legacy | 2 | 0 | legacy |
+| `ENGAGEMENT/2026-11-20_recommendation_for-behar-to-write.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_script_marvin-call-tonight.md` | yes | 0 | 0 | pass |
+| `ENGAGEMENT/2026-11-20_script_travis-full.md` | yes | 0 | 1 | pass, warnings |
+| `ENGAGEMENT/2026-11-20_whatsapp_marvin-the-claude-seat.md` | yes | 0 | 0 | pass |
 | `ENGAGEMENT/FOLLOW-LIST-RULES.md` | legacy | 1 | 0 | legacy |
 | `ENGAGEMENT/audience_follow_list_2026-10-24.md` | legacy | 1 | 1 | legacy |
 | `ENGAGEMENT/comment_round_2026-10-31.md` | legacy | 4 | 1 | legacy |
