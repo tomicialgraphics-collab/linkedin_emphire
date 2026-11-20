@@ -168,3 +168,18 @@ Asked what else the emphire needs, the answer was six items and one removal. The
   row; it now reads the latest date and reports 1,374 on 20 November.
 
 The clock read 22:15 WAT at the end of this work; the session has run since the morning.
+
+## 22:19 WAT: Tolu as the model, and the kill list
+
+The owner uploaded Tolulope Michael's posts as the template source for posts that read as human and convert, and named
+his visuals as the model for cards. The same text and 130 card images already sat in `TOLU TEMPLATE/`. Measured by script:
+135 posts, median 185 words, 112 ending on a PS question, 91 with a list, 22 first-person stories, 6 links, 5 faith posts.
+Five card layouts recur, all 4:5. Filed as `DAILY CONTENT/2026-11-20_tolu-study_posts-and-cards.md`, with one sample post
+in his shape from the owner's own 16-of-64 finding and four decisions: the PS question against R15, a video-teaser
+template, lifting R25 for more card layouts, and a photo shoot, which is the real constraint (one 400x400 headshot
+against his dozen-plus photographs). His unsourced figures are named as the part not to take.
+
+The kill list for the 132 outbox files over seven days is `STATE/2026-11-20_outbox-kill-list.md`, status draft. Groups:
+5 posts live (mark posted), 2 live in other words (confirm), 3 never sent (kill), 11 answered messages (mark sent),
+110 comments and thread replies 8 to 14 days old (close as aged), 2 to ask. A delivery-log row is not treated as proof of a
+send, because rows are often written at gating. Nothing was changed; it waits on the owner's yes by group.
