@@ -37,9 +37,16 @@ npm --version
 docker --version
 ```
 
-Node 20 or newer. Docker Desktop running, which is how Postgres arrives without installing anything else. If there is no
-Docker, stop here and install it, because the test below needs a real Postgres with real roles, and no in-memory database
-can prove a permission.
+Node 20 or newer. Docker Desktop installed and started, which is how Postgres arrives without installing anything else.
+The test below needs a real Postgres with real roles, and no in-memory database can prove a permission.
+
+On this laptop Docker was installed but the engine was not running, and every command failed with a named-pipe error that
+reads like a broken install. Start Docker Desktop, wait for `docker ps` to answer, and only then run the container.
+
+There is already a container on this machine called `nuvora-prod-postgres-1`. It does not publish its port, so it does not
+collide with the one below, but it does mean one habit matters: name the container in every command that touches a
+database. `docker exec eri-pg psql` and never a bare `psql`, and never `drop database` against anything you have not just
+confirmed is called `eri_test`.
 
 # 1. Branch
 
@@ -141,6 +148,11 @@ grant usage, select on sequence seal_id_seq to eri_app;
 revoke update, delete on event from eri_app;
 ```
 
+What actually enforces the rule is the grant list: `eri_app` is given select and insert and nothing else, so an update is
+refused for want of a privilege rather than for want of a rule. The `revoke` line is a guard for later, the day someone
+adds `grant all on event to eri_app` to fix an unrelated problem and quietly removes the whole property. It costs one line
+and it makes that mistake fail loudly instead of silently.
+
 Three additions beyond the plan's version, each one a decision you can defend or drop, and none of them generated:
 `check (address_source in ('sample','live'))` because REQ-052 makes that field load-bearing; `sample_needs_capture_time`
 because a sample with no capture date cannot be trusted as a sample; `check (seq > 0)` and the kind list because a typo in
@@ -191,84 +203,84 @@ Run it with `node --env-file=.env.local db/migrate.mjs`. Node 20 reads that flag
 `tests/event-append-only.test.ts`
 
 ```ts
-import { describe, it, expect, afterAll } from 'vitest'
+import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { Client } from 'pg'
 
 const client = new Client({ connectionString: process.env.DATABASE_URL })
 
+beforeAll(async () => { await client.connect() })
+afterAll(async () => { await client.end() })
+
+async function seedEvent() {
+  const file = await client.query(
+    `insert into evidence_file (postcode, address, address_source, source_captured_at, created_by, agency_id)
+     values ('100001', '{"line":"test only"}'::jsonb, 'sample', now(), gen_random_uuid(), gen_random_uuid())
+     returning id`,
+  )
+  const fileId = file.rows[0].id
+  await client.query(
+    `insert into event (file_id, seq, kind, payload, created_by)
+     values ($1, 1, 'item', '{"note":"test"}'::jsonb, gen_random_uuid())`,
+    [fileId],
+  )
+  return fileId
+}
+
 describe('the event table refuses to be rewritten', () => {
   it('rejects an update from the application role', async () => {
-    await client.connect()
     await client.query('begin')
+    const fileId = await seedEvent()
 
-    const file = await client.query(
-      `insert into evidence_file (postcode, address, address_source, source_captured_at, created_by, agency_id)
-       values ('100001', '{"line":"test only"}'::jsonb, 'sample', now(), gen_random_uuid(), gen_random_uuid())
-       returning id`,
-    )
-    const fileId = file.rows[0].id
-
-    await client.query(
-      `insert into event (file_id, seq, kind, payload, created_by)
-       values ($1, 1, 'item', '{"note":"test"}'::jsonb, gen_random_uuid())`,
-      [fileId],
-    )
+    await client.query('set local role eri_app')
 
     await expect(
-      client.query(`set local role eri_app; update event set kind = 'withdrawal' where file_id = $1`, [fileId]),
+      client.query(`update event set kind = 'withdrawal' where file_id = $1`, [fileId]),
     ).rejects.toMatchObject({ code: '42501' })
 
     await client.query('rollback')
   })
 
   it('rejects a delete from the application role', async () => {
-    await client.connect()
     await client.query('begin')
+    const fileId = await seedEvent()
 
-    const file = await client.query(
-      `insert into evidence_file (postcode, address, address_source, source_captured_at, created_by, agency_id)
-       values ('100001', '{"line":"test only"}'::jsonb, 'sample', now(), gen_random_uuid(), gen_random_uuid())
-       returning id`,
-    )
-    await client.query(
-      `insert into event (file_id, seq, kind, payload, created_by)
-       values ($1, 1, 'item', '{"note":"test"}'::jsonb, gen_random_uuid())`,
-      [file.rows[0].id],
-    )
+    await client.query('set local role eri_app')
 
     await expect(
-      client.query(`set local role eri_app; delete from event where file_id = $1`, [file.rows[0].id]),
+      client.query(`delete from event where file_id = $1`, [fileId]),
     ).rejects.toMatchObject({ code: '42501' })
 
     await client.query('rollback')
   })
 
   it('still allows an insert from the application role', async () => {
-    await client.connect()
     await client.query('begin')
+    const fileId = await seedEvent()
 
-    const file = await client.query(
-      `insert into evidence_file (postcode, address, address_source, source_captured_at, created_by, agency_id)
-       values ('100001', '{"line":"test only"}'::jsonb, 'sample', now(), gen_random_uuid(), gen_random_uuid())
-       returning id`,
-    )
     await client.query('set local role eri_app')
     await client.query(
       `insert into event (file_id, seq, kind, payload, created_by)
-       values ($1, 1, 'item', '{"note":"test"}'::jsonb, gen_random_uuid())`,
-      [file.rows[0].id],
+       values ($1, 2, 'attestation', '{"note":"second"}'::jsonb, gen_random_uuid())`,
+      [fileId],
     )
+
+    const { rows } = await client.query('select count(*)::int as n from event where file_id = $1', [fileId])
+    expect(rows[0].n).toBe(2)
 
     await client.query('rollback')
   })
 })
-
-afterAll(async () => { await client.end() })
 ```
 
-The third test is there for a reason. Two tests that prove a refusal can both pass on a database where the role has no
-rights at all, which would mean the application cannot write a single event. One test that proves the insert still works
-is what separates "the door is locked" from "the door was never installed".
+Three things about that file that will bite anyone who writes it differently.
+
+`set local role` goes in its own call, never in the same string as the statement under test. Node's `pg` switches to the extended protocol as soon as a query has parameters, and the extended protocol refuses two commands in one string, so the combined version fails with a message about a prepared statement that has nothing to do with permissions.
+
+The client connects once, in `beforeAll`. Calling `connect()` again inside a test throws, and the error looks like a database problem when it is a test problem.
+
+Every test opens a transaction and rolls it back, so the database is left as it was found and the tests can run in any order, as many times as you like.
+
+The third test is there for a reason. Two tests that prove a refusal can both pass on a database where the role has no rights at all, which would mean the application cannot write a single event. One test that proves the insert still works is what separates "the door is locked" from "the door was never installed".
 
 # 8. Wire the test script and run it
 
