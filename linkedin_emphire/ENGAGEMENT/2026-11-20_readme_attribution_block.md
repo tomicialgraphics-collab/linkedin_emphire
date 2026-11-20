@@ -52,3 +52,16 @@ is the reviewer's correction, not the owner's.
    record again.
 3. Record both in the exchange log, with the time of publication, so the approval and the publication are dated within
    the same day.
+
+# How to publish it, in order
+
+1. Open the edit page for the README: https://github.com/Teamthy/host-failure-benchmark/edit/main/README.md
+2. Put the cursor at the end of the opening paragraph, the one that begins "A small local suite about one question", and press enter twice. The block goes between that paragraph and the line that begins "Repository:".
+3. Paste the text above as a single paragraph. No heading, no bullet, no bold.
+4. Commit message: `README: record the independent review of version 3 (approved by Behar Dalipi, 20 Nov 2026)`
+5. Commit straight to `main`, which is the default branch and the only branch a reader will arrive on.
+6. Open the commit page and copy the commit SHA from it. That is the second hash, and it is not the ZIP.
+7. Send him the live page and that commit in the message drafted in the DM of the same date.
+
+The repository page is https://github.com/Teamthy/host-failure-benchmark and the rendered file is at
+https://github.com/Teamthy/host-failure-benchmark/blob/main/README.md , which is the page to send him once it is up.
