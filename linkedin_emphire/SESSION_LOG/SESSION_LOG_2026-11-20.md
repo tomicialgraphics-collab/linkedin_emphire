@@ -183,3 +183,16 @@ The kill list for the 132 outbox files over seven days is `STATE/2026-11-20_outb
 5 posts live (mark posted), 2 live in other words (confirm), 3 never sent (kill), 11 answered messages (mark sent),
 110 comments and thread replies 8 to 14 days old (close as aged), 2 to ask. A delivery-log row is not treated as proof of a
 send, because rows are often written at gating. Nothing was changed; it waits on the owner's yes by group.
+
+## 22:30 WAT: the buyer and the selling point, checked against the record
+
+Asked to work on the ICP and the main selling point, verified against what actually works, and to read Sell Like Crazy
+for money left on the table. Read the book's Phases 1, 2, 4, 6, 7 and 8 by section, and the 13 November reading of it. The
+repo already held eight ICP documents built from what a buyer ought to be, so this one is built from the eight people who
+actually answered. Seven of the eight are founders of small companies building AI safety, control or evidence tools; all
+valued the work and none paid, each for want of a customer asking them for the evidence. The verified buyer is that
+founder at the week a customer, investor or auditor asks. The selling point is evidence a customer will accept: every
+finding reruns, and the report names what was not tested. Seven gaps against the book are listed, led by free service
+instead of a free document and no introduction asked in return. The 13 November offer levers were never applied: as of 15
+November the 1 dollar add-on was live, there was no guarantee, and 0 proposals had gone out. Filed as
+`STRATEGY/2026-11-20_icp-and-selling-point_verified.md`, human 92, PASS. The verified lead list is the next round.
