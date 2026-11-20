@@ -22,6 +22,8 @@ sources_read: >-
 | Repo is `Teamthy/Eri-OS`, Marvin invited as `DUNIN7` | Marvin | 2:21 |
 | There is no NIPOST key. Live keys need company verification, so cycle one runs on recorded sample responses | Marvin | 2:37 |
 | The sample path gets its own requirement, REQ-052, so a sample address is labelled wherever it appears | Owner | 2:42 |
+| The build is a test, not necessarily a product. The test settles three things, listed in the message of 02:57 | Marvin, then both | 2:47 |
+| NIPOST expression of interest submitted by Marvin, reference 6affa72517651272a87e6b6c0 | Marvin | 2:49 |
 
 # Open, and who owes an answer
 
@@ -31,6 +33,7 @@ sources_read: >-
 - **How the Claude seat works.** Owner has withdrawn the shared-login idea; either a seat on a team plan or the money.
 - **Whether the Mac Mini can be reached from outside Marvin's network.** Needs a tunnel or a stable address before the
   first Friday review, or the review cannot see the build.
+- **NIPOST's reply.** What they need to verify a Nigerian company, and whether a sandbox or test postcodes exist. Reference 6affa72517651272a87e6b6c0.
 - **Stele.** The only remaining week-one assumption. Whether it can mount, or whether a development-only session is agreed in writing. Asked three times.
 
 # Housekeeping that is the owner's to do, not Marvin's
