@@ -5,7 +5,7 @@ date: 2026-11-20
 audience: internal
 status: ready
 approved: no
-title: The LinkedIn thread with Marvin Percival, 02:22 to 19:01 WAT on 20 November 2026, as pasted by the owner
+title: The LinkedIn thread with Marvin Percival, 02:22 to 19:21 WAT on 20 November 2026, as pasted by the owner
 time_checked: >-
   checked: 2026-11-20 18:48 WAT, read from the system clock in the sandbox before this file was written.
 sources_read: >-
@@ -421,6 +421,15 @@ open a PR when you want it looked at.
 
 Enjoy your evening.
 
+**19:08 Owner.** The reply recorded in `ENGAGEMENT/2026-11-20_dm_marvin-the-split-and-0003.md`, sent as filed there:
+the split accepted, 0003 promised before PR 6 merges, the address and the hash chain to go in the note, the commit label
+corrected on the next commit, and the adoring-babbage branch named as his.
+
+**19:12 Marvin.** I will continue the work on Stele recovery and let you know when done.
+
+**19:12 to 19:21.** `[personal, not recorded]`: his family, and an anniversary he mentioned. The owner asked to be kept
+updated on the Stele recovery work.
+
 ## What the thread settled
 
 | Settled | When |
@@ -440,6 +449,7 @@ Enjoy your evening.
 | PR 4 merged: the phone check applies only to screens and device features | 19:01 |
 | The purge door goes: each event splits into a record that never goes and a content table the purge alone can touch. Written up as decision 0003 before PR 6 merges | 19:01 |
 | The app connects as eri_app, never the owner; migrations run as a non-superuser owner. Marvin writes it into DEPLOYMENT.md | 19:01 |
+| Marvin is finishing the Stele recovery logic and will say when it is done | 19:12 |
 
 ## What it left open
 

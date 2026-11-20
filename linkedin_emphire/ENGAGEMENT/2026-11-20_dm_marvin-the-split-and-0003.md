@@ -3,8 +3,8 @@ deliverable: dm
 id: 2026-11-20_dm_marvin-the-split-and-0003
 date: 2026-11-20
 audience: outbound
-status: ready
-approved: no
+status: sent
+approved: yes
 recipient: Marvin Percival
 warm: yes
 premise: >-
@@ -32,14 +32,19 @@ sources_read: >-
 Confirmed by the owner at about 19:15 WAT on 20 November: `claude/adoring-babbage-jng35n` is his. The last line
 stands as written.
 
-## Message, paste as is
+## Sent
+
+Sent by the owner at 19:08 WAT on 20 November, in this wording, before PR 7 and PR 8 were opened. A later edit of
+this file to name the two PRs was never sent and has been put back to what went.
+
+## Message, as sent
 
 <!-- gate:body:start -->
-Thanks Marvin. The split is better than my door. It's written up as 0003 in PR 7, and the v0.4 requirements are in PR 8, so both are there for you whenever you get to them.
+Thanks Marvin. The split is better than my door, and I'll write it up as 0003 before PR 6 merges.
 
-Two things it pulls in, and both are in the note. The address on evidence_files is a real home once the data is real, so it goes to the content side with the payload. And the standards ask for hash-chained audit rows, which we don't have yet. If the chain runs over the record half only, it survives every purge, which is the certificate's whole point.
+Two things it pulls in, and I'll put both in the same note. The address on evidence_files is a real home once the data is real, so it goes to the content side with the payload. And the standards ask for hash-chained audit rows, which we don't have yet. If the chain runs over the record half only, it survives every purge, which is the certificate's whole point.
 
 On the CHORE label: the instructions file says never amend a pushed commit, so the REQ-020 and REQ-030 label goes on the next commit and the PR title. The package description and the version bump go in the same pass.
 
-The adoring-babbage branch is mine, an early plan from before your repo layout. I'll close it, since v0.4 now covers what it was for.
+The adoring-babbage branch is mine, an early plan from before your repo layout. I'll close it and fold anything useful into v0.4.
 <!-- gate:body:end -->

@@ -137,3 +137,17 @@ promise in the 03:05 message to send REQ-053 with the redline over the weekend i
 
 The eri-test clone was shallow with a fetch rule for main only, so pushed branches showed as untracked and the stop
 check flagged them. A fetch rule for `docs/*` was added and both branches now track their remotes. Nothing was re-pushed.
+
+## 19:24 WAT: the reply went, and what was sent
+
+The owner sent the reply to Marvin at 19:08 in its first wording, before PR 7 and PR 8 existed. A later edit of the file
+to name the two PRs had not been sent, so the file was put back to what went, marked sent and approved, and journalled
+with `pipeline.py log`. The tool gated the file before writing its own row, so it recorded BLOCKED on R22, the missing
+row itself; the row was corrected to the post-row verdict, PASS 0/0, and its clock to 19:24 WAT, because the tool stamps
+the sandbox's UTC time.
+
+The thread is extended to 19:21. Marvin is finishing the Stele recovery logic and will say when it is done. The rest of
+that exchange was about his family and is not recorded, as before.
+
+Worth fixing in the tool on a later day: `pipeline.py log` should write the row before it gates, or skip R22 for the file
+it is logging, and it should stamp WAT rather than UTC.
