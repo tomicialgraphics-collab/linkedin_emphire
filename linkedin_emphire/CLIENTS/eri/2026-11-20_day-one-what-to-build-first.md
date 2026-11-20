@@ -45,22 +45,22 @@ code, one careless query breaks it. Put it in the schema and enforce it with a p
 create table evidence_file (
   id                 uuid primary key default gen_random_uuid(),
   postcode           text not null,
-  address            jsonb not null,          -- exactly what the source returned, unedited
-  address_source     text not null,           -- 'sample' or 'live'   (REQ-052)
-  source_captured_at timestamptz,             -- when the sample was recorded
+  address            jsonb not null,          /* exactly what the source returned, unedited */
+  address_source     text not null,           /* 'sample' or 'live' (REQ-052) */
+  source_captured_at timestamptz,             /* when the sample was recorded */
   created_at         timestamptz not null default now(),
-  created_by         uuid not null,           -- the Stele principal
+  created_by         uuid not null,           /* the Stele principal */
   agency_id          uuid not null
 );
 
-create table event (                          -- append only
+create table event (                          /* append only */
   id          bigserial primary key,
   file_id     uuid not null references evidence_file(id),
-  seq         int  not null,                  -- per file, gapless, unique together
-  kind        text not null,                  -- item | attestation | counter | withdrawal | seal
-  refers_to   bigint references event(id),    -- the event being attested, corrected or withdrawn
-  payload     jsonb not null,                 -- kind specific
-  fingerprint text,                           -- sha256 of content, null for non items
+  seq         int  not null,                  /* per file, gapless, unique together */
+  kind        text not null,                  /* item, attestation, counter, withdrawal, seal */
+  refers_to   bigint references event(id),    /* the event being attested, corrected or withdrawn */
+  payload     jsonb not null,                 /* kind specific */
+  fingerprint text,                           /* sha256 of content, null for non items */
   created_at  timestamptz not null default now(),
   created_by  uuid not null,
   unique (file_id, seq)
@@ -69,7 +69,7 @@ create table event (                          -- append only
 create table seal (
   id          bigserial primary key,
   file_id     uuid not null references evidence_file(id),
-  event_ids   bigint[] not null,              -- exactly the items in this batch
+  event_ids   bigint[] not null,              /* exactly the items in this batch */
   tx_id       text not null,
   block_time  timestamptz not null,
   sealed_at   timestamptz not null default now()
