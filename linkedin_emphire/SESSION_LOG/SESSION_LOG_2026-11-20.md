@@ -205,3 +205,12 @@ governance sellers; tier B, 18 AI agents sold into regulated buyers; tier C, 4 w
 URLs are given, because none was verified and a guessed one would be fabricated. Competitors that sell AI red teaming were
 left out. Klaimee is flagged as a partner lead because it certifies agents before insuring them. Opened as an open loop
 with a kill test.
+
+## 22:35 WAT: LinkedIn and email for ICP-50
+
+Asked for verified emails and LinkedIn URLs. LinkedIn: one search per founder restricted to linkedin.com, then a second
+pass by company and co-founder for the misses. 41 confirmed (name at that company in the result), 2 likely (name matches,
+headline out of date), 3 reached through a co-founder, 4 not found. Added as a table in the lead file. Two corrections came
+out of it: Waniwani's CEO is Robin Diligent, not Robert as the funding report had it, and sources disagree on whether
+Willow's CEO is Eyal Ben Ezra or Shalev Shalit, so the row now says so. Emails: none given. Deliverability cannot be
+checked from this workspace, and the October rule stands that a guessed address is never sent unverified.

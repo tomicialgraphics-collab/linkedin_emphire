@@ -22,8 +22,10 @@ three a day, using the opener at the end, and log each send in `STATE/REVENUE-LO
 ## What is verified, and what is not
 
 - **Verified:** the company, the founder's name and role, the trigger and its date, against the linked source.
-- **Not verified:** email addresses and LinkedIn profile URLs. None is given, because a guessed address is a fabricated
-  one (R06). Find each founder by name and company on LinkedIn at the moment of sending.
+- **LinkedIn:** checked on 20 November, see the table at the end. A URL is marked *confirmed* only when the search result
+  shows that name at that company, *likely* when the name matches but the headline is out of date, and *not found* otherwise.
+- **Email: none given.** No address could be verified for deliverability from this workspace, and a guessed address is a
+  fabricated one (R06). LinkedIn is the lane; the email arrives when they answer.
 - **Single-source names** are marked. Check the company's own site before using them.
 - Amounts and customer names are what each company announced, not checked independently.
 
@@ -63,7 +65,7 @@ because they are competitors, and companies past 100 staff or Series B (Onyx Sec
 | 17 | A | Tenet Security | stops rogue AI agents | Barak Sternberg, Nevo Poran | $6M seed, out of stealth | 2026-06-18 | [link](https://fintech.global/2026/06/18/tenet-security-raises-6m-to-stop-rogue-ai-agents/) |
 | 18 | A | CodeIntegrity | runtime guardrails limiting which systems and data an agent can reach | Steven Jung (CEO), Abi Raghuram (CTO) | $4.8M seed | 2026-06 | [link](https://www.geekwire.com/2026/codeintegrity-raises-4-8m-to-put-permanent-guardrails-on-unpredictable-ai-agents/) |
 | 19 | A | NeuralTrust | gateway, runtime security and visibility for agents, Barcelona and London | Joan Vendrell (CEO), Victor Garcia (CTO) | $20M seed | 2026-06-17 | [link](https://tech.eu/2026/06/17/neuraltrust-closes-20m-to-expand-ai-agent-security-platform/) |
-| 20 | A | Willow | governance and audit trails for enterprise agents; Wix is the reference customer | Eyal Ben Ezra (CEO), Shalev Shalit (CTO) | $7M seed, out of stealth | 2026-06-05 | [link](https://fintech.global/2026/06/05/hetz-ventures-backs-willows-7m-ai-agent-security-play/) |
+| 20 | A | Willow | governance and audit trails for enterprise agents; Wix is the reference customer | Eyal Ben Ezra, Shalev Shalit, Idan Chetrit; sources disagree on who is CEO | $7M seed, out of stealth | 2026-06-05 | [link](https://fintech.global/2026/06/05/hetz-ventures-backs-willows-7m-ai-agent-security-play/) |
 | 21 | A | NewCore | identity, trust score and revocation for AI agents; more than 50 staff | Zohar Alon (CEO), Amihai Neiderman (CTO) | $66M seed, out of stealth | 2026-06-15 | [link](https://techcrunch.com/2026/06/15/ai-agents-are-becoming-employees-newcore-emerges-with-66m-to-give-them-identities/) |
 | 22 | A | Geordie AI | security and governance for AI agents; 37 staff, 2026 RSAC Innovation Sandbox winner | Henry Comfort (CEO), Benji Weber (CTO) | $30M Series A | 2026-05-28 | [link](https://tech.eu/2026/05/29/geordie-raises-30m-to-bring-security-and-governance-to-agentic-ai/) |
 | 23 | A | Capsule Security | runtime protection between an agent's prompt and its action | Naor Paz (CEO) | $7M seed, out of stealth | 2026-04-15 | [link](https://helpnetsecurity.com/2026/04/15/capsule-security-platform/) |
@@ -81,7 +83,7 @@ because they are competitors, and companies past 100 staff or Series B (Onyx Sec
 | 35 | B | Health Force | AI agents for hospital administration and insurance claims under human supervision | Fadi Haddad (CEO), Juan Sebastián Suárez Valencia (CPO) | EUR 4.2M seed | 2026-09 | [link](https://techfundingnews.com/health-force-raises-4-2m-seed-lumo-labs-hospital-ai-agents-europe/) |
 | 36 | B | Klaimee | audits and insures AI agents; premiums tied to a certification score | Ines Boutemadja (founder) | $5.5M seed | 2026-07-22 | [link](https://fintech.global/2026/07/22/klaimee-lands-5-5m-to-insure-autonomous-ai-agents/) |
 | 37 | B | Compuvi | AI compliance platform; funds earmarked for enterprise-grade security certifications | Ataberk Ciftlikli (CEO) | $40M post-money seed | 2026-06-12 | [link](https://fintech.global/2026/06/12/ai-compliance-startup-compuvi-secures-40m-seed-round/) |
-| 38 | B | Waniwani | AI agents for insurance distribution; first product for a German insurer | Robert Diligent (CEO) | $8M seed | 2026-06 | [link](https://app.dealroom.co/news/note/waniwani-closes-8m-seed-round-to-bring-ai-agents-to-insurance) |
+| 38 | B | Waniwani | AI agents for insurance distribution; first product for a German insurer | Robin Diligent (CEO); the funding report said Robert, LinkedIn and McKinsey say Robin | $8M seed | 2026-06 | [link](https://app.dealroom.co/news/note/waniwani-closes-8m-seed-round-to-bring-ai-agents-to-insurance) |
 | 39 | B | Cortea | AI agents that review audit reports before sign-off; 4,000+ reports reviewed | Valentin Neumann (CEO), Philipp Hövelmann | EUR 12M seed | 2026-06-16 | [link](https://bebeez.eu/2026/06/16/berlin-based-cortea-raises-e12-million-seed-round-to-build-ai-quality-layer-for-audit-firms/) |
 | 40 | B | Modicus Prime | AI audit readiness for FDA and EMA regulated pharma manufacturing | Taylor Chartier (CEO) | $8M raise | 2026-05-06 | [link](https://theaiinsider.tech/2026/05/09/modicus-prime-announces-8m-in-funding-to-enable-ai-audit-readiness-across-pharma/) |
 | 41 | B | Variance | AI agents for KYC, AML and fraud investigations; claims human-level precision at a Fortune 500 | Karine Mellata (CEO), Michael Lin | $21.5M Series A | 2026-03-31 | [link](https://fintech.global/2026/04/07/variance-bags-21-5m-to-power-ai-compliance-agents/) |
@@ -94,6 +96,63 @@ because they are competitors, and companies past 100 staff or Series B (Onyx Sec
 | 48 | C | Ciphero | AI verification layer for enterprise AI use | Saoud Khalifah, Rob Gross (COO), Sen Tian | $2.5M pre-seed | 2025-12-22 | [link](https://fintech.global/2025/12/22/enterprise-ai-security-firm-ciphero-bags-2-5m-pre-seed/) |
 | 49 | C | Scalekit | authentication for agentic apps and MCP servers; 25 staff | Satya Devarakonda, Ravi Madabhushi | $5.5M seed | 2025-09 | [link](https://www.crowdfundinsider.com/2025/09/251687-scalekit-welcomes-5-5m-seed-launches-agentic-app-authentication/) |
 | 50 | C | Fourier Health | clinician-in-the-loop AI for clinical intake | Christopher Lee (CEO) | $8.4M seed | 2025-10-17 | [link](https://hitconsultant.net/2025/10/17/fourier-health-secures-8-4m-to-automate-unstructured-clinical-data) |
+
+## LinkedIn, checked 20 November 2026
+
+| # | Person | Profile | State |
+|---|---|---|---|
+| 1 | Neelima Rustagi | not found; CTO Ratnesh Pandey likely at https://www.linkedin.com/in/ratneshiiita (headline still Elpha) | likely |
+| 2 | Elad Tessler | [linkedin.com/in/elad-tessler](https://www.linkedin.com/in/elad-tessler) | confirmed, headline still says Stealth Startup |
+| 3 | Yuval Zacharia | [linkedin.com/in/yuval-zacharia](https://www.linkedin.com/in/yuval-zacharia) | confirmed |
+| 4 | Vidit Arora | not found | not found |
+| 5 | Ron Williams | [linkedin.com/in/ronwilliams](https://www.linkedin.com/in/ronwilliams) | confirmed |
+| 6 | Idan Basre | [linkedin.com/in/idan-basre](https://www.linkedin.com/in/idan-basre) | confirmed |
+| 7 | Jiquan Ngiam | [linkedin.com/in/jngiam](https://www.linkedin.com/in/jngiam) | confirmed |
+| 8 | Chase Lee | [linkedin.com/in/umchaselee](https://www.linkedin.com/in/umchaselee) | confirmed |
+| 9 | Justin D'Souza | [linkedin.com/in/jqdsouza](https://www.linkedin.com/in/jqdsouza) | confirmed, shown as Justin D. |
+| 10 | Shahar Bahat | [linkedin.com/in/shahar-bahat-%E2%98%84%EF%B8%8F-84770b196](https://www.linkedin.com/in/shahar-bahat-%E2%98%84%EF%B8%8F-84770b196) | confirmed |
+| 11 | T.J. Marlin | [linkedin.com/in/toddmarlin](https://www.linkedin.com/in/toddmarlin) | confirmed |
+| 12 | Vineet Gupta | [linkedin.com/in/vineetrf](https://www.linkedin.com/in/vineetrf) | confirmed |
+| 13 | Guy Kozliner | [linkedin.com/in/guy-kozliner-04452b188](https://www.linkedin.com/in/guy-kozliner-04452b188) | confirmed |
+| 14 | Yair Saban | [linkedin.com/in/yair-saban-30615870](https://www.linkedin.com/in/yair-saban-30615870) | confirmed |
+| 15 | Michael Blicher Sørensen | [linkedin.com/in/michaelblicher](https://www.linkedin.com/in/michaelblicher) | confirmed |
+| 16 | Guanlan Dai | [linkedin.com/in/guanlandai](https://www.linkedin.com/in/guanlandai) | confirmed |
+| 17 | Barak Sternberg | [linkedin.com/in/barakolo](https://www.linkedin.com/in/barakolo) | confirmed by a colleague's post; own headline is generic |
+| 18 | Steven Jung | [linkedin.com/in/jungs1](https://www.linkedin.com/in/jungs1) | confirmed |
+| 19 | Joan Vendrell | not found; co-founder Alejandro Domingo at https://www.linkedin.com/in/alejandrodomingosalvador | co-founder instead |
+| 20 | Willow founders | not found for the CEO; co-founder Idan Chetrit at il.https://www.linkedin.com/in/idanchetrit | co-founder instead |
+| 21 | Zohar Alon | [linkedin.com/in/zoharalon](https://www.linkedin.com/in/zoharalon) | confirmed |
+| 22 | Henry Comfort | [linkedin.com/in/henry-comfort](https://www.linkedin.com/in/henry-comfort) | confirmed |
+| 23 | Naor Paz | [linkedin.com/in/naorpaz](https://www.linkedin.com/in/naorpaz) | confirmed |
+| 24 | Eno Thereska | [linkedin.com/in/enothereska](https://www.linkedin.com/in/enothereska) | confirmed |
+| 25 | Neal Swaelens | [linkedin.com/in/nealswaelens](https://www.linkedin.com/in/nealswaelens) | confirmed by colleagues' posts; cached headline varies |
+| 26 | Sasan Padidar | not found; co-founder Mehul Revankar at https://www.linkedin.com/in/mehul-revankar | co-founder instead |
+| 27 | Derek Abdine | [linkedin.com/in/derekabdine](https://www.linkedin.com/in/derekabdine) | confirmed |
+| 28 | Minseung Kang | [linkedin.com/in/minseung-k](https://www.linkedin.com/in/minseung-k) | confirmed; headline says CTO, posts say CEO |
+| 29 | Rhim Shah | [linkedin.com/in/rhim-shah](https://www.linkedin.com/in/rhim-shah) | confirmed |
+| 30 | Will Rice | not found | not found |
+| 31 | Shashwat Patel | [linkedin.com/in/shashwatpatel](https://www.linkedin.com/in/shashwatpatel) | confirmed |
+| 32 | Sina Chehrazi | [linkedin.com/in/sina-chehrazi](https://www.linkedin.com/in/sina-chehrazi) | likely; headline still says Stealth |
+| 33 | Josiah Meyer | [linkedin.com/in/josiah-meyer](https://www.linkedin.com/in/josiah-meyer) | confirmed |
+| 34 | Shengkun Ye | [linkedin.com/in/shengkun-ye](https://www.linkedin.com/in/shengkun-ye) | confirmed |
+| 35 | Fadi Haddad | [linkedin.com/in/fadihdd](https://www.linkedin.com/in/fadihdd) | confirmed |
+| 36 | Ines Boutemadja | [linkedin.com/in/ines-boutemadja](https://www.linkedin.com/in/ines-boutemadja) | confirmed |
+| 37 | Ataberk Ciftlikli | [linkedin.com/in/ataberk](https://www.linkedin.com/in/ataberk) | confirmed |
+| 38 | Robin Diligent | [linkedin.com/in/robindiligent](https://www.linkedin.com/in/robindiligent) | confirmed |
+| 39 | Valentin Neumann | [linkedin.com/in/valentinneumann](https://www.linkedin.com/in/valentinneumann) | confirmed |
+| 40 | Taylor Chartier | [linkedin.com/in/taylor-chartier](https://www.linkedin.com/in/taylor-chartier) | confirmed |
+| 41 | Karine Mellata | [linkedin.com/in/karinemellata](https://www.linkedin.com/in/karinemellata) | confirmed |
+| 42 | Edoardo Maschio | [linkedin.com/in/edoardo-maschio-704](https://www.linkedin.com/in/edoardo-maschio-704) | confirmed |
+| 43 | Anthony Azrak | [linkedin.com/in/anthony-azrak](https://www.linkedin.com/in/anthony-azrak) | confirmed |
+| 44 | Dan Schuleman | [linkedin.com/in/danielschuleman](https://www.linkedin.com/in/danielschuleman) | confirmed |
+| 45 | Alexandre Berkovic | [linkedin.com/in/alexandreberkovic](https://www.linkedin.com/in/alexandreberkovic) | confirmed; another Sphinx also exists, check it is the compliance one |
+| 46 | Nicholas Leonard | not found | not found |
+| 47 | Ian Livingstone | [linkedin.com/in/irlivingstone](https://www.linkedin.com/in/irlivingstone) | confirmed |
+| 48 | Saoud Khalifah | not found | not found |
+| 49 | Satya Devarakonda | [linkedin.com/in/satyapd](https://www.linkedin.com/in/satyapd) | confirmed |
+| 50 | Christopher Lee | [linkedin.com/in/christopherxlee](https://www.linkedin.com/in/christopherxlee) | confirmed |
+
+41 confirmed, 2 likely, 3 reached through a co-founder, 4 not found. Open each profile before writing; a URL from a search snippet can be out of date.
 
 ## The opener, diagnosis before price
 
