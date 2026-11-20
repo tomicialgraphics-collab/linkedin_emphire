@@ -19,8 +19,8 @@ sources_read: >-
   read: STATE/OPEN-LOOPS.md and the Behar exchange files in ENGAGEMENT. No page opened.
 approval: >-
   Behar Dalipi approved the attribution at 13:21 WAT on 20 November, conditional on one technical clarification:
-  dab7483e must be identified explicitly as the SHA-256 prefix of the version 3 ZIP. The clarification is applied below
-  and nothing else is changed from the wording he approved.
+  dab7483e must be identified explicitly as the SHA-256 prefix of the version 3 ZIP. That clarification was made and he
+  approved the exact wording at 13:39 WAT, unchanged. This is the approved text and the only place it goes.
 ---
 
 # Where it goes

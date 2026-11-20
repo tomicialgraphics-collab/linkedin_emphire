@@ -345,3 +345,33 @@ The message does not acknowledge the two replacement entries he asked for at 11:
 have been sent is an open question the owner can answer in one look at the message thread. Everything
 else is now his to do: the rerun against 006d7ee, then the two entries and the V04 status word, then
 one register commit. Section 11 remains parked.
+
+## 19. His message, 1:39 PM, 20 November: the attribution approved as written
+
+He approved the attribution as the exact wording for the repository README, after one correction of his own
+that is worth recording because it was a real ambiguity and not a courtesy.
+
+**The correction.** The first draft said the benchmark was "held at dab7483e" and said nothing about what that
+string was. `dab7483e` is the SHA-256 prefix of the version 3 ZIP, 23 files, full hash
+`dab7483efc8022ee9d924da2d1410457bb8d27eaeee9d19817cf52bbf388c3ae`, md5 `7c216d2f1e118601665db36293bca3cf`.
+It is not a commit, and the covering message to him then treated it as one and asked which commit the second run
+had been against. He caught the reading the sentence invited and asked for it named explicitly. The approved line
+now reads, in the one place it will appear:
+
+> Version 3 of this benchmark, held at dab7483e (the SHA-256 prefix of the version 3 ZIP), was reviewed
+> independently by Behar Dalipi, a research collaborator who coordinated two rounds of AI-assisted technical
+> review. Every finding he raised is answered in the register, either by the patch that closes it or by the reason
+> it stays open; the corrections and the verdicts are mine. His contribution is verification and adversarial
+> testing, and expressly not an endorsement of the benchmark. The results cover the modes tested, and other
+> filesystems and concurrent writers are unverified.
+
+**What he wrote himself, and did not have to.** He supplied his own recommendation wording at 1:15 PM rather than
+accept the draft offered to him, and described his contribution as coordinating two rounds of AI-assisted technical
+review. That disclosure was his choice at a moment when a warmer description was available, and it is now the
+description used in both the recommendation and the README, so the two cannot drift.
+
+**State.** Approved. Not published. The line goes under the opening paragraph of the README of
+`Teamthy/host-failure-benchmark`, and the owner publishes it from his own account. The API identity used in this
+workspace has no push permission on that repository, confirmed at 13:44 WAT, so this is not something that can be
+done from here and it should not be. Once it is up: send him the live page and the commit, each named as what it
+is, and record the publication time here so the approval and the publication carry one date.
