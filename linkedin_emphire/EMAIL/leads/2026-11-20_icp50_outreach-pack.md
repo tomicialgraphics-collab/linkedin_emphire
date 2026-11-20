@@ -1187,7 +1187,7 @@ olusanyatimothy54@gmail.com
 
 **LinkedIn note (215 characters):** Hi Ines, congratulations on the round. I test AI agents adversarially and write evidence an underwriter can rerun. I'd like to talk about testing agents before they get a Klaimee score, and would be glad to connect.
 
-**Follow-up, day 6 if no reply:** Hi Ines, one line in case this got buried. I'd be glad to test one agent of your choosing end to end so you can judge the work before deciding anything.
+**Follow-up, day 6 if no reply:** Hi Ines, one line in case this got buried. I can send a one-page plan showing how I'd test one agent end to end, so you can judge the approach before any work starts.
 
 ### 37. Ataberk Ciftlikli, Compuvi
 
