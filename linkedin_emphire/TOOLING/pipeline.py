@@ -113,6 +113,7 @@ STATE/DELIVERY-LOG.md. Nothing is sent by the agent: the owner sends.
 """)
     print("WHAT IS DUE")
     B.main(["--brief"])
+    print(outbox_brief())
     print(f"OPEN LOOPS ({len(loops)})")
     for item in loops[:12]:
         print(f"  {item['id']:>3}  {item['text']}")
@@ -212,11 +213,14 @@ def cmd_log(args) -> int:
         print(f"no such file: {path}")
         return 2
     rep = G.gate_file(path)
-    fails = len(rep.failed)
+    # R22 asks whether this row exists. It is the row being written now, so it
+    # cannot count against the file that is being logged.
+    failed = [r for r in rep.failed if r["rule"] != "R22"]
+    fails = len(failed)
     warns = len(rep.warned)
     digest = sha256(path)
     size = os.path.getsize(path)
-    stamp = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
+    stamp = G.wat_now().strftime("%Y-%m-%d %H:%M")  # WAT, like every other time in the repo
     line = (
         f"| {stamp} | `{rel(os.path.abspath(path))}` | {size:,} B | `{digest}` | "
         f"{'BLOCKED' if fails else 'pass'} ({fails}F/{warns}W) | {args.to} | {args.how} |"
@@ -987,6 +991,129 @@ def cmd_render(_args) -> int:
 
 # --------------------------------------------------------------------------
 
+# --------------------------------------------------------------------------
+# outbox: what is written, gated and still not sent
+# --------------------------------------------------------------------------
+
+# Audiences that never leave the repo. Everything else is meant for a person.
+INTERNAL_AUDIENCES = {"internal", "owner", ""}
+SKIP_DIRS = {"ARCHIVE", "_variants", ".git", "node_modules"}
+MONEY_RE = re.compile(r"(?:\$\s?\d|\b\d[\d,]*\s?(?:USD|dollars)\b|\bUSD\s?\d|\bprice\b|\binvoice\b)", re.I)
+FM_LINE = re.compile(r"^(?P<key>[a-z_]+):(?P<rest>.*)$")
+
+
+def _outbox_rows() -> list[dict]:
+    rows = []
+    for root, dirs, files in os.walk(EMPIRE):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        for name in files:
+            if not name.endswith(".md"):
+                continue
+            path = os.path.join(root, name)
+            text = read(path)
+            meta, body = G.parse_front_matter(text)
+            if not meta:
+                continue
+            status = str(meta.get("status", "")).lower()
+            approved = str(meta.get("approved", "")).lower() in ("yes", "true", "1")
+            audience = str(meta.get("audience", "")).lower()
+            deliverable = str(meta.get("deliverable", "")).lower()
+            if status != "ready" or approved or deliverable == "internal" or audience in INTERNAL_AUDIENCES:
+                continue
+            hold = str(meta.get("hold_until", ""))[:10]
+            if hold and hold > TODAY:
+                continue
+            date = str(meta.get("date", ""))[:10]
+            try:
+                age = (dt.date.fromisoformat(TODAY) - dt.date.fromisoformat(date)).days
+            except ValueError:
+                age = -1
+            who = str(meta.get("recipient") or meta.get("client") or audience)
+            rows.append({
+                "path": rel(path), "abs": path, "age": age, "type": deliverable or "?",
+                "who": who[:40], "money": bool(MONEY_RE.search(body)),
+            })
+    rows.sort(key=lambda r: (r["age"] < 0, r["age"]))
+    return rows
+
+
+def _set_front_matter(path: str, changes: dict) -> None:
+    """Change or add front matter keys in place, leaving every other line alone."""
+    lines = read(path).split("\n")
+    if not lines or lines[0].strip() != "---":
+        raise SystemExit(f"{rel(path)} has no front matter")
+    end = next(i for i in range(1, len(lines)) if lines[i].strip() == "---")
+    pending = dict(changes)
+    for i in range(1, end):
+        m = FM_LINE.match(lines[i])
+        if m and m.group("key") in pending:
+            lines[i] = f"{m.group('key')}: {pending.pop(m.group('key'))}"
+    lines[end:end] = [f"{k}: {v}" for k, v in pending.items()]
+    open(path, "w", encoding="utf-8").write("\n".join(lines))
+
+
+def outbox_brief() -> str:
+    rows = _outbox_rows()
+    if not rows:
+        return "  outbox      empty: nothing gated and waiting"
+    old = [r for r in rows if r["age"] > 7]
+    money = [r for r in rows if r["money"]]
+    return (f"  outbox      {len(rows)} ready and unsent, {len(old)} older than 7 days, "
+            f"{len(money)} with a price in them. Run `pipeline.py outbox`")
+
+
+def cmd_outbox(args) -> int:
+    if args.action in ("sent", "kill", "hold"):
+        if not args.path:
+            print(f"outbox {args.action} needs a path")
+            return 1
+        path = args.path if os.path.isabs(args.path) else os.path.join(EMPIRE, args.path)
+        if not os.path.exists(path):
+            path = os.path.join(ROOT, args.path)
+        if not os.path.exists(path):
+            print(f"no such file: {args.path}")
+            return 1
+        if args.action == "kill":
+            why = args.why or "not sent, and no longer worth sending"
+            _set_front_matter(path, {"status": "archived", "closed": f"{TODAY}, killed from the outbox: {why}"})
+            print(f"killed {rel(path)}")
+        elif args.action == "hold":
+            if not args.until:
+                print("outbox hold needs --until YYYY-MM-DD")
+                return 1
+            _set_front_matter(path, {"hold_until": args.until})
+            print(f"held {rel(path)} until {args.until}")
+        else:
+            if not args.to:
+                print("outbox sent needs --to")
+                return 1
+            _set_front_matter(path, {"status": "sent", "approved": "yes"})
+            return cmd_log(argparse.Namespace(path=path, to=args.to, how=args.how))
+        return 0
+
+    rows = _outbox_rows()
+    bands = [("today", lambda a: a == 0), ("1 to 3 days", lambda a: 1 <= a <= 3),
+             ("4 to 7 days", lambda a: 4 <= a <= 7), ("over 7 days", lambda a: a > 7)]
+    print(f"\nOUTBOX  {len(rows)} written, gated and not sent")
+    for name, test in bands:
+        n = sum(1 for r in rows if test(r["age"]))
+        print(f"  {name:<12} {n}")
+    show = rows if args.all else rows[: args.limit]
+    print("\n  age  type      $  who                                       file")
+    for r in show:
+        age = f"{r['age']}d" if r["age"] >= 0 else "?"
+        print(f"  {age:>4} {r['type'][:8]:<9} {'$' if r['money'] else ' '}  {r['who']:<41} {r['path']}")
+    if len(rows) > len(show):
+        print(f"  ... {len(rows) - len(show)} more, run `pipeline.py outbox --all`")
+    print("""
+Each one leaves the outbox one of three ways:
+  sent   pipeline.py outbox sent <file> --to "Name" --how "LinkedIn"   (the owner sent it; this logs it)
+  kill   pipeline.py outbox kill <file> --why "overtaken"
+  date   pipeline.py outbox hold <file> --until YYYY-MM-DD
+""")
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="pipeline", description="Run the emphire as a pipeline.")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -1054,6 +1181,17 @@ def main(argv=None) -> int:
 
     sub.add_parser("render").set_defaults(fn=cmd_render)
     sub.add_parser("map").set_defaults(fn=cmd_map)
+
+    p = sub.add_parser("outbox", help="what is gated and not sent; send, kill or date each one")
+    p.add_argument("action", nargs="?", default="list", choices=["list", "sent", "kill", "hold"])
+    p.add_argument("path", nargs="?")
+    p.add_argument("--to")
+    p.add_argument("--how", default="sent by the owner")
+    p.add_argument("--why")
+    p.add_argument("--until")
+    p.add_argument("--all", action="store_true")
+    p.add_argument("--limit", type=int, default=15)
+    p.set_defaults(fn=cmd_outbox)
 
     p = sub.add_parser("loops")
     p.add_argument("action", nargs="?", default="list", choices=["list", "done", "add"])

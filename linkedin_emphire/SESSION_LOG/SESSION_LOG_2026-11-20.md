@@ -151,3 +151,20 @@ that exchange was about his family and is not recorded, as before.
 
 Worth fixing in the tool on a later day: `pipeline.py log` should write the row before it gates, or skip R22 for the file
 it is logging, and it should stamp WAT rather than UTC.
+
+## 22:15 WAT: the outbox and R50, built on the owner's yes
+
+Asked what else the emphire needs, the answer was six items and one removal. The owner said yes to the first two.
+
+- **R50, no credentials in any file**, blocking, scope all. `gate.py` gains `find_secrets`: credential assignments,
+  passwords inside URLs, private keys and the common token shapes, with placeholders, masked samples and code that reads
+  a key from elsewhere let through. The finding names the line, never the value. Six known-bad samples caught, ten
+  known-good passed, and 0 hits across all 2,278 tracked files after tuning out 30 false ones, so no live credential sits
+  in the repository today.
+- **The outbox**, `pipeline.py outbox`, with `sent`, `kill` and `hold`, and one line in `start`. First reading: 331 files
+  gated and unsent, 132 over a week old, 33 with a price in them. Opened as an open loop for the owner's first pass.
+- Two repairs found on the way. `pipeline.py log` no longer blocks a file on R22 for the row it is writing, and it
+  stamps WAT. `board.py` read the bottom row of the newest-first follower log, so `start` reported 1,007 and a missing
+  row; it now reads the latest date and reports 1,374 on 20 November.
+
+The clock read 22:15 WAT at the end of this work; the session has run since the morning.

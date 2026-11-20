@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-15",
+ "updated": "2026-11-20",
  "note": "Machine-readable rule registry. This is the only place a rule is defined. PIPELINE/20-RULES.md is rendered from it, and TOOLING/gate.py enforces the ones with a check. To add a rule, add it here, run pipeline.py render, then run the gate on a known-good file so you know the check does not misfire.",
  "severity_levels": {
   "block": "gate exits non-zero and the file cannot be delivered",
@@ -541,6 +541,16 @@
    ],
    "check": "manual",
    "verify_with": "python3 linkedin_emphire/TOOLING/link_watch.py due exits 1 once the day's record exists, and STATE/LINK_CHECKS/ holds one file per day that lists what moved."
+  },
+  {
+   "id": "R50",
+   "text": "No credential in any file, front matter included: no password, token, API key, private key, or connection string carrying a password. This repository is public. A credential that arrives in a pasted thread is replaced with [credential withheld] before the file is written, and the service that issued it is asked to change it the same day.",
+   "source": "20 November 2026, a password posted in a LinkedIn thread and a database URL committed by mistake in eri-test",
+   "severity": "block",
+   "scope": [
+    "all"
+   ],
+   "check": "secret"
   }
  ]
 }

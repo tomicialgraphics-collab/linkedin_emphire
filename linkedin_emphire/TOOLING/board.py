@@ -48,7 +48,7 @@ def pace_line() -> str:
             if len(r) > 1 and re.fullmatch(r"[\d,]+", r[1])]
     if not rows:
         return "pace        no follower rows at all"
-    last = rows[-1]
+    last = max(rows, key=lambda r: r[0])  # the log is newest first; take the latest date, not the last line
     try:
         n = int(last[1].replace(",", ""))
     except (IndexError, ValueError):

@@ -763,6 +763,86 @@ def check_approval(rep: Report, meta: dict) -> None:
 # --------------------------------------------------------------------------
 
 
+# --------------------------------------------------------------------------
+# R50 credentials
+# --------------------------------------------------------------------------
+
+# A value that only stands in for a secret. Withheld, masked, templated,
+# illustrative or read-from-somewhere-else values pass; anything else is
+# treated as real.
+SECRET_PLACEHOLDER = re.compile(
+    r"^[`'\"]*("
+    r"[\[<{$]|&quot;|&lt;"                               # [withheld] <key> {x} $VAR ${VAR}, escaped quotes
+    r"|\*+|x{3,}|\.\.\.|…"                                # **** xxx ...
+    r"|changeme|placeholder|your[-_ ]?\w*|example\w*|dummy\w*|redacted|withheld|none|null|empty"
+    r"|p|pw|pass|password|secret|token|key"               # u:p@localhost and friends
+    r")",
+    re.I,
+)
+# Inside a value: an ellipsis, a run of x, or a straight alphabet run marks a sample.
+SECRET_SAMPLE = re.compile(r"\.\.\.|…|xxx|abcdefg|0123456|1234567", re.I)
+# Code that reads a secret from somewhere, rather than holding one.
+SECRET_CODE_VALUE = re.compile(r"^`?(?:[a-z_][a-z0-9_]*[.(,)]|[a-z_][a-z0-9_.]*,?$|getpass|os\.|args\.|env\b)")
+
+SECRET_PATTERNS = [
+    ("private key", re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----")),
+    ("AWS access key", re.compile(r"\bAKIA[0-9A-Z]{16}\b")),
+    ("GitHub token", re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{36,}|github_pat_[A-Za-z0-9_]{40,})\b")),
+    ("Slack token", re.compile(r"\bxox[abprs]-[A-Za-z0-9-]{10,}\b")),
+    ("API key (sk-)", re.compile(r"\bsk-(?:ant-|proj-|live-)?[A-Za-z0-9_-]{20,}\b")),
+    ("Google API key", re.compile(r"\bAIza[0-9A-Za-z_-]{35}\b")),
+]
+
+# name = value, where the name says it is a credential. Bare words like
+# "secret" are left out on purpose: in prose they are not credentials.
+SECRET_ASSIGN = re.compile(
+    r"(?i)(?<![\w.])(pw|pwd|passwd|password|passcode|api[_-]?key|secret[_-]key|client[_-]secret"
+    r"|access[_-]?token|auth[_-]?token|[A-Z0-9_]*(?:_KEY|_SECRET|_TOKEN|_PASSWORD|_PASS|_PWD))"
+    r"\s*(?:=|:)\s*(`?[^\s`]+`?)"
+)
+
+# scheme://user:password@host
+SECRET_URL = re.compile(r"\b[a-z][a-z0-9+.-]*://[^\s:/@`]+:([^\s@/`]+)@[^\s`]+", re.I)
+
+
+def _stands_in(value: str) -> bool:
+    bare = value.strip("`'\"),;:")
+    return (len(bare) < 4 or bool(SECRET_PLACEHOLDER.match(value))
+            or bool(SECRET_SAMPLE.search(value)) or bool(SECRET_CODE_VALUE.match(value)))
+
+
+def find_secrets(text: str) -> list[str]:
+    """Return a short description of every credential-shaped string.
+
+    The finding names the line and never repeats the value, so the gate's own
+    output cannot leak what it found.
+    """
+    hits: list[str] = []
+    for label, pat in SECRET_PATTERNS:
+        for m in pat.finditer(text):
+            if SECRET_SAMPLE.search(m.group(0)):
+                continue
+            hits.append(f"{label} on line {text.count(chr(10), 0, m.start()) + 1}")
+    for m in SECRET_ASSIGN.finditer(text):
+        if _stands_in(m.group(2)):
+            continue
+        hits.append(f"'{m.group(1)}' assigned a value on line {text.count(chr(10), 0, m.start()) + 1}")
+    for m in SECRET_URL.finditer(text):
+        if _stands_in(m.group(1)):
+            continue
+        hits.append(f"password inside a URL on line {text.count(chr(10), 0, m.start()) + 1}")
+    return hits
+
+
+def check_secrets(rep: Report, text: str) -> None:
+    hits = find_secrets(text)
+    if hits:
+        shown = "; ".join(hits[:4]) + (f"; and {len(hits) - 4} more" if len(hits) > 4 else "")
+        rep.add("R50", "FAIL", f"{len(hits)} credential(s): {shown}. Replace the value with [credential withheld]")
+    else:
+        rep.add("R50", "PASS", "no credentials")
+
+
 def visible_text(markup: str) -> str:
     """The words a reader sees in an HTML page, with markup and CSS removed.
 
@@ -808,6 +888,7 @@ def gate_file(path: str, forced_type: str | None = None) -> Report:
     else:
         rep.add("R26", "PASS", "exported artefact, internal metadata not required")
     check_text(rep, body, meta, dtype, audience, pasted, exported, path)
+    check_secrets(rep, text)
     check_clock(rep, meta, dtype, path)
     check_profile_read(rep, meta, dtype)
     check_cold_link(rep, meta, body, dtype)
