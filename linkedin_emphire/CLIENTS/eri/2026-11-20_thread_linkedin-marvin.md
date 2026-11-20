@@ -5,7 +5,7 @@ date: 2026-11-20
 audience: internal
 status: ready
 approved: no
-title: The LinkedIn thread with Marvin Percival, 02:22 to 18:27 WAT on 20 November 2026, as pasted by the owner
+title: The LinkedIn thread with Marvin Percival, 02:22 to 19:01 WAT on 20 November 2026, as pasted by the owner
 time_checked: >-
   checked: 2026-11-20 18:48 WAT, read from the system clock in the sandbox before this file was written.
 sources_read: >-
@@ -389,6 +389,38 @@ The rules say tell you the same day, so I am telling you the same day.
 
 Enjoy the evening. We can decide whether to ask GitHub to purge that PR another time.
 
+**19:01 Marvin.** Thanks for flagging the password straight away. That's exactly how it should go. I had a look: PR 5
+only ever had the .env file, it never reached main, and the password's already changed, so as far as I'm concerned it's
+closed. No need to ask GitHub to purge anything. That's for secrets that can't be rotated, and this one is dead. Only
+lesson I'd take: the GitHub web editor ignores .gitignore, so .env should only ever be edited on the laptop.
+
+PR 4 is approved and merged, so your agent will read the new done rule tomorrow. Small one for next time: bump the
+version line at the top of CLAUDE.md when it changes (v0.2 to v0.3).
+
+PR 6 is really good work. Tests written first and seen failing, run twice from an empty database, and the limits named
+instead of hidden. You also caught a genuine contradiction in our own rules: F6 says nothing is deleted, DATA-RULES says
+demo data goes after 30 days. Good catch.
+
+On the purge door, here's my view. As it stands the purge also deletes the fingerprints and the seals, and DATA-RULES
+says those stay. What if we split each event into two parts: the record (kind, seq, fingerprint, seal) that never goes,
+with no door at all, and the content (payload, names, recordings) in its own table that's the only thing the purge can
+touch? Then F6 holds completely, the privacy rule holds, and anyone can still prove a fingerprint existed on a date long
+after the content is gone. That's the whole point of the certificate.
+
+Your call on how to build it, but since it bends a fixed rule, please write it up as decision 0003 so it's on the
+record. I'd rather we settle it before PR 6 merges than patch it after.
+
+Your other two questions: agreed on the owner role. The app connects as eri_app, never the owner, and migrations run as
+a non-superuser owner. I'll put that in DEPLOYMENT.md. And yes, send the v0.4 amendments as a PR whenever you're ready.
+
+Tiny ones on PR 6, no rush: the commit should start REQ-020/REQ-030 rather than CHORE, and package.json picked up the
+README version line as its description.
+
+Last thing: there's a branch called claude/adoring-babbage-jng35n with a phased build plan on it. Is that yours? If so,
+open a PR when you want it looked at.
+
+Enjoy your evening.
+
 ## What the thread settled
 
 | Settled | When |
@@ -404,6 +436,10 @@ Enjoy the evening. We can decide whether to ask GitHub to purge that PR another 
 | Marvin tests on iPhone, the owner on Android | 16:51, 17:00 |
 | A joint GitHub organisation was proposed; Marvin said no rush | 16:52, 17:13 |
 | The database password slip was disclosed the same day | 18:27 |
+| PR 5 closed, no purge asked of GitHub: the password is rotated, so it is dead | 19:01 |
+| PR 4 merged: the phone check applies only to screens and device features | 19:01 |
+| The purge door goes: each event splits into a record that never goes and a content table the purge alone can touch. Written up as decision 0003 before PR 6 merges | 19:01 |
+| The app connects as eri_app, never the owner; migrations run as a non-superuser owner. Marvin writes it into DEPLOYMENT.md | 19:01 |
 
 ## What it left open
 

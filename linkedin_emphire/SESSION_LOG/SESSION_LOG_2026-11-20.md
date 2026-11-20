@@ -92,3 +92,20 @@ Nothing was sent, posted or pushed to Marvin's repository. No live LinkedIn or U
 3. In eri-test, each as a pull request the owner sees before it is pushed: REQ v0.4, decision 0003, the F6 note, the
    hash chain migration.
 4. Bring post folders from 16 November up to date with their live status.
+
+## Later, 19:04 WAT: Marvin's answer
+
+He replied at 19:01, appended to `CLIENTS/eri/2026-11-20_thread_linkedin-marvin.md`. PR 5 closed with no purge, PR 4
+merged, PR 6 praised. His design replaces the purge door: each event splits into a record that never goes (kind, seq,
+fingerprint, seal) and a content table that alone can be purged, written as decision 0003 before PR 6 merges. That takes
+number 0003, so the stack-conditions note becomes 0004. He takes the connecting-role question into DEPLOYMENT.md.
+
+Reply drafted as `ENGAGEMENT/2026-11-20_dm_marvin-the-split-and-0003.md`, PASS at human 92, not sent. It accepts the
+split, adds the address to the content side and the hash chain over the record half, and says the commit label is fixed
+forward because the instructions forbid amending a pushed commit. Its last line assumes `claude/adoring-babbage-jng35n`
+is the owner's: the commit is signed plain "Claude" at 16:03 WAT, not "Claude (for Marvin Percival)". The owner confirms
+before it goes. L74 and L75 updated to match.
+
+Also said to the owner this evening, at his request, and not repeated in any file outward: what the emphire is not
+doing well. In short, free work, drafts that are never sent, a rule set that grew from 30 to 49 while the basics slipped,
+too many threads at once, a public story that disagrees with the record, and security habits that do not match the brand.
