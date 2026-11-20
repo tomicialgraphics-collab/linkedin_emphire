@@ -196,3 +196,12 @@ finding reruns, and the report names what was not tested. Seven gaps against the
 instead of a free document and no introduction asked in return. The 13 November offer levers were never applied: as of 15
 November the 1 dollar add-on was live, there was no guarantee, and 0 proposals had gone out. Filed as
 `STRATEGY/2026-11-20_icp-and-selling-point_verified.md`, human 92, PASS. The verified lead list is the next round.
+
+## 22:32 WAT: ICP-50
+
+Built `EMAIL/leads/2026-11-20_icp50_ai-trust-founders.md` from web searches the same evening: 50 companies matching the
+verified buyer, each with a named founder, a dated trigger and one source link. Tier A, 28 AI agent security and
+governance sellers; tier B, 18 AI agents sold into regulated buyers; tier C, 4 with 2025 triggers. No emails or LinkedIn
+URLs are given, because none was verified and a guessed one would be fabricated. Competitors that sell AI red teaming were
+left out. Klaimee is flagged as a partner lead because it certifies agents before insuring them. Opened as an open loop
+with a kill test.
