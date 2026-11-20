@@ -109,3 +109,11 @@ before it goes. L74 and L75 updated to match.
 Also said to the owner this evening, at his request, and not repeated in any file outward: what the emphire is not
 doing well. In short, free work, drafts that are never sent, a rule set that grew from 30 to 49 while the basics slipped,
 too many threads at once, a public story that disagrees with the record, and security habits that do not match the brand.
+
+## Standing instruction, about 19:15 WAT
+
+"Always give me reply here." Every reply or message drafted for the owner is pasted in full in the chat, ready to copy,
+as well as filed in the repository. A file path alone is not a handover.
+
+The owner confirmed `claude/adoring-babbage-jng35n` is his, so the reply to Marvin is now `status: ready` with its last
+line as written.

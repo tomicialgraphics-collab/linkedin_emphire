@@ -3,7 +3,7 @@ deliverable: dm
 id: 2026-11-20_dm_marvin-the-split-and-0003
 date: 2026-11-20
 audience: outbound
-status: draft
+status: ready
 approved: no
 recipient: Marvin Percival
 warm: yes
@@ -29,10 +29,8 @@ sources_read: >-
 
 ## Before sending
 
-The last line needs the owner's answer: is `claude/adoring-babbage-jng35n` his? It was made at 16:03 WAT by a plain
-"Claude" identity, which is how a claude.ai session signs, after the owner connected GitHub to the shared Claude account
-at 13:34. If it is his, keep the sentence as written. If not, replace it with "Not mine. Your agent signs as Claude for
-Marvin Percival and this one doesn't, so it's worth a look."
+Confirmed by the owner at about 19:15 WAT on 20 November: `claude/adoring-babbage-jng35n` is his. The last line
+stands as written.
 
 ## Message, paste as is
 
