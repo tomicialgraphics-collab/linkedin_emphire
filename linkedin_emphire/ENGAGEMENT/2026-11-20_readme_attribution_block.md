@@ -65,3 +65,14 @@ is the reviewer's correction, not the owner's.
 
 The repository page is https://github.com/Teamthy/host-failure-benchmark and the rendered file is at
 https://github.com/Teamthy/host-failure-benchmark/blob/main/README.md , which is the page to send him once it is up.
+
+# Not yet publishable: one question is open with the reviewer
+
+The README ends with an authorship section recording the suite as written jointly by Behar Dalipi and the owner. The
+approved sentence calls the same person its independent reviewer. Both statements can stand, because the review was of
+the owner's implementation and not of the joint work, but a reader meeting them twenty lines apart has to reconcile them
+without help.
+
+Asked at 13:58 WAT on 20 November, in the DM to him of the same date, with a single drafted
+sentence offered as the alternative. Do not publish until he answers: the approved wording is his, and so is the
+authorship line.
