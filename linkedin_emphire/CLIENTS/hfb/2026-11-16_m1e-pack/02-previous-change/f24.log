@@ -1,0 +1,5 @@
+f24  MISSED  a batch interrupted before its final newline, with the rollback refused
+             retry after the torn batch: journal 551 bytes, intact False, quarantine ['store.jsonl.quarantine-1.bin']; gap after restart None, write after restart answered True
+
+NOT CAUGHT: f24
+A counterexample the verifier still accepts is a claim it does not support.

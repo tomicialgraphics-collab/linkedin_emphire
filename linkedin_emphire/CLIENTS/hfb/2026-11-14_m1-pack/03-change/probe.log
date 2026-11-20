@@ -1,0 +1,12 @@
+M1 probe: a reported conflict must be a named conflict
+revision: 126f1c00dfae18b30456a8dc698ac906ca7ddb0e
+journal: 5 lines, 1664 bytes, from one real conflict on M1-7001
+
+  cut            bytes  conflicted  named  verdict seqs  named seqs  property
+  line-1           102  False       False  []            []          holds
+  line-2           207  False       False  []            []          holds
+  line-3           742  False       False  [3]           []          holds
+  line-4          1335  False       False  [3, 4]        []          holds
+  mid-final-line   1499  False       False  [3, 4]        []          holds
+
+Every cut either reports no conflict or reports one it can name with both sequence numbers. The property held at 5 of 5 cuts.

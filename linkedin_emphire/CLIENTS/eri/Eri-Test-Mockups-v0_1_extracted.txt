@@ -1,0 +1,247 @@
+DUNIN7 · Ẹ̀rí practice build · 19 November 2026
+Ẹ̀rí Test Mockups v0.1
+Version v0.1 · working draft · companion to ERI-REQ-v0_3 and Timothy's scoped plan (v0.4 draft)
+What this is
+Thirteen screens that show what the practice build should look like when it works. They are pictures, not
+code. Their job is to give Timothy and Marvin one shared view of every screen before the first line of code,
+so arguments happen over a picture and not over a memory.
+The screens follow one story. A verifier signs in with a passkey, checks a NIPOST postcode, records an
+elderly speaker in Yoruba with her consent, adds a GPS-stamped photo and a document, gets each item
+attested by someone other than the speaker, and seals the file. The fingerprints are anchored through
+FORAY. A one-page certificate with a QR code lets anyone check the file on their own phone, without an
+account.
+How to read the screens
+Element
+Meaning
+People and the address
+All invented: Mrs Bola Adewale (speaker), Tunde Adewale (son), Chinedu
+Okafor (neighbour), Kemi Bello (verifier), 14 Adeyemi Street, Surulere.
+[POSTCODE]
+The real NIPOST 11-character format goes here. We have not seen a live
+postcode, so none is invented.
+[TX ID] · [BLOCK TIME]
+The values FORAY returns when a batch is anchored. Monday's first test
+produces real ones.
+Fingerprints such as
+9f2c7a1e…41ab
+Shortened SHA-256 values, invented for the picture.
+QR code
+A dummy pattern. It does not scan.
+Yoruba text
+A draft on screen 11 only. Timothy corrects it before anyone else sees it.
+What never appears
+No price, no payment, no NIN, no email field, no password, and no statement about who owns the
+property. Every public screen carries the same sentence: "This certificate records what was said, by whom,
+and when. It does not say who owns this property or that any title is good."
+The screens
+#
+Screen
+Who sees it
+1–7
+Sign-in to seal
+The verifier, on a phone
+8
+Certificate
+Printed or shared as one A4 page
+9–11
+Public check (match, no match, Yoruba)
+Anyone with the QR code
+12
+Brand configuration
+Whoever runs the service
+13
+Timothy's four results
+Anyone who checks a postcode
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 1 of 9
+
+Part 1 · The verifier's flow
+1 Sign in with a passkey
+The first screen a verifier sees. One main button: sign in with a
+passkey (Stele). There is no email, username or password field
+anywhere. A second button creates a passkey for a new verifier. A
+link lets a member of the public check a certificate without signing
+in.
+The English / Yorùbá switch is at the top of every screen.
+Check in the test
+Sign-in works with the phone's screen lock on both the Android phone
+and the iPhone. No field anywhere asks for an email.
+2 Postcode and NIPOST lookup
+The verifier types the postcode from the building's NIPOST plate.
+The server, not the phone, asks NIPOST Lookup and shows the
+official address, building use and time of the check. Ẹ̀rí stores the
+postcode, NIPOST's answer and the time.
+If NIPOST does not find the postcode, the file cannot start. Ẹ̀rí never
+guesses a postcode from a map or an address.
+Check in the test
+The address appears within 3 seconds on 4G. The NIPOST key appears
+nowhere in the page or the response. "Not found" and "NIPOST
+unreachable" each show their own message.
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 2 of 9
+
+3 The evidence file
+One file per postcode. Each item shows its type, who it is from, who
+attested it and its fingerprint. The document item is marked in
+amber because it has no attestation yet, and it blocks sealing until it
+has one.
+The note under the list carries the core rule: once fingerprinted,
+nothing is edited or deleted. A correction or a disagreement is
+added as something new.
+Check in the test
+A direct attempt to edit a stored item is refused. The seal button
+refuses while any item lacks an attestation.
+4 Voice testimony, consent first
+The recording has two parts. First the speaker says, in her own
+words and her own language, who she is and that she agrees the
+recording is kept and can be heard by people who check the
+certificate. Then she gives her testimony. The screen marks where
+the consent sits in the recording.
+The verifier ticks a box confirming they heard the consent. Under
+Timothy's REQ-046, the spoken consent is the record and the tick
+box only supports it.
+Check in the test
+A ten-minute recording on both phones. The consent is audible in the
+first seconds. The fingerprint is computed on the phone and matches
+the server's.
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 3 of 9
+
+5 Photo with GPS
+The camera stamps the phone's position, its accuracy and the time
+at the moment of capture. None of these can be typed in. The
+verifier picks what the photo shows: the house, the postcode plate
+or a document.
+The position is where the phone was, accurate to the figure shown.
+It is not a boundary. Timothy's REQ-014 adds a caption saying
+exactly that, because in a Lagos layout eight metres can be the
+neighbour's plot.
+Check in the test
+Location permission works on both phones. A photo taken with
+location turned off is refused or clearly marked.
+6 Attestation
+A named person, other than the speaker, confirms an item. The
+verifier records how they relate to the household (family, neighbour
+or independent) and what they can confirm:
+Presence: was there when it was recorded
+Knowledge: knows the facts first-hand
+Independent: has no tie to the household
+Verifier: the signed-in verifier
+The statement is recorded by voice or typed. If the person
+disagrees, the link at the bottom adds a counter-attestation
+instead.
+Check in the test
+The speaker's own name is refused as attestor. A counter-attestation
+appears beside the original, which stays unchanged.
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 4 of 9
+
+7 Review and seal
+Before sealing, four checks must pass: postcode checked, consent
+heard on every voice item, every item attested by someone other
+than the speaker, and fingerprints matching on phone and server.
+The screen lists the fingerprints that go to FORAY. Only fingerprints
+leave the server. Recordings, photos and names do not. The amber
+warning says plainly that the batch cannot change after sealing.
+Check in the test
+One seal sends one batch. The transaction ID and block time are
+stored and open on a public explorer. A forced FORAY failure leaves
+nothing marked sealed (Timothy's REQ-049).
+Not yet drawn in Part 1
+Timothy's amendments add states the v0.1 screens do not show yet. They go into v0.2 if he and Marvin
+accept them:
+REQ-047: a separate, per-person consent to be named, dated and revocable, on the voice screen
+REQ-048: an attestor withdrawing, shown as a new event beside the item
+REQ-049: the seal screen when FORAY fails, with a retry
+REQ-050: the verifier's organisation statement, recorded at sign-up and printed on the certificate
+REQ-014: the position caption under every photo
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 5 of 9
+
+Part 2 · What others see
+8 The certificate
+One A4 page. It carries the building, postcode, verifier, sealing time and anchor reference, a table of
+every item with who gave it, who attested it and its fingerprint, and three steps for checking. The QR
+code opens the check page. The disclaimer sits in a box at the foot of the page and cannot be changed
+by any brand.
+Private people appear by their role, such as "Speaker (family)". Their names appear only where they
+agreed to be named. Professionals, such as the verifier, are always named (REQ-038).
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 6 of 9
+
+9 Public check: match
+What anyone sees after scanning the QR code: no sign-in, no app. A
+green panel says all items match what was sealed, and when. Below
+it are the building, the verifier, the anchor reference (which opens
+on a public explorer) and each item marked "Matches".
+"Test my own copy of a file" lets a checker pick a file on their phone.
+It is compared on the phone and never uploaded.
+Check in the test
+This is the minute Timothy's plan is built around: a stranger with a file,
+no account and no app, is told whether it matches and can open the
+anchor herself.
+10 Public check: no match
+The checker's file does not match any sealed item. The screen says
+so plainly, shows both fingerprints, and explains the usual reason:
+even a resized or re-sent photo gives a different fingerprint. It tells
+the checker to ask for the original.
+Check in the test
+A copy altered by one byte says "no match". The deliberately broken
+seed item (Timothy's REQ-051) fails on every release.
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 7 of 9
+
+11 The check page in Yoruba
+The same page as screen 9 with the switch set to YO. All words on
+screen come from a translation file. Only the language changes,
+never the layout or the evidence.
+Draft text. These Yoruba strings were written for the mockup and
+have not been checked by a speaker. Timothy corrects them, including
+tone marks, before the screen is shown to anyone.
+12 Brand configuration
+The product name, tagline, logo, main colour, interface languages
+and certificate footer all come from one brand file. Another country
+or a licensee can run the same software under its own name.
+The disclaimer is the one thing a brand cannot change.
+Check in the test
+Changing the brand file changes the name and colour on every screen
+and the certificate with no code change.
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 8 of 9
+
+Part 3 · Timothy's four results
+When someone checks a postcode, the answer is always one of four results. They share one layout so
+a reader learns it once: a badge, a plain heading, a short explanation, three facts, then the warning
+line just above the buttons.
+Result
+What it means
+Main action
+No record
+Nobody has recorded evidence for this building. It
+does not suggest a problem with the property.
+Start an evidence file
+Level 1 · Registered
+only
+Items were recorded, attested and sealed. No
+document has been compared with the issuing
+office's copy.
+View the evidence file
+Level 2 · Matches the
+issuer's copy
+A document in the file was compared with the copy
+held by the office that issued it, and they match.
+View the evidence file
+Disputed
+Someone added a counter-attestation. The original
+item stays, unchanged, beside the disagreement.
+See both sides
+The colours differ in lightness as well as hue, and every badge carries words, so the result reads
+correctly without colour.
+Level 2 depends on a source the prototype does not have yet (the issuing office's copy), so [ISSUING
+OFFICE] stays a placeholder. The screen is here so the design covers all four results from the start.
+Next
+Version v0.2 of these mockups adds the five states listed at the end of Part 1, once Timothy's
+amendments are agreed, and uses real postcode and anchor values after Monday's first test.
+Ẹ̀rí Test Mockups v0.1 · 19 November 2026 · Ẹ̀rí is a working name
+Ẹ̀rí Test Mockups v0.1 · Working draft
+Page 9 of 9

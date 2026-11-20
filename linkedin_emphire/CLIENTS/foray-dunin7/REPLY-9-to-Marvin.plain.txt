@@ -1,0 +1,23 @@
+Marvin,
+
+Read v0.12 and the status record, and then checked the four things I could check without your repository or your verifier.
+
+Start with the close. W-05 went in with one condition: a producer outside a test anchoring a header with a non-zero segment range. Item 9 records exactly that, and I am closing it against item 9 rather than against A11, because A11 is the rule the verifier reads a segmented header by and item 9 is the artefact that shows a producer wrote one. Item 11 then earns the second half I asked for, and the joining is on real anchors rather than on constructed vectors, which is the version of that rule worth having.
+
+From the public chain, on 10 November. Both transactions return with payloads equal to the anchored values, 32 bytes each and nothing else. The second spends the first one's output, so its input names the first transaction identifier, and that is the lane's own chain at the transaction level, independent of the header chain claim in item 11. Block times 12:20:15 and 15:17:42 UTC, two hours fifty seven minutes apart. Neither the repository nor the verifier was needed, which is the property I care about most: a holder can check the anchoring story with a browser.
+
+That bears on the caveat in items 9 and 11, that the verifier's chain source carries the broadcaster's log time rather than block time. True of the verifier, and not a limit on the claim, because the block time is public. I would say so in the text: the verifier's timestamp is indicative, and the anchor can be dated by anyone who looks.
+
+Two limits I am recording without scoring them, since you stated both first.
+
+The positions come from the request, so the extent proves that a producer committed those record hashes in that order. It does not prove the record body agrees with its position. That is not a defect, and it does bound the coverage sentence: whoever sells this needs the sentence in the sales material, not only in section 10.
+
+The aggregate path is now reachable and not yet anchored. Read against what it replaced, the situation has inverted. On 9 November the code was real and nobody could reach it. Today anyone on a Tier-2 lane can send a stream record and the evidence is a vector set. Send the transaction id when an aggregate carrying a segment lands and I will check it the same way. Until then I would keep the public statement at implemented and tested.
+
+One new item, W-06, and it is documentation rather than protocol. Section 10 item 10 says the amendment still reads that the segments serialiser stays unbuilt, and that this specification does not edit the amendment. A reader who lands there and stops is told the opposite of what is true, with a citation that looks authoritative. It closes on a dated amendment revision. The ruling inside that item, that segments are not the mechanism for attribution or cumulative counters, I am not disputing.
+
+Now the thing that is not technical. I have written the review up as a short case study, about the method and the corrections rather than about you or the project. It would keep none of: the project name, your name, the repository or package names, the finding identifiers, the version codes, the commit hashes, the dates, and anything precise enough to identify the work to someone in the room. It would keep the shape, including where I was wrong first and that the correction came from your evidence. May I show it, and would you rather be named or not. Either answer is fine and neither changes anything in your register.
+
+Last thing. The stablecoin piece is sharper than it looks. Class 2 approval that does not by itself authorise naira domestic settlement is our argument in another costume: a token that is approved and a payment that is permitted. Build in that lane and the evidence question arrives with a deadline on it.
+
+Timothy

@@ -1,0 +1,7 @@
+9070f970ff401c07e8547307e2ac880ddf5352d452bb80d5de017f39f930a5b0  bench/store.py
+1c246c61f2e34aeaf1612901b3b8ddd88aa9472154be8113fd57005aa6ec1812  audit/regressions.py
+b20b4a87801d2df7c722417cef7e4bb0060c5981dbba6c9f57470eeb5a8a68a1  audit/README.md
+revision: M1e, the tree cleared at 21:42 on 16 November
+corrected: 2026-11-16 22:58 WAT. This file previously carried the M1d hashes 837ca42d and f4204ccc
+under this label. See ../04-CORRECTION.md. The f25 log beside it is output-identical on M1d, M1e and
+M1f, so it identifies no tree; see ../06-f25-tree-check/.

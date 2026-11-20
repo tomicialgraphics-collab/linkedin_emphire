@@ -1,0 +1,179 @@
+--- base/bench/store.py
++++ w/bench/store.py
+@@ -234,6 +234,19 @@
+         self.seq = max(self.seq, highest)
+         if not tail:
+             return cut
++        gap = self._gap_from_tail(tail, cut)
++        if gap is not None:
++            # The tail is a whole record whose terminator never arrived. Cutting it here is the
++            # same repair as cutting it in append(), one step earlier and with worse evidence:
++            # the bytes move into a quarantine file, the journal stops ending in the record, and
++            # the next restart reports nothing. A resync runs before the append that would have
++            # refused on the gap, so the refusal came after the damage and claimed the file was
++            # unchanged. It is named here instead, and the file is left exactly as found.
++            self.gap = gap
++            raise JournalError(
++                "journal ends in an unterminated record at byte %d (store_seq %s); refusing to "
++                "append until that gap is resolved, and refusing to cut it"
++                % (gap["start"], gap["store_seq"]))
+         name = self._quarantine_name()
+         with open(os.path.join(os.path.dirname(self.path) or ".", name), "wb") as fh:
+             fh.write(tail)
+@@ -264,7 +277,16 @@
+         if not data or data.endswith(b"\n"):
+             return None
+         start = data.rfind(b"\n") + 1
+-        tail = data[start:]
++        return self._gap_from_tail(data[start:], start)
++
++    @staticmethod
++    def _gap_from_tail(tail, start):
++        """The same test, applied to bytes already in hand.
++
++        Resync holds the tail it is about to cut, so the check has to work without re-reading
++        the file. One implementation, used by both, because a repair that used a looser test than
++        start-up would cut a record that start-up reports.
++        """
+         try:
+             record = json.loads(tail.decode("utf-8"))
+         except (ValueError, UnicodeDecodeError):
+--- base/audit/regressions.py
++++ w/audit/regressions.py
+@@ -93,6 +93,11 @@
+             "custom", set(), set()),
+     "f22": ("one directory compared with itself, and a challenge that edits the evidence",
+             "custom", set(), set()),
++    # F-10. The fourth combination the reviewer found, 16 November: a batch interrupted one
++    # byte before its final newline, the rollback refused, and the retry cutting the withheld
++    # record out of the journal while reporting the file unchanged.
++    "f24": ("a batch interrupted before its final newline, with the rollback refused",
++            "custom", set(), set()),
+ }
+ 
+ 
+@@ -825,6 +830,114 @@
+     return bool(pair_ok and read_ok), detail
+ 
+ 
++
++STORE_TORN_BATCH_CASE = r"""
++import glob, hashlib, json, os, sys, tempfile
++sys.path.insert(0, os.path.join(sys.argv[1], "bench"))
++import store as S
++
++work = tempfile.mkdtemp(prefix="hfb-f24-")
++journal = os.path.join(work, "store.jsonl")
++real_open = S.open if hasattr(S, "open") else open
++out = {}
++
++
++class ShortWrite:
++    # A file that stops one byte before the end of the write, then fails. The batch reaches
++    # the disk whole apart from its final terminator: everything arrived, the file never said
++    # so. This is the crash the reviewer injected, arranged without touching the store.
++    def __init__(self, fh):
++        self.fh = fh
++
++    def write(self, data):
++        self.fh.write(data[:-1] if data.endswith("\n") else data[: max(1, len(data) // 2)])
++        raise OSError("injected: the write stopped one byte short")
++
++    def __enter__(self):
++        return self
++
++    def __exit__(self, *a):
++        self.fh.close()
++        return False
++
++
++def short_open(path, mode="r", *a, **k):
++    fh = real_open(path, mode, *a, **k)
++    if mode.startswith("a") and str(path) == journal:
++        return ShortWrite(fh)
++    return fh
++
++
++s = S.Store(S.Journal(journal))
++s.handle({"cmd": "issue", "action_id": "H-1"})
++first = {"action_id": "H-1", "verdict": "BLOCK", "signature": None}
++second = {"action_id": "H-1", "verdict": "ALLOW", "signature": None}
++s.handle({"cmd": "verdict", "record": first})
++before = open(journal, "rb").read()
++
++s.journal.failpoint = "rollback"
++S.open = short_open
++crash = s.handle({"cmd": "verdict", "record": second})
++S.open = real_open
++s.journal.failpoint = ""
++
++torn = open(journal, "rb").read()
++retry = s.handle({"cmd": "verdict", "record": second})
++after = open(journal, "rb").read()
++
++out["crash_reply"] = crash
++out["retry_reply"] = retry
++out["torn_bytes"] = len(torn) - len(before)
++out["torn_sha"] = hashlib.sha256(torn[len(before):]).hexdigest()
++out["journal_intact"] = after == torn
++out["journal_bytes"] = [len(torn), len(after)]
++out["quarantine_files"] = sorted(os.path.basename(p) for p in glob.glob(os.path.join(work, "*.bin")))
++
++restarted = S.Store(S.Journal(journal))
++out["gap_after_restart"] = restarted.journal.gap and {
++    k: restarted.journal.gap[k] for k in ("store_seq", "kind", "bytes")}
++out["write_after_restart"] = restarted.handle({"cmd": "issue", "action_id": "H-9"})
++print(json.dumps(out, default=str))
++"""
++
++
++def custom_f24(repo: str) -> tuple[bool, str]:
++    """A batch interrupted one byte before its final newline, with the rollback refused.
++
++    The reviewer's fourth hold, 16 November: the retry after that crash reported the file
++    unchanged while moving the withheld record into a quarantine file and cutting the journal,
++    so the gap stopped being reported after a restart and writes were accepted again.
++    """
++    tree = fresh_copy(repo, "f24")
++    work = tempfile.mkdtemp(prefix="hfb-f24-run-")
++    script = os.path.join(work, "torn_batch_case.py")
++    with open(script, "w", encoding="utf-8") as fh:
++        fh.write(STORE_TORN_BATCH_CASE)
++    proc = subprocess.run([sys.executable, script, tree], capture_output=True, text=True,
++                          timeout=120)
++    if proc.returncode != 0:
++        return False, "the case did not run: %s" % (proc.stderr or proc.stdout)[-300:]
++    out = json.loads(proc.stdout.strip().splitlines()[-1])
++
++    retry = out["retry_reply"] or {}
++    crashed = out["crash_reply"] or {}
++    # The crash itself is the known state: the bytes are there and the file never said so.
++    crash_ok = crashed.get("durable") == "unknown"
++    # A refused retry may not touch the file it refuses to append to.
++    intact = (retry.get("ok") is False and out["journal_intact"]
++              and not out["quarantine_files"] and out["torn_bytes"] > 0)
++    # And the gap has to survive the restart, with writes still refused while it stands.
++    gap = out["gap_after_restart"]
++    restart_ok = (isinstance(gap, dict) and gap.get("store_seq") is not None
++                  and (out["write_after_restart"] or {}).get("ok") is False)
++    detail = ("retry after the torn batch: journal %s bytes, intact %s, quarantine %s; gap "
++              "after restart %s, write after restart answered %s"
++              % (out["journal_bytes"][1], out["journal_intact"],
++                 out["quarantine_files"] or "none",
++                 (gap or {}).get("store_seq"), (out["write_after_restart"] or {}).get("ok")))
++    return bool(crash_ok and intact and restart_ok), detail
++
++
+ def fingerprint(rundir: str) -> dict:
+     out = {}
+     for root, _dirs, files in os.walk(rundir):
+@@ -863,7 +976,8 @@
+     return refused and untouched and proc.returncode == 0, detail
+ 
+ 
+-CUSTOM = {"f20": custom_f20, "f21": custom_f21, "f22": custom_f22, "f23": custom_f23}
++CUSTOM = {"f20": custom_f20, "f21": custom_f21, "f22": custom_f22, "f23": custom_f23,
++          "f24": custom_f24}
+ 
+ 
+ def run_mode(repo: str, mode: str) -> tuple[bool, str]:

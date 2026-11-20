@@ -9,6 +9,7 @@
     python3 TOOLING/pipeline.py audit              # gate every live deliverable, write the report
     python3 TOOLING/pipeline.py render             # rebuild the generated docs and MAP.md
     python3 TOOLING/pipeline.py map                # inventory the whole tree
+    python3 TOOLING/pipeline.py board              # what is late and what is due today
     python3 TOOLING/pipeline.py loops              # list open loops
     python3 TOOLING/pipeline.py loops done L3      # close one
     python3 TOOLING/pipeline.py loops add "text"   # open one
@@ -29,6 +30,7 @@ import re
 import shutil
 import subprocess
 import sys
+from pathlib import Path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EMPIRE = os.path.abspath(os.path.join(HERE, ".."))
@@ -39,6 +41,7 @@ GATE = os.path.join(HERE, "gate.py")
 
 sys.path.insert(0, HERE)
 import gate as G  # noqa: E402
+import board as B  # noqa: E402
 
 TODAY = dt.date.today().isoformat()
 
@@ -97,6 +100,9 @@ Read these before writing anything, in this order:
   6  DAILY CONTENT/post_templates.txt         the fourteen templates
   7  context.md s7 and s8                     standing rules and voice
   8  STATE/OPEN-LOOPS.md                      what is unfinished
+  9  STATE/BORROWED-AUDIENCE.md               who has been asked, and who is due
+ 10  STATE/CASE-STUDY-INDEX.md                which client page is waiting on permission
+ 11  PIPELINE/70-WEEKLY-REVIEW.md             the twenty minutes that kills something
 
 Then, before it leaves the repo:
 
@@ -105,6 +111,8 @@ Then, before it leaves the repo:
 Nothing is delivered that the gate blocks. Nothing is delivered without a line in
 STATE/DELIVERY-LOG.md. Nothing is sent by the agent: the owner sends.
 """)
+    print("WHAT IS DUE")
+    B.main(["--brief"])
     print(f"OPEN LOOPS ({len(loops)})")
     for item in loops[:12]:
         print(f"  {item['id']:>3}  {item['text']}")
@@ -112,6 +120,10 @@ STATE/DELIVERY-LOG.md. Nothing is sent by the agent: the owner sends.
         print(f"       ... {len(loops) - 12} more, run `pipeline.py loops`")
     print()
     return 0
+
+
+def cmd_board(_args) -> int:
+    return B.main([])
 
 
 # --------------------------------------------------------------------------
@@ -333,6 +345,277 @@ def cmd_status(_args) -> int:
           + (f", {no_post} folder(s) with no post.md" if no_post else ""))
     print(f"  rules: {len(G.RULE_BY_ID)}  templates: {len(G.TEMPLATE_IDS)}  verified hashtags: {tag_count}")
     print(f"  run `pipeline.py audit` for the full scoreboard\n")
+    return 0
+
+
+# --------------------------------------------------------------------------
+# growth
+# --------------------------------------------------------------------------
+
+GROWTH_TARGET = 5000
+GROWTH_DEADLINE = "2026-12-25"
+GROWTH_CHECKPOINTS = [("2026-11-15", 1600), ("2026-11-29", 2600), ("2026-12-13", 3300)]
+
+
+def _follower_rows():
+    path = os.path.join(EMPIRE, "analytics", "follower-log.md")
+    rows = []
+    if not os.path.exists(path):
+        return rows
+    for line in open(path).read().splitlines():
+        m = re.match(r"\|\s*(\d{4}-\d{2}-\d{2})[^|]*\|\s*([\d,]+)\s*\|", line)
+        if m:
+            rows.append((m.group(1), int(m.group(2).replace(",", ""))))
+    return sorted(rows)
+
+
+
+VIEWER_DIR = os.path.join(EMPIRE, "analytics", "profile-viewers")
+
+_VIEWER_BUCKETS = [
+    ("founder or owner", ("founder", "business owner")),
+    ("university or student", ("university", "college", "student", "institute of technology",
+                               "universita", "epfl", "icfo")),
+    ("research fellow or professor", ("research fellow", "professor")),
+    ("security industry or vendor", ("network security", "security and investigations", "infragard",
+                                     "cymulate", "gray swan", "sonatype", "palo alto", "advai",
+                                     "tenet security", "nimble")),
+    ("named engineering role", ("software developer at", "engineer at", "developer at",
+                                "chief technology officer", "technology manager")),
+]
+
+
+def _viewer_file(args):
+    name = getattr(args, "file", None)
+    if name:
+        return name
+    if not os.path.isdir(VIEWER_DIR):
+        return None
+    files = sorted(f for f in os.listdir(VIEWER_DIR) if f.endswith(".txt"))
+    return os.path.join(VIEWER_DIR, files[-1]) if files else None
+
+
+def cmd_viewers(args) -> int:
+    """Segment a pasted profile viewer list. One descriptor per line."""
+    path = _viewer_file(args)
+    if not path or not os.path.exists(path):
+        print("\n  viewers: no list found. Save the pasted page to analytics/profile-viewers/YYYY-MM-DD_visible.txt\n")
+        return 1
+    lines = [l.strip() for l in open(path, encoding="utf-8").read().splitlines() if l.strip()]
+    if not lines:
+        print("  viewers: the file is empty.")
+        return 1
+    total = len(lines)
+    print(f"\n  {os.path.basename(path)}: {total} visible entries")
+    print("  a share, not a census. LinkedIn shows part of the ninety day total.\n")
+    for label, words in _VIEWER_BUCKETS:
+        hits = [l for l in lines if any(w in l.lower() for w in words)]
+        print(f"    {len(hits):>4}  {len(hits) / total:>5.0%}  {label}")
+    industries = {}
+    for line in lines:
+        m = re.search(r"in the ([A-Za-z ,&]+) industry", line)
+        if m:
+            k = m.group(1).strip()
+            industries[k] = industries.get(k, 0) + 1
+    print("\n  industries named in the descriptors")
+    for label, count in sorted(industries.items(), key=lambda kv: -kv[1])[:6]:
+        print(f"    {count:>4}  {label}")
+    founders = [l for l in lines if "founder" in l.lower() or "business owner" in l.lower()]
+    soft = [l for l in founders if re.search(r"software|it services|technology, information|security", l.lower())]
+    print(f"\n  founders in a software, IT or security industry: {len(soft)} of {len(founders)}")
+    print("  that last number is the one that names buyers.\n")
+    return 0
+
+
+def cmd_growth(_args) -> int:
+    rows = _follower_rows()
+    if not rows:
+        print("growth: analytics/follower-log.md has no dated rows yet. One line a day, or this command cannot speak.")
+        return 1
+    last_date, last = rows[-1]
+    first_date, first = rows[0]
+    d_last = dt.date.fromisoformat(last_date)
+    d_dead = dt.date.fromisoformat(GROWTH_DEADLINE)
+    days_left = (d_dead - d_last).days
+    need = GROWTH_TARGET - last
+    per_day = need / days_left if days_left > 0 else float("inf")
+    span = (d_last - dt.date.fromisoformat(first_date)).days
+    observed = (last - first) / span if span > 0 else 0.0
+    projected = int(last + observed * days_left)
+
+    print(f"\n  followers {last:,} on {last_date}   target {GROWTH_TARGET:,} by {GROWTH_DEADLINE}")
+    print(f"  net new needed {need:,} over {days_left} day(s)  =  {per_day:.1f} a day")
+    print(f"  observed since {first_date}: {observed:.1f} a day  ->  {projected:,} on the deadline")
+    verdict = "on track" if observed >= per_day else "behind the rate the target needs"
+    print(f"  verdict: {verdict}")
+    print("\n  checkpoints from STRATEGY/2026-11-06_follower-plan_1007-to-5000.md")
+    for day, floor in GROWTH_CHECKPOINTS:
+        d = dt.date.fromisoformat(day)
+        if d <= d_last:
+            state = "met" if last >= floor else "MISSED"
+        else:
+            gap_days = (d - d_last).days
+            pace = (floor - last) / gap_days
+            state = f"due in {gap_days} day(s), needs {pace:.1f} a day to reach {floor:,}"
+        print(f"    {day}  floor {floor:,}   {state}")
+    print("\n  the one line to fill tonight: analytics/follower-log.md\n")
+    return 0
+
+
+# --------------------------------------------------------------------------
+# revenue
+# --------------------------------------------------------------------------
+
+REVENUE_TARGET = 5000
+REVENUE_DEADLINE = "2026-12-25"
+
+
+def _revenue_rows():
+    path = os.path.join(EMPIRE, "STATE", "REVENUE-LOG.md")
+    rows = []
+    if not os.path.exists(path):
+        return rows
+    for line in open(path).read().splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) < 6 or not re.match(r"\d{4}-\d{2}-\d{2}$", cells[0]):
+            continue
+        try:
+            amount = float(re.sub(r"[^0-9.]", "", cells[3]) or 0)
+        except ValueError:
+            amount = 0.0
+        rows.append({"date": cells[0], "deal": cells[1], "client": cells[2],
+                     "amount": amount, "state": cells[4].lower()})
+    # The log is append only: a deal that moves state gets a new row, never an edit.
+    # So a client and an amount can appear more than once, and the arithmetic has to
+    # take the last word rather than add every word. Without this, a proposal that was
+    # declined still counts as proposed, and the gap to the target is a fiction.
+    latest = {}
+    for row in rows:
+        key = (row["client"].lower(), row["amount"])
+        if key not in latest or row["date"] >= latest[key]["date"]:
+            latest[key] = row
+    return list(latest.values())
+
+
+def cmd_revenue(_args) -> int:
+    rows = _revenue_rows()
+    if not rows:
+        print("revenue: STATE/REVENUE-LOG.md has no deals. A deal that is not a row does not exist for the maths.")
+        return 1
+    paid = sum(r["amount"] for r in rows if r["state"] == "paid")
+    won = sum(r["amount"] for r in rows if r["state"] == "won")
+    proposed = sum(r["amount"] for r in rows if r["state"] == "proposed")
+    free = [r for r in rows if r["state"] == "free"]
+    open_deals = [r for r in rows if r["state"] in ("prospect", "proposed", "won")]
+    d_last = dt.date.today()
+    days_left = (dt.date.fromisoformat(REVENUE_DEADLINE) - d_last).days
+    gap = max(0.0, REVENUE_TARGET - paid - won)
+    avg = (sum(r["amount"] for r in rows if r["state"] in ("paid", "won")) / max(1, len([r for r in rows if r["state"] in ("paid", "won")])))
+    print(f"\n  revenue to {REVENUE_DEADLINE}: paid {paid:,.0f}  agreed {won:,.0f}  proposed {proposed:,.0f}  of {REVENUE_TARGET:,}")
+    print(f"  days left {days_left}   gap to target {gap:,.0f}")
+    if days_left > 0:
+        print(f"  gap per day {gap / days_left:,.0f}")
+    print(f"  deals at 0 USD recorded as free: {len(free)} of {len(rows)}")
+    print(f"  open conversations: {len(open_deals)}")
+    for r in open_deals:
+        print(f"    {r['state']:<9} {r['amount']:>8,.0f}  {r['client']}  ({r['deal']})")
+    if avg:
+        print(f"  average closed deal {avg:,.0f}, so the gap is about {gap / avg:.1f} more deals at that size")
+    print()
+    return 0
+
+
+# --------------------------------------------------------------------------
+# upwork: the volume channel, measured rather than intended
+# --------------------------------------------------------------------------
+
+UPWORK_DIR = os.path.join(EMPIRE, "UPWORK")
+CONNECTS_FILE = os.path.join(UPWORK_DIR, "connects.txt")
+PROPOSAL_QUOTA = 8  # two a day, Monday to Thursday
+
+
+def _field(text: str, meta: dict, key: str) -> str:
+    """A front-matter value, or the older `Key: value` line inside the file.
+
+    The proposals folder predates front matter, so the first entries record
+    connects and dates as a plain line. Read both rather than rewriting history.
+    """
+    value = str(meta.get(key, "")).strip()
+    if value:
+        return value
+    m = re.search(r"^%s:\s*(.+)$" % re.escape(key), text, re.M | re.I)
+    return m.group(1).strip() if m else ""
+
+
+def _proposal_rows() -> list[dict]:
+    folder = os.path.join(UPWORK_DIR, "PROPOSALS")
+    rows = []
+    if not os.path.isdir(folder):
+        return rows
+    for name in sorted(os.listdir(folder)):
+        if not name.endswith(".md") or name.upper() == "README.MD":
+            continue
+        text = read(os.path.join(folder, name))
+        meta, _ = G.parse_front_matter(text)
+        raw_date = _field(text, meta, "date")
+        m = re.search(r"\d{4}-\d{2}-\d{2}", raw_date)
+        connects = _field(text, meta, "connects")
+        m2 = re.search(r"\d+", connects)
+        quoted = _field(text, meta, "quoted")
+        m3 = re.search(r"[\d,]+", quoted)
+        rows.append({
+            "file": name,
+            "date": m.group(0) if m else "",
+            "connects": int(m2.group(0)) if m2 else 0,
+            "quoted": float(m3.group(0).replace(",", "")) if m3 else 0.0,
+            "status": (_field(text, meta, "status") or "unknown").split(".")[0].strip().lower(),
+        })
+    return rows
+
+
+def cmd_upwork(_args) -> int:
+    rows = _proposal_rows()
+    today = dt.date.today()
+    week_ago = today - dt.timedelta(days=7)
+
+    def in_week(r):
+        try:
+            return dt.date.fromisoformat(r["date"]) >= week_ago
+        except ValueError:
+            return False
+
+    sent = [r for r in rows if r["status"].startswith(("sent", "reply", "interview", "won", "hired"))]
+    recent = [r for r in rows if in_week(r) and r["status"] != "draft"]
+    spent = int(round(sum(r["connects"] for r in sent)))
+    quoted = sum(r["quoted"] for r in rows if r["quoted"])
+
+    balance = None
+    if os.path.exists(CONNECTS_FILE):
+        m = re.search(r"\d+", read(CONNECTS_FILE))
+        balance = int(m.group(0)) if m else None
+
+    print()
+    if balance is None:
+        print("  connects: unknown. Put the number Upwork shows in UPWORK/connects.txt and it stops being a guess.")
+    else:
+        print(f"  connects: {balance:,} on hand")
+    print(f"  proposals sent: {len(sent)} of {len(rows)} files   quoted total {quoted:,.0f}")
+    print(f"  last 7 days: {len(recent)} of {PROPOSAL_QUOTA} quota ({PROPOSAL_QUOTA / 7:.1f} a day)")
+    print(f"  connects spent on sent proposals: {spent:,}")
+    if balance is not None:
+        typical = 12
+        print(f"  at about {typical} connects a proposal, {balance:,} connects buys {balance // typical} proposals, "
+              f"under the {PROPOSAL_QUOTA} a week the plan asks for")
+    won = [r for r in rows if r["status"].startswith(("won", "hired"))]
+    print(f"  won through this folder: {len(won)}")
+    if not sent:
+        print()
+        print("  Nothing has been sent. A proposal that stays a draft costs nothing and earns nothing;")
+        print("  the first send is the only event in this file that can turn into money.")
+    print()
+    print("  An agreed job becomes a row in STATE/REVENUE-LOG.md. ./emphire revenue is the only place")
+    print("  that counts, so a win that is not a row is not money yet.")
+    print()
     return 0
 
 
@@ -607,6 +890,27 @@ def cmd_map(args) -> int:
     return 0
 
 
+def cmd_visual(args) -> int:
+    """Render the card that ships with a post. One implementation, in VISUAL."""
+    sys.path.insert(0, os.path.join(EMPIRE, "VISUAL"))
+    import post_visual
+
+    post = Path(args.post)
+    if not post.is_absolute():
+        post = Path(EMPIRE) / post if (Path(EMPIRE) / post).exists() else Path(post).resolve()
+    if not post.exists():
+        print(f"no such post: {args.post}")
+        return 2
+    result = post_visual.build(post, args.pages)
+    print(f"card    {rel(result['cover'])}")
+    for page in sorted(result["out"].glob("page*.png")):
+        print(f"page    {rel(page)}")
+    if result["pdf"]:
+        print(f"pdf     {rel(result['pdf'])}  ({result['pages']} pages)")
+    print("\nUpload it, then put the Drive link in the post's front matter as visual_link.")
+    return 0
+
+
 def cmd_render(_args) -> int:
     rules = load("rules.json")["rules"]
     by_sev = {}
@@ -689,6 +993,7 @@ def main(argv=None) -> int:
 
     sub.add_parser("start").set_defaults(fn=cmd_start)
     sub.add_parser("status").set_defaults(fn=cmd_status)
+    sub.add_parser("board").set_defaults(fn=cmd_board)
 
     p = sub.add_parser("check")
     p.add_argument("paths", nargs="+")
@@ -733,6 +1038,19 @@ def main(argv=None) -> int:
     p = sub.add_parser("audit")
     p.add_argument("--tolerant", action="store_true")
     p.set_defaults(fn=cmd_audit)
+
+    pv = sub.add_parser("viewers")
+    pv.add_argument("file", nargs="?")
+    pv.set_defaults(fn=cmd_viewers)
+    sub.add_parser("growth").set_defaults(fn=cmd_growth)
+    sub.add_parser("revenue").set_defaults(fn=cmd_revenue)
+
+    sub.add_parser("upwork").set_defaults(fn=cmd_upwork)
+
+    p = sub.add_parser("visual")
+    p.add_argument("post", help="path to a post.md")
+    p.add_argument("--pages", type=int, default=None, help="how many cards counting the cover")
+    p.set_defaults(fn=cmd_visual)
 
     sub.add_parser("render").set_defaults(fn=cmd_render)
     sub.add_parser("map").set_defaults(fn=cmd_map)

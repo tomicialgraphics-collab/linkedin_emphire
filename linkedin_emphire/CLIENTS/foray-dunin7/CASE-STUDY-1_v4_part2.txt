@@ -1,0 +1,27 @@
+What was wrong first, and was corrected
+
+My register opened with a comparison that counted a test file's vectors as evidence of coverage. The author
+showed it counted a command he had not run, and the sentence was withdrawn rather than softened. A second
+claim, that a specific subsystem was closed, lost its heading and became a registered item instead. A third
+correction was mine alone: two commits were named without saying which was which.
+
+Three corrections, two of them raised by the author and one found by re-reading my own text. The register
+carries a revision history for exactly this reason: a reviewer who reports only the corrections he was forced
+into is not keeping a record. Version 7's own header records a separate set, three editorial fixes applied in
+that version, the label, a stale count and the explanation of two counts. The two threes are not the same
+three, which is exactly the sort of sentence that has to be written down rather than remembered.
+
+What has changed in the project since
+
+The project closed every item on the register in code or in text, which is the rarer half. One exception, W-04:
+it is closed in the text, and his record does not show a re-run of my probe against the rule that now states the
+mapping. So it is closed in the specification and not yet confirmed against my test, and that distinction is
+his, stated in his record before I asked for it. The verifier specification has moved from v0.10 to v0.14. The last three revisions each name the finding
+they answer, v0.12 answering A11 and A12 and the two after it naming the corrections raised in review. The
+earlier revisions name the section items they change rather than a finding, which is the smaller claim and the
+one that holds. A correction raised in the last exchange, that one amendment sentence still described the segments
+serialiser as unbuilt after it had been built, is closed in both places: Batch Anchoring Amendment v0.26
+corrects the sentence, keeps the old wording visible as superseded, and points at the verifier rule; the
+specification now points at v0.26 instead of promising a revision that already exists.
+
+[part 2 of 4]

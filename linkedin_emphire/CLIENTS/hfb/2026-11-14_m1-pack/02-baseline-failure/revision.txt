@@ -1,0 +1,8 @@
+revision
+  repository: Teamthy/host-failure-benchmark
+  commit: 126f1c00dfae18b30456a8dc698ac906ca7ddb0e
+  file the change applies to: bench/store.py
+  sha256 at this revision: 99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982
+  sha256 after the patch:  b987cc49e186d9281ce86eca76a940319107002d4c5bc05d2ce362f7acc70085
+  patch sha256: 14997eac567061e6fb53415b1c0da0ea043f0435444b4cc48477f6b849ad67d9
+  two-case probe sha256: 286982e7fe19a3b2c41e57ee56152746ff071f89ead933b08a64fd5f3254e4f7

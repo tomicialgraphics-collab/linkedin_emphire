@@ -1,0 +1,26 @@
+Marvin,
+
+All four are in. Quoting the replacement text so you can check it without reading the page again.
+
+One, the count. "Four numbered entries in register version 7, W-01, W-02, W-03 and W-04, with W-01 carrying
+the sub-findings that the walk, the declared position and the anchoring each failed." I counted the numbered
+entries rather than the sub-findings, because W-04 is one of the eight and counting it twice would inflate the
+register.
+
+Two, the closure. "The project closed every item on the register in code or in text, which is the rarer half.
+One exception, W-04: it is closed in the text, and the author's own status record says he has not re-run my
+probe against the rule that now states the mapping."
+
+Three, that same W-04 line is now the first paragraph under "What is still not established", ahead of the
+single-leaf aggregate and the sequence-number limit.
+
+Four, the corrections count, which was the real error. It says three, lists three, and attributes two to you
+and one to me. Version 7's header records its own three editorial fixes, the label, the stale count and the
+explanation of the two counts, and my sentence had quietly merged the two sets. The page now says they are
+different threes.
+
+On the restriction: the open link is withdrawn. The document is private as of tonight, so it is reachable by
+nobody until you clear it. I do not have your address, so I cannot grant it to you alone; send it and the doc
+comes back shared with that address only. Until then the page sits here and nothing else moves.
+
+Timothy

@@ -1,0 +1,52 @@
+# SHA-256 manifest and identifiers, run 2, 3 November 2026
+# Revised 14 November 2026 after an independent review found two digest mismatches.
+#
+# A digest below belongs to the stored bytes of one object, not to a filename. Every row
+# also carries the byte count, the encoding that is actually on disk, and the git blob id,
+# so a reader never has to work out why the number on their machine differs.
+#
+# sha256sum -c SHA256SUMS.txt works in this directory. This file does not list itself,
+# because its own digest changes whenever it changes.
+
+d9a9b0669262f9c7ab745c04c2af0f1fe63838c3d660752b0de99c390fe0e83f  results.json
+4889096bc551a89116ee8e830ab6e9f896b39e4e1d8f6149800acdf1983bd81b  console.log
+c8c0df12c513117739c9bfddab92558b694a6a9973d593c1d3f9103ad043e92d  README.md
+2788ee0444718eababef3ae6f5a9dbfa735909abc85a800567eb111f0f195109  check_results.py
+6ccc69e83e53337f62fc0a14fd2bba708cd9d4c038dc67a37f0b3dcb21de280d  provenance.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  provenance-after.txt
+8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992  .gitattributes
+
+# name  bytes  encoding  blob
+# results.json          6574  utf-8+crlf      33aeedabde0ec9b674c21b26ef588250697db52c
+# console.log           5274  utf-16le+bom    e238092d04e26c29557677df2dee58631cf03ec2
+# README.md              705  utf-8+bom+crlf  a7cbe989172e1767ddab289dc4adcbcdf391c33b
+# check_results.py       481  utf-8+bom+crlf  3b72d82936520e4e406fe1f5b5b2f7b15855bfc4
+# provenance.txt         124  utf-8+bom+crlf  d004cbba1a959de214d2e236ba71090d75693c3c
+# provenance-after.txt     0  utf-8           e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+# .gitattributes           9  utf-8+crlf      625449502ba4b4d7c229c6ccee42e3ec41cc780c
+
+# Served rendering. A host that displays a UTF-16 object decodes it to UTF-8 with a BOM
+# first, so the response has a different digest and both digests are true. This is all of
+# the console.log mismatch: one content, two encodings, two numbers.
+# served console.log    9828c763bf9822a40ba2186a9d027ff87c9e97bd4a7c5c610d7f5fe2844a8c1a
+#                       utf-8+bom, 2639 bytes
+
+# The harness is in its own checkout at the root of the repository, not in this directory,
+# so it is recorded here rather than as a checksum row that sha256sum -c cannot find.
+# harness redteam.py  19173  utf-8           6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581
+#                     blob            d39a4bedd4e00ba1c67be67b630cf8e28f664ec1
+#                     windows         540cf2abfa2643143d0c84b12c40d3e8f324a3bd6c84e5620124f8282049cff9  (the same object through autocrlf=true)
+
+# run commit     d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6
+# record commit  d60579ac66b41fed26b8aea2758980b619abb4ae
+
+# Two mechanisms change bytes between the stored object and a reader. Neither is damage,
+# and both are recorded above rather than described:
+#   encoding      an object stored as UTF-16 and served as UTF-8. No checkout setting
+#                 changes this, because the difference is in the stored bytes.
+#   line endings  a checkout that writes CRLF where the object holds LF, or the reverse.
+#                 core.autocrlf=false prevents it. This directory sets -text in
+#                 .gitattributes, so the files here match their objects byte for byte.
+# The previous note here blamed line endings alone. That was true of the harness and false
+# of console.log, which never had a line ending problem.
+

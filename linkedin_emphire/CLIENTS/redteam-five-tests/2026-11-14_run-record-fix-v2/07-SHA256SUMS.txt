@@ -1,0 +1,8 @@
+# SHA-256 of the six files in this pack, 2026-11-14, computed from the bytes on disk.
+# The README and this file are not included in themselves.
+dfa8a6bda65d15ae747036f222102f8a6524580aa5bc3028637934e2959174d0  01-SHA256SUMS.corrected.txt
+55e95a33455327b1fbf6d0bf85e4a866b7356e755e99587e741da402b3963e6f  02-record-before-publish-v2.patch
+d6a9635a304198e5c247afc6a75495bee29ca87cbf6785350664d70b26bea5cd  03-verify_run_record.py
+a27940f9b8fd3e9471faad79ef4e29e56aa7b0dd91f5c4bef3d77d0683753250  04-prefix-collision.log
+a475c8333b0d83c4cf8fbc5ff1cf11aacd8355ae2cc643da6621dcc82819fd62  05-failure-paths.py
+4a99d3cbf86d7eb3e1a846ff1ab71e23083ced9890cefe6f2b72240353b1e259  06-failure-paths.log

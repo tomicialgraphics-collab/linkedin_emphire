@@ -1,0 +1,4 @@
+f24  caught  a batch interrupted before its final newline, with the rollback refused
+             retry after the torn batch: journal 875 bytes, intact True, quarantine none; gap after restart 4, write after restart answered False
+
+Every counterexample from the review is caught by the check that claims to catch it.

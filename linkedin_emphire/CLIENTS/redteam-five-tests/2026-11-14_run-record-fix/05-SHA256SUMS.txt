@@ -1,0 +1,4 @@
+dfa8a6bda65d15ae747036f222102f8a6524580aa5bc3028637934e2959174d0  01-SHA256SUMS.corrected.txt
+7c504ea63c3e5fd5c95c9e9033e76ec4ec183ec2553ab37593e3080c985cc86e  02-record-before-publish.patch
+8d6f77209c9ca8651b79dce22233df60fc7d9ff50f1ea6c282c49eaf46cbf074  03-verify_run_record.py
+cbf33c125bc831bc2335a64d4415b85043af3d73fba3dabca5c16815904993df  04-verify-before-and-after.log

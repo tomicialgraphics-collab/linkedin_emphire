@@ -1,0 +1,21 @@
+Marvin,
+
+Whole file rather than the chain, and you're right to ask for it that way. A hash you check against one
+document is worth more than a chain you have to rebuild before you can check anything.
+
+Version 7, 34,757 bytes, SHA-256 b9af6973854d2b27998e6f8775c8e44c791f77888c5a0fd4daeedfa6c9568bce, md5
+a2a8e8508ade04c3f83068e263111c92.
+
+It's here: https://drive.google.com/file/d/1U06zDk55Fo8So12Ryd2zulHD1SwchC06/view?usp=drivesdk and Drive
+reports the same size and the same md5 for the copy it holds, so if your download disagrees with either
+number, the download is what went wrong rather than the file.
+
+It's the same content the patch produces: version 6 at c3888fbf, plus 70e9aec1, equals these bytes. If the
+two ever disagree, the patch was the honest record and I'd want to know which one you were looking at.
+
+Nothing else has changed since the patch, and no further revision is pending from me. It stands as sent,
+under your review, not settled.
+
+W-04 stays with you.
+
+Timothy

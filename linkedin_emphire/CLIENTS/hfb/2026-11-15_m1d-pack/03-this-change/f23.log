@@ -1,0 +1,4 @@
+f23  caught  a verdict retry after an unconfirmed rollback, and a recovery read that fails
+             retry after unknown: conflict 5 pointing at 2 and 4, verdict 4; write after a failed recovery read answered unknown, and the same write once the read worked True
+
+Every counterexample from the review is caught by the check that claims to catch it.

@@ -1,0 +1,44 @@
+ok   G1 every source hash and the imported runner's hash were verified before use
+ok   G2 every call has its own sequential exchange number, and no conclusion uses object identity
+ok   G3 the recorder attributed raw bytes to the parsed objects the cells hold
+ok   W1 the two refused replies are the same bytes, not merely equal as parsed JSON
+ok   W2 the two parsed replies are equal objects
+ok   W3 the retried replies are also the same bytes
+ok   H1 the host event kinds are identical
+ok   H2 the two host journals are identical apart from the records the injection moves
+ok   H3 the selected host event records are identical in full, which is the narrower claim
+ok   R1 the durable verdict records differ, counted per execution
+ok   R2 the acknowledged verdict requests differ, wire executions only
+ok   S1 the replayed state differs, per execution
+
+WIRE
+  conflict reply bytes: 90, sha256 1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7
+  verdict  reply bytes: 90, sha256 1ca16a0ad93f2650f6163c9fe128ea84ed4297321c598d6c35ed18fbaa3c01c7
+  conflict text: {"durable": false, "error": "injected: the journal refused a verdict write", "ok": false}
+  verdict  text: {"durable": false, "error": "injected: the journal refused a verdict write", "ok": false}
+  exchanges: 26 calls, 26 sequential exchanges, 26 distinct by object identity
+HOST
+  conflict kinds: ['wal_commit', 'reply_rejected', 'effect_withheld']
+  verdict  kinds: ['wal_commit', 'reply_rejected', 'effect_withheld']
+  whole journals equal: False
+  equal apart from what the injection moves: True
+  replayed on restart: conflict 5 of 5 records, verdict 3 of 3
+  selected host records equal: True
+EXECUTIONS
+  conflict-wire  records 7, verdict 3, conflict 0, journal dfa5c69d34d1f444
+  conflict-host  records 6, verdict 2, conflict 0, journal cedc5f3c3b4d95f6
+  verdict-wire   records 4, verdict 0, conflict 0, journal b467398465ff00b8
+  verdict-host   records 4, verdict 0, conflict 0, journal 33bfaa1bf0995709
+RECORDS
+  conflict-wire  durable verdict records 3, acknowledged requests 1
+  conflict-host  durable verdict records 2, acknowledged requests None
+  verdict-wire   durable verdict records 0, acknowledged requests 0
+  verdict-host   durable verdict records 0, acknowledged requests None
+STATE
+  conflict-wire  {"conflict": null, "verdict_state": "conflicted"}
+  conflict-host  {"conflict": null, "verdict_state": "conflicted"}
+  verdict-wire   {"conflict": null, "verdict_state": null}
+  verdict-host   {"conflict": null, "verdict_state": null}
+
+0 check(s) failed
+evidence: ./pair3/result.json

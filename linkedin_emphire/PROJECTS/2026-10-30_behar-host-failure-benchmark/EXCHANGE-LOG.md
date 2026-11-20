@@ -345,3 +345,51 @@ The message does not acknowledge the two replacement entries he asked for at 11:
 have been sent is an open question the owner can answer in one look at the message thread. Everything
 else is now his to do: the rerun against 006d7ee, then the two entries and the V04 status word, then
 one register commit. Section 11 remains parked.
+
+## 19. His message, 1:39 PM, 20 November: the attribution approved as written
+
+He approved the attribution as the exact wording for the repository README, after one correction of his own
+that is worth recording because it was a real ambiguity and not a courtesy.
+
+**The correction.** The first draft said the benchmark was "held at dab7483e" and said nothing about what that
+string was. `dab7483e` is the SHA-256 prefix of the version 3 ZIP, 23 files, full hash
+`dab7483efc8022ee9d924da2d1410457bb8d27eaeee9d19817cf52bbf388c3ae`, md5 `7c216d2f1e118601665db36293bca3cf`.
+It is not a commit, and the covering message to him then treated it as one and asked which commit the second run
+had been against. He caught the reading the sentence invited and asked for it named explicitly. The approved line
+now reads, in the one place it will appear:
+
+> Version 3 of this benchmark, held at dab7483e (the SHA-256 prefix of the version 3 ZIP), was reviewed
+> independently by Behar Dalipi, a research collaborator who coordinated two rounds of AI-assisted technical
+> review. Every finding he raised is answered in the register, either by the patch that closes it or by the reason
+> it stays open; the corrections and the verdicts are mine. His contribution is verification and adversarial
+> testing, and expressly not an endorsement of the benchmark. The results cover the modes tested, and other
+> filesystems and concurrent writers are unverified.
+
+**What he wrote himself, and did not have to.** He supplied his own recommendation wording at 1:15 PM rather than
+accept the draft offered to him, and described his contribution as coordinating two rounds of AI-assisted technical
+review. That disclosure was his choice at a moment when a warmer description was available, and it is now the
+description used in both the recommendation and the README, so the two cannot drift.
+
+**State.** Approved. Not published. The line goes under the opening paragraph of the README of
+`Teamthy/host-failure-benchmark`, and the owner publishes it from his own account. The API identity used in this
+workspace has no push permission on that repository, confirmed at 13:44 WAT, so this is not something that can be
+done from here and it should not be. Once it is up: send him the live page and the commit, each named as what it
+is, and record the publication time here so the approval and the publication carry one date.
+
+## 20. Published, 20 November: commit 846ad62 on main
+
+The attribution went into the README of `Teamthy/host-failure-benchmark` as approved, with his clarification applied.
+Commit `846ad620c32557f5b8da383857766295149aa632`, one file changed, four lines added, pushed to `main` from `126f1c0`.
+GitHub stamps the commit 2026-11-20 14:09 WAT. The approval was given at 13:55 WAT the same day, so the approval and the
+publication are forty minutes apart and carry one date, which was the point of doing it today rather than next week.
+
+Two sentences in the file, unchanged from his 13:55 message apart from normalising his curly apostrophe to the straight
+one the rest of the README uses: the attribution as first approved, and his own clarification naming the co-authorship and
+separating the review from it. The word "independently" was replaced with "by" at his instruction, and it is the only
+word of the original attribution that changed between his first approval at 13:39 and publication.
+
+The repository received `126f1c0` earlier the same day, carrying the whole P2 verification tree, sixty-six files and 4,817
+lines, so the review record and the line that points at it landed in that order.
+
+Still owed to him: the two links. Live page
+https://github.com/Teamthy/host-failure-benchmark/blob/main/README.md and the commit above, each named as what it is.

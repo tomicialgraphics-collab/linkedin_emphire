@@ -1,0 +1,54 @@
+Behar,
+
+All four decisions taken, and two of them change the scope rather than confirming it. Recorded here in your order so
+you can check that I read them correctly before anything moves.
+
+S1, partial state. Your narrowing is adopted and it tightens the definition. A record may be named in records_written
+only where its persistence is positively established: its append returned, its fsync returned, and a re-read of the
+journal finds it. If the re-read cannot establish which records landed, the reply is indeterminate, not partial.
+Records_written will never list a record on the strength of an intent.
+
+Then your implementation detail, which is the sharpest thing in your letter. The journal frames one self-digesting
+JSON line per record and fsyncs per record, and the conflict path today calls the record function twice. A single
+append can carry both without changing the record schema, because each record already frames itself: two framed
+lines, one write, one fsync. That removes the failure between the two appends, which is exactly what the failpoint
+injects today.
+
+It does not make the write atomic against a torn write. A batch can still land partially, so partial stays reachable
+and its test changes shape: not the second append refusing, which the new design removes, but the batch torn or its
+fsync failing, after which recovery cuts back to the last whole frame and the reply names precisely the records that
+parsed. Failure injection and restart consistency both remain covered, the first by a torn-batch failpoint and the
+second by the restart on the damaged journal. You are right that a test asserting an obsolete partial-write scenario
+would be worthless, so the test is written against whatever design ships. If the batch cannot carry both without a
+schema change, the two appends stay, I will say so in the M1 notes, and the reply state carries the whole burden.
+
+S3, exit code. Three is free. The codes in use are zero for a clean run or a suite where every mode caught its
+failure, one for a counterexample or a failed check, and two for refusal and usage inside the verifier. A distinct
+three for a run that could not be classified is therefore adopted, and the contract goes in the README table and in
+the technical note as a table of codes and their meanings. Machine-readable JSON stays on stdout and progress goes
+to stderr, which is how the s3-progress mode checks that the JSON is byte-identical to the buffered run.
+Substantive classifications are pinned before and after by the s3-classification mode comparing the full mode table
+and every failed check set, so a run that cannot classify cannot quietly become a counterexample.
+
+S4, test environment. Recorded as a read-only mount and described as evidence for a narrower condition. No
+equivalence claim unless the refusal happens at the same point and produces the same behaviour, which I will not
+assert without demonstrating it. The row stays open, on its own schedule, with no code.
+
+S5, fixture retention. Keep-fixtures as an explicit runner flag, automatic cleanup as the default, and every retained
+directory printed one per line with its reason. The s5 mode proves the assertion can fail by reintroducing a leak in
+a scratch copy of the runner, which is the part that distinguishes a check from a wish.
+
+Closure evidence, in your terms. Each closure carries the baseline failure, the post-fix passing result, the exact
+revision, the execution environment, and a classification log showing the modes unaffected by that milestone are
+unchanged. Register rows move at the end of a milestone in a new revision of the findings register with its own hash,
+never as an edit to the pinned copy, which stays at 4413420b.
+
+Order accepted as proposed: M1 for S1 and S2, M2 for S3, M3 for S5, S4 held.
+
+And the sentence in your letter that I want to keep visible: these decisions are acceptance criteria and not advance
+approval. Agreed, and nothing will be described as closed on the strength of a patch or on the strength of having
+met a condition I set for myself.
+
+M1 is next, and it arrives as evidence rather than as a claim.
+
+Olusanya

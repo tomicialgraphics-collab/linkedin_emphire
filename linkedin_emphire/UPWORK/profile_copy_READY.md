@@ -1,6 +1,6 @@
 # UPWORK PROFILE — READY TO PASTE (SEO-OPTIMIZED, v3 — Software Engineer + AI Red Teaming)
 Source plan: `../PLANS/2026-10-10_upwork-rebrand-empire.md`
-Live profile checked 2026-10-10: still "Shopify & TikTok Shop Strategist VA," $20/hr, 33% complete, 0 completed jobs. Nothing below has been pasted in yet.
+Live profile verified **2026-11-15**: pasted. Title is live as `Software Engineer | AI Red Teaming (LLM, RAG, Agents)` with "Full-Stack" dropped from the front, rate $65/hr, two jobs completed, $100+ earned, three of the six portfolio items live. Full field-by-field state and the four remaining gaps are in `2026-11-15_live-profile-state.md`. This file is now the reference for what was intended, not a description of what is pending.
 
 Profile: https://www.upwork.com/freelancers/~01a65712b8b0954fd2
 Sibling: https://www.linkedin.com/in/olusanya-timothy

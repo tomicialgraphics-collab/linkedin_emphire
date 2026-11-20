@@ -1,0 +1,537 @@
+Ẹ̀ rí Prototype: Requirements (v0.3
+Version: v0.3 (working draft, replaces v0.2
+Changed from v0.2 Reframed as a practice build rather than a pitch entry. REQ038 now always
+names professionals and names private people only with their consent. REQ043 now counts from the
+practice build review. Ẹ̀ rí is a working name.
+Changed in v0.2 iPhone Safari testing REQ044 and home-screen install REQ045 added.
+Date: 19 November 2026
+Total build days: 6.5
+Business Context
+Ẹ̀ rí (a working name) is a practice build: a small prototype that Olusanya Timothy and Marvin Percival
+build together over four weekly cycles, to learn how they work together before the full register. It could
+later be shown at a future “Built on Nigeriaʼs Postcodeˮ pitch session. It starts a tamper-evident
+evidence file for a building with a NIPOST postcode. The file holds voice testimony, photos and
+documents. Each item is attested by a named person other than the speaker, fingerprinted on the
+phone, and anchored publicly through FORAY. A one-page certificate with a QR code lets anyone
+check the file. The prototype is the first working slice of the Lagos property evidence register.
+User Roles
+Verifier: signs in with a Stele passkey; creates evidence files, records items, confirms consent,
+records attestations, seals files and switches the public names setting.
+Speaker: gives voice testimony; has no account.
+Attestor: confirms another personʼs item by voice or typed statement; has no account.
+Public checker: opens a certificate or public check page without signing in.
+Scope
+The prototype covers: verifier sign-in; postcode entry and NIPOST Lookup; evidence files linked to one
+postcode; voice, photo and document capture; spoken consent; on-device fingerprints; append-only
+storage; attestation and counter-attestation; sealing and FORAY anchoring; a printable certificate with
+a QR code; a public check page; English and Yoruba interface text; brand configuration; demo seed
+and reset.
+Exclusions
+Any statement that a title is good, that a property is safe to buy, or who owns a property
+Land parcels, survey outlines or coordinates as the evidence fileʼs key
+Payments, prices, plans or subscriptions
+Collecting, storing or sending NIN numbers or email addresses
+Ẹ̀ rí Prototype Requirements v0.3 · Working draft · Page 1 of 8
+The NIPOST map widget
+Real users or real household data
+Offline capture with later upload
+Account recovery beyond what Stele already supports
+Interface languages other than English and Yoruba
+Native app-store builds for Android or iOS (the prototype runs on both platforms as an installable
+mobile web app)
+Transcription or translation of recordings
+Integration Boundaries
+System In scope for the prototype Out of scope
+NIPOST Postcode
+API
+Lookup by postcode, called from the server with an API key Autocomplete, the widget,
+bookmarks
+FORAY Anchoring batches of fingerprints; reading back transaction ID
+and block time
+Any other FORAY feature
+Stele Passkey sign-in for verifiers Recovery changes (separate Stele
+project)
+Public block
+explorer
+Links from anchor references Any data written to it
+Glossary
+Evidence file: the record for one NIPOST postcode, holding items and attestations.
+Item: one piece of evidence: a voice recording, a photo or a document image.
+Speaker: the person whose voice is in a recording item.
+Attestor: a named person, other than the speaker, who confirms an item.
+Attestation: an attestorʼs confirmation of an item, with relationship (family, neighbour,
+independent) and kind (presence, knowledge, independent, verifier).
+Counter-attestation: an attestation that disputes an item; added as a new event.
+Verifier: a signed-in user who runs capture and sealing.
+Fingerprint: the SHA256 hash of an itemʼs content.
+Seal: the action that sends a batch of fingerprints to FORAY.
+Anchor reference: the transaction ID and block time returned for a sealed batch.
+Certificate: the one-page summary of a sealed evidence file, with a QR code.
+Public check page: the page anyone can open to see a fileʼs sealed items and test a file against
+them.
+Postcode: NIPOSTʼs 11-character, 5-segment code for a building.
+Assumptions
+NIPOST grants API access in time. Test keys do not resolve live postcodes; live keys need
+company verification KYB.
+Ẹ̀ rí Prototype Requirements v0.3 · Working draft · Page 2 of 8
+The FORAY anchoring service accepts batches of fingerprints and returns a transaction ID and
+block time.
+Stele can be mounted into the prototypeʼs server for passkey sign-in.
+Two demo phones are available: an Android phone running Chrome and an iPhone running Safari
+on the current iOS version, each with camera, microphone and location permissions.
+All demo people and households are invented.
+Constraints
+Four weekly cycles, then a recorded demo and a joint review.
+Two builders: Olusanya Timothy and Marvin Percival.
+The prototype handles all data in line with the Nigeria Data Protection Act 2023.
+Non-Functional Requirements
+Performance
+The NIPOST address appears within 3 seconds of submitting a postcode on a 4G connection, in
+at least 9 of 10 timed lookups REQ041.
+Security
+All traffic uses TLS 1.2 or higher REQ042.
+The NIPOST API key never leaves the server REQ006.
+Verifiers sign in with passkeys; there are no passwords REQ004.
+Scalability
+The prototype serves one demo verifier and up to 20 public checkers at once.
+Availability
+The staging URL is online during each Friday review and the final demo.
+Backup and Recovery
+The demo can be restored to its seeded state with one command REQ040.
+Demo data is deleted within 30 days after the session REQ043.
+Tech Stack
+Interface: Mobile web app TypeScript), installable to the home screen on Android Chrome and
+iPhone Safari
+Server: Python with FastAPI
+Database: PostgreSQL
+Ẹ̀ rí Prototype Requirements v0.3 · Working draft · Page 3 of 8
+Sign-in: Stele (passkeys)
+Fingerprints: SHA256 using the browserʼs Web Crypto API, recomputed on the server
+Anchoring: FORAY
+Postcodes: NIPOST Postcode API Lookup)
+Hosting: One staging environment (to be chosen)
+Phase 1 Capture Cycles 12
+3.1 build days.
+Cycle 1 Foundation and Postcode Lookup 1.6 build days)
+ID Description Estimate Dependencies Acceptance criteria
+REQ
+001
+The prototype runs as a mobile
+web app backed by a server and
+a PostgreSQL database, deployed
+to one staging URL.
+0.3 None Opening the staging URL on an Android phone in
+Chrome loads the home screen; the server health
+endpoint returns HTTP 200.
+REQ
+002
+Every word shown on screen is
+read from a translation file, with
+an English set and a Yoruba set.
+0.2 REQ001 Searching the interface source finds no on-screen
+text outside the translation files; switching the
+language setting changes every screenʼs text to
+the other set.
+REQ
+003
+The product name, logo and
+primary colour are read from one
+brand configuration file.
+0.1 REQ001 Changing the name, logo and colour values in the
+brand file and reloading changes all three on every
+screen, with no code change.
+REQ
+004
+A verifier signs in with a passkey
+through Stele, with no email or
+username field.
+0.3 REQ001 A registered verifier signs in with a passkey and
+reaches the verifier home screen; the sign-in
+screen contains no email or username field.
+REQ
+005
+The postcode entry field accepts
+only the 11-character, 5-segment
+NIPOST format.
+0.1 REQ004 Entering EK 01 A03 FK 01 (with or without spaces)
+is accepted; entering 10 characters, 12 characters
+or a non-matching pattern shows the text ‘This is
+not a NIPOST postcode.ʼ
+REQ
+006
+The server calls the NIPOST
+Lookup endpoint for an entered
+postcode, using an API key held
+only on the server.
+0.2 REQ005 A lookup request reaches api.postcode.gov.ng
+with the XAPIKey header; the key does not
+appear in any response, page source or browser
+storage.
+REQ
+007
+The verifier sees the
+administrative address and
+building use that Lookup returns
+for a valid postcode.
+0.1 REQ006 For a valid postcode, the screen shows the state,
+LGA, locality and building use values returned by
+Lookup, matching the API response field for field.
+REQ
+008
+A postcode that Lookup reports
+as not valid is refused.
+0.1 REQ006 When Lookup returns valid=false, the screen
+shows the text ‘NIPOST does not recognise this
+postcode.ʼ and no evidence file is created.
+REQ
+009
+When NIPOST cannot be
+reached, the verifier is told and
+no evidence file is created.
+0.1 REQ006 When the Lookup call times out after 10 seconds
+or returns HTTP 5xx, the screen shows the text
+‘NIPOST could not be reached. Try again.ʼ and no
+evidence file is created.
+Ẹ̀ rí Prototype Requirements v0.3 · Working draft · Page 4 of 8
+ID Description Estimate Dependencies Acceptance criteria
+REQ
+010
+A verifier creates an evidence file
+linked to one checked postcode.
+0.1 REQ007 After a successful lookup, pressing ‘Start evidence
+fileʼ creates a file showing the postcode, the
+address from Lookup, the creation date and time,
+and the signed-in verifierʼs name.
+Cycle 1 total: 1.6 build days | 10 requirements REQ001  REQ010
+Cycle 2 Evidence Capture 1.5 build days)
+ID Description Estimate Dependencies Acceptance criteria
+REQ
+011
+A verifier records voice testimony
+of up to 10 minutes in the browser.
+0.3 REQ010 A 10-minute recording made on an Android
+phone in Chrome is saved to the evidence file
+and plays back in full; recording stops
+automatically at 10 minutes.
+REQ
+012
+Each recording opens with the
+speakerʼs spoken consent, and the
+verifier confirms consent before
+the recording is saved.
+0.1 REQ011 The recording screen shows the consent
+prompt text from the translation file before
+recording starts; the save button stays
+disabled until the verifier ticks ‘Speaker gave
+consentʼ.
+REQ
+013
+Each recording carries the
+speakerʼs name, the language
+spoken and the speakerʼs
+relationship to the household.
+0.1 REQ011 Saving a recording with the name, language or
+relationship field empty shows the text ‘Name,
+language and relationship are needed.ʼ and
+the recording is not saved.
+REQ
+014
+A verifier takes a photo that is
+saved with the date, time, latitude,
+longitude and location accuracy
+from the device.
+0.2 REQ010 A photo taken with location permission
+granted is saved with date, time, latitude,
+longitude and accuracy in metres, all shown
+under the photo.
+REQ
+015
+A photo taken without location
+permission is saved and marked as
+having no location.
+0.1 REQ014 With location permission denied, the photo is
+saved and shows the text ‘Location not
+recordedʼ in place of coordinates.
+REQ
+016
+A verifier adds an image of a
+receipt or document to the
+evidence file.
+0.1 REQ010 An image chosen from the phoneʼs gallery is
+saved to the evidence file and shown with its
+date added.
+REQ
+017
+Each itemʼs SHA256 fingerprint is
+computed on the phone before the
+item is uploaded.
+0.2 REQ011, REQ
+014, REQ016
+For a test file with a known SHA256 value,
+the fingerprint shown on the phone equals the
+known value before any upload request is
+sent.
+REQ
+018
+The server recomputes each
+uploaded itemʼs fingerprint and
+refuses the item if the two do not
+match.
+0.1 REQ017 An upload whose content is altered after the
+phone computed its fingerprint is refused with
+the text ‘This item changed in transit. Record it
+again.ʼ and is not stored.
+REQ
+019
+The evidence file lists its items in
+the order they were captured, each
+with its type and capture time.
+0.1 REQ018 A file with 4 items lists them in capture order,
+each showing type (voice, photo or document)
+and capture date and time.
+Ẹ̀ rí Prototype Requirements v0.3 · Working draft · Page 5 of 8
+ID Description Estimate Dependencies Acceptance criteria
+REQ
+020
+Once an item is fingerprinted it
+cannot be edited or deleted; a
+correction is added as a new item
+that refers to the earlier one.
+0.2 REQ018 The interface offers no edit or delete action on
+a saved item; a direct edit or delete request to
+the server returns HTTP 403; a correction
+item shows the text ‘Corrects item Nʼ.
+Cycle 2 total: 1.5 build days | 10 requirements REQ011  REQ020
+Phase 2 Proof and Demo Cycles 34
+3.4 build days.
+Cycle 3 Attestation and Anchoring 1.3 build days)
+ID Description Estimate Dependencies Acceptance criteria
+REQ
+021
+An attestor confirms an item, with
+the attestorʼs name, relationship and
+kind of attestation recorded.
+0.2 REQ019 Each attestation shows the attestorʼs name, a
+relationship of family, neighbour or
+independent, and a kind of presence,
+knowledge, independent or verifier.
+REQ
+022
+The speaker of an item cannot attest
+that same item.
+0.1 REQ021 Entering the itemʼs speaker as its attestor
+shows the text ‘A speaker cannot attest their
+own evidence.ʼ and the attestation is not
+saved.
+REQ
+023
+An attestorʼs statement is captured
+as a voice recording or typed text
+and fingerprinted.
+0.1 REQ021 A saved attestation holds either a voice
+recording or typed text, and shows its SHA
+256 fingerprint.
+REQ
+024
+A verifier attestation is signed by the
+signed-in verifierʼs Stele identity.
+0.1 REQ021, REQ
+004
+A verifier attestation shows the signed-in
+verifierʼs name, and the server stores the
+verifierʼs Stele principal ID with it.
+REQ
+025
+Each item shows whether it is
+attested.
+0.1 REQ021 An item with no attestation shows the text ‘Not
+yet attestedʼ; an item with one or more shows
+the count of attestations.
+REQ
+026
+A counter-attestation is added as a
+new event that refers to the item it
+disputes, and both remain shown.
+0.1 REQ021 After a counter-attestation is saved, the item
+shows both the original attestations and the
+counter-attestation, labelled ‘Disputed byʼ with
+the attestorʼs name.
+REQ
+027
+Pressing ‘Sealʼ sends the
+fingerprints of all unsealed items in
+the file to FORAY for public
+anchoring as one batch.
+0.3 REQ025 Pressing ‘Sealʼ on a file with 4 unsealed items
+sends one batch to the FORAY anchoring
+service containing exactly those 4
+fingerprints.
+REQ
+028
+Each sealed item stores the FORAY
+anchor reference: the transaction ID
+and the block time.
+0.1 REQ027 After sealing completes, every sealed item
+shows a transaction ID and a block time, and
+the same values appear for each item in the
+batch.
+Ẹ̀ rí Prototype Requirements v0.3 · Working draft · Page 6 of 8
+ID Description Estimate Dependencies Acceptance criteria
+REQ
+029
+Sealing is refused while any
+unsealed item has no attestation.
+0.1 REQ025, REQ
+027
+Pressing ‘Sealʼ with one unattested item shows
+the text ‘Every item needs at least one
+attestation before sealing.ʼ and no batch is
+sent.
+REQ
+030
+After a seal, new items are added
+and sealed as a new batch; sealed
+batches never change.
+0.1 REQ028 Adding an item to a sealed file and sealing
+again creates a second batch with its own
+anchor reference; the first batchʼs items and
+reference are unchanged.
+Cycle 3 total: 1.3 build days | 10 requirements REQ021  REQ030
+Cycle 4 Certificate and Public Check 2.1 build days)
+ID Description Estimate Dependencies Acceptance criteria
+REQ
+031
+A certificate page shows the
+postcode, address and every sealed
+item with its type, speaker role,
+attestations, fingerprint and anchor
+reference.
+0.3 REQ028 For the demo file, the certificate page lists all
+sealed items, and each itemʼs fingerprint and
+anchor reference match the values stored on
+the server.
+REQ
+032
+The certificate states what it does not
+prove.
+0.1 REQ031 The certificate shows the text ‘This certificate
+records what was said, by whom, and when. It
+does not say who owns this property or that
+any title is good.ʼ
+REQ
+033
+The certificate carries a QR code that
+opens the fileʼs public check page.
+0.1 REQ031 Scanning the QR code with a second phoneʼs
+camera opens the public check page for the
+same evidence file.
+REQ
+034
+The public check page opens without
+sign-in and shows each sealed itemʼs
+type, date, fingerprint and anchor
+reference.
+0.2 REQ033 Opening the public check URL in a private
+browser window with no session shows every
+sealed itemʼs type, date, fingerprint and anchor
+reference.
+REQ
+035
+A public checker chooses a file on
+their device and the page reports
+whether its fingerprint matches a
+sealed item.
+0.2 REQ034 Choosing the original demo recording shows
+‘Matches item Nʼ; choosing a copy altered by
+one byte shows ‘No match in this evidence
+file.ʼ The chosen file is not uploaded to the
+server.
+REQ
+036
+The public check page links each
+anchor reference to its transaction on
+a public block explorer.
+0.1 REQ034 Selecting an anchor reference opens the
+matching transaction on a public block
+explorer, showing the same transaction ID.
+REQ
+037
+The certificate prints to one A4 page
+for a file of up to 8 items.
+0.2 REQ031 Printing the certificate of an 8-item file to PDF
+from Chrome produces exactly one A4 page
+with every item listed.
+REQ
+038
+The public page always shows the
+names of agencies, surveyors,
+lawyers and verifiers, and shows a
+private personʼs name only when that
+person agreed to it.
+0.1 REQ034 A professionalʼs name appears on every item
+they registered or verified; a private speakerʼs
+or attestorʼs name appears only when their
+consent to show it is recorded, and otherwise
+their role alone is shown.
+Ẹ̀ rí Prototype Requirements v0.3 · Working draft · Page 7 of 8
+ID Description Estimate Dependencies Acceptance criteria
+REQ
+039
+A demo data set of an invented
+household with one postcode and 4
+attested, sealed items loads with one
+command.
+0.1 REQ030 Running the seed command on an empty
+database creates the demo file with 4 sealed
+items, each showing an anchor reference.
+REQ
+040
+A reset command returns the demo
+to its seeded state.
+0.1 REQ039 After items are added during a rehearsal,
+running the reset command leaves exactly the
+seeded demo file and its 4 items.
+REQ
+041
+The NIPOST address appears within
+3 seconds of submitting a postcode
+on a 4G connection.
+0.1 REQ007 In 10 timed lookups on a 4G connection, at
+least 9 show the address within 3 seconds of
+pressing submit.
+REQ
+042
+All traffic between phone, server,
+NIPOST and FORAY uses TLS 1.2 or
+higher.
+0.1 REQ001 A TLS scan of the staging URL reports no
+protocol below TLS 1.2; the server refuses
+plain HTTP connections to the API.
+REQ
+043
+Demo data is deleted within 30 days
+after the practice build review.
+0.1 REQ039 Thirty days after the review date, the database
+holds no evidence files, items or recordings.
+REQ
+044
+Every acceptance test written for an
+Android phone in Chrome also
+passes on an iPhone in Safari.
+0.2 REQ001 Each acceptance criterion in REQ001 to REQ
+043 that names Android Chrome is run on an
+iPhone with the current iOS version in Safari
+and passes; any failure is logged against its
+requirement ID.
+REQ
+045
+The app installs to the home screen
+and opens from its own icon on both
+Android Chrome and iPhone Safari.
+0.1 REQ003 On each phone, adding the app to the home
+screen shows the brand name and logo from
+the brand file, and opening the icon starts the
+app without the browser address bar.
+Cycle 4 total: 2.1 build days | 15 requirements REQ031  REQ045
+Ẹ̀ rí: Requirements — v0.3  19 November 2026
+Ẹ̀ rí Prototype Requirements v0.3 · Working draft · Page 8 of 8

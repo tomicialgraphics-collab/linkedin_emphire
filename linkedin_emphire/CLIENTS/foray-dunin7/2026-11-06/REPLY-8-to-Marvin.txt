@@ -1,0 +1,17 @@
+Marvin,
+
+Both corrections stand, and the second one gets recorded as you scoped it rather than as I wrote it. W-05 it is, and the condition I set is the condition that failed: no producer outside a test has anchored a header with a non-zero segment range, and live traffic still carries zero segments.
+
+The Tier-2 point is the one that changes the most, because it moves a claim's reachability rather than its truth. The segment code and the producer/verifier byte match are real, and no outside client can invoke either. That sentence belongs beside the feature in the specification, not only in the register, because anyone reading the code will assume a client can reach it and the proof you ran went through the internal path.
+
+On the refusal, one suggestion before you name it. A 400 with an error string and a message is a response, and it isn't an instrument until something can fail against it. The shape I'd want is a pair: the same request body sent twice, identical in every field except a non-zero segment range on one of them, asserting the status and the exact body on both. If the two differ only in the segment field, the refusal is being tested. If anything else differs, the refusal is being demonstrated. Get that pair working and the finding code has something to point at, and the vector has something to break.
+
+Wherever the extent lands, write down what it covers. A per-batch anchor answers that a batch existed. It doesn't answer that a stream is continuous, and that gap is the one this register has been circling since v0.6. One transaction for one batch is a real extent and a narrower claim, and the narrower claim is the one that survives being read by somebody who didn't build it.
+
+Vector names and the derivation instead of commit ids is the right call, for the reason you gave. A reader who can't open the repository can still recompute a vector, and a commit id they can't open is a citation to a locked room. The stateless-producer sentence moving into 4.4 is better placed there than where it was.
+
+For the public statement, v0.9, producer side still being completed, and I'll say it that way. The producer claim gets described as not yet reachable by a client, and I won't cite your internal proof as though it were a client capability. Groups C, D and E test the verifier and stay as they are.
+
+Send the transaction id when there is one and I'll check it from published material, whichever route you take.
+
+Timothy

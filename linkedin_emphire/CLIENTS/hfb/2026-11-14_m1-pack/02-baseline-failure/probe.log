@@ -1,0 +1,14 @@
+M1 probe: a reported conflict must be a named conflict
+revision: 126f1c00dfae18b30456a8dc698ac906ca7ddb0e
+journal: 5 lines, 1548 bytes, from one real conflict on M1-7001
+
+  cut            bytes  conflicted  named  verdict seqs  named seqs  property
+  line-1           102  False       False  []            []          holds
+  line-2           207  False       False  []            []          holds
+  line-3           742  False       False  [3]           []          holds
+  line-4          1277  True        False  [3, 4]        []          FAILS
+  mid-final-line   1412  True        False  [3, 4]        []          FAILS
+
+FAILURE: 2 of 5 cuts leave the store reporting a conflict it cannot name: line-4, mid-final-line
+  line-4 at byte 1277: conflicted=True, conflict record=False, verdict seqs=[3, 4]
+  mid-final-line at byte 1412: conflicted=True, conflict record=False, verdict seqs=[3, 4]

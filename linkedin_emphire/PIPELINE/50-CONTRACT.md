@@ -38,6 +38,26 @@ lists as `[a, b]`, comments after `#`. Nothing nested.
 
 `profile_checked`, which is the date you read the person's profile and something only they said.
 `warm: yes` if a link is allowed.
+`premise_checked`, from 2026-11-10 on, which is the fact the post rests on and the day it was checked:
+`checked: <claim>, <where>, <date>`, or `stable: <why it cannot have moved>`, or `opinion: <no checkable claim>`. A post quoting a price, a follower count, a benchmark or a funding round is dated the moment it is written.
+
+`sources_read`, from 2026-11-10 on. **Every link a post attaches is opened before the comment is
+written** (owner instruction, 2026-11-09: "please always read it"). The line records what happened:
+
+| value | means |
+| --- | --- |
+| `read: <what it was> <date>` | opened it, and the comment is written against it |
+| `none: nothing attached` | there was no link, paper, film, thread or repository to open |
+| `blocked: <why>, so <what the comment claims anyway>` | it will not open, with the reason and the consequence |
+
+A post points at something far more often than it looks. A paper, an SSRN version, a film, a waitlist,
+a publisher page, another post, a repository. A landing page or a waitlist still counts as read: open
+it, say what it turned out to be, and the line reads `read:`. `blocked:` is for material that will not
+open at all, and it has to say what the comment claims without it.
+
+There is no "I read the post so the link does not matter". That was the earlier version of this rule
+and the owner struck it out on 2026-11-09, the same evening. Working from a summary of a source and
+working from the source are different acts, and only one of them can be checked afterwards.
 
 ### When the file leaves the repo as it stands
 

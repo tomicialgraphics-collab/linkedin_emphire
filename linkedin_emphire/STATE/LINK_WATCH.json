@@ -1,0 +1,79 @@
+{
+ "rule": "R49",
+ "purpose": "The four Upwork pages the owner watches, read once a day, diffed against the previous read. Set 2026-11-15 on his instruction, 'add the link check as a daily rule'.",
+ "timezone": "Africa/Lagos",
+ "links": {
+  "consultation": {
+   "label": "Development & IT Consultation",
+   "url": "https://www.upwork.com/services/consultation/development-it-timothy-1697327656243625984",
+   "note": "the only entry-priced product on the account, so its chips and copy matter most"
+  },
+  "red-team": {
+   "label": "AI red team test and prompt injection audit",
+   "url": "https://www.upwork.com/services/product/development-it-an-ai-red-team-test-and-prompt-injection-audit-2109166740052666541",
+   "note": "the listing that outdrew the chatbot 12 views to 8"
+  },
+  "chatbot": {
+   "label": "AI chatbot or agent built, tested, and hardened",
+   "url": "https://www.upwork.com/services/product/development-it-an-ai-chatbot-or-agent-built-tested-and-hardened-2109189706859183826",
+   "note": "highest top tier of the three, $2,500"
+  },
+  "profile": {
+   "label": "Public profile",
+   "url": "https://www.upwork.com/freelancers/timothyo28",
+   "note": "short form is canonical; ~01a65712b8b0954fd2 resolves to the same page"
+  }
+ },
+ "baseline": {
+  "checked_at": "2026-11-15 12:14 WAT",
+  "page": {
+   "consultation": {
+    "status": "live logged out",
+    "price": "$40 per 30 minutes, 30 and 60 minute options",
+    "views_30d": 3,
+    "orders": 0,
+    "chips": "Chatbot Development, Cybersecurity & Data Protection, User Testing, full-stack development, ai app development",
+    "requirements_render_char_counts": "yes, 101, 142 and 111 characters visible to the buyer",
+    "faq_answers_visible": "no, questions render without answers logged out"
+   },
+   "red-team": {
+    "status": "live logged out",
+    "price_from": "$150",
+    "tiers": "$150 / $600 / $1,500 over 3 / 7 / 14 days",
+    "views_30d": 12,
+    "orders": 0,
+    "company_size_rows": "all three blank",
+    "addons": "fast delivery +$75"
+   },
+   "chatbot": {
+    "status": "live logged out",
+    "price_from": "$300",
+    "tiers": "$300 / $900 / $2,500 over 5 / 10 / 21 days",
+    "views_30d": 8,
+    "orders": 0,
+    "addons": "extra integration +$150, 14-day re-test guarantee +$1"
+   },
+   "profile": {
+    "status": "live logged out",
+    "title": "AI Security | LLM Red Teaming, Agent Testing, Rerunnable Evals",
+    "rate": "$65.00/hr",
+    "portfolio_items_public": 2,
+    "skills": 20,
+    "badge": "none",
+    "work_history_public": "No items",
+    "odd_chip": "Features 33% Complete"
+   }
+  }
+ },
+ "first_baseline": {},
+ "last_checked": "2026-11-15",
+ "history": [
+  {
+   "date": "2026-11-15",
+   "checked_at": "2026-11-15 12:14 WAT",
+   "file": "STATE/LINK_CHECKS/2026-11-15.md",
+   "changes": 0,
+   "first": true
+  }
+ ]
+}

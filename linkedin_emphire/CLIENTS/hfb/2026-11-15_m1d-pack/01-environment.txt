@@ -1,0 +1,6 @@
+interpreter: Python 3.11.2
+platform: Linux 6.1.158+
+machine: x86_64
+
+Both revisions were run in this environment on 2026-11-15 (WAT): the audit through
+audit/regressions.py, the suite through run.py and verify.py.

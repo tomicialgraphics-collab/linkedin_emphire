@@ -1,0 +1,25 @@
+Evelyne-Claudia,
+
+All three of your qualifications were real, and all three are answered by the archive whose hash you quote. I think you examined v2 while reading the v3 numbers off my letter, and there is a one-line way to settle it.
+
+First, which file you hold. F9b-refusal-pair-v3.zip, 43,489 bytes, SHA-256 3643a92c95e493923572e1908167a1e8ceca66fc41c2ba065d1fa7ec8bdd7ab6, md5 162cec51c4d2bc3af8306a351d49ed88, uploaded 8 November at 21:31 UTC. That is the copy on Drive, and it is the one I described.
+
+On the recorder, which is your first point. The string you quote as shipped, "26 calls recorded, 25 distinct replies", does not occur in v3. It occurs in v2, in pair2/result.json, SHA-256 b1271532…, and it is produced by the line you name, raw_by_id[id(parsed)]. In v3 the shipped matched-run result file is pair3/result.json, SHA-256 d41a3e5546e1…, and its second check reads:
+
+{"calls": 26, "distinct_by_exchange": 26, "distinct_by_identity": 26, "identity_collisions": 0}
+
+The printed line in v3 is "exchanges: 26 calls, 26 sequential exchanges, 26 distinct by object identity". Object identity is measured there and nothing rests on it. The reason it is measured rather than removed is your sentence: a sequential exchange identifier retaining each request, parsed reply and raw bytes together. That is what v3 does, because you asked for it.
+
+On provenance, your second point. conflict.update(host_cell(...)) is v2's line. v3 reports four executions separately, each with its own record count, its own journal digest and its own restart state: conflict-host, journal cedc5f3c…, six records; conflict-wire, journal dfa5c69d…, seven records; verdict-host, journal 33bfaa1b…, four records; verdict-wire, journal b4673984…, four records. The acknowledged count is null where the reply was not captured rather than inferred from the other execution, which is the separation you asked for.
+
+On the journal comparison, your third point. v3 states it against itself: whole_journals_equal is false, why_not_equal names the suppressed verdict append, verdict_records are two against none, and replayed records on restart are five against three. The narrower claim is labelled as the narrower one, and the distinct-action-ID run fails exactly two checks, H2 and H3, by name, in its own result file with SHA-256 078b4e39…. A condition that produces two failures when you move one variable is a condition, not a convenience.
+
+So the position I will not accept, and not out of pride. "Exact result-file reproduction failed in this examination" is true of v2 and is not true of v3 as shipped, and the difference is a single string. Check the second check in the result file your run generated. If it reads "26 calls recorded, 25 distinct replies", the file came from v2 and my Sunday letter stands as written. If it reads the JSON above and your run still reproduced it exactly, then you ran v3 and the two of us disagree about a file, and I would rather be shown wrong than be agreed with.
+
+Send me the archive you unzipped and the result file your run wrote, with their hashes, and I will take whichever of the two the bytes support. If it is v3 and it failed, the claim falls in your terms and the artifact stays in the record as evidence of the failure.
+
+What I will not do is concede a defect that the artifact does not contain, because an examination that records a false defect is as damaging to the record as a claim that was never tested. That is your own obligation turned around, and it applies to me first.
+
+Nothing here moves REACHABLE in either direction, and reproducibility alone still does not establish that an architecture is correct.
+
+Timothy

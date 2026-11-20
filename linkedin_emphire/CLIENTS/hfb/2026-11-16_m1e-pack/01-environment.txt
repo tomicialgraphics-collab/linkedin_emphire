@@ -1,0 +1,19 @@
+produced on 2026-11-16 (sandbox clock, WAT)
+
+python            Python 3.11.2
+kernel            Linux 6.1.158+ x86_64
+stdlib only       json, hmac, hashlib, os, socketserver, tempfile, subprocess
+no network        every check runs on loopback or in process
+
+how to reproduce
+
+  cd host-failure-benchmark
+  python3 audit/regressions.py f24
+  python3 audit/regressions.py
+  python3 run.py
+  python3 verify.py artifacts/<run-id>
+
+hashes of the two trees
+
+  02-previous-change/revision.txt   M1d, the revision delivered on 15 November
+  03-this-change/revision.txt       M1e, M1d plus the resync gap guard

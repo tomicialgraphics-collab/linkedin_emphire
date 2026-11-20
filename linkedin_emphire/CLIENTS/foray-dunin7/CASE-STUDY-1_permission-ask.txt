@@ -1,0 +1,19 @@
+Marvin,
+
+One thing outside the register, and it is a question rather than a document.
+
+I have written up the review as a short case study: what was checked, what the register found, where I
+was wrong first, and what changed in the specification afterwards. It is written for someone deciding
+whether this kind of review is worth commissioning, so it is about the method and about the corrections
+rather than about you or the project.
+
+The version I would show keeps none of the following: the project name, your name, the repository or
+package names, the finding identifiers, the version numbers, the commit hashes, the dates, and any
+detail precise enough to identify the work to someone who was in the room. What stays is the shape: a
+byte match that was real, a client lane that could not reach it, a register that was corrected three
+times by its author's own evidence, and a public statement narrowed to what had been demonstrated.
+
+Your name stays out unless you would rather it was in. Either answer is fine and neither changes
+anything about the register.
+
+Timothy

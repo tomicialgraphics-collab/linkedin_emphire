@@ -1,0 +1,14 @@
+{
+  "post_number": 30,
+  "date": "2026-11-12",
+  "slug": "whose-clock",
+  "pillar": "AI Security / AI Evaluation",
+  "style": "TEMPLATE 1 technical, single mechanism",
+  "word_count": 255,
+  "summary": "Freshness is a subtraction against a clock, and most implementations never name which one. If the receiver supplies both operands it is measuring its own drift, so the test is to move the clock and watch the pair disagree.",
+  "hashtags": ["#AISecurity", "#AIRedTeam", "#AIEvaluation", "#AIGovernance"],
+  "slot": "13:30 WAT, Thursday 12 November 2026",
+  "fact_verification": "No figure describes the world. Every number is a parameter of the proposed test. See sources.md.",
+  "link_placement": "first comment",
+  "status": "READY"
+}

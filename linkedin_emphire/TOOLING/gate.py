@@ -34,6 +34,7 @@ import os
 import re
 import subprocess
 import sys
+from datetime import datetime, timedelta, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 EMPIRE = os.path.abspath(os.path.join(HERE, ".."))            # linkedin_emphire/
@@ -107,9 +108,26 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
     if not m:
         return {}, text
     meta: dict = {}
-    for raw in m.group(1).splitlines():
+    lines = m.group(1).splitlines()
+    i = 0
+    while i < len(lines):
+        raw = lines[i]
+        i += 1
         # Full-line comments only. A "#" inside a value is a hashtag, not a comment.
         if not raw.strip() or raw.lstrip().startswith("#") or ":" not in raw:
+            continue
+        # Block scalars: `key: >-` or `key: |` fold every following indented line into
+        # the value. Without this, the value parsed as the marker itself, which is how
+        # a `profile_checked: >-` header read as ">-" for a while.
+        if raw.rstrip().endswith((">-", ">", "|-", "|")):
+            key, _, _marker = raw.rstrip().partition(":")
+            body = []
+            while i < len(lines) and (lines[i].startswith((" ", "\t")) or not lines[i].strip()):
+                body.append(lines[i].strip())
+                i += 1
+            folded = " ".join(x for x in body if x)
+            if folded:
+                meta[key.strip().lower()] = folded
             continue
         line = raw.rstrip()
         key, _, val = line.partition(":")
@@ -172,6 +190,28 @@ BODY_END = "<!-- gate:body:end -->"
 PASTE_HEADING = re.compile(r"^##+\s*(post,?\s*paste-ready|paste-ready|the post)\s*$", re.I | re.M)
 
 
+PASTE_REGION = re.compile(
+    r"^##+\s*(?:the\s+)?(?:comment|reply|dm|message|post)[^\n]*\b(?:paste[^\n]*|send[^\n]*this[^\n]*)\s*$",
+    re.I | re.M,
+)
+
+
+def paste_region(text: str) -> str:
+    """The lines a human copies out, when the file says where they are.
+
+    Comment files carry working notes next to the comment. Those notes are allowed
+    to name files, paths and dates, because nobody pastes them. This returns the
+    marked region when a file has one, and the whole text when it does not, which
+    is the safe direction: a bare draft is treated as all paste.
+    """
+    m = PASTE_REGION.search(text)
+    if not m:
+        return text
+    rest = text[m.end():]
+    nxt = re.search(r"^##\s", rest, re.M)
+    return (rest[: nxt.start()] if nxt else rest).strip()
+
+
 def post_body(text: str) -> str:
     """The part of a post file that actually gets pasted into LinkedIn.
 
@@ -191,6 +231,27 @@ def post_body(text: str) -> str:
         nxt = re.search(r"^##\s", rest, re.M)
         return (rest[: nxt.start()] if nxt else rest).strip()
     return text.strip()
+
+
+CODE_FENCE = re.compile(r"```.*?```", re.S)
+INDENTED = re.compile(r"^(?: {2,}|\t)\S.*$", re.M)
+
+
+def prose_only(text: str, indented: bool = False) -> str:
+    """The part of a pasted block a human reads as sentences.
+
+    A command, a diff and a code snippet are not prose: they carry no terminal
+    punctuation, no sentence openings and no dotted filename a reader would
+    follow. Scoring them as voice measures the wrong text, which is what R14 and
+    R32 were doing to a technical message whose whole substance is the commands.
+
+    Fenced blocks always go. Indented lines go only when the caller says so, and
+    only a dm or an email says so: a command written in a message is not prose,
+    while an indented line in a comment or a post is usually a quotation or a
+    list, and stripping it was silently re-scoring 20 historical files.
+    """
+    stripped = CODE_FENCE.sub("", text)
+    return INDENTED.sub("", stripped) if indented else stripped
 
 
 # --------------------------------------------------------------------------
@@ -228,7 +289,7 @@ def body_words(text: str) -> int:
 
 
 def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
-               pasted: str | None = None, exported: bool = False) -> None:
+               pasted: str | None = None, exported: bool = False, path: str = "") -> None:
     pasted = pasted if pasted is not None else body
     # R01 em dash
     dashes = [i for i, ch in enumerate(body) if ch in "\u2014\u2013"]
@@ -277,7 +338,7 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
         rep.add("R05", "PASS", "no local paths")
 
     # R14 voice gate
-    human = VL.human_gate(pasted, profile)
+    human = VL.human_gate(prose_only(pasted, indented=dtype in ("dm", "email")), profile)
     score = VL.score_findings(findings + human["findings"])
     errs = [f for f in findings + human["findings"] if f["severity"] == "error"]
     if dtype == "internal":
@@ -317,6 +378,75 @@ def check_text(rep: Report, body: str, meta: dict, dtype: str, audience: str,
     else:
         rep.add("R24", "PASS", "no phone number")
 
+    # R32 a filename typed into pasted text autolinks to a dead address
+    if dtype in ("post", "comment", "dm"):
+        region = prose_only(paste_region(pasted), indented=dtype in ("dm", "email"))
+        dotted = re.findall(
+            r"(?<![\w/.:-])[\w][\w-]*\.(?:zip|md|json|txt|pdf|docx|xlsx|csv|png|jpg|py|sh|ps1)(?![\w])",
+            region,
+        )
+        if dotted:
+            status = "FAIL" if str(meta.get("date", "")) >= "2026-11-10" else "WARN"
+            rep.add("R32", status, "filename with an extension in the pasted text, which autolinks to a dead address: "
+                                   + ", ".join(sorted(set(dotted))[:4]) + ". Name it without the extension.")
+        else:
+            rep.add("R32", "PASS", "no dotted filenames in the pasted text")
+
+    # R40 a post carries a real number, or says why it carries none
+    if dtype == "post":
+        if not re.search(r"\d", pasted):
+            rep.add("R40", "WARN", "no number anywhere in the post: add one from a run you actually have, "
+                                   "or say in the text why the post has none")
+        else:
+            rep.add("R40", "PASS", "carries a number")
+
+    # R43 a case study carries its client permission
+    if "CASE-STUDY" in path.upper() and "PIPELINE" not in path.upper():
+        perm = str(meta.get("permission", "")).strip().lower()
+        state = str(meta.get("status", "")).strip().lower()
+        if not perm:
+            rep.add("R43", "FAIL", "case study without permission: in front matter")
+        elif perm.startswith("granted"):
+            rep.add("R43", "PASS", f"permission {perm.split(':')[0]}: client agreed")
+        elif state in ("draft", ""):
+            rep.add("R43", "PASS", f"permission {perm}: drafting is allowed before the ask")
+        else:
+            rep.add("R43", "FAIL", f"permission {perm} but status {state}: nothing leaves until the client agrees in writing")
+
+    # R44 the comment box is a hard boundary at 1,250 characters
+    if dtype == "comment":
+        marked = PASTE_REGION.search(pasted) is not None
+        n = len(paste_region(pasted).strip())
+        if n > 1250 and marked:
+            rep.add("R44", "FAIL", f"{n:,} characters, over the 1,250 LinkedIn comment limit by {n - 1250}")
+        elif n > 1250:
+            rep.add("R44", "WARN", f"{n:,} characters, but no paste region is marked, so the count includes "
+                                   "notes and may be harmless: mark the block with a paste heading")
+        elif marked and n > 1180:
+            rep.add("R44", "WARN", f"{n:,} characters, inside the limit with no room to edit")
+        else:
+            rep.add("R44", "PASS", f"{n:,} characters")
+
+    # R45 the comment register: list scaffolding and aphorism closers read as generated
+    if dtype == "comment":
+        region = paste_region(pasted)
+        tells = []
+        for pat, name in (
+            (r"\b(?:Two|Three|Four|Five)\s+(?:things|rows|points|reasons|tests|questions)\b", "a counted frame"),
+            (r"\bThe first (?:is|one)\b", "first/second scaffolding"),
+            (r"\bHere(?:'s| is) what I\b", "an announced structure"),
+            (r"\bOf the lot\b", "a selection announcement"),
+            (r"\bCheap to (?:add|fix)\b", "a cost aside that flatters the author"),
+            (r"\bWhat (?:separates|distinguishes) .+ from .+\b", "a mirrored clause"),
+        ):
+            if re.search(pat, region, re.I):
+                tells.append(name)
+        if tells:
+            rep.add("R45", "WARN", "reads as generated: " + ", ".join(dict.fromkeys(tells))
+                    + ". Start inside the problem and keep one idea.")
+        else:
+            rep.add("R45", "PASS", "no generated tells")
+
     # R30 relative dates
     if dtype != "internal":
         rel = re.findall(r"\b(?:yesterday|last week|last night|this morning|tomorrow)\b", body, re.I)
@@ -343,6 +473,39 @@ def check_contract(rep: Report, meta: dict, dtype: str, audience: str, path: str
         "draft", "ready", "sent", "posted", "superseded", "archived", "frozen"
     ):
         rep.add("R26", "WARN", f"status '{meta['status']}' is not one of draft/ready/sent/posted")
+
+    # R26 linked material. A comment on somebody else's post is written about material
+    # that post points at. Saying whether that material was opened is the difference
+    # between a reading and a reaction, so the file states it from 2026-11-10 onward.
+    # Nothing before that date is retro-fitted: the values would be reconstruction.
+    if dtype in ("comment", "dm") and str(meta.get("date", "")) >= "2026-11-10":
+        prem = str(meta.get("premise_checked", "")).strip()
+        if not prem:
+            rep.add("R33", "FAIL", "missing premise_checked: name the fact the post rests on and the day it was checked, "
+                                   "or opinion: when the post makes no checkable claim")
+        elif not prem.lower().startswith(("checked:", "stable:", "opinion:")):
+            rep.add("R33", "WARN", "premise_checked must open with checked:, stable: or opinion:")
+        elif prem.lower().startswith("checked:") and len(prem.split()) < 4:
+            rep.add("R33", "WARN", "checked: names the claim, where it was checked, and the date")
+        else:
+            rep.add("R33", "PASS", "premise accounted for")
+
+    if dtype in ("comment", "dm") and str(meta.get("date", "")) >= "2026-11-10":
+        src = str(meta.get("sources_read", "")).strip()
+        if not src:
+            rep.add("R26", "FAIL", "missing sources_read: name the linked material and whether it was opened, "
+                                   "or none: nothing attached")
+        elif src.lower().startswith("not-needed"):
+            rep.add("R26", "FAIL", "not-needed is retired (owner instruction 2026-11-09): open it and say what it was, "
+                                   "or blocked: if it will not open")
+        elif not src.lower().startswith(("read:", "none:", "blocked:")):
+            rep.add("R26", "WARN", "sources_read must open with read:, none: or blocked:")
+        elif src.lower().startswith("blocked:") and len(src.split()) < 8:
+            rep.add("R26", "WARN", "blocked: states the reason, then what the comment claims without it")
+        elif src.lower().startswith("read:") and len(src.split()) < 4:
+            rep.add("R26", "WARN", "read: names what was opened and the date")
+        else:
+            rep.add("R26", "PASS", "linked material accounted for")
 
 
 def check_post(rep: Report, meta: dict, body: str) -> None:
@@ -436,6 +599,96 @@ def check_post(rep: Report, meta: dict, body: str) -> None:
         rep.add("R13", "PASS", tpl)
 
 
+def check_visual(rep: Report, meta: dict, path: str) -> None:
+    """R46 the card, and the link to it.
+
+    The rule is dated so that posts written before the card system existed keep the
+    gate result they shipped with. New posts cannot pass without one.
+    """
+    date = str(meta.get("date", "")).strip()
+    if date and date < "2026-11-14":
+        rep.add("R46", "SKIP", "post predates the card system (14 November 2026)")
+        return
+
+    card = os.path.join(os.path.dirname(os.path.abspath(path)), "visual", "cover.png")
+    if not os.path.exists(card):
+        rep.add("R46", "FAIL", "no visual/cover.png beside the post: run `./emphire visual <post>`")
+        return
+    link = str(meta.get("visual_link", "")).strip()
+    if not link:
+        rep.add("R46", "WARN", "card rendered, Drive link not in the front matter yet")
+    elif "drive.google.com" not in link:
+        rep.add("R46", "WARN", f"visual_link is not a Drive link: {link[:60]}")
+    else:
+        rep.add("R46", "PASS", "card rendered and linked")
+
+
+WAT = timezone(timedelta(hours=1))
+
+
+def wat_now() -> datetime:
+    """The clock this check reads, in one place, so a wrong clock has one place to be fixed."""
+    return datetime.now(WAT)
+
+
+def check_clock(rep: Report, meta: dict, dtype: str, path: str) -> None:
+    """R47: read a clock before delivering, and put the reading in the file.
+
+    Every draft is written against a day. If nobody reads the clock, the day in the file is the
+    day the work started, and the file ends up answering a message that arrived after it, naming
+    a slot that has already passed, or calling Saturday a Friday. The record is one line and it
+    has to survive being read back: a date, a time, the zone, and the clock it came from. A
+    landing date that disagrees with the file's own date is not a nuance, it is the failure this
+    rule exists to catch.
+    """
+    if dtype in ("internal", "session-log"):
+        rep.add("R47", "SKIP", "internal file, never delivered")
+        return
+    # Nothing before 14 November 2026 is retro-fitted. A clock reading for an old file would be
+    # reconstruction, and a reconstructed timestamp is worse than an absent one because it looks
+    # like a check.
+    if str(meta.get("date", "")) < "2026-11-14":
+        rep.add("R47", "SKIP", "dated before the rule; a later clock reading would be reconstruction")
+        return
+    raw = " ".join(str(meta.get("time_checked") or "").split())
+    if not raw:
+        rep.add("R47", "FAIL",
+                "no time_checked: read a clock before this leaves, then record the date, the time "
+                "in WAT, and which clock was read")
+        return
+
+    problems = []
+    if not re.match(r"^checked:", raw, re.I):
+        problems.append("must open with checked:")
+    date = re.search(r"\b(20\d\d-\d\d-\d\d)\b", raw)
+    stamp = re.search(r"\b([01]\d|2[0-3]):[0-5]\d\b", raw)
+    if not date:
+        problems.append("no date in YYYY-MM-DD form")
+    if not stamp:
+        problems.append("no time as HH:MM")
+    if "WAT" not in raw:
+        problems.append("no WAT, so the reader cannot convert it")
+    if not re.search(r"\b(clock|device|system|sandbox|owner|handset|terminal)\b", raw, re.I):
+        problems.append("no clock named, so nobody can tell what was read")
+    if date and meta.get("date") and date.group(1) != str(meta["date"]).strip():
+        problems.append("verified on %s but the file is dated %s" % (date.group(1), meta["date"]))
+    if problems:
+        rep.add("R47", "FAIL", "; ".join(problems))
+        return
+
+    now = wat_now()
+    status = str(meta.get("status", "")).lower()
+    if date.group(1) != now.strftime("%Y-%m-%d") and status not in ("sent", "posted"):
+        rep.add("R47", "WARN",
+                "verified %s %s WAT; the clock reads %s %s WAT now, so check it again before sending"
+                % (date.group(1), stamp.group(0), now.strftime("%Y-%m-%d"), now.strftime("%H:%M")))
+    else:
+        rep.add("R47", "PASS",
+                "verified %s %s WAT against the %s"
+                % (date.group(1), stamp.group(0),
+                   (re.search(r"\b(clock|device|system|sandbox|owner|handset|terminal)\b", raw, re.I).group(1)).lower()))
+
+
 def check_profile_read(rep: Report, meta: dict, dtype: str) -> None:
     if dtype not in ("comment", "dm"):
         rep.add("R16", "SKIP", "not a per-person deliverable")
@@ -449,6 +702,13 @@ def check_profile_read(rep: Report, meta: dict, dtype: str) -> None:
 def check_cold_link(rep: Report, meta: dict, body: str, dtype: str) -> None:
     if dtype != "comment":
         rep.add("R17", "SKIP", "not a comment")
+        return
+    # R17 targets a link inside a cold comment, which is where an unsolicited URL
+    # reads as spam. The first comment under his own post is not that: the playbook
+    # link there is a standing requirement. Exempt it by name rather than by
+    # "warm: yes", which would claim a conversation that is not happening.
+    if os.path.basename(getattr(rep, "path", "")).upper().startswith("FIRST_COMMENT"):
+        rep.add("R17", "SKIP", "first comment on his own post, where the playbook link is required")
         return
     warm = str(meta.get("warm", "")).lower() in ("yes", "true", "1")
     links = re.findall(r"https?://\S+|www\.\S+", body)
@@ -547,13 +807,15 @@ def gate_file(path: str, forced_type: str | None = None) -> Report:
         check_contract(rep, meta, dtype, audience, path)
     else:
         rep.add("R26", "PASS", "exported artefact, internal metadata not required")
-    check_text(rep, body, meta, dtype, audience, pasted, exported)
+    check_text(rep, body, meta, dtype, audience, pasted, exported, path)
+    check_clock(rep, meta, dtype, path)
     check_profile_read(rep, meta, dtype)
     check_cold_link(rep, meta, body, dtype)
     check_approval(rep, meta)
     if dtype == "post":
         check_post(rep, meta, pasted)
         check_index_row(rep, meta, path)
+        check_visual(rep, meta, path)
     check_delivery_log(rep, meta, path)
     rep.rows.sort(key=lambda r: STATUS_ORDER.get(r["status"], 9))
     return rep

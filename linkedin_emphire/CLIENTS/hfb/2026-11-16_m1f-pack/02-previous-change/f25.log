@@ -1,0 +1,4 @@
+f25  caught  a genuinely torn line quarantined by recovery, then a retry that fails at open
+             torn line of 44 bytes quarantined by recovery (file 341 to 297 bytes), gap None; retry refused with disk_state unchanged and the file unchanged by the retry
+
+Every counterexample from the review is caught by the check that claims to catch it.

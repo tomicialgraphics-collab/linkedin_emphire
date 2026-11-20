@@ -1,0 +1,40 @@
+Environment record for the M1 pack
+
+Collected on the machine that produced 02 and 03. Regenerate with 01-environment.sh, which is this file's only source.
+
+operating system
+Linux 6.1.158+ x86_64
+
+python
+Python 3.11.2
+executable: /usr/bin/python3
+
+modules the benchmark needs
+  json           stdlib, present
+  socket         stdlib, present
+  socketserver   stdlib, present
+  hashlib        stdlib, present
+  hmac           stdlib, present
+  subprocess     stdlib, present
+  tempfile       stdlib, present
+
+modules the benchmark does not need, and does not use
+  pytest absent (not required)
+  numpy absent (not required)
+  cryptography absent (not required)
+
+external verifier binaries named by the 1.3.0 release notes
+  evidence-verify-rs absent (not required by this pack)
+  evidence-verify-crypto absent (not required by this pack)
+
+why the binary question does not block the pack
+  run.py and verify.py import nothing outside the standard library, so every number in
+  02 and 03 was produced by the two files named in the reproduction section of 00-README.md,
+  on this interpreter, with no network beyond loopback.
+
+determinism
+  the seed, the policy digest and the decision key are constants in bench/common.py
+  the clock is a counter, not a wall clock, so artifacts carry no timestamps
+  two runs of the same revision on this machine were compared file by file: 23 of 24 files
+  byte-identical, and the 24th is port.txt, which records the ephemeral port the store
+  bound to and is not evidence about anything

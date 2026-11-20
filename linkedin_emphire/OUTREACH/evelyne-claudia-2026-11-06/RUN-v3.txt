@@ -1,0 +1,38 @@
+HOW TO RUN THIS ARCHIVE
+=======================
+
+Everything needed is in this folder. Python 3.8 or later, standard library only, Linux or macOS.
+There is no network access anywhere in the runner.
+
+1. Unpack the archive and enter the folder it creates.
+
+2. Run the matched configuration:
+
+       python3 F9b-refusal-pair-v3.py --bench . --out ./pair3 --match-host-id
+
+   Expected: twelve checks printed, none marked FAIL, exit code 0, and a file at
+   ./pair3/result.json whose SHA-256 is
+   d41a3e5546e1a4fe6683604d4bf237dad97da47e9693fead6428a64494beef81
+
+3. Run it a second time into a different directory:
+
+       python3 F9b-refusal-pair-v3.py --bench . --out ./pair3-again --match-host-id
+
+   The two result files must have the same hash. A difference means the artifact is not deterministic,
+   which is what the previous version got wrong and why this one is measured twice before it is sent.
+
+4. Run the distinct-action-id configuration:
+
+       python3 F9b-refusal-pair-v3.py --bench . --out ./pair3-unmatched
+
+   Expected: exit code 1, two checks marked FAIL, H2 and H3, and a result file whose SHA-256 is
+   078b4e39f5a8a2f39f4e7b8c34de5dcd344c4faff0fe07a9a0f27df0cad1b351
+   That failure is the point of the run. It is what makes the matched-id condition a condition rather
+   than a convenience.
+
+The runner verifies the hash of every benchmark source it uses, and the hash of the imported earlier
+runner before importing it, and refuses to run if any of them differs. If a hash check refuses, the
+archive has been altered rather than the run having gone wrong.
+
+The two benchmark files it patches, and the three it verifies, are in bench/. The patch is applied to a
+copy in a temporary directory. Nothing in this folder is modified by a run.

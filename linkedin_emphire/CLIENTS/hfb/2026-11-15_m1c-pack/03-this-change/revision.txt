@@ -1,0 +1,8 @@
+revision
+  repository: Teamthy/host-failure-benchmark
+  applies to: bench/store.py at 99f25cab23b3dea0f6f739a96fae23bc25bbc3d0a0db96e801ac7d701ae1f982
+  bench/store.py after the patch: ee42139cab14fdb02dd82ad88d6421afc4af7a808cf0f561cc15f2db3a0bde85
+  audit/regressions.py after the patch: 68a87228fb13f46c1db0d65affd2320cf841c1c38ad7ad65fc65513d474f2db0
+  patch sha256: 5dfd7dc3da646d914367ac0c84e91ef822c0a41311427dd3128f33d9832cf53e
+  probe_new_cases.py sha256: c563a86cb8d09280e840869be90fc28891b38588949ac286c1c826ed886826b0
+  re-applied to a clean copy and diffed against this tree: identical, both files

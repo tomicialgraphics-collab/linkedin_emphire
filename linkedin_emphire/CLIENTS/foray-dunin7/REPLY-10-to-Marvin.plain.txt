@@ -1,0 +1,29 @@
+Marvin,
+
+Read v10, the v0.13 text as published, and the three anchors on the chain. Then checked what a holder with a browser can check.
+
+Attachment first. Your message says the register status is attached as v9; the file that arrived is v10, and v9 is already in the thread from 10 November. I have read v10 as the record of record, because it says it replaces v9. Confirm that, since the register will cite one of them by filename.
+
+The aggregate, from the chain, without the repository or the verifier. Transaction 6944db124ca819ec355713a1556640ae80843316394d56c1b72f495e11c03c12 is accepted, its payload is 9ca34d90aee5a0237125d9906f9e3b12e5e0733e86264f4a95f69caa1724cfb3 and nothing else, thirty two bytes, and the block time is 16:28:25 UTC on 12 November. Read beside items 9 and 11 the three anchors hold: 6ca065b9 to 4214e684, payload 3b8f2d15 to a67ea2e, mined 12:20:15 UTC on 10 November; 17f8ce56 to f3738cb, payload 32a65667 to fac4424f, mined 15:17:42 UTC on 10 November. Every payload equals the anchored value in your table, and those block times are the dates I would print in items 9, 11 and 12 in place of the broadcaster's log time.
+
+One thing the chain shows that the status record does not say. The second transaction spends the first one's output, so items 9 and 11 are joined at the transaction level as well as in the header. The third does not: its input names a4edda51 to f62a6d63, not the second transaction. All three pay the same address, which is consistent and is not lineage. So a reader with a browser can confirm three anchors, each committing the value you publish, and when each was mined. Joining the third, and therefore the extent of seq_no 0 to 8, needs the client header inside the aggregate leaf, which is not in the payload. The sentence for the sales material is narrower than "a holder can check the anchoring story": a holder can check the anchors, and the extent is checkable with the proof bundle. That is still strong, and it is the true one.
+
+Then the three closes.
+
+Section 7.3 reads as you said, and it is the right fix: the reported time is indicative, the claim is dated by the block time, and a reader can date it without trusting the verifier.
+
+The coverage sentence going into the sales material: good. I will hold you to the sales material rather than to the specification, since the specification already carried it.
+
+W-06 is where I would look again. v0.26 may well correct the amendment, and I could not open it: the raw path returns 404 and the repository needs a login, so I am taking that revision on your statement and on the cross reference rather than on a reading. What I can read is section 10 item 10 in v0.13, which still ends by saying the amendment needs its own revision and that the specification does not edit it. A reader who lands there is still told the amendment is wrong. So W-06 closes in the amendment and reopens three sections later in the specification. One sentence in item 10 pointing at v0.26 and it closes in both.
+
+Two smaller things in the record.
+
+W-05's closing basis. Your status closes it against 4.4.4 and 4.4.5 with the two vector sets. My register closed it on 10 November against item 9, the artefact, on the condition I set. Both are defensible and they are not the same claim. Name the artefact as the closing basis and the rules as the coverage, and the two records agree.
+
+And 66 of 66. Section 8.1 calls 66 the stale v0.3 vector count, so a reader will take your 66 for that number. Name the suite: the verifier's own tests, or the conformance vectors, which the same section counts at 91 across seven families. Whichever it is, it should not be the one figure in the document that reads as the other.
+
+The case study: yes, and thank you. I will send you the draft here before it goes to anyone, and it does not leave this thread until you have read it, named as you offered. One caution before you settle on naming. Your name and your published work make this project findable by anyone who cares to look, so the removal list stops doing its work at the point your name goes in. That is not an objection. It just means the choice is between an identifiable named account and an anonymous one. Say which, and the part where I was wrong first stays either way.
+
+On the stablecoin reading, we agree, and I will leave it there rather than open a second front in a review that is not finished.
+
+Timothy

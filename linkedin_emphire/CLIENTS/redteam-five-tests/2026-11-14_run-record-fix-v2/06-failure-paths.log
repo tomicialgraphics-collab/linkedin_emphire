@@ -1,0 +1,30 @@
+builder  <v2 checkout>/package/build_package.py
+clock    2026-11-14 18:27 WAT Saturday
+
+T1  no results at all
+  pass  archive refuses with nothing to archive              refused: no results/results.json to archive at <temp>/t1/ha
+  pass  package untouched                                    
+  pass  no record published                                  
+
+T2  non-zero exit, results file left over from before the run
+[run] python redteam.py  (model=test-model endpoint=http://127.0.0.1:9/v1)
+  pass  run refuses a results file this run did not write    refused: the harness exited 1 and results/results.json is byte for byte the file
+
+T3  results that do not parse
+  pass  archive refuses unparseable results                  refused: results.json did not parse (Expecting property name enclosed in double 
+
+T4  crash between the two renames
+  pass  publish raises on the simulated crash                OSError after the record rename
+  pass  record published, package still the old text         the safe direction
+  pass  the mismatch is detectable from RUN.json             record names d19a642b56da5121, disk has 2f73349cfc463025
+
+T5  a good run, record then package
+  pass  record and package both published                    
+  pass  RUN.json digest equals the package on disk           42da876cf7d1f279
+  pass  sha256sum -c runs clean in the record                
+  pass  no staging file left behind                          
+
+T6  a digest that matches on a 16 character prefix
+  pass  verifier self-test fails a prefix collision          exit 0 from the self-test
+
+13 passed, 0 failed

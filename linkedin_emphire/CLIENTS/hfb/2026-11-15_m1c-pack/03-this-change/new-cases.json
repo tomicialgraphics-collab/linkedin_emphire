@@ -1,0 +1,75 @@
+[
+ {
+  "case": "C duplicate sequence numbers after an unconfirmed rollback",
+  "applicable": true,
+  "reply": {
+   "raised": true,
+   "reason": "journal write failed (injected: partial batch write) and the rollback was refused by the failpoint: the record's state on disk is unknown"
+  },
+  "all_seq": [
+   1,
+   2,
+   3
+  ],
+  "checks": {
+   "c_reply_says_unknown": true,
+   "c_records_on_disk_after_failure": 3,
+   "c_retry_replied": true,
+   "c_retry_seq": null,
+   "c_unique_seq": true
+  },
+  "holds": true
+ },
+ {
+  "case": "D a malformed line before an unterminated final record",
+  "gap_restart_1": {
+   "reason": "unterminated record",
+   "start": 104,
+   "bytes": 108,
+   "sha256": "a96e1ede470672563f7875118e4e4f5cb10640d3820dabb689f4bbd88bbc726b",
+   "store_seq": 2,
+   "kind": "expectation",
+   "action_id": "M1C-D2",
+   "quarantine": "store.jsonl.quarantine-1.bin",
+   "quarantine_offset": 26
+  },
+  "gap_restart_2": {
+   "reason": "unterminated record",
+   "start": 104,
+   "bytes": 108,
+   "sha256": "a96e1ede470672563f7875118e4e4f5cb10640d3820dabb689f4bbd88bbc726b",
+   "store_seq": 2,
+   "kind": "expectation",
+   "action_id": "M1C-D2"
+  },
+  "quarantine": {
+   "file": "store.jsonl.quarantine-1.bin",
+   "bytes": 134,
+   "sha256": "614fa2ef3e792283ec507eff66d4d826c20e889418b315c933cabb6d8e633e67",
+   "ranges": [
+    {
+     "start": 104,
+     "end": 130
+    }
+   ],
+   "unterminated_tail": {
+    "quarantine_offset": 26,
+    "bytes": 108,
+    "sha256": "a96e1ede470672563f7875118e4e4f5cb10640d3820dabb689f4bbd88bbc726b",
+    "store_seq": 2
+   }
+  },
+  "checks": {
+   "d_gap_on_restart_1": true,
+   "d_gap_on_restart_2": true,
+   "d_gap_same_sha": true,
+   "d_gap_names_seq": true,
+   "d_record_in_journal": true,
+   "d_record_in_quarantine": true,
+   "d_damage_in_quarantine": true,
+   "d_journal_stable_across_restarts": true,
+   "d_record_not_indexed": true
+  },
+  "holds": true
+ }
+]

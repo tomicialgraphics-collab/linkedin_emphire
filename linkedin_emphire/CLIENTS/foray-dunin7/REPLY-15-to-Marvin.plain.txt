@@ -1,0 +1,14 @@
+Here is the sentence as it stands, unaltered:
+
+"The verifier specification has moved from v0.10 to v0.14. The last three revisions each name the finding they
+answer, v0.12 answering A11 and A12 and the two after it naming the corrections raised in review. The earlier
+revisions name the section items they change rather than a finding, which is the smaller claim and the one that
+holds."
+
+That's the whole of the revision claim. The sentence after it is the v0.26 correction, and the one before it is
+the W-04 limit.
+
+On where it lands: nothing's placed yet, and I'd rather tell you the place once it exists than promise one
+now. When it goes out I'll send you the location and the wording of whatever surrounds it.
+
+Timothy

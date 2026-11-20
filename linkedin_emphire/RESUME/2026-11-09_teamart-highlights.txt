@@ -1,0 +1,12 @@
+AI Red Team Engineer, Teamart Inc.
+
+Independent engineering practice. I build AI systems, then attack them on purpose before anyone else does.
+
+What I do: LLM integrations (chatbots, retrieval, tool calling), pre-launch red teaming against them, and the evaluation work that decides whether a fix actually holds.
+
+Recent work:
+- Author of the AI Red Team Playbook: 168 testable classes across model behaviour, retrieval, agents, output handling, measurement and governance. Public, with tooling that puts an interval on every attack success rate and a coverage argument that names the classes nobody tested. github.com/Teamthy/Ai-Red-Team-Playbook
+- Breaking AI, a public series on reproducible failure modes in shipped AI features.
+- Built a customer support chatbot, then ran six prompt injection tests before launch. Four broke it: a system prompt leak, an unauthorised refund commitment, and a content policy bypass. Each finding went back to the build with a test attached, and the set became a repeatable checklist.
+
+Stack: Python, Go, TypeScript, LLM APIs, retrieval, PostgreSQL.

@@ -1,0 +1,23 @@
+Marvin,
+
+One thing's left between us that money can settle, and it is small.
+
+W-04 closed in the text and open against the test, in your own words. I'd like to run the probe against the
+v0.26 mapping and close it properly. One week, fixed scope, 1,500 USD.
+
+What you get, stated as the deliverable rather than as effort: the probe re-run against the rule as written, one
+result per case with the reason each passes or fails, and the finding moved in the register from a textual
+closure to a closure with a tested rule behind it. If it fails, you get the failure written up with the smallest
+reproduction I can produce, which is worth more to you than a pass. One revision of the write-up is included and
+anything past that is a new scope.
+
+What it isn't: not a new review, not load testing, no changes to your code from me, and nothing in the case
+study depends on it. The page is yours and it stands whether or not you take this.
+
+The review so far was unpaid and that was my choice, not an invoice I am presenting late. This is a separate,
+smaller thing, priced the way it is because everything has already been read: one week, 1,500, invoiced on
+delivery.
+
+If that's useful, say so and I'll send a one-page scope and an invoice, and we can be finished inside a week.
+
+Timothy
