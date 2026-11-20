@@ -3,7 +3,7 @@ deliverable: dm
 id: 2026-11-20_dm_marvin-the-repo-is-up
 date: 2026-11-20
 audience: outbound
-status: ready
+status: superseded
 approved: no
 recipient: Marvin Percival
 premise: >-
@@ -26,7 +26,7 @@ sources_read: >-
   read: github.com/Teamthy/Eri-OS through the GitHub API on 20 November. No page opened.
 ---
 
-## Send only after the repository is private
+## Superseded by 2026-11-20_dm_marvin-both-of-us-admin.md. Do not send this one.
 
 If it is sent while the repository is public, the second paragraph is a false statement to a co-builder on day one.
 
