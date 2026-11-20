@@ -126,3 +126,14 @@ content fingerprint on every event and on the evidence file, the postcode and ad
 chain over the record half by a trigger. The rework of PR 6 waits for Marvin to agree it. No handoff note was added on
 this branch, because `notes/2026-11-20-olusanya.md` already sits on `feat/event-table` and a second file of the same
 name would collide on merge.
+
+## REQ v0.4, opened as PR 8
+
+`docs/ERI-REQ-v0_4.md` on branch `docs/req-v0_4`, commit `0a5bb15`, built from v0.3 with the amendments in
+`CLIENTS/eri/ERI-REQ-v0.4-amendments.md`. 45 to 53 requirements, 6.5 to 7.65 build days, summed by script. REQ-053 is
+written as a general check page reached without a QR code, the owner's choice on his yes; the PR names the
+register-wide lookup as worth a sentence before real data. Opened as DUNIN7/eri-test PR 8 on the owner's yes. The
+promise in the 03:05 message to send REQ-053 with the redline over the weekend is kept.
+
+The eri-test clone was shallow with a fetch rule for main only, so pushed branches showed as untracked and the stop
+check flagged them. A fetch rule for `docs/*` was added and both branches now track their remotes. Nothing was re-pushed.
