@@ -82,3 +82,26 @@ human or not. An agent that can rewrite an append-only table can destroy the pro
 The same four rules, and one sentence on why: he plans to let his agent manage the repository, which is fine until it
 tidies a branch that a record points at. Agreed between the two of you, it is a standard. Imposed on him, it is a
 restriction.
+
+# The desktop Plugins screen, and what it does not do
+
+The desktop client shows **Plugins** where the web client shows **Customize → Connectors**. The `github` plugin being
+switched on means Claude has the tools to talk to GitHub. It does not mean Claude can reach a repository, and confusing
+the two is the most common way this setup stalls.
+
+Two separate things have to be true:
+
+1. The plugin is on, so the tools exist. That is the switch in the panel.
+2. The Claude GitHub App is installed on the account or organisation that owns the repository, with that repository
+   included in the installation. That is done on github.com, not in the panel.
+
+If the first is true and the second is not, Claude will read a public repository and return not found for a private one.
+That is a permissions answer, not a broken connection.
+
+**The check that settles it**, in one message: ask Claude to quote the first line of the README in the repository by its
+full name. If it reads it, access is real. If it says it cannot find it, the app is missing or was installed on the wrong
+account. Do not test with a search, because search never returns private repositories whatever the permissions say.
+
+**For the build this week, none of this is needed.** Route A above runs inside a folder you already cloned and does not
+depend on the plugin or the app at all. The plugin is for reading issues, branches and pull requests from a chat window,
+which is useful when the repository of record exists and you are not at that machine.
