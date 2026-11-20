@@ -214,3 +214,14 @@ headline out of date), 3 reached through a co-founder, 4 not found. Added as a t
 out of it: Waniwani's CEO is Robin Diligent, not Robert as the funding report had it, and sources disagree on whether
 Willow's CEO is Eyal Ben Ezra or Shalev Shalit, so the row now says so. Emails: none given. Deliverability cannot be
 checked from this workspace, and the October rule stands that a guessed address is never sent unverified.
+
+## 22:39 WAT: the ICP-50 outreach pack
+
+Asked for each lead's verified name, email, a personalized email and anything else needed, with his LinkedIn and Upwork
+profiles attached, to send by email and LinkedIn. Built `EMAIL/leads/2026-11-20_icp50_outreach-pack.md`: for each of the
+fifty, the name and role, the LinkedIn state, a subject, an email naming that company's own claim and the first test I
+would run on it, a LinkedIn connection note under 300 characters, and one day-6 follow-up. Klaimee gets a partner email
+instead. All fifty bodies passed the human gate at 90 or above with no errors, one by one. The signature carries the
+LinkedIn URL, the Upwork profile by its fixed ID, and the outbound address (R04). No email address is given: none could be
+verified, so the pack tells the owner to run each through his own tool and paste the results back. No price in any
+message.
