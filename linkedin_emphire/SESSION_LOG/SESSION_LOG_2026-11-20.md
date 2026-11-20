@@ -101,7 +101,7 @@ fingerprint, seal) and a content table that alone can be purged, written as deci
 number 0003, so the stack-conditions note becomes 0004. He takes the connecting-role question into DEPLOYMENT.md.
 
 Reply drafted as `ENGAGEMENT/2026-11-20_dm_marvin-the-split-and-0003.md`, PASS at human 92, not sent. It accepts the
-split, adds the address to the content side and the hash chain over the record half, and says the commit label is fixed
+split, adds the address to the content side and the hash chain over the record half, and says the commit label is corrected
 forward because the instructions forbid amending a pushed commit. Its last line assumes `claude/adoring-babbage-jng35n`
 is the owner's: the commit is signed plain "Claude" at 16:03 WAT, not "Claude (for Marvin Percival)". The owner confirms
 before it goes. L74 and L75 updated to match.
