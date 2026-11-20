@@ -117,3 +117,12 @@ as well as filed in the repository. A file path alone is not a handover.
 
 The owner confirmed `claude/adoring-babbage-jng35n` is his, so the reply to Marvin is now `status: ready` with its last
 line as written.
+
+## Decision 0003, about 19:20 WAT
+
+Written in `eri-test` on branch `docs/0003-record-and-content`, commit `42cdda0`, as Teamthy. Pushed when the session's
+stop check required it, then opened as PR 7 on the owner's yes. One file, no code: the record and content split, a
+content fingerprint on every event and on the evidence file, the postcode and address moved to content, and the hash
+chain over the record half by a trigger. The rework of PR 6 waits for Marvin to agree it. No handoff note was added on
+this branch, because `notes/2026-11-20-olusanya.md` already sits on `feat/event-table` and a second file of the same
+name would collide on merge.
