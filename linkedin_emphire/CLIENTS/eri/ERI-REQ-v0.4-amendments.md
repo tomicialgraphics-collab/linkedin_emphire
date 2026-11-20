@@ -31,9 +31,10 @@ acceptance criteria comparable week to week, and a new number leaves a trace of 
 | 6 | Sealing has no failure path | add REQ-049, amend REQ-027 | 3 | +0.15 |
 | 7 | No requirement has the agency declare anything | add REQ-050, show it at REQ-031 | 1 and 4 | +0.20 |
 | 8 | Public check never fails in a test | add REQ-051, amend REQ-039 | 4 | +0.05 |
+| 9 | No NIPOST key, so cycle one runs on samples | add REQ-052 | 1 | +0.10 |
 
-Eight rows for seven gaps, because the negative control is an addition rather than a gap. Total added: **0.95 build
-days**. The document goes from 6.5 to **7.45 build days, roughly 60 hours** over four cycles.
+Nine rows for seven gaps and two additions. Total added: **1.05 build days**, of which 0.10 is REQ-052,
+added in the morning of 20 November once Marvin confirmed there is no NIPOST key yet. The document goes from 6.5 to **7.55 build days, roughly 60 hours** over four cycles.
 
 ---
 
@@ -124,6 +125,23 @@ this evidence file." when the file corresponding to the bad item's content is ch
 page ever reports a match.
 
 **Amends REQ-039** by adding: *"one of the four seeded items is the negative control under REQ-051."*
+
+
+## REQ-052, sample data is labelled (new, cycle 1)
+
+> When the address shown for a postcode comes from a recorded NIPOST sample rather than a live call, the app says so
+> wherever that address appears, and the sample's capture date is shown with it.
+
+Acceptance: with the sample data source selected, the postcode result screen shows the address, the words "sample
+response, captured on <date>", and no claim that NIPOST returned it today. Switching the data source to live removes the
+label, and the same screen is otherwise identical.
+
+**Why:** Marvin confirmed on 20 November that there is no NIPOST key yet and that live keys need company verification,
+so cycle one will run on recorded responses. A reviewer who discovers afterwards that an address was a fixture stops
+trusting the rest of the demo, and this product is being sold on the habit of not overstating what it knows.
+
+**Also required with it:** the source is selected by one configuration value with two implementations, sample and live,
+so the day a key arrives is a config change and not a rewrite.
 
 ---
 
