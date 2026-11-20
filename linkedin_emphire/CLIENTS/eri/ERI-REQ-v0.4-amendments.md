@@ -32,9 +32,9 @@ acceptance criteria comparable week to week, and a new number leaves a trace of 
 | 7 | No requirement has the agency declare anything | add REQ-050, show it at REQ-031 | 1 and 4 | +0.20 |
 | 8 | Public check never fails in a test | add REQ-051, amend REQ-039 | 4 | +0.05 |
 | 9 | No NIPOST key, so cycle one runs on samples | add REQ-052 | 1 | +0.10 |
+| 10 | The fourth answer has no requirement | add REQ-053 | 4 | +0.10 |
 
-Nine rows for seven gaps and two additions. Total added: **1.05 build days**, of which 0.10 is REQ-052,
-added in the morning of 20 November once Marvin confirmed there is no NIPOST key yet. The document goes from 6.5 to **7.55 build days, roughly 60 hours** over four cycles.
+Ten rows for seven gaps and three additions. Total added: **1.15 build days**. REQ-052 was added once Marvin confirmed there is no NIPOST key yet, and REQ-053 once he pointed out that the requirements document already answered the questions put to him, which was true of two of the three and not of the empty register. The document goes from 6.5 to **7.65 build days, roughly 61 hours** over four cycles.
 
 ---
 
@@ -142,6 +142,23 @@ trusting the rest of the demo, and this product is being sold on the habit of no
 
 **Also required with it:** the source is selected by one configuration value with two implementations, sample and live,
 so the day a key arrives is a config change and not a rewrite.
+
+
+## REQ-053, the fourth answer (new, cycle 4)
+
+> A public checker whose file matches nothing in the register is told that no record exists under that fingerprint, in
+> the same layout and the same tone as a match, with one line beneath it saying that this only means nobody has
+> registered this paper yet.
+
+Acceptance: with one seeded file in the register, checking a file that is not in it shows "No record under this
+fingerprint.", styled exactly like a match, with no warning colour, no error icon and no suggestion that the paper is
+bad. Checking the seeded file in the same session shows a match. The two results are the same page with one word
+changed.
+
+**Why:** REQ-035 tells a checker whether their file matches a sealed item inside one evidence file. Nothing in v0.3
+describes what a person sees when their paper matches nothing anywhere, which is the answer most people will get in the
+first year and the moment a buyer asks an agent to register. On day one the register is empty, so this is the first
+screen of the demo rather than the last.
 
 ---
 
