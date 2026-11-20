@@ -375,3 +375,21 @@ description used in both the recommendation and the README, so the two cannot dr
 workspace has no push permission on that repository, confirmed at 13:44 WAT, so this is not something that can be
 done from here and it should not be. Once it is up: send him the live page and the commit, each named as what it
 is, and record the publication time here so the approval and the publication carry one date.
+
+## 20. Published, 20 November: commit 846ad62 on main
+
+The attribution went into the README of `Teamthy/host-failure-benchmark` as approved, with his clarification applied.
+Commit `846ad620c32557f5b8da383857766295149aa632`, one file changed, four lines added, pushed to `main` from `126f1c0`.
+GitHub stamps the commit 2026-11-20 14:09 WAT. The approval was given at 13:55 WAT the same day, so the approval and the
+publication are forty minutes apart and carry one date, which was the point of doing it today rather than next week.
+
+Two sentences in the file, unchanged from his 13:55 message apart from normalising his curly apostrophe to the straight
+one the rest of the README uses: the attribution as first approved, and his own clarification naming the co-authorship and
+separating the review from it. The word "independently" was replaced with "by" at his instruction, and it is the only
+word of the original attribution that changed between his first approval at 13:39 and publication.
+
+The repository received `126f1c0` earlier the same day, carrying the whole P2 verification tree, sixty-six files and 4,817
+lines, so the review record and the line that points at it landed in that order.
+
+Still owed to him: the two links. Live page
+https://github.com/Teamthy/host-failure-benchmark/blob/main/README.md and the commit above, each named as what it is.
