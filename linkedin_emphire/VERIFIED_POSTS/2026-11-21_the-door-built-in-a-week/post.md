@@ -3,8 +3,8 @@ deliverable: post
 id: 2026-11-21_post_the-door-built-in-a-week
 date: 2026-11-21
 audience: outbound
-status: ready
-approved: no
+status: posted
+approved: yes
 channel: LinkedIn, own feed
 template: T6
 headline: Remove the reset email and your recovery path becomes your login.
