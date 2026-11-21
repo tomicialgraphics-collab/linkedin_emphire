@@ -3,8 +3,8 @@ deliverable: dm
 id: 2026-11-21_dm_marvin-saturday-plan
 date: 2026-11-21
 audience: outbound
-status: ready
-approved: no
+status: sent
+approved: yes
 recipient: Marvin Percival
 warm: yes
 premise: >-
