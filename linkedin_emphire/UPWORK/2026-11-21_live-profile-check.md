@@ -6,7 +6,7 @@ audience: internal
 status: ready
 approved: no
 time_checked: >-
-  checked: 2026-11-21 06:40 WAT, read from the system clock in the sandbox before this file was written.
+  checked: 2026-11-21 05:49 WAT, the time this file was first committed. The value first written here was ahead of the real clock and has been corrected.
 sources_read: >-
   read: three screenshots of the logged-in profile and the services page, pasted by the owner on 21 Nov 2026.
   upwork.com itself returned 403 to a fetch, so nothing here comes from the live page directly.

@@ -16,7 +16,7 @@ premise: >-
   owner's angle, that a daily price can only move on what outsiders can check, and model claims mostly cannot be checked
   from outside yet. It repeats none of his figures and corrects none of them.
 time_checked: >-
-  checked: 2026-11-21 06:05 WAT, read from the system clock in the sandbox before this file was written.
+  checked: 2026-11-21 05:25 WAT, the time this file was first committed. The value first written here was ahead of the real clock and has been corrected.
 premise_checked: >-
   opinion: no figure, date or price in the comment. Ethan's own numbers are his and are not restated.
 sources_read: >-

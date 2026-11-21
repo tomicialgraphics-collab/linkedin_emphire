@@ -7,7 +7,7 @@ status: ready
 approved: no
 title: The red team and security plan for the Ẹ̀rí test build, FORAY and Stele
 time_checked: >-
-  checked: 2026-11-21 07:20 WAT, read from the system clock in the sandbox before this file was written.
+  checked: 2026-11-21 06:03 WAT, the time this file was first committed. The value first written here was ahead of the real clock and has been corrected.
 sources_read: >-
   read: DUNIN7/eri-test main at 4888b86 and the feat/event-table branch at 733db7a, fetched 21 Nov 2026: the PRD v0.2,
   REQ v0.4, the standards, DEPLOYMENT.md and DATA-RULES.md. Marvin's Stele message of 21 Nov 2026, 00:16 WAT. The

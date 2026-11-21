@@ -13,7 +13,7 @@ premise: >-
   anchoring before any other code, and that has not been done. The message lists what waits on him, in order, and
   what the owner does today.
 time_checked: >-
-  checked: 2026-11-21 07:45 WAT, read from the system clock in the sandbox before this file was written.
+  checked: 2026-11-21 06:08 WAT, the time this file was first committed. The value first written here was ahead of the real clock and has been corrected.
 profile_checked: >-
   Marvin Percival, architect and reviewer on Ẹ̀rí, who writes short, reads closely and asked for numbered steps when he
   has to act. The message gives him numbered steps and keeps the owner's own work as a short list.

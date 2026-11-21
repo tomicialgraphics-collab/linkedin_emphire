@@ -15,7 +15,7 @@ premise: >-
   through Hostinger, parking nameservers, no active website, no indexed presence. The comment confirms the conclusion
   and corrects two findings, because the true evidence on the live page is stronger than what the evaluation reported.
 time_checked: >-
-  checked: 2026-11-21 05:40 WAT, read from the system clock in the sandbox before this file was written.
+  checked: 2026-11-21 05:02 WAT, the time this file was first committed. The value first written here was ahead of the real clock and has been corrected.
 premise_checked: >-
   checked: Verisign RDAP for tycoonawards.com on 21 Nov 2026 at about 05:35 WAT shows registration 2026-01-31T11:58:29Z,
   expiry 2028-01-31, registrar HOSTINGER operations UAB, nameservers NS1 and NS2.DNS-PARKING.COM, which is

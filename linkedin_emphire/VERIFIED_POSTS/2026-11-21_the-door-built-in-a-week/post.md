@@ -29,7 +29,7 @@ premise: >-
   speaks to the buyer in the ICP note (founders of agent identity and access companies) and ends on three questions the
   reader can check against their own system. It names no person, company or product.
 time_checked: >-
-  checked: 2026-11-21 05:05 WAT, read from the system clock in the sandbox before this file was written.
+  checked: 2026-11-21 04:46 WAT, the time this file was first committed. The value first written here was ahead of the real clock and has been corrected.
 profile_checked: >-
   Olusanya Timothy, AI red teaming and evaluation, Lagos. The post is written to the selling point in
   STRATEGY/2026-11-20_icp-and-selling-point_verified.md: specific attacks, said plainly, no service announced.
