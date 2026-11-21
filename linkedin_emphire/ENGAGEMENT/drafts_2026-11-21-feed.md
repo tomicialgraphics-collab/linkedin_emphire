@@ -3,8 +3,8 @@ deliverable: comment
 id: drafts_2026-11-21-feed
 date: 2026-11-21
 audience: outbound
-status: ready
-approved: no
+status: posted
+approved: yes
 recipient: Kirk Borne
 profile_checked: >-
   Kirk Borne, Ph.D., data scientist and astrophysicist, LinkedIn Top Voice, founder of Data Leadership Group, advisor
