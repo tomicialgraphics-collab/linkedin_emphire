@@ -3,8 +3,8 @@ deliverable: comment
 id: drafts_2026-11-21-feed_ethan-cho
 date: 2026-11-21
 audience: outbound
-status: ready
-approved: no
+status: posted
+approved: yes
 recipient: Ethan Cho
 profile_checked: >-
   Ethan Cho, Chief Investment Officer and Partner at TheVentures, early investor in Toss and Dunamu, writes on what
