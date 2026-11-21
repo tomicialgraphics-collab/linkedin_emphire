@@ -19,6 +19,9 @@ subheadline_alt2: >-
   An account recovery path with no email behind it has to carry its own safety checks.
 box: THE OTHER DOOR
 box_alt: LOST EVERYTHING
+card: >-
+  Portrait layout, VISUAL/portrait_card.py, owner's photograph, cover.png and cover.jpg. Card line is the short form
+  of the headline: No reset email? Then recovery is your login. The type-only carousel pages stay beside it.
 hashtags: ["#AISecurity", "#AIRedTeam", "#AIEvaluation", "#AIEngineering"]
 premise: >-
   Observational post for Saturday 21 Nov 2026. Systems that drop email for passkeys lose the reset link that quietly did
